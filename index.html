@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | Dashboard</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="dashboard-page">
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h1>Ban-Koe Academy</h1>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button class="active" onclick="goDashboard()">🏠 Dashboard</button>
+                <button onclick="goTraining()">📖 Training</button>
+                <button onclick="goQuiz()">📝 Quiz</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button onclick="goProducts()">📦 Products</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button onclick="goProgress()">📈 Progress</button>
+                <button onclick="goSettings()">⚙ Settings</button>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content">
+        <header class="page-header">
+            <h1 class="pageTitle">Good Morning</h1>
+            <p class="page-subtitle">Start with your highest-impact training tasks for today.</p>
+        </header>
+
+        <section id="dashboardPage" class="main-grid">
+            <div class="dashboard-grid">
+                <article class="panel">
+                <h3 class="card-title">Continue Learning</h3>
+                <p class="mt16">Resume your last training path and complete pending product verifications.</p>
+                <div class="mt24">
+                    <button class="btn btn-primary" onclick="goTraining()">Go to Training</button>
+                </div>
+                </article>
+
+                <article class="panel">
+                    <h3 class="card-title">Today's Goal</h3>
+                    <p class="mt16">Complete 3 lessons and finish one product quiz sequence.</p>
+                </article>
+
+                <article class="panel">
+                    <h3 class="card-title">Overall Progress</h3>
+                    <p class="dashboard-progress-value mt16" id="xpCounter">0 XP</p>
+                </article>
+
+                <article class="panel">
+                <h3 class="card-title">Recent Activity</h3>
+                <div class="list mt16">
+                    <div class="card">Completed Module 2 quiz review.</div>
+                    <div class="card">Viewed Edwards manufacturer catalog.</div>
+                    <div class="card">Updated progress after latest training session.</div>
+                </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="quizPage" class="hidden">
+            <h2 id="questionTitle" class="section-title">Question 1</h2>
+            <div id="questionCounter" class="mt16">1 / 1</div>
+            <div id="questionBox" class="panel mt16">Question</div>
+            <div id="answers" class="mt16"></div>
+            <p id="explanation" class="mt16"></p>
+            <div class="toolbar mt16">
+                <button id="nextButton" class="btn btn-primary">Next</button>
+            </div>
+        </section>
+
+        <section class="hidden">
+            <button id="startQuizButton">Start</button>
+            <button id="module1Button">Module 1</button>
+            <button id="module2Button">Module 2</button>
+            <span id="correctCounter">0</span>
+            <span id="incorrectCounter">0</span>
+            <span id="questionsAnswered">0</span>
+            <span id="accuracy">0%</span>
+            <span id="levelCounter">1</span>
+            <span id="rankCounter">Apprentice</span>
+        </section>
+    </main>
+</div>
+
+<script src="scripts/navigation.js"></script>
+<script src="data/module1.js"></script>
+<script src="data/module2.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>

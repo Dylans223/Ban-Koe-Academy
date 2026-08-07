@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | Settings</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h1>Ban-Koe Academy</h1>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button onclick="goDashboard()">🏠 Dashboard</button>
+                <button onclick="goTraining()">📖 Training</button>
+                <button onclick="goQuiz()">📝 Quiz</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button onclick="goProducts()">📦 Products</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button onclick="goProgress()">📈 Progress</button>
+                <button class="active" onclick="goSettings()">⚙ Settings</button>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content" id="settingsPage">
+        <header class="page-header">
+            <h1 class="pageTitle">Settings</h1>
+            <p class="page-subtitle">Manage workspace preferences and account-level controls.</p>
+        </header>
+
+        <div class="toolbar">
+            <button class="btn">Update Preferences</button>
+            <button class="btn btn-danger">Reset Progress</button>
+        </div>
+
+        <section class="panel">
+            <h3 class="card-title">Profile & Preferences</h3>
+            <p class="mt16">Settings controls can be expanded here without changing app behavior.</p>
+        </section>
+    </main>
+</div>
+
+<script src="../scripts/navigation.js"></script>
+<script src="settings.js"></script>
+</body>
+</html>

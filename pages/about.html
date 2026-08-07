@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | About</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h1>Ban-Koe Academy</h1>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button onclick="goDashboard()">🏠 Dashboard</button>
+                <button onclick="goTraining()">📖 Training</button>
+                <button onclick="goQuiz()">📝 Quiz</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button onclick="goProducts()">📦 Products</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button onclick="goProgress()">📈 Progress</button>
+                <button onclick="goSettings()">⚙ Settings</button>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content">
+        <header class="page-header">
+            <h1 class="pageTitle">About</h1>
+            <p class="page-subtitle">Platform information for internal Ban-Koe Systems training operations.</p>
+        </header>
+
+        <div class="toolbar">
+            <button class="btn" onclick="goDashboard()">Back to Dashboard</button>
+        </div>
+
+        <section class="panel">
+            <h3 class="card-title">Ban-Koe Academy</h3>
+            <p class="mt16">Internal learning workspace for product knowledge, role progression, and skills validation.</p>
+        </section>
+    </main>
+</div>
+
+<script src="../scripts/navigation.js"></script>
+</body>
+</html>

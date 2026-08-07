@@ -1,0 +1,73 @@
+/* ==========================================
+GLOBAL STYLES
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#111827;
+    color:white;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.app{
+    display:flex;
+    min-height:100vh;
+}
+
+.sidebar{
+    width:260px;
+    background:#1f2937;
+    padding:25px;
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+}
+
+.sidebar h1{
+    margin-bottom:35px;
+    color:#60a5fa;
+}
+
+.sidebar button{
+    width:100%;
+    margin-bottom:12px;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:#374151;
+    color:white;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.sidebar button:hover{
+    background:#2563eb;
+}
+
+.content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:40px;
+}
+
+.pageTitle{
+    font-size:38px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:#1f2937;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+button{
+    cursor:pointer;
+}

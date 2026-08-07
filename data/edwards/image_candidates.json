@@ -1,0 +1,176 @@
+[
+    {
+        "Part":  "SIGA-OSD",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-OSHD",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-PD",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-PS",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-PHS",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-PHD",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-HFS",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-HRS",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-CC1",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-CC2",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-MCC1",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-MCC2",
+        "Found":  true,
+        "Source":  "https://www.buyfirealarmparts.com/shop/edwards-est-siga-mcc2.html",
+        "Image":  "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/c25c667b1d0f5e39707536f64bc4ca44/d/s/dscn0530.png"
+    },
+    {
+        "Part":  "SIGA-RM1",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-CT1",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-CT2",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-CRR",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-UM",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-UM2",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-CC1S",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-IM",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-RM",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-SB",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-SB4",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-IB",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-IB4",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-AB4G",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-LED",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-270",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-278",
+        "Found":  false,
+        "Source":  null,
+        "Image":  null
+    }
+]

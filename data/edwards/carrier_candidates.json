@@ -1,0 +1,118 @@
+[
+    {
+        "Part":  "SIGA-OSD",
+        "Image":  "https://images.carriercms.com/image/upload/v1650658068/edwards/Lifelines/Images/Intelligent-Devices/SIGA-OSD-front.jpg"
+    },
+    {
+        "Part":  "SIGA-OSHD",
+        "Image":  "https://images.carriercms.com/image/upload/v1650658068/edwards/Lifelines/Images/Intelligent-Devices/SIGA-OSHD-front.jpg"
+    },
+    {
+        "Part":  "SIGA-PD",
+        "Image":  "https://images.carriercms.com/image/upload/v1650658068/edwards/Lifelines/Images/Intelligent-Devices/SIGA-PD.png"
+    },
+    {
+        "Part":  "SIGA-PS",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-PHS",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-PHD",
+        "Image":  "https://images.carriercms.com/image/upload/v1650658068/edwards/Lifelines/Images/Intelligent-Devices/SIGA-PHD.png"
+    },
+    {
+        "Part":  "SIGA-HFS",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-HRS",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-CC1",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-CC2",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-MCC1",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-MCC2",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-RM1",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-CT1",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-CT2",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-CRR",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-UM",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-UM2",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-CC1S",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-IM",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-RM",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-SB",
+        "Image":  "https://images.carriercms.com/image/upload/v1650658068/edwards/Lifelines/Images/Intelligent-Devices/SIGA-SB.png"
+    },
+    {
+        "Part":  "SIGA-SB4",
+        "Image":  "https://images.carriercms.com/image/upload/v1650658068/edwards/Lifelines/Images/Intelligent-Devices/SIGA-SB4.png"
+    },
+    {
+        "Part":  "SIGA-IB",
+        "Image":  "https://images.carriercms.com/image/upload/v1650658068/edwards/Lifelines/Images/Intelligent-Devices/SIGA-IB.png"
+    },
+    {
+        "Part":  "SIGA-IB4",
+        "Image":  "https://images.carriercms.com/image/upload/v1650658068/edwards/Lifelines/Images/Intelligent-Devices/SIGA-IB4.png"
+    },
+    {
+        "Part":  "SIGA-AB4G",
+        "Image":  "https://images.carriercms.com/image/upload/v1650658068/edwards/Lifelines/Images/Intelligent-Devices/SIGA-AB4G.png"
+    },
+    {
+        "Part":  "SIGA-LED",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-270",
+        "Image":  null
+    },
+    {
+        "Part":  "SIGA-278",
+        "Image":  null
+    }
+]

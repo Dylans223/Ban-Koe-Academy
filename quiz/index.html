@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | Quiz</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body class="quiz-page">
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h1>Ban-Koe Academy</h1>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button onclick="goDashboard()">🏠 Dashboard</button>
+                <button onclick="goTraining()">📖 Training</button>
+                <button class="active" onclick="goQuiz()">📝 Quiz</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button onclick="goProducts()">📦 Products</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button onclick="goProgress()">📈 Progress</button>
+                <button onclick="goSettings()">⚙ Settings</button>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content">
+        <header class="page-header">
+            <h1 class="pageTitle">Quiz</h1>
+            <p class="page-subtitle">Run focused assessment sessions with clear progression and explanations.</p>
+        </header>
+
+        <div class="toolbar">
+            <select id="moduleSelect">
+                <option value="1">Module 1</option>
+                <option value="2">Module 2</option>
+            </select>
+
+            <select id="difficultySelect">
+                <option value="all">All Difficulties</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+
+            <button id="startQuizButton" class="btn btn-primary">Start Quiz</button>
+        </div>
+
+        <section class="quiz-shell">
+            <div class="panel quiz-progress">
+                <p class="kpi-label">Progress</p>
+                <p id="questionNumber">Question 1 of 1</p>
+                <div class="quiz-progress-track">
+                    <div class="quiz-progress-fill"></div>
+                </div>
+            </div>
+
+            <div id="quizContainer" style="display:none;">
+                <article class="panel">
+                    <p class="kpi-label">Question</p>
+                    <p id="questionText">Question text appears here.</p>
+                    <div id="answers" class="mt24"></div>
+                </article>
+
+                <div class="quiz-actions mt16">
+                    <button id="nextQuestion" class="btn btn-primary">Next Question</button>
+                </div>
+
+                <article class="panel mt16">
+                    <h3 class="card-title">Explanation</h3>
+                    <p id="explanation" class="mt16"></p>
+                </article>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="../scripts/navigation.js"></script>
+<script src="../data/module1.js"></script>
+<script src="../data/module2.js"></script>
+<script src="../data/edwards/index.js"></script>
+<script src="quiz.js"></script>
+</body>
+</html>
