@@ -263,32 +263,13 @@ const moduleSteps = [
     }
 ];
 
-function goDashboard() {
-    window.location.href = "../../index.html";
-}
-
-function goProducts() {
-    window.location.href = "../../products/index.html";
-}
-
-function goTraining() {
-    window.location.href = "../index.html";
-}
-
+// Navigation is handled by global functions in navigation.js
+// Add module-specific navigation if needed
 function goSystemBuilder() {
-    window.location.href = "../system-builder/index.html";
-}
-
-function goQuiz() {
-    window.location.href = "../../quiz/index.html";
-}
-
-function goProgress() {
-    window.location.href = "../../progress/index.html";
-}
-
-function goSettings() {
-    window.location.href = "../../settings/index.html";
+    // Navigate to the next training module
+    const depth = getCurrentDepth();
+    const upPrefix = depth > 0 ? "../".repeat(depth) : "";
+    window.location.href = upPrefix + "system-builder/index.html";
 }
 
 const bomCatalog = {

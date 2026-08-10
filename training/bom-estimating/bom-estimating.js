@@ -361,10 +361,13 @@
 
         el.tryAgainButton.addEventListener("click", resetModule);
         el.returnTrainingButton.addEventListener("click", () => {
-            window.location.href = "../index.html";
+            goTraining();
         });
         el.nextModuleButton.addEventListener("click", () => {
-            window.location.href = "../scenarios/index.html";
+            // Navigate to next training module (sibling directory)
+            const depth = getCurrentDepth();
+            const upPrefix = depth > 0 ? "../".repeat(depth) : "";
+            window.location.href = upPrefix + "scenarios/index.html";
         });
 
         el.closeProductModalButton.addEventListener("click", closeProductModal);

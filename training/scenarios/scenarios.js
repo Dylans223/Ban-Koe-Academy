@@ -944,7 +944,7 @@
         const returnButton = el.scenarioStepShell.querySelector("[data-return-training]");
         if (returnButton) {
             returnButton.addEventListener("click", () => {
-                window.location.href = "../index.html";
+                goTraining();
             });
         }
 

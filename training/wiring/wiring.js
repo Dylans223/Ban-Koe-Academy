@@ -417,10 +417,13 @@ function bindStepButtons() {
     el.submitChallenge.addEventListener("click", submitFinalChallenge);
     el.tryAgain.addEventListener("click", resetModule);
     el.returnTraining.addEventListener("click", () => {
-        window.location.href = "../index.html";
+        goTraining();
     });
     el.continueNext.addEventListener("click", () => {
-        window.location.href = "../bom-estimating/index.html";
+        // Navigate to next training module (sibling directory)
+        const depth = getCurrentDepth();
+        const upPrefix = depth > 0 ? "../".repeat(depth) : "";
+        window.location.href = upPrefix + "bom-estimating/index.html";
     });
 }
 

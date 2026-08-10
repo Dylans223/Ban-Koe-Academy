@@ -1,21 +1,74 @@
 // ==========================================
-// Ban-Koe Academy Navigation
+// Ban-Koe Academy Navigation v2.0
+// Application-relative navigation system
 // ==========================================
 
-function navigateTo(targetPage){
+/**
+ * Detects the application base path by finding the /BKA/ segment
+ * or returns "/" for local development
+ * Works for both GitHub Pages (/BKA/) and local serving
+ */
+function getBasePath() {
+    const pathname = window.location.pathname;
+    const bkaIndex = pathname.indexOf('/BKA/');
+    if (bkaIndex !== -1) {
+        return '/BKA/';
+    }
+    return '/';
+}
 
-    const currentPath = window.location.pathname.replace(/\\/g, "/");
+/**
+ * Gets the current depth level (how many directories deep we are from base)
+ * Returns number of ../ needed to get back to base
+ */
+function getCurrentDepth() {
+    const pathname = window.location.pathname.replace(/\\/g, "/");
+    const basePath = getBasePath();
+    
+    // Remove base path from current path
+    let relativePath = pathname;
+    if (basePath !== '/') {
+        relativePath = pathname.substring(basePath.length);
+    }
+    
+    // Count remaining path segments (directories)
+    const segments = relativePath.split("/").filter(s => s && s !== "index.html");
+    return segments.length;
+}
 
-    const isNested = currentPath.split("/").filter(Boolean).length > 1;
+/**
+ * Constructs application-relative URL that works from any page depth
+ * @param {string} targetPath - path from application root (e.g., "products/index.html")
+ * @returns {string} - correctly formatted relative path with ../ prefixes
+ */
+function buildNavigationUrl(targetPath) {
+    const depth = getCurrentDepth();
+    const upPrefix = depth > 0 ? "../".repeat(depth) : "";
+    return upPrefix + targetPath;
+}
 
-    const targetPath =
-    targetPage === "dashboard"
-    ? "index.html"
-    : targetPage + "/index.html";
-
-    window.location.href =
-    isNested ? "../" + targetPath : targetPath;
-
+/**
+ * Universal navigation function
+ * @param {string} targetPage - page key (dashboard, training, products, quiz, progress, settings)
+ */
+function navigateTo(targetPage) {
+    const targetMap = {
+        "dashboard": "index.html",
+        "training": "training/index.html",
+        "products": "products/index.html",
+        "quiz": "quiz/index.html",
+        "progress": "progress/index.html",
+        "settings": "settings/index.html"
+    };
+    
+    const targetPath = targetMap[targetPage];
+    if (!targetPath) {
+        console.error("Unknown navigation target:", targetPage);
+        return;
+    }
+    
+    const url = buildNavigationUrl(targetPath);
+    window.location.href = url;
 }
 
 function goDashboard(){
@@ -45,3 +98,20 @@ function goSettings(){
 function goHome(){
     goDashboard();
 }
+
+/**
+ * Initialization: Set up data-nav-target handlers if they exist
+ * This allows buttons with data-nav-target="dashboard" to work automatically
+ */
+window.addEventListener("DOMContentLoaded", function() {
+    const navButtons = document.querySelectorAll("[data-nav-target]");
+    navButtons.forEach(button => {
+        if (!button.hasAttribute("data-nav-listener-attached")) {
+            button.addEventListener("click", function() {
+                const target = this.getAttribute("data-nav-target");
+                navigateTo(target);
+            });
+            button.setAttribute("data-nav-listener-attached", "true");
+        }
+    });
+});
