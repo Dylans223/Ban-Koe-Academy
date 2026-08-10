@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | Wiring & Connections</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../module-shell.css">
+    <link rel="stylesheet" href="wiring.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h1>Ban-Koe Academy</h1>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button type="button" data-nav-target="dashboard">Dashboard</button>
+                <button class="active" type="button" data-nav-target="training">Training</button>
+                <button type="button" data-nav-target="quiz">Quiz</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button type="button" data-nav-target="products">Products</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button type="button" data-nav-target="progress">Progress</button>
+                <button type="button" data-nav-target="settings">Settings</button>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content wiring-content training-module-content">
+        <div class="module-back-row">
+            <button class="module-back-button" type="button" data-nav-target="training">← Back to Training</button>
+        </div>
+
+        <header class="page-header wiring-header">
+            <div>
+                <p class="eyebrow">Job Skills Training</p>
+                <h1 class="pageTitle">Wiring & Connections</h1>
+                <p class="page-subtitle">Learn how fire alarm circuits, modules, and interfaces connect and communicate.</p>
+            </div>
+            <div class="wiring-progress panel">
+                <div class="progress-header">
+                    <span>Wiring & Connections</span>
+                    <strong id="stepIndicator">Step 1 of 7</strong>
+                </div>
+                <div class="progress-track" aria-hidden="true">
+                    <div id="progressFill" class="progress-fill" style="width: 14%"></div>
+                </div>
+                <div class="progress-meta">
+                    <span>Progress</span>
+                    <strong id="progressValue">14%</strong>
+                </div>
+            </div>
+        </header>
+
+        <section class="panel module-overview">
+            <div class="module-overview-stepper">
+                <p class="eyebrow">Where Am I?</p>
+                <div id="moduleStepList" class="module-step-list" aria-label="Wiring steps"></div>
+            </div>
+            <div class="module-overview-objective">
+                <p class="eyebrow">Current Objective</p>
+                <span id="moduleObjectiveChip" class="module-objective-chip">Know Your Circuits</span>
+                <h2 id="moduleObjectiveTitle" class="module-objective-title">Learn the core wiring concept before applying it.</h2>
+                <p id="moduleObjectiveText" class="module-objective-text">Your goal is to understand what each circuit or interface does, then test that concept before moving to the next one.</p>
+            </div>
+        </section>
+
+        <section class="wiring-layout">
+            <div class="wiring-main">
+                <section id="step1" class="wiring-step panel">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Step 1</p>
+                            <h2>Know Your Circuits</h2>
+                        </div>
+                    </div>
+
+                    <div class="card-grid two">
+                        <article class="concept-card" data-circuit-card="slc">
+                            <h3>SLC</h3>
+                            <p class="concept-subtitle">Signaling Line Circuit</p>
+                            <p>An SLC is used for communication with addressable initiating devices and other compatible addressable devices on the system.</p>
+                        </article>
+                        <article class="concept-card" data-circuit-card="nac">
+                            <h3>NAC</h3>
+                            <p class="concept-subtitle">Notification Appliance Circuit</p>
+                            <p>A NAC is used to provide power/output to notification appliances such as horns, strobes, or horn/strobes, depending on the system design.</p>
+                        </article>
+                    </div>
+
+                    <div class="feedback-box hidden" id="circuitFeedback"></div>
+
+                    <div class="key-difference panel">
+                        <h3>Key Difference</h3>
+                        <div class="difference-grid">
+                            <article>
+                                <h4>SLC</h4>
+                                <p>Primarily communication / device signaling.</p>
+                            </article>
+                            <article>
+                                <h4>NAC</h4>
+                                <p>Primarily notification output.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="table-shell">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>SLC</th>
+                                    <th>NAC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Purpose</td>
+                                    <td>Addressable device communication</td>
+                                    <td>Notification output</td>
+                                </tr>
+                                <tr>
+                                    <td>Typical devices</td>
+                                    <td>Detectors, pull stations, modules</td>
+                                    <td>Horns, strobes, horn/strobes, speakers</td>
+                                </tr>
+                                <tr>
+                                    <td>Circuit function</td>
+                                    <td>Signaling and status reporting</td>
+                                    <td>Output activation for occupant alerting</td>
+                                </tr>
+                                <tr>
+                                    <td>Conceptual difference</td>
+                                    <td>Input and communication path</td>
+                                    <td>Output and notification path</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mini-quiz" id="circuitQuiz"></div>
+
+                    <div class="panel-actions">
+                        <button id="step1Next" class="btn btn-primary" type="button" disabled>Continue →</button>
+                    </div>
+                </section>
+
+                <section id="step2" class="wiring-step panel hidden">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Step 2</p>
+                            <h2>Understanding Wire Sizes</h2>
+                        </div>
+                    </div>
+
+                    <p class="section-intro">The first number generally refers to conductor gauge. The /2 indicates two conductors.</p>
+
+                    <div id="wireCards" class="card-grid three"></div>
+
+                    <div class="awg-visual panel">
+                        <h3>AWG Comparison</h3>
+                        <p>Lower AWG number means a larger conductor.</p>
+                        <div class="awg-bars">
+                            <div class="awg-row"><span>18 AWG</span><div class="awg-bar awg18"></div></div>
+                            <div class="awg-row"><span>14 AWG</span><div class="awg-bar awg14"></div></div>
+                            <div class="awg-row"><span>12 AWG</span><div class="awg-bar awg12"></div></div>
+                        </div>
+                        <p class="small-note">Actual conductor size depends on the equipment, circuit requirements, voltage drop, distance, installation method, code, and manufacturer/project specifications.</p>
+                    </div>
+
+                    <div class="mini-quiz" id="wireQuiz"></div>
+
+                    <div class="panel-actions">
+                        <button id="step2Next" class="btn btn-primary" type="button" disabled>Continue →</button>
+                    </div>
+                </section>
+
+                <section id="step3" class="wiring-step panel hidden">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Step 3</p>
+                            <h2>Monitor vs Control</h2>
+                        </div>
+                    </div>
+
+                    <div class="card-grid two" id="moduleCards"></div>
+
+                    <div class="memory-aid">
+                        <span>MONITOR = "What's happening?"</span>
+                        <span>CONTROL = "Make something happen."</span>
+                    </div>
+
+                    <div class="scenario-list" id="moduleScenarios"></div>
+
+                    <div class="panel-actions">
+                        <button id="step3Next" class="btn btn-primary" type="button" disabled>Continue →</button>
+                    </div>
+                </section>
+
+                <section id="step4" class="wiring-step panel hidden">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Step 4</p>
+                            <h2>Understanding Relays</h2>
+                        </div>
+                    </div>
+
+                    <div class="relay-diagram panel">
+                        <h3>Conceptual Relay Path</h3>
+                        <div class="relay-flow">
+                            <div class="relay-node">CONTROL SIGNAL</div>
+                            <div class="relay-arrow">down</div>
+                            <div class="relay-node relay-core">RELAY</div>
+                            <div class="relay-arrow">down</div>
+                            <div class="relay-node">EXTERNAL CIRCUIT</div>
+                        </div>
+                        <p>A relay allows one circuit/control signal to operate another circuit through an electrically controlled switching mechanism.</p>
+                    </div>
+
+                    <div class="relay-terminals panel">
+                        <h3>Relay Terminals</h3>
+                        <div class="terminal-buttons" id="relayTerminalButtons"></div>
+                        <div class="feedback-box hidden" id="relayTerminalFeedback"></div>
+                    </div>
+
+                    <div class="scenario-list" id="relayScenario"></div>
+
+                    <p class="small-note">Actual relay contact arrangement depends on the specific equipment and design requirements.</p>
+
+                    <div class="panel-actions">
+                        <button id="step4Next" class="btn btn-primary" type="button" disabled>Continue →</button>
+                    </div>
+                </section>
+
+                <section id="step5" class="wiring-step panel hidden">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Step 5</p>
+                            <h2>Understanding Isolators</h2>
+                        </div>
+                    </div>
+
+                    <p class="section-intro">An isolator is used in certain addressable systems to help isolate a shorted section of the circuit so that the rest of the loop can continue operating, depending on the system architecture.</p>
+
+                    <div class="isolator-grid">
+                        <article class="isolator-card panel">
+                            <h3>Normal</h3>
+                            <div class="vertical-path">
+                                <span>FACP</span><span>|</span><span>Device</span><span>|</span><span>Device</span><span>|</span><span>Device</span><span>|</span><span>Device</span>
+                            </div>
+                        </article>
+                        <article class="isolator-card panel">
+                            <h3>Short Circuit</h3>
+                            <div class="vertical-path">
+                                <span>FACP</span><span>|</span><span>Device</span><span>|</span><span>[ISOLATOR]</span><span>|</span><span class="danger">X SHORT</span><span>|</span><span>Device</span><span>|</span><span>Device</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="mini-quiz" id="isolatorQuiz"></div>
+
+                    <div class="panel-actions">
+                        <button id="step5Next" class="btn btn-primary" type="button" disabled>Continue →</button>
+                    </div>
+                </section>
+
+                <section id="step6" class="wiring-step panel hidden">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Step 6</p>
+                            <h2>Trace the Circuit</h2>
+                        </div>
+                    </div>
+
+                    <p class="section-intro">These are conceptual training diagrams, not universal wiring diagrams.</p>
+
+                    <div id="traceExercises" class="trace-list"></div>
+
+                    <div class="panel-actions">
+                        <button id="step6Next" class="btn btn-primary" type="button" disabled>Continue →</button>
+                    </div>
+                </section>
+
+                <section id="step7" class="wiring-step panel hidden">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Step 7</p>
+                            <h2>Find the Wiring Problem</h2>
+                        </div>
+                    </div>
+
+                    <div id="troubleshootingCases" class="scenario-list"></div>
+
+                    <div class="challenge panel">
+                        <h3>Wiring Challenge</h3>
+                        <p>A two-story office has addressable smoke detectors, pull stations, horn/strobes, a duct detector, HVAC shutdown, and an external monitored contact. The system is experiencing several issues.</p>
+                        <p>Answer the questions below to identify circuits, functions, interfaces, and troubleshooting categories.</p>
+                        <div id="finalChallengeQuestions" class="mini-quiz"></div>
+                        <div class="panel-actions">
+                            <button id="submitChallenge" class="btn btn-primary" type="button" disabled>Check My Wiring Challenge</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="completion" class="wiring-step panel hidden completion">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Wiring Challenge Complete</p>
+                            <h2>You completed Wiring & Connections.</h2>
+                        </div>
+                        <span class="badge" id="completionScore">0 / 100</span>
+                    </div>
+
+                    <div class="score-grid">
+                        <article class="summary-card"><span class="summary-label">Circuit Knowledge</span><strong class="summary-value" id="scoreCircuit">0/20</strong></article>
+                        <article class="summary-card"><span class="summary-label">Wire Knowledge</span><strong class="summary-value" id="scoreWire">0/10</strong></article>
+                        <article class="summary-card"><span class="summary-label">Monitor vs Control</span><strong class="summary-value" id="scoreModule">0/20</strong></article>
+                        <article class="summary-card"><span class="summary-label">Relay Knowledge</span><strong class="summary-value" id="scoreRelay">0/15</strong></article>
+                        <article class="summary-card"><span class="summary-label">Isolator Knowledge</span><strong class="summary-value" id="scoreIsolator">0/15</strong></article>
+                        <article class="summary-card"><span class="summary-label">Troubleshooting</span><strong class="summary-value" id="scoreTroubleshooting">0/20</strong></article>
+                    </div>
+
+                    <div class="panel explanation-block">
+                        <h3>Concept Summary</h3>
+                        <ul id="conceptSummary"></ul>
+                    </div>
+
+                    <div id="nextModuleMessage" class="feedback-box hidden"></div>
+
+                    <div class="panel-actions">
+                        <button id="tryAgain" class="btn btn-secondary" type="button">Try Again</button>
+                        <button id="returnTraining" class="btn btn-secondary" type="button">Return to Training</button>
+                        <button id="continueNext" class="btn btn-primary" type="button">Next Module →</button>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="wiring-rail">
+                <section class="panel rail-card quick-reference">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Quick Reference</p>
+                            <h2>Memory Aids</h2>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><strong>SLC:</strong> Communication / addressable device signaling</li>
+                        <li><strong>NAC:</strong> Notification output</li>
+                        <li><strong>MONITOR:</strong> What's happening?</li>
+                        <li><strong>CONTROL:</strong> Make something happen.</li>
+                        <li><strong>RELAY:</strong> Electrical switching/interface</li>
+                        <li><strong>ISOLATOR:</strong> Helps isolate a shorted section</li>
+                        <li><strong>18/2:</strong> 18 AWG, 2 conductors</li>
+                        <li><strong>14/2:</strong> 14 AWG, 2 conductors</li>
+                        <li><strong>12/2:</strong> 12 AWG, 2 conductors</li>
+                    </ul>
+                </section>
+
+                <section class="panel rail-card">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Training Note</p>
+                            <h2>Safety and Accuracy</h2>
+                        </div>
+                    </div>
+                    <p>This module teaches conceptual fire alarm wiring and troubleshooting relationships. Actual conductor sizing, terminal connections, circuit topology, device compatibility, installation methods, programming, testing, and system design must follow the applicable codes, engineered drawings, manufacturer documentation, and AHJ requirements.</p>
+                </section>
+            </aside>
+        </section>
+    </main>
+</div>
+
+<script src="../../data/edwards/index.js"></script>
+<script src="wiring.js"></script>
+</body>
+</html>

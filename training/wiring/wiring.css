@@ -1,0 +1,416 @@
+/* Wiring & Connections module styles */
+
+.wiring-content {
+    gap: var(--space-3);
+}
+
+.wiring-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(250px, 0.8fr);
+    gap: var(--space-3);
+    align-items: start;
+}
+
+.wiring-progress {
+    display: grid;
+    gap: 10px;
+    padding: var(--space-3);
+}
+
+.progress-header,
+.progress-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-header span,
+.progress-meta span {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.wiring-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.7fr);
+    gap: var(--space-3);
+    align-items: start;
+}
+
+.wiring-main,
+.wiring-rail {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.wiring-rail {
+    position: sticky;
+    top: var(--space-3);
+}
+
+.wiring-step,
+.rail-card,
+.wiring-progress,
+.concept-card,
+.challenge,
+.relay-diagram,
+.relay-terminals,
+.isolator-card,
+.awg-visual,
+.key-difference,
+.explanation-block,
+.summary-card,
+.trace-card,
+.trace-nodes,
+.scenario-case {
+    background: #152235;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+}
+
+.wiring-step,
+.rail-card,
+.challenge,
+.relay-diagram,
+.relay-terminals,
+.awg-visual,
+.key-difference,
+.explanation-block,
+.trace-card,
+.scenario-case {
+    padding: var(--space-3);
+}
+
+.eyebrow {
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.card-grid {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.card-grid.two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card-grid.three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.concept-card {
+    padding: var(--space-3);
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.concept-card:hover,
+.concept-card.active {
+    border-color: var(--hover);
+    transform: translateY(-2px);
+}
+
+.concept-subtitle {
+    color: #dbeafe;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.feedback-box {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: rgba(15, 23, 42, 0.7);
+    padding: 14px;
+    color: var(--text-secondary);
+}
+
+.feedback-box.correct {
+    border-color: rgba(34, 197, 94, 0.6);
+    background: rgba(20, 83, 45, 0.35);
+    color: #dcfce7;
+}
+
+.feedback-box.incorrect,
+.feedback-box.warning {
+    border-color: rgba(239, 68, 68, 0.6);
+    background: rgba(127, 29, 29, 0.35);
+    color: #fee2e2;
+}
+
+.key-difference {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.difference-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-2);
+}
+
+.difference-grid article {
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(51, 65, 85, 0.85);
+    border-radius: var(--radius-md);
+    padding: var(--space-2);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+    border: 1px solid rgba(51, 65, 85, 0.9);
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.comparison-table th {
+    background: rgba(15, 23, 42, 0.85);
+    color: #dbeafe;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.mini-quiz,
+.scenario-list,
+.trace-list {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.quiz-card,
+.module-scenario,
+.trace-card,
+.scenario-case {
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(51, 65, 85, 0.85);
+    border-radius: var(--radius-md);
+    padding: var(--space-2);
+    display: grid;
+    gap: 10px;
+}
+
+.quiz-options,
+.option-row,
+.trace-nodes,
+.multi-options,
+.terminal-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.quiz-options button,
+.option-row button,
+.trace-nodes button,
+.multi-options button,
+.terminal-buttons button {
+    border-radius: 999px;
+    border: 1px solid rgba(51, 65, 85, 0.9);
+    background: rgba(15, 23, 42, 0.85);
+    color: var(--text);
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.quiz-options button.selected,
+.option-row button.selected,
+.trace-nodes button.selected,
+.multi-options button.selected,
+.terminal-buttons button.selected {
+    border-color: var(--primary);
+    background: rgba(37, 99, 235, 0.22);
+}
+
+.awg-bars {
+    display: grid;
+    gap: 10px;
+}
+
+.awg-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.awg-bar {
+    height: 16px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #1e40af, #60a5fa);
+    border: 1px solid rgba(96, 165, 250, 0.6);
+}
+
+.awg18 { width: 45%; }
+.awg14 { width: 72%; }
+.awg12 { width: 88%; }
+
+.memory-aid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.memory-aid span {
+    background: rgba(37, 99, 235, 0.16);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    border-radius: 999px;
+    padding: 10px 14px;
+    color: #dbeafe;
+    font-weight: 700;
+}
+
+.relay-flow {
+    display: grid;
+    gap: 10px;
+    justify-items: center;
+}
+
+.relay-node {
+    min-width: 220px;
+    text-align: center;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(51, 65, 85, 0.9);
+    border-radius: var(--radius-sm);
+    padding: 10px;
+    font-weight: 700;
+}
+
+.relay-core {
+    border-color: rgba(37, 99, 235, 0.8);
+}
+
+.relay-arrow {
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.isolator-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-2);
+}
+
+.vertical-path {
+    display: grid;
+    justify-items: center;
+    gap: 4px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.vertical-path .danger {
+    color: #fca5a5;
+}
+
+.trace-nodes {
+    gap: 8px;
+}
+
+.trace-nodes button {
+    border-radius: var(--radius-sm);
+}
+
+.trace-progress {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.quick-reference ul,
+.explanation-block ul {
+    display: grid;
+    gap: 8px;
+    padding-left: 18px;
+}
+
+.small-note {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.score-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-2);
+}
+
+.summary-card {
+    padding: var(--space-2);
+    display: grid;
+    gap: 8px;
+    min-height: 116px;
+}
+
+.summary-label {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.summary-value {
+    color: var(--text);
+    font-size: 28px;
+    line-height: 1;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 1100px) {
+    .wiring-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .wiring-rail {
+        position: static;
+    }
+}
+
+@media (max-width: 900px) {
+    .wiring-header,
+    .card-grid.two,
+    .card-grid.three,
+    .difference-grid,
+    .isolator-grid,
+    .score-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .wiring-step,
+    .rail-card,
+    .wiring-progress,
+    .challenge,
+    .relay-diagram,
+    .relay-terminals,
+    .awg-visual,
+    .key-difference,
+    .explanation-block,
+    .trace-card,
+    .scenario-case {
+        padding: var(--space-2);
+    }
+
+    .summary-value {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | System Builder</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../module-shell.css">
+    <link rel="stylesheet" href="system-builder.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h1>Ban-Koe Academy</h1>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button onclick="goDashboard()">🏠 Dashboard</button>
+                <button class="active" onclick="goTraining()">📖 Training</button>
+                <button onclick="goQuiz()">📝 Quiz</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button onclick="goProducts()">📦 Products</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button onclick="goProgress()">📈 Progress</button>
+                <button onclick="goSettings()">⚙ Settings</button>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content system-builder-content training-module-content">
+        <div class="module-back-row">
+            <button class="module-back-button" type="button" onclick="goTraining()">← Back to Training</button>
+        </div>
+
+        <header class="page-header system-builder-header">
+            <div class="system-builder-header-copy">
+                <p class="eyebrow">Job Skills Training</p>
+                <h1 class="pageTitle">System Builder</h1>
+                <p class="page-subtitle">Build fire alarm systems by understanding how devices, circuits, and interfaces work together.</p>
+            </div>
+
+            <div class="builder-status panel">
+                <div class="builder-step-label">
+                    <span>System Builder</span>
+                    <strong id="builderStepIndicator">Step 1 of 6</strong>
+                </div>
+                <div class="progress-track" aria-hidden="true">
+                    <div id="builderProgressBar" class="progress-fill" style="width: 17%"></div>
+                </div>
+                <div class="builder-step-meta">
+                    <span>Progress</span>
+                    <strong id="builderProgressValue">17%</strong>
+                </div>
+            </div>
+        </header>
+
+        <section class="panel module-overview">
+            <div class="module-overview-stepper">
+                <p class="eyebrow">Where Am I?</p>
+                <div id="moduleStepList" class="module-step-list" aria-label="System Builder steps"></div>
+            </div>
+            <div class="module-overview-objective">
+                <p class="eyebrow">Current Objective</p>
+                <span id="moduleObjectiveChip" class="module-objective-chip">Project Scenario</span>
+                <h2 id="moduleObjectiveTitle" class="module-objective-title">Understand the system you are about to build.</h2>
+                <p id="moduleObjectiveText" class="module-objective-text">Your goal is to review the scenario so you know which devices, interfaces, and building functions belong in the system.</p>
+            </div>
+        </section>
+
+        <section class="system-builder-layout">
+            <div class="system-builder-main">
+                <section class="builder-step panel" id="scenarioStep">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Step 1</p>
+                            <h2>Project Scenario</h2>
+                        </div>
+                        <span class="badge">Beginner</span>
+                    </div>
+
+                    <div class="project-brief-grid system-brief-grid">
+                        <article class="brief-card">
+                            <h3>Project</h3>
+                            <p>Two-Story Office Fire Alarm System</p>
+                        </article>
+                        <article class="brief-card">
+                            <h3>Difficulty</h3>
+                            <p>Beginner</p>
+                        </article>
+                        <article class="brief-card">
+                            <h3>Scenario</h3>
+                            <p>You are preparing a basic system concept for a two-story office building. The system will use an Edwards EST4 fire alarm control panel and Signature Series initiating devices.</p>
+                        </article>
+                    </div>
+
+                    <div class="project-brief-details">
+                        <div>
+                            <h3>Requirements</h3>
+                            <ul class="requirement-list">
+                                <li>Fire alarm control panel</li>
+                                <li>Smoke detection</li>
+                                <li>Manual pull stations</li>
+                                <li>Notification appliances</li>
+                                <li>Duct smoke detection</li>
+                                <li>HVAC shutdown interface</li>
+                                <li>Two floors</li>
+                                <li>Central fire alarm control panel</li>
+                            </ul>
+                        </div>
+
+                        <div class="learning-model-card">
+                            <h3>Core Learning Model</h3>
+                            <div class="layer-map" aria-label="Fire alarm system layers">
+                                <div class="layer-row"><span class="layer-label">CONTROL</span><span class="layer-arrow">↓</span></div>
+                                <div class="layer-row"><span class="layer-label">INITIATING DEVICES</span><span class="layer-arrow">↓</span></div>
+                                <div class="layer-row"><span class="layer-label">MONITORING / INPUTS</span><span class="layer-arrow">↓</span></div>
+                                <div class="layer-row"><span class="layer-label">LOGIC / CONTROL</span><span class="layer-arrow">↓</span></div>
+                                <div class="layer-row"><span class="layer-label">NOTIFICATION</span><span class="layer-arrow">↓</span></div>
+                                <div class="layer-row"><span class="layer-label">BUILDING SYSTEM INTERFACES</span></div>
+                            </div>
+                            <p class="small-note">Actual system architecture depends on the project design, equipment, specifications, code requirements, and AHJ.</p>
+                        </div>
+                    </div>
+
+                    <div class="panel-actions">
+                        <button id="startBuilderButton" class="btn btn-primary" type="button">Start Building</button>
+                    </div>
+                </section>
+
+                <section class="builder-step panel hidden" id="controlStep">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Step 2</p>
+                            <h2>Choose the Control Panel</h2>
+                        </div>
+                        <span class="badge">15 points</span>
+                    </div>
+
+                    <p class="section-intro">The control panel is the central point of the fire alarm system. Choose the appropriate control platform for this scenario.</p>
+                    <div id="controlPanelOptions" class="control-option-grid" aria-live="polite"></div>
+                    <div id="controlPanelFeedback" class="feedback-banner hidden" aria-live="polite"></div>
+                    <div class="panel-actions">
+                        <button id="continueToStep3Button" class="btn btn-primary" type="button" disabled>Continue →</button>
+                    </div>
+                </section>
+
+                <section class="builder-step panel hidden" id="initiatingStep">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Step 3</p>
+                            <h2>Add Initiating Devices</h2>
+                        </div>
+                        <span class="badge">20 points</span>
+                    </div>
+
+                    <p class="section-intro">Initiating devices detect conditions or allow people to manually initiate an alarm condition.</p>
+                    <div class="builder-workspace">
+                        <section class="builder-panel">
+                            <h3>Available Components</h3>
+                            <div id="initiatingComponentList" class="component-list" aria-live="polite"></div>
+                        </section>
+
+                        <section class="builder-panel system-panel">
+                            <h3>Your System</h3>
+                            <div id="initiatingSystemTree" class="system-tree"></div>
+                            <div id="initiatingFeedback" class="feedback-banner hidden" aria-live="polite"></div>
+                        </section>
+                    </div>
+                    <div class="panel-actions">
+                        <button id="continueToStep4Button" class="btn btn-primary" type="button" disabled>Continue →</button>
+                    </div>
+                </section>
+
+                <section class="builder-step panel hidden" id="notificationStep">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Step 4</p>
+                            <h2>Add Notification Appliances</h2>
+                        </div>
+                        <span class="badge">20 points</span>
+                    </div>
+
+                    <p class="section-intro">Now add devices that alert building occupants.</p>
+                    <div class="builder-workspace">
+                        <section class="builder-panel">
+                            <h3>Available Components</h3>
+                            <div id="notificationComponentList" class="component-list" aria-live="polite"></div>
+                        </section>
+
+                        <section class="builder-panel system-panel">
+                            <h3>Your System</h3>
+                            <div id="notificationSystemTree" class="system-tree"></div>
+                            <div id="notificationFeedback" class="feedback-banner hidden" aria-live="polite"></div>
+                            <p class="small-note">Actual notification appliance selection and placement depend on the engineered design, code requirements, coverage requirements, and project specifications.</p>
+                        </section>
+                    </div>
+                    <div class="panel-actions">
+                        <button id="continueToStep5Button" class="btn btn-primary" type="button" disabled>Continue →</button>
+                    </div>
+                </section>
+
+                <section class="builder-step panel hidden" id="interfacesStep">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Step 5</p>
+                            <h2>Build System Interfaces</h2>
+                        </div>
+                        <span class="badge">25 points</span>
+                    </div>
+
+                    <p class="section-intro">Use the scenarios below to identify when monitoring or control interfaces are needed.</p>
+                    <div id="interfaceScenarioList" class="scenario-grid" aria-live="polite"></div>
+                    <div class="panel-actions">
+                        <button id="continueToStep6Button" class="btn btn-primary" type="button" disabled>Continue →</button>
+                    </div>
+                </section>
+
+                <section class="builder-step panel hidden" id="finalStep">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Step 6</p>
+                            <h2>Build the System</h2>
+                        </div>
+                        <span class="badge">20 points</span>
+                    </div>
+
+                    <p class="section-intro">Place the components into the appropriate part of the fire alarm system.</p>
+
+                    <div class="builder-toolbar">
+                        <span class="toolbar-label">Selected Section</span>
+                        <div id="finalSectionSelector" class="section-selector" aria-label="Select a system section"></div>
+                    </div>
+
+                    <div class="builder-workspace final-builder-workspace">
+                        <section class="builder-panel palette-panel">
+                            <h3>Available Components</h3>
+                            <div id="finalComponentPalette" class="component-list final-component-list" aria-live="polite"></div>
+                        </section>
+
+                        <section class="builder-panel canvas-panel">
+                            <div class="canvas-heading">
+                                <h3>Fire Alarm System</h3>
+                                <div class="canvas-actions">
+                                    <button id="checkSystemButton" class="btn btn-primary" type="button">Check My System</button>
+                                    <button id="resetSystemButton" class="btn btn-secondary" type="button">Reset System</button>
+                                </div>
+                            </div>
+                            <div id="finalSystemCanvas" class="final-system-canvas"></div>
+                            <div id="finalPlacementFeedback" class="feedback-banner hidden" aria-live="polite"></div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="system-builder-rail">
+                <section class="panel rail-card">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Training Focus</p>
+                            <h2>What this module teaches</h2>
+                        </div>
+                    </div>
+                    <ul class="focus-list">
+                        <li>What connects to what</li>
+                        <li>Why it connects</li>
+                        <li>What function it performs</li>
+                        <li>When additional modules or interfaces are needed</li>
+                    </ul>
+                </section>
+
+                <section class="panel rail-card">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Training Note</p>
+                            <h2>Design Reminder</h2>
+                        </div>
+                    </div>
+                    <p>This simulator teaches system relationships and estimating concepts. Actual fire alarm system design, device selection, wiring, programming, placement, and interfaces must be based on the applicable codes, project specifications, engineered drawings, manufacturer documentation, and AHJ requirements.</p>
+                </section>
+
+                <section class="panel rail-card">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Live Status</p>
+                            <h2>Progress Snapshot</h2>
+                        </div>
+                    </div>
+                    <div class="status-grid">
+                        <article class="status-item">
+                            <span class="summary-label">Control</span>
+                            <strong id="controlStatusValue" class="summary-value">0/15</strong>
+                        </article>
+                        <article class="status-item">
+                            <span class="summary-label">Initiating</span>
+                            <strong id="initiatingStatusValue" class="summary-value">0/20</strong>
+                        </article>
+                        <article class="status-item">
+                            <span class="summary-label">Notification</span>
+                            <strong id="notificationStatusValue" class="summary-value">0/20</strong>
+                        </article>
+                        <article class="status-item">
+                            <span class="summary-label">Interfaces</span>
+                            <strong id="interfaceStatusValue" class="summary-value">0/25</strong>
+                        </article>
+                    </div>
+                </section>
+            </aside>
+        </section>
+
+        <section id="completionStep" class="builder-step panel hidden completion-panel">
+            <div class="section-heading compact">
+                <div>
+                    <p class="eyebrow">System Builder Complete</p>
+                    <h2>You successfully built the conceptual fire alarm system.</h2>
+                </div>
+                <span class="badge" id="completionScoreBadge">0 / 100</span>
+            </div>
+
+            <p class="section-intro">Review how the system works, then decide whether you want to try again or move on.</p>
+
+            <div class="completion-score-grid">
+                <article class="summary-card">
+                    <span class="summary-label">Score</span>
+                    <strong class="summary-value" id="completionScoreValue">0/100</strong>
+                </article>
+                <article class="summary-card">
+                    <span class="summary-label">Correct Components</span>
+                    <strong class="summary-value" id="completionCorrectValue">0</strong>
+                </article>
+                <article class="summary-card">
+                    <span class="summary-label">Incorrect Components</span>
+                    <strong class="summary-value" id="completionIncorrectValue">0</strong>
+                </article>
+                <article class="summary-card">
+                    <span class="summary-label">System Organization</span>
+                    <strong class="summary-value" id="completionOrganizationValue">0</strong>
+                </article>
+            </div>
+
+            <div class="explanation-panel">
+                <h3>Why this system works</h3>
+                <ol id="completionExplanationList" class="explanation-list"></ol>
+            </div>
+
+            <div class="explanation-panel">
+                <h3>Concepts Mastered</h3>
+                <ul id="conceptMasteryList" class="mastery-list"></ul>
+            </div>
+
+            <div class="next-module-note panel" id="nextModuleNote">
+                <h3>Continue to Next Module</h3>
+                <p>Wiring &amp; Connections is the next module in the training path.</p>
+            </div>
+
+            <div id="nextModuleMessage" class="feedback-banner hidden"></div>
+
+            <div class="panel-actions completion-actions">
+                <button id="completionTryAgainButton" class="btn btn-secondary" type="button">Try Again</button>
+                <button id="completionReturnButton" class="btn btn-secondary" type="button">Return to Training</button>
+                <button id="completionNextButton" class="btn btn-primary" type="button">Next Module →</button>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="../../scripts/navigation.js"></script>
+<script src="../../data/edwards/index.js"></script>
+<script src="system-builder.js"></script>
+</body>
+</html>

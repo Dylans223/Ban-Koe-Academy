@@ -1,380 +1,219 @@
 // ===============================================
 // Ban-Koe Academy
-// Training Center
+// Job Skills Training Center
 // ===============================================
 
-const manufacturerContainer =
-document.getElementById("manufacturerContainer");
+const trainingModules = [
+    {
+        id: "takeoff-training",
+        icon: "🏗️",
+        name: "Takeoff Training",
+        difficulty: "Beginner",
+        progress: 0,
+        description: "Practice reading layouts, identifying devices, and determining material quantities.",
+        preview: "Future lessons can include floor plans, device identification, quantity calculations, placement decisions, and full takeoff exercises."
+    },
+    {
+        id: "system-builder",
+        icon: "🧩",
+        name: "System Builder",
+        difficulty: "Beginner / Intermediate",
+        progress: 0,
+        description: "Build complete fire alarm systems from real-world scenarios.",
+        preview: "Future scenarios can connect FACP, SLC, NAC, detectors, pull stations, notification appliances, modules, HVAC shutdown, dampers, elevators, and door holders."
+    },
+    {
+        id: "wiring-connections",
+        icon: "🔌",
+        name: "Wiring & Connections",
+        difficulty: "Intermediate",
+        progress: 0,
+        description: "Learn SLC, NAC, power, relay, and module connections.",
+        preview: "Future lessons can cover SLC, NAC, 18/2, 14/2, 12/2, power-limited circuits, CT1, CT2, relays, isolators, duct detector wiring, and HVAC shutdown connections."
+    },
+    {
+        id: "bom-estimating",
+        icon: "📋",
+        name: "BOM & Estimating",
+        difficulty: "Intermediate / Advanced",
+        progress: 0,
+        description: "Practice building accurate BOMs from project requirements.",
+        preview: "Future workflows can turn project requirements into product lists, quantities, complete BOMs, answer checks, and later pricing or quoting practice."
+    },
+    {
+        id: "real-world-scenarios",
+        icon: "🎯",
+        name: "Real-World Scenarios",
+        difficulty: "Advanced",
+        progress: 0,
+        description: "Solve realistic customer, estimating, and system-design situations.",
+        preview: "Future scenario drills can include HVAC shutdown, duct smoke detection, door-holder release, exterior notification, gym speakers, classroom ceiling speakers, extra SLC devices, relay interfaces, module selection, and incomplete project information."
+    }
+];
 
-const familyContainer =
-document.getElementById("familyContainer");
-
-const productContainer =
-document.getElementById("productContainer");
-
-const trainingSearch =
-document.getElementById("trainingSearch");
-
-let selectedManufacturer = "";
-let selectedFamily = "";
-
-// ===============================================
-// START
-// ===============================================
-
-window.onload = () => {
-
-    loadManufacturers();
-
+const recommendedNextStep = {
+    title: "Start with Takeoff Training",
+    description: "Learn how to identify devices on a plan and build your first basic material takeoff.",
+    actionLabel: "Start Takeoff Training",
+    moduleId: "takeoff-training"
 };
 
-// ===============================================
-// SEARCH
-// ===============================================
+const moduleContainer = document.getElementById("trainingModules");
+const modal = document.getElementById("trainingModal");
+const modalTitle = document.getElementById("trainingModalTitle");
+const modalDifficulty = document.getElementById("trainingModalDifficulty");
+const modalDescription = document.getElementById("trainingModalDescription");
+const modalPreview = document.getElementById("trainingModalPreview");
+const modalCloseButton = document.getElementById("trainingModalCloseButton");
+const recommendedTitle = document.getElementById("recommendedNextStepTitle");
+const recommendedDescription = document.getElementById("recommendedNextStepDescription");
+const recommendedButton = document.getElementById("recommendedNextStepButton");
+const overallProgressValue = document.getElementById("overallProgressValue");
+const modulesStartedValue = document.getElementById("modulesStartedValue");
+const skillsMasteredValue = document.getElementById("skillsMasteredValue");
+const trainingXpValue = document.getElementById("trainingXpValue");
 
-trainingSearch.addEventListener("keyup", function(){
+window.addEventListener("DOMContentLoaded", initializeTrainingPage);
+window.addEventListener("keydown", handleKeyboardShortcuts);
 
-    const text =
-    trainingSearch.value.toLowerCase();
+function initializeTrainingPage() {
+    renderRecommendedNextStep();
+    renderTrainingModules();
+    renderTrainingSummary();
+    bindModalControls();
+}
 
-    if(text===""){
+function renderRecommendedNextStep() {
+    recommendedTitle.textContent = recommendedNextStep.title;
+    recommendedDescription.textContent = recommendedNextStep.description;
+    recommendedButton.textContent = recommendedNextStep.actionLabel;
+    recommendedButton.addEventListener("click", goToTakeoffTraining);
+}
 
-        manufacturerContainer.classList.remove("hidden");
-        familyContainer.classList.add("hidden");
-        productContainer.classList.add("hidden");
+function renderTrainingModules() {
+    moduleContainer.innerHTML = trainingModules.map((module) => `
+        <article class="training-module-card" data-module-id="${module.id}">
+            <div class="training-module-top">
+                <div>
+                    <div class="training-module-icon" aria-hidden="true">${module.icon}</div>
+                </div>
+                <span class="badge">Future ready</span>
+            </div>
 
-        loadManufacturers();
+            <div>
+                <h2 class="training-module-title">${module.name}</h2>
+                <p class="training-module-description">${module.description}</p>
+            </div>
 
+            <div class="training-module-preview">
+                <h3>Preview</h3>
+                <p>${module.preview}</p>
+            </div>
+
+            <div class="module-meta">
+                <span class="module-difficulty">${module.difficulty}</span>
+                <span class="module-progress-text">${module.progress}%</span>
+            </div>
+
+            <div class="progress-track" aria-hidden="true">
+                <div class="progress-fill" style="width: ${module.progress}%"></div>
+            </div>
+
+            <div class="module-actions">
+                <button class="btn btn-primary" type="button" data-module-start="${module.id}">${module.id === "takeoff-training" ? "Start Takeoff Training" : module.id === "system-builder" ? "Start System Builder" : module.id === "wiring-connections" ? "Start Wiring & Connections" : module.id === "bom-estimating" ? "Start BOM & Estimating" : module.id === "real-world-scenarios" ? "Start Real-World Scenarios" : "Start Training"}</button>
+            </div>
+        </article>
+    `).join("");
+
+    moduleContainer.querySelectorAll("[data-module-start]").forEach((button) => {
+        button.addEventListener("click", () => {
+            const moduleId = button.getAttribute("data-module-start");
+            if (moduleId === recommendedNextStep.moduleId) {
+                goToTakeoffTraining();
+                return;
+            }
+
+            if (moduleId === "system-builder") {
+                goToSystemBuilder();
+                return;
+            }
+
+            if (moduleId === "wiring-connections") {
+                goToWiringConnections();
+                return;
+            }
+
+            if (moduleId === "bom-estimating") {
+                goToBomEstimating();
+                return;
+            }
+
+            if (moduleId === "real-world-scenarios") {
+                goToRealWorldScenarios();
+                return;
+            }
+
+            openTrainingModule(moduleId);
+        });
+    });
+}
+
+function renderTrainingSummary() {
+    overallProgressValue.textContent = "0%";
+    modulesStartedValue.textContent = "0 / 5";
+    skillsMasteredValue.textContent = "0";
+    trainingXpValue.textContent = "0 XP";
+}
+
+function bindModalControls() {
+    modalCloseButton.addEventListener("click", closeTrainingModal);
+    modal.querySelector("[data-close-training-modal]").addEventListener("click", closeTrainingModal);
+}
+
+function openTrainingModule(moduleId) {
+    const module = trainingModules.find((entry) => entry.id === moduleId);
+
+    if (!module) {
         return;
-
     }
 
-    searchProducts(text);
+    modalTitle.textContent = module.name;
+    modalDifficulty.textContent = module.difficulty;
+    modalDescription.textContent = module.description;
+    modalPreview.textContent = module.preview;
 
-});
-
-// ===============================================
-// MANUFACTURERS
-// ===============================================
-
-function loadManufacturers(){
-
-    manufacturerContainer.innerHTML="";
-
-    const manufacturers = [
-
-        ...new Set(
-
-            productLibrary.products.map(
-
-                p=>p.manufacturer
-
-            )
-
-        )
-
-    ];
-
-    manufacturers.sort();
-
-    manufacturers.forEach(name=>{
-
-        const card =
-        document.createElement("div");
-
-        card.className="trainingCard";
-
-        card.innerHTML=`
-
-            <h2>${name}</h2>
-
-            <p>
-
-            Open ${name} Product Library
-
-            </p>
-
-        `;
-
-        card.onclick=()=>{
-
-            openManufacturer(name);
-
-        };
-
-        manufacturerContainer.appendChild(card);
-
-    });
-
+    modal.classList.remove("hidden");
+    modal.setAttribute("aria-hidden", "false");
+    modalCloseButton.focus();
 }
 
-// ===============================================
-// MANUFACTURER
-// ===============================================
-
-function openManufacturer(name){
-
-    selectedManufacturer=name;
-
-    manufacturerContainer.classList.add("hidden");
-
-    familyContainer.classList.remove("hidden");
-
-    loadFamilies();
-
+function closeTrainingModal() {
+    modal.classList.add("hidden");
+    modal.setAttribute("aria-hidden", "true");
 }
 
-// ===============================================
-// FAMILIES
-// ===============================================
-
-function loadFamilies(){
-
-    familyContainer.innerHTML="";
-
-    const families=[
-
-        ...new Set(
-
-            productLibrary.products
-
-            .filter(
-
-                p=>p.manufacturer===selectedManufacturer
-
-            )
-
-            .map(
-
-                p=>p.family
-
-            )
-
-        )
-
-    ];
-
-    families.sort();
-
-    families.forEach(family=>{
-
-        const card=document.createElement("div");
-
-        card.className="trainingCard";
-
-        card.innerHTML=`
-
-            <h2>
-
-            ${family}
-
-            </h2>
-
-            <p>
-
-            View Products
-
-            </p>
-
-        `;
-
-        card.onclick=()=>{
-
-            openFamily(family);
-
-        };
-
-        familyContainer.appendChild(card);
-
-    });
-
+function goToTakeoffTraining() {
+    window.location.href = "takeoff/index.html";
 }
 
-// ===============================================
-// FAMILY
-// ===============================================
-
-function openFamily(family){
-
-    selectedFamily=family;
-
-    familyContainer.classList.add("hidden");
-
-    productContainer.classList.remove("hidden");
-
-    loadProducts();
-
+function goToSystemBuilder() {
+    window.location.href = "system-builder/index.html";
 }
 
-// ===============================================
-// PRODUCTS
-// ===============================================
-
-function loadProducts(){
-
-    productContainer.innerHTML="";
-
-    const products=
-
-    productLibrary.products.filter(
-
-        p=>
-
-        p.manufacturer===selectedManufacturer &&
-
-        p.family===selectedFamily
-
-    );
-
-    products.sort(
-
-        (a,b)=>
-
-        a.model.localeCompare(b.model)
-
-    );
-
-    products.forEach(product=>{
-
-        const card=document.createElement("div");
-
-        card.className="trainingCard";
-
-        card.innerHTML=`
-
-            <h2>
-
-            ${product.model}
-
-            </h2>
-
-            <p>
-
-            ${product.category}
-
-            </p>
-
-            <br>
-
-            <span class="productStatus">
-
-            ${product.verification}
-
-            </span>
-
-        `;
-
-        card.onclick=()=>{
-
-            window.location.href=
-
-            "../products/index.html?id="+
-
-            product.id;
-
-        };
-
-        productContainer.appendChild(card);
-
-    });
-
+function goToWiringConnections() {
+    window.location.href = "wiring/index.html";
 }
 
-// ===============================================
-// SEARCH
-// ===============================================
-
-function searchProducts(text){
-
-    manufacturerContainer.classList.add("hidden");
-
-    familyContainer.classList.add("hidden");
-
-    productContainer.classList.remove("hidden");
-
-    productContainer.innerHTML="";
-
-    const results=
-
-    productLibrary.products.filter(product=>{
-
-        return (
-
-            product.model.toLowerCase().includes(text)
-
-            ||
-
-            product.category.toLowerCase().includes(text)
-
-            ||
-
-            product.family.toLowerCase().includes(text)
-
-            ||
-
-            product.manufacturer.toLowerCase().includes(text)
-
-        );
-
-    });
-
-    results.sort(
-
-        (a,b)=>
-
-        a.model.localeCompare(b.model)
-
-    );
-
-    results.forEach(product=>{
-
-        const card=document.createElement("div");
-
-        card.className="trainingCard";
-
-        card.innerHTML=`
-
-            <h2>
-
-            ${product.model}
-
-            </h2>
-
-            <p>
-
-            ${product.family}
-
-            </p>
-
-            <small>
-
-            ${product.category}
-
-            </small>
-
-            <br><br>
-
-            <span class="productStatus">
-
-            ${product.verification}
-
-            </span>
-
-        `;
-
-        card.onclick=()=>{
-
-            window.location.href=
-
-            "../products/index.html?id="+
-
-            product.id;
-
-        };
-
-        productContainer.appendChild(card);
-
-    });
-
+function goToBomEstimating() {
+    window.location.href = "bom-estimating/index.html";
 }
 
+function goToRealWorldScenarios() {
+    window.location.href = "scenarios/index.html";
+}
+
+function handleKeyboardShortcuts(event) {
+    if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+        closeTrainingModal();
+    }
+}

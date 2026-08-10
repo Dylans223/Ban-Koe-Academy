@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | Takeoff Training</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../module-shell.css">
+    <link rel="stylesheet" href="takeoff.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h1>Ban-Koe Academy</h1>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button onclick="goDashboard()">🏠 Dashboard</button>
+                <button class="active" onclick="goTraining()">📖 Training</button>
+                <button onclick="goQuiz()">📝 Quiz</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button onclick="goProducts()">📦 Products</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button onclick="goProgress()">📈 Progress</button>
+                <button onclick="goSettings()">⚙ Settings</button>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content takeoff-content training-module-content">
+        <div class="module-back-row">
+            <button class="module-back-button" type="button" onclick="goTraining()">← Back to Training</button>
+        </div>
+
+        <header class="page-header takeoff-header">
+            <div class="takeoff-header-copy">
+                <p class="eyebrow">Job Skills Training</p>
+                <h1 class="pageTitle">Takeoff Training</h1>
+                <p class="page-subtitle">Learn how to turn project requirements into an accurate fire alarm material takeoff.</p>
+            </div>
+
+            <div class="takeoff-header-status panel">
+                <div class="takeoff-step-label">
+                    <span>Takeoff Training</span>
+                    <strong id="stepIndicator">Step 1 of 5</strong>
+                </div>
+                <div class="progress-track" aria-hidden="true">
+                    <div id="topProgressBar" class="progress-fill" style="width: 20%"></div>
+                </div>
+                <div class="takeoff-header-meta">
+                    <span>Progress</span>
+                    <strong id="topProgressValue">20%</strong>
+                </div>
+            </div>
+        </header>
+
+        <section class="panel module-overview">
+            <div class="module-overview-stepper">
+                <p class="eyebrow">Where Am I?</p>
+                <div id="moduleStepList" class="module-step-list" aria-label="Takeoff steps"></div>
+            </div>
+            <div class="module-overview-objective">
+                <p class="eyebrow">Current Objective</p>
+                <span id="moduleObjectiveChip" class="module-objective-chip">Project Brief</span>
+                <h2 id="moduleObjectiveTitle" class="module-objective-title">Understand the project requirements.</h2>
+                <p id="moduleObjectiveText" class="module-objective-text">Your goal is to read the project scope and understand what you will need to identify before building the takeoff.</p>
+            </div>
+        </section>
+
+        <section class="takeoff-layout">
+            <div class="takeoff-main">
+                <section class="takeoff-panel project-brief panel" id="projectStep">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Section 1</p>
+                            <h2>Project Brief</h2>
+                        </div>
+                        <span class="badge">Beginner</span>
+                    </div>
+
+                    <div class="project-brief-grid">
+                        <article class="brief-card">
+                            <h3>Project</h3>
+                            <p>Small Office Fire Alarm Upgrade</p>
+                        </article>
+                        <article class="brief-card">
+                            <h3>System Type</h3>
+                            <p>Edwards EST4 with Signature Series initiating devices</p>
+                        </article>
+                        <article class="brief-card">
+                            <h3>Scope</h3>
+                            <p>Two-story office building with smoke detection, manual pull stations, notification appliances, duct detection, and HVAC shutdown interfaces.</p>
+                        </article>
+                    </div>
+
+                    <div class="project-brief-details">
+                        <div>
+                            <h3>Description</h3>
+                            <p>You are preparing a basic material takeoff for a small two-story office building. The fire alarm system will use an Edwards EST4 fire alarm control panel and Signature Series initiating devices.</p>
+                        </div>
+
+                        <div>
+                            <h3>Project Requirements</h3>
+                            <ul class="requirement-list">
+                                <li>1 fire alarm control panel</li>
+                                <li>2 floors</li>
+                                <li>10 smoke detectors per floor</li>
+                                <li>2 manual pull stations per floor</li>
+                                <li>4 horn/strobes per floor</li>
+                                <li>1 duct smoke detector</li>
+                                <li>The duct detector must provide a signal to the fire alarm system</li>
+                                <li>The system must provide HVAC shutdown</li>
+                                <li>Provide appropriate modules for the required interfaces</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="panel-actions">
+                        <button id="beginTakeoffButton" class="btn btn-primary">Begin Takeoff</button>
+                    </div>
+                </section>
+
+                <section class="takeoff-panel panel hidden" id="identifyStep">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Section 2</p>
+                            <h2>Identify the Devices</h2>
+                        </div>
+                        <span class="badge">20 points</span>
+                    </div>
+                    <p class="section-intro">Select the one correct device for each requirement.</p>
+                    <div id="identifyQuestionArea"></div>
+                </section>
+
+                <section class="takeoff-panel panel hidden" id="quantityStep">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Section 3</p>
+                            <h2>Determine Quantities</h2>
+                        </div>
+                        <span class="badge">30 points</span>
+                    </div>
+                    <p class="section-intro">Enter the exact quantity for each required device.</p>
+                    <div id="quantityQuestionArea"></div>
+                </section>
+
+                <section class="takeoff-panel panel hidden" id="relationshipStep">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Section 4</p>
+                            <h2>Identify Related Modules</h2>
+                        </div>
+                        <span class="badge">20 points</span>
+                    </div>
+                    <p class="section-intro">Select the single module or interface that matches each scenario.</p>
+                    <div id="relationshipQuestionArea"></div>
+                </section>
+
+                <section class="takeoff-panel panel hidden" id="bomStep">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Section 5</p>
+                            <h2>Build Your BOM</h2>
+                        </div>
+                        <span class="badge">30 points</span>
+                    </div>
+                    <p class="section-intro">Build the material list using the quantities you already calculated.</p>
+
+                    <div class="remembered-counts panel">
+                        <div class="section-heading compact">
+                            <div>
+                                <p class="eyebrow">Remembered Counts</p>
+                                <h3>Use the quantities you already calculated</h3>
+                            </div>
+                            <button id="addRememberedCountsButton" class="btn btn-secondary" type="button">Use Remembered Counts</button>
+                        </div>
+
+                        <div class="remembered-table-shell">
+                            <table class="bom-table remembered-table">
+                                <thead>
+                                    <tr>
+                                        <th>Material</th>
+                                        <th>Remembered Count</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="rememberedCountsBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="bom-builder">
+                        <div class="bom-form">
+                            <div class="field-group">
+                                <label for="bomCategory">Category</label>
+                                <select id="bomCategory"></select>
+                            </div>
+                            <div class="field-group">
+                                <label for="bomItem">Item</label>
+                                <select id="bomItem"></select>
+                            </div>
+                            <div class="field-group quantity-field">
+                                <label for="bomQuantity">Quantity</label>
+                                <input id="bomQuantity" type="text" inputmode="numeric" placeholder="1">
+                            </div>
+                            <div class="field-group action-field">
+                                <label>&nbsp;</label>
+                                <button id="addBomItemButton" class="btn btn-secondary" type="button">Add Item</button>
+                            </div>
+                        </div>
+
+                        <div class="bom-table-shell">
+                            <table class="bom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Item</th>
+                                        <th>Quantity</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bomTableBody"></tbody>
+                            </table>
+                            <div class="bom-empty hidden" id="bomEmptyState">
+                                Add items to build the project takeoff.
+                            </div>
+                        </div>
+
+                        <div class="bom-actions">
+                            <button id="submitTakeoffButton" class="btn btn-primary" type="button">Submit Takeoff</button>
+                            <button id="resetTakeoffButton" class="btn btn-secondary" type="button">Try Again</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="takeoff-panel panel hidden" id="resultsStep">
+                    <div class="section-heading compact">
+                        <div>
+                            <p class="eyebrow">Takeoff Results</p>
+                            <h2>Review and Learn</h2>
+                        </div>
+                        <span class="badge" id="finalScoreBadge">0 / 100</span>
+                    </div>
+
+                    <div class="results-summary-grid">
+                        <article class="summary-card">
+                            <span class="summary-label">Score</span>
+                            <strong class="summary-value" id="resultScore">0/100</strong>
+                        </article>
+                        <article class="summary-card">
+                            <span class="summary-label">Correct Items</span>
+                            <strong class="summary-value" id="resultCorrectItems">0/0</strong>
+                        </article>
+                        <article class="summary-card">
+                            <span class="summary-label">Incorrect Items</span>
+                            <strong class="summary-value" id="resultIncorrectItems">0/0</strong>
+                        </article>
+                        <article class="summary-card">
+                            <span class="summary-label">Quantity Accuracy</span>
+                            <strong class="summary-value" id="resultQuantityAccuracy">0%</strong>
+                        </article>
+                    </div>
+
+                    <div class="review-grid">
+                        <article class="review-panel">
+                            <h3>What You Learned</h3>
+                            <ul>
+                                <li>How to convert project requirements into device quantities.</li>
+                                <li>How to distinguish initiating devices from notification appliances.</li>
+                                <li>Why duct detection may require additional interfaces.</li>
+                                <li>Why HVAC shutdown requires a control or interface function.</li>
+                                <li>Why a BOM must include related modules and accessories.</li>
+                                <li>Why quantities should be verified against project plans and specifications.</li>
+                            </ul>
+                        </article>
+
+                        <article class="review-panel" id="mistakeReviewPanel">
+                            <h3>Detailed Review</h3>
+                            <div id="resultsReview"></div>
+                        </article>
+                    </div>
+
+                    <div class="panel-actions wrap-actions">
+                        <button id="reviewMistakesButton" class="btn btn-secondary" type="button">Review Mistakes</button>
+                        <button id="tryAgainButton" class="btn btn-primary" type="button">Try Again</button>
+                        <button id="returnTrainingButton" class="btn btn-secondary" type="button">Return to Training</button>
+                        <button id="nextModuleButton" class="btn btn-secondary" type="button">Next Module →</button>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="takeoff-sidebar">
+                <section class="panel takeoff-status-card">
+                    <p class="eyebrow">Project Snapshot</p>
+                    <h2>Small Office Fire Alarm Upgrade</h2>
+                    <p>This first scenario focuses on the workflow behind a simple office takeoff. Future scenarios can add more complexity without changing the structure of this module.</p>
+                </section>
+
+                <section class="panel takeoff-status-card">
+                    <p class="eyebrow">Current Score</p>
+                    <h2 id="liveScoreValue">0 / 100</h2>
+                    <p id="liveScoreNote">Work through the steps to build your total.</p>
+                </section>
+
+                <section class="panel takeoff-status-card">
+                    <p class="eyebrow">Takeoff Sequence</p>
+                    <ol class="sequence-list">
+                        <li>Read the project</li>
+                        <li>Identify devices</li>
+                        <li>Determine quantities</li>
+                        <li>Identify related modules</li>
+                        <li>Build the BOM</li>
+                    </ol>
+                </section>
+            </aside>
+        </section>
+    </main>
+</div>
+
+<script src="../../scripts/navigation.js"></script>
+<script src="../../data/edwards/index.js"></script>
+<script src="takeoff.js"></script>
+</body>
+</html>

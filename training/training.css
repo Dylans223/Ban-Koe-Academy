@@ -1,6 +1,360 @@
 /* Training page specific styles */
-.training-stage #manufacturerContainer,
-.training-stage #familyContainer,
-.training-stage #productContainer {
-    align-content: start;
+.training-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(220px, 0.9fr);
+    gap: var(--space-3);
+    align-items: start;
+}
+
+.training-intro-copy {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.training-intro-copy h2 {
+    color: var(--text);
+    font-size: 26px;
+    max-width: 22ch;
+}
+
+.training-intro-copy p {
+    max-width: 68ch;
+}
+
+.eyebrow {
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.training-intro-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: stretch;
+    justify-content: center;
+}
+
+.training-intro-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(15, 23, 42, 0.55);
+    color: var(--text);
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.training-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-2);
+}
+
+.summary-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    display: grid;
+    gap: 10px;
+    min-height: 124px;
+}
+
+.summary-label {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.summary-value {
+    color: var(--text);
+    font-size: 32px;
+    line-height: 1;
+}
+
+.training-section {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.section-heading h2 {
+    color: var(--text);
+}
+
+.section-heading p {
+    max-width: 44ch;
+}
+
+.section-heading.compact p {
+    max-width: none;
+}
+
+.training-modules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-2);
+}
+
+.training-module-card {
+    background: #152235;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    display: grid;
+    gap: var(--space-2);
+    transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 12px 24px rgba(2, 6, 23, 0.16);
+}
+
+.training-module-card:hover {
+    border-color: var(--hover);
+    background: #1A2A42;
+    transform: translateY(-2px);
+}
+
+.training-module-top {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-2);
+    align-items: start;
+}
+
+.training-module-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: rgba(37, 99, 235, 0.18);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+    flex-shrink: 0;
+}
+
+.training-module-title {
+    color: var(--text);
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.training-module-description {
+    color: var(--text-secondary);
+}
+
+.training-module-preview {
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(51, 65, 85, 0.85);
+}
+
+.training-module-preview h3 {
+    color: var(--text);
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.training-module-preview p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.module-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.module-difficulty {
+    color: #dbeafe;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.module-progress-text {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.progress-track {
+    width: 100%;
+    height: 10px;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(51, 65, 85, 0.9);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--primary), #22c55e);
+    border-radius: inherit;
+}
+
+.module-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.module-actions .btn {
+    min-width: 160px;
+}
+
+.training-next-step {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.next-step-card {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-2);
+    align-items: center;
+    flex-wrap: wrap;
+    background: #152235;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+}
+
+.next-step-title {
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.training-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: grid;
+    place-items: center;
+    padding: var(--space-3);
+}
+
+.training-modal.hidden {
+    display: none !important;
+}
+
+.training-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.72);
+    backdrop-filter: blur(6px);
+}
+
+.training-modal-panel {
+    position: relative;
+    width: min(620px, 100%);
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: var(--space-4);
+    display: grid;
+    gap: var(--space-2);
+    box-shadow: 0 28px 60px rgba(2, 6, 23, 0.48);
+    animation: modalIn 0.2s ease;
+}
+
+.training-modal-panel h2 {
+    color: var(--text);
+    font-size: 28px;
+}
+
+.training-modal-difficulty {
+    color: #dbeafe;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.training-modal-preview {
+    margin-top: 2px;
+}
+
+.training-modal-preview h3 {
+    color: var(--text);
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.training-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--space-1);
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 1100px) {
+    .training-intro,
+    .training-summary,
+    .training-modules-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 860px) {
+    .training-intro {
+        grid-template-columns: 1fr;
+    }
+
+    .training-intro-copy h2 {
+        max-width: none;
+    }
+
+    .training-intro-cta {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .training-summary,
+    .training-modules-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-value {
+        font-size: 28px;
+    }
+
+    .next-step-card {
+        align-items: flex-start;
+    }
+
+    .training-modal-panel {
+        padding: var(--space-3);
+    }
 }
