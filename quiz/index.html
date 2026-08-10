@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ban-Koe Academy | Quiz</title>
+    <title>Ban-Koe Academy | Quiz Center</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="quiz.css">
 </head>
@@ -38,53 +38,235 @@
     </aside>
 
     <main class="content">
-        <header class="page-header">
-            <h1 class="pageTitle">Quiz</h1>
-            <p class="page-subtitle">Run focused assessment sessions with clear progression and explanations.</p>
-        </header>
 
-        <div class="toolbar">
-            <select id="moduleSelect">
-                <option value="1">Module 1</option>
-                <option value="2">Module 2</option>
-            </select>
+        <!-- ============================================
+             VIEW: QUIZ CENTER
+             ============================================ -->
+        <section id="viewCenter" class="quiz-view active">
 
-            <select id="difficultySelect">
-                <option value="all">All Difficulties</option>
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select>
+            <header class="page-header">
+                <h1 class="pageTitle">Quiz Center</h1>
+                <p class="page-subtitle">Test your knowledge, build mastery, and identify the areas that need more practice.</p>
+            </header>
 
-            <button id="startQuizButton" class="btn btn-primary">Start Quiz</button>
-        </div>
-
-        <section class="quiz-shell">
-            <div class="panel quiz-progress">
-                <p class="kpi-label">Progress</p>
-                <p id="questionNumber">Question 1 of 1</p>
-                <div class="quiz-progress-track">
-                    <div class="quiz-progress-fill"></div>
+            <!-- Stats -->
+            <div class="quiz-stats-grid">
+                <div class="quiz-stat-card">
+                    <span class="quiz-stat-label">Overall Accuracy</span>
+                    <span class="quiz-stat-value" id="statAccuracy">0%</span>
+                </div>
+                <div class="quiz-stat-card">
+                    <span class="quiz-stat-label">Questions Answered</span>
+                    <span class="quiz-stat-value" id="statQuestions">0</span>
+                </div>
+                <div class="quiz-stat-card">
+                    <span class="quiz-stat-label">Quizzes Completed</span>
+                    <span class="quiz-stat-value" id="statQuizzes">0</span>
+                </div>
+                <div class="quiz-stat-card">
+                    <span class="quiz-stat-label">Current Streak</span>
+                    <span class="quiz-stat-value" id="statStreak">0</span>
+                </div>
+                <div class="quiz-stat-card">
+                    <span class="quiz-stat-label">XP Earned</span>
+                    <span class="quiz-stat-value" id="statXP">0 XP</span>
                 </div>
             </div>
 
-            <div id="quizContainer" style="display:none;">
-                <article class="panel">
-                    <p class="kpi-label">Question</p>
-                    <p id="questionText">Question text appears here.</p>
-                    <div id="answers" class="mt24"></div>
-                </article>
-
-                <div class="quiz-actions mt16">
-                    <button id="nextQuestion" class="btn btn-primary">Next Question</button>
+            <!-- Quick Quiz -->
+            <div class="quick-quiz-banner">
+                <span class="quick-icon">⚡</span>
+                <div class="quick-quiz-body">
+                    <h2>Quick Quiz</h2>
+                    <p>Have 5 minutes? Take 10 random questions from your available knowledge areas.</p>
                 </div>
-
-                <article class="panel mt16">
-                    <h3 class="card-title">Explanation</h3>
-                    <p id="explanation" class="mt16"></p>
-                </article>
+                <button class="btn btn-primary" id="startQuickQuiz">Start Quick Quiz →</button>
             </div>
+
+            <!-- Recommended Practice -->
+            <div class="recommended-panel">
+                <div class="recommended-body">
+                    <p class="eyebrow">Recommended Practice</p>
+                    <h2 id="recommendTitle">Start a quiz to get recommendations.</h2>
+                    <p class="recommend-detail" id="recommendDetail">Complete at least one quiz to start building your personalized recommendations.</p>
+                    <div class="recommend-score hidden" id="recommendScore"></div>
+                </div>
+                <button class="btn btn-secondary hidden" id="recommendBtn">Practice This Area →</button>
+            </div>
+
+            <!-- Category Grid -->
+            <div>
+                <h2 style="color:var(--text); margin-bottom: var(--space-2);">Choose a Quiz</h2>
+                <div class="quiz-category-grid" id="categoryGrid"></div>
+            </div>
+
         </section>
+
+        <!-- ============================================
+             VIEW: ACTIVE QUIZ
+             ============================================ -->
+        <section id="viewQuiz" class="quiz-view">
+
+            <!-- Top bar -->
+            <div class="quiz-top-bar">
+                <div class="quiz-top-left">
+                    <button class="quiz-exit-btn" id="exitQuizBtn">← Exit Quiz</button>
+                    <div class="quiz-title-bar">
+                        <span class="quiz-category-label" id="quizCategoryLabel">Category</span>
+                        <span class="quiz-counter-label" id="quizCounterLabel">Question 1 of 20</span>
+                    </div>
+                </div>
+                <div class="quiz-streak-display" id="quizStreakDisplay" style="font-size:14px;color:var(--text-secondary);">Streak: 0 🔥</div>
+            </div>
+
+            <!-- Progress -->
+            <div class="quiz-progress-section">
+                <div class="quiz-progress-meta">
+                    <span id="quizProgressLabel">0 of 20 answered</span>
+                    <span class="progress-pct" id="quizProgressPct">0%</span>
+                </div>
+                <div class="quiz-progress-track">
+                    <div class="quiz-progress-fill" id="quizProgressFill" style="width:0%"></div>
+                </div>
+            </div>
+
+            <!-- Question -->
+            <div class="question-panel">
+                <p class="question-eyebrow">Question</p>
+                <p class="question-text" id="questionText">Question text will appear here.</p>
+            </div>
+
+            <!-- Answer cards -->
+            <div class="answer-grid" id="answerGrid"></div>
+
+            <!-- Feedback -->
+            <div class="feedback-panel" id="feedbackPanel">
+                <div class="feedback-verdict" id="feedbackVerdict">✓ CORRECT</div>
+                <div class="feedback-correct-answer hidden" id="feedbackCorrectAnswer"></div>
+                <div class="feedback-explanation" id="feedbackExplanation"></div>
+            </div>
+
+            <!-- Actions -->
+            <div class="quiz-action-bar">
+                <button class="btn btn-primary" id="submitAnswerBtn" disabled>Submit Answer →</button>
+                <button class="btn btn-primary hidden" id="continueBtn">Continue →</button>
+            </div>
+
+        </section>
+
+        <!-- ============================================
+             VIEW: RESULTS
+             ============================================ -->
+        <section id="viewResults" class="quiz-view">
+
+            <div class="results-hero">
+                <p class="results-quiz-name" id="resultsQuizName">PRODUCT RECOGNITION</p>
+                <p class="results-complete-label">Quiz Complete</p>
+                <div class="results-score-circle">
+                    <span class="results-score-number" id="resultsScore">0%</span>
+                    <span class="results-score-label">Score</span>
+                </div>
+                <div class="results-kpis">
+                    <div class="result-kpi">
+                        <span class="result-kpi-label">Correct</span>
+                        <span class="result-kpi-value" id="resultsCorrect" style="color:var(--success)">0</span>
+                    </div>
+                    <div class="result-kpi">
+                        <span class="result-kpi-label">Incorrect</span>
+                        <span class="result-kpi-value" id="resultsIncorrect" style="color:var(--danger)">0</span>
+                    </div>
+                    <div class="result-kpi">
+                        <span class="result-kpi-label">XP Earned</span>
+                        <span class="result-kpi-value" id="resultsXP" style="color:var(--primary)">0 XP</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-breakdown">
+                <h3>Skill Breakdown</h3>
+                <div class="breakdown-row">
+                    <span class="label">Questions Answered</span>
+                    <span class="value" id="bdTotal">0</span>
+                </div>
+                <div class="breakdown-row">
+                    <span class="label">Correct</span>
+                    <span class="value correct" id="bdCorrect">0</span>
+                </div>
+                <div class="breakdown-row">
+                    <span class="label">Incorrect</span>
+                    <span class="value incorrect" id="bdIncorrect">0</span>
+                </div>
+                <div class="breakdown-row">
+                    <span class="label">Accuracy</span>
+                    <span class="value" id="bdAccuracy">0%</span>
+                </div>
+                <div class="breakdown-row">
+                    <span class="label">XP Earned</span>
+                    <span class="value" id="bdXP">0 XP</span>
+                </div>
+            </div>
+
+            <div class="results-review-section" id="reviewSection">
+                <h3>What to Review</h3>
+                <div id="reviewPreviewList"></div>
+            </div>
+
+            <div class="results-action-bar">
+                <button class="btn" id="reviewMistakesBtn">Review Mistakes</button>
+                <button class="btn" id="retakeQuizBtn">Retake Quiz</button>
+                <button class="btn btn-primary" id="backToCenterBtn">Back to Quiz Center</button>
+            </div>
+
+        </section>
+
+        <!-- ============================================
+             VIEW: REVIEW MISTAKES
+             ============================================ -->
+        <section id="viewReview" class="quiz-view">
+
+            <div class="review-header-bar">
+                <div>
+                    <h1 class="pageTitle">Review Mistakes</h1>
+                    <p class="review-counter" id="reviewCounter">Reviewing mistake <strong>1</strong> of <strong>1</strong></p>
+                </div>
+                <button class="btn" id="exitReviewBtn">← Back to Results</button>
+            </div>
+
+            <!-- Active mistake card (hidden when complete) -->
+            <div id="reviewActiveCard">
+                <div class="review-question-card">
+                    <p class="question-eyebrow">Question</p>
+                    <p class="review-question-text" id="reviewQuestionText">Question text here.</p>
+
+                    <div class="review-answer-row your-answer">
+                        <span class="review-answer-label">Your Answer</span>
+                        <span class="review-answer-text" id="reviewYourAnswer">—</span>
+                    </div>
+
+                    <div class="review-answer-row correct-answer">
+                        <span class="review-answer-label">Correct Answer</span>
+                        <span class="review-answer-text" id="reviewCorrectAnswer">—</span>
+                    </div>
+
+                    <div class="review-explanation-block">
+                        <strong>Why: </strong><span id="reviewExplanation"></span>
+                    </div>
+                </div>
+
+                <div class="quiz-action-bar" style="margin-top: var(--space-2);">
+                    <button class="btn btn-primary" id="nextMistakeBtn">Next Mistake →</button>
+                </div>
+            </div>
+
+            <!-- Complete state -->
+            <div id="reviewCompleteCard" class="review-complete-card hidden">
+                <h2>Review Complete</h2>
+                <p>You've reviewed all missed questions. Keep practicing to build mastery.</p>
+                <button class="btn btn-primary" id="reviewDoneBtn" style="margin-top:var(--space-2);">Back to Quiz Center</button>
+            </div>
+
+        </section>
+
     </main>
 </div>
 
@@ -92,6 +274,9 @@
 <script src="../data/module1.js"></script>
 <script src="../data/module2.js"></script>
 <script src="../data/edwards/index.js"></script>
+<script src="../data/wiringQuestions.js"></script>
+<script src="../data/partNumberQuestions.js"></script>
+<script src="../data/quizData.js"></script>
 <script src="quiz.js"></script>
 </body>
 </html>
