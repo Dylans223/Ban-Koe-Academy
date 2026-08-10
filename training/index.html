@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | Training</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="training.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h1>Ban-Koe Academy</h1>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button onclick="goDashboard()">🏠 Dashboard</button>
+                <button class="active" onclick="goTraining()">📖 Training</button>
+                <button onclick="goQuiz()">📝 Quiz</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button onclick="goProducts()">📦 Products</button>
+            </div>
+
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button onclick="goProgress()">📈 Progress</button>
+                <button onclick="goSettings()">⚙ Settings</button>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content">
+        <header class="page-header">
+            <h1 class="pageTitle">Training</h1>
+            <p class="page-subtitle">Move through modules, lessons, and product practice in sequence.</p>
+        </header>
+
+        <div class="toolbar trainingToolbar">
+            <input id="trainingSearch" type="text" placeholder="Search modules, lessons, products">
+            <button class="btn btn-primary" onclick="goQuiz()">Continue Learning</button>
+        </div>
+
+        <section class="training-flow">
+            <article class="column-panel training-stage" id="manufacturerStage">
+                <div class="training-stage-header">
+                    <h3>Modules</h3>
+                    <span class="badge">Step 1</span>
+                </div>
+                <div id="manufacturerContainer"></div>
+            </article>
+
+            <article class="column-panel training-stage" id="familyStage">
+                <div class="training-stage-header">
+                    <h3>Lessons</h3>
+                    <span class="badge">Step 2</span>
+                </div>
+                <div id="familyContainer" class="hidden"></div>
+            </article>
+
+            <article class="column-panel training-stage" id="productStage">
+                <div class="training-stage-header">
+                    <h3>Completed Status</h3>
+                    <span class="badge">Step 3</span>
+                </div>
+                <div id="productContainer" class="hidden"></div>
+            </article>
+        </section>
+    </main>
+</div>
+
+<script src="../scripts/navigation.js"></script>
+<script src="../data/edwards/index.js"></script>
+<script src="training.js"></script>
+</body>
+</html>

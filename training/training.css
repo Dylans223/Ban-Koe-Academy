@@ -1,0 +1,6 @@
+/* Training page specific styles */
+.training-stage #manufacturerContainer,
+.training-stage #familyContainer,
+.training-stage #productContainer {
+    align-content: start;
+}
