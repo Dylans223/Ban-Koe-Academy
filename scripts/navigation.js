@@ -4,17 +4,34 @@
 // ==========================================
 
 /**
- * Detects the application base path by finding the /BKA/ segment
- * or returns "/" for local development
- * Works for both GitHub Pages (/BKA/) and local serving
+ * Detects the application base path without assuming a specific repository name.
+ * Works for both local development and GitHub Pages repo subpath hosting.
+ * Examples:
+ *   / -> '/'
+ *   /training/takeoff/ -> '/'
+ *   /Ban-Koe-Academy/ -> '/Ban-Koe-Academy/'
+ *   /Ban-Koe-Academy/training/takeoff/ -> '/Ban-Koe-Academy/'
  */
 function getBasePath() {
-    const pathname = window.location.pathname;
-    const bkaIndex = pathname.indexOf('/BKA/');
-    if (bkaIndex !== -1) {
-        return '/BKA/';
+    const pathname = (window.location.pathname || '/').replace(/\\/g, '/');
+    const normalized = pathname.replace(/\/+$/, '');
+
+    if (!normalized || normalized === '/') {
+        return '/';
     }
-    return '/';
+
+    const segments = normalized.split('/').filter(Boolean);
+    const knownAppSegments = new Set(['training', 'products', 'quiz', 'progress', 'settings', 'pages', 'index.html']);
+
+    for (let i = 0; i < segments.length; i++) {
+        const segment = segments[i];
+        if (knownAppSegments.has(segment) || segment.endsWith('.html')) {
+            const baseSegments = segments.slice(0, i);
+            return baseSegments.length > 0 ? '/' + baseSegments.join('/') + '/' : '/';
+        }
+    }
+
+    return '/' + segments.join('/') + '/';
 }
 
 /**
@@ -22,17 +39,18 @@ function getBasePath() {
  * Returns number of ../ needed to get back to base
  */
 function getCurrentDepth() {
-    const pathname = window.location.pathname.replace(/\\/g, "/");
+    const pathname = (window.location.pathname || '/').replace(/\\/g, '/');
     const basePath = getBasePath();
-    
-    // Remove base path from current path
-    let relativePath = pathname;
+    const normalizedPath = pathname.replace(/\/+$/, '');
+
+    let relativePath = normalizedPath;
     if (basePath !== '/') {
-        relativePath = pathname.substring(basePath.length);
+        relativePath = normalizedPath.startsWith(basePath)
+            ? normalizedPath.substring(basePath.length)
+            : normalizedPath;
     }
-    
-    // Count remaining path segments (directories)
-    const segments = relativePath.split("/").filter(s => s && s !== "index.html");
+
+    const segments = relativePath.split('/').filter(s => s && s !== 'index.html');
     return segments.length;
 }
 
@@ -43,7 +61,7 @@ function getCurrentDepth() {
  */
 function buildNavigationUrl(targetPath) {
     const depth = getCurrentDepth();
-    const upPrefix = depth > 0 ? "../".repeat(depth) : "";
+    const upPrefix = depth > 0 ? '../'.repeat(depth) : '';
     return upPrefix + targetPath;
 }
 
