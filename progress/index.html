@@ -39,60 +39,130 @@
 
     <main class="content">
         <header class="page-header">
-            <h1 class="pageTitle">Progress</h1>
-            <p class="page-subtitle">Track performance metrics and completion quality across training sessions.</p>
+            <h1 class="pageTitle">PROGRESS</h1>
+            <p class="page-subtitle">Track your growth across Ban-Koe Academy.</p>
         </header>
 
         <div class="toolbar">
             <button class="btn" onclick="goTraining()">Resume Training</button>
-            <button class="btn" onclick="goQuiz()">Run Quiz</button>
+            <button class="btn btn-primary" onclick="goQuiz()">Go to Quiz</button>
         </div>
 
-        <section class="statsGrid">
-            <article class="card">
-                <h2>XP</h2>
-                <h1 id="xpCounter">0</h1>
+        <section class="progress-dashboard">
+            <article class="card mastery-card">
+                <div class="card-heading">
+                    <p class="section-eyebrow">Overall Mastery</p>
+                    <h2>OVERALL MASTERY</h2>
+                </div>
+                <div class="mastery-score-row">
+                    <div class="mastery-score" id="masteryScore">0%</div>
+                    <div class="mastery-track" aria-hidden="true">
+                        <div class="mastery-fill" id="masteryFill"></div>
+                    </div>
+                </div>
+                <p class="card-support" id="masterySummary">Complete your first quiz to begin tracking mastery.</p>
             </article>
 
-            <article class="card">
-                <h2>Level</h2>
-                <h1 id="levelCounter">1</h1>
+            <section class="stats-grid">
+                <article class="card metric-card">
+                    <p class="metric-label">Accuracy</p>
+                    <h3 id="accuracyValue">0%</h3>
+                </article>
+                <article class="card metric-card">
+                    <p class="metric-label">Questions Answered</p>
+                    <h3 id="questionsValue">0</h3>
+                </article>
+                <article class="card metric-card">
+                    <p class="metric-label">Quizzes Completed</p>
+                    <h3 id="quizzesValue">0</h3>
+                </article>
+                <article class="card metric-card">
+                    <p class="metric-label">XP Earned</p>
+                    <h3 id="xpValue">0 XP</h3>
+                </article>
+            </section>
+
+            <article class="card streak-card">
+                <div class="card-heading">
+                    <p class="section-eyebrow">Current Streak</p>
+                    <h2>🔥 <span id="streakValue">0</span></h2>
+                </div>
+                <p class="card-support">Correct answers in a row</p>
             </article>
 
-            <article class="card">
-                <h2>Rank</h2>
-                <h1 id="rankCounter">Apprentice</h1>
-            </article>
+            <section class="card section-card">
+                <div class="card-heading">
+                    <p class="section-eyebrow">Skill Mastery</p>
+                    <h2>SKILL MASTERY</h2>
+                </div>
+                <div id="skillMasteryList" class="skill-list"></div>
+            </section>
 
-            <article class="card">
-                <h2>Accuracy</h2>
-                <h1 id="accuracyCounter">0%</h1>
-            </article>
+            <section class="card section-card recommendation-card">
+                <div class="card-heading">
+                    <p class="section-eyebrow">Recommended Next Step</p>
+                    <h2>RECOMMENDED NEXT STEP</h2>
+                </div>
+                <div id="recommendationContent" class="recommendation-content"></div>
+            </section>
 
-            <article class="card">
-                <h2>Correct</h2>
-                <h1 id="correctCounter">0</h1>
-            </article>
+            <div class="dashboard-grid">
+                <section class="card section-card">
+                    <div class="card-heading">
+                        <p class="section-eyebrow">Recent Activity</p>
+                        <h2>RECENT ACTIVITY</h2>
+                    </div>
+                    <ul id="recentActivityList" class="activity-list"></ul>
+                </section>
 
-            <article class="card">
-                <h2>Incorrect</h2>
-                <h1 id="incorrectCounter">0</h1>
-            </article>
+                <section class="card section-card">
+                    <div class="card-heading">
+                        <p class="section-eyebrow">Achievements</p>
+                        <h2>ACHIEVEMENTS</h2>
+                    </div>
+                    <div id="achievementList" class="achievement-list"></div>
+                </section>
+            </div>
 
-            <article class="card">
-                <h2>Questions Answered</h2>
-                <h1 id="questionsCounter">0</h1>
-            </article>
-
-            <article class="card">
-                <h2>Session Status</h2>
-                <h1>Active</h1>
-            </article>
+            <section class="card section-card compact-progress-card">
+                <div class="card-heading">
+                    <p class="section-eyebrow">Overall Progress</p>
+                    <h2>OVERALL PROGRESS</h2>
+                </div>
+                <div class="compact-progress-grid">
+                    <div class="compact-item">
+                        <span>Total Questions Answered</span>
+                        <strong id="compactQuestions">0</strong>
+                    </div>
+                    <div class="compact-item">
+                        <span>Total Quizzes Completed</span>
+                        <strong id="compactQuizzes">0</strong>
+                    </div>
+                    <div class="compact-item">
+                        <span>Total XP</span>
+                        <strong id="compactXP">0</strong>
+                    </div>
+                    <div class="compact-item">
+                        <span>Current Streak</span>
+                        <strong id="compactStreak">0</strong>
+                    </div>
+                    <div class="compact-item">
+                        <span>Overall Accuracy</span>
+                        <strong id="compactAccuracy">0%</strong>
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
 </div>
 
 <script src="../scripts/navigation.js"></script>
+<script src="../data/module1.js"></script>
+<script src="../data/module2.js"></script>
+<script src="../data/edwards/index.js"></script>
+<script src="../data/wiringQuestions.js"></script>
+<script src="../data/partNumberQuestions.js"></script>
+<script src="../data/quizData.js"></script>
 <script src="progress.js"></script>
 </body>
 </html>

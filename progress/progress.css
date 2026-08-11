@@ -1,4 +1,276 @@
 /* Progress page specific styles */
-.statsGrid {
-    align-items: stretch;
+.progress-dashboard {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.card-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: var(--space-2);
+}
+
+.section-eyebrow {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.card-support {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.mastery-card {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.mastery-score-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.mastery-score {
+    font-size: 54px;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.mastery-track,
+.skill-progress-track {
+    width: 100%;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.2);
+    overflow: hidden;
+}
+
+.mastery-fill,
+.skill-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--success));
+    border-radius: inherit;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-2);
+}
+
+.metric-card {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.metric-card h3 {
+    font-size: 28px;
+    color: var(--text);
+}
+
+.metric-label {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.streak-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 36px;
+}
+
+.skill-list,
+.activity-list,
+.achievement-list {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.skill-item,
+.achievement-item {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-2);
+}
+
+.skill-header,
+.achievement-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-2);
+}
+
+.skill-header h3,
+.achievement-item h3 {
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.skill-header p,
+.achievement-item p {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    background: rgba(37, 99, 235, 0.18);
+    color: #BFDBFE;
+    border: 1px solid rgba(37, 99, 235, 0.35);
+    white-space: nowrap;
+}
+
+.skill-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    margin-top: 10px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.skill-footer strong {
+    color: var(--text);
+}
+
+.recommendation-body,
+.recommendation-empty {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.recommendation-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+}
+
+.recommendation-body h3,
+.recommendation-empty h3 {
+    font-size: 18px;
+    color: var(--text);
+}
+
+.recommendation-body p {
+    color: var(--text-secondary);
+}
+
+.activity-list {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+.activity-list li:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.achievement-item {
+    align-items: center;
+}
+
+.achievement-item.complete {
+    border-color: rgba(34, 197, 94, 0.35);
+    background: rgba(34, 197, 94, 0.12);
+}
+
+.achievement-item.locked {
+    opacity: 0.8;
+}
+
+.achievement-item span {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-2);
+}
+
+.compact-progress-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: var(--space-2);
+}
+
+.compact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--border);
+}
+
+.compact-item span {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.compact-item strong {
+    color: var(--text);
+    font-size: 18px;
+}
+
+@media (max-width: 980px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-grid,
+    .compact-progress-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .content {
+        padding: var(--space-3);
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-header,
+    .recommendation-head,
+    .achievement-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

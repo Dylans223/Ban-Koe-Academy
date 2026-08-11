@@ -579,6 +579,20 @@ function truncate(str, n) {
 // -----------------------------------------------
 // EVENT BINDINGS
 // -----------------------------------------------
+function autoLaunchCategoryFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const categoryId = params.get("category");
+    if (!categoryId) return;
+
+    const meta = getCategoryMeta(categoryId);
+    if (!meta) return;
+
+    const pool = getQuestionPool(categoryId) || [];
+    if (pool.length < MIN_QUESTIONS_TO_START) return;
+
+    launchQuiz(categoryId);
+}
+
 window.addEventListener("DOMContentLoaded", () => {
     el.startQuickQuiz .addEventListener("click", startQuickQuiz);
     el.exitQuizBtn    .addEventListener("click", exitQuizWithConfirm);
@@ -592,6 +606,7 @@ window.addEventListener("DOMContentLoaded", () => {
     el.exitReviewBtn  .addEventListener("click", () => showView("results"));
 
     initCenter();
+    autoLaunchCategoryFromUrl();
 });
 
 // Allow keyboard: Enter = submit/continue
