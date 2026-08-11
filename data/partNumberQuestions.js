@@ -722,6 +722,566 @@ answers: [
 ],
 correct: 0,
 explanation: "SIGA-SB4 is the Standard Detector Base with a 4-inch footprint — used when 4-inch mounting boxes are specified. The standard-footprint variant is SIGA-SB. The isolator variant is SIGA-IB4."
+},
+
+{
+id: 44,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0543 Synchronization Output Module",
+question: "Which Edwards product is identified by the part number E85001-0543?",
+answers: [
+"Synchronization Output Module",
+"High Power Control Relay Module",
+"Releasing Module",
+"Universal Input-Output Module Motherboards"
+],
+correct: 0,
+explanation: "The Edwards Lifelines page lists E85001-0543 as the Synchronization Output Module within the Intelligent Input/Output Modules collection."
+},
+
+{
+id: 45,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0365 Universal Input-Output Module Motherboards",
+question: "Which Edwards product is identified by the part number E85001-0365?",
+answers: [
+"Universal Input-Output Module Motherboards",
+"Signal Modules with Class A Operation",
+"Input Modules",
+"Releasing Module"
+],
+correct: 0,
+explanation: "The Edwards Lifelines page lists E85001-0365 as Universal Input-Output Module Motherboards in the Intelligent Input/Output Modules collection."
+},
+
+{
+id: 46,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0743 Fireray Smoke Beam Detector",
+question: "Which Edwards conventional initiating device is identified by the part number E85001-0743?",
+answers: [
+"Fireray Smoke Beam Detector",
+"Explosionproof Smoke Detector",
+"Carbon Monoxide Detector",
+"Double Action Pull Station"
+],
+correct: 0,
+explanation: "The Edwards Conventional Initiating Devices page lists E85001-0743 as the Fireray Smoke Beam Detector."
+},
+
+{
+id: 47,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0227 Double Action Pull Stations",
+question: "Which Edwards conventional product is identified by the part number E85001-0227?",
+answers: [
+"Double Action Pull Stations",
+"Single Action Pull Stations",
+"Fire Alarm Stations",
+"Weatherproof Pull Stations"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0227 as Double Action Pull Stations in the Conventional Initiating Devices collection."
+},
+
+{
+id: 48,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-1026 Genesis LED G4S Series Wall Mount Speakers and Speaker-Strobes",
+question: "Which Edwards notification product is identified by the part number E85001-1026?",
+answers: [
+"Genesis LED G4S Series Wall Mount Speakers and Speaker-Strobes",
+"Genesis LED G4SE Strobe Expander",
+"Genesis Chimes and Chime-Strobes",
+"Genesis Low Frequency Audible Signals"
+],
+correct: 0,
+explanation: "The Edwards speakers and strobes page lists E85001-1026 as Genesis LED G4S Series Wall Mount Speakers and Speaker-Strobes."
+},
+
+{
+id: 49,
+category: "PartNumber",
+difficulty: "Easy",
+product: "E85005-0127 Auxiliary Power Supply",
+question: "Which Edwards power supply product is identified by the part number E85005-0127?",
+answers: [
+"Auxiliary Power Supply",
+"Remote Booster Power Supply",
+"Voltage Regulator with Security Bell Interface",
+"Batteries"
+],
+correct: 0,
+explanation: "Edwards lists E85005-0127 as the Auxiliary Power Supply in the Power Supplies and Accessories collection."
+},
+
+{
+id: 50,
+category: "PartNumber",
+difficulty: "Easy",
+product: "E85001-0545 Signal Master",
+question: "Which Edwards accessory is identified by the part number E85001-0545?",
+answers: [
+"Signal Master",
+"Bell-Strobe Plate",
+"Protective Hoods, Grills, and Grids",
+"Surface Mount Boxes"
+],
+correct: 0,
+explanation: "The Power Supplies and Accessories page lists E85001-0545 as Signal Master."
+},
+
+{
+id: 51,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0297 Input Modules",
+question: "Which Edwards product is identified by the part number E85001-0297?",
+answers: [
+"Input Modules",
+"Input-Output Modules",
+"Signal Modules",
+"Riser Monitor Modules"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0297 as an Input Modules product in the Intelligent Input/Output Modules collection."
+},
+
+{
+id: 52,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0275 Class A, B Signal Modules",
+question: "Which Edwards product is identified by the part number E85001-0275?",
+answers: [
+"Class A, B Signal Modules",
+"Input Modules",
+"Riser Monitor Modules",
+"Input-Output Modules"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0275 as Class A, B Signal Modules in the Intelligent Input/Output Modules collection."
+},
+
+{
+id: 53,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0535 Riser Monitor Modules",
+question: "Which Edwards product is identified by the part number E85001-0535?",
+answers: [
+"Riser Monitor Modules",
+"Signal Modules",
+"Input Modules",
+"Remote Booster Power Supplies"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0535 as Riser Monitor Modules in the Intelligent Input/Output Modules collection."
+},
+
+{
+id: 54,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0533 Input-Output Modules",
+question: "Which Edwards product is identified by the part number E85001-0533?",
+answers: [
+"Input-Output Modules",
+"Signal Modules",
+"Input Modules",
+"Riser Monitor Modules"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0533 as Input-Output Modules in the Intelligent Input/Output Modules collection."
+},
+
+{
+id: 55,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0241 Input Modules",
+question: "Which Edwards product is identified by the part number E85001-0241?",
+answers: [
+"Input Modules",
+"Signal Modules",
+"Input-Output Modules",
+"Riser Monitor Modules"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0241 as Input Modules in the Intelligent Input/Output Modules collection."
+},
+
+{
+id: 56,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0237 Signal Modules",
+question: "Which Edwards product is identified by the part number E85001-0237?",
+answers: [
+"Signal Modules",
+"Input Modules",
+"Riser Monitor Modules",
+"Input-Output Modules"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0237 as Signal Modules in the Intelligent Input/Output Modules collection."
+},
+
+{
+id: 57,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-1051 Genesis Ceiling Mount High Candela Strobes & Speaker Strobes",
+question: "Which Edwards notification product is identified by the part number E85001-1051?",
+answers: [
+"Genesis Ceiling Mount High Candela Strobes & Speaker Strobes",
+"Genesis Wall Mount Mass Notification",
+"Genesis Outdoor Speakers and Strobes",
+"Genesis Chimes and Chime-Strobes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-1051 as a Genesis ceiling-mount high-candela strobe and speaker-strobe product."
+},
+
+{
+id: 58,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-1050 Genesis Ceiling Mount Mass Notification",
+question: "Which Edwards notification product is identified by the part number E85001-1050?",
+answers: [
+"Genesis Ceiling Mount Mass Notification",
+"Genesis Wall Mount Mass Notification",
+"Genesis Outdoor Horns and Strobes",
+"Genesis Low Frequency Audible Signals"
+],
+correct: 0,
+explanation: "Edwards lists E85001-1050 as Genesis Ceiling Mount Mass Notification."
+},
+
+{
+id: 59,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-1027 Genesis Wall Mount Mass Notification",
+question: "Which Edwards notification product is identified by the part number E85001-1027?",
+answers: [
+"Genesis Wall Mount Mass Notification",
+"Genesis Ceiling Mount Mass Notification",
+"Genesis Outdoor Speakers and Strobes",
+"Harsh Environment Strobes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-1027 as Genesis Wall Mount Mass Notification."
+},
+
+{
+id: 60,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0293 8-inch Speaker and Speaker-Strobe",
+question: "Which Edwards notification product is identified by the part number E85001-0293?",
+answers: [
+"8-inch Speaker and Speaker-Strobe",
+"4-inch Ceiling Speakers and Speaker-Strobes",
+"Genesis Outdoor Horns and Strobes",
+"Hazardous Location Horns"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0293 as an 8-inch Speaker and Speaker-Strobe."
+},
+
+{
+id: 61,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0289 8-inch Ceiling Speakers and Speaker-Strobes",
+question: "Which Edwards notification product is identified by the part number E85001-0289?",
+answers: [
+"8-inch Ceiling Speakers and Speaker-Strobes",
+"8-inch Speaker and Speaker-Strobe",
+"Genesis Outdoor Speakers and Strobes",
+"Hazardous Location Strobes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0289 as 8-inch Ceiling Speakers and Speaker-Strobes."
+},
+
+{
+id: 62,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0283 4-inch Ceiling Speakers and Speaker-Strobes",
+question: "Which Edwards notification product is identified by the part number E85001-0283?",
+answers: [
+"4-inch Ceiling Speakers and Speaker-Strobes",
+"8-inch Ceiling Speakers and Speaker-Strobes",
+"Genesis Outdoor Speakers and Strobes",
+"Weatherproof Mounting Boxes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0283 as 4-inch Ceiling Speakers and Speaker-Strobes."
+},
+
+{
+id: 63,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0626 Genesis Outdoor Speakers and Strobes",
+question: "Which Edwards notification product is identified by the part number E85001-0626?",
+answers: [
+"Genesis Outdoor Speakers and Strobes",
+"Genesis Outdoor Horns and Strobes",
+"Genesis Wall Mount Mass Notification",
+"Genesis Ceiling Mount Mass Notification"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0626 as Genesis Outdoor Speakers and Strobes."
+},
+
+{
+id: 64,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0591 Multi-purpose Loudspeaker, 15 Watt",
+question: "Which Edwards notification product is identified by the part number E85001-0591?",
+answers: [
+"Multi-purpose Loudspeaker, 15 Watt",
+"Hazardous Location Horns",
+"Weatherproof Mounting Boxes",
+"Genesis Outdoor Horns and Strobes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0591 as a Multi-purpose Loudspeaker, 15 Watt."
+},
+
+{
+id: 65,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0317 Integrity Re-entrant Speaker and Speaker-Strobe",
+question: "Which Edwards notification product is identified by the part number E85001-0317?",
+answers: [
+"Integrity Re-entrant Speaker and Speaker-Strobe",
+"Integrity Speaker and Speaker-Strobe",
+"Genesis Outdoor Speakers and Strobes",
+"Weatherproof Mounting Boxes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0317 as the Integrity Re-entrant Speaker and Speaker-Strobe."
+},
+
+{
+id: 66,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0315 Integrity Speaker and Speaker-Strobe",
+question: "Which Edwards notification product is identified by the part number E85001-0315?",
+answers: [
+"Integrity Speaker and Speaker-Strobe",
+"Integrity Re-entrant Speaker and Speaker-Strobe",
+"Genesis Outdoor Horns and Strobes",
+"Hazardous Location Horns"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0315 as the Integrity Speaker and Speaker-Strobe."
+},
+
+{
+id: 67,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-1030 Genesis Outdoor-Rated Horns, Strobes, and Horn-Strobes",
+question: "Which Edwards notification product is identified by the part number E85001-1030?",
+answers: [
+"Genesis Outdoor-Rated Horns, Strobes, and Horn-Strobes",
+"Genesis Outdoor-Rated Speakers and Speaker-Strobes",
+"Genesis Wall Mount Mass Notification",
+"Harsh Environment Strobes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-1030 as Genesis Outdoor-Rated Horns, Strobes, and Horn-Strobes."
+},
+
+{
+id: 68,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-1031 Genesis Outdoor-Rated Speakers and Speaker-Strobes",
+question: "Which Edwards notification product is identified by the part number E85001-1031?",
+answers: [
+"Genesis Outdoor-Rated Speakers and Speaker-Strobes",
+"Genesis Outdoor-Rated Horns, Strobes, and Horn-Strobes",
+"Genesis Wall Mount Mass Notification",
+"Weatherproof Mounting Boxes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-1031 as Genesis Outdoor-Rated Speakers and Speaker-Strobes."
+},
+
+{
+id: 69,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0391 Horn-Siren Combination",
+question: "Which Edwards notification product is identified by the part number E85001-0391?",
+answers: [
+"Horn-Siren Combination",
+"Hazardous Location Bells",
+"Hazardous Location Horns",
+"Weatherproof Mounting Boxes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0391 as a Horn-Siren Combination."
+},
+
+{
+id: 70,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0399 Hazardous Location Bells",
+question: "Which Edwards notification product is identified by the part number E85001-0399?",
+answers: [
+"Hazardous Location Bells",
+"Hazardous Location Horns",
+"Horn-Siren Combination",
+"Weatherproof Mounting Boxes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0399 as Hazardous Location Bells."
+},
+
+{
+id: 71,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0397 Hazardous Location Horns",
+question: "Which Edwards notification product is identified by the part number E85001-0397?",
+answers: [
+"Hazardous Location Horns",
+"Hazardous Location Bells",
+"Horn-Siren Combination",
+"Harsh Environment Strobes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0397 as Hazardous Location Horns."
+},
+
+{
+id: 72,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0387 Hazardous Location Multiple Tone Signal",
+question: "Which Edwards notification product is identified by the part number E85001-0387?",
+answers: [
+"Hazardous Location Multiple Tone Signal",
+"Hazardous Location Horns",
+"Hazardous Location Bells",
+"Weatherproof Mounting Boxes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0387 as a Hazardous Location Multiple Tone Signal."
+},
+
+{
+id: 73,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0385 Hazardous Location Horns and Sirens",
+question: "Which Edwards notification product is identified by the part number E85001-0385?",
+answers: [
+"Hazardous Location Horns and Sirens",
+"Hazardous Location Multiple Tone Signal",
+"Hazardous Location Bells",
+"Genesis Outdoor Horns and Strobes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0385 as Hazardous Location Horns and Sirens."
+},
+
+{
+id: 74,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0628 Genesis Outdoor Horns and Strobes",
+question: "Which Edwards notification product is identified by the part number E85001-0628?",
+answers: [
+"Genesis Outdoor Horns and Strobes",
+"Genesis Outdoor Speakers and Strobes",
+"Hazardous Location Horns",
+"Weatherproof Mounting Boxes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0628 as Genesis Outdoor Horns and Strobes."
+},
+
+{
+id: 75,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0309 Weatherproof Mounting Boxes",
+question: "Which Edwards notification accessory is identified by the part number E85001-0309?",
+answers: [
+"Weatherproof Mounting Boxes",
+"Harsh Environment Strobes",
+"Hazardous Location Strobes",
+"Genesis Outdoor Speakers and Strobes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0309 as Weatherproof Mounting Boxes."
+},
+
+{
+id: 76,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0305 Harsh Environment Strobes",
+question: "Which Edwards notification product is identified by the part number E85001-0305?",
+answers: [
+"Harsh Environment Strobes",
+"Weatherproof Mounting Boxes",
+"Hazardous Location Strobes",
+"Genesis Outdoor Horns and Strobes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0305 as Harsh Environment Strobes."
+},
+
+{
+id: 77,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0624 Hazardous Location Strobes",
+question: "Which Edwards notification product is identified by the part number E85001-0624?",
+answers: [
+"Hazardous Location Strobes",
+"Harsh Environment Strobes",
+"Genesis Outdoor Horns and Strobes",
+"Weatherproof Mounting Boxes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0624 as Hazardous Location Strobes."
+},
+
+{
+id: 78,
+category: "PartNumber",
+difficulty: "Medium",
+product: "E85001-0655 Signature Series Diagnostic Tool",
+question: "Which Edwards product is identified by the part number E85001-0655?",
+answers: [
+"Signature Series Diagnostic Tool",
+"Auxiliary Power Supply",
+"Signal Master",
+"Weatherproof Mounting Boxes"
+],
+correct: 0,
+explanation: "Edwards lists E85001-0655 as the Signature Series Diagnostic Tool."
 }
 
 ];

@@ -70,6 +70,8 @@ document
 .getElementById("module2Button")
 .onclick = () => startQuiz(2);
 
+updateStats();
+
 function startQuiz(module = 1){
 
     currentModule = module;
@@ -196,7 +198,7 @@ function updateStats(){
 
 incorrectCounter.innerText = incorrect;
 
-xpCounter.innerText = xp;
+xpCounter.innerText = xp + " XP";
 let level =
 Math.floor(xp/100)+1;
 

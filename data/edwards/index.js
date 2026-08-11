@@ -104,7 +104,7 @@ const productLibrary = {
             model: "iO Communications Bridge",
             verification: "VERIFIED",
             sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85010-0156%20--%20iO%20Communications%20Bridge.pdf",
-            image: "https://www.fireprojects.co.in/assets/uploads/media-uploader/large-edwards-fsb-pc4-lw1760174804.JPG",
+            image: "",
             officialDescription: "Official Edwards catalog sheet listing for the iO Communications Bridge under Small Building Fire Alarm Solutions.",
             features: [
                 "Listed by Edwards as an iO Series communications bridge component.",
@@ -125,7 +125,7 @@ const productLibrary = {
             model: "EDGE-ML Fire Alarm Systems",
             verification: "VERIFIED",
             sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85008-0001%20--%20EDGE-ML%20Fire%20Alarm%20Systems%20Datasheet.pdf",
-            image: "https://dyn.mktgcdn.com/p/R68L7TwCC-EEkyFZ1EeIfiKYsDSolMSSzFUG3xn6Eo8/width=640,height=966",
+            image: "",
             officialDescription: "The Edge Series gives you the quality of Edwards systems tailored for mid-sized applications with faster installation, simpler maintenance, affordable system upgrades, and user-friendly operation.",
             features: [
                 "10-inch touchscreen with tap-and-go navigation.",
@@ -235,7 +235,7 @@ const productLibrary = {
             model: "SIGA-HPR High Power Control Relay Module",
             verification: "VERIFIED",
             sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0644%20--%20High%20Power%20Control%20Relay%20Module.pdf",
-            image: "https://firealarm.com/wp-content/uploads/2021/01/Edwards-One-Gang-Module.jpg",
+            image: "",
             officialDescription: "Official Edwards Intelligent Input/Output Modules catalog listing for the High Power Control Relay Module.",
             features: [
                 "High-power control relay module category.",
@@ -277,7 +277,7 @@ const productLibrary = {
             model: "Genesis LED G4 Series Wall Mount Notification Devices",
             verification: "VERIFIED",
             sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0668%20--%20Genesis%20LED%20G4%20Series%20Wall%20Mount%20Notification%20Devices.pdf",
-            image: "https://www.kidde-esfire.com/Content/Images/Genesis_LED_Mass_Notification_Series.jpg",
+            image: "",
             officialDescription: "Genesis notification appliances deliver the latest notification technology along with looks and features ideal for facilities of all sizes. Genesis brings on-demand notification to every application with field-configurable options including high/low dB output settings, wattage tap selections, and selectable candela output and flash rate.",
             features: [
                 "Wall-mount notification device category.",
@@ -300,7 +300,7 @@ const productLibrary = {
             model: "Genesis LED G1 Series Compact Notification Devices",
             verification: "VERIFIED",
             sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0667%20--%20Genesis%20LED%20G1%20Series%20Compact%20Notification%20Devices.pdf",
-            image: "https://priority.edwardsfiresafety.com/Content/Images/LandingPages/genesis_group.png",
+            image: "",
             officialDescription: "Genesis notification appliances are designed to deliver on-demand notification with configurable visual and audible options while maintaining discreet device profiles.",
             features: [
                 "Compact notification device category.",
@@ -321,7 +321,7 @@ const productLibrary = {
             model: "Genesis LED G4LF Series Low Frequency",
             verification: "VERIFIED",
             sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-1052%20--%20Edwards%20Genesis%20LED%20G4LF%20Series%20Low%20Frequency%20Datasheet.pdf",
-            image: "https://firealarm.com/wp-content/uploads/2018/07/Edwards-Signaling-G4FWF-H.jpg",
+            image: "",
             officialDescription: "Genesis notification appliances provide a broad range of field-configurable options, including low frequency signaling product variants for application-specific notification requirements.",
             features: [
                 "Low-frequency Genesis LED signaling category.",
@@ -342,7 +342,7 @@ const productLibrary = {
             model: "Genesis LED GCS Series Ceiling Mount Speakers and Speaker-Strobes",
             verification: "VERIFIED",
             sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-1025%20--%20Genesis%20LED%20GCS%20Series%20Ceiling%20Mount%20Speakers%20and%20Speaker-Strobes.pdf",
-            image: "https://firealarm.com/wp-content/uploads/2023/01/GCSWF.jpg",
+            image: "",
             officialDescription: "Genesis speakers and speaker-strobes are part of the Edwards notification lineup, designed to blend with facilities while providing configurable notification output options.",
             features: [
                 "Ceiling-mount speaker and speaker-strobe category.",
@@ -405,7 +405,7 @@ const productLibrary = {
             model: "SIGA-PD Intelligent Photoelectric Smoke Detector",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/c0bb0e9415247cb97707075204a89237/d/s/dscn1141.png",
+            image: "",
             officialDescription: "Legacy Signature detection model maintained in Edwards Signature ecosystem references.",
             features: [
                 "Legacy Signature photoelectric smoke detection.",
@@ -426,7 +426,7 @@ const productLibrary = {
             model: "SIGA-PS Intelligent Photoelectric Smoke Detector (legacy variant)",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/c0bb0e9415247cb97707075204a89237/i/m/img_0528_2_2.png",
+            image: "",
             officialDescription: "Legacy Signature photoelectric detector variant still seen in installed-base documentation and service workflows.",
             features: [
                 "Legacy Signature photoelectric smoke detector variant.",
@@ -447,7 +447,7 @@ const productLibrary = {
             model: "SIGA-PHS Intelligent Photoelectric Smoke & Heat Detector",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/c0bb0e9415247cb97707075204a89237/i/m/img_0528_2_1.png",
+            image: "",
             officialDescription: "Legacy Signature combined smoke and heat detector listed within Edwards Signature initiating device ecosystem references.",
             features: [
                 "Combined photoelectric smoke and heat sensing.",
@@ -468,7 +468,7 @@ const productLibrary = {
             model: "SIGA-PHD Intelligent Multisensor Detector",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/c0bb0e9415247cb97707075204a89237/d/s/dscn1026_1.png",
+            image: "",
             officialDescription: "Legacy Signature multisensor detector model listed in Edwards Signature initiating device references.",
             features: [
                 "Legacy multisensor detector model.",
@@ -489,7 +489,7 @@ const productLibrary = {
             model: "SIGA-HFS Fixed Temperature Heat Detector",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/c0bb0e9415247cb97707075204a89237/d/s/dscn1671_2.png",
+            image: "",
             officialDescription: "Legacy Signature fixed-temperature heat detection model in Edwards Signature initiating device ecosystem references.",
             features: [
                 "Fixed-temperature intelligent heat detection.",
@@ -510,7 +510,7 @@ const productLibrary = {
             model: "SIGA-HRS Rate-of-Rise Heat Detector",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/c0bb0e9415247cb97707075204a89237/d/s/dscn0852_2.png",
+            image: "",
             officialDescription: "Legacy Signature rate-of-rise heat detection model in Edwards Signature initiating device references.",
             features: [
                 "Rate-of-rise thermal detection behavior.",
@@ -531,7 +531,7 @@ const productLibrary = {
             model: "SIGA-CO Intelligent Carbon Monoxide Detector",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
-            image: "https://images.carriercms.com/image/upload/v1650658069/edwards/Lifelines/Images/Intelligent-Devices/SIGA-COD.png",
+            image: "",
             officialDescription: "Legacy Signature intelligent CO detector model found in Edwards Signature detection references and installed-base documentation.",
             features: [
                 "CO-specific intelligent detection.",
@@ -552,7 +552,7 @@ const productLibrary = {
             model: "SIGA-CC1 Single Input Monitor Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
-            image: "https://images.carriercms.com/image/upload/v1650657933/edwards/Lifelines/Images/Input-Output-Modules/One-gang-IO-Module.jpg",
+            image: "",
             officialDescription: "Common Signature monitor module used for single input monitoring in Edwards addressable module architecture.",
             features: [
                 "Single input monitor module.",
@@ -573,7 +573,7 @@ const productLibrary = {
             model: "SIGA-CC2 Dual Input Monitor Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/f32a31ae2a5f6b766abb5a113edc0501/e/s/est_siga-cc2.png",
+            image: "",
             officialDescription: "Signature dual input monitor module used for monitoring two initiating inputs within Edwards addressable systems.",
             features: [
                 "Dual input monitoring capability.",
@@ -594,7 +594,7 @@ const productLibrary = {
             model: "SIGA-MCC1 Miniature Single Input Monitor Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/f32a31ae2a5f6b766abb5a113edc0501/i/m/img_4007_edited.jpg",
+            image: "",
             officialDescription: "Miniature Signature single input monitor module used where compact installation form factor is required.",
             features: [
                 "Miniature form factor.",
@@ -615,7 +615,7 @@ const productLibrary = {
             model: "SIGA-MCC2 Miniature Dual Input Monitor Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/f32a31ae2a5f6b766abb5a113edc0501/d/s/dscn0530.png",
+            image: "",
             officialDescription: "Miniature Signature dual input monitor module for compact two-channel input monitoring applications.",
             features: [
                 "Miniature dual input monitoring.",
@@ -636,7 +636,7 @@ const productLibrary = {
             model: "SIGA-RM1 Riser Monitor Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/c0bb0e9415247cb97707075204a89237/i/m/img_3994_edited.jpg",
+            image: "",
             officialDescription: "Signature riser monitor module used in riser monitoring applications within Edwards intelligent module architectures.",
             features: [
                 "Riser monitor functionality.",
@@ -657,7 +657,7 @@ const productLibrary = {
             model: "SIGA-CT1 Single Output Control Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/f32a31ae2a5f6b766abb5a113edc0501/d/s/dscn1134.png",
+            image: "",
             officialDescription: "Common Signature control module used for single output control in Edwards addressable systems.",
             features: [
                 "Single output control.",
@@ -678,7 +678,7 @@ const productLibrary = {
             model: "SIGA-CT2 Dual Output Control Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
-            image: "https://images.carriercms.com/image/upload/v1650657933/edwards/Lifelines/Images/Input-Output-Modules/Two-gang-IO-Module.jpg",
+            image: "https://firealarm.com/wp-content/uploads/2021/01/SIGA-CT2-main.jpg",
             officialDescription: "Common Signature dual output control module used for two-channel output control in Edwards systems.",
             features: [
                 "Dual output control channels.",
@@ -699,7 +699,7 @@ const productLibrary = {
             model: "SIGA-CR Control Relay Module",
             verification: "VERIFIED",
             sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0239%20--%20Control%20Relay%20Modules.pdf",
-            image: "https://firealarm.com/wp-content/uploads/2021/01/Edwards-One-Gang-Module.jpg",
+            image: "",
             officialDescription: "Signature control relay module for interfacing panel commands to external controlled circuits.",
             features: [
                 "Form C relay style control interface.",
@@ -720,7 +720,7 @@ const productLibrary = {
             model: "SIGA-CRR Reverse Polarity Control Relay Module",
             verification: "VERIFIED",
             sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0239%20--%20Control%20Relay%20Modules.pdf",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/f32a31ae2a5f6b766abb5a113edc0501/e/d/edw_siga-crr.jpg",
+            image: "",
             officialDescription: "Signature reverse-polarity relay module variant used where reverse-polarity relay behavior is required by the design.",
             features: [
                 "Reverse polarity relay behavior.",
@@ -741,7 +741,7 @@ const productLibrary = {
             model: "SIGA-UM Universal Class B Signal Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/f32a31ae2a5f6b766abb5a113edc0501/d/s/dscn0862.png",
+            image: "",
             officialDescription: "Signature universal signal module variant for Class B signaling applications in Edwards intelligent module ecosystems.",
             features: [
                 "Universal signaling functionality.",
@@ -762,7 +762,7 @@ const productLibrary = {
             model: "SIGA-UM2 Universal Class A/B Signal Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
-            image: "https://images.carriercms.com/image/upload/v1650657933/edwards/Lifelines/Images/Input-Output-Modules/IO-Modules.jpg",
+            image: "",
             officialDescription: "Signature universal signal module variant supporting Class A/B signaling applications depending on project topology requirements.",
             features: [
                 "Class A/B signaling flexibility.",
@@ -783,7 +783,7 @@ const productLibrary = {
             model: "SIGA-CC1S Class A Signal Module (varies by market)",
             verification: "VERIFIED",
             sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0609%20--%20Signal%20Modules%20with%20Class%20A%20Operation.pdf",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/c0bb0e9415247cb97707075204a89237/i/m/img_4015_edited_1.jpg",
+            image: "",
             officialDescription: "Class A signal module variant documented in Edwards signal module literature, with availability and naming that can vary by market.",
             features: [
                 "Class A signaling application focus.",
@@ -804,7 +804,7 @@ const productLibrary = {
             model: "SIGA-IM Short Circuit Isolator Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/c0bb0e9415247cb97707075204a89237/d/s/dscn0897.png",
+            image: "",
             officialDescription: "Signature short-circuit isolator module used to limit fault impact in intelligent loop architectures.",
             features: [
                 "Loop fault isolation functionality.",
@@ -825,7 +825,7 @@ const productLibrary = {
             model: "SIGA-RM Releasing Module",
             verification: "VERIFIED",
             sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0531%20--%20Releasing%20Module.pdf",
-            image: "https://images.carriercms.com/image/upload/v1650657933/edwards/Lifelines/Images/Input-Output-Modules/278A-REL.jpg",
+            image: "",
             officialDescription: "Signature releasing module used in releasing-service applications such as pre-action, deluge, and clean-agent systems.",
             features: [
                 "Releasing-service application module.",
@@ -846,7 +846,7 @@ const productLibrary = {
             model: "SIGA-SB Standard Detector Base",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/f32a31ae2a5f6b766abb5a113edc0501/d/s/dscn0883_1.png",
+            image: "",
             officialDescription: "Standard Signature detector base used for compatible Signature detector head mounting and loop connectivity.",
             features: [
                 "Standard Signature detector base format.",
@@ -867,7 +867,7 @@ const productLibrary = {
             model: "SIGA-SB4 Standard Detector Base (4-inch)",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/c0bb0e9415247cb97707075204a89237/d/s/dscn0881.png",
+            image: "",
             officialDescription: "4-inch Signature standard detector base variant used where specific footprint or mounting standards apply.",
             features: [
                 "4-inch base footprint.",
@@ -888,7 +888,7 @@ const productLibrary = {
             model: "SIGA-IB Isolator Detector Base",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/f32a31ae2a5f6b766abb5a113edc0501/e/s/est_siga-ib.jpg",
+            image: "",
             officialDescription: "Signature isolator detector base variant adding isolation functionality at detector base locations.",
             features: [
                 "Detector base with isolation behavior.",
@@ -909,7 +909,7 @@ const productLibrary = {
             model: "SIGA-IB4 Isolator Detector Base (4-inch)",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/f32a31ae2a5f6b766abb5a113edc0501/e/s/est_siga-ib4.jpg",
+            image: "",
             officialDescription: "4-inch Signature isolator detector base variant for detector mounting with integrated isolation behavior.",
             features: [
                 "4-inch isolator base footprint.",
@@ -930,7 +930,7 @@ const productLibrary = {
             model: "SIGA-AB4G Audible Sounder Base",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/f32a31ae2a5f6b766abb5a113edc0501/e/d/edwards_est_siga-ab4g-lf_2_edited.jpg",
+            image: "",
             officialDescription: "Signature audible sounder base accessory used to provide local audible output at detector base positions.",
             features: [
                 "Audible sounder base functionality.",
@@ -951,7 +951,7 @@ const productLibrary = {
             model: "SIGA-LED Remote LED Indicator",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/f32a31ae2a5f6b766abb5a113edc0501/d/s/dscn0887.png",
+            image: "",
             officialDescription: "Signature remote LED indicator accessory used for remote visual status indication of associated initiating devices.",
             features: [
                 "Remote visual indication.",
@@ -972,7 +972,7 @@ const productLibrary = {
             model: "SIGA-270 Single Action Intelligent Pull Station",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/conventional-initiating-devices/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/f32a31ae2a5f6b766abb5a113edc0501/d/s/dscn0854.png",
+            image: "",
             officialDescription: "Signature intelligent manual pull station model for single-action manual initiation in Edwards system designs.",
             features: [
                 "Single-action manual initiation.",
@@ -993,7 +993,7 @@ const productLibrary = {
             model: "SIGA-278 Double Action Intelligent Pull Station",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/conventional-initiating-devices/",
-            image: "https://www.buyfirealarmparts.com/shop/pub/media/catalog/product/cache/c0bb0e9415247cb97707075204a89237/s/i/siga-278_edited.jpg",
+            image: "",
             officialDescription: "Signature intelligent double-action pull station model for manual fire alarm initiation where double-action operation is required.",
             features: [
                 "Double-action manual initiation.",
@@ -1004,6 +1004,1714 @@ const productLibrary = {
             commonMistakes: [
                 "Selecting station action type without confirming project and AHJ requirements.",
                 "Mixing single-action and double-action station assumptions in BOM counts."
+            ]
+        },
+        {
+            id: 52,
+            manufacturer: "Edwards",
+            family: "Detector Bases",
+            category: "Audible Sounder Base (Low Frequency)",
+            model: "SIGA-AB4G-LF Audible Sounder Base (Low Frequency)",
+            verification: "VERIFIED",
+            sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
+            image: "",
+            officialDescription: "Official Edwards listing for the Signature audible sounder base low-frequency variant used where low-frequency notification is specified.",
+            features: [
+                "Low-frequency sounder base variant.",
+                "Fits the Signature detector base accessory ecosystem."
+            ],
+            quizQuestions: [],
+            howItWorks: "The base adds low-frequency audible signaling at detector locations while keeping the detector mounting and loop interface intact.",
+            commonMistakes: [
+                "Assuming standard sounder bases are interchangeable with low-frequency variants.",
+                "Ignoring occupancy-specific low-frequency design criteria."
+            ]
+        },
+        {
+            id: 53,
+            manufacturer: "Edwards",
+            family: "Legacy Signature Detection",
+            category: "Intelligent Multisensor Smoke and CO Detector",
+            model: "SIGA-PCD Intelligent Multisensor Smoke and CO Detector",
+            verification: "VERIFIED",
+            sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
+            image: "",
+            officialDescription: "Official Edwards intelligent initiating device listing for the Signature multisensor smoke and CO detector family variant.",
+            features: [
+                "Multisensor smoke and CO detection capability.",
+                "Part of the legacy Signature initiating device ecosystem."
+            ],
+            quizQuestions: [],
+            howItWorks: "The detector evaluates smoke and carbon monoxide conditions and reports intelligent status to compatible panel logic.",
+            commonMistakes: [
+                "Assuming multisensor smoke and CO devices provide the same sensing profile as single-criteria detector variants.",
+                "Using model names interchangeably without checking the exact sensing combination."
+            ]
+        },
+        {
+            id: 54,
+            manufacturer: "Edwards",
+            family: "Legacy Signature Detection",
+            category: "Intelligent Multisensor Smoke, Heat and CO Detector",
+            model: "SIGA-PHCD Intelligent Multisensor Smoke, Heat and CO Detector",
+            verification: "VERIFIED",
+            sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
+            image: "",
+            officialDescription: "Official Edwards intelligent initiating device listing for the Signature multisensor smoke, heat, and CO detector variant.",
+            features: [
+                "Combined smoke, heat, and CO sensing capability.",
+                "Part of the legacy Signature multisensor detector family."
+            ],
+            quizQuestions: [],
+            howItWorks: "The detector combines smoke, thermal, and CO sensing inputs and communicates addressable status to the fire alarm system.",
+            commonMistakes: [
+                "Treating this as a standard smoke-only device without verifying its heat and CO functions.",
+                "Assuming all multisensor products use the same sensing mix."
+            ]
+        },
+        {
+            id: 55,
+            manufacturer: "Edwards",
+            family: "Motion Detection",
+            category: "PIR Motion Detector",
+            model: "SIGA-MD Signature PIR Motion Detector",
+            verification: "VERIFIED",
+            sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
+            image: "",
+            officialDescription: "Official Edwards intelligent device listing for the Signature PIR motion detector accessory family.",
+            features: [
+                "PIR-based motion detection capability.",
+                "Used in Signature system accessory and monitoring workflows."
+            ],
+            quizQuestions: [],
+            howItWorks: "The detector reports occupancy or motion-related status through the Signature system architecture for the intended application logic.",
+            commonMistakes: [
+                "Assuming motion detectors behave like standard initiating devices in all applications.",
+                "Ignoring the intended use case and placement criteria when selecting motion-based devices."
+            ]
+        },
+        {
+            id: 56,
+            manufacturer: "Edwards",
+            family: "Motion Detection",
+            category: "PIR Motion Detector (Swivel Mount)",
+            model: "SIGA-MDS Signature PIR Motion Detector Swivel Mount",
+            verification: "VERIFIED",
+            sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
+            image: "",
+            officialDescription: "Official Edwards intelligent device listing for the Signature PIR motion detector swivel-mount variant.",
+            features: [
+                "Swivel-mount mechanical adaptation for PIR motion detection.",
+                "Designed for applications where detector orientation needs adjustment."
+            ],
+            quizQuestions: [],
+            howItWorks: "The swivel-mount version provides the same motion-detection function with a fixed orientation option suited to installation geometry.",
+            commonMistakes: [
+                "Assuming all PIR detectors share the same mounting approach.",
+                "Overlooking placement geometry when selecting the swivel-mount variant."
+            ]
+        },
+        {
+            id: 57,
+            manufacturer: "Edwards",
+            family: "System Cabinets",
+            category: "Complete Cabinet",
+            model: "SIGA-SEC2 Complete Cabinet",
+            verification: "VERIFIED",
+            sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
+            image: "",
+            officialDescription: "Official Edwards intelligent device listing for the Signature complete cabinet used with local rail module spaces.",
+            features: [
+                "Wallbox and door with five local rail module spaces.",
+                "Used as a cabinet solution within the Signature ecosystem."
+            ],
+            quizQuestions: [],
+            howItWorks: "The cabinet provides enclosure support and module-space capacity for Signature-system equipment layouts.",
+            commonMistakes: [
+                "Treating cabinet hardware as interchangeable with field device modules.",
+                "Ignoring module-space capacity and enclosure planning."
+            ]
+        },
+        {
+            id: 58,
+            manufacturer: "Edwards",
+            family: "Accessories",
+            category: "System Accessory",
+            model: "SIGA-TS Signature System Accessory",
+            verification: "VERIFIED",
+            sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
+            image: "",
+            officialDescription: "Official Edwards intelligent device listing for the Signature accessory identified as SIGA-TS.",
+            features: [
+                "Listed by Edwards as a Signature accessory.",
+                "Supports the broader Signature module and device ecosystem."
+            ],
+            quizQuestions: [],
+            howItWorks: "This accessory item is part of the Signature product family and should be treated as a system accessory rather than a primary initiating device.",
+            commonMistakes: [
+                "Assuming every Signature accessory has the same function as a detector or module.",
+                "Overlooking accessory-specific installation context during BOM review."
+            ]
+        },
+        {
+            id: 59,
+            manufacturer: "Edwards",
+            family: "Accessories",
+            category: "Detector Mounting Plate",
+            model: "SIGA-DMP Detector Mounting Plate",
+            verification: "VERIFIED",
+            sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-initiating-devices/",
+            image: "",
+            officialDescription: "Official Edwards intelligent device listing for the Signature detector mounting plate used in raised-floor and plenum applications.",
+            features: [
+                "Raised-floor and plenum mounting support.",
+                "Used as a detector mounting accessory within the Signature ecosystem."
+            ],
+            quizQuestions: [],
+            howItWorks: "The mounting plate provides the required mechanical interface for detector placement in non-standard or constrained ceiling or floor spaces.",
+            commonMistakes: [
+                "Assuming a standard detector base is sufficient in plenum or raised-floor layouts.",
+                "Ignoring mounting-plate requirements when reviewing installation details."
+            ]
+        },
+        {
+            id: 60,
+            manufacturer: "Edwards",
+            family: "Input/Output Modules",
+            category: "Synchronization Output Module",
+            model: "E85001-0543 Synchronization Output Module",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0543%20--%20Synchronization%20Output%20Module.pdf",
+            image: "",
+            officialDescription: "Official Edwards Intelligent Input/Output Modules catalog listing for the Synchronization Output Module.",
+            features: [
+                "Listed by Edwards as a synchronization output module.",
+                "Included in the Intelligent Input/Output Modules literature set."
+            ],
+            quizQuestions: [44],
+            howItWorks: "The module provides synchronization output behavior in Edwards intelligent system architectures according to the documented product listing.",
+            commonMistakes: [
+                "Treating the module as a generic control module without confirming its synchronization role.",
+                "Assuming all output modules share the same function and wiring intent."
+            ]
+        },
+        {
+            id: 61,
+            manufacturer: "Edwards",
+            family: "Input/Output Modules",
+            category: "Universal Input-Output Module Motherboards",
+            model: "E85001-0365 Universal Input-Output Module Motherboards",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0365%20--%20Universal%20Input-Output%20Module%20Motherboards.pdf",
+            image: "",
+            officialDescription: "Official Edwards Intelligent Input/Output Modules catalog listing for Universal Input-Output Module Motherboards.",
+            features: [
+                "Listed by Edwards as universal input-output module motherboards.",
+                "Part of the Edwards intelligent module ecosystem documentation."
+            ],
+            quizQuestions: [45],
+            howItWorks: "These motherboards provide a documented hardware platform for Edwards intelligent input-output module applications in the product listing.",
+            commonMistakes: [
+                "Assuming all module hardware is interchangeable without checking the documented motherboard listing.",
+                "Treating the product as a generic field device rather than a module platform component."
+            ]
+        },
+        {
+            id: 62,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Beam Smoke Detector",
+            model: "E85001-0743 Fireray Smoke Beam Detector",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0743%20--%20Fireray%20Smoke%20Beam%20Detector.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for the Fireray Smoke Beam Detector.",
+            features: [
+                "Listed by Edwards as a beam smoke detector product.",
+                "Part of the conventional initiating devices collection."
+            ],
+            quizQuestions: [46],
+            howItWorks: "The detector is documented as a dedicated beam smoke detector product in Edwards conventional initiating devices literature.",
+            commonMistakes: [
+                "Assuming all smoke detectors are point-type detectors without checking the beam-detector category.",
+                "Using conventional detector assumptions when a beam detector is actually specified."
+            ]
+        },
+        {
+            id: 63,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Beam Smoke Detector",
+            model: "E85001-0643 End-to-End Beam Smoke Detector",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0643%20--%20End-to-End%20Beam%20Smoke%20Detector.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for the End-to-End Beam Smoke Detector.",
+            features: [
+                "Listed by Edwards as an end-to-end beam smoke detector.",
+                "Appears in the conventional initiating devices collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "This product is documented as a conventional beam detector option in Edwards initiating device literature.",
+            commonMistakes: [
+                "Treating beam detectors as interchangeable with point detectors without confirming the application.",
+                "Overlooking detector technology differences when reviewing project documents."
+            ]
+        },
+        {
+            id: 64,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Explosionproof Smoke Detector",
+            model: "E85001-0645 Explosionproof Smoke Detector",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0645%20--%20Explosionproof%20Smoke%20Detector.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for the Explosionproof Smoke Detector.",
+            features: [
+                "Listed by Edwards as an explosionproof smoke detector.",
+                "Appears in the conventional initiating devices collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The device is documented as an explosionproof detector product within the conventional initiating devices offering.",
+            commonMistakes: [
+                "Assuming all smoke detectors are suitable for hazardous locations without confirming the product category.",
+                "Ignoring the environmental requirements that drive hazardous-location detector selection."
+            ]
+        },
+        {
+            id: 65,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Carbon Monoxide Detector",
+            model: "E85001-0632 Carbon Monoxide Detector",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0632%20--%20Carbon%20Monoxide%20Detector.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for the Carbon Monoxide Detector.",
+            features: [
+                "Listed by Edwards as a carbon monoxide detector.",
+                "Appears in the conventional initiating devices collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The detector is documented as a carbon monoxide detector product in the conventional initiating devices portfolio.",
+            commonMistakes: [
+                "Assuming CO detection products provide smoke detection as well.",
+                "Using product names interchangeably when the sensing technology differs."
+            ]
+        },
+        {
+            id: 66,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Reflective Beam Detector",
+            model: "E85001-0616 EC5000R Reflective Beam Detector",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0616%20--%20EC5000R%20Reflective%20Beam%20Detector.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for the EC5000R Reflective Beam Detector.",
+            features: [
+                "Listed by Edwards as a reflective beam detector.",
+                "Part of the conventional initiating devices beam-detector offering."
+            ],
+            quizQuestions: [],
+            howItWorks: "The detector is documented as a reflective beam detector product in the conventional initiating devices collection.",
+            commonMistakes: [
+                "Assuming beam detectors are the same as point-type detectors without confirming the application.",
+                "Ignoring the need to verify the exact detector model chosen for the project."
+            ]
+        },
+        {
+            id: 67,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Conventional Smoke and Heat Detector",
+            model: "E85001-0599 Conventional 2-Wire Smoke & Heat Detectors",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0599%20--%20Conventional%202-Wire%20Smoke%20and%20Heat%20Detectors.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for Conventional 2-Wire Smoke & Heat Detectors.",
+            features: [
+                "Listed by Edwards as conventional 2-wire smoke and heat detectors.",
+                "Appears in the conventional initiating devices collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "This product listing documents a conventional smoke and heat detector family in the initiating device line.",
+            commonMistakes: [
+                "Assuming conventional detectors behave the same as addressable detectors.",
+                "Skipping the exact model review when selecting detector families."
+            ]
+        },
+        {
+            id: 68,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Heat Detector",
+            model: "E85001-0589 Rate Compensation Heat Detectors",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0589%20--%20Rate%20Compensation%20Heat%20Detectors.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for Rate Compensation Heat Detectors.",
+            features: [
+                "Listed by Edwards as rate compensation heat detectors.",
+                "Appears in the conventional initiating devices collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "This product is documented as a heat detector family in the conventional initiating devices portfolio.",
+            commonMistakes: [
+                "Treating all heat detectors as identical without checking the design basis.",
+                "Using smoke-detector assumptions when a heat detector is actually needed."
+            ]
+        },
+        {
+            id: 69,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Duct Smoke Detector",
+            model: "E85001-0585 Two-Wire SuperDuct Duct Smoke Detector",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0585%20--%20Two-Wire%20SuperDuct%20Duct%20Smoke%20Detector.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for the Two-Wire SuperDuct Duct Smoke Detector.",
+            features: [
+                "Listed by Edwards as a two-wire SuperDuct duct smoke detector.",
+                "Appears in the conventional initiating devices collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The product is documented as a duct smoke detector option in Edwards conventional initiating devices literature.",
+            commonMistakes: [
+                "Assuming all duct detectors use the same mounting strategy without checking the model.",
+                "Ignoring the distinction between two-wire and four-wire duct detector products."
+            ]
+        },
+        {
+            id: 70,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Duct Smoke Detector",
+            model: "E85001-0583 Four-Wire SuperDuct Duct Smoke Detector",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0583%20--%20Four-Wire%20SuperDuct%20Duct%20Smoke%20Detector.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for the Four-Wire SuperDuct Duct Smoke Detector.",
+            features: [
+                "Listed by Edwards as a four-wire SuperDuct duct smoke detector.",
+                "Appears in the conventional initiating devices collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The product is documented as a four-wire duct smoke detector option in the conventional initiating devices collection.",
+            commonMistakes: [
+                "Assuming two-wire and four-wire devices are interchangeable without reviewing the application.",
+                "Ignoring the distinction between duct detector wiring methods."
+            ]
+        },
+        {
+            id: 71,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Fire Alarm Station",
+            model: "E85001-0303 Fire Alarm Stations",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0303%20--%20Fire%20Alarm%20Stations.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for Fire Alarm Stations.",
+            features: [
+                "Listed by Edwards as fire alarm stations.",
+                "Appears in the conventional initiating devices manual stations collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "This listing documents the conventional manual station offering in the Edwards initiating device collection.",
+            commonMistakes: [
+                "Assuming manual stations are all identical without checking the station type.",
+                "Ignoring project-specific station action requirements."
+            ]
+        },
+        {
+            id: 72,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Pull Station",
+            model: "E85001-0227 Double Action Pull Stations",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0227%20--%20Double%20Action%20Pull%20Stations.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for Double Action Pull Stations.",
+            features: [
+                "Listed by Edwards as double action pull stations.",
+                "Appears in the conventional initiating devices manual stations collection."
+            ],
+            quizQuestions: [47],
+            howItWorks: "The station is documented as a double-action manual initiating device in the conventional portfolio.",
+            commonMistakes: [
+                "Assuming all manual stations use the same operating action.",
+                "Ignoring station-action requirements specified by the project or AHJ."
+            ]
+        },
+        {
+            id: 73,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Pull Station",
+            model: "E85001-0183 Single Action Pull Stations",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0183%20--%20Single%20Action%20Pull%20Stations.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for Single Action Pull Stations.",
+            features: [
+                "Listed by Edwards as single action pull stations.",
+                "Appears in the conventional initiating devices manual stations collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The station is documented as a single-action manual initiating device in the conventional portfolio.",
+            commonMistakes: [
+                "Assuming single-action and double-action station requirements are interchangeable.",
+                "Ignoring the operation type when reviewing station schedules."
+            ]
+        },
+        {
+            id: 74,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Hazardous-Location Station",
+            model: "E85001-0371 Hazardous location Fire Alarm Station",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0371%20--%20Hazardous%20location%20Fire%20Alarm%20Station.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for a Hazardous location Fire Alarm Station.",
+            features: [
+                "Listed by Edwards as a hazardous-location fire alarm station.",
+                "Appears in the conventional initiating devices manual station collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The station is documented as a hazardous-location manual station option in Edwards conventional initiating devices literature.",
+            commonMistakes: [
+                "Assuming standard stations are suitable for hazardous locations without checking the listed product.",
+                "Ignoring environmental conditions when planning manual station selection."
+            ]
+        },
+        {
+            id: 75,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Weatherproof/Explosionproof Pull Station",
+            model: "E85001-0588 Weatherproof, Explosionproof Pull Stations",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0588%20--%20Weatherproof,%20Explosionproof%20Pull%20Stations.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for Weatherproof and Explosionproof Pull Stations.",
+            features: [
+                "Listed by Edwards as weatherproof/explosionproof pull stations.",
+                "Appears in the conventional initiating devices manual stations collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The product is documented as a weatherproof or explosionproof station option within the Edwards conventional initiating devices line.",
+            commonMistakes: [
+                "Assuming standard pull stations are suitable for harsh-environment locations.",
+                "Ignoring special application requirements in station selection."
+            ]
+        },
+        {
+            id: 76,
+            manufacturer: "Edwards",
+            family: "Conventional Initiating Devices",
+            category: "Key-Operated Station",
+            model: "E85001-0654 Key-operated Fire Alarm Station",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0654%20--%20Key-operated%20Fire%20Alarm%20Station.pdf",
+            image: "",
+            officialDescription: "Official Edwards Conventional Initiating Devices catalog listing for the Key-operated Fire Alarm Station.",
+            features: [
+                "Listed by Edwards as a key-operated fire alarm station.",
+                "Appears in the conventional initiating devices manual stations collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The station is documented as a key-operated manual station option in Edwards conventional initiating device literature.",
+            commonMistakes: [
+                "Assuming all manual stations share the same operation method.",
+                "Ignoring the need to verify key-operated station requirements."
+            ]
+        },
+        {
+            id: 77,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Wall Mount Speaker and Speaker-Strobe",
+            model: "E85001-1026 Genesis LED G4S Series Wall Mount Speakers and Speaker-Strobes",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-1026%20--%20Genesis%20LED%20G4S%20Series%20Wall%20Mount%20Speakers%20and%20Speaker-Strobes.pdf",
+            image: "",
+            officialDescription: "Official Edwards speakers and strobes page listing for the Genesis LED G4S Series Wall Mount Speakers and Speaker-Strobes.",
+            features: [
+                "Listed by Edwards as a Genesis wall-mount speaker and speaker-strobe product.",
+                "Appears in the speakers, strobes, horns, bells and chimes collection."
+            ],
+            quizQuestions: [48],
+            howItWorks: "This product is documented as a Genesis wall-mount speaker and speaker-strobe offering in the Edwards notification portfolio.",
+            commonMistakes: [
+                "Assuming all Genesis wall notification products use the same form factor.",
+                "Mixing wall-mount speakers with ceiling-mount models without reviewing the listed product."
+            ]
+        },
+        {
+            id: 78,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Ceiling Mount Notification Device",
+            model: "E85001-1021 Genesis LED GC Series Ceiling Mount Notification Devices",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-1021%20--%20Genesis%20LED%20GC%20Series%20Ceiling%20Mount%20Notification%20Devices.pdf",
+            image: "",
+            officialDescription: "Official Edwards speakers and strobes page listing for the Genesis LED GC Series Ceiling Mount Notification Devices.",
+            features: [
+                "Listed by Edwards as a Genesis ceiling mount notification device family.",
+                "Appears in the speakers, strobes, horns, bells and chimes collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "This product is documented as a Genesis ceiling-mount notification device offering in Edwards notification literature.",
+            commonMistakes: [
+                "Assuming ceiling-mounted notification devices are interchangeable with wall-mounted models.",
+                "Ignoring the ceiling-mount product family when reviewing notification schedules."
+            ]
+        },
+        {
+            id: 79,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Strobe Expander",
+            model: "E85001-0614 Genesis LED G4SE Strobe Expander",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0614%20---%20Genesis%20LED%20G4SE%20Strobe%20Expander.pdf",
+            image: "",
+            officialDescription: "Official Edwards speakers and strobes page listing for the Genesis LED G4SE Strobe Expander.",
+            features: [
+                "Listed by Edwards as a Genesis strobe expander.",
+                "Appears in the speakers, strobes, horns, bells and chimes collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The strobe expander is documented as a Genesis notification accessory within the Edwards notification lineup.",
+            commonMistakes: [
+                "Treating the strobe expander as a complete notification appliance rather than an accessory component.",
+                "Ignoring the distinction between appliance and expander products."
+            ]
+        },
+        {
+            id: 80,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Chime and Chime-Strobe",
+            model: "E85001-0574 Genesis Chimes and Chime-Strobes",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0574%20--%20Genesis%20Chimes%20and%20Chime-Strobes.pdf",
+            image: "",
+            officialDescription: "Official Edwards speakers and strobes page listing for Genesis Chimes and Chime-Strobes.",
+            features: [
+                "Listed by Edwards as Genesis chimes and chime-strobes.",
+                "Appears in the speakers, strobes, horns, bells and chimes collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "This product is documented as a Genesis chime and chime-strobe offering in the Edwards notification portfolio.",
+            commonMistakes: [
+                "Assuming all audible notification appliances are horns or speakers.",
+                "Ignoring chime and chime-strobe products when reviewing notification schedules."
+            ]
+        },
+        {
+            id: 81,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Low Frequency Audible Signal",
+            model: "E85001-0639 Genesis Low Frequency Audible Signals",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0639%20--%20Genesis%20Low%20Frequency%20Audible%20Signals.pdf",
+            image: "",
+            officialDescription: "Official Edwards speakers and strobes page listing for Genesis Low Frequency Audible Signals.",
+            features: [
+                "Listed by Edwards as Genesis low frequency audible signals.",
+                "Appears in the speakers, strobes, horns, bells and chimes collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The product is documented as a low-frequency audible signal offering within the Edwards Genesis line.",
+            commonMistakes: [
+                "Assuming standard audible appliances are interchangeable with low-frequency variants.",
+                "Ignoring application-specific low-frequency requirements."
+            ]
+        },
+        {
+            id: 82,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Multiple Tone Signal",
+            model: "E85001-0415 Multiple Tone Signal",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0415%20--%20Multiple%20Tone%20Signal.pdf",
+            image: "",
+            officialDescription: "Official Edwards speakers and strobes page listing for the Multiple Tone Signal.",
+            features: [
+                "Listed by Edwards as a multiple tone signal.",
+                "Appears in the speakers, strobes, horns, bells and chimes collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The product is documented as a signal appliance within the Edwards notification portfolio.",
+            commonMistakes: [
+                "Assuming all notification appliances are strobes or speakers.",
+                "Ignoring audible signal options when reviewing the notification schedule."
+            ]
+        },
+        {
+            id: 83,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Synchronized Strobe",
+            model: "E85001-0369 202 Synchronized Strobe",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0369%20--%20202%20Synchronized%20Strobe.pdf",
+            image: "",
+            officialDescription: "Official Edwards speakers and strobes page listing for the 202 Synchronized Strobe.",
+            features: [
+                "Listed by Edwards as a synchronized strobe product.",
+                "Appears in the speakers, strobes, horns, bells and chimes collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "This product is documented as a synchronized strobe option in the Edwards notification offering.",
+            commonMistakes: [
+                "Assuming all strobes are identical without checking for synchronized operation.",
+                "Ignoring the distinction between standard and synchronized strobe products."
+            ]
+        },
+        {
+            id: 84,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Horn and Horn-Strobe",
+            model: "E85001-0341 Temporal Horns and Horn-strobes",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0341%20--%20Temporal%20Horns%20and%20Horn-strobes.pdf",
+            image: "",
+            officialDescription: "Official Edwards speakers and strobes page listing for Temporal Horns and Horn-strobes.",
+            features: [
+                "Listed by Edwards as temporal horns and horn-strobes.",
+                "Appears in the speakers, strobes, horns, bells and chimes collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The product is documented as a horn and horn-strobe offering in the Edwards notification portfolio.",
+            commonMistakes: [
+                "Assuming all audible notification devices are speakers or chimes.",
+                "Ignoring the distinction between horn and horn-strobe products."
+            ]
+        },
+        {
+            id: 85,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Bell",
+            model: "E85001-0333 Fire Alarm Bells",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0333%20--%20Fire%20Alarm%20Bells.pdf",
+            image: "",
+            officialDescription: "Official Edwards speakers and strobes page listing for Fire Alarm Bells.",
+            features: [
+                "Listed by Edwards as fire alarm bells.",
+                "Appears in the speakers, strobes, horns, bells and chimes collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "This product is documented as a bell-type notification appliance within the Edwards notification portfolio.",
+            commonMistakes: [
+                "Assuming all notification products are strobes or speakers.",
+                "Ignoring bell products when reviewing audible notification options."
+            ]
+        },
+        {
+            id: 86,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Power Supply",
+            model: "E85005-0127 Auxiliary Power Supply",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85005-0127%20--%20Auxiliary%20Power%20Supply.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for the Auxiliary Power Supply.",
+            features: [
+                "Listed by Edwards as an auxiliary power supply.",
+                "Appears in the power supplies and accessories collection."
+            ],
+            quizQuestions: [49],
+            howItWorks: "The product is documented as a power supply item in the Edwards accessories and power supplies collection.",
+            commonMistakes: [
+                "Assuming all power supply products are identical without confirming the listed model.",
+                "Ignoring power-supply selection differences when reviewing system architecture."
+            ]
+        },
+        {
+            id: 87,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Power Supply",
+            model: "E85005-0125 Remote Booster Power Supplies",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85005-0125%20--%20Remote%20Booster%20Power%20Supplies.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for Remote Booster Power Supplies.",
+            features: [
+                "Listed by Edwards as remote booster power supplies.",
+                "Appears in the power supplies and accessories collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "This product is documented as a booster power supply offering within the Edwards power supplies and accessories line.",
+            commonMistakes: [
+                "Assuming every power supply is a primary panel supply.",
+                "Ignoring the need to verify the specific booster power supply product."
+            ]
+        },
+        {
+            id: 88,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Battery",
+            model: "E85010-0127 Batteries",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85010-0127%20--%20Batteries.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for Batteries.",
+            features: [
+                "Listed by Edwards as batteries.",
+                "Appears in the power supplies and accessories collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The product is documented as a battery offering within the Edwards power supplies and accessories collection.",
+            commonMistakes: [
+                "Assuming battery selection is independent of the installed system architecture.",
+                "Ignoring the need to verify the correct battery product for the project."
+            ]
+        },
+        {
+            id: 89,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Power Supply / Interface",
+            model: "E85005-0111 Voltage Regulator with Security Bell Interface",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85005-0111%20--%20Voltage%20Regulator%20with%20Security%20Bell%20Interface.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for a Voltage Regulator with Security Bell Interface.",
+            features: [
+                "Listed by Edwards as a voltage regulator with security bell interface.",
+                "Appears in the power supplies and accessories collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The product is documented as a voltage-regulator accessory within the Edwards power supplies and accessories collection.",
+            commonMistakes: [
+                "Assuming every voltage regulator is a general-purpose power supply.",
+                "Ignoring the need to verify the interface role described in the product listing."
+            ]
+        },
+        {
+            id: 90,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Control Relay",
+            model: "E85003-2766 PAM1 Multi-Voltage Control Relay",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85003-2766%20--%20PAM1%20Multi-Voltage%20Control%20Relay.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for the PAM1 Multi-Voltage Control Relay.",
+            features: [
+                "Listed by Edwards as a multi-voltage control relay.",
+                "Appears in the power supplies and accessories relays collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The relay is documented as a control relay product in the Edwards power-supplies and accessories portfolio.",
+            commonMistakes: [
+                "Assuming all relay products are interchangeable without checking the listed type.",
+                "Ignoring the multi-voltage relay distinction when reviewing control requirements."
+            ]
+        },
+        {
+            id: 91,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Control Relay",
+            model: "E85003-2765 Heavy Duty Power Relays",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85003-2765%20--%20Heavy%20Duty%20Power%20Relays.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for Heavy Duty Power Relays.",
+            features: [
+                "Listed by Edwards as heavy duty power relays.",
+                "Appears in the power supplies and accessories relays collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The relays are documented as heavy-duty control relay items in the Edwards power-supplies portfolio.",
+            commonMistakes: [
+                "Assuming all relay products have the same duty rating without confirming the listed variant.",
+                "Ignoring the need to review the exact relay model."
+            ]
+        },
+        {
+            id: 92,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Control Relay",
+            model: "E85003-2764 MR-700 Multi-Voltage Control Relays",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85003-2764%20--%20MR-700%20Multi-Voltage%20Control%20Relays.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for MR-700 Multi-Voltage Control Relays.",
+            features: [
+                "Listed by Edwards as MR-700 multi-voltage control relays.",
+                "Appears in the power supplies and accessories relays collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The relays are documented as MR-700 multi-voltage control relay items in the Edwards offerings.",
+            commonMistakes: [
+                "Assuming every multi-voltage relay shares the same exact model designation.",
+                "Ignoring the specific relay family when reviewing panel control requirements."
+            ]
+        },
+        {
+            id: 93,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Control Relay",
+            model: "E85003-2763 MR-800 Multi-Voltage Control Relays",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85003-2763%20--%20MR-800%20Multi-Voltage%20Control%20Relays.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for MR-800 Multi-Voltage Control Relays.",
+            features: [
+                "Listed by Edwards as MR-800 multi-voltage control relays.",
+                "Appears in the power supplies and accessories relays collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The relays are documented as MR-800 multi-voltage control relay items in the Edwards offerings.",
+            commonMistakes: [
+                "Assuming the MR-700 and MR-800 relay families are interchangeable without checking the listed model.",
+                "Ignoring the exact control-relay family during product selection."
+            ]
+        },
+        {
+            id: 94,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Control Relay",
+            model: "E85003-2762 MR-100 and 200 Multi-Voltage Control Relays",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85003-2762%20--%20MR-100%20and%20200%20Multi-Voltage%20Control%20Relays.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for MR-100 and 200 Multi-Voltage Control Relays.",
+            features: [
+                "Listed by Edwards as MR-100 and 200 multi-voltage control relays.",
+                "Appears in the power supplies and accessories relays collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The relays are documented as MR-100 and 200 multi-voltage control relay items in the Edwards power-supplies offering.",
+            commonMistakes: [
+                "Assuming all multi-voltage relays are one family without confirming the exact model.",
+                "Ignoring the need to review the specific relay product."
+            ]
+        },
+        {
+            id: 95,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Control Relay",
+            model: "E85003-2761 Manual Override Relays",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85003-2761%20--%20Manual%20Override%20Relays.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for Manual Override Relays.",
+            features: [
+                "Listed by Edwards as manual override relays.",
+                "Appears in the power supplies and accessories relays collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The relay is documented as a manual override relay item within the Edwards power-supplies and accessories offerings.",
+            commonMistakes: [
+                "Assuming all relays are automatically controlled without checking the manual override product.",
+                "Ignoring the specific relay function when reviewing the product list."
+            ]
+        },
+        {
+            id: 96,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Mounting Accessory",
+            model: "E85001-0351 ADA Station Relocator",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0351%20--%20ADA%20Station%20Relocator.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for the ADA Station Relocator.",
+            features: [
+                "Listed by Edwards as an ADA station relocator.",
+                "Appears in the power supplies and accessories mounting accessories collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The accessory is documented as a mounting-related accessory in the Edwards power-supplies and accessories offering.",
+            commonMistakes: [
+                "Assuming all mounting accessories are interchangeable without checking the listed product.",
+                "Ignoring location and accessibility planning when reviewing the accessory list."
+            ]
+        },
+        {
+            id: 97,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Mounting Accessory",
+            model: "E85001-0495 Surface Mount Boxes",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0495%20--%20Surface%20Mount%20Boxes.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for Surface Mount Boxes.",
+            features: [
+                "Listed by Edwards as surface mount boxes.",
+                "Appears in the power supplies and accessories mounting accessories collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The product is documented as a surface-mount accessory within the Edwards power-supplies and accessories collection.",
+            commonMistakes: [
+                "Assuming all mounting accessories are the same without checking the listed box type.",
+                "Ignoring enclosure and installation requirements."
+            ]
+        },
+        {
+            id: 98,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Accessory",
+            model: "E85001-0491 STI Series Stopper",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0491%20--%20STI%20Series%20Stopper.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for the STI Series Stopper.",
+            features: [
+                "Listed by Edwards as an STI Series stopper.",
+                "Appears in the power supplies and accessories mounting accessories collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The product is documented as an accessory item in the Edwards power-supplies and accessories offering.",
+            commonMistakes: [
+                "Assuming all accessories are generic without reviewing the specific listed product.",
+                "Ignoring the need to verify accessory selection in the project setup."
+            ]
+        },
+        {
+            id: 99,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Door Holder",
+            model: "E85001-0421 Electromagnetic Door Holders",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0421%20--%20Electromagnetic%20Door%20Holders.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for Electromagnetic Door Holders.",
+            features: [
+                "Listed by Edwards as electromagnetic door holders.",
+                "Appears in the power supplies and accessories other equipment collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The product is documented as an accessory item within the Edwards power-supplies and accessories collection.",
+            commonMistakes: [
+                "Assuming all door-holder products are the same without checking the listed device.",
+                "Ignoring compatibility and installation planning requirements."
+            ]
+        },
+        {
+            id: 100,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Accessory Kit",
+            model: "E85001-0403 Call for Assistance Kit",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0403%20--%20Call%20for%20Assistance%20Kit.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for the Call for Assistance Kit.",
+            features: [
+                "Listed by Edwards as a call for assistance kit.",
+                "Appears in the power supplies and accessories other equipment collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The product is documented as a packaged accessory item in the Edwards power-supplies and accessories collection.",
+            commonMistakes: [
+                "Assuming all accessory kits are interchangeable without confirming the listed product.",
+                "Ignoring the need to verify the intended application."
+            ]
+        },
+        {
+            id: 101,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Accessory",
+            model: "E85001-0545 Signal Master",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0545%20--%20Signal%20Master.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for Signal Master.",
+            features: [
+                "Listed by Edwards as Signal Master.",
+                "Appears in the power supplies and accessories accessories collection."
+            ],
+            quizQuestions: [50],
+            howItWorks: "The product is documented as an accessory item in the Edwards power-supplies and accessories collection.",
+            commonMistakes: [
+                "Assuming all signal accessories are interchangeable without checking the listed product.",
+                "Ignoring the specific accessory function described in the product listing."
+            ]
+        },
+        {
+            id: 102,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Accessory",
+            model: "E85001-0441 Bell-Strobe Plate",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0441%20--%20Bell-Strobe%20Plate.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for Bell-Strobe Plate.",
+            features: [
+                "Listed by Edwards as a bell-strobe plate.",
+                "Appears in the power supplies and accessories accessories collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The product is documented as an accessory item in the Edwards notification and accessories lineup.",
+            commonMistakes: [
+                "Assuming all accessory plates are interchangeable without checking the listed product.",
+                "Ignoring accessory-specific application context."
+            ]
+        },
+        {
+            id: 103,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Accessory",
+            model: "E85001-0425 Protective Hoods, Grills, and Grids",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0425%20--%20Protective%20Hoods,%20Grills,%20and%20Grids.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for Protective Hoods, Grills, and Grids.",
+            features: [
+                "Listed by Edwards as protective hoods, grills, and grids.",
+                "Appears in the power supplies and accessories accessories collection."
+            ],
+            quizQuestions: [],
+            howItWorks: "The product is documented as an accessory item in the Edwards power-supplies and accessories collection.",
+            commonMistakes: [
+                "Assuming all protective accessories are the same without checking the listed product.",
+                "Ignoring the need to verify the specific accessory type."
+            ]
+        },
+        {
+            id: 104,
+            manufacturer: "Edwards",
+            family: "SIGA",
+            category: "Input Module",
+            model: "E85001-0297 Input Modules",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0297%20--%20Input%20Modules.pdf",
+            image: "",
+            officialDescription: "Official Edwards Intelligent Input/Output Modules catalog listing for the Input Modules product.",
+            features: [
+                "Listed by Edwards as an input module.",
+                "Part of the Intelligent Input/Output Modules collection.",
+                "Used for addressable input monitoring and supervision."
+            ],
+            quizQuestions: [51],
+            howItWorks: "These modules support supervised input monitoring in addressable fire alarm systems by reporting field contact status to the panel.",
+            commonMistakes: [
+                "Assuming every intelligent module is an output device.",
+                "Ignoring the input-supervision role when reviewing module selection."
+            ]
+        },
+        {
+            id: 105,
+            manufacturer: "Edwards",
+            family: "SIGA",
+            category: "Signal Module",
+            model: "E85001-0275 Class A, B Signal Modules",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0275%20--%20Class%20A,%20B%20Signal%20Modules.pdf",
+            image: "",
+            officialDescription: "Official Edwards Intelligent Input/Output Modules catalog listing for Class A and Class B signal modules.",
+            features: [
+                "Listed by Edwards as signal modules for class A and class B operation.",
+                "Used in addressable module architectures for signaling applications.",
+                "Part of the Intelligent Input/Output Modules family."
+            ],
+            quizQuestions: [52],
+            howItWorks: "Signal modules provide supervised signaling output functions within Edwards addressable system architectures and support the documented system wiring strategy.",
+            commonMistakes: [
+                "Confusing signal modules with input monitor modules.",
+                "Overlooking the class A/class B operating distinction."
+            ]
+        },
+        {
+            id: 106,
+            manufacturer: "Edwards",
+            family: "SIGA",
+            category: "Monitor Module",
+            model: "E85001-0535 Riser Monitor Modules",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0535%20--%20Riser%20Monitor%20Modules.pdf",
+            image: "",
+            officialDescription: "Official Edwards Intelligent Input/Output Modules catalog listing for Riser Monitor Modules.",
+            features: [
+                "Listed by Edwards as riser monitor modules.",
+                "Supports connection and supervision of riser-related signaling paths.",
+                "Used in intelligent input/output module system design."
+            ],
+            quizQuestions: [53],
+            howItWorks: "Riser monitor modules are applied in system layouts where riser monitoring and supervision are needed for the installed architecture.",
+            commonMistakes: [
+                "Assuming riser monitor modules are generic input modules.",
+                "Ignoring the riser-specific application context."
+            ]
+        },
+        {
+            id: 107,
+            manufacturer: "Edwards",
+            family: "SIGA",
+            category: "Input-Output Module",
+            model: "E85001-0533 Input-Output Modules",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0533%20--%20Input-Output%20Modules.pdf",
+            image: "",
+            officialDescription: "Official Edwards Intelligent Input/Output Modules catalog listing for Input-Output Modules.",
+            features: [
+                "Listed by Edwards as input-output modules.",
+                "Supports mixed input and output functions in intelligent systems.",
+                "Belongs to the Edwards Intelligent Input/Output Modules family."
+            ],
+            quizQuestions: [54],
+            howItWorks: "Input-output modules support both monitored input and control output functions in a single addressable module footprint.",
+            commonMistakes: [
+                "Treating the product as a simple monitor module.",
+                "Ignoring its combined input/output role."
+            ]
+        },
+        {
+            id: 108,
+            manufacturer: "Edwards",
+            family: "SIGA",
+            category: "Input Module",
+            model: "E85001-0241 Input Modules",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0241%20--%20Input%20Modules.pdf",
+            image: "",
+            officialDescription: "Official Edwards Intelligent Input/Output Modules catalog listing for Input Modules.",
+            features: [
+                "Listed by Edwards as input modules.",
+                "Used for supervised input monitoring.",
+                "Part of the intelligent module literature set."
+            ],
+            quizQuestions: [55],
+            howItWorks: "These modules monitor field input conditions and report them to the fire alarm system for alarm and supervisory processing.",
+            commonMistakes: [
+                "Assuming input modules and output modules are interchangeable.",
+                "Forgetting that the product is part of the module supervision architecture."
+            ]
+        },
+        {
+            id: 109,
+            manufacturer: "Edwards",
+            family: "SIGA",
+            category: "Signal Module",
+            model: "E85001-0237 Signal Modules",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0237%20--%20Signal%20Modules.pdf",
+            image: "",
+            officialDescription: "Official Edwards Intelligent Input/Output Modules catalog listing for Signal Modules.",
+            features: [
+                "Listed by Edwards as signal modules.",
+                "Used in addressable signaling applications.",
+                "Supports Edwards intelligent module architecture."
+            ],
+            quizQuestions: [56],
+            howItWorks: "Signal modules provide addressable signaling output support within the documented intelligent system design approach.",
+            commonMistakes: [
+                "Assuming signal modules are the same as monitor modules.",
+                "Ignoring signal-module role in the intended notification architecture."
+            ]
+        },
+        {
+            id: 110,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Ceiling Mount Speaker and Speaker-Strobe",
+            model: "E85001-1051 Genesis Ceiling Mount High Candela Strobes & Speaker Strobes",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-1051%20--%20Genesis%20Ceiling%20Mount%20High%20Candela%20Strobes%20and%20Speaker-Strobes.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for ceiling-mount high-candela strobes and speaker-strobes.",
+            features: [
+                "Listed by Edwards in the Genesis notification device portfolio.",
+                "Designed for ceiling-mount audible/visible notification.",
+                "Supports high-candela visual output applications."
+            ],
+            quizQuestions: [57],
+            howItWorks: "These devices provide visible and audible occupant notification from ceiling mount locations in line with the project notification plan.",
+            commonMistakes: [
+                "Assuming a high-candela ceiling speaker-strobe is the same as a standard wall-mounted device.",
+                "Ignoring the mounting and light-output distinction."
+            ]
+        },
+        {
+            id: 111,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Ceiling Mount Notification Device",
+            model: "E85001-1050 Genesis Ceiling Mount Mass Notification",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-1050%20--%20Genesis%20Ceiling%20Mount%20Mass%20Notification.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis notification listing for ceiling-mount mass notification appliances.",
+            features: [
+                "Listed by Edwards as a Genesis ceiling-mount mass notification device.",
+                "Suitable for occupant alerting in large or open spaces.",
+                "Belongs to the Genesis notification family."
+            ],
+            quizQuestions: [58],
+            howItWorks: "The device provides audible and/or visual mass notification output from a ceiling-mount position for building-wide or area-specific coverage.",
+            commonMistakes: [
+                "Treating mass notification appliances as generic speakers.",
+                "Ignoring the ceiling-mount application context."
+            ]
+        },
+        {
+            id: 112,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Wall Mount Notification Device",
+            model: "E85001-1027 Genesis Wall Mount Mass Notification",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-1027%20--%20Genesis%20Wall%20Mount%20Mass%20Notification.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis notification listing for wall-mount mass notification appliances.",
+            features: [
+                "Listed by Edwards as a Genesis wall-mount mass notification device.",
+                "Designed for wall placement in occupied spaces.",
+                "Supports the broader Genesis notification lineup."
+            ],
+            quizQuestions: [59],
+            howItWorks: "Wall-mount mass notification appliances provide occupant alerting from a wall-mounted position and are selected based on coverage and system design requirements.",
+            commonMistakes: [
+                "Assuming wall-mounted notification appliances are interchangeable with ceiling-mounted devices.",
+                "Ignoring the required coverage geometry and mounting context."
+            ]
+        },
+        {
+            id: 113,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Speaker and Speaker-Strobe",
+            model: "E85001-0293 8-inch Speaker and Speaker-Strobe",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0293%20--%208-inch%20Speaker%20and%20Speaker-Strobe.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for an 8-inch speaker and speaker-strobe.",
+            features: [
+                "Listed by Edwards as an 8-inch speaker and speaker-strobe.",
+                "Part of the Genesis speaker and speaker-strobe product range.",
+                "Used for audible and visible occupant notification."
+            ],
+            quizQuestions: [60],
+            howItWorks: "This appliance combines audible output with visual notification in a compact 8-inch form factor suited to the installation layout.",
+            commonMistakes: [
+                "Treating it as a speaker-only device.",
+                "Ignoring the speaker-strobe combination."
+            ]
+        },
+        {
+            id: 114,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Ceiling Speaker and Speaker-Strobe",
+            model: "E85001-0289 8-inch Ceiling Speakers and Speaker-Strobes",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0289%20--%208-inch%20Ceiling%20Speakers%20and%20Speaker-Strobes.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for 8-inch ceiling speakers and speaker-strobes.",
+            features: [
+                "Listed by Edwards as 8-inch ceiling speakers and speaker-strobes.",
+                "Designed for ceiling mounting.",
+                "Supports combined audible and visible notification."
+            ],
+            quizQuestions: [61],
+            howItWorks: "Ceiling speaker-strobes provide audible and visible notification from overhead locations where ceiling placement is preferred.",
+            commonMistakes: [
+                "Assuming ceiling and wall devices are interchangeable.",
+                "Ignoring mounting-position differences."
+            ]
+        },
+        {
+            id: 115,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Ceiling Speaker and Speaker-Strobe",
+            model: "E85001-0283 4-inch Ceiling Speakers and Speaker-Strobes",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0283%20--%204-inch%20Ceiling%20Speakers%20and%20Speaker-Strobes.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for 4-inch ceiling speakers and speaker-strobes.",
+            features: [
+                "Listed by Edwards as 4-inch ceiling speakers and speaker-strobes.",
+                "Used for compact ceiling-mounted notification.",
+                "Supports a combination of audio and visible signaling."
+            ],
+            quizQuestions: [62],
+            howItWorks: "These ceiling-mounted devices provide compact audible and visible occupant notification where smaller-profile appliances fit the design.",
+            commonMistakes: [
+                "Assuming all ceiling speaker-strobes are the same size.",
+                "Ignoring the 4-inch form factor in selection."
+            ]
+        },
+        {
+            id: 116,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Outdoor Speaker and Speaker-Strobe",
+            model: "E85001-0626 Genesis Outdoor Speakers and Strobes",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0626%20--%20Genesis%20Outdoor%20Speakers%20and%20Strobes.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for outdoor speakers and strobes.",
+            features: [
+                "Listed by Edwards as outdoor speakers and strobes.",
+                "Designed for exterior notification applications.",
+                "Belongs to the Genesis outdoor notification offering."
+            ],
+            quizQuestions: [63],
+            howItWorks: "Outdoor notification appliances are selected for exterior coverage where weather-resistant installation is required.",
+            commonMistakes: [
+                "Using indoor-only notification products in exterior applications.",
+                "Ignoring the outdoor suitability requirement."
+            ]
+        },
+        {
+            id: 117,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Loudspeaker",
+            model: "E85001-0591 Multi-purpose Loudspeaker, 15 Watt",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0591%20--%20Multi-purpose%20Loudspeaker,%2015%20Watt.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for a multi-purpose 15-watt loudspeaker.",
+            features: [
+                "Listed by Edwards as a multi-purpose loudspeaker.",
+                "15-watt rating for audio output applications.",
+                "Part of the Genesis audible notification family."
+            ],
+            quizQuestions: [64],
+            howItWorks: "The loudspeaker provides audible notification output and is selected based on wattage and coverage needs in the system design.",
+            commonMistakes: [
+                "Treating all loudspeakers as identical regardless of wattage.",
+                "Ignoring the power-rating distinction."
+            ]
+        },
+        {
+            id: 118,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Re-entrant Speaker and Speaker-Strobe",
+            model: "E85001-0317 Integrity Re-entrant Speaker and Speaker-Strobe",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0317%20--%20Integrity%20Re-entrant%20Speaker%20and%20Speaker-Strobe.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for the Integrity re-entrant speaker and speaker-strobe.",
+            features: [
+                "Listed by Edwards as an Integrity re-entrant speaker and speaker-strobe.",
+                "Supports audible and visible notification in integrated systems.",
+                "Belongs to the Genesis/notification product group."
+            ],
+            quizQuestions: [65],
+            howItWorks: "This device provides hearing-impaired occupant notification while maintaining a re-entrant speaker profile for the intended installation arrangement.",
+            commonMistakes: [
+                "Assuming re-entrant and standard speaker-strobes are the same.",
+                "Ignoring the re-entrant form distinction."
+            ]
+        },
+        {
+            id: 119,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Speaker and Speaker-Strobe",
+            model: "E85001-0315 Integrity Speaker and Speaker-Strobe",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0315%20--%20Integrity%20Speaker%20and%20Speaker-Strobe.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for the Integrity speaker and speaker-strobe.",
+            features: [
+                "Listed by Edwards as an Integrity speaker and speaker-strobe.",
+                "Supports combined audible and visible occupancy signaling.",
+                "Appears in the Genesis/notification literature."
+            ],
+            quizQuestions: [66],
+            howItWorks: "The speaker-strobe combines audio and visual signaling to support occupant notification and audible alerting in one appliance.",
+            commonMistakes: [
+                "Treating it as a speaker-only device.",
+                "Ignoring the visual signaling component."
+            ]
+        },
+        {
+            id: 120,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Outdoor Horn and Horn-Strobe",
+            model: "E85001-1030 Genesis Outdoor-Rated Horns, Strobes, and Horn-Strobes",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-1030%20--%20Genesis%20Outdoor-Rated%20Horns,%20Strobes,%20and%20Horn-Strobes.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for outdoor-rated horns, strobes, and horn-strobes.",
+            features: [
+                "Listed by Edwards as outdoor-rated horns, strobes, and horn-strobes.",
+                "Used for exterior audible/visible notification.",
+                "Part of the Genesis outdoor notification product family."
+            ],
+            quizQuestions: [67],
+            howItWorks: "Outdoor-rated appliances are selected when exterior notification coverage and environmental durability are required.",
+            commonMistakes: [
+                "Using indoor-only notification appliances outside.",
+                "Ignoring the environmental-rating requirement."
+            ]
+        },
+        {
+            id: 121,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Outdoor Speaker and Speaker-Strobe",
+            model: "E85001-1031 Genesis Outdoor-Rated Speakers and Speaker-Strobes",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-1031%20--%20Genesis%20Outdoor-Rated%20Speakers%20and%20Speaker-Strobes.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for outdoor-rated speakers and speaker-strobes.",
+            features: [
+                "Listed by Edwards as outdoor-rated speakers and speaker-strobes.",
+                "Intended for exterior audible/visible notification.",
+                "Fits the Genesis outdoor product range."
+            ],
+            quizQuestions: [68],
+            howItWorks: "These devices supply audible and visible notification from outdoor locations while meeting the system's environmental requirements.",
+            commonMistakes: [
+                "Assuming indoor speakers work outdoors without checking suitability.",
+                "Confusing outdoor speaker-strobes with indoor units."
+            ]
+        },
+        {
+            id: 122,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Horn-Siren Combination",
+            model: "E85001-0391 Horn-Siren Combination",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0391%20--%20Horn-Siren%20Combination.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for the horn-siren combination appliance.",
+            features: [
+                "Listed by Edwards as a horn-siren combination.",
+                "Used for audible notification with broader siren functionality.",
+                "Appears in the Edwards Genesis notification set."
+            ],
+            quizQuestions: [69],
+            howItWorks: "The appliance provides an audible output suited to applications requiring a horn and siren-style signaling function.",
+            commonMistakes: [
+                "Treating it as a standard horn-only device.",
+                "Ignoring the siren-combination function."
+            ]
+        },
+        {
+            id: 123,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Bell",
+            model: "E85001-0399 Hazardous Location Bells",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0399%20--%20Hazardous%20Location%20Bells.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for hazardous-location bells.",
+            features: [
+                "Listed by Edwards as hazardous-location bells.",
+                "Used where special environmental conditions require a bell-type appliance.",
+                "Part of the hazardous-location notification product set."
+            ],
+            quizQuestions: [70],
+            howItWorks: "Bell-type appliances are selected for audible signaling applications that specifically require the bell form factor and environment suitability.",
+            commonMistakes: [
+                "Assuming all hazardous-location notification products are strobes.",
+                "Ignoring the bell-specific category."
+            ]
+        },
+        {
+            id: 124,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Horn",
+            model: "E85001-0397 Hazardous Location Horns",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0397%20--%20Hazardous%20Location%20Horns.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for hazardous-location horns.",
+            features: [
+                "Listed by Edwards as hazardous-location horns.",
+                "Used when horn-type audible signaling is required in hazardous areas.",
+                "Belongs to the Genesis hazardous-location notification group."
+            ],
+            quizQuestions: [71],
+            howItWorks: "Hazardous-location horns provide audible signaling in environments where special-rated appliances are required.",
+            commonMistakes: [
+                "Assuming hazardous-location horns are interchangeable with standard horns.",
+                "Ignoring the environmental-rating and spacing requirements."
+            ]
+        },
+        {
+            id: 125,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Multiple Tone Signal",
+            model: "E85001-0387 Hazardous Location Multiple Tone Signal",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0387%20--%20Hazardous%20Location%20Multiple%20Tone%20Signal.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for hazardous-location multiple tone signal appliances.",
+            features: [
+                "Listed by Edwards as a hazardous-location multiple tone signal.",
+                "Used where multi-tone audible signaling is required in hazardous areas.",
+                "Belongs to the Genesis notification hardware set."
+            ],
+            quizQuestions: [72],
+            howItWorks: "The appliance provides a multiple-tone audible output suited to hazardous-location applications and the notification design intent.",
+            commonMistakes: [
+                "Assuming all hazardous-location audible appliances are simple horns.",
+                "Ignoring the tone-signaling distinction."
+            ]
+        },
+        {
+            id: 126,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Horn and Siren",
+            model: "E85001-0385 Hazardous Location Horns and Sirens",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0385%20--%20Hazardous%20Location%20Horns%20and%20Sirens.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for hazardous-location horns and sirens.",
+            features: [
+                "Listed by Edwards as hazardous-location horns and sirens.",
+                "Used where a horn and siren-type alert is required.",
+                "Part of the Genesis hazardous-location notification family."
+            ],
+            quizQuestions: [73],
+            howItWorks: "These appliances provide audible notification with a horn/siren functionality suited to hazardous-location applications.",
+            commonMistakes: [
+                "Assuming all hazardous-location appliances are simple bells.",
+                "Ignoring the horn-and-siren function."
+            ]
+        },
+        {
+            id: 127,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Outdoor Horn and Horn-Strobe",
+            model: "E85001-0628 Genesis Outdoor Horns and Strobes",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0628%20--%20Genesis%20Outdoor%20Horns%20and%20Strobes.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for outdoor horns and strobes.",
+            features: [
+                "Listed by Edwards as outdoor horns and strobes.",
+                "Used for weather-rated exterior notification.",
+                "Supports outdoor audible/visual signaling."
+            ],
+            quizQuestions: [74],
+            howItWorks: "Outdoor horns and strobes are applied where audible and visual signaling must be delivered from exterior locations.",
+            commonMistakes: [
+                "Using indoor horns and strobes outside.",
+                "Ignoring the outdoor environmental requirement."
+            ]
+        },
+        {
+            id: 128,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Mounting Accessory",
+            model: "E85001-0309 Weatherproof Mounting Boxes",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0309%20--%20Weatherproof%20Mounting%20Boxes.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for weatherproof mounting boxes.",
+            features: [
+                "Listed by Edwards as weatherproof mounting boxes.",
+                "Used to support exterior notification appliance installation.",
+                "Belongs to the Genesis notification accessory range."
+            ],
+            quizQuestions: [75],
+            howItWorks: "These boxes provide the required enclosure and mounting support for outdoor notification appliances in exposed locations.",
+            commonMistakes: [
+                "Assuming standard boxes are suitable for exterior installation.",
+                "Ignoring weatherproof mounting requirements."
+            ]
+        },
+        {
+            id: 129,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Strobe",
+            model: "E85001-0305 Harsh Environment Strobes",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0305%20--%20Harsh%20Environment%20Strobes.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for harsh-environment strobes.",
+            features: [
+                "Listed by Edwards as harsh-environment strobes.",
+                "Used where environmental durability is part of the product requirement.",
+                "Part of the Genesis notification appliance line."
+            ],
+            quizQuestions: [76],
+            howItWorks: "Harsh-environment strobes are selected when visual notification must operate in demanding conditions.",
+            commonMistakes: [
+                "Assuming all strobes are suitable for harsh environments.",
+                "Ignoring environmental-rating differences."
+            ]
+        },
+        {
+            id: 130,
+            manufacturer: "Edwards",
+            family: "Genesis",
+            category: "Strobe",
+            model: "E85001-0624 Hazardous Location Strobes",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0624%20--%20Hazardous%20Location%20Strobes.pdf",
+            image: "",
+            officialDescription: "Official Edwards Genesis listing for hazardous-location strobes.",
+            features: [
+                "Listed by Edwards as hazardous-location strobes.",
+                "Used for visible notification in hazardous environments.",
+                "Belongs to the Genesis notification product group."
+            ],
+            quizQuestions: [77],
+            howItWorks: "Hazardous-location strobes provide visible signaling in applications that require special-rated notification appliances.",
+            commonMistakes: [
+                "Assuming standard strobes are acceptable in hazardous areas.",
+                "Ignoring the hazardous-location requirement."
+            ]
+        },
+        {
+            id: 131,
+            manufacturer: "Edwards",
+            family: "Power Supplies and Accessories",
+            category: "Diagnostic Tool",
+            model: "E85001-0655 Signature Series Diagnostic Tool",
+            verification: "VERIFIED",
+            sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0655%20--%20Signature%20Series%20Diagnostic%20Tool.pdf",
+            image: "",
+            officialDescription: "Official Edwards Power Supplies and Accessories catalog listing for the Signature Series Diagnostic Tool.",
+            features: [
+                "Listed by Edwards as a diagnostic tool.",
+                "Used for troubleshooting and verification activities.",
+                "Belongs to the Edwards power and accessory literature set."
+            ],
+            quizQuestions: [78],
+            howItWorks: "This tool supports field verification and troubleshooting workflows for the associated Edwards system components.",
+            commonMistakes: [
+                "Treating it as a primary panel or power supply.",
+                "Ignoring its diagnostic troubleshooting role."
             ]
         }
     ]

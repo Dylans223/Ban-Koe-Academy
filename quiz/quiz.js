@@ -131,6 +131,33 @@ function incrementStats(correct, incorrect, xpGained, quizCompleted) {
     saveStats(stats);
 }
 
+function markDailyTrainingStep(stepName) {
+    const todayKey = (() => {
+        const now = new Date();
+        return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+    })();
+
+    try {
+        const raw = localStorage.getItem("bkaDailyTraining");
+        if (!raw) return;
+
+        const session = JSON.parse(raw);
+        if (!session || session.date !== todayKey) return;
+
+        if (stepName === "practice" && session.pendingStep === "practice") {
+            session.practiceComplete = true;
+            session.pendingStep = null;
+        }
+
+        if (stepName === "challenge" && session.pendingStep === "challenge") {
+            session.challengeComplete = true;
+            session.pendingStep = null;
+        }
+
+        localStorage.setItem("bkaDailyTraining", JSON.stringify(session));
+    } catch {}
+}
+
 function recordCategoryResult(categoryId, correct, total) {
     const stats = loadStats();
     if (!stats.categories) stats.categories = {};
@@ -261,10 +288,12 @@ function launchQuiz(categoryId, questionCount) {
     const meta = getCategoryMeta(categoryId);
     if (!meta) return;
 
-    const count = questionCount || meta.targetCount;
+    const explicitCount = Number.isFinite(questionCount) && questionCount > 0 ? questionCount : null;
+    const count = explicitCount || meta.targetCount;
     const pool  = selectQuestions(categoryId, count);
+    const minimumPoolSize = explicitCount ? 1 : MIN_QUESTIONS_TO_START;
 
-    if (pool.length < MIN_QUESTIONS_TO_START) {
+    if (pool.length < minimumPoolSize) {
         alert(`Not enough questions yet for "${meta.name}". Check back soon!`);
         return;
     }
@@ -417,6 +446,8 @@ function finishQuiz() {
     const incorrect = total - correct;
     const accuracy  = total > 0 ? Math.round((correct / total) * 100) : 0;
     const isPerfect = correct === total && total > 0;
+    const params = new URLSearchParams(window.location.search);
+    const dailyStep = params.get("dailyStep");
 
     // Base XP calculation
     let xpEarned = correct * XP_PER_CORRECT + XP_QUIZ_COMPLETE;
@@ -427,6 +458,10 @@ function finishQuiz() {
     // Persist stats
     incrementStats(correct, incorrect, xpEarned, true);
     recordCategoryResult(state.activeCategoryId, correct, total);
+
+    if (dailyStep) {
+        markDailyTrainingStep(dailyStep);
+    }
 
     // Populate results view
     const meta = getCategoryMeta(state.activeCategoryId);
@@ -590,7 +625,9 @@ function autoLaunchCategoryFromUrl() {
     const pool = getQuestionPool(categoryId) || [];
     if (pool.length < MIN_QUESTIONS_TO_START) return;
 
-    launchQuiz(categoryId);
+    const requestedCount = Number(params.get("questionCount"));
+    const count = Number.isFinite(requestedCount) && requestedCount > 0 ? requestedCount : null;
+    launchQuiz(categoryId, count);
 }
 
 window.addEventListener("DOMContentLoaded", () => {

@@ -52,6 +52,28 @@
                 </div>
                 </article>
 
+                <article class="panel daily-training-card">
+                    <div class="daily-training-header">
+                        <div>
+                            <h3 class="card-title">TODAY'S TRAINING</h3>
+                            <p class="mt8">Your recommended training session for today.</p>
+                        </div>
+                        <span class="daily-training-pill">About 15 minutes</span>
+                    </div>
+                    <div class="daily-training-progress mt16" id="dailyTrainingProgress">0 / 4 Complete</div>
+                    <p class="daily-training-meta mt8" id="dailyTrainingMeta">Start your first training session.</p>
+                    <div class="daily-training-steps mt16" id="dailyTrainingSteps"></div>
+                    <div class="daily-training-complete mt16 hidden" id="dailyTrainingCompleteState">
+                        <h4>🎉 DAILY TRAINING COMPLETE</h4>
+                        <p>Great work. You've completed today's recommended training session.</p>
+                        <div class="daily-training-xp mt8" id="dailyTrainingXpValue">0 XP earned today</div>
+                        <button class="btn btn-primary mt16" onclick="goProgress()">Review Progress →</button>
+                    </div>
+                    <div class="mt24">
+                        <button class="btn btn-primary" id="dailyTrainingStartButton" type="button">Start Today's Training →</button>
+                    </div>
+                </article>
+
                 <article class="panel">
                     <h3 class="card-title">Today's Goal</h3>
                     <p class="mt16">Complete 3 lessons and finish one product quiz sequence.</p>
@@ -101,6 +123,8 @@
 <script src="scripts/navigation.js"></script>
 <script src="data/module1.js"></script>
 <script src="data/module2.js"></script>
+<script src="data/quizData.js"></script>
 <script src="scripts/script.js"></script>
+<script src="scripts/dailyTraining.js"></script>
 </body>
 </html>
