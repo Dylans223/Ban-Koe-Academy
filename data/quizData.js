@@ -224,6 +224,11 @@ function buildAllQuestionPools() {
         partNumberQuestions.forEach(q => addQuestion(q, "pn"));
     }
 
+    // Process dedicated Final Boss questions
+    if (typeof finalBossQuestions !== "undefined" && Array.isArray(finalBossQuestions)) {
+        finalBossQuestions.forEach(q => addQuestion(q, "fbq", "final-boss"));
+    }
+
     // Build mixed-knowledge and final-boss pools from all other categories
     const standardCategories = ["product-recognition", "product-applications",
         "modules-systems", "wiring-connections", "part-number-mastery",
@@ -234,10 +239,6 @@ function buildAllQuestionPools() {
             // Mixed-knowledge pulls from all standard categories
             const mixedCopy = { ...q, uid: q.uid + "_mx", category: "mixed-knowledge" };
             pools["mixed-knowledge"].push(mixedCopy);
-
-            // Final-boss pulls from all standard categories
-            const bossCopy = { ...q, uid: q.uid + "_fb", category: "final-boss" };
-            pools["final-boss"].push(bossCopy);
         });
     });
 
