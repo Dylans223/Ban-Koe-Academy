@@ -51,13 +51,6 @@ const trainingModules = [
     }
 ];
 
-const recommendedNextStep = {
-    title: "Start with Takeoff Training",
-    description: "Learn how to identify devices on a plan and build your first basic material takeoff.",
-    actionLabel: "Start Takeoff Training",
-    moduleId: "takeoff-training"
-};
-
 const moduleContainer = document.getElementById("trainingModules");
 const modal = document.getElementById("trainingModal");
 const modalTitle = document.getElementById("trainingModalTitle");
@@ -65,9 +58,6 @@ const modalDifficulty = document.getElementById("trainingModalDifficulty");
 const modalDescription = document.getElementById("trainingModalDescription");
 const modalPreview = document.getElementById("trainingModalPreview");
 const modalCloseButton = document.getElementById("trainingModalCloseButton");
-const recommendedTitle = document.getElementById("recommendedNextStepTitle");
-const recommendedDescription = document.getElementById("recommendedNextStepDescription");
-const recommendedButton = document.getElementById("recommendedNextStepButton");
 const overallProgressValue = document.getElementById("overallProgressValue");
 const modulesStartedValue = document.getElementById("modulesStartedValue");
 const skillsMasteredValue = document.getElementById("skillsMasteredValue");
@@ -77,17 +67,9 @@ window.addEventListener("DOMContentLoaded", initializeTrainingPage);
 window.addEventListener("keydown", handleKeyboardShortcuts);
 
 function initializeTrainingPage() {
-    renderRecommendedNextStep();
     renderTrainingModules();
     renderTrainingSummary();
     bindModalControls();
-}
-
-function renderRecommendedNextStep() {
-    recommendedTitle.textContent = recommendedNextStep.title;
-    recommendedDescription.textContent = recommendedNextStep.description;
-    recommendedButton.textContent = recommendedNextStep.actionLabel;
-    recommendedButton.addEventListener("click", goToTakeoffTraining);
 }
 
 function renderTrainingModules() {
@@ -128,7 +110,7 @@ function renderTrainingModules() {
     moduleContainer.querySelectorAll("[data-module-start]").forEach((button) => {
         button.addEventListener("click", () => {
             const moduleId = button.getAttribute("data-module-start");
-            if (moduleId === recommendedNextStep.moduleId) {
+            if (moduleId === "takeoff-training") {
                 goToTakeoffTraining();
                 return;
             }

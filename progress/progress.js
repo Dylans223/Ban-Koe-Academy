@@ -75,19 +75,6 @@ function getStatusLabel(mastery) {
     return "Mastered";
 }
 
-function getWeakestCategory(stats) {
-    const candidates = CATEGORY_IDS
-        .map((categoryId) => getCategorySummary(categoryId, stats))
-        .filter((item) => item.total >= 3);
-
-    if (candidates.length === 0) {
-        return null;
-    }
-
-    candidates.sort((a, b) => a.mastery - b.mastery || a.total - b.total);
-    return candidates[0];
-}
-
 function setText(id, value) {
     const element = document.getElementById(id);
     if (element) {
@@ -97,25 +84,12 @@ function setText(id, value) {
 
 function renderProgressDashboard() {
     const stats = getQuizStats();
-    const recommendation = getWeakestCategory(stats);
-
-    setText("masteryScore", `${stats.accuracy}%`);
-    setText("masterySummary", stats.totalQuestions > 0
-        ? "Based on your quiz performance across all categories."
-        : "Complete your first quiz to begin tracking mastery.");
-    document.getElementById("masteryFill").style.width = `${Math.min(100, stats.accuracy)}%`;
 
     setText("accuracyValue", `${stats.accuracy}%`);
     setText("questionsValue", formatNumber(stats.totalQuestions));
     setText("quizzesValue", formatNumber(stats.quizzesCompleted));
     setText("xpValue", `${formatNumber(stats.totalXP)} XP`);
     setText("streakValue", `${stats.streak}`);
-
-    setText("compactQuestions", formatNumber(stats.totalQuestions));
-    setText("compactQuizzes", formatNumber(stats.quizzesCompleted));
-    setText("compactXP", formatNumber(stats.totalXP));
-    setText("compactStreak", `${stats.streak}`);
-    setText("compactAccuracy", `${stats.accuracy}%`);
 
     const skillsMarkup = CATEGORY_IDS.map((categoryId) => {
         const summary = getCategorySummary(categoryId, stats);
@@ -147,59 +121,6 @@ function renderProgressDashboard() {
     const skillMasteryList = document.getElementById("skillMasteryList");
     if (skillMasteryList) {
         skillMasteryList.innerHTML = skillsMarkup;
-    }
-
-    const recommendationContent = document.getElementById("recommendationContent");
-    if (recommendationContent) {
-        if (stats.totalQuestions === 0) {
-            recommendationContent.innerHTML = `
-                <div class="recommendation-empty">
-                    <h3>Complete your first quiz to begin receiving personalized recommendations.</h3>
-                    <button class="btn btn-primary" onclick="goQuiz()">Go to Quiz →</button>
-                </div>
-            `;
-        } else if (!recommendation) {
-            recommendationContent.innerHTML = `
-                <div class="recommendation-empty">
-                    <h3>Complete a few more questions to build a stronger recommendation.</h3>
-                    <button class="btn btn-primary" onclick="goQuiz()">Go to Quiz →</button>
-                </div>
-            `;
-        } else {
-            recommendationContent.innerHTML = `
-                <div class="recommendation-body">
-                    <div class="recommendation-head">
-                        <h3>${recommendation.meta ? recommendation.meta.name.toUpperCase() : "NEXT CATEGORY"}</h3>
-                        <span class="status-pill">${getStatusLabel(recommendation.mastery)}</span>
-                    </div>
-                    <p>This is currently your lowest-performing skill area.</p>
-                    <p>Recent mastery: ${recommendation.mastery}%</p>
-                    <p>Practice this area to improve your overall mastery.</p>
-                    <button class="btn btn-primary" onclick="window.location.href='../quiz/index.html?category=${recommendation.categoryId}'">Practice ${recommendation.meta ? recommendation.meta.name : "This Area"} →</button>
-                </div>
-            `;
-        }
-    }
-
-    const activityItems = [];
-    if (stats.quizzesCompleted > 0) {
-        activityItems.push(`✓ Completed ${formatNumber(stats.quizzesCompleted)} quiz${stats.quizzesCompleted === 1 ? "" : "zes"}`);
-    }
-    if (stats.totalQuestions > 0) {
-        activityItems.push(`✓ Answered ${formatNumber(stats.totalQuestions)} questions`);
-    }
-    if (stats.totalXP > 0) {
-        activityItems.push(`✓ Earned ${formatNumber(stats.totalXP)} XP`);
-    }
-    if (stats.accuracy > 0) {
-        activityItems.push(`✓ Current accuracy is ${stats.accuracy}%`);
-    }
-
-    const recentActivityList = document.getElementById("recentActivityList");
-    if (recentActivityList) {
-        recentActivityList.innerHTML = activityItems.length > 0
-            ? activityItems.map((item) => `<li>${item}</li>`).join("")
-            : `<li>No activity yet.</li><li>Complete a quiz or training module to begin building your history.</li>`;
     }
 
     const achievements = [

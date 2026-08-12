@@ -222,30 +222,6 @@
     min-width: 160px;
 }
 
-.training-next-step {
-    display: grid;
-    gap: var(--space-2);
-}
-
-.next-step-card {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--space-2);
-    align-items: center;
-    flex-wrap: wrap;
-    background: #152235;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: var(--space-3);
-}
-
-.next-step-title {
-    color: var(--text);
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-
 .training-modal {
     position: fixed;
     inset: 0;
@@ -348,10 +324,6 @@
 
     .summary-value {
         font-size: 28px;
-    }
-
-    .next-step-card {
-        align-items: flex-start;
     }
 
     .training-modal-panel {
