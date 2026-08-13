@@ -42,12 +42,17 @@ function getCurrentDepth() {
     const pathname = (window.location.pathname || '/').replace(/\\/g, '/');
     const basePath = getBasePath();
     const normalizedPath = pathname.replace(/\/+$/, '');
+    const normalizedBasePath = basePath.replace(/\/+$/, ''); // Remove trailing slash for consistent comparison
 
     let relativePath = normalizedPath;
-    if (basePath !== '/') {
-        relativePath = normalizedPath.startsWith(basePath)
-            ? normalizedPath.substring(basePath.length)
-            : normalizedPath;
+    if (normalizedBasePath !== '/') {
+        // Check if we're exactly at the base path (root)
+        if (normalizedPath === normalizedBasePath) {
+            relativePath = '';
+        } else if (normalizedPath.startsWith(normalizedBasePath + '/')) {
+            // We're in a subdirectory, get the relative portion
+            relativePath = normalizedPath.substring(normalizedBasePath.length + 1);
+        }
     }
 
     const segments = relativePath.split('/').filter(s => s && s !== 'index.html');
