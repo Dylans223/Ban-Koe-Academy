@@ -2716,3 +2716,18 @@ const productLibrary = {
         }
     ]
 };
+
+// Literature identifiers are source references, never product part numbers.
+productLibrary.products.forEach(product => {
+    product.quizQuestions = (product.quizQuestions || []).filter(id => id < 44);
+
+    const match = String(product.model || "").match(/^(E8500[0-9]{1,2}-\d{4})\s+(.+)$/i);
+    if (!match) {
+        product.partNumber = product.model || "";
+        return;
+    }
+
+    product.documentReference = match[1];
+    product.partNumber = "";
+    product.model = match[2];
+});

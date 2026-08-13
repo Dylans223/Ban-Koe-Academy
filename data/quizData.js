@@ -22,6 +22,14 @@ const QUIZ_CATEGORIES = [
         targetCount: 20
     },
     {
+        id: "inventory-order-check-in",
+        name: "Inventory & Order Check-In",
+        icon: "📦",
+        description: "Practice the Ban-Koe receiving, Pulse check-in, staging, documentation, and delivery procedure.",
+        difficulty: "Beginner / Intermediate",
+        targetCount: 20
+    },
+    {
         id: "product-applications",
         name: "Product Applications",
         icon: "🧠",
@@ -122,6 +130,7 @@ const CATEGORY_ASSIGNMENT = {
     // Dedicated question banks
     "Wiring":               "wiring-connections",
     "PartNumber":           "part-number-mastery",
+    "InventoryOrderCheckIn": "inventory-order-check-in",
 
     // Skipped — too module-specific for open category quizzes
     "Review":               null,
@@ -189,6 +198,9 @@ function buildAllQuestionPools() {
     const seen = new Set();
 
     function addQuestion(q, sourcePrefix, overrideCategory) {
+        const questionText = JSON.stringify(q);
+        if (sourcePrefix === "pn" && /E8500[0-9]{1,2}-\d{4}/i.test(questionText)) return;
+
         const norm = normalizeQuestion(q, sourcePrefix, overrideCategory);
         if (!norm) return;
         if (seen.has(norm.uid)) return;
@@ -217,6 +229,10 @@ function buildAllQuestionPools() {
     // Process dedicated wiring questions (variable: wiringQuestions)
     if (typeof wiringQuestions !== "undefined" && Array.isArray(wiringQuestions)) {
         wiringQuestions.forEach(q => addQuestion(q, "wq"));
+    }
+
+    if (typeof inventoryOrderCheckInQuestions !== "undefined" && Array.isArray(inventoryOrderCheckInQuestions)) {
+        inventoryOrderCheckInQuestions.forEach(q => addQuestion(q, "oci"));
     }
 
     // Process dedicated part number mastery questions

@@ -1,0 +1,45 @@
+.checkin-content { gap: var(--space-3); }
+.checkin-header { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(260px, .7fr); gap: var(--space-3); align-items: start; }
+.checkin-status { display: grid; gap: 12px; background: #152235; }
+.checkin-status-line { display: flex; justify-content: space-between; gap: 12px; color: var(--text-secondary); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; }
+.checkin-overview { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, .8fr); gap: var(--space-3); align-items: start; }
+.checkin-overview h2 { color: var(--text); font-size: 24px; line-height: 1.25; margin: 8px 0 12px; }
+.checkin-overview p { max-width: 72ch; color: var(--text-secondary); }
+.checkin-step-list { list-style: none; display: grid; gap: 7px; margin: 0; padding: 0; }
+.checkin-step-list li { display: flex; align-items: center; gap: 9px; color: var(--text-secondary); font-size: 13px; }
+.checkin-step-list li::before { content: attr(data-step); display: grid; place-items: center; width: 25px; height: 25px; flex: 0 0 25px; border: 1px solid var(--border); border-radius: 50%; color: var(--text-secondary); font-weight: 700; }
+.checkin-step-list li.active { color: var(--text); font-weight: 700; }
+.checkin-step-list li.active::before { border-color: var(--primary); background: rgba(37, 99, 235, .2); color: #bfdbfe; }
+.checkin-step-list li.complete::before { content: "✓"; border-color: rgba(34, 197, 94, .65); color: #bbf7d0; }
+.checkin-lesson { min-height: 520px; background: #152235; }
+.lesson-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-2); flex-wrap: wrap; border-bottom: 1px solid var(--border); padding-bottom: var(--space-2); }
+.lesson-heading h2 { color: var(--text); font-size: 28px; margin-top: 5px; }
+.lesson-heading p { color: var(--text-secondary); }
+.lesson-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: var(--space-3); align-items: start; margin-top: var(--space-3); }
+.lesson-copy { display: grid; gap: var(--space-2); }
+.lesson-copy h3, .checkin-check h3 { color: var(--text); font-size: 17px; }
+.lesson-copy p, .lesson-copy li, .checkin-check p { color: var(--text-secondary); }
+.lesson-copy ul, .lesson-copy ol { display: grid; gap: 9px; padding-left: 21px; }
+.lesson-copy strong, .checkin-callout strong { color: #f8fafc; }
+.checkin-callout { padding: 14px; border: 1px solid rgba(245, 158, 11, .52); background: rgba(120, 53, 15, .22); border-radius: var(--radius-sm); color: #fde68a; }
+.checkin-callout.good { border-color: rgba(34, 197, 94, .5); background: rgba(20, 83, 45, .24); color: #bbf7d0; }
+.visual-placeholder { min-height: 235px; display: grid; place-items: center; text-align: center; padding: var(--space-3); border: 1px dashed rgba(147, 197, 253, .55); border-radius: var(--radius-md); background: linear-gradient(135deg, rgba(30, 64, 175, .24), rgba(15, 23, 42, .72)); color: #bfdbfe; }
+.visual-placeholder strong { display: block; color: #eff6ff; font-size: 16px; margin-bottom: 7px; }
+.visual-placeholder span { display: block; color: #bfdbfe; font-size: 13px; }
+.visual-placeholder code { display: block; margin-top: 12px; color: #fef3c7; font-size: 13px; }
+.checkin-figure { margin: 0; display: grid; gap: 9px; align-content: start; }
+.checkin-image-link { display: block; border: 1px solid rgba(147, 197, 253, .45); border-radius: var(--radius-md); background: rgba(15, 23, 42, .72); padding: 8px; transition: border-color .2s ease, transform .2s ease; }
+.checkin-image-link:hover, .checkin-image-link:focus-visible { border-color: var(--hover); transform: translateY(-1px); }
+.checkin-image-link img { display: block; width: 100%; height: auto; max-height: 470px; object-fit: contain; border-radius: var(--radius-sm); }
+.checkin-figure figcaption { color: var(--text-secondary); font-size: 12px; text-align: center; }
+.checkin-check { display: grid; gap: 12px; margin-top: var(--space-3); padding: var(--space-2); border: 1px solid rgba(59, 130, 246, .34); border-radius: var(--radius-md); background: rgba(15, 23, 42, .42); }
+.checkin-options { display: grid; gap: 8px; }
+.checkin-option { width: 100%; text-align: left; color: var(--text); background: rgba(30, 41, 59, .78); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 11px 13px; cursor: pointer; }
+.checkin-option:hover { border-color: var(--hover); }
+.checkin-option.correct { border-color: rgba(34, 197, 94, .75); background: rgba(20, 83, 45, .35); }
+.checkin-option.incorrect { border-color: rgba(239, 68, 68, .75); background: rgba(127, 29, 29, .3); }
+.checkin-feedback { min-height: 20px; color: #bbf7d0; font-weight: 700; }
+.checkin-navigation { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+#navigationStatus { color: var(--text-secondary); font-size: 14px; font-weight: 700; }
+@media (max-width: 900px) { .checkin-header, .checkin-overview, .lesson-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .checkin-navigation { align-items: stretch; flex-direction: column; } .checkin-navigation .btn { width: 100%; } #navigationStatus { order: -1; text-align: center; } .lesson-heading h2 { font-size: 23px; } }

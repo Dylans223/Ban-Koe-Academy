@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | Inventory &amp; Order Check-In</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="inventory-order-check-in.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand"><h1>Ban-Koe Academy</h1></div>
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button type="button" data-nav-target="dashboard">Dashboard</button>
+                <button type="button" data-nav-target="training">Training</button>
+                <button type="button" data-nav-target="quiz">Quiz</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button type="button" data-nav-target="products">Products</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button type="button" data-nav-target="progress">Progress</button>
+                <button type="button" data-nav-target="settings">Settings</button>
+            </div>
+        </nav>
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content oci-hub-content">
+        <header class="page-header oci-hub-header">
+            <p class="eyebrow">Ban-Koe Core Job Function</p>
+            <h1 class="pageTitle">Inventory &amp; Order Check-In</h1>
+            <p class="page-subtitle">Ban-Koe receiving, check-in, staging, documentation, and delivery process.</p>
+        </header>
+
+        <section class="panel oci-hub-intro">
+            <div>
+                <p class="eyebrow">Work the process</p>
+                <h2>Learn the complete Ban-Koe receiving and check-in workflow.</h2>
+                <p>Use the actual procedure and supplied receiving images to practice what happens from package arrival through completed receiving documentation.</p>
+            </div>
+            <div class="oci-workflow" aria-label="Inventory and Order Check-In workflow">Receive → Identify → Verify → Check In → Stage → Complete → Document</div>
+        </section>
+
+        <section class="oci-hub-actions" aria-label="Inventory and Order Check-In actions">
+            <article class="panel oci-action-card">
+                <div class="oci-action-icon" aria-hidden="true">📋</div>
+                <p class="eyebrow">11-step procedure</p>
+                <h2>Check-In Training</h2>
+                <p>Follow Steps 1–5, 6A, 6B, and 7–11 with the real Ban-Koe receiving images and procedure.</p>
+                <a class="btn btn-primary" href="../training/inventory-order-check-in/index.html">Open Check-In Training →</a>
+            </article>
+            <article class="panel oci-action-card">
+                <div class="oci-action-icon" aria-hidden="true">✓</div>
+                <p class="eyebrow">Procedure knowledge</p>
+                <h2>Check-In Quiz</h2>
+                <p>Test receiving, Pulse, documentation, staging, discrepancy handling, and delivery knowledge.</p>
+                <a class="btn btn-primary" href="../quiz/index.html?category=inventory-order-check-in">Open Check-In Quiz →</a>
+            </article>
+        </section>
+
+        <section class="oci-progress-section">
+            <div class="section-heading compact">
+                <div>
+                    <p class="eyebrow">Your Check-In Progress</p>
+                    <h2>Keep this job function moving</h2>
+                </div>
+                <p>Progress shown here is specific to Inventory &amp; Order Check-In.</p>
+            </div>
+            <div class="oci-progress-grid">
+                <article class="panel oci-progress-card">
+                    <span class="oci-progress-label">Training Progress</span>
+                    <strong id="trainingProgressValue">11 steps</strong>
+                    <span id="trainingProgressDetail">Training not started in this session</span>
+                </article>
+                <article class="panel oci-progress-card">
+                    <span class="oci-progress-label">Quiz Progress</span>
+                    <strong id="quizProgressValue">0 questions</strong>
+                    <span id="quizProgressDetail">Check-In Quiz not started</span>
+                </article>
+                <article class="panel oci-progress-card">
+                    <span class="oci-progress-label">Quiz Accuracy</span>
+                    <strong id="quizAccuracyValue">0%</strong>
+                    <span id="quizAccuracyDetail">No Check-In Quiz answers yet</span>
+                </article>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="../scripts/navigation.js"></script>
+<script src="inventory-order-check-in.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | Inventory &amp; Order Check-In</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../module-shell.css">
+    <link rel="stylesheet" href="inventory-order-check-in.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand"><h1>Ban-Koe Academy</h1></div>
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button type="button" data-nav-target="dashboard">Dashboard</button>
+                <button class="active" type="button" data-nav-target="training">Training</button>
+                <button type="button" data-nav-target="quiz">Quiz</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button type="button" data-nav-target="products">Products</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button type="button" data-nav-target="progress">Progress</button>
+                <button type="button" data-nav-target="settings">Settings</button>
+            </div>
+        </nav>
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content checkin-content">
+        <div class="module-back-row">
+            <button class="module-back-button" type="button" data-nav-target="training">← Back to Training</button>
+        </div>
+
+        <header class="page-header checkin-header">
+            <div>
+                <p class="eyebrow">Ban-Koe Job Skills Training</p>
+                <h1 class="pageTitle">Inventory &amp; Order Check-In</h1>
+                <p class="page-subtitle">Follow the Ban-Koe process for receiving equipment, checking it into Pulse, staging it, documenting it, and preparing it for delivery.</p>
+            </div>
+            <div class="panel checkin-status">
+                <div class="checkin-status-line"><span id="stepLabel">Introduction</span><strong id="stepIndicator">Start</strong></div>
+                <div class="progress-track" aria-hidden="true"><div id="progressFill" class="progress-fill" style="width: 0%"></div></div>
+                <div class="checkin-status-line"><span>Progress</span><strong id="progressValue">0%</strong></div>
+            </div>
+        </header>
+
+        <section class="panel checkin-overview">
+            <div>
+                <p class="eyebrow">The workflow</p>
+                <h2>Receive → Identify → Verify → Check In → Stage → Complete → Document → Deliver</h2>
+                <p>This training covers the Ban-Koe process for receiving equipment, verifying shipments, checking material into Pulse, staging equipment, completing receiving documentation, and preparing equipment for delivery.</p>
+            </div>
+            <ol id="stepList" class="checkin-step-list" aria-label="Inventory and Order Check-In steps"></ol>
+        </section>
+
+        <section id="lessonPanel" class="panel checkin-lesson" aria-live="polite"></section>
+
+        <nav class="checkin-navigation" aria-label="Lesson navigation">
+            <button id="previousButton" class="btn btn-secondary" type="button">← Previous</button>
+            <span id="navigationStatus">Introduction</span>
+            <button id="nextButton" class="btn btn-primary" type="button">Begin Step 1 →</button>
+        </nav>
+    </main>
+</div>
+<script src="../../scripts/navigation.js"></script>
+<script src="inventory-order-check-in.js"></script>
+</body>
+</html>

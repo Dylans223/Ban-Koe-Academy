@@ -21,7 +21,7 @@ function getBasePath() {
     }
 
     const segments = normalized.split('/').filter(Boolean);
-    const knownAppSegments = new Set(['training', 'products', 'quiz', 'progress', 'settings', 'pages', 'index.html']);
+    const knownAppSegments = new Set(['training', 'inventory-order-check-in', 'products', 'quiz', 'progress', 'settings', 'pages', 'index.html']);
 
     for (let i = 0; i < segments.length; i++) {
         const segment = segments[i];
@@ -86,6 +86,7 @@ function navigateTo(targetPage) {
     const targetMap = {
         "dashboard": "index.html",
         "training": "training/index.html",
+        "inventory-order-check-in": "inventory-order-check-in/index.html",
         "products": "products/index.html",
         "quiz": "quiz/index.html",
         "progress": "progress/index.html",
@@ -114,6 +115,10 @@ function goTraining(){
     navigateTo("training");
 }
 
+function goInventoryOrderCheckIn(){
+    navigateTo("inventory-order-check-in");
+}
+
 function goQuiz(){
     navigateTo("quiz");
 }
@@ -135,6 +140,22 @@ function goHome(){
  * This allows buttons with data-nav-target="dashboard" to work automatically
  */
 window.addEventListener("DOMContentLoaded", function() {
+    const mainNav = document.querySelector(".sidebar-nav .nav-group");
+    if (mainNav && !mainNav.querySelector('[data-top-level="inventory-order-check-in"]')) {
+        const inventoryButton = document.createElement("button");
+        inventoryButton.type = "button";
+        inventoryButton.textContent = "📦 Inventory & Order Check-In";
+        inventoryButton.dataset.topLevel = "inventory-order-check-in";
+        inventoryButton.classList.toggle("active", window.location.pathname.includes("/inventory-order-check-in/"));
+        inventoryButton.addEventListener("click", goInventoryOrderCheckIn);
+        const trainingButton = mainNav.querySelector('[onclick*="goTraining"], [data-nav-target="training"]');
+        if (trainingButton && trainingButton.nextSibling) {
+            mainNav.insertBefore(inventoryButton, trainingButton.nextSibling);
+        } else {
+            mainNav.appendChild(inventoryButton);
+        }
+    }
+
     const navButtons = document.querySelectorAll("[data-nav-target]");
     navButtons.forEach(button => {
         if (!button.hasAttribute("data-nav-listener-attached")) {

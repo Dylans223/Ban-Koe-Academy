@@ -46,7 +46,7 @@ function openProduct(id) {
 
 function loadProduct(product) {
     document.getElementById("detailModel").innerText = product.model || "Product";
-    document.getElementById("detailModelCode").innerText = product.model || "Part number unavailable";
+    document.getElementById("detailModelCode").innerText = product.partNumber || "Part number unavailable";
     document.getElementById("detailManufacturer").innerText = product.manufacturer || "Manufacturer unavailable";
     document.getElementById("detailHeaderMeta").innerText = product.family || product.category || "Details unavailable";
     document.getElementById("detailVerification").innerText = product.verification || "PENDING";

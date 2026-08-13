@@ -282,7 +282,7 @@ id: 17,
 category: "PartNumber",
 difficulty: "Medium",
 product: "SIGA-OSD Signature Optica Smoke Detector",
-question: "What type of Signature Optica detector is SIGA-OSD?",
+question: "SIGA-OSD is listed in the Academy as which type of Signature Optica detector?",
 answers: [
 "Intelligent Smoke Detector (smoke detection only)",
 "Intelligent Smoke and Heat Detector",
@@ -298,7 +298,7 @@ id: 18,
 category: "PartNumber",
 difficulty: "Medium",
 product: "SIGA-OSHCD Signature Optica Smoke, Heat & Carbon Monoxide Detector",
-question: "What combination of hazards does SIGA-OSHCD detect?",
+question: "SIGA-OSHCD is described in the Academy as detecting which combination of hazards?",
 answers: [
 "Smoke, Heat, and Carbon Monoxide",
 "Smoke and Heat only",
@@ -314,7 +314,7 @@ id: 19,
 category: "PartNumber",
 difficulty: "Medium",
 product: "SIGA-SB4 Standard Detector Base (4-inch)",
-question: "Which product is represented by SIGA-SB4?",
+question: "SIGA-SB4 is documented in the Academy as which product?",
 answers: [
 "Standard Detector Base with 4-inch footprint",
 "Isolator Detector Base with 4-inch footprint",
@@ -330,7 +330,7 @@ id: 20,
 category: "PartNumber",
 difficulty: "Medium",
 product: "SIGA-CRR Reverse Polarity Control Relay Module",
-question: "Which relay module variant is represented by SIGA-CRR?",
+question: "SIGA-CRR is documented in the Academy as which relay module variant?",
 answers: [
 "Reverse Polarity Control Relay Module",
 "Standard Control Relay Module",
@@ -346,7 +346,7 @@ id: 21,
 category: "PartNumber",
 difficulty: "Hard",
 product: "SIGA-UM2 Universal Class A/B Signal Module",
-question: "What type of signal module is SIGA-UM2?",
+question: "SIGA-UM2 is documented in the Academy as which type of signal module?",
 answers: [
 "Universal Class A/B Signal Module",
 "Universal Class B Signal Module",
@@ -362,7 +362,7 @@ id: 22,
 category: "PartNumber",
 difficulty: "Hard",
 product: "SIGA-LED Remote LED Indicator",
-question: "What type of accessory is SIGA-LED?",
+question: "The SIGA-LED is documented in the Academy as which type of accessory?",
 answers: [
 "Remote LED Indicator for associated initiating devices",
 "LED notification strobe for corridor use",
@@ -383,7 +383,7 @@ id: 23,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "SIGA-CC1 and SIGA-CC2 are both monitor modules. What does the number suffix (1 vs 2) indicate in this naming pattern?",
+question: "The Academy documents SIGA-CC1 as Single Input Monitor Module and SIGA-CC2 as Dual Input Monitor Module. What does the number suffix (1 vs 2) indicate in this naming pattern?",
 answers: [
 "The number of input channels (1 = single, 2 = dual)",
 "The product generation number",
@@ -399,7 +399,7 @@ id: 24,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "SIGA-CT1 and SIGA-CT2 are both control modules. What does the number suffix indicate in the CT naming pattern?",
+question: "The Academy documents SIGA-CT1 as Single Output Control Module and SIGA-CT2 as Dual Output Control Module. What does the number suffix indicate in the CT module naming?",
 answers: [
 "The number of output channels (1 = single, 2 = dual)",
 "The product generation number",
@@ -415,7 +415,7 @@ id: 25,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "SIGA-CC1 and SIGA-CC2 are both monitor modules. What module function does the 'CC' portion identify?",
+question: "Looking at SIGA-CC1 (Single Input Monitor Module) and SIGA-CC2 (Dual Input Monitor Module) in the Academy: what module function does the 'CC' portion identify?",
 answers: [
 "Monitor/input module category",
 "Control/output module category",
@@ -431,7 +431,7 @@ id: 26,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "SIGA-CT1 and SIGA-CT2 are both control modules. What module function does the 'CT' portion identify?",
+question: "Looking at SIGA-CT1 (Single Output Control Module) and SIGA-CT2 (Dual Output Control Module): what module function does the 'CT' portion identify?",
 answers: [
 "Control/output module category",
 "Monitor/input module category",
@@ -447,7 +447,7 @@ id: 27,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "SIGA-SB and SIGA-SB4 are both detector bases. What does the '4' suffix indicate in the part number?",
+question: "The Academy lists SIGA-SB (Standard Detector Base) and SIGA-SB4 (Standard Detector Base 4-inch). What does the '4' suffix indicate in Signature detector base part numbers?",
 answers: [
 "A 4-inch footprint form factor variant",
 "4-wire electrical connection",
@@ -463,7 +463,7 @@ id: 28,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "SIGA-MCC1 and SIGA-CC1 are both single-input monitor modules. What does the 'M' prefix in SIGA-MCC1 indicate?",
+question: "The Academy documents SIGA-MCC1 (Miniature Single Input Monitor Module) and SIGA-CC1 (Single Input Monitor Module). What does the 'M' prefix in SIGA-MCC1 indicate?",
 answers: [
 "Miniature form factor variant of the same monitor function",
 "Multi-channel operation",
@@ -479,7 +479,7 @@ id: 29,
 category: "PartNumber",
 difficulty: "Hard",
 product: "",
-question: "SIGA-UM and SIGA-UM2 are both universal signal modules. What capability does the '2' in SIGA-UM2 add?",
+question: "The Academy documents SIGA-UM (Universal Class B Signal Module) and SIGA-UM2 (Universal Class A/B Signal Module). What specific capability does the '2' in SIGA-UM2 add?",
 answers: [
 "Class A wiring topology support in addition to Class B",
 "Two output channels instead of one",
@@ -495,7 +495,7 @@ id: 30,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "Genesis G4 and GCS are both notification products. What primary distinction do these series identifiers represent?",
+question: "The Academy documents Genesis G4 as Wall Mount Notification Devices and GCS as Ceiling Mount Speakers and Speaker-Strobes. What primary distinction do these series identifiers represent?",
 answers: [
 "G4 = wall-mount notification; GCS = ceiling-mount speakers and speaker-strobes",
 "G4 = compact devices; GCS = standard-size devices",
@@ -516,7 +516,7 @@ id: 31,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "SIGA-CC1 and SIGA-MCC1 are both single input monitor modules. What is the practical difference between them?",
+question: "The Academy documents both SIGA-CC1 and SIGA-MCC1. Both are single input monitor modules. What is the documented difference between them?",
 answers: [
 "SIGA-MCC1 is the miniature form factor; SIGA-CC1 is the standard form factor",
 "SIGA-CC1 is addressable; SIGA-MCC1 is conventional",
@@ -532,7 +532,7 @@ id: 32,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "SIGA-CT1 and SIGA-CC1 are both Signature addressable modules. What is the key functional difference?",
+question: "The Academy documents both SIGA-CT1 and SIGA-CC1 as Signature addressable modules. What is the key functional difference?",
 answers: [
 "SIGA-CT1 provides a controlled output; SIGA-CC1 supervises an input",
 "SIGA-CT1 is Class A capable; SIGA-CC1 is Class B only",
@@ -548,7 +548,7 @@ id: 33,
 category: "PartNumber",
 difficulty: "Hard",
 product: "",
-question: "SIGA-CR and SIGA-CRR are both control relay modules. What is the practical distinction between them?",
+question: "The Academy documents SIGA-CR (Control Relay Module) and SIGA-CRR (Reverse Polarity Control Relay Module). What is the documented distinction?",
 answers: [
 "SIGA-CRR provides reverse-polarity relay behavior; SIGA-CR is the standard Form C relay variant",
 "SIGA-CRR has two relay outputs; SIGA-CR has one",
@@ -564,7 +564,7 @@ id: 34,
 category: "PartNumber",
 difficulty: "Hard",
 product: "",
-question: "SIGA-IM and SIGA-IM2 are separate isolator products. What does that distinction tell you?",
+question: "The Academy documents SIGA-IM (Short Circuit Isolator Module) and SIGA-IM2 (Intelligent Isolator Module) as separate products. What does this distinction tell you?",
 answers: [
 "They are separate isolator products listed under different categories in the Signature family",
 "SIGA-IM2 is simply the newer generation of SIGA-IM with no functional difference",
@@ -572,7 +572,7 @@ answers: [
 "SIGA-IM handles open circuits; SIGA-IM2 handles short circuits"
 ],
 correct: 0,
-explanation: "SIGA-IM and SIGA-IM2 are listed as distinct isolator products with different designations. They should not be assumed to be identical or interchangeable without verifying specifications."
+explanation: "The Academy lists SIGA-IM as 'Short Circuit Isolator Module' and SIGA-IM2 as 'Intelligent Isolator Module' — two distinct products. They should not be assumed to be identical or interchangeable without verifying specifications."
 },
 
 {
@@ -580,7 +580,7 @@ id: 35,
 category: "PartNumber",
 difficulty: "Hard",
 product: "",
-question: "Genesis G4 and Genesis G4LF are both notification products. What does the 'LF' suffix specifically indicate?",
+question: "The Academy documents Genesis G4 (Wall Mount Notification Devices) and Genesis G4LF (Low Frequency). What does the 'LF' suffix specifically indicate?",
 answers: [
 "Low frequency signaling capability for application-specific notification requirements",
 "Left-side fixture mounting orientation",
@@ -727,561 +727,641 @@ explanation: "SIGA-SB4 is the Standard Detector Base with a 4-inch footprint —
 {
 id: 44,
 category: "PartNumber",
-difficulty: "Medium",
-product: "E85001-0543 Synchronization Output Module",
-question: "Which Edwards product is identified by the part number E85001-0543?",
+difficulty: "Easy",
+product: "SIGA-HPR High Power Control Relay Module",
+question: "Which product is identified by the catalog number SIGA-HPR?",
 answers: [
-"Synchronization Output Module",
 "High Power Control Relay Module",
-"Releasing Module",
-"Universal Input-Output Module Motherboards"
+"Standard Control Relay Module",
+"Dual Input Monitor Module",
+"Universal Signal Module"
 ],
 correct: 0,
-explanation: "The Edwards Lifelines page lists E85001-0543 as the Synchronization Output Module within the Intelligent Input/Output Modules collection."
+explanation: "SIGA-HPR is the High Power Control Relay Module in the Edwards Signature module family."
 },
 
 {
 id: 45,
 category: "PartNumber",
-difficulty: "Medium",
-product: "E85001-0365 Universal Input-Output Module Motherboards",
-question: "Which Edwards product is identified by the part number E85001-0365?",
+difficulty: "Easy",
+product: "SIGA-OSCD Signature Optica Smoke and Carbon Monoxide Detector",
+question: "What product does the catalog number SIGA-OSCD identify?",
 answers: [
-"Universal Input-Output Module Motherboards",
-"Signal Modules with Class A Operation",
-"Input Modules",
-"Releasing Module"
+"Signature Optica Smoke and Carbon Monoxide Detector",
+"Signature Optica Smoke Detector",
+"Signature Optica Smoke and Heat Detector",
+"Intelligent Carbon Monoxide Detector"
 ],
 correct: 0,
-explanation: "The Edwards Lifelines page lists E85001-0365 as Universal Input-Output Module Motherboards in the Intelligent Input/Output Modules collection."
+explanation: "SIGA-OSCD identifies the Signature Optica detector that combines smoke and carbon monoxide detection."
 },
 
 {
 id: 46,
 category: "PartNumber",
-difficulty: "Medium",
-product: "E85001-0743 Fireray Smoke Beam Detector",
-question: "Which Edwards conventional initiating device is identified by the part number E85001-0743?",
+difficulty: "Easy",
+product: "SIGA-COD Intelligent Carbon Monoxide Detector",
+question: "An inventory label shows SIGA-COD. What product should you recognize?",
 answers: [
-"Fireray Smoke Beam Detector",
-"Explosionproof Smoke Detector",
-"Carbon Monoxide Detector",
-"Double Action Pull Station"
+"Intelligent Carbon Monoxide Detector",
+"Signature Optica Smoke Detector",
+"Intelligent Multisensor Detector",
+"Remote LED Indicator"
 ],
 correct: 0,
-explanation: "The Edwards Conventional Initiating Devices page lists E85001-0743 as the Fireray Smoke Beam Detector."
+explanation: "SIGA-COD is the Intelligent Carbon Monoxide Detector in the Edwards Signature product data."
 },
 
 {
 id: 47,
 category: "PartNumber",
-difficulty: "Medium",
-product: "E85001-0227 Double Action Pull Stations",
-question: "Which Edwards conventional product is identified by the part number E85001-0227?",
+difficulty: "Easy",
+product: "SIGA-PCD Intelligent Multisensor Smoke and CO Detector",
+question: "Which detector is identified by SIGA-PCD?",
 answers: [
-"Double Action Pull Stations",
-"Single Action Pull Stations",
-"Fire Alarm Stations",
-"Weatherproof Pull Stations"
+"Intelligent Multisensor Smoke and CO Detector",
+"Intelligent Multisensor Smoke, Heat and CO Detector",
+"Intelligent Photoelectric Smoke Detector",
+"Intelligent Carbon Monoxide Detector"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0227 as Double Action Pull Stations in the Conventional Initiating Devices collection."
+explanation: "SIGA-PCD is the Intelligent Multisensor Smoke and CO Detector."
 },
 
 {
 id: 48,
 category: "PartNumber",
-difficulty: "Medium",
-product: "E85001-1026 Genesis LED G4S Series Wall Mount Speakers and Speaker-Strobes",
-question: "Which Edwards notification product is identified by the part number E85001-1026?",
+difficulty: "Easy",
+product: "SIGA-PHCD Intelligent Multisensor Smoke, Heat and CO Detector",
+question: "Which product is identified by the catalog number SIGA-PHCD?",
 answers: [
-"Genesis LED G4S Series Wall Mount Speakers and Speaker-Strobes",
-"Genesis LED G4SE Strobe Expander",
-"Genesis Chimes and Chime-Strobes",
-"Genesis Low Frequency Audible Signals"
+"Intelligent Multisensor Smoke, Heat and CO Detector",
+"Intelligent Multisensor Smoke and CO Detector",
+"Signature Optica Smoke and Heat Detector",
+"Intelligent Photoelectric Smoke Detector"
 ],
 correct: 0,
-explanation: "The Edwards speakers and strobes page lists E85001-1026 as Genesis LED G4S Series Wall Mount Speakers and Speaker-Strobes."
+explanation: "SIGA-PHCD is the Intelligent Multisensor Smoke, Heat and CO Detector."
 },
 
 {
 id: 49,
 category: "PartNumber",
 difficulty: "Easy",
-product: "E85005-0127 Auxiliary Power Supply",
-question: "Which Edwards power supply product is identified by the part number E85005-0127?",
+product: "SIGA-MD Signature PIR Motion Detector",
+question: "What product is identified by SIGA-MD?",
 answers: [
-"Auxiliary Power Supply",
-"Remote Booster Power Supply",
-"Voltage Regulator with Security Bell Interface",
-"Batteries"
+"Signature PIR Motion Detector",
+"Signature PIR Motion Detector Swivel Mount",
+"Detector Mounting Plate",
+"Remote LED Indicator"
 ],
 correct: 0,
-explanation: "Edwards lists E85005-0127 as the Auxiliary Power Supply in the Power Supplies and Accessories collection."
+explanation: "SIGA-MD identifies the Signature PIR Motion Detector."
 },
 
 {
 id: 50,
 category: "PartNumber",
 difficulty: "Easy",
-product: "E85001-0545 Signal Master",
-question: "Which Edwards accessory is identified by the part number E85001-0545?",
+product: "SIGA-MDS Signature PIR Motion Detector Swivel Mount",
+question: "An inventory label reads SIGA-MDS. Which product should be selected?",
 answers: [
-"Signal Master",
-"Bell-Strobe Plate",
-"Protective Hoods, Grills, and Grids",
-"Surface Mount Boxes"
+"Signature PIR Motion Detector Swivel Mount",
+"Signature PIR Motion Detector",
+"Complete Cabinet",
+"Detector Mounting Plate"
 ],
 correct: 0,
-explanation: "The Power Supplies and Accessories page lists E85001-0545 as Signal Master."
+explanation: "SIGA-MDS is the Signature PIR Motion Detector Swivel Mount."
 },
 
 {
 id: 51,
 category: "PartNumber",
-difficulty: "Medium",
-product: "E85001-0297 Input Modules",
-question: "Which Edwards product is identified by the part number E85001-0297?",
+difficulty: "Easy",
+product: "SIGA-SEC2 Complete Cabinet",
+question: "Which product is identified by the catalog number SIGA-SEC2?",
 answers: [
-"Input Modules",
-"Input-Output Modules",
-"Signal Modules",
-"Riser Monitor Modules"
+"Complete Cabinet",
+"Detector Mounting Plate",
+"High Power Control Relay Module",
+"Audible Sounder Base"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0297 as an Input Modules product in the Intelligent Input/Output Modules collection."
+explanation: "SIGA-SEC2 identifies the Complete Cabinet product in the Signature product data."
 },
 
 {
 id: 52,
 category: "PartNumber",
-difficulty: "Medium",
-product: "E85001-0275 Class A, B Signal Modules",
-question: "Which Edwards product is identified by the part number E85001-0275?",
+difficulty: "Easy",
+product: "SIGA-TS Signature Series Box Trim Skirt/Ring",
+question: "Which catalog number identifies the Signature Series Box Trim Skirt/Ring?",
 answers: [
-"Class A, B Signal Modules",
-"Input Modules",
-"Riser Monitor Modules",
-"Input-Output Modules"
+"SIGA-TS",
+"SIGA-LED",
+"SIGA-DMP",
+"SIGA-SEC2"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0275 as Class A, B Signal Modules in the Intelligent Input/Output Modules collection."
+explanation: "SIGA-TS identifies the Signature Series Box Trim Skirt/Ring accessory."
 },
 
 {
 id: 53,
 category: "PartNumber",
-difficulty: "Medium",
-product: "E85001-0535 Riser Monitor Modules",
-question: "Which Edwards product is identified by the part number E85001-0535?",
+difficulty: "Easy",
+product: "SIGA-DMP Detector Mounting Plate",
+question: "Which catalog number identifies the Signature detector mounting plate?",
 answers: [
-"Riser Monitor Modules",
-"Signal Modules",
-"Input Modules",
-"Remote Booster Power Supplies"
+"SIGA-DMP",
+"SIGA-TS",
+"SIGA-SEC2",
+"SIGA-SB"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0535 as Riser Monitor Modules in the Intelligent Input/Output Modules collection."
+explanation: "SIGA-DMP is the Signature Detector Mounting Plate used for detector mounting in raised-floor and plenum applications."
 },
 
 {
 id: 54,
 category: "PartNumber",
-difficulty: "Medium",
-product: "E85001-0533 Input-Output Modules",
-question: "Which Edwards product is identified by the part number E85001-0533?",
+difficulty: "Easy",
+product: "SIGA-AB4G-LF Audible Sounder Base Low Frequency",
+question: "Which catalog number identifies the low-frequency audible sounder base?",
 answers: [
-"Input-Output Modules",
-"Signal Modules",
-"Input Modules",
-"Riser Monitor Modules"
+"SIGA-AB4G-LF",
+"SIGA-AB4G",
+"SIGA-SB4",
+"SIGA-LED"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0533 as Input-Output Modules in the Intelligent Input/Output Modules collection."
+explanation: "SIGA-AB4G-LF is the low-frequency variant of the Signature Audible Sounder Base."
 },
 
 {
 id: 55,
 category: "PartNumber",
-difficulty: "Medium",
-product: "E85001-0241 Input Modules",
-question: "Which Edwards product is identified by the part number E85001-0241?",
+difficulty: "Easy",
+product: "SIGA-IM Short Circuit Isolator Module",
+question: "Which Signature catalog number represents the Short Circuit Isolator Module?",
 answers: [
-"Input Modules",
-"Signal Modules",
-"Input-Output Modules",
-"Riser Monitor Modules"
+"SIGA-IM",
+"SIGA-IM2",
+"SIGA-IB",
+"SIGA-CC1"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0241 as Input Modules in the Intelligent Input/Output Modules collection."
+explanation: "SIGA-IM is the Short Circuit Isolator Module. SIGA-IM2 is a separate Intelligent Isolator Module product."
 },
 
 {
 id: 56,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0237 Signal Modules",
-question: "Which Edwards product is identified by the part number E85001-0237?",
+product: "SIGA-UM Universal Class B Signal Module",
+question: "What is the catalog number for the Universal Class B Signal Module?",
 answers: [
-"Signal Modules",
-"Input Modules",
-"Riser Monitor Modules",
-"Input-Output Modules"
+"SIGA-UM",
+"SIGA-UM2",
+"SIGA-CC2",
+"SIGA-CT2"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0237 as Signal Modules in the Intelligent Input/Output Modules collection."
+explanation: "SIGA-UM is the Universal Class B Signal Module; SIGA-UM2 is the Class A/B variant."
 },
 
 {
 id: 57,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-1051 Genesis Ceiling Mount High Candela Strobes & Speaker Strobes",
-question: "Which Edwards notification product is identified by the part number E85001-1051?",
+product: "SIGA-IB4 Isolator Detector Base 4-inch",
+question: "Which catalog number identifies an Isolator Detector Base with a 4-inch footprint?",
 answers: [
-"Genesis Ceiling Mount High Candela Strobes & Speaker Strobes",
-"Genesis Wall Mount Mass Notification",
-"Genesis Outdoor Speakers and Strobes",
-"Genesis Chimes and Chime-Strobes"
+"SIGA-IB4",
+"SIGA-IB",
+"SIGA-SB4",
+"SIGA-AB4G"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-1051 as a Genesis ceiling-mount high-candela strobe and speaker-strobe product."
+explanation: "SIGA-IB4 combines the Signature isolator detector base function with the 4-inch footprint variant."
 },
 
 {
 id: 58,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-1050 Genesis Ceiling Mount Mass Notification",
-question: "Which Edwards notification product is identified by the part number E85001-1050?",
+product: "SIGA-SB Standard Detector Base",
+question: "Which catalog number identifies the standard Signature detector base?",
 answers: [
-"Genesis Ceiling Mount Mass Notification",
-"Genesis Wall Mount Mass Notification",
-"Genesis Outdoor Horns and Strobes",
-"Genesis Low Frequency Audible Signals"
+"SIGA-SB",
+"SIGA-SB4",
+"SIGA-IB",
+"SIGA-AB4G"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-1050 as Genesis Ceiling Mount Mass Notification."
+explanation: "SIGA-SB is the standard Signature Detector Base; SIGA-SB4 is the 4-inch footprint version."
 },
 
 {
 id: 59,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-1027 Genesis Wall Mount Mass Notification",
-question: "Which Edwards notification product is identified by the part number E85001-1027?",
+product: "SIGA-LED Remote LED Indicator",
+question: "A quote needs a remote visual status indicator for an associated initiating device. Which catalog number should be entered?",
 answers: [
-"Genesis Wall Mount Mass Notification",
-"Genesis Ceiling Mount Mass Notification",
-"Genesis Outdoor Speakers and Strobes",
-"Harsh Environment Strobes"
+"SIGA-LED",
+"SIGA-AB4G",
+"SIGA-DMP",
+"SIGA-TS"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-1027 as Genesis Wall Mount Mass Notification."
+explanation: "SIGA-LED is the Signature Remote LED Indicator accessory."
 },
 
 {
 id: 60,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0293 8-inch Speaker and Speaker-Strobe",
-question: "Which Edwards notification product is identified by the part number E85001-0293?",
+product: "SIGA-OSHD Signature Optica Smoke and Heat Detector",
+question: "Which catalog number corresponds to the Signature Optica Smoke and Heat Detector?",
 answers: [
-"8-inch Speaker and Speaker-Strobe",
-"4-inch Ceiling Speakers and Speaker-Strobes",
-"Genesis Outdoor Horns and Strobes",
-"Hazardous Location Horns"
+"SIGA-OSHD",
+"SIGA-OSCD",
+"SIGA-OSD",
+"SIGA-OSHCD"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0293 as an 8-inch Speaker and Speaker-Strobe."
+explanation: "SIGA-OSHD is the Signature Optica Smoke and Heat Detector."
 },
 
 {
 id: 61,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0289 8-inch Ceiling Speakers and Speaker-Strobes",
-question: "Which Edwards notification product is identified by the part number E85001-0289?",
+product: "SIGA-OSCD Signature Optica Smoke and Carbon Monoxide Detector",
+question: "Which catalog number corresponds to the Signature Optica Smoke and Carbon Monoxide Detector?",
 answers: [
-"8-inch Ceiling Speakers and Speaker-Strobes",
-"8-inch Speaker and Speaker-Strobe",
-"Genesis Outdoor Speakers and Strobes",
-"Hazardous Location Strobes"
+"SIGA-OSCD",
+"SIGA-OSD",
+"SIGA-OSHD",
+"SIGA-COD"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0289 as 8-inch Ceiling Speakers and Speaker-Strobes."
+explanation: "SIGA-OSCD is the Signature Optica Smoke and Carbon Monoxide Detector."
 },
 
 {
 id: 62,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0283 4-inch Ceiling Speakers and Speaker-Strobes",
-question: "Which Edwards notification product is identified by the part number E85001-0283?",
+product: "SIGA-COD Intelligent Carbon Monoxide Detector",
+question: "Which catalog number corresponds to the Intelligent Carbon Monoxide Detector?",
 answers: [
-"4-inch Ceiling Speakers and Speaker-Strobes",
-"8-inch Ceiling Speakers and Speaker-Strobes",
-"Genesis Outdoor Speakers and Strobes",
-"Weatherproof Mounting Boxes"
+"SIGA-COD",
+"SIGA-OSCD",
+"SIGA-PCD",
+"SIGA-PHCD"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0283 as 4-inch Ceiling Speakers and Speaker-Strobes."
+explanation: "SIGA-COD is the Intelligent Carbon Monoxide Detector, distinct from the smoke-and-CO detector variants."
 },
 
 {
 id: 63,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0626 Genesis Outdoor Speakers and Strobes",
-question: "Which Edwards notification product is identified by the part number E85001-0626?",
+product: "SIGA-HPR High Power Control Relay Module",
+question: "Which catalog number corresponds to the High Power Control Relay Module?",
 answers: [
-"Genesis Outdoor Speakers and Strobes",
-"Genesis Outdoor Horns and Strobes",
-"Genesis Wall Mount Mass Notification",
-"Genesis Ceiling Mount Mass Notification"
+"SIGA-HPR",
+"SIGA-CR",
+"SIGA-CRR",
+"SIGA-CT2"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0626 as Genesis Outdoor Speakers and Strobes."
+explanation: "SIGA-HPR is the High Power Control Relay Module."
 },
 
 {
 id: 64,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0591 Multi-purpose Loudspeaker, 15 Watt",
-question: "Which Edwards notification product is identified by the part number E85001-0591?",
+product: "SIGA-SEC2 Complete Cabinet",
+question: "Which catalog number corresponds to the Signature Complete Cabinet?",
 answers: [
-"Multi-purpose Loudspeaker, 15 Watt",
-"Hazardous Location Horns",
-"Weatherproof Mounting Boxes",
-"Genesis Outdoor Horns and Strobes"
+"SIGA-SEC2",
+"SIGA-DMP",
+"SIGA-TS",
+"SIGA-SB"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0591 as a Multi-purpose Loudspeaker, 15 Watt."
+explanation: "SIGA-SEC2 is the Complete Cabinet product in the Signature product family."
 },
 
 {
 id: 65,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0317 Integrity Re-entrant Speaker and Speaker-Strobe",
-question: "Which Edwards notification product is identified by the part number E85001-0317?",
+product: "SIGA-DMP Detector Mounting Plate",
+question: "Which catalog number corresponds to the Signature Detector Mounting Plate?",
 answers: [
-"Integrity Re-entrant Speaker and Speaker-Strobe",
-"Integrity Speaker and Speaker-Strobe",
-"Genesis Outdoor Speakers and Strobes",
-"Weatherproof Mounting Boxes"
+"SIGA-DMP",
+"SIGA-IB4",
+"SIGA-SB4",
+"SIGA-LED"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0317 as the Integrity Re-entrant Speaker and Speaker-Strobe."
+explanation: "SIGA-DMP is the Signature Detector Mounting Plate."
 },
 
 {
 id: 66,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0315 Integrity Speaker and Speaker-Strobe",
-question: "Which Edwards notification product is identified by the part number E85001-0315?",
+product: "SIGA-MCC2 Miniature Dual Input Monitor Module",
+question: "Which catalog number belongs to the miniature dual-input monitor module family?",
 answers: [
-"Integrity Speaker and Speaker-Strobe",
-"Integrity Re-entrant Speaker and Speaker-Strobe",
-"Genesis Outdoor Horns and Strobes",
-"Hazardous Location Horns"
+"SIGA-MCC2",
+"SIGA-MCC1",
+"SIGA-CC2",
+"SIGA-CT2"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0315 as the Integrity Speaker and Speaker-Strobe."
+explanation: "SIGA-MCC2 is the miniature dual-input monitor module; SIGA-MCC1 is the miniature single-input version."
 },
 
 {
 id: 67,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-1030 Genesis Outdoor-Rated Horns, Strobes, and Horn-Strobes",
-question: "Which Edwards notification product is identified by the part number E85001-1030?",
+product: "SIGA-IM Short Circuit Isolator Module",
+question: "Which catalog number belongs to the Signature short-circuit isolator module family?",
 answers: [
-"Genesis Outdoor-Rated Horns, Strobes, and Horn-Strobes",
-"Genesis Outdoor-Rated Speakers and Speaker-Strobes",
-"Genesis Wall Mount Mass Notification",
-"Harsh Environment Strobes"
+"SIGA-IM",
+"SIGA-IB",
+"SIGA-IM2",
+"SIGA-IB4"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-1030 as Genesis Outdoor-Rated Horns, Strobes, and Horn-Strobes."
+explanation: "SIGA-IM is the module-level Short Circuit Isolator; SIGA-IB and SIGA-IB4 are isolator detector bases."
 },
 
 {
 id: 68,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-1031 Genesis Outdoor-Rated Speakers and Speaker-Strobes",
-question: "Which Edwards notification product is identified by the part number E85001-1031?",
+product: "SIGA-SB Standard Detector Base",
+question: "Which catalog number belongs to the standard Signature detector base family?",
 answers: [
-"Genesis Outdoor-Rated Speakers and Speaker-Strobes",
-"Genesis Outdoor-Rated Horns, Strobes, and Horn-Strobes",
-"Genesis Wall Mount Mass Notification",
-"Weatherproof Mounting Boxes"
+"SIGA-SB",
+"SIGA-IB",
+"SIGA-SB4",
+"SIGA-AB4G"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-1031 as Genesis Outdoor-Rated Speakers and Speaker-Strobes."
+explanation: "SIGA-SB is the standard detector base; SIGA-IB is the isolator detector base."
 },
 
 {
 id: 69,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0391 Horn-Siren Combination",
-question: "Which Edwards notification product is identified by the part number E85001-0391?",
+product: "SIGA-IB4 Isolator Detector Base 4-inch",
+question: "Which catalog number belongs to the 4-inch Signature isolator detector base family?",
 answers: [
-"Horn-Siren Combination",
-"Hazardous Location Bells",
-"Hazardous Location Horns",
-"Weatherproof Mounting Boxes"
+"SIGA-IB4",
+"SIGA-SB4",
+"SIGA-IB",
+"SIGA-AB4G"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0391 as a Horn-Siren Combination."
+explanation: "SIGA-IB4 is the isolator detector base with the 4-inch footprint."
 },
 
 {
 id: 70,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0399 Hazardous Location Bells",
-question: "Which Edwards notification product is identified by the part number E85001-0399?",
+product: "SIGA-AB4G-LF Audible Sounder Base Low Frequency",
+question: "Which catalog number belongs to the low-frequency Signature audible sounder base family?",
 answers: [
-"Hazardous Location Bells",
-"Hazardous Location Horns",
-"Horn-Siren Combination",
-"Weatherproof Mounting Boxes"
+"SIGA-AB4G-LF",
+"SIGA-AB4G",
+"SIGA-SB4",
+"SIGA-IB4"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0399 as Hazardous Location Bells."
+explanation: "SIGA-AB4G-LF is the low-frequency audible sounder base; SIGA-AB4G is the standard audible sounder base."
 },
 
 {
 id: 71,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0397 Hazardous Location Horns",
-question: "Which Edwards notification product is identified by the part number E85001-0397?",
+product: "SIGA-MDS Signature PIR Motion Detector Swivel Mount",
+question: "Which catalog number belongs to the Signature PIR motion detector swivel-mount family?",
 answers: [
-"Hazardous Location Horns",
-"Hazardous Location Bells",
-"Horn-Siren Combination",
-"Harsh Environment Strobes"
+"SIGA-MDS",
+"SIGA-MD",
+"SIGA-DMP",
+"SIGA-TS"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0397 as Hazardous Location Horns."
+explanation: "SIGA-MDS is the Signature PIR Motion Detector Swivel Mount; SIGA-MD is the non-swivel PIR motion detector listing."
 },
 
 {
 id: 72,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0387 Hazardous Location Multiple Tone Signal",
-question: "Which Edwards notification product is identified by the part number E85001-0387?",
+product: "SIGA-OSCD and SIGA-OSD",
+question: "Which catalog number identifies the Signature Optica model that adds carbon monoxide detection to smoke detection?",
 answers: [
-"Hazardous Location Multiple Tone Signal",
-"Hazardous Location Horns",
-"Hazardous Location Bells",
-"Weatherproof Mounting Boxes"
+"SIGA-OSCD",
+"SIGA-OSD",
+"SIGA-OSHD",
+"SIGA-COD"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0387 as a Hazardous Location Multiple Tone Signal."
+explanation: "SIGA-OSCD is the smoke-and-carbon-monoxide model; SIGA-OSD is the smoke-only model."
 },
 
 {
 id: 73,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0385 Hazardous Location Horns and Sirens",
-question: "Which Edwards notification product is identified by the part number E85001-0385?",
+product: "SIGA-OSHD and SIGA-OSHCD",
+question: "Which catalog number identifies the Signature Optica model with smoke and heat detection but without carbon monoxide detection?",
 answers: [
-"Hazardous Location Horns and Sirens",
-"Hazardous Location Multiple Tone Signal",
-"Hazardous Location Bells",
-"Genesis Outdoor Horns and Strobes"
+"SIGA-OSHD",
+"SIGA-OSHCD",
+"SIGA-OSCD",
+"SIGA-COD"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0385 as Hazardous Location Horns and Sirens."
+explanation: "SIGA-OSHD is the smoke-and-heat detector; SIGA-OSHCD adds carbon monoxide detection."
 },
 
 {
 id: 74,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0628 Genesis Outdoor Horns and Strobes",
-question: "Which Edwards notification product is identified by the part number E85001-0628?",
+product: "SIGA-PCD and SIGA-PHCD",
+question: "Which catalog number identifies the multisensor detector described as smoke and CO, without heat in its product name?",
 answers: [
-"Genesis Outdoor Horns and Strobes",
-"Genesis Outdoor Speakers and Strobes",
-"Hazardous Location Horns",
-"Weatherproof Mounting Boxes"
+"SIGA-PCD",
+"SIGA-PHCD",
+"SIGA-OSHD",
+"SIGA-COD"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0628 as Genesis Outdoor Horns and Strobes."
+explanation: "SIGA-PCD is the Intelligent Multisensor Smoke and CO Detector; SIGA-PHCD includes smoke, heat, and CO."
 },
 
 {
 id: 75,
 category: "PartNumber",
 difficulty: "Medium",
-product: "E85001-0309 Weatherproof Mounting Boxes",
-question: "Which Edwards notification accessory is identified by the part number E85001-0309?",
+product: "SIGA-MCC1 and SIGA-MCC2",
+question: "Which catalog number identifies the miniature dual-input monitor module rather than the miniature single-input version?",
 answers: [
-"Weatherproof Mounting Boxes",
-"Harsh Environment Strobes",
-"Hazardous Location Strobes",
-"Genesis Outdoor Speakers and Strobes"
+"SIGA-MCC2",
+"SIGA-MCC1",
+"SIGA-CC2",
+"SIGA-CT2"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0309 as Weatherproof Mounting Boxes."
+explanation: "SIGA-MCC2 is the miniature dual-input monitor module; SIGA-MCC1 is the miniature single-input version."
 },
 
 {
 id: 76,
 category: "PartNumber",
-difficulty: "Medium",
-product: "E85001-0305 Harsh Environment Strobes",
-question: "Which Edwards notification product is identified by the part number E85001-0305?",
+difficulty: "Hard",
+product: "SIGA-SB and SIGA-IB",
+question: "Which catalog number identifies the standard detector base rather than the isolator detector base?",
 answers: [
-"Harsh Environment Strobes",
-"Weatherproof Mounting Boxes",
-"Hazardous Location Strobes",
-"Genesis Outdoor Horns and Strobes"
+"SIGA-SB",
+"SIGA-IB",
+"SIGA-SB4",
+"SIGA-IB4"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0305 as Harsh Environment Strobes."
+explanation: "SIGA-SB is the standard detector base; SIGA-IB is the isolator detector base."
 },
 
 {
 id: 77,
 category: "PartNumber",
-difficulty: "Medium",
-product: "E85001-0624 Hazardous Location Strobes",
-question: "Which Edwards notification product is identified by the part number E85001-0624?",
+difficulty: "Hard",
+product: "SIGA-AB4G and SIGA-AB4G-LF",
+question: "Which catalog number identifies the low-frequency audible sounder base rather than the standard audible sounder base?",
 answers: [
-"Hazardous Location Strobes",
-"Harsh Environment Strobes",
-"Genesis Outdoor Horns and Strobes",
-"Weatherproof Mounting Boxes"
+"SIGA-AB4G-LF",
+"SIGA-AB4G",
+"SIGA-SB4",
+"SIGA-IB4"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0624 as Hazardous Location Strobes."
+explanation: "SIGA-AB4G-LF is the low-frequency variant; SIGA-AB4G is the standard audible sounder base."
 },
 
 {
 id: 78,
 category: "PartNumber",
-difficulty: "Medium",
-product: "E85001-0655 Signature Series Diagnostic Tool",
-question: "Which Edwards product is identified by the part number E85001-0655?",
+difficulty: "Hard",
+product: "SIGA-HPR High Power Control Relay Module",
+question: "A control requirement calls for the high-power relay product rather than a standard control relay. Which catalog number should be selected?",
 answers: [
-"Signature Series Diagnostic Tool",
-"Auxiliary Power Supply",
-"Signal Master",
-"Weatherproof Mounting Boxes"
+"SIGA-HPR",
+"SIGA-CR",
+"SIGA-CRR",
+"SIGA-CT1"
 ],
 correct: 0,
-explanation: "Edwards lists E85001-0655 as the Signature Series Diagnostic Tool."
-}
+explanation: "SIGA-HPR is the High Power Control Relay Module; SIGA-CR and SIGA-CRR are separate control relay products."
+},
+
+{
+id: 79,
+category: "PartNumber",
+difficulty: "Hard",
+product: "SIGA-MD Signature PIR Motion Detector",
+question: "A project needs a Signature PIR motion detector without the swivel-mount variant. Which catalog number should be selected?",
+answers: [
+"SIGA-MD",
+"SIGA-MDS",
+"SIGA-DMP",
+"SIGA-SEC2"
+],
+correct: 0,
+explanation: "SIGA-MD is the Signature PIR Motion Detector; SIGA-MDS is the swivel-mount variant."
+},
+
+{
+id: 80,
+category: "PartNumber",
+difficulty: "Hard",
+product: "SIGA-IB4 Isolator Detector Base 4-inch",
+question: "A sales-support request specifies a four-inch footprint and detector-base isolation. Which catalog number should be entered?",
+answers: [
+"SIGA-IB4",
+"SIGA-IB",
+"SIGA-SB4",
+"SIGA-IM2"
+],
+correct: 0,
+explanation: "SIGA-IB4 matches both requirements: the isolator detector base function and the 4-inch footprint."
+},
+
+{
+id: 81,
+category: "PartNumber",
+difficulty: "Hard",
+product: "SIGA-SEC2 Complete Cabinet",
+question: "An equipment schedule calls for the Signature Complete Cabinet. Which catalog number belongs on the line item?",
+answers: [
+"SIGA-SEC2",
+"SIGA-DMP",
+"SIGA-TS",
+"SIGA-HPR"
+],
+correct: 0,
+explanation: "SIGA-SEC2 is the Complete Cabinet catalog number in the Signature product data."
+},
+
+{
+id: 82,
+category: "PartNumber",
+difficulty: "Hard",
+product: "SIGA-DMP Detector Mounting Plate",
+question: "A mounting detail requires the Signature detector mounting plate for a raised-floor or plenum installation. Which catalog number should be entered?",
+answers: [
+"SIGA-DMP",
+"SIGA-SB",
+"SIGA-IB",
+"SIGA-LED"
+],
+correct: 0,
+explanation: "SIGA-DMP is the Detector Mounting Plate associated with raised-floor and plenum mounting support."
+},
+
+{
+id: 83,
+category: "PartNumber",
+difficulty: "Hard",
+product: "SIGA-UM2 Universal Class A/B Signal Module",
+question: "A design requires the Signature universal signal module that supports both Class A and Class B. Which catalog number should be selected?",
+answers: [
+"SIGA-UM2",
+"SIGA-UM",
+"SIGA-CT2",
+"SIGA-CR"
+],
+correct: 0,
+explanation: "SIGA-UM2 is the Universal Class A/B Signal Module; SIGA-UM is the Class B variant."
+},
 
 ];

@@ -48,7 +48,7 @@ const trainingModules = [
         progress: 0,
         description: "Solve realistic customer, estimating, and system-design situations.",
         preview: "Future scenario drills can include HVAC shutdown, duct smoke detection, door-holder release, exterior notification, gym speakers, classroom ceiling speakers, extra SLC devices, relay interfaces, module selection, and incomplete project information."
-    }
+    },
 ];
 
 const moduleContainer = document.getElementById("trainingModules");
@@ -142,7 +142,7 @@ function renderTrainingModules() {
 
 function renderTrainingSummary() {
     overallProgressValue.textContent = "0%";
-    modulesStartedValue.textContent = "0 / 5";
+    modulesStartedValue.textContent = `0 / ${trainingModules.length}`;
     skillsMasteredValue.textContent = "0";
     trainingXpValue.textContent = "0 XP";
 }
