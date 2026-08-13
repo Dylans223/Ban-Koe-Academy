@@ -65,6 +65,14 @@ function getCurrentDepth() {
  * @returns {string} - correctly formatted relative path with ../ prefixes
  */
 function buildNavigationUrl(targetPath) {
+    // On http(s) hosting, build an absolute path from the detected base path.
+    // This is deterministic and immune to relative-path resolution surprises.
+    if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+        const basePath = getBasePath();
+        return basePath + targetPath;
+    }
+
+    // file:// protocol (opening pages directly from disk): use relative traversal.
     const depth = getCurrentDepth();
     const upPrefix = depth > 0 ? '../'.repeat(depth) : '';
     return upPrefix + targetPath;
