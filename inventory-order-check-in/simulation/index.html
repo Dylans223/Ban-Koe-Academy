@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | Order Check-In Simulation</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="simulation.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand"><h1>Ban-Koe Academy</h1></div>
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button type="button" data-nav-target="dashboard">Dashboard</button>
+                <button type="button" data-nav-target="training">Training</button>
+                <button type="button" data-nav-target="quiz">Quiz</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button type="button" data-nav-target="products">Products</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button type="button" data-nav-target="progress">Progress</button>
+                <button type="button" data-nav-target="settings">Settings</button>
+            </div>
+        </nav>
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content simulation-content">
+        <div class="simulation-back-row">
+            <a class="simulation-back" href="../index.html">← Back to Inventory &amp; Order Check-In</a>
+        </div>
+        <header class="simulation-header">
+            <div>
+                <p class="eyebrow">Hands-on workflow</p>
+                <h1 class="pageTitle">Order Check-In Simulation</h1>
+                <p class="page-subtitle">Receive and check in the simulated Ticket 192815 shipment using the Ban-Koe procedure.</p>
+            </div>
+            <div class="simulation-ticket"><span>Ticket</span><strong>192815</strong></div>
+        </header>
+
+        <section class="simulation-progress panel">
+            <div class="simulation-progress-line"><span id="eventLabel">Decision 1 of 17</span><strong id="progressPercent">0%</strong></div>
+            <div class="progress-track" aria-hidden="true"><div id="progressFill" class="progress-fill" style="width:0%"></div></div>
+        </section>
+
+        <section id="simulationPanel" class="simulation-panel panel" aria-live="polite"></section>
+    </main>
+</div>
+<script src="../../scripts/navigation.js"></script>
+<script src="simulation.js"></script>
+</body>
+</html>

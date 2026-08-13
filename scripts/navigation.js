@@ -144,7 +144,7 @@ window.addEventListener("DOMContentLoaded", function() {
     if (mainNav && !mainNav.querySelector('[data-top-level="inventory-order-check-in"]')) {
         const inventoryButton = document.createElement("button");
         inventoryButton.type = "button";
-        inventoryButton.textContent = "📦 Inventory & Order Check-In";
+        inventoryButton.textContent = "📦 Order Check-In";
         inventoryButton.dataset.topLevel = "inventory-order-check-in";
         inventoryButton.classList.toggle("active", window.location.pathname.includes("/inventory-order-check-in/"));
         inventoryButton.addEventListener("click", goInventoryOrderCheckIn);

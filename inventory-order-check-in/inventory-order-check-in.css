@@ -5,17 +5,11 @@
 .oci-hub-intro h2 { color: var(--text); font-size: 25px; margin: 7px 0 10px; max-width: 25ch; }
 .oci-hub-intro p:not(.eyebrow) { color: var(--text-secondary); max-width: 66ch; }
 .oci-workflow { border-left: 3px solid var(--primary); padding: 16px 18px; color: #dbeafe; font-size: 17px; font-weight: 700; line-height: 1.6; background: rgba(30, 64, 175, .18); }
-.oci-hub-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+.oci-hub-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); }
 .oci-action-card { display: grid; gap: 12px; min-height: 270px; background: #152235; }
 .oci-action-card h2 { color: var(--text); font-size: 25px; }
 .oci-action-card p:not(.eyebrow) { color: var(--text-secondary); max-width: 52ch; }
 .oci-action-card .btn { justify-self: start; align-self: end; }
 .oci-action-icon { width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid rgba(59, 130, 246, .4); border-radius: 14px; background: rgba(37, 99, 235, .18); font-size: 25px; }
-.oci-progress-section { display: grid; gap: var(--space-2); }
-.oci-progress-section .section-heading p { max-width: 40ch; }
-.oci-progress-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); }
-.oci-progress-card { display: grid; gap: 8px; min-height: 130px; background: #152235; }
-.oci-progress-label { color: var(--text-secondary); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-.oci-progress-card strong { color: var(--text); font-size: 28px; line-height: 1.1; }
-.oci-progress-card span:last-child { color: var(--text-secondary); font-size: 13px; }
-@media (max-width: 850px) { .oci-hub-intro, .oci-hub-actions, .oci-progress-grid { grid-template-columns: 1fr; } .oci-action-card { min-height: 0; } }
+@media (max-width: 1100px) { .oci-hub-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 850px) { .oci-hub-intro, .oci-hub-actions { grid-template-columns: 1fr; } .oci-action-card { min-height: 0; } }
