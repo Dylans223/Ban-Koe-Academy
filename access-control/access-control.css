@@ -1,0 +1,8 @@
+/* Access Control hub */
+.access-hub-content { gap: var(--space-3); }
+.access-hub-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); }
+.access-hub-card { display: grid; grid-template-rows: auto 1fr auto; gap: var(--space-2); min-height: 280px; background: #152235; }
+.access-hub-card h2 { color: var(--text); font-size: 20px; }
+.access-hub-card p:not(.eyebrow) { margin-top: 8px; }
+.access-hub-icon { display: grid; width: 58px; height: 58px; place-items: center; border-radius: var(--radius-md); background: rgba(37, 99, 235, 0.18); border: 1px solid rgba(59, 130, 246, 0.35); font-size: 28px; }
+@media (max-width: 1050px) { .access-hub-grid { grid-template-columns: 1fr; } .access-hub-card { min-height: auto; } }

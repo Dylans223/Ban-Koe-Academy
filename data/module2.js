@@ -721,42 +721,6 @@ explanation:"Understanding detector/base relationships helps prevent ordering mi
 },
 
 {
-id:41,
-module:2,
-lesson:4,
-category:"Duct Smoke Detection",
-difficulty:"Easy",
-product:"",
-question:"What is the primary purpose of a duct smoke detector?",
-answers:[
-"Detect smoke within an HVAC duct",
-"Detect water flow",
-"Operate notification appliances",
-"Monitor sprinkler pressure"
-],
-correct:0,
-explanation:"Duct smoke detectors are designed to detect smoke moving through HVAC ductwork."
-},
-
-{
-id:42,
-module:2,
-lesson:4,
-category:"Duct Smoke Detection",
-difficulty:"Easy",
-product:"",
-question:"Where is a duct smoke detector typically installed?",
-answers:[
-"In HVAC ductwork",
-"Inside the fire alarm control panel",
-"Inside a pull station",
-"Inside a speaker"
-],
-correct:0,
-explanation:"Duct smoke detectors are installed within HVAC duct systems to monitor moving air."
-},
-
-{
 id:43,
 module:2,
 lesson:4,

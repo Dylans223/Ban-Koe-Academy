@@ -420,10 +420,7 @@ function bindStepButtons() {
         goTraining();
     });
     el.continueNext.addEventListener("click", () => {
-        // Navigate to next training module (sibling directory)
-        const depth = getCurrentDepth();
-        const upPrefix = depth > 0 ? "../".repeat(depth) : "";
-        window.location.href = upPrefix + "bom-estimating/index.html";
+        window.location.href = buildNavigationUrl("training/bom-estimating/index.html");
     });
 }
 

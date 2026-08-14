@@ -21,7 +21,7 @@ function getBasePath() {
     }
 
     const segments = normalized.split('/').filter(Boolean);
-    const knownAppSegments = new Set(['training', 'inventory-order-check-in', 'products', 'quiz', 'progress', 'settings', 'pages', 'index.html']);
+    const knownAppSegments = new Set(['training', 'inventory-order-check-in', 'access-control', 'products', 'quiz', 'progress', 'settings', 'pages', 'index.html']);
 
     for (let i = 0; i < segments.length; i++) {
         const segment = segments[i];
@@ -87,6 +87,7 @@ function navigateTo(targetPage) {
         "dashboard": "index.html",
         "training": "training/index.html",
         "inventory-order-check-in": "inventory-order-check-in/index.html",
+        "access-control": "access-control/index.html",
         "products": "products/index.html",
         "quiz": "quiz/index.html",
         "progress": "progress/index.html",
@@ -119,6 +120,10 @@ function goInventoryOrderCheckIn(){
     navigateTo("inventory-order-check-in");
 }
 
+function goAccessControl(){
+    navigateTo("access-control");
+}
+
 function goQuiz(){
     navigateTo("quiz");
 }
@@ -149,11 +154,28 @@ window.addEventListener("DOMContentLoaded", function() {
         inventoryButton.classList.toggle("active", window.location.pathname.includes("/inventory-order-check-in/"));
         inventoryButton.addEventListener("click", goInventoryOrderCheckIn);
         const trainingButton = mainNav.querySelector('[onclick*="goTraining"], [data-nav-target="training"]');
-        if (trainingButton && trainingButton.nextSibling) {
-            mainNav.insertBefore(inventoryButton, trainingButton.nextSibling);
+        if (trainingButton) {
+            trainingButton.insertAdjacentElement("afterend", inventoryButton);
         } else {
             mainNav.appendChild(inventoryButton);
         }
+    }
+
+    const orderButton = mainNav && mainNav.querySelector('[data-top-level="inventory-order-check-in"]');
+    if (mainNav && orderButton && !mainNav.querySelector('[data-top-level="access-control"]')) {
+        const accessButton = document.createElement("button");
+        accessButton.type = "button";
+        accessButton.textContent = "🔐 Access Control";
+        accessButton.dataset.topLevel = "access-control";
+        accessButton.classList.toggle("active", window.location.pathname.includes("/access-control/"));
+        accessButton.addEventListener("click", goAccessControl);
+        orderButton.insertAdjacentElement("afterend", accessButton);
+    }
+
+    const quizButton = document.querySelector('.sidebar-nav button[onclick*="goQuiz"], .sidebar-nav button[data-nav-target="quiz"]');
+    const productsGroup = Array.from(document.querySelectorAll(".sidebar-nav .nav-group")).find((group) => group.querySelector('[onclick*="goProducts"], [data-nav-target="products"]'));
+    if (quizButton && productsGroup && quizButton.parentElement !== productsGroup) {
+        productsGroup.appendChild(quizButton);
     }
 
     const navButtons = document.querySelectorAll("[data-nav-target]");

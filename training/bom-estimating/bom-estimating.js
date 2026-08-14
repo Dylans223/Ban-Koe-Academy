@@ -364,10 +364,7 @@
             goTraining();
         });
         el.nextModuleButton.addEventListener("click", () => {
-            // Navigate to next training module (sibling directory)
-            const depth = getCurrentDepth();
-            const upPrefix = depth > 0 ? "../".repeat(depth) : "";
-            window.location.href = upPrefix + "scenarios/index.html";
+            window.location.href = buildNavigationUrl("training/scenarios/index.html");
         });
 
         el.closeProductModalButton.addEventListener("click", closeProductModal);

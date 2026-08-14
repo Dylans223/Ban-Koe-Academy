@@ -266,10 +266,7 @@ const moduleSteps = [
 // Navigation is handled by global functions in navigation.js
 // Add module-specific navigation if needed
 function goSystemBuilder() {
-    // Navigate to the next training module
-    const depth = getCurrentDepth();
-    const upPrefix = depth > 0 ? "../".repeat(depth) : "";
-    window.location.href = upPrefix + "system-builder/index.html";
+    window.location.href = buildNavigationUrl("training/system-builder/index.html");
 }
 
 const bomCatalog = {

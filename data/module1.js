@@ -2881,24 +2881,6 @@ explanation:"The official model listing identifies this detector as a smoke and 
 },
 
 {
-id:161,
-module:1,
-lesson:10,
-category:"Edwards Product Library",
-difficulty:"Easy",
-product:"Intelligent CO Detector",
-question:"Which Edwards family includes the Intelligent CO Detector?",
-answers:[
-"Signature Series",
-"Genesis",
-"EST4",
-"Edge Series"
-],
-correct:0,
-explanation:"The product is grouped under Signature Series intelligent initiating devices."
-},
-
-{
 id:162,
 module:1,
 lesson:10,

@@ -5,20 +5,7 @@
 
 let currentQuestion = 0;
 
-let currentModule = 1;
-
 let activeQuestions = [];
-
-const moduleMap = {
-
-    1: questions,
-    2: module2Questions
-
-    // 3: module3Questions
-    // 4: module4Questions
-    // etc.
-
-};
 
 let correct =
 Number(localStorage.getItem("correct")) || 0;
@@ -56,35 +43,13 @@ document.getElementById("questionCounter");
 
 const explanation =
 document.getElementById("explanation");
-document
-.getElementById("startQuizButton")
-.addEventListener("click", startQuiz);
-
 nextButton.addEventListener("click", nextQuestion);
-
-document
-.getElementById("module1Button")
-.onclick = () => startQuiz(1);
-
-document
-.getElementById("module2Button")
-.onclick = () => startQuiz(2);
 
 updateStats();
 
-function startQuiz(module = 1){
+function startAccessControlPractice(){
 
-    currentModule = module;
-
-    if(!moduleMap[module]){
-
-        alert("This module has not been added yet.");
-
-        return;
-
-    }
-
-    activeQuestions = [...moduleMap[module]];
+    activeQuestions = [...module3Questions];
 
     currentQuestion = 0;
 
@@ -120,15 +85,20 @@ explanation.style.display="none";
 
     answersDiv.innerHTML = "";
 
-    q.answers.forEach((answer,index)=>{
+    const shuffledAnswers = q.answers
+        .map((answer, index) => ({ answer, index }))
+        .sort(() => Math.random() - 0.5);
+
+    shuffledAnswers.forEach((entry) => {
 
         const button = document.createElement("button");
 
         button.className = "answerButton";
 
-        button.innerText = answer;
+        button.innerText = entry.answer;
+        button.dataset.answerIndex = entry.index;
 
-        button.onclick = ()=>checkAnswer(index);
+        button.onclick = ()=>checkAnswer(entry.index);
 
         answersDiv.appendChild(button);
 
@@ -152,8 +122,11 @@ function checkAnswer(selected){
     const correctAnswer =
         activeQuestions[currentQuestion].correct;
 
-    buttons[correctAnswer]
-        .classList.add("correct");
+    buttons.forEach((button) => {
+        if (Number(button.dataset.answerIndex) === correctAnswer) {
+            button.classList.add("correct");
+        }
+    });
 
     if(selected===correctAnswer){
 
@@ -309,7 +282,6 @@ function nextQuestion(){
         quizPage.classList.add("hidden");
 
         dashboardPage.classList.remove("hidden");
-
         currentQuestion=0;
 
         return;
@@ -337,4 +309,9 @@ function saveProgress(){
         xp
     );
 
+}
+
+const practiceTarget = new URLSearchParams(window.location.search).get("practice");
+if (practiceTarget === "access-control") {
+    startAccessControlPractice();
 }

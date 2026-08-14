@@ -175,23 +175,23 @@ function closeTrainingModal() {
 }
 
 function goToTakeoffTraining() {
-    window.location.href = "takeoff/index.html";
+    window.location.href = buildNavigationUrl("training/takeoff/index.html");
 }
 
 function goToSystemBuilder() {
-    window.location.href = "system-builder/index.html";
+    window.location.href = buildNavigationUrl("training/system-builder/index.html");
 }
 
 function goToWiringConnections() {
-    window.location.href = "wiring/index.html";
+    window.location.href = buildNavigationUrl("training/wiring/index.html");
 }
 
 function goToBomEstimating() {
-    window.location.href = "bom-estimating/index.html";
+    window.location.href = buildNavigationUrl("training/bom-estimating/index.html");
 }
 
 function goToRealWorldScenarios() {
-    window.location.href = "scenarios/index.html";
+    window.location.href = buildNavigationUrl("training/scenarios/index.html");
 }
 
 function handleKeyboardShortcuts(event) {

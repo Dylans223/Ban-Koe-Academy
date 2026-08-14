@@ -1,0 +1,37 @@
+/* Access Control training uses the shared module shell and card language. */
+.access-content { gap: var(--space-3); }
+.access-header { display: block; }
+.access-layout, .access-main { display: grid; gap: var(--space-2); }
+.access-step { display: grid; gap: var(--space-2); background: #152235; border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-3); }
+.access-step h2 { color: var(--text); }
+.access-step h3, .access-step h4 { color: var(--text); }
+.access-step p, .access-step li { max-width: 76ch; }
+.access-step ul, .access-step ol { display: grid; gap: 8px; padding-left: 22px; }
+.access-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; align-items: center; }
+.flow-node { display: grid; gap: 4px; place-items: center; min-height: 86px; padding: 12px; text-align: center; background: rgba(37,99,235,.16); border: 1px solid rgba(59,130,246,.5); border-radius: var(--radius-md); color: var(--text); font-weight: 700; }
+.flow-node small { color: var(--text-secondary); font-size: 12px; font-weight: 500; }
+.flow-arrow { color: var(--hover); font-size: 22px; text-align: center; }
+.info-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
+.info-card, .product-card, .compare-card, .callout, .scenario-card { display: grid; gap: 8px; padding: var(--space-2); background: rgba(15,23,42,.58); border: 1px solid rgba(51,65,85,.9); border-radius: var(--radius-md); }
+.product-card { min-height: 150px; }
+.product-card.must { border-color: rgba(239,68,68,.65); }
+.product-card.should { border-color: rgba(245,158,11,.65); }
+.product-card h3 { font-size: 19px; }
+.product-label { color: #bfdbfe; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.memory { padding: 14px; background: rgba(34,197,94,.12); border: 1px solid rgba(34,197,94,.45); border-radius: var(--radius-md); color: #dcfce7; font-weight: 700; }
+.callout strong { color: var(--text); }
+.callout.warning { border-color: rgba(245,158,11,.65); background: rgba(120,53,15,.18); }
+.compare-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
+.compare-card h3 { font-size: 18px; }
+.compare-card.fail-safe { border-color: rgba(34,197,94,.65); }
+.compare-card.fail-secure { border-color: rgba(239,68,68,.65); }
+.family-table { width: 100%; border-collapse: collapse; }
+.family-table th, .family-table td { border: 1px solid rgba(51,65,85,.9); padding: 9px 11px; text-align: left; vertical-align: top; }
+.family-table th { color: #dbeafe; background: rgba(15,23,42,.85); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+.access-step .table-shell { overflow-x: auto; }
+.module-actions { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; align-items: center; }
+.check-list { display: grid; gap: 8px; }
+.check-list label { display: flex; gap: 10px; align-items: flex-start; padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: rgba(15,23,42,.45); }
+.check-list input { width: 18px; min-height: 18px; margin-top: 3px; accent-color: var(--success); }
+@media (max-width: 800px) { .access-header, .info-grid, .compare-grid { grid-template-columns: 1fr; } .access-flow { grid-template-columns: 1fr; } .flow-arrow { transform: rotate(90deg); } .family-table { font-size: 13px; } .family-table th, .family-table td { padding: 8px; } }
+@media (max-width: 768px) { .access-control-page .app { display: block; } .access-control-page .sidebar { position: static; width: 100%; min-height: auto; } .access-control-page .content { margin-left: 0; width: 100%; padding: var(--space-2); } }

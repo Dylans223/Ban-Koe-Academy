@@ -70,6 +70,14 @@ const QUIZ_CATEGORIES = [
         targetCount: 15
     },
     {
+        id: "access-control",
+        name: "Access Control",
+        icon: "🔐",
+        description: "Recognize access-control controllers, readers, locks, exit devices, relays, and estimating relationships.",
+        difficulty: "Beginner / Intermediate",
+        targetCount: 150
+    },
+    {
         id: "mixed-knowledge",
         name: "Mixed Knowledge",
         icon: "🔥",
@@ -96,6 +104,7 @@ const CATEGORY_ASSIGNMENT = {
     "Detector Bases":       "product-recognition",
     "Inventory":            "product-recognition",
     "Warehouse":            "product-recognition",
+    "Access Control":       "access-control",
 
     "Applications":         "product-applications",
     "Application":          "product-applications",
@@ -245,10 +254,14 @@ function buildAllQuestionPools() {
         finalBossQuestions.forEach(q => addQuestion(q, "fbq", "final-boss"));
     }
 
+    if (typeof accessControlQuestions !== "undefined" && Array.isArray(accessControlQuestions)) {
+        accessControlQuestions.forEach(q => addQuestion(q, "ac", "access-control"));
+    }
+
     // Build mixed-knowledge and final-boss pools from all other categories
     const standardCategories = ["product-recognition", "product-applications",
         "modules-systems", "wiring-connections", "part-number-mastery",
-        "takeoff-estimating", "real-world-scenarios"];
+        "takeoff-estimating", "real-world-scenarios", "access-control"];
 
     standardCategories.forEach(catId => {
         pools[catId].forEach(q => {

@@ -11,22 +11,6 @@ const wiringQuestions = [
 // -----------------------------------------------
 
 {
-id: 1,
-category: "Wiring",
-difficulty: "Easy",
-product: "",
-question: "What does SLC stand for?",
-answers: [
-"Signaling Line Circuit",
-"Smoke Line Circuit",
-"Supervised Loop Circuit",
-"Signal Logic Controller"
-],
-correct: 0,
-explanation: "SLC stands for Signaling Line Circuit. It is the communication loop that carries data between the fire alarm control panel and addressable field devices."
-},
-
-{
 id: 2,
 category: "Wiring",
 difficulty: "Easy",

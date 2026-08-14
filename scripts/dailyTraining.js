@@ -8,7 +8,8 @@
         "modules-systems",
         "wiring-connections",
         "takeoff-estimating",
-        "real-world-scenarios"
+        "real-world-scenarios",
+        "access-control"
     ];
 
     const REVIEW_TARGETS = {
@@ -18,7 +19,8 @@
         "real-world-scenarios": { path: "training/scenarios/index.html", label: "Real-World Scenarios" },
         "product-applications": { path: "training/index.html", label: "Training Overview" },
         "part-number-mastery": { path: "training/index.html", label: "Training Overview" },
-        "product-recognition": { path: "training/index.html", label: "Training Overview" }
+        "product-recognition": { path: "training/index.html", label: "Training Overview" },
+        "access-control": { path: "training/access-control/index.html", label: "Access Control" }
     };
 
     const APPLY_TARGETS = {
@@ -28,7 +30,8 @@
         "real-world-scenarios": { path: "training/scenarios/index.html", label: "Real-World Scenarios" },
         "product-applications": { path: "training/scenarios/index.html", label: "Real-World Scenarios" },
         "part-number-mastery": { path: "training/scenarios/index.html", label: "Real-World Scenarios" },
-        "product-recognition": { path: "training/scenarios/index.html", label: "Real-World Scenarios" }
+        "product-recognition": { path: "training/scenarios/index.html", label: "Real-World Scenarios" },
+        "access-control": { path: "training/access-control/index.html", label: "Access Control" }
     };
 
     function safeNumber(value) {

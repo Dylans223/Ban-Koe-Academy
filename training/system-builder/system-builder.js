@@ -1146,10 +1146,7 @@ function showNextModuleMessage() {
 }
 
 function goToWiringConnections() {
-    // Navigate to the next training module (sibling directory)
-    const depth = getCurrentDepth();
-    const upPrefix = depth > 0 ? "../".repeat(depth) : "";
-    window.location.href = upPrefix + "wiring/index.html";
+    window.location.href = buildNavigationUrl("training/wiring/index.html");
 }
 
 function scrollToStep(stepNumber) {

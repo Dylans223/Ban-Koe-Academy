@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | Access Control</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../module-shell.css">
+    <link rel="stylesheet" href="access-control.css">
+</head>
+<body class="access-control-page">
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand"><h1>Ban-Koe Academy</h1></div>
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button type="button" data-nav-target="dashboard">Dashboard</button>
+                <button class="active" type="button" data-nav-target="training">Training</button>
+                <button type="button" data-nav-target="quiz">Quiz</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button type="button" data-nav-target="products">Products</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button type="button" data-nav-target="progress">Progress</button>
+                <button type="button" data-nav-target="settings">Settings</button>
+            </div>
+        </nav>
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+    <main class="content training-module-content access-content">
+        <div class="module-back-row"><button class="module-back-button" type="button" data-nav-target="training">← Back to Training</button></div>
+        <header class="page-header access-header">
+            <div><p class="eyebrow">Job Skills Training</p><h1 class="pageTitle">Access Control</h1><p class="page-subtitle">Learn controllers, readers, locks, exit devices, relays, power requirements, and estimating fundamentals.</p></div>
+        </header>
+        <section class="panel module-overview">
+            <div class="module-overview-stepper"><p class="eyebrow">Where Am I?</p><div id="accessStepList" class="module-step-list" aria-label="Access Control modules"></div></div>
+            <div class="module-overview-objective"><p class="eyebrow">Current Objective</p><span id="accessObjectiveChip" class="module-objective-chip">System Flow</span><h2 id="accessObjectiveTitle" class="module-objective-title">Understand how an access decision becomes a door action.</h2><p id="accessObjectiveText" class="module-objective-text">Move from part recognition to complete-door estimating judgment.</p></div>
+        </section>
+        <section class="access-layout"><div id="accessMain" class="access-main"></div></section>
+    </main>
+</div>
+<script src="../../scripts/navigation.js"></script>
+<script src="access-control.js"></script>
+</body>
+</html>

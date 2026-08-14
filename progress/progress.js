@@ -10,7 +10,8 @@ const CATEGORY_IDS = [
     "modules-systems",
     "wiring-connections",
     "takeoff-estimating",
-    "real-world-scenarios"
+    "real-world-scenarios",
+    "access-control"
 ];
 
 function safeNumber(value) {
