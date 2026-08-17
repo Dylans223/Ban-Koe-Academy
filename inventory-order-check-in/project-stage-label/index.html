@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | Project Stage Label</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="project-stage-label.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar no-print">
+        <div class="sidebar-brand"><h1>Ban-Koe Academy</h1></div>
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button type="button" data-nav-target="dashboard">Dashboard</button>
+                <button type="button" data-nav-target="training">Training</button>
+                <button type="button" data-nav-target="quiz">Quiz</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button type="button" data-nav-target="products">Products</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button type="button" data-nav-target="progress">Progress</button>
+                <button type="button" data-nav-target="settings">Settings</button>
+            </div>
+        </nav>
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content stage-label-content">
+        <div class="stage-label-back-row no-print">
+            <a class="stage-label-back" href="../index.html">← Back to Inventory &amp; Order Check-In</a>
+        </div>
+        <header class="stage-label-header no-print">
+            <div>
+                <p class="eyebrow">Equipment staging</p>
+                <h1 class="pageTitle">Project Stage Label</h1>
+                <p class="page-subtitle">Create a project staging label using the information required for equipment staging.</p>
+            </div>
+        </header>
+
+        <div class="stage-label-mode-tabs no-print" role="tablist" aria-label="Project Stage Label modes">
+            <button type="button" id="createLabelModeBtn" class="stage-label-mode-tab active" role="tab" aria-selected="true">Create a Label</button>
+            <button type="button" id="practiceModeBtn" class="stage-label-mode-tab" role="tab" aria-selected="false">Practice Scenarios</button>
+        </div>
+
+        <div id="createLabelPanel">
+            <section class="panel stage-label-form-panel no-print" aria-label="Project stage label form">
+                <form id="stageLabelForm" novalidate>
+                    <div class="form-field">
+                        <label for="projectName">Project Name</label>
+                        <input type="text" id="projectName" name="projectName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="salesRepFullName">Sales Rep Full Name</label>
+                        <input type="text" id="salesRepFullName" name="salesRepFullName" placeholder="e.g., Kyle Williams" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="systemType">Type of System</label>
+                        <input type="text" id="systemType" name="systemType" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="ticketNumber">Ticket #</label>
+                        <input type="text" id="ticketNumber" name="ticketNumber" required>
+                    </div>
+
+                    <p id="formError" class="stage-label-error" role="alert" hidden>All four fields are required, and Sales Rep Full Name must contain a valid name, before generating the label.</p>
+
+                    <div class="stage-label-actions">
+                        <button type="button" id="useExampleBtn" class="btn btn-secondary">Use Example</button>
+                        <button type="submit" class="btn btn-primary">Generate Label</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="labelOutputSection" class="stage-label-output-section" hidden>
+                <div class="stage-label-output-actions no-print">
+                    <button type="button" id="printLabelBtn" class="btn btn-primary">Print Label</button>
+                </div>
+                <div id="stageLabel" class="stage-label print-target">
+                    <p class="stage-label-brand">Ban-Koe Academy — Project Stage Label</p>
+                    <div class="stage-label-field">
+                        <span class="stage-label-key">Project Name</span>
+                        <span id="labelProjectName" class="stage-label-value"></span>
+                    </div>
+                    <div class="stage-label-field">
+                        <span class="stage-label-key">Sales Rep Initials</span>
+                        <span id="labelSalesRepInitials" class="stage-label-value"></span>
+                    </div>
+                    <div class="stage-label-field">
+                        <span class="stage-label-key">Type of System</span>
+                        <span id="labelSystemType" class="stage-label-value"></span>
+                    </div>
+                    <div class="stage-label-field">
+                        <span class="stage-label-key">Ticket #</span>
+                        <span id="labelTicketNumber" class="stage-label-value"></span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="practiceScenariosPanel" class="no-print" hidden>
+            <section class="panel scenario-intro-panel">
+                <p class="eyebrow">Practice Scenarios</p>
+                <h2>Read the project information and build the correct staging label.</h2>
+                <div class="scenario-score-bar" aria-label="Scenario session score">
+                    <div><span>Scenarios Completed</span><strong id="scenarioCompletedValue">0</strong></div>
+                    <div><span>Correct</span><strong id="scenarioCorrectValue">0</strong></div>
+                    <div><span>Accuracy</span><strong id="scenarioAccuracyValue">0%</strong></div>
+                </div>
+            </section>
+
+            <section id="scenarioActivePanel" class="panel scenario-active-panel">
+                <div class="scenario-card">
+                    <span id="scenarioDifficultyBadge" class="scenario-difficulty-badge"></span>
+                    <p id="scenarioCounter" class="scenario-counter"></p>
+                    <p id="scenarioText" class="scenario-text"></p>
+                </div>
+
+                <form id="scenarioForm" novalidate>
+                    <div class="form-field">
+                        <label for="scenarioProjectName">Project Name</label>
+                        <input type="text" id="scenarioProjectName" name="scenarioProjectName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="scenarioSalesRepInitials">Sales Rep Initials</label>
+                        <input type="text" id="scenarioSalesRepInitials" name="scenarioSalesRepInitials" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="scenarioSystemType">Type of System</label>
+                        <input type="text" id="scenarioSystemType" name="scenarioSystemType" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="scenarioTicketNumber">Ticket #</label>
+                        <input type="text" id="scenarioTicketNumber" name="scenarioTicketNumber" required>
+                    </div>
+
+                    <p id="scenarioFormError" class="stage-label-error" role="alert" hidden>All four fields are required before checking the label.</p>
+
+                    <div class="stage-label-actions">
+                        <button type="submit" id="checkLabelBtn" class="btn btn-primary">Check Label</button>
+                    </div>
+                </form>
+
+                <div id="scenarioFeedback" class="scenario-feedback" hidden>
+                    <p id="scenarioFeedbackMessage" class="scenario-feedback-message"></p>
+                    <ul id="scenarioFieldChecklist" class="scenario-field-checklist"></ul>
+                    <p id="scenarioExplanation" class="scenario-explanation" hidden></p>
+
+                    <div id="scenarioCorrectLabelWrap" class="stage-label-output-section" hidden>
+                        <div id="scenarioStageLabel" class="stage-label">
+                            <p class="stage-label-brand">Ban-Koe Academy — Project Stage Label</p>
+                            <div class="stage-label-field">
+                                <span class="stage-label-key">Project Name</span>
+                                <span id="scenarioLabelProjectName" class="stage-label-value"></span>
+                            </div>
+                            <div class="stage-label-field">
+                                <span class="stage-label-key">Sales Rep Initials</span>
+                                <span id="scenarioLabelSalesRepInitials" class="stage-label-value"></span>
+                            </div>
+                            <div class="stage-label-field">
+                                <span class="stage-label-key">Type of System</span>
+                                <span id="scenarioLabelSystemType" class="stage-label-value"></span>
+                            </div>
+                            <div class="stage-label-field">
+                                <span class="stage-label-key">Ticket #</span>
+                                <span id="scenarioLabelTicketNumber" class="stage-label-value"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scenario-feedback-actions">
+                        <button type="button" id="tryAgainBtn" class="btn btn-secondary" hidden>Try Again</button>
+                        <button type="button" id="nextScenarioBtn" class="btn btn-primary" hidden>Next Scenario</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="scenarioCompletePanel" class="panel scenario-complete-panel" hidden>
+                <h2>Project Stage Label Scenario Training Complete</h2>
+                <div class="scenario-score-bar" aria-label="Final scenario session score">
+                    <div><span>Scenarios Completed</span><strong id="finalCompletedValue">0</strong></div>
+                    <div><span>Correct</span><strong id="finalCorrectValue">0</strong></div>
+                    <div><span>Accuracy</span><strong id="finalAccuracyValue">0%</strong></div>
+                </div>
+                <button type="button" id="practiceAgainBtn" class="btn btn-primary">Practice Again</button>
+            </section>
+        </div>
+    </main>
+</div>
+<script src="../../scripts/navigation.js"></script>
+<script src="projectStageLabelScenarios.js"></script>
+<script src="project-stage-label.js"></script>
+</body>
+</html>
