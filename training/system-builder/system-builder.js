@@ -10,7 +10,6 @@ function findProductBy(predicate) {
 }
 
 const est4Product = findProductBy((product) => product.family === "EST4" || product.model === "EST4");
-const est3Product = findProductBy((product) => product.model === "EST3");
 const ioProduct = findProductBy((product) => product.family === "iO Series");
 const io64Product = findProductBy((product) => product.model === "iO64");
 const io1000Product = findProductBy((product) => product.model === "iO1000");
@@ -18,6 +17,8 @@ const edgeProduct = findProductBy((product) => product.family === "Edge Series")
 const g4NotificationProduct = findProductBy((product) => product.model === "Genesis LED G4 Series Wall Mount Notification Devices");
 const gcsNotificationProduct = findProductBy((product) => product.model === "Genesis LED GCS Series Ceiling Mount Speakers and Speaker-Strobes");
 const g1NotificationProduct = findProductBy((product) => product.model === "Genesis LED G1 Series Compact Notification Devices");
+const g1VNotificationProduct = findProductBy((product) => product.model === "G1V Genesis LED Compact Wall-Mount Strobe");
+const g1AvNotificationProduct = findProductBy((product) => product.model === "G1AV Genesis LED Compact Wall-Mount Horn-Strobe");
 
 const systemScenario = {
     id: "two-story-office-system",
@@ -47,16 +48,6 @@ const controlPanelChoices = [
         product: est4Product,
         correct: false,
         whyNot: "EST4 remains a valid larger-capacity platform, but this project is deliberately kept within the small-building iO64 fit; the scenario is intended to test device-count-based platform selection."
-    },
-    {
-        id: "est3",
-        title: est3Product ? est3Product.model : "Edwards EST3 Fire Alarm Control Platform",
-        subtitle: est3Product ? est3Product.category : "Emergency Communications Platform",
-        description: est3Product ? est3Product.officialDescription : "A modular control platform used in other Edwards system designs.",
-        badge: "Verified",
-        product: est3Product,
-        correct: false,
-        whyNot: "EST3 is a valid platform in other applications, but the explicit 48-device small-building fit in this scenario points to the iO64."
     },
     {
         id: "io64",
@@ -130,8 +121,8 @@ const systemComponents = [
         name: "Horn/Strobe",
         category: "notification",
         categoryLabel: "Notification Appliances",
-        description: g4NotificationProduct ? g4NotificationProduct.category : "Provides audible and visual notification.",
-        function: g4NotificationProduct ? g4NotificationProduct.howItWorks : "Alerts occupants with sound and visible flashing light.",
+        description: g1AvNotificationProduct ? g1AvNotificationProduct.category : "Provides audible and visual notification.",
+        function: g1AvNotificationProduct ? g1AvNotificationProduct.howItWorks : "Alerts occupants with sound and visible flashing light.",
         step3Available: true,
         step4Available: true,
         finalAvailable: true
@@ -152,8 +143,8 @@ const systemComponents = [
         name: "Strobe",
         category: "notification",
         categoryLabel: "Notification Appliances",
-        description: g1NotificationProduct ? g1NotificationProduct.category : "Provides visible notification.",
-        function: g1NotificationProduct ? g1NotificationProduct.howItWorks : "Provides visible occupant notification.",
+        description: g1VNotificationProduct ? g1VNotificationProduct.category : "Provides visible notification.",
+        function: g1VNotificationProduct ? g1VNotificationProduct.howItWorks : "Provides visible occupant notification.",
         step3Available: true,
         step4Available: true,
         finalAvailable: true
@@ -623,16 +614,16 @@ function renderNotificationTree() {
 }
 
 function getNotificationReferenceText(componentId) {
-    if (componentId === "horn-strobe" && g4NotificationProduct) {
-        return `Verified product reference: ${g4NotificationProduct.model}`;
+    if (componentId === "horn-strobe" && g1AvNotificationProduct) {
+        return `Verified product reference: ${g1AvNotificationProduct.model}`;
     }
 
     if (componentId === "speaker" && gcsNotificationProduct) {
         return `Verified product reference: ${gcsNotificationProduct.model}`;
     }
 
-    if (componentId === "strobe" && g1NotificationProduct) {
-        return `Verified product reference: ${g1NotificationProduct.model}`;
+    if (componentId === "strobe" && g1VNotificationProduct) {
+        return `Verified product reference: ${g1VNotificationProduct.model}`;
     }
 
     return "Use the notification device that matches the signaling requirement.";

@@ -186,13 +186,23 @@ function addUnique(list, message) {
     if (message && !list.includes(message)) list.push(message);
 }
 
+function shuffleOptions(options) {
+    const shuffled = options.map((option, originalIndex) => ({ option, originalIndex }));
+    for (let index = shuffled.length - 1; index > 0; index--) {
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+    }
+    return shuffled;
+}
+
 function renderEvent() {
     const event = simulationEvents[currentEvent];
+    const shuffledOptions = shuffleOptions(event.options);
     const percent = Math.round((currentEvent / simulationEvents.length) * 100);
     eventLabel.textContent = `Decision ${currentEvent + 1} of ${simulationEvents.length}`;
     progressPercent.textContent = `${percent}%`;
     progressFill.style.width = `${percent}%`;
-    simulationPanel.innerHTML = `<div class="simulation-step-heading"><div><p class="eyebrow">Procedure Step ${event.officialStep}</p><h2>${event.title}</h2><p>${event.objective}</p></div><span class="badge">Ticket 192815</span></div><div class="simulation-layout"><div class="simulation-copy"><p><strong>Current situation</strong></p><p>${event.situation || event.prompt}</p>${event.document || ""}</div><div class="simulation-copy"><p><strong>What do you do?</strong></p><div class="simulation-options">${event.options.map((option, index) => `<button type="button" class="simulation-option" data-option="${index}">${option}</button>`).join("")}</div><div class="simulation-feedback" aria-live="polite"></div></div></div>`;
+    simulationPanel.innerHTML = `<div class="simulation-step-heading"><div><p class="eyebrow">Procedure Step ${event.officialStep}</p><h2>${event.title}</h2><p>${event.objective}</p></div><span class="badge">Ticket 192815</span></div><div class="simulation-layout"><div class="simulation-copy"><p><strong>Current situation</strong></p><p>${event.situation || event.prompt}</p>${event.document || ""}</div><div class="simulation-copy"><p><strong>What do you do?</strong></p><div class="simulation-options">${shuffledOptions.map(({ option, originalIndex }) => `<button type="button" class="simulation-option" data-option="${originalIndex}">${option}</button>`).join("")}</div><div class="simulation-feedback" aria-live="polite"></div></div></div>`;
     simulationPanel.querySelectorAll(".simulation-option").forEach(button => button.addEventListener("click", () => chooseOption(button, event)));
 }
 

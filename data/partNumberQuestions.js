@@ -92,22 +92,6 @@ explanation: "SIGA-270 is the Single Action Intelligent Pull Station in the Edwa
 },
 
 {
-id: 6,
-category: "PartNumber",
-difficulty: "Easy",
-product: "SIGA-IM2 Isolator Module",
-question: "Which product is identified by the part number SIGA-IM2?",
-answers: [
-"Intelligent Isolator Module",
-"Dual Input Monitor Module",
-"Control Relay Module",
-"Intelligent CO Detector"
-],
-correct: 0,
-explanation: "SIGA-IM2 is the Intelligent Isolator Module in the Edwards Signature family — used to help isolate shorted sections of an addressable circuit."
-},
-
-{
 id: 7,
 category: "PartNumber",
 difficulty: "Easy",
@@ -209,22 +193,6 @@ explanation: "SIGA-CT2 is the Dual Output Control Module, providing two independ
 },
 
 {
-id: 13,
-category: "PartNumber",
-difficulty: "Medium",
-product: "SIGA-MCC1 Miniature Single Input Monitor Module",
-question: "A design calls for a miniature form factor single input monitor module. Which Signature part number should be specified?",
-answers: [
-"SIGA-MCC1",
-"SIGA-CC1",
-"SIGA-MCC2",
-"SIGA-RM1"
-],
-correct: 0,
-explanation: "SIGA-MCC1 is the Miniature Single Input Monitor Module — same input supervision function as SIGA-CC1 but in a miniature physical form for constrained installations."
-},
-
-{
 id: 14,
 category: "PartNumber",
 difficulty: "Medium",
@@ -254,22 +222,6 @@ answers: [
 ],
 correct: 0,
 explanation: "SIGA-278 is the Double Action Intelligent Pull Station, designed for applications requiring double-action (two-step) operation. SIGA-270 is the single-action variant."
-},
-
-{
-id: 16,
-category: "PartNumber",
-difficulty: "Medium",
-product: "SIGA-IB Isolator Detector Base",
-question: "A system design uses a detector base that includes loop isolation functionality. Which Signature detector base part number includes this feature?",
-answers: [
-"SIGA-IB",
-"SIGA-SB",
-"SIGA-SB4",
-"SIGA-LED"
-],
-correct: 0,
-explanation: "SIGA-IB is the Isolator Detector Base — it combines detector mounting with loop isolation capability, unlike SIGA-SB which is a standard base without isolation."
 },
 
 // ═══════════════════════════════════════════════
@@ -459,22 +411,6 @@ explanation: "The '4' suffix in Signature base part numbers like SIGA-SB4 and SI
 },
 
 {
-id: 28,
-category: "PartNumber",
-difficulty: "Medium",
-product: "",
-question: "The Academy documents SIGA-MCC1 (Miniature Single Input Monitor Module) and SIGA-CC1 (Single Input Monitor Module). What does the 'M' prefix in SIGA-MCC1 indicate?",
-answers: [
-"Miniature form factor variant of the same monitor function",
-"Multi-channel operation",
-"Manual addressing mode",
-"Modular panel architecture compatibility"
-],
-correct: 0,
-explanation: "The 'M' prefix in SIGA-MCC1 and SIGA-MCC2 identifies the miniature form factor variant. The monitoring function is the same as the standard CC modules, but in a compact physical size for constrained mounting locations."
-},
-
-{
 id: 29,
 category: "PartNumber",
 difficulty: "Hard",
@@ -512,22 +448,6 @@ explanation: "G4 identifies the wall-mount notification series; GCS identifies t
 // ═══════════════════════════════════════════════
 
 {
-id: 31,
-category: "PartNumber",
-difficulty: "Medium",
-product: "",
-question: "The Academy documents both SIGA-CC1 and SIGA-MCC1. Both are single input monitor modules. What is the documented difference between them?",
-answers: [
-"SIGA-MCC1 is the miniature form factor; SIGA-CC1 is the standard form factor",
-"SIGA-CC1 is addressable; SIGA-MCC1 is conventional",
-"SIGA-MCC1 monitors two inputs; SIGA-CC1 monitors one",
-"There is no practical difference — they are the same product"
-],
-correct: 0,
-explanation: "SIGA-MCC1 is the Miniature Single Input Monitor Module — the same monitoring function as SIGA-CC1 but in a miniature physical form for constrained installations."
-},
-
-{
 id: 32,
 category: "PartNumber",
 difficulty: "Medium",
@@ -560,22 +480,6 @@ explanation: "Both are control relay modules. SIGA-CRR is specifically designed 
 },
 
 {
-id: 34,
-category: "PartNumber",
-difficulty: "Hard",
-product: "",
-question: "The Academy documents SIGA-IM (Short Circuit Isolator Module) and SIGA-IM2 (Intelligent Isolator Module) as separate products. What does this distinction tell you?",
-answers: [
-"They are separate isolator products listed under different categories in the Signature family",
-"SIGA-IM2 is simply the newer generation of SIGA-IM with no functional difference",
-"SIGA-IM is for addressable systems; SIGA-IM2 is for conventional systems",
-"SIGA-IM handles open circuits; SIGA-IM2 handles short circuits"
-],
-correct: 0,
-explanation: "The Academy lists SIGA-IM as 'Short Circuit Isolator Module' and SIGA-IM2 as 'Intelligent Isolator Module' — two distinct products. They should not be assumed to be identical or interchangeable without verifying specifications."
-},
-
-{
 id: 35,
 category: "PartNumber",
 difficulty: "Hard",
@@ -601,15 +505,15 @@ id: 36,
 category: "PartNumber",
 difficulty: "Easy",
 product: "Genesis LED G4 Series Wall Mount Notification Devices",
-question: "A fire alarm project calls for horn/strobe notification appliances on walls throughout a building. Which Genesis series would you investigate first?",
+question: "A fire alarm project calls for ordinary wall-mounted horn-strobes, and the schedule does not specify low-frequency output or a G4-specific requirement. Which Genesis family should you investigate first?",
 answers: [
-"Genesis LED G4 Series (Wall Mount Notification)",
 "Genesis LED GCS Series (Ceiling Mount Speakers)",
 "Genesis LED G4LF Series (Low Frequency)",
+"Genesis LED G4 Series (Wall Mount Notification)",
 "Genesis LED G1 Series (Compact)"
 ],
-correct: 0,
-explanation: "The Genesis G4 Series covers Wall Mount Notification Devices. For standard wall-mounted horn/strobe applications, G4 is the appropriate starting point within the Genesis LED family."
+correct: 3,
+explanation: "For ordinary wall-mounted horn-strobe work that fits the common G1 family, investigate Genesis G1 first. G4 remains legitimate when the project specifically calls for G4 or its documented characteristics."
 },
 
 {
@@ -773,22 +677,6 @@ explanation: "SIGA-COD is the Intelligent Carbon Monoxide Detector in the Edward
 },
 
 {
-id: 47,
-category: "PartNumber",
-difficulty: "Easy",
-product: "SIGA-PCD Intelligent Multisensor Smoke and CO Detector",
-question: "Which detector is identified by SIGA-PCD?",
-answers: [
-"Intelligent Multisensor Smoke and CO Detector",
-"Intelligent Multisensor Smoke, Heat and CO Detector",
-"Intelligent Photoelectric Smoke Detector",
-"Intelligent Carbon Monoxide Detector"
-],
-correct: 0,
-explanation: "SIGA-PCD is the Intelligent Multisensor Smoke and CO Detector."
-},
-
-{
 id: 48,
 category: "PartNumber",
 difficulty: "Easy",
@@ -805,22 +693,6 @@ explanation: "SIGA-PHCD is the Intelligent Multisensor Smoke, Heat and CO Detect
 },
 
 {
-id: 49,
-category: "PartNumber",
-difficulty: "Easy",
-product: "SIGA-MD Signature PIR Motion Detector",
-question: "What product is identified by SIGA-MD?",
-answers: [
-"Signature PIR Motion Detector",
-"Signature PIR Motion Detector Swivel Mount",
-"Detector Mounting Plate",
-"Remote LED Indicator"
-],
-correct: 0,
-explanation: "SIGA-MD identifies the Signature PIR Motion Detector."
-},
-
-{
 id: 50,
 category: "PartNumber",
 difficulty: "Easy",
@@ -834,22 +706,6 @@ answers: [
 ],
 correct: 0,
 explanation: "SIGA-MDS is the Signature PIR Motion Detector Swivel Mount."
-},
-
-{
-id: 51,
-category: "PartNumber",
-difficulty: "Easy",
-product: "SIGA-SEC2 Complete Cabinet",
-question: "Which product is identified by the catalog number SIGA-SEC2?",
-answers: [
-"Complete Cabinet",
-"Detector Mounting Plate",
-"High Power Control Relay Module",
-"Audible Sounder Base"
-],
-correct: 0,
-explanation: "SIGA-SEC2 identifies the Complete Cabinet product in the Signature product data."
 },
 
 {
@@ -901,22 +757,6 @@ explanation: "SIGA-AB4G-LF is the low-frequency variant of the Signature Audible
 },
 
 {
-id: 55,
-category: "PartNumber",
-difficulty: "Easy",
-product: "SIGA-IM Short Circuit Isolator Module",
-question: "Which Signature catalog number represents the Short Circuit Isolator Module?",
-answers: [
-"SIGA-IM",
-"SIGA-IM2",
-"SIGA-IB",
-"SIGA-CC1"
-],
-correct: 0,
-explanation: "SIGA-IM is the Short Circuit Isolator Module. SIGA-IM2 is a separate Intelligent Isolator Module product."
-},
-
-{
 id: 56,
 category: "PartNumber",
 difficulty: "Medium",
@@ -930,22 +770,6 @@ answers: [
 ],
 correct: 0,
 explanation: "SIGA-UM is the Universal Class B Signal Module; SIGA-UM2 is the Class A/B variant."
-},
-
-{
-id: 57,
-category: "PartNumber",
-difficulty: "Medium",
-product: "SIGA-IB4 Isolator Detector Base 4-inch",
-question: "Which catalog number identifies an Isolator Detector Base with a 4-inch footprint?",
-answers: [
-"SIGA-IB4",
-"SIGA-IB",
-"SIGA-SB4",
-"SIGA-AB4G"
-],
-correct: 0,
-explanation: "SIGA-IB4 combines the Signature isolator detector base function with the 4-inch footprint variant."
 },
 
 {
@@ -1045,22 +869,6 @@ explanation: "SIGA-HPR is the High Power Control Relay Module."
 },
 
 {
-id: 64,
-category: "PartNumber",
-difficulty: "Medium",
-product: "SIGA-SEC2 Complete Cabinet",
-question: "Which catalog number corresponds to the Signature Complete Cabinet?",
-answers: [
-"SIGA-SEC2",
-"SIGA-DMP",
-"SIGA-TS",
-"SIGA-SB"
-],
-correct: 0,
-explanation: "SIGA-SEC2 is the Complete Cabinet product in the Signature product family."
-},
-
-{
 id: 65,
 category: "PartNumber",
 difficulty: "Medium",
@@ -1093,22 +901,6 @@ explanation: "SIGA-MCC2 is the miniature dual-input monitor module; SIGA-MCC1 is
 },
 
 {
-id: 67,
-category: "PartNumber",
-difficulty: "Medium",
-product: "SIGA-IM Short Circuit Isolator Module",
-question: "Which catalog number belongs to the Signature short-circuit isolator module family?",
-answers: [
-"SIGA-IM",
-"SIGA-IB",
-"SIGA-IM2",
-"SIGA-IB4"
-],
-correct: 0,
-explanation: "SIGA-IM is the module-level Short Circuit Isolator; SIGA-IB and SIGA-IB4 are isolator detector bases."
-},
-
-{
 id: 68,
 category: "PartNumber",
 difficulty: "Medium",
@@ -1122,22 +914,6 @@ answers: [
 ],
 correct: 0,
 explanation: "SIGA-SB is the standard detector base; SIGA-IB is the isolator detector base."
-},
-
-{
-id: 69,
-category: "PartNumber",
-difficulty: "Medium",
-product: "SIGA-IB4 Isolator Detector Base 4-inch",
-question: "Which catalog number belongs to the 4-inch Signature isolator detector base family?",
-answers: [
-"SIGA-IB4",
-"SIGA-SB4",
-"SIGA-IB",
-"SIGA-AB4G"
-],
-correct: 0,
-explanation: "SIGA-IB4 is the isolator detector base with the 4-inch footprint."
 },
 
 {
@@ -1205,22 +981,6 @@ explanation: "SIGA-OSHD is the smoke-and-heat detector; SIGA-OSHCD adds carbon m
 },
 
 {
-id: 74,
-category: "PartNumber",
-difficulty: "Medium",
-product: "SIGA-PCD and SIGA-PHCD",
-question: "Which catalog number identifies the multisensor detector described as smoke and CO, without heat in its product name?",
-answers: [
-"SIGA-PCD",
-"SIGA-PHCD",
-"SIGA-OSHD",
-"SIGA-COD"
-],
-correct: 0,
-explanation: "SIGA-PCD is the Intelligent Multisensor Smoke and CO Detector; SIGA-PHCD includes smoke, heat, and CO."
-},
-
-{
 id: 75,
 category: "PartNumber",
 difficulty: "Medium",
@@ -1285,54 +1045,6 @@ explanation: "SIGA-HPR is the High Power Control Relay Module; SIGA-CR and SIGA-
 },
 
 {
-id: 79,
-category: "PartNumber",
-difficulty: "Hard",
-product: "SIGA-MD Signature PIR Motion Detector",
-question: "A project needs a Signature PIR motion detector without the swivel-mount variant. Which catalog number should be selected?",
-answers: [
-"SIGA-MD",
-"SIGA-MDS",
-"SIGA-DMP",
-"SIGA-SEC2"
-],
-correct: 0,
-explanation: "SIGA-MD is the Signature PIR Motion Detector; SIGA-MDS is the swivel-mount variant."
-},
-
-{
-id: 80,
-category: "PartNumber",
-difficulty: "Hard",
-product: "SIGA-IB4 Isolator Detector Base 4-inch",
-question: "A sales-support request specifies a four-inch footprint and detector-base isolation. Which catalog number should be entered?",
-answers: [
-"SIGA-IB4",
-"SIGA-IB",
-"SIGA-SB4",
-"SIGA-IM2"
-],
-correct: 0,
-explanation: "SIGA-IB4 matches both requirements: the isolator detector base function and the 4-inch footprint."
-},
-
-{
-id: 81,
-category: "PartNumber",
-difficulty: "Hard",
-product: "SIGA-SEC2 Complete Cabinet",
-question: "An equipment schedule calls for the Signature Complete Cabinet. Which catalog number belongs on the line item?",
-answers: [
-"SIGA-SEC2",
-"SIGA-DMP",
-"SIGA-TS",
-"SIGA-HPR"
-],
-correct: 0,
-explanation: "SIGA-SEC2 is the Complete Cabinet catalog number in the Signature product data."
-},
-
-{
 id: 82,
 category: "PartNumber",
 difficulty: "Hard",
@@ -1362,6 +1074,97 @@ answers: [
 ],
 correct: 0,
 explanation: "SIGA-UM2 is the Universal Class A/B Signal Module; SIGA-UM is the Class B variant."
+},
+
+{
+id:84,
+category:"PartNumber",
+difficulty:"Hard",
+product:"G4LFVRF Genesis LED Wall-Mount Low-Frequency Horn-Strobe",
+question:"Using the documented Genesis syntax, what does G4LFVRF identify?",
+answers:["G4 ceiling appliance, LF low-frequency horn, W white housing, N no marking","G4 wall appliance, LFV low-frequency horn-strobe, W white housing, A ALERT marking","G4 wall-mount appliance, LFV low-frequency horn-strobe, R red housing, F FIRE marking","G4 compact appliance, LF standard horn, R red housing, F-FR FIRE/FEU marking"],
+correct:2,
+explanation:"The supplied syntax documents G4 as the Genesis wall-mount appliance, LFV as low-frequency horn-strobe, R as red housing, and F as FIRE marking."
+},
+{
+id:85,
+category:"PartNumber",
+difficulty:"Medium",
+product:"G4LF and G4LFV Genesis LED Appliances",
+question:"What is the documented distinction between G4LF and G4LFV?",
+answers:["G4LF is ceiling-mounted; G4LFV is a detector base","G4LF is the low-frequency horn; G4LFV is the low-frequency horn-strobe","G4LF is white; G4LFV is always red","G4LF is a removal tool; G4LFV is a trim plate"],
+correct:1,
+explanation:"G4LF and G4LFV are separate Genesis families: LF identifies the low-frequency horn, while LFV identifies the low-frequency horn-strobe."
+},
+{
+id:86,
+category:"PartNumber",
+difficulty:"Medium",
+product:"GRSW-10 Room-Side Wiring Plate",
+question:"What does GRSW-10 represent in a Genesis takeoff?",
+answers:["A red 4-inch surface-mount box","A device/cover removal tool for one appliance","The required room-side wiring plate, ordered separately in a 10-pack","A white G4 trim plate"],
+correct:2,
+explanation:"GRSW-10 is the required room-side wiring plate and is ordered separately in packs of 10."
+},
+{
+id:87,
+category:"PartNumber",
+difficulty:"Hard",
+product:"Genesis Housing Markings",
+question:"In the documented Genesis housing-marking syntax, which code indicates FIRE/FEU?",
+answers:["F","F-SP","A","F-FR"],
+correct:3,
+explanation:"The supplied Genesis syntax identifies F-FR as FIRE/FEU, F as FIRE, F-SP as FUEGO, and A as ALERT."
+},
+{
+id:88,
+category:"PartNumber",
+difficulty:"Hard",
+product:"G1AVRF Genesis LED Compact Wall-Mount Horn-Strobe",
+question:"Using the documented G1 syntax, what does G1AVRF identify?",
+answers:["A white Genesis G1 wall-mounted ALERT strobe","A red Genesis G1 wall-mounted FIRE horn","A red Genesis G1 wall-mounted FIRE horn-strobe","A red Genesis G4 low-frequency horn-strobe"],
+correct:2,
+explanation:"G1 is the Genesis wall-mount appliance, AV is horn-strobe, R is red, and F is FIRE."
+},
+{
+id:89,
+category:"PartNumber",
+difficulty:"Medium",
+product:"Genesis G1 Function Codes",
+question:"What does AV indicate in a documented G1 model number?",
+answers:["Horn only","Strobe only","Surface-mount box","Horn-strobe"],
+correct:3,
+explanation:"AV identifies the G1 horn-strobe function. A identifies horn and V identifies strobe."
+},
+{
+id:90,
+category:"PartNumber",
+difficulty:"Medium",
+product:"Genesis G1 Housing Codes",
+question:"What does R indicate in a documented G1 model number?",
+answers:["White housing","No marking","Red housing","FIRE marking"],
+correct:2,
+explanation:"R identifies the red housing option; W identifies white housing."
+},
+{
+id:91,
+category:"PartNumber",
+difficulty:"Medium",
+product:"Genesis G1 Marking Codes",
+question:"What does N indicate in a documented G1 model number?",
+answers:["FIRE marking","FUEGO marking","ALERT marking","No marking"],
+correct:3,
+explanation:"N identifies no marking. F, F-FR, F-SP, and A identify the documented marking options."
+},
+{
+id:92,
+category:"PartNumber",
+difficulty:"Medium",
+product:"G1TR Red G1 Trim Ring",
+question:"Which item is a G1 accessory rather than a primary notification appliance?",
+answers:["G1AVRF horn-strobe","G1TR red trim ring","G1ARF horn","G1VRF strobe"],
+correct:1,
+explanation:"G1TR is the red G1 trim ring accessory. G1AVRF, G1ARF, and G1VRF are primary notification appliance variants."
 },
 
 ];

@@ -11,22 +11,6 @@ const wiringQuestions = [
 // -----------------------------------------------
 
 {
-id: 2,
-category: "Wiring",
-difficulty: "Easy",
-product: "",
-question: "What is the primary function of the SLC in an addressable fire alarm system?",
-answers: [
-"Carry communication between the panel and addressable devices",
-"Provide power to notification appliances",
-"Supply battery backup to the panel",
-"Monitor water pressure in the sprinkler system"
-],
-correct: 0,
-explanation: "The SLC is the communication backbone of an addressable system. Every addressable device reports its status to the panel and receives commands over this circuit."
-},
-
-{
 id: 3,
 category: "Wiring",
 difficulty: "Easy",
@@ -41,7 +25,6 @@ answers: [
 correct: 0,
 explanation: "Addressable smoke detectors communicate their state to the panel over the SLC. Notification appliances such as horn/strobes are powered by the NAC, not the SLC."
 },
-
 {
 id: 4,
 category: "Wiring",
@@ -115,7 +98,7 @@ id: 8,
 category: "Wiring",
 difficulty: "Medium",
 product: "",
-question: "A project includes horn/strobes throughout a building that need to operate during an alarm. Which circuit powers these devices?",
+question: "During troubleshooting, horn/strobes have no output during an alarm while addressable devices still communicate. Which circuit should be checked first?",
 answers: [
 "NAC",
 "SLC",
@@ -123,7 +106,7 @@ answers: [
 "LAN"
 ],
 correct: 0,
-explanation: "Notification appliances are powered by the Notification Appliance Circuit (NAC). The SLC carries communication for addressable devices — it does not power notification output."
+explanation: "Check the NAC first because it provides notification-appliance output power. Continued SLC communication does not prove that the NAC output path is operating."
 },
 
 {
@@ -864,6 +847,67 @@ answers: [
 ],
 correct: 0,
 explanation: "The SIGA-DDOS wiring diagram identifies RELAY_NC, RELAY_C, and RELAY_NO terminals for its built-in Form C auxiliary relay."
+},
+
+{
+id:53,
+category:"Wiring",
+difficulty:"Medium",
+product:"G4LF Genesis LED Wall-Mount Low-Frequency Horn",
+question:"Which wire-size range is documented for the Genesis low-frequency appliance wiring?",
+answers:["20–24 AWG","12–18 AWG","6–8 AWG","2–4 AWG"],
+correct:1,
+explanation:"The supplied Genesis datasheets document 12–18 AWG wiring."
+},
+{
+id:54,
+category:"Wiring",
+difficulty:"Medium",
+product:"GRSW-10 Room-Side Wiring Plate",
+question:"What installation relationship does GRSW-10 represent?",
+answers:["The 4-inch octagon box adapter plate","The red device/cover removal tool","The required room-side wiring plate ordered separately in packs of 10","The white surface-mount box"],
+correct:2,
+explanation:"GRSW-10 is the required room-side wiring plate and is ordered separately in packs of 10."
+},
+{
+id:55,
+category:"Wiring",
+difficulty:"Hard",
+product:"GOCT 4-Inch Octagon Box Adapter Plate",
+question:"A G4LF appliance is specified on a 4-inch octagon box. What should the estimator verify in the wiring/mounting relationship?",
+answers:["That a second SLC address is assigned","That GRT-10 is ordered per appliance","That the appliance is changed to a ceiling speaker","That the documented GOCT adapter plate is included"],
+correct:3,
+explanation:"The datasheet relationship identifies GOCT as required when installing the G4LF/G4LFV appliance onto a 4-inch octagon box."
+},
+{
+id:56,
+category:"Wiring",
+difficulty:"Medium",
+product:"G4LFV Genesis LED Wall-Mount Low-Frequency Horn-Strobe",
+question:"Which statement accurately distinguishes the G4LFV from the G4LF during a signaling-appliance takeoff?",
+answers:["G4LFV is the required room-side wiring plate; G4LF is the adapter","G4LFV is the low-frequency horn-strobe; G4LF is the low-frequency horn","G4LFV is a ceiling speaker; G4LF is a detector","G4LFV and G4LF are interchangeable model names"],
+correct:1,
+explanation:"G4LFV includes the horn-strobe function, while G4LF is the horn-only low-frequency appliance."
+},
+{
+id:57,
+category:"Wiring",
+difficulty:"Medium",
+product:"G1A, G1V, and G1AV Genesis LED Appliances",
+question:"Which functional distinction matters when connecting a G1 notification appliance to the planned notification circuit?",
+answers:["All G1 models are speaker-strobes","G1A is horn, G1V is strobe, and G1AV is horn-strobe","G1V is horn-only and G1A is strobe-only","G1AV is a detector base"],
+correct:1,
+explanation:"The G1 family separates audible, visual, and combined audible/visual functions: G1A horn, G1V strobe, G1AV horn-strobe."
+},
+{
+id:58,
+category:"Wiring",
+difficulty:"Hard",
+product:"G1AVRF Genesis LED Compact Wall-Mount Horn-Strobe",
+question:"A wall notification circuit requires both audible and visual output, and the schedule identifies G1AVRF. Which device function should the installer expect?",
+answers:["Horn only","Strobe only","Horn-strobe","Speaker-strobe"],
+correct:2,
+explanation:"G1AV identifies the wall-mounted horn-strobe function; RF identifies the red FIRE-marked variant."
 }
 
 ];

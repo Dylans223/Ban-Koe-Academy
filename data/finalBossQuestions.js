@@ -22,21 +22,6 @@ correct: 0,
 explanation: "SIGA-CT2 is a Signature dual output control module. The key distinction is output control, not input monitoring."
 },
 {
-id: "fbq_002",
-category: "Final Boss",
-difficulty: "Easy",
-product: "SIGA-IM2",
-question: "Which description best matches SIGA-IM2?",
-answers: [
-"Intelligent Isolator Module",
-"Single Input Monitor Module",
-"Single Output Control Module",
-"Universal Signal Module"
-],
-correct: 0,
-explanation: "SIGA-IM2 is the Signature intelligent isolator module used to isolate shorted loop sections."
-},
-{
 id: "fbq_003",
 category: "Final Boss",
 difficulty: "Medium",
@@ -80,21 +65,6 @@ answers: [
 ],
 correct: 0,
 explanation: "SIGA-OSD is the smoke-only model. OSHD adds heat and OSHCD adds smoke, heat, and CO."
-},
-{
-id: "fbq_006",
-category: "Final Boss",
-difficulty: "Medium",
-product: "SIGA-IB4",
-question: "You need a 4-inch detector base with isolation capability. Which base should be recognized?",
-answers: [
-"SIGA-IB4",
-"SIGA-SB4",
-"SIGA-SB",
-"SIGA-AB4G"
-],
-correct: 0,
-explanation: "SIGA-IB4 is the 4-inch isolator detector base. SIGA-SB4 is a standard 4-inch base without isolation."
 },
 {
 id: "fbq_007",
@@ -172,21 +142,6 @@ correct: 0,
 explanation: "The LF in G4LF identifies low-frequency notification capability within the Genesis LED family."
 },
 {
-id: "fbq_012",
-category: "Final Boss",
-difficulty: "Hard",
-product: "SIGA-MCC1",
-question: "Which statement best distinguishes SIGA-MCC1 from SIGA-CC1?",
-answers: [
-"Both are single input monitor modules, but MCC1 is the miniature form factor",
-"MCC1 is dual input while CC1 is single input",
-"MCC1 is a control module while CC1 is a monitor module",
-"MCC1 is an isolator module while CC1 is a relay module"
-],
-correct: 0,
-explanation: "MCC1 and CC1 share monitor function, but MCC1 is the miniature variant."
-},
-{
 id: "fbq_013",
 category: "Final Boss",
 difficulty: "Medium",
@@ -262,21 +217,6 @@ answers: [
 ],
 correct: 0,
 explanation: "SIGA-CC2 is the dual input monitor module. CT2 is dual output control, not monitor input."
-},
-{
-id: "fbq_018",
-category: "Final Boss",
-difficulty: "Medium",
-product: "SIGA-MCC2",
-question: "You need a miniature dual input monitor module. Which part number should be investigated?",
-answers: [
-"SIGA-MCC2",
-"SIGA-CC2",
-"SIGA-MCC1",
-"SIGA-CT2"
-],
-correct: 0,
-explanation: "SIGA-MCC2 is the miniature dual input monitor model. CC2 is standard form factor dual input monitor."
 },
 {
 id: "fbq_019",
@@ -369,36 +309,6 @@ correct: 0,
 explanation: "CC2 is a dual input monitor module and directly fits two supervised inputs."
 },
 {
-id: "fbq_025",
-category: "Final Boss",
-difficulty: "Hard",
-product: "SIGA-UM2",
-question: "A specification calls for a universal signal module that supports both Class A and Class B. Which part number matches that exact callout?",
-answers: [
-"SIGA-UM2",
-"SIGA-UM",
-"SIGA-CT2",
-"SIGA-CR"
-],
-correct: 0,
-explanation: "UM2 is the universal Class A/B signal module. UM is the Class B-only variant."
-},
-{
-id: "fbq_026",
-category: "Final Boss",
-difficulty: "Medium",
-product: "SIGA-IB4",
-question: "Which part number should be selected when both of these are required: 4-inch detector base footprint and isolation function?",
-answers: [
-"SIGA-IB4",
-"SIGA-SB4",
-"SIGA-IB",
-"SIGA-AB4G"
-],
-correct: 0,
-explanation: "IB4 combines 4-inch footprint and isolator-base function."
-},
-{
 id: "fbq_027",
 category: "Final Boss",
 difficulty: "Hard",
@@ -412,21 +322,6 @@ answers: [
 ],
 correct: 0,
 explanation: "SB4 is the standard 4-inch base. IB4 is the isolator 4-inch base."
-},
-{
-id: "fbq_028",
-category: "Final Boss",
-difficulty: "Hard",
-product: "SIGA-IM and SIGA-IM2",
-question: "A customer asks if SIGA-IM and SIGA-IM2 are automatically interchangeable. What is the best answer?",
-answers: [
-"Treat them as distinct products and verify specifications before substitution",
-"Yes, they are always equivalent",
-"Use IM2 only for conventional systems",
-"Use IM only for Class A systems"
-],
-correct: 0,
-explanation: "SIGA-IM and SIGA-IM2 are listed as distinct products. Do not assume interchangeability without verification."
 },
 {
 id: "fbq_029",
@@ -557,28 +452,13 @@ difficulty: "Medium",
 product: "SLC vs NAC",
 question: "Addressable detectors and pull stations are being wired. Which circuit should be your primary focus?",
 answers: [
-"SLC",
-"NAC",
-"Audio speaker circuit",
-"Battery charger circuit"
-],
-correct: 0,
-explanation: "Addressable initiating devices communicate on the SLC, not on NAC output circuits."
-},
-{
-id: "fbq_038",
-category: "Final Boss",
-difficulty: "Medium",
-product: "NAC",
-question: "Horn/strobes across tenant floors are not the right device class for which circuit?",
-answers: [
 "SLC communication circuit",
 "NAC output circuit",
-"Notification branch circuit",
-"Panel output section"
+"120 VAC branch circuit",
+"Speaker circuit"
 ],
 correct: 0,
-explanation: "Horn/strobes are NAC output devices, not SLC communication devices."
+explanation: "Addressable detectors and pull stations communicate with the fire alarm control panel over the Signaling Line Circuit (SLC). The NAC is used for notification-appliance output, not addressable-device communication."
 },
 {
 id: "fbq_039",
@@ -709,28 +589,13 @@ difficulty: "Medium",
 product: "NAC",
 question: "Which system path typically powers horns and strobes?",
 answers: [
-"NAC",
-"SLC",
-"Monitor module input",
-"Isolator segment"
+"Notification Appliance Circuit (NAC)",
+"Signaling Line Circuit (SLC)",
+"120 VAC branch circuit",
+"Telephone line"
 ],
 correct: 0,
-explanation: "NAC circuits provide notification appliance output power."
-},
-{
-id: "fbq_048",
-category: "Final Boss",
-difficulty: "Medium",
-product: "FACP",
-question: "What is the most accurate role of the fire alarm control panel in a sales support context?",
-answers: [
-"It receives field inputs and executes programmed system responses",
-"It only powers speakers",
-"It only stores event history and does not control outputs",
-"It replaces all field modules"
-],
-correct: 0,
-explanation: "The panel supervises the system, processes events, and controls outputs according to programming."
+explanation: "The NAC is the output circuit that powers notification appliances such as horns and strobes. The SLC carries communication with addressable devices."
 },
 {
 id: "fbq_049",

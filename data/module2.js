@@ -1873,24 +1873,6 @@ explanation:"The updated Edwards product library groups the Intelligent CO Detec
 },
 
 {
-id:110,
-module:2,
-lesson:9,
-category:"Edwards Product Library",
-difficulty:"Hard",
-product:"SIGA-IM2 Isolator Module",
-question:"What is the best functional summary for SIGA-IM2 in an addressable loop design?",
-answers:[
-"It helps localize and manage loop fault impact",
-"It generates occupant audible signals",
-"It provides detector sensitivity calibration",
-"It acts as a panel touchscreen"
-],
-correct:0,
-explanation:"The SIGA-IM2 entry describes isolator-module use for managing fault impact through loop segmentation strategy."
-},
-
-{
 id:111,
 module:2,
 lesson:9,

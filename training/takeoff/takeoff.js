@@ -13,8 +13,11 @@ const takeoffScenario = {
         "48 addressable devices total",
         "2 floors",
         "10 smoke detectors per floor",
-        "2 manual pull stations per floor",
-        "4 horn/strobes per floor",
+        "First floor: 2 single-action manual pull stations and 1 double-action manual pull station",
+        "Second floor: 2 single-action manual pull stations",
+        "4 wall-mounted low-frequency horn-strobes per floor",
+        "The notification drawing specifies G4LFV appliances on 4-inch octagon boxes",
+        "A separate ordinary wall horn-strobe schedule specifies red housing with FIRE marking at 7 new locations",
         "1 duct smoke detector",
         "Use one monitor module or input interface for the duct detector",
         "Use one control or relay interface for HVAC shutdown"
@@ -37,20 +40,36 @@ const takeoffScenario = {
             explanation: "Correct. Smoke detectors are initiating devices used to detect smoke and send an alarm condition to the fire alarm system."
         },
         {
-            id: "manual-activation",
-            requirement: "Allow occupants to manually initiate an alarm condition.",
-            question: "Select the correct device for manual alarm initiation.",
-            options: ["Control panel", "Pull station", "Monitor module", "Duct detector"],
-            answer: "Pull station",
-            explanation: "Correct. Pull stations are manual initiating devices used to let occupants activate the fire alarm system."
+            id: "single-action-manual-activation",
+            requirement: "The first-floor drawing notes specify single-action manual initiating stations at two exit locations.",
+            question: "Which exact device should be included for those two locations?",
+            options: ["SIGA-270 Single Action Intelligent Pull Station", "SIGA-278 Double Action Intelligent Pull Station", "SIGA-CC1 Single Input Monitor Module", "SIGA-CT1 Single Output Control Module"],
+            answer: "SIGA-270 Single Action Intelligent Pull Station",
+            explanation: "Correct. The verified Edwards SIGA-270 is the single-action intelligent pull station, so the takeoff needs two SIGA-270 devices for the specified first-floor locations."
+        },
+        {
+            id: "double-action-manual-activation",
+            requirement: "The first-floor drawing notes specify one double-action manual initiating station at a designated exit location.",
+            question: "Which exact device should be included for that location?",
+            options: ["SIGA-278 Double Action Intelligent Pull Station", "SIGA-270 Single Action Intelligent Pull Station", "SIGA-CC1 Single Input Monitor Module", "SIGA-CR Control Relay Module"],
+            answer: "SIGA-278 Double Action Intelligent Pull Station",
+            explanation: "Correct. The verified Edwards SIGA-278 is the double-action intelligent pull station, so the takeoff needs one SIGA-278 device for the specified location."
         },
         {
             id: "audible-visual",
-            requirement: "Provide audible and visual notification throughout the building.",
-            question: "Select the correct device for audible and visual notification.",
-            options: ["Horn/strobe", "Smoke detector", "Monitor module", "Isolator base"],
-            answer: "Horn/strobe",
-            explanation: "Correct. Horn/strobes are notification appliances used to alert occupants with sound and visible flashing light."
+            requirement: "Provide wall-mounted 520 Hz low-frequency audible and visual notification throughout the building.",
+            question: "The notification drawing specifies a Genesis LED low-frequency horn-strobe. Which exact product should be included?",
+            options: ["G4LF", "G4LFV", "GCS ceiling speaker-strobe", "G1 compact notification device"],
+            answer: "G4LFV",
+            explanation: "Correct. G4LFV is the verified Genesis LED wall-mount low-frequency horn-strobe. G4LF is the distinct horn-only model."
+        },
+        {
+            id: "g1-wall-horn-strobe",
+            requirement: "A separate notification schedule specifies ordinary wall-mounted audible and visual notification with red housing and FIRE marking, without a low-frequency requirement.",
+            question: "Which exact G1 product should be included for those locations?",
+            options: ["G1ARF", "G1VRF", "G1AVRF", "G4LFV"],
+            answer: "G1AVRF",
+            explanation: "Correct. G1AV is the wall horn-strobe family, R is red housing, and F is FIRE marking. G4LFV remains the correct choice only for the separately specified low-frequency schedule."
         },
         {
             id: "duct-smoke",
@@ -71,22 +90,65 @@ const takeoffScenario = {
     ],
     quantityQuestions: [
         {
+            id: "easy-single-action-drawing",
+            difficulty: "Easy",
+            drawing: "Fire alarm drawing FP-1 shows five new single-action manual pull-station locations on Floor 1: Main Entrance, East Exit, Stairwell A, Loading Exit, and Office Lobby. No existing pull stations are marked at these locations.",
+            question: "Extract the new BOM line from the drawing.",
+            lines: [{ id: "easy-single-line", label: "Single-action pull stations", expectedProduct: "SIGA-270 Single Action Intelligent Pull Station", expectedQuantity: 5 }],
+            explanation: "Five new single-action locations require SIGA-270 quantity 5."
+        },
+        {
+            id: "g1-wall-horn-strobe-quantity",
+            difficulty: "Medium",
+            drawing: "The ordinary wall horn-strobe schedule identifies seven new locations: Floor 1 Main Entrance, East Exit, Stairwell A, and Floor 2 West Exit, East Exit, Conference Hall, and Loading Exit. The specification calls for red housing with FIRE marking and does not call for low-frequency output.",
+            question: "Extract the G1 BOM line from the drawing.",
+            lines: [{ id: "g1-wall-horn-strobe-line", label: "G1 wall horn-strobes", expectedProduct: "G1AVRF Genesis LED Compact Wall-Mount Horn-Strobe", expectedQuantity: 7 }],
+            rememberedKeys: [{ key: "g1-wall-horn-strobe-quantity", value: 7 }],
+            explanation: "Seven ordinary wall horn-strobe locations with red housing and FIRE marking require G1AVRF quantity 7."
+        },
+        {
             id: "smoke-quantity",
             question: "Enter the total number of smoke detectors required for 10 per floor across 2 floors.",
             answer: 20,
             explanation: "10 detectors × 2 floors = 20 detectors"
         },
         {
-            id: "pull-quantity",
-            question: "Enter the total number of pull stations required for 2 per floor across 2 floors.",
-            answer: 4,
-            explanation: "2 pull stations × 2 floors = 4 pull stations"
+            id: "single-pull-quantity",
+            difficulty: "Medium",
+            drawing: "Drawing FP-1 identifies four new single-action manual pull-station locations: Floor 1 Main Entrance and East Exit; Floor 2 West Exit and East Exit. These locations are marked as new work.",
+            question: "Extract the SIGA-270 BOM line from the drawing.",
+            lines: [{ id: "single-pull-line", label: "Single-action pull stations", expectedProduct: "SIGA-270 Single Action Intelligent Pull Station", expectedQuantity: 4 }],
+            rememberedKeys: [{ key: "single-pull-quantity", value: 4 }],
+            explanation: "The drawing has two new single-action locations on each floor, so the SIGA-270 quantity is 4."
+        },
+        {
+            id: "double-pull-quantity",
+            difficulty: "Medium",
+            drawing: "Drawing FP-1 identifies one new double-action manual pull-station location at Floor 1 Stairwell Exit. The note calls for a double-action station.",
+            question: "Extract the SIGA-278 BOM line from the drawing.",
+            lines: [{ id: "double-pull-line", label: "Double-action pull stations", expectedProduct: "SIGA-278 Double Action Intelligent Pull Station", expectedQuantity: 1 }],
+            rememberedKeys: [{ key: "double-pull-quantity", value: 1 }],
+            explanation: "The drawing has one new double-action location, so the SIGA-278 quantity is 1."
+        },
+        {
+            id: "hard-mixed-existing-drawing",
+            difficulty: "Hard",
+            drawing: "Project FP-2 covers Buildings A and B. Building A Floor 1 has new single-action stations at Rooms 101 and 104 plus an existing station at Room 101 marked REMAIN. Building A Floor 2 has new single-action stations at Rooms 201, 204, and 208. Building B Floor 1 has new double-action stations at Rooms 110 and 118, and Building B Floor 2 has a new double-action station at Room 210. The title block, PO 48217, and customer contact block do not change the device count.",
+            question: "Separate new work by device type and exclude the existing station marked REMAIN.",
+            lines: [
+                { id: "hard-single-line", label: "New single-action pull stations", expectedProduct: "SIGA-270 Single Action Intelligent Pull Station", expectedQuantity: 5 },
+                { id: "hard-double-line", label: "New double-action pull stations", expectedProduct: "SIGA-278 Double Action Intelligent Pull Station", expectedQuantity: 3 }
+            ],
+            explanation: "The existing Room 101 station is excluded. The new work is SIGA-270 quantity 5 and SIGA-278 quantity 3."
         },
         {
             id: "horn-quantity",
-            question: "Enter the total number of horn/strobes required for 4 per floor across 2 floors.",
-            answer: 8,
-            explanation: "4 horn/strobes × 2 floors = 8 horn/strobes"
+            difficulty: "Medium",
+            drawing: "The notification drawing specifies four G4LFV wall-mounted low-frequency horn-strobes per floor across two floors. The G4LFV product selection was established in the identification step.",
+            question: "Extract the exact G4LFV BOM line from the drawing.",
+            lines: [{ id: "g4lfv-quantity-line", label: "Low-frequency wall horn-strobes", expectedProduct: "G4LFV Genesis LED Wall-Mount Low-Frequency Horn-Strobe", expectedQuantity: 8 }],
+            rememberedKeys: [{ key: "horn-quantity", value: 8 }],
+            explanation: "Four G4LFV locations per floor × two floors = G4LFV quantity 8."
         },
         {
             id: "duct-quantity",
@@ -125,6 +187,14 @@ const takeoffScenario = {
             options: ["Control or relay interface", "Detector base", "Monitor-only circuit", "Smoke sensor"],
             answer: "Control or relay interface",
             explanation: "Correct. Door holder release is typically handled by a control or relay function so the release logic can respond to the fire alarm condition."
+        },
+        {
+            id: "genesis-octagon-adapter",
+            scenario: "The notification drawing specifies a G4LFV appliance mounted on a 4-inch octagon box.",
+            question: "Which additional Genesis mounting component is required for this box relationship?",
+            options: ["GOCT 4-inch octagon box adapter plate", "GRT-10 device/cover removal tool", "G4TR red trim plate", "G4RSB red surface-mount box"],
+            answer: "GOCT 4-inch octagon box adapter plate",
+            explanation: "Correct. GOCT is required when installing the G4LF/G4LFV appliance onto a 4-inch octagon box."
         }
     ],
     bomDefaults: [
@@ -142,15 +212,39 @@ const takeoffScenario = {
         },
         {
             category: "Initiating Device",
-            item: "SIGA-278 Double Action Intelligent Pull Station",
+            item: "SIGA-270 Single Action Intelligent Pull Station",
             quantity: 4,
-            key: "pull-station"
+            key: "single-pull-station"
+        },
+        {
+            category: "Initiating Device",
+            item: "SIGA-278 Double Action Intelligent Pull Station",
+            quantity: 1,
+            key: "double-pull-station"
         },
         {
             category: "Notification",
-            item: "Genesis LED G4 Series Wall Mount Notification Devices",
+            item: "G4LFV Genesis LED Wall-Mount Low-Frequency Horn-Strobe",
             quantity: 8,
             key: "horn-strobe"
+        },
+        {
+            category: "Notification",
+            item: "G1AVRF Genesis LED Compact Wall-Mount Horn-Strobe",
+            quantity: 7,
+            key: "g1-wall-horn-strobe"
+        },
+        {
+            category: "Module",
+            item: "GRSW-10 Room-Side Wiring Plate",
+            quantity: 1,
+            key: "genesis-room-side-plate"
+        },
+        {
+            category: "Accessories",
+            item: "GOCT 4-Inch Octagon Box Adapter Plate",
+            quantity: 8,
+            key: "genesis-octagon-adapter"
         },
         {
             category: "Duct Detection",
@@ -290,6 +384,9 @@ const bomCatalog = {
     ],
     "Notification": [
         { label: "Genesis LED G4 Series Wall Mount Notification Devices", type: "verified" },
+        { label: "G4LF Genesis LED Wall-Mount Low-Frequency Horn", type: "verified" },
+        { label: "G4LFV Genesis LED Wall-Mount Low-Frequency Horn-Strobe", type: "verified" },
+        { label: "G1AVRF Genesis LED Compact Wall-Mount Horn-Strobe", type: "verified" },
         { label: "Genesis LED GCS Series Ceiling Mount Speakers and Speaker-Strobes", type: "verified" },
         { label: "Genesis LED G1 Series Compact Notification Devices", type: "verified" }
     ],
@@ -308,6 +405,13 @@ const bomCatalog = {
         { label: "Secondary power / battery set", type: "generic" }
     ],
     "Accessories": [
+        { label: "GRSW-10 Room-Side Wiring Plate", type: "verified" },
+        { label: "GOCT 4-Inch Octagon Box Adapter Plate", type: "verified" },
+        { label: "GRT-10 Genesis LED Device/Cover Removal Tool", type: "verified" },
+        { label: "G4TR Red G4 Trim Plate", type: "verified" },
+        { label: "G4TW White G4 Trim Plate", type: "verified" },
+        { label: "G4RSB Red 4-Inch Surface-Mount Box", type: "verified" },
+        { label: "G4WSB White 4-Inch Surface-Mount Box", type: "verified" },
         { label: "Device labels and mounting accessories", type: "generic" },
         { label: "Mounting hardware and trim accessories", type: "generic" }
     ]
@@ -425,17 +529,38 @@ function renderQuantityStep() {
     quantityQuestionArea.innerHTML = takeoffScenario.quantityQuestions.map((question, index) => `
         <article class="quantity-card" data-quantity-card="${question.id}">
             <div class="question-meta">
-                <span class="badge">Question ${index + 1}</span>
+                <span class="badge">Question ${index + 1}${question.difficulty ? ` · ${question.difficulty}` : ""}</span>
                 <span class="question-title">Quantity Check</span>
             </div>
+            ${question.drawing ? `<div class="drawing-note"><strong>Drawing / project information</strong><p>${question.drawing}</p></div>` : ""}
             <p class="question-prompt">${question.question}</p>
-            <div class="quantity-grid">
-                <div class="field-group">
-                    <label for="quantity-input-${question.id}">Answer</label>
-                    <input id="quantity-input-${question.id}" type="text" inputmode="numeric" placeholder="Enter quantity">
+            ${question.lines ? question.lines.map((line) => `
+                <div class="quantity-grid drawing-line" data-quantity-line="${line.id}">
+                    <div class="field-group">
+                        <label for="product-select-${line.id}">${line.label} · Product</label>
+                        <select id="product-select-${line.id}">
+                            <option value="">Select verified product</option>
+                            <option value="SIGA-270 Single Action Intelligent Pull Station">SIGA-270 Single Action Intelligent Pull Station</option>
+                            <option value="SIGA-278 Double Action Intelligent Pull Station">SIGA-278 Double Action Intelligent Pull Station</option>
+                            <option value="G4LF Genesis LED Wall-Mount Low-Frequency Horn">G4LF Genesis LED Wall-Mount Low-Frequency Horn</option>
+                            <option value="G4LFV Genesis LED Wall-Mount Low-Frequency Horn-Strobe">G4LFV Genesis LED Wall-Mount Low-Frequency Horn-Strobe</option>
+                            <option value="G1AVRF Genesis LED Compact Wall-Mount Horn-Strobe">G1AVRF Genesis LED Compact Wall-Mount Horn-Strobe</option>
+                        </select>
+                    </div>
+                    <div class="field-group">
+                        <label for="quantity-input-${line.id}">${line.label} · Quantity</label>
+                        <input id="quantity-input-${line.id}" type="text" inputmode="numeric" placeholder="Count locations">
+                    </div>
                 </div>
-                <button type="button" class="btn btn-primary" data-quantity-submit="${question.id}">Check Answer</button>
-            </div>
+            `).join("") : `
+                <div class="quantity-grid">
+                    <div class="field-group">
+                        <label for="quantity-input-${question.id}">Answer</label>
+                        <input id="quantity-input-${question.id}" type="text" inputmode="numeric" placeholder="Enter quantity">
+                    </div>
+                </div>
+            `}
+            <button type="button" class="btn btn-primary" data-quantity-submit="${question.id}">Check Answer</button>
             <div class="feedback-box hidden" data-quantity-feedback="${question.id}"></div>
         </article>
     `).join("");
@@ -449,21 +574,34 @@ function handleQuantityAnswer(button) {
     const questionId = button.getAttribute("data-quantity-submit");
     const questionIndex = takeoffScenario.quantityQuestions.findIndex((entry) => entry.id === questionId);
     const question = takeoffScenario.quantityQuestions[questionIndex];
-    const input = document.getElementById(`quantity-input-${questionId}`);
     const feedback = quantityQuestionArea.querySelector(`[data-quantity-feedback="${questionId}"]`);
-    const normalizedValue = normalizeQuantityInput(input.value);
-    const isCorrect = normalizedValue === question.answer;
+    const lineResults = question.lines
+        ? question.lines.map((line) => {
+            const product = document.getElementById(`product-select-${line.id}`).value;
+            const quantity = normalizeQuantityInput(document.getElementById(`quantity-input-${line.id}`).value);
+            return { line, product, quantity, isCorrect: product === line.expectedProduct && quantity === line.expectedQuantity };
+        })
+        : [{ line: null, product: "", quantity: normalizeQuantityInput(document.getElementById(`quantity-input-${questionId}`).value), isCorrect: normalizeQuantityInput(document.getElementById(`quantity-input-${questionId}`).value) === question.answer }];
+    const isCorrect = lineResults.every((result) => result.isCorrect);
 
     feedback.classList.remove("hidden");
     feedback.className = `feedback-box ${isCorrect ? "correct" : "incorrect"}`;
+    const expectedText = question.lines
+        ? question.lines.map((line) => `${line.expectedProduct} — Qty ${line.expectedQuantity}`).join("<br>")
+        : `Expected ${question.answer}`;
     feedback.innerHTML = isCorrect
         ? `<span class="feedback-label correct">Correct</span><p>${question.explanation}</p><button type="button" class="btn btn-secondary" data-next-question="quantity" data-question-index="${questionIndex}">Continue →</button>`
-        : `<span class="feedback-label incorrect">Incorrect</span><p>Expected ${question.answer}. ${question.explanation}</p><button type="button" class="btn btn-secondary" data-next-question="quantity" data-question-index="${questionIndex}">Continue →</button>`;
+        : `<span class="feedback-label incorrect">Incorrect</span><p>${expectedText}. ${question.explanation}</p><button type="button" class="btn btn-secondary" data-next-question="quantity" data-question-index="${questionIndex}">Continue →</button>`;
 
-    if (isCorrect && !input.dataset.scored) {
-        input.dataset.scored = "true";
+    const scoreTarget = question.lines ? button.closest(".quantity-card") : document.getElementById(`quantity-input-${questionId}`);
+    if (isCorrect && !scoreTarget.dataset.scored) {
+        scoreTarget.dataset.scored = "true";
         scenarioState.quantityScore += scoreWeights.quantity / takeoffScenario.quantityQuestions.length;
-        scenarioState.rememberedCounts[questionId] = question.answer;
+        if (question.rememberedKeys) {
+            question.rememberedKeys.forEach(({ key, value }) => { scenarioState.rememberedCounts[key] = value; });
+        } else if (!question.lines) {
+            scenarioState.rememberedCounts[questionId] = question.answer;
+        }
         renderRememberedCounts();
         updateScoreState();
     }
@@ -541,8 +679,10 @@ function renderRememberedCounts() {
 
     const rows = [
         { label: "Smoke detectors", count: scenarioState.rememberedCounts["smoke-quantity"] || 0 },
-        { label: "Pull stations", count: scenarioState.rememberedCounts["pull-quantity"] || 0 },
-        { label: "Horn/strobes", count: scenarioState.rememberedCounts["horn-quantity"] || 0 },
+        { label: "SIGA-270 single-action pull stations", count: scenarioState.rememberedCounts["single-pull-quantity"] || 0 },
+        { label: "SIGA-278 double-action pull stations", count: scenarioState.rememberedCounts["double-pull-quantity"] || 0 },
+        { label: "G1AVRF wall horn-strobes", count: scenarioState.rememberedCounts["g1-wall-horn-strobe-quantity"] || 0 },
+        { label: "G4LFV low-frequency wall horn-strobes", count: scenarioState.rememberedCounts["horn-quantity"] || 0 },
         { label: "Duct smoke detectors", count: scenarioState.rememberedCounts["duct-quantity"] || 0 },
         { label: "Fire alarm control panels", count: scenarioState.rememberedCounts["panel-quantity"] || 0 },
         { label: "Duct detector interface", count: scenarioState.rememberedCounts["duct-monitor"] || 0 },
@@ -561,10 +701,13 @@ function getBomSuggestedQuantity(item) {
     const suggestions = {
         "EST4 Fire Alarm Control Panel": scenarioState.rememberedCounts["panel-quantity"] || 1,
         "Signature Optica Smoke Detector": scenarioState.rememberedCounts["smoke-quantity"] || 20,
-        "SIGA-278 Double Action Intelligent Pull Station": scenarioState.rememberedCounts["pull-quantity"] || 4,
-        "SIGA-270 Single Action Intelligent Pull Station": scenarioState.rememberedCounts["pull-quantity"] || 4,
+        "SIGA-278 Double Action Intelligent Pull Station": scenarioState.rememberedCounts["double-pull-quantity"] || 1,
+        "SIGA-270 Single Action Intelligent Pull Station": scenarioState.rememberedCounts["single-pull-quantity"] || 4,
         "Signature Optica Smoke and Heat Detector": scenarioState.rememberedCounts["smoke-quantity"] || 20,
         "Genesis LED G4 Series Wall Mount Notification Devices": scenarioState.rememberedCounts["horn-quantity"] || 8,
+        "G4LF Genesis LED Wall-Mount Low-Frequency Horn": scenarioState.rememberedCounts["horn-quantity"] || 8,
+        "G4LFV Genesis LED Wall-Mount Low-Frequency Horn-Strobe": scenarioState.rememberedCounts["horn-quantity"] || 8,
+        "G1AVRF Genesis LED Compact Wall-Mount Horn-Strobe": scenarioState.rememberedCounts["g1-wall-horn-strobe-quantity"] || 7,
         "Genesis LED GCS Series Ceiling Mount Speakers and Speaker-Strobes": scenarioState.rememberedCounts["horn-quantity"] || 8,
         "Genesis LED G1 Series Compact Notification Devices": scenarioState.rememberedCounts["horn-quantity"] || 8,
         "Duct Smoke Detector": scenarioState.rememberedCounts["duct-quantity"] || 1,
@@ -573,6 +716,13 @@ function getBomSuggestedQuantity(item) {
         "Control or relay interface for HVAC shutdown": scenarioState.rememberedCounts["hvac-interface"] || 1,
         "SIGA-CT1 Single Output Control Module": scenarioState.rememberedCounts["hvac-interface"] || 1,
         "Control or relay interface for door holder release": 1,
+        "GRSW-10 Room-Side Wiring Plate": 1,
+        "GOCT 4-Inch Octagon Box Adapter Plate": 8,
+        "GRT-10 Genesis LED Device/Cover Removal Tool": 1,
+        "G4TR Red G4 Trim Plate": 1,
+        "G4TW White G4 Trim Plate": 1,
+        "G4RSB Red 4-Inch Surface-Mount Box": 1,
+        "G4WSB White 4-Inch Surface-Mount Box": 1,
         "System power supply / batteries": 1,
         "Secondary power / battery set": 1,
         "Device labels and mounting accessories": 1,

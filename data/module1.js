@@ -421,7 +421,7 @@ lesson:1,
 category:"Fundamentals",
 difficulty:"Easy",
 product:"",
-question:"Which circuit normally powers horn/strobes?",
+question:"A drawing shows horn/strobes connected from the fire alarm panel to notification appliances. Which circuit should the estimator trace for that output path?",
 answers:[
 "SLC",
 "NAC",
@@ -429,7 +429,7 @@ answers:[
 "LAN"
 ],
 correct:1,
-explanation:"Notification Appliance Circuits (NACs) provide operating power to horn/strobes and other notification appliances."
+explanation:"The notification output path is the NAC. The SLC communicates with addressable devices; it is not the horn/strobe output circuit."
 },
 
 {
@@ -439,7 +439,7 @@ lesson:1,
 category:"Fundamentals",
 difficulty:"Easy",
 product:"",
-question:"Which circuit carries communication between the panel and addressable modules?",
+question:"A technician is tracing the addressable circuit connecting intelligent detectors and modules back to the fire alarm control panel. Which circuit is being traced?",
 answers:[
 "NAC",
 "SLC",
@@ -447,7 +447,7 @@ answers:[
 "Telephone Line"
 ],
 correct:1,
-explanation:"The Signaling Line Circuit (SLC) carries data between the fire alarm panel and addressable devices."
+explanation:"The SLC is the communication path between the panel and addressable detectors, modules, and other addressable devices."
 },
 
 {
@@ -583,7 +583,7 @@ lesson:1,
 category:"Sales Support",
 difficulty:"Medium",
 product:"",
-question:"A BOM includes multiple rooftop HVAC units. Which category of fire alarm device will likely be required?",
+question:"A BOM lists multiple rooftop HVAC units, and the plans show fire alarm-controlled shutdown. What should you verify before the quote is finalized?",
 answers:[
 "Control Modules",
 "Smoke Detectors",
@@ -591,7 +591,7 @@ answers:[
 "Speakers"
 ],
 correct:0,
-explanation:"Control modules are commonly used to interface with rooftop HVAC equipment."
+explanation:"Verify the required control-output interface for each HVAC shutdown function and compare it with the plans, specifications, and system design."
 },
 
 {
@@ -1081,24 +1081,6 @@ explanation:"Lesson 2 focuses on interfaces, control, monitoring, and real-world
 },
 
 {
-id:61,
-module:1,
-lesson:3,
-category:"Product Recognition",
-difficulty:"Easy",
-product:"SIGA-IM2 Isolator Module",
-question:"The SIGA-IM2 belongs to which general category of fire alarm device?",
-answers:[
-"Intelligent Isolator Module",
-"Smoke Detector",
-"Heat Detector",
-"Power Supply"
-],
-correct:0,
-explanation:"The SIGA-IM2 is listed by Edwards as an intelligent isolator module in the Signature/SIGA module family."
-},
-
-{
 id:62,
 module:1,
 lesson:3,
@@ -1132,24 +1114,6 @@ answers:[
 ],
 correct:0,
 explanation:"Edwards identifies this product as a signal module category that supports Class A operation."
-},
-
-{
-id:64,
-module:1,
-lesson:3,
-category:"Product Recognition",
-difficulty:"Easy",
-product:"SIGA-IM2 Isolator Module",
-question:"Which Edwards SIGA device belongs to the isolator module category?",
-answers:[
-"SIGA-IM2",
-"EST3X",
-"G4LF",
-"iO Bridge"
-],
-correct:0,
-explanation:"SIGA-IM2 is the isolator module model listed in the Edwards library data."
 },
 
 {
@@ -2737,42 +2701,6 @@ explanation:"Edwards lists an on-board webserver for remote, device-independent 
 },
 
 {
-id:153,
-module:1,
-lesson:10,
-category:"Edwards Product Library",
-difficulty:"Easy",
-product:"EST3",
-question:"EST3 is best described as what kind of platform?",
-answers:[
-"A modular control platform for standalone or multi-panel networks",
-"A notification-only wall strobe",
-"A detector base",
-"A sprinkler valve"
-],
-correct:0,
-explanation:"Edwards describes EST3 as a modular control platform for standalone and multi-panel network applications."
-},
-
-{
-id:154,
-module:1,
-lesson:10,
-category:"Edwards Product Library",
-difficulty:"Medium",
-product:"EST3X",
-question:"How many EST3X nodes can an EST3X network include?",
-answers:[
-"8",
-"2",
-"16",
-"64"
-],
-correct:0,
-explanation:"The EST3X platform description states networking with up to eight EST3X nodes."
-},
-
-{
 id:156,
 module:1,
 lesson:10,
@@ -2842,24 +2770,6 @@ answers:[
 ],
 correct:0,
 explanation:"The official model listing identifies this detector as a smoke and CO combination model."
-},
-
-{
-id:162,
-module:1,
-lesson:10,
-category:"Edwards Product Library",
-difficulty:"Easy",
-product:"SIGA-IM2 Isolator Module",
-question:"What type of module is SIGA-IM2?",
-answers:[
-"Intelligent Isolator Module",
-"Speaker Module",
-"Detector Base",
-"Battery Charger"
-],
-correct:0,
-explanation:"The Edwards product library categorizes SIGA-IM2 as an intelligent isolator module."
 },
 
 {
@@ -2971,42 +2881,6 @@ explanation:"EST4 literature describes operation using fiber, Ethernet, or coppe
 },
 
 {
-id:169,
-module:1,
-lesson:10,
-category:"Edwards Product Library",
-difficulty:"Medium",
-product:"EST3",
-question:"Why is EST3 often considered flexible over a system lifecycle?",
-answers:[
-"Its operating features are software-controlled",
-"It has no configurable options",
-"It only supports single-panel sites",
-"It cannot be upgraded after installation"
-],
-correct:0,
-explanation:"EST3 documentation emphasizes software-controlled operating features for site flexibility and future changes."
-},
-
-{
-id:170,
-module:1,
-lesson:10,
-category:"Edwards Product Library",
-difficulty:"Hard",
-product:"EST3",
-question:"Which set of functions is explicitly associated with EST3 unified applications?",
-answers:[
-"Fire alarm, security, and mass notification",
-"Lighting control, CCTV, and access cards",
-"Only smoke detection and paging",
-"Sprinkler flow and elevator dispatch only"
-],
-correct:0,
-explanation:"The official EST3 description includes unified fire alarm, security, and mass notification functions."
-},
-
-{
 id:171,
 module:1,
 lesson:10,
@@ -3076,24 +2950,6 @@ answers:[
 ],
 correct:0,
 explanation:"The library separates the Intelligent CO Detector entry from multi-criteria Signature Optica combinations."
-},
-
-{
-id:175,
-module:1,
-lesson:10,
-category:"Edwards Product Library",
-difficulty:"Medium",
-product:"SIGA-IM2 Isolator Module",
-question:"What is the practical role of the SIGA-IM2 Isolator Module in loop architecture?",
-answers:[
-"Help localize and manage loop fault impact",
-"Provide audible occupant notification",
-"Detect smoke in ducts",
-"Power the panel touchscreen"
-],
-correct:0,
-explanation:"The SIGA-IM2 description explains its use for managing loop fault impact based on placement and design."
 },
 
 {
@@ -3400,6 +3256,193 @@ answers:[
 ],
 correct:0,
 explanation:"The brochure distinguishes iO64 as a fixed-capacity 64-device platform and iO1000 as the expandable platform supporting up to 1,000 addressable devices."
+},
+
+{
+id:194,
+module:1,
+lesson:10,
+category:"BOM Recognition",
+difficulty:"Medium",
+product:"SIGA-270 Single Action Intelligent Pull Station",
+question:"A fire alarm drawing specifies single-action manual pull stations at seven locations. Which Edwards device should be included in the takeoff?",
+answers:[
+"SIGA-270 Single Action Intelligent Pull Station",
+"SIGA-278 Double Action Intelligent Pull Station",
+"SIGA-CC1 Single Input Monitor Module",
+"SIGA-CT1 Single Output Control Module"
+],
+correct:0,
+explanation:"The verified Edwards SIGA-270 is the single-action intelligent pull station, so the takeoff line is SIGA-270, quantity 7."
+},
+
+{
+id:195,
+module:1,
+lesson:10,
+category:"BOM Recognition",
+difficulty:"Medium",
+product:"SIGA-278 Double Action Intelligent Pull Station",
+question:"The fire alarm notes specify double-action manual pull stations at four designated locations. Which Edwards device should be included in the takeoff?",
+answers:[
+"SIGA-278 Double Action Intelligent Pull Station",
+"SIGA-270 Single Action Intelligent Pull Station",
+"SIGA-CC1 Single Input Monitor Module",
+"SIGA-CR Control Relay Module"
+],
+correct:0,
+explanation:"The verified Edwards SIGA-278 is the double-action intelligent pull station, so the takeoff line is SIGA-278, quantity 4."
+},
+
+{
+id:196,
+module:1,
+lesson:10,
+category:"BOM Recognition",
+difficulty:"Hard",
+product:"SIGA-270 and SIGA-278 Intelligent Pull Stations",
+question:"A two-floor drawing calls for four single-action manual pull stations and three double-action manual pull stations. What should appear on the BOM?",
+answers:[
+"SIGA-270 — Qty 4; SIGA-278 — Qty 3",
+"SIGA-270 — Qty 7 only",
+"SIGA-278 — Qty 7 only",
+"SIGA-270 — Qty 3; SIGA-278 — Qty 4"
+],
+correct:0,
+explanation:"The takeoff must preserve both the device type and quantity: four single-action locations require SIGA-270 quantity 4, and three double-action locations require SIGA-278 quantity 3."
+},
+
+{
+id:197,
+module:1,
+lesson:10,
+category:"Product Recognition",
+difficulty:"Easy",
+product:"G4LF and G4LFV Genesis LED Appliances",
+question:"Which Genesis family is the low-frequency horn-strobe rather than the horn-only appliance?",
+answers:["G4LF","G4LFV","G4 Series standard wall appliance","GCS ceiling speaker-strobe"],
+correct:1,
+explanation:"G4LF is the Genesis LED wall-mount low-frequency horn. G4LFV is the distinct low-frequency horn-strobe."
+},
+{
+id:198,
+module:1,
+lesson:10,
+category:"Product Recognition",
+difficulty:"Medium",
+product:"G4LF Genesis LED Wall-Mount Low-Frequency Horn",
+question:"What audible frequency is documented for the Genesis G4LF/G4LFV low-frequency appliances?",
+answers:["250 Hz","520 Hz","1,000 Hz","60 Hz"],
+correct:1,
+explanation:"The supplied Genesis datasheets document 520 Hz low-frequency audible output."
+},
+{
+id:199,
+module:1,
+lesson:10,
+category:"Applications",
+difficulty:"Medium",
+product:"GOCT 4-Inch Octagon Box Adapter Plate",
+question:"A drawing specifies a G4LFV appliance mounted on a 4-inch octagon box. Which additional Genesis component is required by that mounting relationship?",
+answers:["G4TR red trim plate","GRT-10 removal tool","GOCT 4-inch octagon box adapter plate","G4RSB red surface-mount box"],
+correct:2,
+explanation:"GOCT is the documented 4-inch octagon box adapter plate required for the G4LF/G4LFV to 4-inch octagon box installation relationship."
+},
+{
+id:200,
+module:1,
+lesson:10,
+category:"Control & Monitor Modules",
+difficulty:"Medium",
+product:"GRSW-10 Room-Side Wiring Plate",
+question:"Which Genesis accessory is the required room-side wiring plate and is ordered separately in packs of 10?",
+answers:["GRT-10","GRSW-10","G4TW","G4WSB"],
+correct:1,
+explanation:"GRSW-10 is the required room-side wiring plate and is ordered separately in packs of 10."
+},
+{
+id:201,
+module:1,
+lesson:10,
+category:"Wiring",
+difficulty:"Medium",
+product:"G4LF Genesis LED Wall-Mount Low-Frequency Horn",
+question:"Which conductor range is documented for the applicable Genesis appliance wiring?",
+answers:["20–24 AWG","6–8 AWG","12–18 AWG","2–4 AWG"],
+correct:2,
+explanation:"The supplied Genesis datasheets document 12–18 AWG wiring."
+},
+{
+id:202,
+module:1,
+lesson:10,
+category:"BOM Recognition",
+difficulty:"Hard",
+product:"G4LFV Genesis LED Wall-Mount Low-Frequency Horn-Strobe",
+question:"A takeoff calls for a wall-mounted low-frequency horn-strobe on a 4-inch octagon box. Which BOM set matches the documented appliance and mounting relationship?",
+answers:["G4LF only, with no room-side wiring plate","G4LFV, GRSW-10, and GOCT","G4TW and G4WSB only","GRT-10 for each appliance, with no adapter plate"],
+correct:1,
+explanation:"The appliance is G4LFV. GRSW-10 is the required room-side wiring plate, and GOCT is required for the documented 4-inch octagon box relationship."
+},
+{
+id:203,
+module:1,
+lesson:10,
+category:"Product Recognition",
+difficulty:"Easy",
+product:"G1A Genesis LED Compact Wall-Mount Horn",
+question:"What is G1A in the Genesis G1 family?",
+answers:["A wall-mounted strobe","A wall-mounted horn","A wall-mounted horn-strobe","A ceiling speaker-strobe"],
+correct:1,
+explanation:"G1A is the Genesis LED compact wall-mount horn family."
+},
+{
+id:204,
+module:1,
+lesson:10,
+category:"Product Recognition",
+difficulty:"Easy",
+product:"G1V Genesis LED Compact Wall-Mount Strobe",
+question:"Which G1 family provides strobe-only notification?",
+answers:["G1AV","G1A","G1V","G4LFV"],
+correct:2,
+explanation:"G1V is the Genesis LED compact wall-mount strobe family. G1A is horn-only and G1AV is horn-strobe."
+},
+{
+id:205,
+module:1,
+lesson:10,
+category:"Control & Monitor Modules",
+difficulty:"Medium",
+product:"G1AV Genesis LED Compact Wall-Mount Horn-Strobe",
+question:"Which G1 family provides both audible and visual notification?",
+answers:["G1V","G1A","GCS","G1AV"],
+correct:3,
+explanation:"G1AV is the wall-mounted horn-strobe family, providing both audible and visual notification."
+},
+{
+id:206,
+module:1,
+lesson:10,
+category:"Applications",
+difficulty:"Medium",
+product:"G1AVRF Genesis LED Compact Wall-Mount Horn-Strobe",
+question:"A drawing specifies a wall-mounted audible and visual notification appliance with red housing and FIRE marking. Which G1 product matches the documented function, color, and marking?",
+answers:["G1ARF","G1VRF","G1AVRF","G1AVRN"],
+correct:2,
+explanation:"G1AV is the horn-strobe family, R identifies red housing, and F identifies FIRE marking, producing G1AVRF."
+},
+{
+id:207,
+module:1,
+lesson:10,
+category:"BOM Recognition",
+difficulty:"Hard",
+product:"G1AVRF Genesis LED Compact Wall-Mount Horn-Strobe",
+question:"A drawing lists seven new wall horn-strobe locations with red housing and FIRE marking. What should appear on the BOM?",
+answers:["G1A — Qty 7","G1VRF — Qty 7","G1AVRF — Qty 7","G4LFV — Qty 7"],
+correct:2,
+explanation:"The G1AV function is horn-strobe, R is red housing, F is FIRE marking, and the drawing has seven new locations."
 }
 
 ];
