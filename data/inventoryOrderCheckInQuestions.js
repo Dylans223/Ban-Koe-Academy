@@ -114,7 +114,7 @@ const inventoryOrderCheckInQuestions = [
         category: "InventoryOrderCheckIn",
         difficulty: "Medium",
         product: "",
-        question: "What does Step 6A compare?",
+        question: "When the received equipment is checked against the Bill of Materials, what should be compared?",
         answers: [
             "Part Number → Required Quantity → Quantity Received on the Bill of Materials",
             "Part Number → Ordered Quantity → Received Quantity on the Purchase Order",
@@ -122,14 +122,14 @@ const inventoryOrderCheckInQuestions = [
             "Attachment Category → File Name → Network Folder"
         ],
         correct: 0,
-        explanation: "Step 6A checks the received equipment against the Bill of Materials and its required quantities."
+        explanation: "The Bill of Materials check compares the received equipment against the project's material requirements: Part Number, Required Quantity, and Quantity Received."
     },
     {
         id: "oci_010",
         category: "InventoryOrderCheckIn",
         difficulty: "Medium",
         product: "",
-        question: "What does Step 6B compare?",
+        question: "When the received equipment is checked against the Purchase Order, what should be compared?",
         answers: [
             "Part Number → Ordered Quantity → Received Quantity on the Purchase Order",
             "Part Number → Required Quantity → Quantity Received on the Bill of Materials",
@@ -137,7 +137,7 @@ const inventoryOrderCheckInQuestions = [
             "Service note → Sales category → File cabinet"
         ],
         correct: 0,
-        explanation: "Step 6B checks the received equipment against the Purchase Order, including ordered and received quantities."
+        explanation: "The Purchase Order check compares the received equipment against what was ordered: Part Number, Ordered Quantity, and Received Quantity."
     },
     {
         id: "oci_011",
@@ -347,6 +347,6 @@ const inventoryOrderCheckInQuestions = [
             "The BOM is used only after delivery"
         ],
         correct: 0,
-        explanation: "Step 6A checks project requirements on the BOM, while Step 6B checks ordered and received quantities on the PO."
+        explanation: "The Bill of Materials check confirms the project's material requirements, while the Purchase Order check confirms ordered quantities against received quantities."
     }
 ];

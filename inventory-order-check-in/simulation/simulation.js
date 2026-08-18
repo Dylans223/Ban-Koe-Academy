@@ -56,20 +56,20 @@ const simulationEvents = [
         title: "Check the Bill of Materials",
         objective: "Compare received equipment with the project's material requirements.",
         document: `<div class="simulation-document"><h3>Bill of Materials</h3><div class="document-row"><span>Part Number</span><strong>N9-BATFIREVZ</strong></div><div class="document-row"><span>Required Quantity</span><strong>5</strong></div><div class="document-row"><span>Quantity Received</span><strong>4</strong></div></div>`,
-        prompt: "Which comparison belongs in Step 6A?",
+        prompt: "Which comparison confirms the received equipment meets the project's material requirements?",
         options: ["Part Number → Required Quantity → Quantity Received", "Part Number → Ordered Quantity → Received Quantity on the PO", "Project Name → Ticket Number → Sales Rep", "Attachment Category → File Name → Network Folder"],
         correct: 0,
-        explanation: "Step 6A checks the received equipment against the Bill of Materials: Part Number, Required Quantity, and Quantity Received."
+        explanation: "The Bill of Materials check compares Part Number, Required Quantity, and Quantity Received."
     },
     {
         officialStep: "6B",
         title: "Check the Purchase Order",
         objective: "Compare the received equipment with the order quantities.",
         document: `<div class="simulation-document"><h3>Purchase Order</h3><div class="document-row"><span>Part Number</span><strong>N9-BATFIREVZ</strong></div><div class="document-row"><span>Ordered Quantity</span><strong>5</strong></div><div class="document-row"><span>Received Quantity</span><strong>4</strong></div></div>`,
-        prompt: "Which comparison belongs in Step 6B?",
+        prompt: "Which comparison confirms the received equipment matches what was ordered?",
         options: ["Part Number → Ordered Quantity → Received Quantity", "Part Number → Required Quantity → Quantity Received on the BOM", "Ticket Number → Sales Rep → Type of System", "Service note → Sales category → File cabinet"],
         correct: 0,
-        explanation: "Step 6B checks the Purchase Order: Part Number, Ordered Quantity, and Received Quantity. Place the Packing Slip behind the respective Purchase Order in the physical project folder."
+        explanation: "The Purchase Order check compares Part Number, Ordered Quantity, and Received Quantity. Place the Packing Slip behind the respective Purchase Order in the physical project folder."
     },
     {
         officialStep: "7",

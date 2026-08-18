@@ -56,7 +56,7 @@ const steps = [
         body: `<p>Compare the received equipment against the <strong>Bill of Materials</strong>.</p><div class="checkin-callout good"><strong>Check</strong><br>Part Number → Required Quantity → Quantity Received</div><p>Mark the received material appropriately on the BOM. This step checks the project's material requirements.</p>`,
         visual: "Step 6A Bill of Materials screenshot",
         imagePath: "images/step-06a-bom.png",
-        check: { question: "What does Step 6A check?", options: ["Project material requirements on the Bill of Materials", "The final delivery signature", "The carrier tracking number"], correct: 0 }
+        check: { question: "When the received equipment is checked against the Bill of Materials, what is being confirmed?", options: ["Project material requirements on the Bill of Materials", "The final delivery signature", "The carrier tracking number"], correct: 0 }
     },
     {
         label: "Check PO",
