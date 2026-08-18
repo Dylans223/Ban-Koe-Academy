@@ -12,6 +12,8 @@ function findProductBy(predicate) {
 const est4Product = findProductBy((product) => product.family === "EST4" || product.model === "EST4");
 const est3Product = findProductBy((product) => product.model === "EST3");
 const ioProduct = findProductBy((product) => product.family === "iO Series");
+const io64Product = findProductBy((product) => product.model === "iO64");
+const io1000Product = findProductBy((product) => product.model === "iO1000");
 const edgeProduct = findProductBy((product) => product.family === "Edge Series");
 const g4NotificationProduct = findProductBy((product) => product.model === "Genesis LED G4 Series Wall Mount Notification Devices");
 const gcsNotificationProduct = findProductBy((product) => product.model === "Genesis LED GCS Series Ceiling Mount Speakers and Speaker-Strobes");
@@ -19,11 +21,12 @@ const g1NotificationProduct = findProductBy((product) => product.model === "Gene
 
 const systemScenario = {
     id: "two-story-office-system",
-    title: "Two-Story Office Fire Alarm System",
+    title: "Small Office Fire Alarm System",
     difficulty: "Beginner",
-    description: "You are preparing a basic system concept for a two-story office building. The system will use an Edwards EST4 fire alarm control panel and Signature Series initiating devices.",
+    description: "You are preparing a basic system concept for a small, single-building office. Determine the appropriate Edwards control platform family for a project of this size before building out the rest of the system.",
     requirements: [
         "Fire alarm control panel",
+        "48 addressable devices total",
         "Smoke detection",
         "Manual pull stations",
         "Notification appliances",
@@ -42,8 +45,8 @@ const controlPanelChoices = [
         description: est4Product ? est4Product.officialDescription : "Edwards EST4 serves as the primary life safety control platform.",
         badge: "Verified",
         product: est4Product,
-        correct: true,
-        whyNot: "The fire alarm control panel provides system control, supervision, annunciation, and interfaces with connected system components."
+        correct: false,
+        whyNot: "EST4 remains a valid larger-capacity platform, but this project is deliberately kept within the small-building iO64 fit; the scenario is intended to test device-count-based platform selection."
     },
     {
         id: "est3",
@@ -53,17 +56,17 @@ const controlPanelChoices = [
         badge: "Verified",
         product: est3Product,
         correct: false,
-        whyNot: "That choice is not the primary control platform specified for this scenario. The system needs the EST4 platform so the control center matches the training brief."
+        whyNot: "EST3 is a valid platform in other applications, but the explicit 48-device small-building fit in this scenario points to the iO64."
     },
     {
-        id: "io-series",
-        title: ioProduct ? "iO-Series Intelligent Fire Alarm Systems" : "Edwards iO-Series Intelligent Fire Alarm Systems",
-        subtitle: ioProduct ? ioProduct.category : "Small Building Fire Alarm Solution",
-        description: ioProduct ? ioProduct.officialDescription : "An intelligent system family positioned for smaller buildings.",
+        id: "io64",
+        title: io64Product ? io64Product.model : "Edwards iO64",
+        subtitle: io64Product ? io64Product.category : "Small Building Fire Alarm Solution",
+        description: io64Product ? "iO64 ships with one Signature loop controller and supports up to 64 devices of any type; its device capacity cannot be expanded." : "Small-building iO-Series panel designed for up to 64 devices with a fixed device capacity.",
         badge: "Verified",
-        product: ioProduct,
-        correct: false,
-        whyNot: "This is a different control family. It is a valid product line, but it does not match the scenario's EST4 requirement."
+        product: io64Product,
+        correct: true,
+        whyNot: "The project is only 48 addressable devices total, which fits within the iO64's fixed 64-device capacity. That makes iO64 the appropriate small-building platform for this scenario."
     },
     {
         id: "edge-series",
@@ -73,18 +76,18 @@ const controlPanelChoices = [
         badge: "Verified",
         product: edgeProduct,
         correct: false,
-        whyNot: "This is another valid Edwards platform, but it is not the control platform requested in this beginner scenario."
+        whyNot: "Edge Series is a valid platform for other applications, but this scenario is intentionally sized to match the fixed small-building fit of the iO64."
     }
 ];
 
 const systemComponents = [
     {
-        id: "est4-panel",
-        name: est4Product ? est4Product.model : "Edwards EST4 Fire Alarm Control Platform",
+        id: "io64-panel",
+        name: io64Product ? io64Product.model : "iO64",
         category: "control",
         categoryLabel: "Control",
-        description: est4Product ? est4Product.category : "Primary fire alarm control platform.",
-        function: est4Product ? est4Product.howItWorks : "Provides centralized control and supervision for the system.",
+        description: io64Product ? io64Product.category : "Small Building Fire Alarm Solution",
+        function: io64Product ? io64Product.howItWorks : "Provides centralized control and supervision for a small-building system with a fixed 64-device capacity.",
         step3Available: false,
         step4Available: false,
         finalAvailable: true
@@ -249,7 +252,7 @@ const interfaceScenarios = [
 ];
 
 const finalSections = [
-    { key: "control", label: "Control Panel", expected: ["est4-panel"] },
+    { key: "control", label: "Control Panel", expected: ["io64-panel"] },
     { key: "initiating", label: "Initiating Devices", expected: ["smoke-detector", "manual-pull-station", "duct-smoke-detector"] },
     { key: "logic", label: "Logic / Control", fixed: true },
     { key: "notification", label: "Notification Appliances", expected: ["horn-strobe", "speaker", "strobe"] },
@@ -320,10 +323,6 @@ const completionNextButton = document.getElementById("completionNextButton");
 const builderStepIndicator = document.getElementById("builderStepIndicator");
 const builderProgressBar = document.getElementById("builderProgressBar");
 const builderProgressValue = document.getElementById("builderProgressValue");
-const controlStatusValue = document.getElementById("controlStatusValue");
-const initiatingStatusValue = document.getElementById("initiatingStatusValue");
-const notificationStatusValue = document.getElementById("notificationStatusValue");
-const interfaceStatusValue = document.getElementById("interfaceStatusValue");
 const moduleStepList = document.getElementById("moduleStepList");
 const moduleObjectiveChip = document.getElementById("moduleObjectiveChip");
 const moduleObjectiveTitle = document.getElementById("moduleObjectiveTitle");
@@ -366,7 +365,6 @@ function initializeSystemBuilder() {
     renderInterfaceScenarios();
     renderFinalBuilder();
     updateStepState();
-    updateLiveScores();
 }
 
 function renderModuleShell() {
@@ -397,7 +395,6 @@ function renderModuleShell() {
 function setStep(stepNumber) {
     builderState.currentStep = stepNumber;
     updateStepState();
-    updateLiveScores();
     scrollToStep(stepNumber);
 }
 
@@ -421,14 +418,6 @@ function updateStepState() {
     builderProgressBar.style.width = `${progressPercent}%`;
     builderProgressValue.textContent = `${progressPercent}%`;
     renderModuleShell();
-}
-
-function updateLiveScores() {
-    const evaluation = evaluateSystem();
-    controlStatusValue.textContent = `${evaluation.control}/15`;
-    initiatingStatusValue.textContent = `${evaluation.initiating}/20`;
-    notificationStatusValue.textContent = `${evaluation.notification}/20`;
-    interfaceStatusValue.textContent = `${evaluation.interfaces}/25`;
 }
 
 function renderControlPanelOptions() {
@@ -462,7 +451,6 @@ function handleControlPanelSelection(event) {
     const choiceId = button.getAttribute("data-control-select");
     builderState.controlSelection = choiceId;
     renderControlPanelOptions();
-    updateLiveScores();
 }
 
 function updateControlFeedback() {
@@ -489,7 +477,7 @@ function updateControlFeedback() {
 }
 
 function isControlCorrect() {
-    return builderState.controlSelection === "est4";
+    return builderState.controlSelection === "io64";
 }
 
 function renderInitiatingWorkspace() {
@@ -542,7 +530,6 @@ function handleInitiatingComponentClick(event) {
     showFeedback(initiatingFeedback, `${component.name} added to the initiating system.`, "correct");
     renderInitiatingTree();
     continueToStep4Button.disabled = !requiredStep3.every((id) => builderState.step3Selections.includes(id));
-    updateLiveScores();
 }
 
 function renderInitiatingTree() {
@@ -608,7 +595,6 @@ function handleNotificationComponentClick(event) {
     showFeedback(notificationFeedback, `${component.name} added to notification.`, "correct");
     renderNotificationTree();
     continueToStep5Button.disabled = !requiredStep4.every((id) => builderState.step4Selections.includes(id));
-    updateLiveScores();
 }
 
 function renderNotificationTree() {
@@ -690,7 +676,6 @@ function handleInterfaceScenarioClick(event) {
         const optionValue = optionButton.getAttribute("data-option-value");
         builderState.interfaceAnswers[scenarioId] = optionValue;
         renderInterfaceScenarios();
-        updateLiveScores();
         return;
     }
 
@@ -720,14 +705,12 @@ function handleInterfaceScenarioClick(event) {
 
     showFeedback(feedback, isCorrect ? scenario.explanation : `The correct answer is ${scenario.answer}. ${scenario.explanation}`, isCorrect ? "correct" : "incorrect");
     renderInterfaceScenarios();
-    updateLiveScores();
 }
 
 function renderFinalBuilder() {
     renderSectionSelector();
     renderFinalPalette();
     renderFinalSystemCanvas();
-    updateLiveScores();
 }
 
 function renderSectionSelector() {
@@ -805,7 +788,6 @@ function placeFinalComponent(componentId) {
 
     showFeedback(finalPlacementFeedback, isCorrect ? `Placed ${component.name} in ${getSectionLabel(sectionKey)}.` : getIncorrectPlacementMessage(component, sectionKey), isCorrect ? "correct" : "incorrect");
     renderFinalSystemCanvas();
-    updateLiveScores();
 }
 
 function renderFinalSystemCanvas() {
@@ -894,7 +876,6 @@ function removeFinalComponent(sectionKey, componentId) {
     }
 
     renderFinalSystemCanvas();
-    updateLiveScores();
     showFeedback(finalPlacementFeedback, `Removed ${getComponentById(componentId)?.name || "component"} from ${getSectionLabel(sectionKey)}.`, "warning");
 }
 
@@ -906,7 +887,6 @@ function clearFinalSection(sectionKey) {
 
     builderState.finalSections[sectionKey] = [];
     renderFinalSystemCanvas();
-    updateLiveScores();
     showFeedback(finalPlacementFeedback, `Cleared ${getSectionLabel(sectionKey)}.`, "warning");
 }
 
@@ -960,7 +940,6 @@ function resetFinalSystem() {
     renderFinalSystemCanvas();
     renderFinalPalette();
     showFeedback(finalPlacementFeedback, "System reset. Start placing components again.", "warning");
-    updateLiveScores();
 }
 
 function restartModule() {
@@ -984,7 +963,6 @@ function restartModule() {
     renderNotificationTree();
     renderInterfaceScenarios();
     renderFinalBuilder();
-    updateLiveScores();
 
     stepPanels.completion.classList.add("hidden");
     stepPanels.completion.classList.remove("is-visible");

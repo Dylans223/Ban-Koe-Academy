@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | Access Control System Design</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="access-control-system-design.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand"><h1>Ban-Koe Academy</h1></div>
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button type="button" data-nav-target="dashboard">Dashboard</button>
+                <button type="button" data-nav-target="training">Training</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button type="button" data-nav-target="products">Products</button>
+                <button type="button" data-nav-target="quiz">Quiz</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button type="button" data-nav-target="progress">Progress</button>
+                <button type="button" data-nav-target="settings">Settings</button>
+            </div>
+        </nav>
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content acsd-content">
+        <div class="acsd-back-row">
+            <a class="acsd-back" href="../index.html">← Back to Access Control</a>
+        </div>
+        <header class="acsd-header">
+            <div>
+                <p class="eyebrow">Full system design exercise</p>
+                <h1 class="pageTitle">Access Control System Design</h1>
+                <p class="page-subtitle">Design a complete access-control system from project requirements, door hardware, and system-level requirements.</p>
+            </div>
+        </header>
+
+        <section class="panel acsd-intro-panel">
+            <div class="acsd-score-bar" aria-label="Scenario session score">
+                <div><span>Scenarios Completed</span><strong id="acsdCompletedValue">0</strong></div>
+                <div><span>First-Attempt Accuracy</span><strong id="acsdAccuracyValue">0%</strong></div>
+                <div><span>Correct Door Decisions</span><strong id="acsdCorrectDoorValue">0</strong></div>
+                <div><span>Incorrect Door Decisions</span><strong id="acsdIncorrectDoorValue">0</strong></div>
+                <div><span>Correct System Decisions</span><strong id="acsdCorrectSystemValue">0</strong></div>
+                <div><span>Incorrect System Decisions</span><strong id="acsdIncorrectSystemValue">0</strong></div>
+                <div><span>Correct Project Totals</span><strong id="acsdCorrectTotalsValue">0</strong></div>
+                <div><span>Incorrect Project Totals</span><strong id="acsdIncorrectTotalsValue">0</strong></div>
+            </div>
+        </section>
+
+        <section id="acsdActivePanel" class="panel acsd-active-panel">
+            <div class="acsd-scenario-card">
+                <span id="acsdDifficultyBadge" class="acsd-difficulty-badge"></span>
+                <p id="acsdCounter" class="acsd-counter"></p>
+                <p class="acsd-section-label">SECTION 1 — PROJECT INFORMATION</p>
+                <p class="acsd-project-label">PROJECT</p>
+                <h2 id="acsdProjectName" class="acsd-title"></h2>
+                <p id="acsdScenarioText" class="acsd-scenario-text"></p>
+            </div>
+
+            <form id="acsdForm" novalidate>
+                <p class="acsd-section-label">SECTION 2 — DOOR-BY-DOOR DESIGN</p>
+                <div id="acsdDoorsContainer" class="acsd-doors-container"></div>
+
+                <div class="acsd-system-panel">
+                    <p class="acsd-section-label">SECTION 3 — SYSTEM-LEVEL DESIGN</p>
+                    <h3>System Equipment</h3>
+                    <p class="acsd-system-hint">Some hardware (like controllers and power supplies) is shared across the whole project rather than assigned per door.</p>
+                    <div id="acsdSystemFields" class="acsd-category-grid"></div>
+                </div>
+
+                <div id="acsdProductTotalsPanel" class="acsd-product-totals-panel" hidden>
+                    <h3>Product-Specific Equipment</h3>
+                    <p class="acsd-system-hint">Enter the total quantity needed for each product across the whole project.</p>
+                    <div id="acsdProductTotalsFields" class="acsd-category-grid"></div>
+                </div>
+
+                <div class="acsd-summary-panel">
+                    <p class="acsd-section-label">SECTION 4 — PROJECT TOTALS</p>
+                    <h3>Project Summary</h3>
+                    <p class="acsd-summary-hint">Add up each door's requirements to calculate the project-level door-device totals.</p>
+                    <div id="acsdSummaryFields" class="acsd-category-grid"></div>
+                </div>
+
+                <p id="acsdFormError" class="acsd-error" role="alert" hidden>Enter a quantity for every category (0 is fine) and select a product wherever shown before checking your solution.</p>
+
+                <div class="acsd-actions">
+                    <button type="submit" id="acsdCheckBtn" class="btn btn-primary">Check Solution</button>
+                </div>
+            </form>
+
+            <div id="acsdFeedback" class="acsd-feedback" hidden>
+                <p id="acsdFeedbackMessage" class="acsd-feedback-message"></p>
+                <div id="acsdFeedbackDetail" class="acsd-feedback-detail"></div>
+                <p id="acsdExplanation" class="acsd-explanation" hidden></p>
+
+                <div class="acsd-feedback-actions">
+                    <button type="button" id="acsdTryAgainBtn" class="btn btn-secondary" hidden>Try Again</button>
+                    <button type="button" id="acsdNextScenarioBtn" class="btn btn-primary" hidden>Next Scenario</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="acsdCompletePanel" class="panel acsd-complete-panel" hidden>
+            <h2>Access Control System Design Complete</h2>
+            <div class="acsd-score-bar" aria-label="Final scenario session score">
+                <div><span>Scenarios Completed</span><strong id="acsdFinalCompletedValue">0</strong></div>
+                <div><span>First-Attempt Accuracy</span><strong id="acsdFinalAccuracyValue">0%</strong></div>
+                <div><span>Door Decisions</span><strong id="acsdFinalDoorValue">0</strong></div>
+                <div><span>System Decisions</span><strong id="acsdFinalSystemValue">0</strong></div>
+                <div><span>Project Totals</span><strong id="acsdFinalTotalsValue">0</strong></div>
+                <div><span>Overall Performance</span><strong id="acsdFinalOverallValue">0%</strong></div>
+            </div>
+            <button type="button" id="acsdPracticeAgainBtn" class="btn btn-primary">Practice Again</button>
+        </section>
+    </main>
+</div>
+<script src="../../scripts/navigation.js"></script>
+<script src="accessControlSystemDesignScenarios.js"></script>
+<script src="access-control-system-design.js"></script>
+</body>
+</html>

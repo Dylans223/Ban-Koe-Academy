@@ -53,7 +53,7 @@ function startAccessControlPractice(){
 
     currentQuestion = 0;
 
-    activeQuestions.sort(() => Math.random() - 0.5);
+    shuffleArray(activeQuestions);
 
     document.querySelectorAll("main section")
         .forEach(section => section.classList.add("hidden"));
@@ -85,9 +85,8 @@ explanation.style.display="none";
 
     answersDiv.innerHTML = "";
 
-    const shuffledAnswers = q.answers
-        .map((answer, index) => ({ answer, index }))
-        .sort(() => Math.random() - 0.5);
+    const shuffledAnswers = q.answers.map((answer, index) => ({ answer, index }));
+    shuffleArray(shuffledAnswers);
 
     shuffledAnswers.forEach((entry) => {
 
@@ -146,8 +145,8 @@ function checkAnswer(selected){
 
         incorrect++;
 
-        buttons[selected]
-            .classList.add("incorrect");
+        const selectedButton = Array.from(buttons).find((button) => Number(button.dataset.answerIndex) === selected);
+        selectedButton?.classList.add("incorrect");
 
         explanation.style.display="block";
 
@@ -163,6 +162,14 @@ function checkAnswer(selected){
 
     nextButton.disabled = false;
 
+}
+
+function shuffleArray(array) {
+    for (let index = array.length - 1; index > 0; index--) {
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        [array[index], array[swapIndex]] = [array[swapIndex], array[index]];
+    }
+    return array;
 }
 
 function updateStats(){

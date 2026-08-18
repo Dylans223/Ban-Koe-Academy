@@ -142,6 +142,66 @@ const productLibrary = {
             ]
         },
         {
+            id: 133,
+            manufacturer: "Edwards",
+            family: "iO Series",
+            category: "Small Building Fire Alarm Solution",
+            model: "iO64",
+            verification: "VERIFIED",
+            source: "Edwards iO Series brochure, E85000-0348, V3.1, page 5",
+            sourceURL: "",
+            image: "https://images.carriercms.com/image/upload/v1651509559/edwards/Lifelines/Images/iO-Series/Edwards-iO64---iO1000.jpg",
+            officialDescription: "Edwards iO64 is a compact iO-Series fire alarm control panel for appropriately small buildings. It ships with one Signature loop controller and supports up to 64 devices of any type. Its device capacity cannot be expanded.",
+            features: [
+                "Ships with one Signature loop controller.",
+                "Supports 64 devices of any type.",
+                "Device capacity cannot be expanded.",
+                "Supports up to 8 remote annunciators.",
+                "Has two Class B or two optional Class A NACs.",
+                "Has two Form C relays and one Form A relay.",
+                "Supports Ethernet via SA-ETH.",
+                "Supports DACT/Dialer via SA-DACT2.",
+                "Supports Cellular Gateway via ECG1.",
+                "Supports RS-232 via SA-232 / SA-USB.",
+                "Has 16 conventional IDCs.",
+                "Can add two additional NACs with the RZI16-2 module.",
+                "Can use the SA-FSB Field Server Bridge for third-party Building Management System interface."
+            ],
+            quizQuestions: [],
+            howItWorks: "The iO64 is sized as a fixed-capacity small-building panel. Its one Signature loop controller handles the addressed device count up to 64 devices, and the panel's device capacity is not expandable beyond that fixed limit.",
+            commonMistakes: [
+                "Assuming iO64 is universal for every project instead of checking device count and platform fit.",
+                "Confusing iO64 with the iO Communications Bridge or treating iO64 as expandable.",
+                "Treating iO64 and iO1000 as the same platform when the brochure distinguishes them by capacity and expansion capability."
+            ]
+        },
+        {
+            id: 134,
+            manufacturer: "Edwards",
+            family: "iO Series",
+            category: "Expandable Fire Alarm Platform",
+            model: "iO1000",
+            verification: "VERIFIED",
+            source: "Edwards iO Series brochure, E85000-0348, V3.1, page 5",
+            sourceURL: "",
+            image: "https://images.carriercms.com/image/upload/v1651509559/edwards/Lifelines/Images/iO-Series/Edwards-iO64---iO1000.jpg",
+            officialDescription: "Edwards iO1000 is the larger expandable iO-Series platform. It supports up to 1,000 addressable devices and can accommodate up to two Signature loop controller cards, with single or dual 250-device loops.",
+            features: [
+                "Supports up to 1,000 addressable devices.",
+                "Has room for up to two Signature loop controller cards.",
+                "Supports single or dual 250-device loops.",
+                "iO1000 addressable loops support 125 detectors and 125 modules.",
+                "Has expansion capability.",
+                "Supports up to 8 remote annunciators."
+            ],
+            quizQuestions: [],
+            howItWorks: "The iO1000 is the expandable iO-Series platform for larger or growth-oriented applications. It is distinguished from the fixed-capacity iO64 by its higher addressable device capacity and expansion capability.",
+            commonMistakes: [
+                "Using iO64 capacity assumptions on projects that exceed 64 devices.",
+                "Confusing iO1000's expansion capability with the fixed-capacity iO64."
+            ]
+        },
+        {
             id: 7,
             manufacturer: "Edwards",
             family: "Signature Series",
@@ -2712,6 +2772,32 @@ const productLibrary = {
             commonMistakes: [
                 "Treating it as a primary panel or power supply.",
                 "Ignoring its diagnostic troubleshooting role."
+            ]
+        },
+        {
+            id: 132,
+            manufacturer: "Edwards",
+            family: "Signature Series",
+            category: "Intelligent Duct Smoke Detector",
+            model: "SIGA-DDOS Intelligent Duct Smoke Detector",
+            verification: "VERIFIED",
+            source: "SIGA-DDOS Intelligent Duct Smoke Detector Installation Sheet, Edwards / Walter Kidde Portable Equipment, LLC, P/N 3102774-EN, Rev 002, REB 28AUG25",
+            sourceURL: "",
+            image: "",
+            officialDescription: "Intelligent duct smoke detector used to detect smoke in a building's HVAC system. Requires one address on the Signature Signaling Line Circuit (SLC) and uses photoelectric smoke detection.",
+            features: [
+                "Signature SLC device — requires one SLC address.",
+                "Photoelectric smoke detection.",
+                "Built-in auxiliary relay (1, Zone/Programmable operation, Form C contacts).",
+                "Auxiliary relay terminals: RELAY_NC, RELAY_C, RELAY_NO.",
+                "Sampling tubes are ordered separately."
+            ],
+            quizQuestions: [],
+            howItWorks: "The SIGA-DDOS monitors a duct sampling airflow photoelectrically and reports its state to the panel over the Signature SLC. Its onboard auxiliary relay (Form C) can provide a relay/control function for the applicable duct-detector application without requiring a separate external relay for that same function.",
+            commonMistakes: [
+                "Automatically adding a separate external relay (such as a SIGA-CT1, CT2, or CR) for a function the SIGA-DDOS's built-in auxiliary relay already provides.",
+                "Assuming the SIGA-DDOS eliminates every external control/relay module — other applications may still legitimately need a separate device.",
+                "Assuming every duct detector includes a built-in relay — this is specific to the SIGA-DDOS."
             ]
         }
     ]

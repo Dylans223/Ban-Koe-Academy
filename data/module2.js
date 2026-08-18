@@ -1783,42 +1783,6 @@ explanation:"The EST4 platform documentation includes an on-board webserver for 
 },
 
 {
-id:102,
-module:2,
-lesson:9,
-category:"Edwards Product Library",
-difficulty:"Hard",
-product:"EST3",
-question:"EST3 is most accurately described as which of the following?",
-answers:[
-"A modular platform for standalone or multi-panel unified life safety applications",
-"A wall-mounted strobe family",
-"A detector-only initiating system",
-"A low-frequency notification appliance"
-],
-correct:0,
-explanation:"Edwards describes EST3 as a modular platform for standalone through multi-panel configurations with unified fire alarm, security, and mass notification functions."
-},
-
-{
-id:103,
-module:2,
-lesson:9,
-category:"Edwards Product Library",
-difficulty:"Hard",
-product:"EST3X",
-question:"Which EST3X statement is correct for network architecture discussions?",
-answers:[
-"It supports up to 8 EST3X nodes and can integrate into EST3 networks up to 64 nodes.",
-"It supports only standalone operation.",
-"It supports up to 64 EST3X nodes directly.",
-"It cannot be used with mass notification features."
-],
-correct:0,
-explanation:"The Edwards EST3X materials differentiate local EST3X node networking from larger EST3 network integration limits."
-},
-
-{
 id:104,
 module:2,
 lesson:9,
@@ -1834,24 +1798,6 @@ answers:[
 ],
 correct:0,
 explanation:"The iO-Series library entry includes intelligent/electronic addressing and automatic device mapping."
-},
-
-{
-id:105,
-module:2,
-lesson:9,
-category:"Edwards Product Library",
-difficulty:"Hard",
-product:"iO Communications Bridge",
-question:"During BOM review, how should the iO Communications Bridge be treated?",
-answers:[
-"As an iO communications accessory that supports intended architecture paths",
-"As a detector base",
-"As a Genesis notification appliance",
-"As an EST3X panel CPU"
-],
-correct:0,
-explanation:"The product is categorized as a communications accessory in the iO ecosystem, not a detection or notification endpoint."
 },
 
 {
@@ -2050,6 +1996,24 @@ answers:[
 ],
 correct:0,
 explanation:"The GCS series is categorized as ceiling-mount speaker/speaker-strobe notification devices in the updated library."
+},
+
+{
+id:117,
+module:2,
+lesson:9,
+category:"BOM Recognition",
+difficulty:"Medium",
+product:"SIGA-DDOS Intelligent Duct Smoke Detector",
+question:"A BOM lists a SIGA-DDOS and also lists a separate SIGA-CR for the same duct-detector relay function. What should you flag for review?",
+answers:[
+"A possible duplicated relay function, since the SIGA-DDOS already includes its own onboard auxiliary relay",
+"Nothing — every duct detector always needs a separate relay",
+"The SIGA-DDOS itself, since it cannot be used on this project",
+"The SIGA-CR, since it is now an obsolete product"
+],
+correct:0,
+explanation:"The SIGA-DDOS has a built-in auxiliary relay. If a separate relay is also listed for the same function, verify against the actual application before assuming both are required — the SIGA-CR may still be legitimately needed for a different function, but a duplicated relay for the same function should be flagged."
 }
 
 ];

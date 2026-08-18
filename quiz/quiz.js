@@ -319,8 +319,8 @@ function loadQuestion() {
     const q = state.activeQuestions[state.currentIndex];
     const total = state.activeQuestions.length;
 
-    // Shuffle answers (copy to preserve original)
-    const shuffled = [...q.answers];
+    // Shuffle answer objects so displayed order stays linked to source metadata.
+    const shuffled = q.answers.map((answer, originalIndex) => ({ answer, originalIndex }));
     shuffleArray(shuffled);
     state.shuffledAnswers = shuffled;
     state.selectedAnswer  = null;
@@ -342,8 +342,8 @@ function loadQuestion() {
     el.questionText.textContent = q.question;
 
     // Answer cards
-    el.answerGrid.innerHTML = shuffled.map((answer, i) => `
-        <button class="answer-card" data-answer="${escapeAttr(answer)}" onclick="selectAnswer(this)">
+    el.answerGrid.innerHTML = shuffled.map(({ answer, originalIndex }) => `
+        <button class="answer-card" data-answer="${escapeAttr(answer)}" data-original-index="${originalIndex}" onclick="selectAnswer(this)">
             <span class="answer-radio"><span class="answer-radio-dot"></span></span>
             <span>${escapeHTML(answer)}</span>
         </button>`).join("");

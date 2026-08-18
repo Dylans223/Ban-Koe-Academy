@@ -848,6 +848,22 @@ answers: [
 ],
 correct: 0,
 explanation: "Fire alarm wiring problems can share symptoms across different root causes. A device not communicating could be a wire break, connection problem, module failure, or configuration error. A systematic approach — checking from wiring and connections outward — avoids wasted effort and identifies the real root cause."
+},
+
+{
+id: 52,
+category: "Wiring",
+difficulty: "Easy",
+product: "SIGA-DDOS Intelligent Duct Smoke Detector",
+question: "Which terminals are provided for the SIGA-DDOS onboard auxiliary relay?",
+answers: [
+"RELAY_NC, RELAY_C, and RELAY_NO",
+"NAC1 and NAC2 only",
+"SLC+ and SLC- only",
+"EOL and Trouble only"
+],
+correct: 0,
+explanation: "The SIGA-DDOS wiring diagram identifies RELAY_NC, RELAY_C, and RELAY_NO terminals for its built-in Form C auxiliary relay."
 }
 
 ];

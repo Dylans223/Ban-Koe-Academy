@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | Access Control Scenarios</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="access-control-scenarios.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand"><h1>Ban-Koe Academy</h1></div>
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button type="button" data-nav-target="dashboard">Dashboard</button>
+                <button type="button" data-nav-target="training">Training</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button type="button" data-nav-target="products">Products</button>
+                <button type="button" data-nav-target="quiz">Quiz</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button type="button" data-nav-target="progress">Progress</button>
+                <button type="button" data-nav-target="settings">Settings</button>
+            </div>
+        </nav>
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content acs-content">
+        <div class="acs-back-row">
+            <a class="acs-back" href="../index.html">← Back to Access Control</a>
+        </div>
+        <header class="acs-header">
+            <div>
+                <p class="eyebrow">Application exercise</p>
+                <h1 class="pageTitle">Access Control Scenarios</h1>
+                <p class="page-subtitle">Apply access-control knowledge to realistic door and system requirements.</p>
+            </div>
+        </header>
+
+        <section class="panel acs-intro-panel">
+            <div class="acs-score-bar" aria-label="Scenario session score">
+                <div><span>Scenarios Completed</span><strong id="acsCompletedValue">0</strong></div>
+                <div><span>First-Attempt Accuracy</span><strong id="acsAccuracyValue">0%</strong></div>
+                <div><span>Correct Decisions</span><strong id="acsCorrectDecisionsValue">0</strong></div>
+                <div><span>Incorrect Decisions</span><strong id="acsIncorrectDecisionsValue">0</strong></div>
+            </div>
+        </section>
+
+        <section id="acsActivePanel" class="panel acs-active-panel">
+            <div class="acs-scenario-card">
+                <span id="acsDifficultyBadge" class="acs-difficulty-badge"></span>
+                <p id="acsCounter" class="acs-counter"></p>
+                <h2 id="acsTitle" class="acs-title"></h2>
+                <p id="acsScenarioText" class="acs-scenario-text"></p>
+            </div>
+
+            <form id="acsForm" novalidate>
+                <div id="acsDoorsContainer" class="acs-doors-container"></div>
+
+                <div class="acs-system-panel">
+                    <h3>System Equipment</h3>
+                    <p class="acs-system-hint">Some hardware (like the controller and power supply) is shared across the whole project rather than assigned per door.</p>
+                    <div id="acsSystemFields" class="acs-system-fields"></div>
+                </div>
+
+                <div id="acsProductQuestionWrap" class="acs-product-question" hidden>
+                    <h3 id="acsProductPrompt"></h3>
+                    <select id="acsProductSelect">
+                        <option value="">-- Select a product --</option>
+                    </select>
+                </div>
+
+                <p id="acsFormError" class="acs-error" role="alert" hidden>Enter a quantity for every category (0 is fine) and, if shown, select a product before checking your solution.</p>
+
+                <div class="acs-actions">
+                    <button type="submit" id="acsCheckBtn" class="btn btn-primary">Check Solution</button>
+                </div>
+            </form>
+
+            <div id="acsFeedback" class="acs-feedback" hidden>
+                <p id="acsFeedbackMessage" class="acs-feedback-message"></p>
+                <div id="acsFeedbackDetail" class="acs-feedback-detail"></div>
+                <p id="acsExplanation" class="acs-explanation" hidden></p>
+
+                <div class="acs-feedback-actions">
+                    <button type="button" id="acsTryAgainBtn" class="btn btn-secondary" hidden>Try Again</button>
+                    <button type="button" id="acsNextScenarioBtn" class="btn btn-primary" hidden>Next Scenario</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="acsCompletePanel" class="panel acs-complete-panel" hidden>
+            <h2>Access Control Scenarios Complete</h2>
+            <div class="acs-score-bar" aria-label="Final scenario session score">
+                <div><span>Scenarios Completed</span><strong id="acsFinalCompletedValue">0</strong></div>
+                <div><span>First-Attempt Accuracy</span><strong id="acsFinalAccuracyValue">0%</strong></div>
+                <div><span>Correct Decisions</span><strong id="acsFinalCorrectDecisionsValue">0</strong></div>
+                <div><span>Incorrect Decisions</span><strong id="acsFinalIncorrectDecisionsValue">0</strong></div>
+            </div>
+            <button type="button" id="acsPracticeAgainBtn" class="btn btn-primary">Practice Again</button>
+        </section>
+    </main>
+</div>
+<script src="../../scripts/navigation.js"></script>
+<script src="accessControlScenarios.js"></script>
+<script src="access-control-scenarios.js"></script>
+</body>
+</html>

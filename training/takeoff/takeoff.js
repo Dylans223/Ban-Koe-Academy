@@ -7,9 +7,10 @@ const takeoffScenario = {
     id: "small-office-fire-alarm-upgrade",
     name: "Small Office Fire Alarm Upgrade",
     difficulty: "Beginner",
-    description: "You are preparing a basic material takeoff for a small two-story office building. The fire alarm system will use an Edwards EST4 fire alarm control panel and Signature Series initiating devices.",
+    description: "You are preparing a basic material takeoff for a small two-story office building with 48 addressable devices total. This scenario is intentionally sized so the Edwards iO64 is a valid small-building option because it supports up to 64 devices and its capacity cannot be expanded. EST4 remains available when the project requires a different platform, but the device count here points to iO64.",
     requirements: [
         "1 fire alarm control panel",
+        "48 addressable devices total",
         "2 floors",
         "10 smoke detectors per floor",
         "2 manual pull stations per floor",
@@ -19,6 +20,14 @@ const takeoffScenario = {
         "Use one control or relay interface for HVAC shutdown"
     ],
     identificationQuestions: [
+        {
+            id: "panel-selection-io64",
+            requirement: "Match the project size to the correct control platform.",
+            question: "Your project has 48 addressable devices. Which Edwards panel should you consider for this small-building project?",
+            options: ["iO64", "iO1000", "EST4", "Edge Series"],
+            answer: "iO64",
+            explanation: "Correct. The iO64 supports up to 64 devices and its capacity cannot be expanded, which fits this 48-device project. The iO1000 is the expandable option for larger systems, while EST4 is not automatically the best fit for every small project."
+        },
         {
             id: "smoke-detection",
             requirement: "Detect smoke throughout the occupied office areas.",

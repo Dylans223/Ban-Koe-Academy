@@ -1,0 +1,57 @@
+[hidden] { display: none !important; }
+
+.acs-content { gap: var(--space-3); }
+.acs-back-row { display: flex; }
+.acs-back { color: #bfdbfe; text-decoration: none; font-weight: 700; }
+.acs-back:hover { color: #fff; }
+.acs-header .pageTitle { margin-top: 6px; }
+
+.acs-intro-panel { background: #152235; }
+.acs-score-bar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-2); }
+.acs-score-bar div { display: grid; gap: 4px; padding: 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: rgba(15, 23, 42, .45); }
+.acs-score-bar span { color: var(--text-secondary); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.acs-score-bar strong { color: var(--text); font-size: 20px; }
+@media (max-width: 850px) { .acs-score-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.acs-active-panel { display: grid; gap: var(--space-3); background: #152235; }
+.acs-scenario-card { display: grid; gap: 8px; padding: 16px; border: 1px solid rgba(147, 197, 253, .4); border-radius: var(--radius-md); background: rgba(15, 23, 42, .55); }
+.acs-difficulty-badge { justify-self: start; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: rgba(37, 99, 235, .28); color: #bfdbfe; border: 1px solid rgba(59, 130, 246, .5); }
+.acs-counter { color: var(--text-secondary); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.acs-title { color: var(--text); font-size: 21px; }
+.acs-scenario-text { color: #e2e8f0; line-height: 1.6; }
+
+#acsForm { display: grid; gap: var(--space-3); }
+.acs-doors-container { display: grid; gap: var(--space-2); }
+.acs-door-card { display: grid; gap: 10px; padding: 14px; border: 1px solid var(--border); border-radius: var(--radius-md); background: rgba(15, 23, 42, .5); }
+.acs-door-card h4 { color: var(--text); font-size: 16px; }
+.acs-category-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.acs-category-field { display: grid; gap: 4px; }
+.acs-category-field label { color: var(--text-secondary); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.acs-category-field input { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: rgba(15, 23, 42, .6); color: var(--text); font-size: 14px; }
+@media (max-width: 700px) { .acs-category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.acs-system-panel { display: grid; gap: 8px; padding: 14px; border: 1px solid rgba(59, 130, 246, .35); border-radius: var(--radius-md); background: rgba(30, 64, 175, .12); }
+.acs-system-panel h3 { color: var(--text); font-size: 16px; }
+.acs-system-hint { color: var(--text-secondary); font-size: 13px; }
+.acs-system-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 700px) { .acs-system-fields { grid-template-columns: 1fr; } }
+
+.acs-product-question { display: grid; gap: 8px; padding: 14px; border: 1px solid rgba(245, 158, 11, .4); border-radius: var(--radius-md); background: rgba(120, 53, 15, .14); }
+.acs-product-question h3 { color: var(--text); font-size: 15px; font-weight: 600; }
+.acs-product-question select { padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: rgba(15, 23, 42, .6); color: var(--text); font-size: 14px; }
+
+.acs-error { color: #fecaca; font-weight: 700; }
+.acs-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.acs-feedback { display: grid; gap: var(--space-2); border-top: 1px solid var(--border); padding-top: var(--space-2); }
+.acs-feedback-message { font-size: 18px; font-weight: 700; color: var(--text); }
+.acs-feedback-detail { display: grid; gap: 14px; }
+.acs-door-result h4 { color: var(--text); font-size: 15px; margin-bottom: 6px; }
+.acs-result-list { display: grid; gap: 5px; list-style: none; padding: 0; margin: 0; }
+.acs-result-list li { color: var(--text-secondary); font-weight: 600; font-size: 14px; }
+.acs-result-list li.correct { color: #bbf7d0; }
+.acs-result-list li.incorrect { color: #fecaca; }
+.acs-explanation { color: #bbf7d0; }
+.acs-feedback-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.acs-complete-panel { display: grid; gap: var(--space-2); background: #152235; justify-items: start; }

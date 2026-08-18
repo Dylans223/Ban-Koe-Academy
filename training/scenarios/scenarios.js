@@ -121,10 +121,12 @@
                     { id: "existing-module", label: "Existing module/interface", importance: "A module may already be shown or specified on the project documents." },
                     { id: "drawings", label: "Drawings", importance: "The plans or riser often show how the device is intended to connect." },
                     { id: "manufacturer-docs", label: "Manufacturer documentation", importance: "You need documented compatibility and functional details." },
+                    { id: "siga-ddos-relay", label: "Whether the specified detector already has a built-in relay (e.g., SIGA-DDOS)", importance: "Some duct detectors, like the SIGA-DDOS, include their own onboard auxiliary relay for the applicable function. Recognizing this avoids adding an unnecessary duplicate external relay — other applications may still legitimately need a separate device such as a SIGA-CT1, CT2, or CR." },
                     { id: "employee-count", label: "Number of employees in the building", importance: "This does not explain how the detector communicates to the panel." },
                     { id: "paint-color", label: "Paint color of the duct", importance: "This does not affect communication method." }
                 ],
-                required: ["fa-system", "detector-model", "monitor-function", "existing-module", "drawings", "manufacturer-docs"]
+                required: ["fa-system", "detector-model", "monitor-function", "existing-module", "drawings", "manufacturer-docs"],
+                optionalValid: ["siga-ddos-relay"]
             },
             missingInformation: {
                 prompt: "What key idea is still missing if the customer only says the detector is on the project?",
@@ -160,7 +162,7 @@
                     { id: "verify-function", label: "Verify the intended monitoring function", status: "also-reasonable" }
                 ],
                 correct: "assume-module",
-                explanation: "Do not assume a specific monitor/input interface is compatible without checking the system design and manufacturer documentation."
+                explanation: "Do not assume a specific monitor/input interface is compatible without checking the system design and manufacturer documentation. Also recognize what the detector already provides — for example, a SIGA-DDOS includes its own onboard auxiliary relay, so a separate external relay for that same function shouldn't be automatically added, though other applications may still need one."
             },
             responseBuilder: {
                 intro: "Build the customer response you would send before naming a specific module.",

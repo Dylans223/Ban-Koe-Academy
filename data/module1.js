@@ -2773,24 +2773,6 @@ explanation:"The EST3X platform description states networking with up to eight E
 },
 
 {
-id:155,
-module:1,
-lesson:10,
-category:"Edwards Product Library",
-difficulty:"Medium",
-product:"EST3X",
-question:"EST3X can integrate with an EST3 network up to how many total nodes?",
-answers:[
-"64",
-"8",
-"32",
-"4"
-],
-correct:0,
-explanation:"Edwards states EST3X can integrate with EST3 networks comprising as many as 64 nodes."
-},
-
-{
 id:156,
 module:1,
 lesson:10,
@@ -2806,24 +2788,6 @@ answers:[
 ],
 correct:0,
 explanation:"The iO Series description lists automatic device mapping as a key capability."
-},
-
-{
-id:157,
-module:1,
-lesson:10,
-category:"Edwards Product Library",
-difficulty:"Easy",
-product:"iO Communications Bridge",
-question:"The iO Communications Bridge is best categorized as what?",
-answers:[
-"A communications accessory in the iO Series ecosystem",
-"A smoke detector",
-"A horn-strobe",
-"A pull station"
-],
-correct:0,
-explanation:"In the Edwards library, the iO Communications Bridge is categorized as a communications accessory."
 },
 
 {
@@ -3241,24 +3205,6 @@ explanation:"The GCS entry describes ceiling-mounted speaker-strobe notification
 },
 
 {
-id:182,
-module:1,
-lesson:10,
-category:"Edwards Product Library",
-difficulty:"Hard",
-product:"EST3X",
-question:"Which statement correctly combines the EST3X network limits used in this product family?",
-answers:[
-"Up to 8 EST3X nodes, and integration with EST3 networks up to 64 nodes",
-"Up to 64 EST3X nodes with no EST3 integration",
-"Up to 8 nodes total in any architecture",
-"No network operation is supported"
-],
-correct:0,
-explanation:"The updated EST3X entries distinguish local EST3X networking (up to 8 nodes) from EST3 integration (up to 64 nodes)."
-},
-
-{
 id:183,
 module:1,
 lesson:10,
@@ -3274,6 +3220,186 @@ answers:[
 ],
 correct:0,
 explanation:"This model is specifically listed as the smoke and CO detector variant."
+},
+
+{
+id:184,
+module:1,
+lesson:10,
+category:"Product Recognition",
+difficulty:"Easy",
+product:"SIGA-DDOS Intelligent Duct Smoke Detector",
+question:"What is the SIGA-DDOS?",
+answers:[
+"An intelligent duct smoke detector",
+"A control relay module",
+"A notification appliance",
+"A power supply"
+],
+correct:0,
+explanation:"The SIGA-DDOS is Edwards' intelligent duct smoke detector, used to detect smoke in a building's HVAC ductwork."
+},
+
+{
+id:185,
+module:1,
+lesson:10,
+category:"Product Recognition",
+difficulty:"Easy",
+product:"SIGA-DDOS Intelligent Duct Smoke Detector",
+question:"What signaling circuit does the SIGA-DDOS use?",
+answers:[
+"Signature SLC",
+"A conventional NAC circuit",
+"A dry contact-only circuit",
+"An RS-485 network only"
+],
+correct:0,
+explanation:"The SIGA-DDOS is a Signature SLC device, addressed on the Signature Signaling Line Circuit."
+},
+
+{
+id:186,
+module:1,
+lesson:10,
+category:"Product Recognition",
+difficulty:"Easy",
+product:"SIGA-DDOS Intelligent Duct Smoke Detector",
+question:"How many Signature SLC addresses does a SIGA-DDOS require?",
+answers:[
+"One",
+"Two",
+"Four",
+"None — it is a conventional device"
+],
+correct:0,
+explanation:"The SIGA-DDOS requires one address on the Signature SLC."
+},
+
+{
+id:187,
+module:1,
+lesson:10,
+category:"Applications",
+difficulty:"Medium",
+product:"SIGA-DDOS Intelligent Duct Smoke Detector",
+question:"A project specifies a SIGA-DDOS and requires the relay function that the detector's onboard auxiliary relay can provide. What should the estimator recognize?",
+answers:[
+"The SIGA-DDOS already provides that relay function, so an additional external relay should not automatically be added",
+"A SIGA-CT1 must always be added alongside every SIGA-DDOS",
+"Duct detectors never require any relay or control function",
+"The SIGA-DDOS cannot provide any relay function"
+],
+correct:0,
+explanation:"The SIGA-DDOS has a built-in auxiliary Form C relay. When that onboard relay satisfies the application's relay requirement, an additional external relay is not automatically needed. Other duct-detector configurations or applications may still require a separate device such as a SIGA-CT1, CT2, or CR depending on the system design."
+},
+
+{
+id:188,
+module:1,
+lesson:10,
+category:"Applications",
+difficulty:"Medium",
+product:"iO-Series Intelligent Fire Alarm Systems",
+question:"For an appropriately small building project, which Edwards platform family should be considered as an alternative to automatically selecting an EST4?",
+answers:[
+"The iO Series",
+"EST3X",
+"A duct smoke detector",
+"A notification power supply"
+],
+correct:0,
+explanation:"Edwards positions the iO Series as an intelligent system family for small to mid-sized applications. For a project sized appropriately for that family, it should be considered rather than defaulting to EST4 for every building."
+},
+
+{
+id:189,
+module:1,
+lesson:10,
+category:"Control & Monitor Modules",
+difficulty:"Easy",
+product:"SIGA-DDOS Intelligent Duct Smoke Detector",
+question:"What relay feature is built into the SIGA-DDOS?",
+answers:[
+"One onboard auxiliary Form C relay",
+"Two onboard Form A relays",
+"No relay — an external module is always required",
+"A built-in NAC power supply"
+],
+correct:0,
+explanation:"The SIGA-DDOS includes one onboard auxiliary relay with Form C contacts (RELAY_NC, RELAY_C, RELAY_NO terminals)."
+},
+
+{
+id:190,
+module:1,
+lesson:10,
+category:"Edwards Product Library",
+difficulty:"Easy",
+product:"iO64",
+question:"What is the maximum device capacity of an Edwards iO64?",
+answers:[
+"64 devices",
+"125 devices",
+"250 devices",
+"1,000 devices"
+],
+correct:0,
+explanation:"The Edwards brochure identifies the iO64 as a fixed-capacity small-building panel supporting up to 64 devices of any type."
+},
+
+{
+id:191,
+module:1,
+lesson:10,
+category:"Edwards Product Library",
+difficulty:"Easy",
+product:"iO64",
+question:"Can the device capacity of an iO64 be expanded?",
+answers:[
+"No",
+"Yes, by adding another controller card",
+"Yes, by doubling every loop",
+"Only if it is paired with an EST4"
+],
+correct:0,
+explanation:"The iO64 has a fixed device capacity and cannot be expanded beyond its 64-device limit."
+},
+
+{
+id:192,
+module:1,
+lesson:10,
+category:"Applications",
+difficulty:"Medium",
+product:"iO64",
+question:"A small building has 48 addressable devices. Which Edwards platform should be considered based on the iO Series product family?",
+answers:[
+"iO64",
+"iO1000",
+"EST4 only",
+"A communications bridge"
+],
+correct:0,
+explanation:"The iO64 supports 64 devices and has fixed, non-expandable capacity, which makes it a purpose-built option for an appropriately small building with 48 addressable devices."
+},
+
+{
+id:193,
+module:1,
+lesson:10,
+category:"Edwards Product Library",
+difficulty:"Medium",
+product:"iO1000",
+question:"Which statement best describes the difference between iO64 and iO1000?",
+answers:[
+"iO64 is fixed-capacity at 64 devices, while iO1000 is the expandable platform up to 1,000 addressable devices",
+"iO64 supports 1,000 devices and iO1000 supports only 64",
+"Both are identical except for their external cabinet color",
+"The iO1000 is not an Edwards product"
+],
+correct:0,
+explanation:"The brochure distinguishes iO64 as a fixed-capacity 64-device platform and iO1000 as the expandable platform supporting up to 1,000 addressable devices."
 }
 
 ];

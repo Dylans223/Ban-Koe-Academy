@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban-Koe Academy | Access Control Multi-Door</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="access-control-multi-door.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-brand"><h1>Ban-Koe Academy</h1></div>
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <p class="nav-group-title">Main</p>
+                <button type="button" data-nav-target="dashboard">Dashboard</button>
+                <button type="button" data-nav-target="training">Training</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Library</p>
+                <button type="button" data-nav-target="products">Products</button>
+                <button type="button" data-nav-target="quiz">Quiz</button>
+            </div>
+            <div class="nav-group">
+                <p class="nav-group-title">Tools</p>
+                <button type="button" data-nav-target="progress">Progress</button>
+                <button type="button" data-nav-target="settings">Settings</button>
+            </div>
+        </nav>
+        <div class="sidebar-footer">Version 1.0</div>
+    </aside>
+
+    <main class="content acmd-content">
+        <div class="acmd-back-row">
+            <a class="acmd-back" href="../index.html">← Back to Access Control</a>
+        </div>
+        <header class="acmd-header">
+            <div>
+                <p class="eyebrow">Multi-door design exercise</p>
+                <h1 class="pageTitle">Access Control Multi-Door</h1>
+                <p class="page-subtitle">Practice building access-control systems across multiple doors with different requirements.</p>
+            </div>
+        </header>
+
+        <section class="panel acmd-intro-panel">
+            <div class="acmd-score-bar" aria-label="Scenario session score">
+                <div><span>Scenarios Completed</span><strong id="acmdCompletedValue">0</strong></div>
+                <div><span>First-Attempt Accuracy</span><strong id="acmdAccuracyValue">0%</strong></div>
+                <div><span>Correct Door Decisions</span><strong id="acmdCorrectDoorValue">0</strong></div>
+                <div><span>Incorrect Door Decisions</span><strong id="acmdIncorrectDoorValue">0</strong></div>
+                <div><span>Correct Project Totals</span><strong id="acmdCorrectTotalsValue">0</strong></div>
+                <div><span>Incorrect Project Totals</span><strong id="acmdIncorrectTotalsValue">0</strong></div>
+            </div>
+        </section>
+
+        <section id="acmdActivePanel" class="panel acmd-active-panel">
+            <div class="acmd-scenario-card">
+                <span id="acmdDifficultyBadge" class="acmd-difficulty-badge"></span>
+                <p id="acmdCounter" class="acmd-counter"></p>
+                <p class="acmd-project-label">PROJECT</p>
+                <h2 id="acmdProjectName" class="acmd-title"></h2>
+                <p id="acmdScenarioText" class="acmd-scenario-text"></p>
+            </div>
+
+            <form id="acmdForm" novalidate>
+                <div id="acmdDoorsContainer" class="acmd-doors-container"></div>
+
+                <div class="acmd-summary-panel">
+                    <h3>Project Summary</h3>
+                    <p class="acmd-summary-hint">Add up each door's requirements to calculate the project-level totals.</p>
+                    <div id="acmdSummaryFields" class="acmd-category-grid"></div>
+                </div>
+
+                <div class="acmd-system-panel">
+                    <h3>System Equipment</h3>
+                    <p class="acmd-system-hint">Some hardware (like the controller and power supply) is shared across the whole project rather than assigned per door.</p>
+                    <div id="acmdSystemFields" class="acmd-category-grid"></div>
+                </div>
+
+                <p id="acmdFormError" class="acmd-error" role="alert" hidden>Enter a quantity for every category (0 is fine) and select a product wherever shown before checking your solution.</p>
+
+                <div class="acmd-actions">
+                    <button type="submit" id="acmdCheckBtn" class="btn btn-primary">Check Solution</button>
+                </div>
+            </form>
+
+            <div id="acmdFeedback" class="acmd-feedback" hidden>
+                <p id="acmdFeedbackMessage" class="acmd-feedback-message"></p>
+                <div id="acmdFeedbackDetail" class="acmd-feedback-detail"></div>
+                <p id="acmdExplanation" class="acmd-explanation" hidden></p>
+
+                <div class="acmd-feedback-actions">
+                    <button type="button" id="acmdTryAgainBtn" class="btn btn-secondary" hidden>Try Again</button>
+                    <button type="button" id="acmdNextScenarioBtn" class="btn btn-primary" hidden>Next Scenario</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="acmdCompletePanel" class="panel acmd-complete-panel" hidden>
+            <h2>Access Control Multi-Door Complete</h2>
+            <div class="acmd-score-bar" aria-label="Final scenario session score">
+                <div><span>Scenarios Completed</span><strong id="acmdFinalCompletedValue">0</strong></div>
+                <div><span>First-Attempt Accuracy</span><strong id="acmdFinalAccuracyValue">0%</strong></div>
+                <div><span>Door Decisions</span><strong id="acmdFinalDoorValue">0</strong></div>
+                <div><span>Project Totals</span><strong id="acmdFinalTotalsValue">0</strong></div>
+                <div><span>Overall Performance</span><strong id="acmdFinalOverallValue">0%</strong></div>
+            </div>
+            <button type="button" id="acmdPracticeAgainBtn" class="btn btn-primary">Practice Again</button>
+        </section>
+    </main>
+</div>
+<script src="../../scripts/navigation.js"></script>
+<script src="accessControlMultiDoorScenarios.js"></script>
+<script src="access-control-multi-door.js"></script>
+</body>
+</html>
