@@ -150,9 +150,20 @@ function renderVisual(step) {
     return `<div class="visual-placeholder" role="img" aria-label="${step.visual} placeholder"><div><strong>${step.visual}</strong><span>The supplied image is not present in this workspace yet.</span><code>${step.imageName}</code></div></div>`;
 }
 
+// Keeps the displayed order linked to the source index so the correct answer follows the shuffle.
+function shuffleOptions(options) {
+    const shuffled = options.map((option, originalIndex) => ({ option, originalIndex }));
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
 function renderCheck(check) {
     if (!check) return "";
-    return `<section class="checkin-check"><h3>Knowledge check</h3><p>${check.question}</p><div class="checkin-options">${check.options.map((option, index) => `<button type="button" class="checkin-option" data-answer-index="${index}">${option}</button>`).join("")}</div><div class="checkin-feedback" aria-live="polite"></div></section>`;
+    const shuffled = shuffleOptions(check.options);
+    return `<section class="checkin-check"><h3>Knowledge check</h3><p>${check.question}</p><div class="checkin-options">${shuffled.map(({ option, originalIndex }) => `<button type="button" class="checkin-option" data-answer-index="${originalIndex}">${option}</button>`).join("")}</div><div class="checkin-feedback" aria-live="polite"></div></section>`;
 }
 
 function renderStep() {
