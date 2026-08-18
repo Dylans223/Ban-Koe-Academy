@@ -119,6 +119,57 @@ function normalize(value) {
     return String(value || "").trim().toLowerCase();
 }
 
+// Canonicalizes a project name: trims, lowercases, collapses whitespace, and drops trailing/incidental punctuation.
+// Intentionally exact-match after canonicalization -- no fuzzy/substring matching, so a different project name never passes.
+function canonicalizeProjectName(value) {
+    return normalize(value).replace(/\s+/g, " ").replace(/[.,]/g, "").trim();
+}
+
+// Canonicalizes Sales Rep Initials: trims, uppercases, strips internal whitespace and an optional leading dash.
+function canonicalizeInitials(value) {
+    return String(value || "").trim().toUpperCase().replace(/\s+/g, "").replace(/^-/, "");
+}
+
+// Canonicalizes a system type: trims, lowercases, collapses whitespace, and drops a single trailing "system" word.
+// "Fire Alarm System" and "Fire Alarm" both canonicalize to "fire alarm"; combined/unrelated systems are left untouched
+// (and therefore still rejected) since only a single trailing "system" token is stripped, never a substring match.
+function canonicalizeSystemType(value) {
+    return normalize(value).replace(/\s+/g, " ").replace(/\s+system$/, "").trim();
+}
+
+// Ticket numbers are compared strictly: trimmed exact match only, no normalization that could mask a PO/SO/invoice/tracking number.
+function canonicalizeTicketNumber(value) {
+    return String(value || "").trim();
+}
+
+// Checks a single field's entered value against a scenario's canonical answer plus any scenario-specific accepted variations.
+function isFieldAnswerCorrect(fieldKey, enteredValue, scenario) {
+    switch (fieldKey) {
+        case "projectName": {
+            const accepted = [scenario.projectName, ...(scenario.acceptedProjectNames || [])];
+            const entered = canonicalizeProjectName(enteredValue);
+            return accepted.some((value) => canonicalizeProjectName(value) === entered);
+        }
+        case "salesRepInitials": {
+            const accepted = [scenario.salesRepInitials, ...(scenario.acceptedSalesRepInitials || [])];
+            const entered = canonicalizeInitials(enteredValue);
+            return accepted.some((value) => canonicalizeInitials(value) === entered);
+        }
+        case "systemType": {
+            const accepted = [scenario.systemType, ...(scenario.acceptedSystemTypes || [])];
+            const entered = canonicalizeSystemType(enteredValue);
+            return accepted.some((value) => canonicalizeSystemType(value) === entered);
+        }
+        case "ticketNumber": {
+            const accepted = [scenario.ticketNumber, ...(scenario.acceptedTicketNumbers || [])];
+            const entered = canonicalizeTicketNumber(enteredValue);
+            return accepted.some((value) => canonicalizeTicketNumber(value) === entered);
+        }
+        default:
+            return false;
+    }
+}
+
 function shuffle(array) {
     const copy = array.slice();
     for (let i = copy.length - 1; i > 0; i--) {
@@ -188,14 +239,10 @@ function handleScenarioSubmit(event) {
     }
     document.getElementById("scenarioFormError").hidden = true;
 
-    const results = SCENARIO_FIELDS.map((field) => {
-        // Sales Rep Initials accepts an optional leading dash (e.g. "KW" and "-KW" are equivalent).
-        const stripDash = (value) => (field.key === "salesRepInitials" ? value.replace(/^-/, "") : value);
-        return {
-            ...field,
-            isCorrect: stripDash(normalize(entries[field.key])) === stripDash(normalize(scenario[field.key]))
-        };
-    });
+    const results = SCENARIO_FIELDS.map((field) => ({
+        ...field,
+        isCorrect: isFieldAnswerCorrect(field.key, entries[field.key], scenario)
+    }));
     const allCorrect = results.every((result) => result.isCorrect);
 
     if (!scenarioSession.firstAttemptMade) {

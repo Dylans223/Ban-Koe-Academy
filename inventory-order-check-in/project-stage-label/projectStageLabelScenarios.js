@@ -27,6 +27,7 @@ const PROJECT_STAGE_LABEL_SCENARIOS = [
         projectName: "Coulee Ridge Apartments",
         salesRepInitials: "-MB",
         systemType: "Intrusion Alarm",
+        acceptedSystemTypes: ["Intrusion Alarm", "Intrusion Alarm System"],
         ticketNumber: "196110",
         scenarioText: "Coulee Ridge Apartments had a delivery show up around noon. Property manager Diane Osei let the driver in. The account is being handled by Marcus Bell. Ticket 196110 is tied to the order, which is an intrusion alarm system. The invoice number on file is INV-50218."
     },
