@@ -1168,6 +1168,645 @@ answers:[
 ],
 correct:0,
 explanation:"The SIGA-DDOS has a built-in auxiliary relay. If a separate relay is also listed for the same function, verify against the actual application before assuming both are required — the SIGA-CR may still be legitimately needed for a different function, but a duplicated relay for the same function should be flagged."
-}
-
+},
+{
+id:118,
+module:2,
+lesson:10,
+category:"BOM Review",
+difficulty:"Hard",
+product:"Quote and Scope Review",
+question:"A revised drawing adds equipment callouts, but the equipment schedule and current BOM still match the earlier issue. What should the reviewer reconcile first?",
+answers:[
+"The revision identifier, affected drawing callouts, equipment schedule, and BOM scope",
+"Only the previous BOM quantity, without reviewing the revision",
+"Only the product price, without checking the documents",
+"The newest quantity by averaging it with the old quantity"
+],
+correct:0,
+explanation:"A revision should be traced through the affected callouts, schedule, and BOM before the quote is updated. The reviewer should identify the changed scope rather than averaging or assuming quantities."
+},
+{
+id:119,
+module:2,
+lesson:10,
+category:"Estimator",
+difficulty:"Hard",
+product:"Quantity Reconciliation",
+question:"A takeoff count does not match the equipment schedule, and both documents appear to be current. What is the strongest next review step?",
+answers:[
+"Trace each count back to the marked plan locations and document revision information before selecting a quantity",
+"Average the two counts and release the quote",
+"Use the larger count automatically without recording the discrepancy",
+"Delete the schedule because the takeoff is always correct"
+],
+correct:0,
+explanation:"Conflicting quantities require evidence-based reconciliation. Each count should be traced to the applicable plan locations and document issue before a final quantity is selected."
+},
+{
+id:120,
+module:2,
+lesson:10,
+category:"Scenario",
+difficulty:"Hard",
+product:"Substitution Review",
+question:"A request says to use an equivalent replacement, but no approved compatibility evidence is attached. What should Sales Support record before proceeding?",
+answers:[
+"The original item, required function, proposed substitute, and the missing compatibility evidence requiring verification",
+"Only the substitute's lowest available price",
+"A silent substitution so the quote can be issued",
+"Nothing, because similar product names establish equivalence"
+],
+correct:0,
+explanation:"A substitute should not be treated as equivalent by name alone. The original requirement, functional need, proposed substitute, and missing compatibility evidence should be documented for verification."
+},
+{
+id:121,
+module:2,
+lesson:10,
+category:"Customer Support",
+difficulty:"Hard",
+product:"Document Revision Control",
+question:"A customer refers to a drawing as the \"latest version,\" but the file has no visible revision date or issue identifier. What information is needed before using it for a quote decision?",
+answers:[
+"The document issue/revision identity and confirmation that it is the authorized project version",
+"Only the file's color and page size",
+"Only the name of the person who forwarded it",
+"No additional information if the drawing looks complete"
+],
+correct:0,
+explanation:"A quote decision depends on knowing which authorized document issue is being used. An unlabeled file should not silently replace the controlled project documents."
+},
+{
+id:122,
+module:2,
+lesson:10,
+category:"BOM Review",
+difficulty:"Hard",
+product:"Scope Ownership",
+question:"A product appears on the BOM but has no corresponding callout in the current drawings. What should the reviewer determine before removing or retaining it?",
+answers:[
+"Whether the item is supported by another current project document or represents an unresolved scope discrepancy",
+"Whether the item has the shortest product description",
+"Whether the item can be removed without documenting the decision",
+"Whether an unrelated product can replace it automatically"
+],
+correct:0,
+explanation:"A missing drawing callout does not by itself prove that a BOM item is wrong. The item should be checked against the current schedule, specifications, and other controlled documents before the scope is changed."
+},
+{
+id:123,
+module:2,
+lesson:10,
+category:"Scenario",
+difficulty:"Hard",
+product:"Scope Clarification",
+question:"A customer email requests a project change that is not reflected in the issued drawings or BOM. What should Sales Support do before treating the email as revised scope?",
+answers:[
+"Record the requested change, identify the affected documents and material, and obtain an authorized project clarification",
+"Update the BOM immediately and discard the issued documents",
+"Ignore the email because customer information never matters",
+"Apply the change only to the quantity column without documenting it"
+],
+correct:0,
+explanation:"Customer information may identify a requested change, but the affected scope and controlling project documentation must be clarified before the quote is changed."
+},
+{
+id:124,
+module:2,
+lesson:10,
+category:"Product Applications",
+difficulty:"Hard",
+product:"Application Clarification",
+question:"A request names a product family but does not state the function, mounting context, or system role required. What should guide the next step?",
+answers:[
+"Identify the missing application criteria and verify them before selecting a specific configuration",
+"Choose the most familiar model in inventory",
+"Select the cheapest item in the family",
+"Treat every family member as interchangeable"
+],
+correct:0,
+explanation:"A product-family name is not enough to select a configuration. The missing application criteria must be identified and verified before a specific product is chosen."
+},
+{
+id:125,
+module:2,
+lesson:10,
+category:"Scenario",
+difficulty:"Hard",
+product:"Availability Review",
+question:"A required item has uncertain availability while a quote deadline is approaching. What should Sales Support verify before making a commitment?",
+answers:[
+"Current availability information, whether an approved alternative exists, and how any unresolved issue should be communicated in the quote",
+"A made-up lead time so the customer has a definite answer",
+"An internal cost or margin before reviewing the requirement",
+"A substitute chosen without confirming functional or compatibility requirements"
+],
+correct:0,
+explanation:"Availability uncertainty should be handled with current verified information and documented qualification. No lead time, substitute, or commercial assumption should be invented."
+},
+{
+id:126,
+module:2,
+lesson:11,
+category:"Fundamentals",
+difficulty:"Medium",
+product:"EST4 Audio Units and Interfaces",
+question:"An EST4 project adds emergency voice audio to a scope that previously contained only fire alarm detection and notification. Which system relationship should the reviewer expect to evaluate?",
+answers:[
+"Audio units/interfaces and zoned audio amplifiers selected as modular EST4 components",
+"Only detector bases, with no audio hardware review",
+"Only a network firewall, because audio replaces amplifiers",
+"Only a manual pull station, because voice audio is an initiating function"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0017", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Audio Units and Interfaces; Zoned Audio Amplifiers" },
+explanation:"Edwards documents EST4 voice audio as a modular system using audio units/interfaces and zoned audio amplifiers. Adding voice audio therefore changes the system relationship review beyond ordinary detection and notification."
+},
+{
+id:127,
+module:2,
+lesson:11,
+category:"Fundamentals",
+difficulty:"Hard",
+product:"EST4 Zoned Audio Amplifiers",
+question:"A documented audio amplifier is listed on an EST4 BOM. Which contribution should the reviewer associate with the amplifier?",
+answers:[
+"Digital audio decoding and a built-in speaker circuit with documented Class A or Class B output options",
+"Network security for external TCP/IP connections",
+"Remote front-panel status and control only",
+"Central processing of all EST4 network nodes"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0017", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Zoned Audio Amplifiers" },
+explanation:"The Edwards zoned-amplifier sheet documents digital audio decoding, a built-in speaker circuit, and Class A or Class B output options. The other choices describe different EST4 component roles."
+},
+{
+id:128,
+module:2,
+lesson:11,
+category:"Fundamentals",
+difficulty:"Hard",
+product:"EST4 Audio Network",
+question:"An audio design connects remote EST4 audio equipment using the documented network media options. Which relationship should be recognized?",
+answers:[
+"Network data, audio data, and firefighter telephone data can share a twisted pair or fiber connection",
+"Audio requires a separate unrelated network with no EST4 relationship",
+"Audio can travel only through detector-base wiring",
+"Audio replaces the need for system power supplies"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0001/E85014-0002", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Overview/Networking; EST4 Audio Units and Interfaces" },
+explanation:"The Edwards EST4 overview and audio sheet document shared transport of network, audio, and firefighter-telephone data over twisted copper or fiber options."
+},
+{
+id:129,
+module:2,
+lesson:11,
+category:"Applications",
+difficulty:"Hard",
+product:"EST4 Zoned Audio Amplifiers",
+question:"A design requires audio to be delivered to designated zones and the project documents identify EST4 zoned amplification. What should Sales Support verify in the audio scope?",
+answers:[
+"That the documented audio units/interfaces, zoned amplifiers, speaker-circuit requirements, and system power relationships are represented",
+"That all audio items can be replaced by notification strobes",
+"That no cabinet or power review is needed for audio equipment",
+"That the audio scope is treated as a detector-input circuit"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0017/E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Audio Units and Interfaces; Zoned Audio Amplifiers; System Power Supplies" },
+explanation:"The approved Edwards documents describe audio units/interfaces, zoned amplifiers, speaker circuits, and system power as related EST4 component areas. The review should reconcile those documented relationships without inventing sizing or quantities."
+},
+{
+id:130,
+module:2,
+lesson:11,
+category:"Estimator",
+difficulty:"Hard",
+product:"EST4 Audio Scope Change",
+question:"A revision changes a project from ordinary occupant notification to an EST4 voice-audio scope. What should the estimator compare before updating the BOM?",
+answers:[
+"The revised audio requirements against the audio units/interfaces, amplifier, cabinet, and power portions of the current BOM",
+"Only the existing smoke-detector quantity",
+"Only the color of the notification appliances",
+"Only the project title, because audio does not affect material scope"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0004/E85014-0017/E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Audio Units and Interfaces; Cabinets and Chassis; Zoned Audio Amplifiers; System Power Supplies" },
+explanation:"The Edwards documents identify audio, amplifier, cabinet, and power components as related parts of an EST4 audio configuration. A scope change should trigger a cross-check of those BOM sections."
+},
+{
+id:131,
+module:2,
+lesson:11,
+category:"Estimator",
+difficulty:"Hard",
+product:"EST4 Remote Audio Cabinets",
+question:"A project drawing places EST4 audio equipment in a remote cabinet, but the equipment schedule lists only the main cabinet. What should the estimator verify?",
+answers:[
+"Whether the remote cabinet, audio modules, amplifier, and associated power relationships are included in the documented scope",
+"Whether the remote cabinet can be deleted because all audio belongs in the main cabinet",
+"Whether detector bases should be used as the remote audio enclosure",
+"Whether the drawing should be ignored when the schedule is shorter"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0004/E85014-0017", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Audio Units and Interfaces; Cabinets and Chassis; Zoned Audio Amplifiers" },
+explanation:"Edwards documents audio components that mount in EST4 cabinets and describes cabinet arrangements for system equipment. The remote-cabinet scope should be reconciled before the BOM is finalized."
+},
+{
+id:132,
+module:2,
+lesson:11,
+category:"Scenario",
+difficulty:"Hard",
+product:"EST4 Audio Clarification",
+question:"A specification says \"voice evacuation required\" but does not identify the audio interface, amplifier arrangement, or speaker-circuit configuration. What should Sales Support identify before selecting line items?",
+answers:[
+"The missing documented audio-system components and configuration requirements that determine the BOM scope",
+"A made-up amplifier size based on the building name",
+"A generic speaker product with no application review",
+"Only the number of smoke detectors"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0017", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Audio Units and Interfaces; Zoned Audio Amplifiers" },
+explanation:"The approved Edwards audio documents describe multiple component relationships, but they do not provide enough project-specific information to select a complete configuration from the phrase alone. Missing scope criteria must be identified before quoting."
+},
+{
+id:133,
+module:2,
+lesson:11,
+category:"Scenario",
+difficulty:"Hard",
+product:"EST4 Audio and Notification Coordination",
+question:"A drawing labels a device as a speaker-strobe, while the specification describes an EST4 voice-audio system. What is the best review approach?",
+answers:[
+"Reconcile the endpoint description with the documented EST4 audio units, amplifier, speaker-circuit, and notification scope before selecting the BOM line",
+"Assume every speaker-strobe is interchangeable with every EST4 audio component",
+"Treat the label as an audio amplifier and omit the system audio review",
+"Replace the device with a detector because the specification is more detailed"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0017", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Audio Units and Interfaces; Zoned Audio Amplifiers" },
+explanation:"The Edwards documents distinguish modular audio components and zoned amplifiers from endpoint notification devices. Conflicting endpoint and system descriptions require scope reconciliation before selection."
+},
+{
+id:134,
+module:2,
+lesson:12,
+category:"Fundamentals",
+difficulty:"Medium",
+product:"EST4 Cabinets and Chassis",
+question:"A panel specification requires two color LCD touch screens plus LED and switch modules at the cabinet. Which cabinet-scope fact should Sales Support verify?",
+answers:[
+"Whether the selected EST4 cabinet/chassis arrangement supports that documented display and module configuration",
+"Whether the displays can be replaced by detector bases",
+"Whether the network firewall supplies the cabinet mounting space",
+"Whether the audio amplifier removes the need for a chassis"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0004", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Cabinets and Chassis" },
+explanation:"The official Edwards cabinet sheet documents arrangements supporting up to two color LCD touch screens and LED/switch module configurations. The selected cabinet/chassis arrangement should be reconciled with the specified display scope."
+},
+{
+id:135,
+module:2,
+lesson:12,
+category:"Fundamentals",
+difficulty:"Medium",
+product:"EST4 Control-Display Modules",
+question:"A specification calls for visible status indicators and local control switches on the inside of an EST4 cabinet door. Which component relationship should be reviewed?",
+answers:[
+"EST4 control-display modules mounted in the cabinet door's available display locations",
+"Only the 4-LCD touch screen, with no control-display module review",
+"Only the system power supply, because it provides the indicators",
+"Only the network extender, because it provides local switches"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0006", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Display Modules" },
+explanation:"The official Edwards display-module sheet documents LED indicators, large buttons, labels, and snap-in mounting on the inner cabinet door in available display locations."
+},
+{
+id:136,
+module:2,
+lesson:12,
+category:"Fundamentals",
+difficulty:"Hard",
+product:"EST4 LCD Display Module",
+question:"A project requires event information to be visible at multiple EST4 LCD locations, with some messages routed only to selected displays. Which documented display behavior should be considered?",
+answers:[
+"The 4-LCD can display messages at every LCD on the network or route them to specific LCDs",
+"The 4-LCD can display only local detector status and cannot receive network messages",
+"The 4-LCD is limited to one event and cannot route messages",
+"The 4-LCD is a power-supply monitor rather than a display component"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0007", manufacturer:"Edwards", verified:true, sourcePage:"2", sourceSection:"EST4 LCD Display Module" },
+explanation:"The official Edwards LCD sheet states that messages can display at every LCD on the network or route to specific LCDs. This is a display-configuration consideration, not a power or detector function."
+},
+{
+id:137,
+module:2,
+lesson:12,
+category:"Fundamentals",
+difficulty:"Hard",
+product:"EST4 Central Processing Unit",
+question:"A proposed EST4 node includes more local rail modules than the documented 4-CPU local-module allowance. What should the configuration review do?",
+answers:[
+"Flag the configuration for reconciliation against the 4-CPU documentation before release",
+"Assume the node can support any number without checking the design",
+"Replace the extra modules with notification appliances automatically",
+"Move every module to a remote annunciator without reviewing the scope"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0010", manufacturer:"Edwards", verified:true, sourcePage:"2", sourceSection:"Intra-module Communications" },
+explanation:"The official 4-CPU sheet documents control of up to 19 additional local rail modules. A configuration beyond that documented allowance requires review before release rather than assumption."
+},
+{
+id:138,
+module:2,
+lesson:12,
+category:"Estimator",
+difficulty:"Hard",
+product:"EST4 Cabinets and Chassis",
+question:"A panel revision adds local rail modules and display components. Which BOM relationship should be reviewed before finalizing the cabinet selection?",
+answers:[
+"Available cabinet/chassis space for the documented power, display, SLC, amplifier, and other local-rail modules",
+"Only the project title and customer address",
+"Only the color of the cabinet door",
+"Only the pull-station action type"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0004", manufacturer:"Edwards", verified:true, sourcePage:"2", sourceSection:"EST4 Cabinets and Chassis" },
+explanation:"The official cabinet sheet documents cabinet space for power supplies, amplifiers, SLC, and other modules. A revision affecting local hardware should be reconciled with the cabinet/chassis arrangement."
+},
+{
+id:139,
+module:2,
+lesson:12,
+category:"Estimator",
+difficulty:"Hard",
+product:"EST4 Power Supplies",
+question:"A BOM revision adds EST4 local-rail and control-display hardware. What power-related relationship should the estimator verify from the approved documentation?",
+answers:[
+"That the documented system power-supply arrangement distributes power to the affected local-rail and control-display modules",
+"That power supplies determine the LCD message routing policy",
+"That power supplies replace the 4-CPU when more modules are added",
+"That power requirements can be estimated from customer pricing"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"System Power Supplies" },
+explanation:"The official power-supply sheet documents distribution to local rail modules and control-display modules. The review should verify the documented arrangement without inventing electrical calculations or commercial values."
+},
+{
+id:140,
+module:2,
+lesson:12,
+category:"Scenario",
+difficulty:"Hard",
+product:"EST4 Power-Supply Configuration",
+question:"A proposed cabinet combines a 4-PPS/M with a listed legacy 3-series power supply. What should Sales Support do with this configuration before quote release?",
+answers:[
+"Flag the combination for correction because the official power-supply rules prohibit that cabinet combination",
+"Treat the supplies as interchangeable because both provide system power",
+"Remove the 4-CPU instead of reviewing the power-supply combination",
+"Ignore the combination because power supplies are outside the BOM"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"2", sourceSection:"Power Supply Rules" },
+explanation:"The official Edwards power-supply rules state that 4-PPS/M must not be installed in the same cabinet as the specified legacy 3-series power supplies because the combination can cause damage."
+},
+{
+id:141,
+module:2,
+lesson:12,
+category:"Scenario",
+difficulty:"Hard",
+product:"EST4 Panel Configuration Review",
+question:"A schedule identifies an EST4 panel but does not state the required LCD/control-display arrangement, cabinet/chassis arrangement, local-module scope, or power configuration. What is the strongest review conclusion?",
+answers:[
+"The configuration is incomplete for final BOM selection and those documented requirements must be reconciled before release",
+"The smallest cabinet and one display can be assumed",
+"The 4-CPU alone defines every cabinet and display choice",
+"The missing information can be replaced with internal pricing assumptions"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0004/E85014-0006/E85014-0007/E85014-0010/E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Cabinets and Chassis; Display Modules; LCD Display Module; Central Processing Unit; System Power Supplies" },
+explanation:"The approved Edwards documents describe separate cabinet, display, CPU, local-module, and power relationships. Without the required configuration information, Sales Support should not finalize the BOM by assumption."
+},
+{
+id:142,
+module:2,
+lesson:13,
+category:"Scenario",
+difficulty:"Hard",
+product:"EST4 Network Extender",
+question:"A project team reports a 4-NET-XT link problem but provides no panel screenshots or equipment details. Which documented information should Sales Support gather before escalating the issue?",
+answers:[
+"The Power, DSL, Ethernet, and Link Trouble LED states and the documented extender location/run context",
+"A replacement part selected solely from the symptom",
+"Instructions to bypass the link supervision",
+"A new cable size chosen without reviewing the design"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0009", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Network Extender" },
+explanation:"The official Edwards network-extender sheet identifies Power, DSL, Ethernet, and Link Trouble status LEDs. Gathering those documented observations and the equipment context supports escalation without assuming a failed component or directing field repair."
+},
+{
+id:143,
+module:2,
+lesson:13,
+category:"Fundamentals",
+difficulty:"Medium",
+product:"EST4 LCD Display Module",
+question:"A 4-LCD shows several system events during a support call. Which documented display behavior should shape the information captured for review?",
+answers:[
+"Record the displayed events and the highest-priority event rather than inferring a component failure from one symptom",
+"Assume the last event shown is always the root cause",
+"Replace the LCD before reviewing the event information",
+"Ignore event priority because all messages have the same status"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0007", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"EST4 LCD Display Module" },
+explanation:"The official Edwards LCD sheet documents display of multiple events and the last highest-priority event. The support role is to capture the documented event information rather than infer an unsupported failure or replacement."
+},
+{
+id:144,
+module:2,
+lesson:13,
+category:"Scenario",
+difficulty:"Medium",
+product:"EST4 Control-Display Modules",
+question:"A project report mentions a CPU Fail and Trouble indication on the EST4 control display. What is the safest Sales Support interpretation?",
+answers:[
+"Record the exact indicators and related event information, then escalate for technical review without directing a repair",
+"Tell the user to bypass the indicators and continue operation",
+"Identify the failed board with certainty from the indicator names alone",
+"Replace the display module because it shows a system status"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0006", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Display Modules" },
+explanation:"Edwards documents discrete CPU Fail and Trouble indicators as system-status information. The approved source does not provide a repair decision tree, so Sales Support should capture the indication and escalate rather than diagnose or direct a repair."
+},
+{
+id:145,
+module:2,
+lesson:13,
+category:"Fundamentals",
+difficulty:"Hard",
+product:"EST4 CPU and Local Rail",
+question:"A local-rail module is reported as not appearing as expected after an EST4 power-up. Which documented system relationship should be reviewed first in the information-gathering step?",
+answers:[
+"Whether the 4-CPU learned the local-rail module attributes and location, and what the system displayed",
+"Whether the module should be replaced immediately",
+"Whether supervision should be disabled",
+"Whether an unrelated notification appliance should be rewired"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0010", manufacturer:"Edwards", verified:true, sourcePage:"2", sourceSection:"Intra-module Communications" },
+explanation:"The official 4-CPU sheet documents automatic learning of local-rail module attributes and locations on power-up. It does not authorize a replacement or field repair conclusion, so the documented learning/status information should be gathered for escalation."
+},
+{
+id:146,
+module:2,
+lesson:13,
+category:"Scenario",
+difficulty:"Hard",
+product:"EST4 Power Supply and Local Rail",
+question:"A support request says several local-rail modules are affected, but no power-supply or display information is included. What system-level information should be requested before assigning a cause?",
+answers:[
+"The affected modules, power-supply arrangement, local-rail relationship, and documented status indications",
+"Only the product price of the affected module",
+"A definite failed power supply selected from the symptom alone",
+"Instructions to disconnect the local rail"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"System Power Supplies" },
+explanation:"The official power-supply sheet documents the monitor-module and local-rail power relationship. It does not identify a failed component from a symptom alone, so the relevant configuration and status information should be gathered before escalation."
+},
+{
+id:147,
+module:2,
+lesson:14,
+category:"Applications",
+difficulty:"Hard",
+product:"SIGA-OSCD Signature Optica Smoke and CO Detector",
+question:"A project requires one detector to evaluate smoke and carbon monoxide as separate life-safety conditions. Which documented detector behavior should Sales Support verify?",
+answers:[
+"SIGA-OSCD analyzes the smoke sensor independently from the CO sensor for fire-alarm or life-safety CO decisions",
+"SIGA-OSCD is a notification appliance that directly sounds every horn",
+"SIGA-OSCD detects heat only and has no CO sensing",
+"SIGA-OSCD requires a separate smoke detector because it has no optical sensing"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-1002", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Intelligent Multisensor Smoke and CO Detector" },
+explanation:"The official Edwards SIGA-OSCD sheet documents optical smoke detection with CO sensing and states that the smoke and CO sensors are analyzed independently for their respective alarm decisions."
+},
+{
+id:148,
+module:2,
+lesson:14,
+category:"Applications",
+difficulty:"Hard",
+product:"SIGA-COD Intelligent CO Detector",
+question:"A project requirement is CO-only detection on an Edwards Signature system. What documented relationship should be verified before selecting the detector?",
+answers:[
+"SIGA-COD uses electrochemical CO sensing and is documented as compatible only with the Signature Loop Controller",
+"SIGA-COD is a smoke-and-heat detector that can use any fire alarm loop",
+"SIGA-COD is a notification appliance and needs a NAC amplifier",
+"SIGA-COD is a manual station with no detector-system relationship"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0648", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Intelligent CO Detector; Compatibility" },
+explanation:"The official Edwards SIGA-COD sheet documents advanced electrochemical CO sensing and states that the detector is compatible only with the Signature Loop Controller."
+},
+{
+id:149,
+module:2,
+lesson:14,
+category:"Applications",
+difficulty:"Medium",
+product:"SIGA-OSHCD Signature Optica Multisensor Detector",
+question:"A specification requires optical smoke, rate-of-rise heat, fixed-temperature heat, and CO sensing in the documented detector category. Which characteristic should be matched?",
+answers:[
+"The SIGA-OSHCD combination of optical smoke, rate-of-rise heat, fixed-temperature heat, and CO sensing",
+"A smoke-only detector with no heat or CO sensing",
+"A CO-only detector with no optical smoke sensing",
+"A notification appliance with audible and visual output"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-1004", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Intelligent Multisensor Smoke, Heat, CO Detector" },
+explanation:"The official SIGA-OSHCD sheet documents an optical smoke sensor, rate-of-rise heat sensing with a fixed temperature setting, and CO sensing in the same detector."
+},
+{
+id:150,
+module:2,
+lesson:14,
+category:"BOM Recognition",
+difficulty:"Hard",
+product:"SIGA-OSHCD Mounting Bases",
+question:"A SIGA-OSHCD detector is listed on a BOM, but the base function is not identified. What should the reviewer verify from the documented product options?",
+answers:[
+"Whether the required standard, relay, fault-isolator, or audible base option is identified for the application",
+"That every OSHCD must use a relay base",
+"That the detector can be installed without any base information",
+"That the base can be replaced with a notification appliance"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-1004", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Intelligent Multisensor Smoke, Heat, CO Detector" },
+explanation:"The official SIGA-OSHCD sheet lists standard, relay, fault-isolator, and audible mounting bases. The required base option should be identified from the application rather than assumed."
+},
+{
+id:151,
+module:2,
+lesson:14,
+category:"Applications",
+difficulty:"Hard",
+product:"Optica Duct Smoke Detectors",
+question:"A project places smoke detection in HVAC ductwork where cooking smoke, dust, or steam may be present. Which documented application characteristic should be considered?",
+answers:[
+"Optica duct detectors are designed for HVAC smoke detection and documented nuisance-discrimination characteristics",
+"A ceiling detector can always be substituted without reviewing the duct application",
+"The detector should be selected by speaker wattage",
+"The application should be treated as a manual initiating station"
+],
+correct:0,
+source:{ sourceType:"Edwards Announcement/Flyer", sourceDocument:"E85001-2007", manufacturer:"Edwards", verified:true, sourcePage:"2", sourceSection:"Optica Duct Smoke Detection" },
+explanation:"The official Edwards Optica duct-detector flyer describes HVAC smoke-detection applications, nuisance discrimination, and a sensing design intended for duct conditions involving particles such as cooking smoke, dust, or steam."
+},
+{
+id:152,
+module:2,
+lesson:14,
+category:"Scenario",
+difficulty:"Hard",
+product:"Optica Duct Smoke Detector Upgrade",
+question:"An upgrade project replaces SuperDuct detectors with Optica duct detectors. What documented relationship should Sales Support verify during the scope review?",
+answers:[
+"The Optica duct detectors use the Signature protocol and the same entry/exit pipe locations and dimensions documented for SuperDuct upgrades",
+"The upgrade automatically changes the system to a notification circuit",
+"The Optica detector is unrelated to duct applications",
+"The replacement can be approved without checking the existing duct-detector arrangement"
+],
+correct:0,
+source:{ sourceType:"Edwards Announcement/Flyer", sourceDocument:"E85001-2007", manufacturer:"Edwards", verified:true, sourcePage:"2", sourceSection:"Backwards Compatible for Easier Upgrades" },
+explanation:"The official Edwards flyer documents Signature protocol use and the same entry/exit pipe locations and dimensions as SuperDuct detectors for backwards-compatible upgrades."
+},
+{
+id:153,
+module:2,
+lesson:14,
+category:"Scenario",
+difficulty:"Hard",
+product:"SIGA-COD Intelligent CO Detector",
+question:"A support record identifies an older SIGA-COD detector and reports a trouble indication near the documented service-life timing. What should Sales Support gather before escalating?",
+answers:[
+"The detector age, exact panel indication, and applicable control-panel documentation rather than assigning a replacement from the symptom alone",
+"A definite replacement part selected without reviewing the panel documentation",
+"Instructions to bypass the trouble indication",
+"A new detector technology chosen from general web information"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0648", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Intelligent CO Detector, Note 1" },
+explanation:"The official SIGA-COD sheet states that the detector signals a trouble condition after approximately ten years and directs users to control-panel documentation for specifics. It does not authorize a replacement decision from the symptom alone."
+},
 ];

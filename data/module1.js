@@ -3293,6 +3293,222 @@ answers:[
 ],
 correct:0,
 explanation:"The Academy material states that interface devices can affect wiring, hardware, and project costs. EST4 networking and voice evacuation introduce additional documented component relationships that should be reconciled in the estimate."
+},
+{
+id:219,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Medium",
+product:"EST4 Network Controllers",
+question:"An EST4 project must use a specified network medium between nodes. Which component selection directly determines the available network-media option?",
+answers:[
+"4-NET network controller",
+"Remote annunciator",
+"Zoned audio amplifier",
+"Cabinet chassis"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0008", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Network Controllers" },
+explanation:"The official Edwards network-controller sheet identifies 4-NET controllers as SFP transceivers that provide physical-media options, with controller selection determining the network media."
+},
+{
+id:220,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Hard",
+product:"EST4 Network Extender",
+question:"A long cable run is being added between two EST4 network locations using 4-NET-XT extenders. What should the BOM review verify?",
+answers:[
+"Two extenders are included, one at each end of the cable run",
+"One extender is included at the main panel only",
+"A zoned amplifier replaces the second extender",
+"A remote annunciator replaces the cable-end extender"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0009", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Network Extender" },
+explanation:"The official Edwards network-extender sheet states that two 4-NET-XT modules are needed to complete a circuit path, with one at each end of the cable run."
+},
+{
+id:221,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Hard",
+product:"EST4 Network Adder Module",
+question:"A design needs network branches leaving an EST4 cabinet for a star or mesh arrangement. Which component relationship should be investigated?",
+answers:[
+"4-NET-AD supplementary SFP ports connected to the node's 4-CPU board",
+"4-FWAL firewall ports connected directly to speaker circuits",
+"Remote annunciator LEDs connected to detector bases",
+"Zoned amplifier outputs connected to network controllers"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0015", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Network Adder Module" },
+explanation:"The official Edwards adder sheet identifies two supplementary SFP ports for branching and USB connections to the node's 4-CPU board."
+},
+{
+id:222,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Hard",
+product:"EST4 Network Firewall",
+question:"An EST4 design includes an external network connection that must be protected and may use IPv4 or IPv6 addressing. Which component should be evaluated?",
+answers:[
+"4-FWAL network firewall",
+"4-NET-XT network extender",
+"4-LCD display module",
+"System power supply"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0012", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Network Firewalls" },
+explanation:"The official Edwards firewall sheet describes 4-FWAL as a secure interface between EST4 and outside networks and states support for both IPv4 and IPv6 networks."
+},
+{
+id:223,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Hard",
+product:"EST4 Central Processing Unit",
+question:"A BOM includes a 4-CPU and separate network and audio components. Which architecture role should the estimator associate with the 4-CPU?",
+answers:[
+"System-wide network communication, node control, and audio-data control",
+"Only the remote display function at a security desk",
+"Only the physical mounting of batteries",
+"Only the speaker circuit output"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0010", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Central Processing Unit" },
+explanation:"The official Edwards CPU sheet describes the 4-CPU as the nexus for system-wide network communication, controller of nodes, and controller of audio data."
+},
+{
+id:224,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Medium",
+product:"EST4 Remote Annunciators",
+question:"A project requires system status and control at a location away from the main EST4 cabinet. Which component should be evaluated?",
+answers:[
+"EST4 remote annunciator connected over the life-safety network",
+"4-NET-XT alone with no user-interface component",
+"System power supply mounted as a display",
+"Detector base with a local relay"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0003", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Remote Annunciators" },
+explanation:"The official Edwards annunciator sheet describes remote annunciators as front-panel system status/control stations connected over the high-speed life-safety network."
+},
+{
+id:225,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Medium",
+product:"EST4 Zoned Audio Amplifiers",
+question:"A voice-evacuation design needs digital audio delivered through speaker circuits with a selectable Class A or Class B output. Which component should be reviewed?",
+answers:[
+"EST4 zoned audio amplifier",
+"EST4 network firewall",
+"EST4 central processing unit only",
+"EST4 remote annunciator only"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0017", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Zoned Audio Amplifiers" },
+explanation:"The official Edwards amplifier sheet describes zoned audio amplifiers with built-in speaker circuits and Class A or Class B output options."
+},
+{
+id:226,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Medium",
+product:"EST4 System Power Supplies",
+question:"When reviewing an EST4 cabinet configuration, why should system power supplies be considered alongside the local-rail modules?",
+answers:[
+"They distribute filtered, regulated power to the local rail and connected system modules",
+"They select the network media type for every node",
+"They replace the central processing unit",
+"They provide the remote annunciator display"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"System Power Supplies" },
+explanation:"The official Edwards power-supply sheet describes filtered, regulated power supplies that distribute power to the local rail and other modules."
+},
+{
+id:227,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Medium",
+product:"EST4 Audio Units and Interfaces",
+question:"A project adds voice audio to an EST4 system. Which statement reflects the documented architecture?",
+answers:[
+"Audio is built modularly from audio units/interfaces and amplifiers selected for the project",
+"Audio requires replacing all network controllers with detector bases",
+"Audio is provided only by remote annunciator LEDs",
+"Audio is unrelated to EST4 cabinets and power supplies"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Audio Units and Interfaces" },
+explanation:"The official Edwards audio sheet describes EST4 voice audio as a modular collection of audio components that are selected and assembled for the project."
+},
+{
+id:228,
+module:1,
+lesson:10,
+category:"Estimator",
+difficulty:"Hard",
+product:"EST4 Network and Audio Scope",
+question:"A revised drawing adds a networked EST4 node and voice audio to a scope that previously listed only the main cabinet. What should the estimator reconcile before quote release?",
+answers:[
+"The required network controllers or expansion components, audio components, power, and cabinet space",
+"Only the detector count, because network and audio do not affect the BOM",
+"Only the color of the notification appliances",
+"Only the manual pull-station action type"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0001", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Overview/Networking" },
+explanation:"The official EST4 overview and component sheets document separate network, audio, power, and cabinet relationships. A scope revision should reconcile those component groups before release."
+},
+{
+id:229,
+module:1,
+lesson:10,
+category:"Scenario",
+difficulty:"Hard",
+product:"EST4 Network Controllers and Extenders",
+question:"A drawing specifies a long EST4 connection but does not show whether the design uses direct network-media controllers or a paired extender arrangement. What should Sales Support document for clarification?",
+answers:[
+"The cable-run requirement and whether the design calls for 4-NET controller media selection or two 4-NET-XT modules at the run ends",
+"Only the customer billing address",
+"Only the notification-appliance color",
+"Nothing, because either arrangement is automatically interchangeable"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0008/E85014-0009", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Network Controllers; EST4 Network Extender" },
+explanation:"The Edwards sheets describe different roles: 4-NET controllers provide network-media options, while 4-NET-XT extenders are used as a pair at the ends of a cable run. The design intent must be clarified before quoting."
+},
+{
+id:230,
+module:1,
+lesson:10,
+category:"Scenario",
+difficulty:"Hard",
+product:"EST4 Network Firewall and Network Adder",
+question:"A BOM lists a 4-NET-AD for network branching and a 4-FWAL for an external network interface. What should the reviewer verify before treating them as interchangeable network hardware?",
+answers:[
+"That the adder's SFP/USB branching role and the firewall's external-network security role match the documented design requirements",
+"That both devices are simply alternate power supplies",
+"That either device can replace the 4-CPU without review",
+"That the devices are both speaker amplifiers"
+],
+correct:0,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0012/E85014-0015", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Network Firewalls; EST4 Network Adder Module" },
+explanation:"The Edwards sheets give the components different roles: 4-NET-AD provides SFP/USB network expansion and branching, while 4-FWAL provides a secure interface to outside networks."
 }
 
 ];
