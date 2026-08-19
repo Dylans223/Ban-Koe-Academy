@@ -547,15 +547,15 @@ lesson:1,
 category:"Applications",
 difficulty:"Medium",
 product:"",
-question:"Which building system is commonly interfaced with a fire alarm system for life safety?",
+question:"A building has doors that must close automatically when the fire alarm activates. Which fire alarm function should the design review include?",
 answers:[
-"HVAC",
-"Internet Router",
-"Telephone",
-"Security Camera"
+"Control output for door-holder release",
+"Additional speaker wattage",
+"Battery charging logic",
+"Manual pull station reset"
 ],
 correct:0,
-explanation:"Fire alarm systems commonly interface with HVAC systems for smoke control and shutdown."
+explanation:"Electrically held-open doors are commonly released by a fire alarm control output during an alarm condition."
 },
 
 {
@@ -565,15 +565,15 @@ lesson:1,
 category:"Applications",
 difficulty:"Medium",
 product:"",
-question:"During an alarm, why might an HVAC unit be shut down?",
+question:"A project includes smoke dampers in the ductwork. What type of fire alarm interface is commonly required?",
 answers:[
-"To reduce electrical usage",
-"To prevent smoke from spreading",
-"To save battery power",
-"To reduce panel temperature"
+"Control output to operate the damper",
+"Additional strobe power only",
+"A dedicated SLC amplifier",
+"A photoelectric sensor reset"
 ],
-correct:1,
-explanation:"Shutting down HVAC equipment can help prevent smoke from spreading throughout a building."
+correct:0,
+explanation:"Smoke dampers are commonly controlled by the fire alarm system so they can close and help limit smoke movement."
 },
 
 {
@@ -583,15 +583,15 @@ lesson:1,
 category:"Sales Support",
 difficulty:"Medium",
 product:"",
-question:"A BOM includes multiple rooftop HVAC units. Which category of fire alarm device will likely be required?",
+question:"An elevator recall sequence is required on alarm. Which building system should be reviewed as part of the fire alarm interface scope?",
 answers:[
-"Control Modules",
-"Smoke Detectors",
-"Manual Pull Stations",
-"Speakers"
+"Elevator controls",
+"Internet router",
+"Security camera network",
+"Parking gate controls"
 ],
 correct:0,
-explanation:"Control modules are commonly used to interface with rooftop HVAC equipment."
+explanation:"Elevators commonly interface with the fire alarm system for recall and life-safety sequencing."
 },
 
 {
@@ -792,41 +792,7 @@ correct:0,
 explanation:"HVAC systems are commonly shut down to help prevent smoke spread."
 },
 
-{
-id:45,
-module:1,
-lesson:2,
-category:"Applications",
-difficulty:"Easy",
-product:"",
-question:"Why are smoke dampers installed?",
-answers:[
-"To improve heating efficiency",
-"To limit smoke movement through ducts",
-"To reduce sound",
-"To improve airflow"
-],
-correct:1,
-explanation:"Smoke dampers help contain smoke during a fire event."
-},
 
-{
-id:46,
-module:1,
-lesson:2,
-category:"Applications",
-difficulty:"Medium",
-product:"",
-question:"A rooftop HVAC unit must shut down when duct smoke is detected. Which type of fire alarm device usually performs that interface?",
-answers:[
-"Control Module",
-"Smoke Detector",
-"Horn/Strobe",
-"Power Supply"
-],
-correct:0,
-explanation:"A control module commonly interfaces with HVAC equipment for shutdown."
-},
 
 {
 id:47,
@@ -1026,23 +992,7 @@ correct:0,
 explanation:"Door holders are commonly released by the fire alarm system."
 },
 
-{
-id:58,
-module:1,
-lesson:2,
-category:"Applications",
-difficulty:"Medium",
-product:"",
-question:"What is the purpose of releasing magnetic door holders during an alarm?",
-answers:[
-"To help contain smoke and fire",
-"To reduce electrical load",
-"To increase airflow",
-"To improve sound quality"
-],
-correct:0,
-explanation:"Releasing door holders helps close fire doors and limit smoke spread."
-},
+
 
 {
 id:59,
@@ -1386,41 +1336,7 @@ correct:0,
 explanation:"Always verify the exact part number and intended application before quoting a replacement."
 },
 
-{
-id:78,
-module:1,
-lesson:4,
-category:"Applications",
-difficulty:"Medium",
-product:"",
-question:"Which fire alarm interface is commonly associated with magnetic door holders?",
-answers:[
-"Control Module",
-"Smoke Detector",
-"Heat Detector",
-"Speaker"
-],
-correct:0,
-explanation:"Magnetic door holders are commonly released through a fire alarm control output."
-},
 
-{
-id:79,
-module:1,
-lesson:4,
-category:"Applications",
-difficulty:"Medium",
-product:"",
-question:"Which fire alarm interface is commonly associated with smoke dampers?",
-answers:[
-"Control Module",
-"Manual Pull Station",
-"Speaker",
-"Smoke Detector"
-],
-correct:0,
-explanation:"Smoke dampers are commonly controlled by a fire alarm output."
-},
 
 {
 id:80,
@@ -1710,23 +1626,7 @@ correct:0,
 explanation:"Duct smoke detectors are commonly associated with HVAC equipment."
 },
 
-{
-id:96,
-module:1,
-lesson:5,
-category:"Scenario",
-difficulty:"Hard",
-product:"",
-question:"A customer asks if a fire alarm system can release magnetic door holders during an alarm. What is the correct answer?",
-answers:[
-"Yes, with the proper fire alarm interface.",
-"No, never.",
-"Only on conventional systems.",
-"Only during supervisory events."
-],
-correct:0,
-explanation:"Fire alarm systems commonly release magnetic door holders through properly designed interface circuits."
-},
+
 
 {
 id:97,
