@@ -11,30 +11,30 @@ id: "fbq_001",
 category: "Final Boss",
 difficulty: "Easy",
 product: "SIGA-CT2",
-question: "A BOM line calls for SIGA-CT2. What should you recognize this device as?",
+question: "A field note says two separate equipment outputs must be controlled at one location. Which Signature module function should you recognize as the best fit?",
 answers: [
-"Dual Output Control Module",
-"Dual Input Monitor Module",
-"Intelligent Isolator Module",
-"Remote LED Indicator"
+"Dual output control function",
+"Dual input monitoring function",
+"Detectors-only monitoring function",
+"Remote visual status indication"
 ],
 correct: 0,
-explanation: "SIGA-CT2 is a Signature dual output control module. The key distinction is output control, not input monitoring."
+explanation: "A dual output control module is the correct fit when the system must command two separate external actions from one location. The distinction is output control, not input supervision."
 },
 {
 id: "fbq_003",
 category: "Final Boss",
 difficulty: "Medium",
 product: "Genesis LED GCS Series",
-question: "A submittal requires ceiling-mount speaker-strobes in the Genesis LED family. Which series should you identify first?",
+question: "A ceiling-mount application calls for speaker-strobes, not wall-mounted horn-strobes. Which Genesis notification category should you recognize as the correct fit?",
 answers: [
-"Genesis LED GCS Series",
-"Genesis LED G4 Series",
-"Genesis LED G4LF Series",
-"Genesis LED G1 Series"
+"Ceiling speaker and speaker-strobe family",
+"Wall-mount horn-strobe family",
+"Low-frequency signaling family",
+"Compact detector accessory family"
 ],
 correct: 0,
-explanation: "GCS is the Genesis LED ceiling speaker and speaker-strobe series. G4 is wall notification and G4LF is low-frequency notification."
+explanation: "Ceiling speaker-strobes are recognized as the Genesis ceiling speaker and speaker-strobe category, which is distinct from wall-mount and low-frequency notification families."
 },
 {
 id: "fbq_004",
@@ -56,60 +56,60 @@ id: "fbq_005",
 category: "Final Boss",
 difficulty: "Medium",
 product: "SIGA-OSD",
-question: "Which Signature Optica device is smoke-only detection?",
+question: "An application calls for a detector that senses smoke only, with no heat or carbon monoxide input. Which Signature Optica detection category should you recognize?",
 answers: [
-"SIGA-OSD",
-"SIGA-OSHD",
-"SIGA-OSHCD",
-"SIGA-COD"
+"Smoke-only detector",
+"Smoke and heat detector",
+"Smoke, heat, and CO detector",
+"CO-only detector"
 ],
 correct: 0,
-explanation: "SIGA-OSD is the smoke-only model. OSHD adds heat and OSHCD adds smoke, heat, and CO."
+explanation: "A smoke-only Optica detector is the simplest detection category; the other options add heat or CO capability. This is a functional recognition issue, not a part-number identification exercise."
 },
 {
 id: "fbq_007",
 category: "Final Boss",
 difficulty: "Medium",
 product: "SIGA-CRR",
-question: "Which module is the reverse-polarity relay variant?",
+question: "A field sequence requires a relay interface that uses reverse-polarity switching for an external device. Which relay type should you recognize as the correct function?",
 answers: [
-"SIGA-CRR",
-"SIGA-CR",
-"SIGA-CT1",
-"SIGA-CC1"
+"Reverse-polarity control relay",
+"Standard control relay",
+"Single-output control module",
+"Single-input monitor module"
 ],
 correct: 0,
-explanation: "SIGA-CRR is the reverse-polarity control relay variant. SIGA-CR is the standard control relay module."
+explanation: "Reverse-polarity relay behavior is a distinct relay-function category, not just a generic control module. The correct fit is a reverse-polarity control relay module."
 },
 {
 id: "fbq_008",
 category: "Final Boss",
 difficulty: "Medium",
 product: "Signature Optica",
-question: "Which part number belongs to the Signature Optica detector family?",
+question: "A multi-hazard detector is required for a space that needs smoke and heat detection without CO sensing. Which Signature Optica category should you recognize?",
 answers: [
-"SIGA-OSHD",
-"SIGA-CT2",
-"SIGA-MCC2",
-"SIGA-UM2"
+"Smoke and heat detector",
+"Smoke-only detector",
+"CO-only detector",
+"Universal signal module"
 ],
 correct: 0,
-explanation: "SIGA-OSHD is a Signature Optica detector model. The others are module types, not Optica detectors."
+explanation: "The smoke-and-heat category is the correct recognition fit when the requirement includes smoke and heat, but not CO. The Optica family includes multiple hazard combinations, each with a different detection profile."
 },
 {
 id: "fbq_009",
 category: "Final Boss",
 difficulty: "Medium",
 product: "SIGA-278",
-question: "A designer notes that manual stations must be double action. Which device should you recognize as fitting that callout?",
+question: "A campus standard requires two-step manual activation in public corridors. Which manual-station type should you recognize as the correct application?",
 answers: [
-"SIGA-278",
-"SIGA-270",
-"SIGA-CC1",
-"SIGA-CT1"
+"Double-action pull station",
+"Single-action pull station",
+"Monitor module",
+"Relay module"
 ],
 correct: 0,
-explanation: "SIGA-278 is the double action intelligent pull station, while SIGA-270 is single action."
+explanation: "Two-step activation is a double-action manual-station function, which is distinct from a single-action pull station and from module-based interfaces."
 },
 {
 id: "fbq_010",
@@ -131,60 +131,60 @@ id: "fbq_011",
 category: "Final Boss",
 difficulty: "Hard",
 product: "Genesis LED G4LF",
-question: "A design narrative explicitly requires low-frequency signaling. Which Genesis family label should stand out as the best fit?",
+question: "A design narrative explicitly requires low-frequency occupant notification. Which product characteristic should stand out as the deciding recognition factor?",
 answers: [
-"G4LF",
-"G4",
-"GCS",
-"G1"
+"Low-frequency signaling requirement",
+"Wall-mount horn-strobe layout",
+"Ceiling speaker-strobe mounting",
+"Detector base sounder output"
 ],
 correct: 0,
-explanation: "The LF in G4LF identifies low-frequency notification capability within the Genesis LED family."
+explanation: "Low-frequency signaling is the key recognition factor for the Genesis low-frequency notification family; this is an application-driven classification rather than a part-number lookup."
 },
 {
 id: "fbq_013",
 category: "Final Boss",
 difficulty: "Medium",
 product: "SIGA-COD",
-question: "Which Signature Optica model is identified as a carbon monoxide detector?",
+question: "A design note calls out a detector that monitors carbon monoxide only, with no smoke or heat alarm function. Which Optica detection category should you recognize?",
 answers: [
-"SIGA-COD",
-"SIGA-OSD",
-"SIGA-OSHD",
-"SIGA-OSHCD"
+"CO-only detector",
+"Smoke-only detector",
+"Smoke and heat detector",
+"Smoke, heat, and CO detector"
 ],
 correct: 0,
-explanation: "SIGA-COD is the CO detector model in the Signature Optica family."
+explanation: "A carbon-monoxide-only detector is a distinct Optica category. The recognition issue is the hazard profile, not a part-number match."
 },
 {
 id: "fbq_014",
 category: "Final Boss",
 difficulty: "Medium",
 product: "SIGA-UM2",
-question: "A parts review compares SIGA-UM and SIGA-UM2. What added capability should you recognize with UM2?",
+question: "A project requires a signal module that supports both Class A and Class B wiring topologies. Which module type should you recognize?",
 answers: [
-"Class A support in addition to Class B",
-"Two supervised outputs",
-"Integrated relay contacts",
-"Built-in isolator segmentation"
+"Universal Class A/B signal module",
+"Single-output control module",
+"Dual-input monitor module",
+"Isolator module"
 ],
 correct: 0,
-explanation: "SIGA-UM2 supports Class A and Class B topologies, while SIGA-UM is Class B only."
+explanation: "A universal signal module with both Class A and Class B support is the correct recognition fit. This is a topology and function recognition question, not a part-number decode."
 },
 {
 id: "fbq_015",
 category: "Final Boss",
 difficulty: "Medium",
 product: "SIGA-CT1",
-question: "A quote has SIGA-CT1 next to a note that says \"single monitored input.\" What is the most important recognition issue?",
+question: "A quote note says a field point requires one monitored input, but the listed device is described as a one-output control module. What is the main recognition issue?",
 answers: [
-"The function appears mismatched because CT1 is a control output module",
-"No issue, CT1 is a single input monitor module",
-"No issue, CT1 is an isolator module",
-"No issue, CT1 is a detector base"
+"The listed device is the wrong function for an input-only point",
+"The listed device is a detector base and should be ignored",
+"The control module is always used for monitored inputs",
+"The input point should be treated as a notification appliance"
 ],
 correct: 0,
-explanation: "CT1 is a single output control module. A single monitored input usually points to a monitor module such as CC1."
+explanation: "An input-only point should be recognized as a monitor function, not a control-output module. CT1 is a one-output control module, while a monitored input is typically handled by a monitor module such as CC1."
 },
 
 // Part Number Mastery (15)
