@@ -957,24 +957,6 @@ explanation:"Fire alarm systems commonly interface with elevators for recall and
 },
 
 {
-id:56,
-module:1,
-lesson:2,
-category:"Sales Support",
-difficulty:"Medium",
-product:"",
-question:"Why should Sales Support understand common fire alarm interfaces?",
-answers:[
-"To recognize required products and avoid quoting errors.",
-"To replace electricians.",
-"To program panels.",
-"To install devices."
-],
-correct:0,
-explanation:"Understanding interfaces helps identify the correct products for a project."
-},
-
-{
 id:57,
 module:1,
 lesson:2,
@@ -1103,24 +1085,6 @@ explanation:"Duct smoke detection commonly results in HVAC shutdown."
 },
 
 {
-id:67,
-module:1,
-lesson:3,
-category:"Sales Support",
-difficulty:"Medium",
-product:"",
-question:"When reviewing a BOM, why is recognizing module part numbers important?",
-answers:[
-"To verify the correct interface devices are included",
-"To determine paint color",
-"To calculate conduit fill",
-"To determine sprinkler spacing"
-],
-correct:0,
-explanation:"Recognizing module part numbers helps ensure the required interface devices are supplied."
-},
-
-{
 id:68,
 module:1,
 lesson:3,
@@ -1190,24 +1154,6 @@ answers:[
 ],
 correct:0,
 explanation:"Stopping air movement helps reduce smoke spread during a fire."
-},
-
-{
-id:72,
-module:1,
-lesson:3,
-category:"Sales Support",
-difficulty:"Medium",
-product:"",
-question:"A project includes several smoke dampers. What should you expect to see on the BOM?",
-answers:[
-"Interface modules",
-"Additional pull stations",
-"Extra batteries only",
-"More speaker strobes only"
-],
-correct:0,
-explanation:"Smoke dampers normally require fire alarm interface devices."
 },
 
 {
@@ -1283,26 +1229,6 @@ explanation:"Duct smoke detectors commonly require interface modules to communic
 },
 
 {
-id:77,
-module:1,
-lesson:4,
-category:"Sales Support",
-difficulty:"Medium",
-product:"",
-question:"A customer asks for a replacement module but only gives you the Edwards part number. What should you verify before quoting?",
-answers:[
-"The exact part number and application",
-"The building color",
-"The electrician's name",
-"The battery manufacturer"
-],
-correct:0,
-explanation:"Always verify the exact part number and intended application before quoting a replacement."
-},
-
-
-
-{
 id:80,
 module:1,
 lesson:4,
@@ -1318,24 +1244,6 @@ answers:[
 ],
 correct:0,
 explanation:"Monitor modules supervise sprinkler system devices such as waterflow and tamper switches."
-},
-
-{
-id:81,
-module:1,
-lesson:4,
-category:"Scenario",
-difficulty:"Medium",
-product:"",
-question:"A project includes multiple elevator shafts. Which building system will likely interface with the fire alarm system?",
-answers:[
-"Elevator controls",
-"Lighting controls",
-"Telephone system",
-"Parking gates"
-],
-correct:0,
-explanation:"Fire alarm systems commonly interface with elevators for recall and other life-safety functions."
 },
 
 {
@@ -1390,24 +1298,6 @@ answers:[
 ],
 correct:0,
 explanation:"Control modules provide outputs that operate connected equipment."
-},
-
-{
-id:85,
-module:1,
-lesson:4,
-category:"Sales Support",
-difficulty:"Medium",
-product:"",
-question:"Why is recognizing common part numbers valuable in Sales Support?",
-answers:[
-"You can identify products without looking them up.",
-"You no longer need a BOM.",
-"You can skip reviewing drawings.",
-"You eliminate programming."
-],
-correct:0,
-explanation:"Fast product recognition improves quoting, inventory, and customer support."
 },
 
 {
@@ -1609,24 +1499,6 @@ explanation:"Fire alarm systems commonly release magnetic door holders through p
 },
 
 {
-id:97,
-module:1,
-lesson:5,
-category:"Sales Support",
-difficulty:"Medium",
-product:"",
-question:"When reviewing a quote, which mistake is most likely to delay a project?",
-answers:[
-"Incorrect part number",
-"Using blue ink",
-"Printing double-sided",
-"Alphabetizing the BOM"
-],
-correct:0,
-explanation:"Incorrect part numbers frequently result in ordering delays or incorrect shipments."
-},
-
-{
 id:98,
 module:1,
 lesson:5,
@@ -1681,24 +1553,6 @@ explanation:"Module 1 is designed to help Sales Support personnel recognize prod
 },
 
 {
-id:101,
-module:1,
-lesson:6,
-category:"Sales Support Scenario",
-difficulty:"Hard",
-product:"",
-question:"A customer sends a BOM containing multiple rooftop units. Before quoting, what should you verify?",
-answers:[
-"That the required fire alarm interface devices are included",
-"That the paint color matches",
-"That all smoke detectors are white",
-"That the batteries are already installed"
-],
-correct:0,
-explanation:"Rooftop units commonly require fire alarm interfaces for shutdown or monitoring."
-},
-
-{
 id:102,
 module:1,
 lesson:6,
@@ -1714,24 +1568,6 @@ answers:[
 ],
 correct:0,
 explanation:"Waterflow switches must be monitored by the fire alarm system."
-},
-
-{
-id:103,
-module:1,
-lesson:6,
-category:"BOM Recognition",
-difficulty:"Hard",
-product:"",
-question:"A project has numerous valve tamper switches. What fire alarm device category is typically associated with them?",
-answers:[
-"Monitor modules",
-"Control modules",
-"Heat detectors",
-"Notification appliances"
-],
-correct:0,
-explanation:"Valve tamper switches generate supervisory conditions and are monitored."
 },
 
 {
@@ -1789,24 +1625,6 @@ explanation:"Sprinkler system devices such as waterflow and tamper switches are 
 },
 
 {
-id:107,
-module:1,
-lesson:6,
-category:"Sales Support",
-difficulty:"Hard",
-product:"",
-question:"Which skill helps identify missing products before a quote is submitted?",
-answers:[
-"Understanding product relationships",
-"Programming panels",
-"Installing conduit",
-"Testing batteries"
-],
-correct:0,
-explanation:"Knowing which products commonly appear together helps catch omissions."
-},
-
-{
 id:108,
 module:1,
 lesson:6,
@@ -1861,60 +1679,6 @@ explanation:"Notification Appliance Circuits power horn/strobes and similar devi
 },
 
 {
-id:111,
-module:1,
-lesson:7,
-category:"BOM Scenario",
-difficulty:"Hard",
-product:"",
-question:"A school project includes 48 classrooms. Which product category would you expect to appear throughout the building?",
-answers:[
-"Notification appliances",
-"Waterflow switches",
-"Kitchen suppression systems",
-"Sprinkler valves"
-],
-correct:0,
-explanation:"Most classrooms require occupant notification devices as part of the fire alarm system."
-},
-
-{
-id:112,
-module:1,
-lesson:7,
-category:"Estimator",
-difficulty:"Hard",
-product:"",
-question:"While reviewing a BOM, you notice smoke detectors but no detector bases. What should you do?",
-answers:[
-"Verify whether compatible bases are included elsewhere in the BOM.",
-"Delete the smoke detectors.",
-"Order additional horn/strobes.",
-"Ignore it."
-],
-correct:0,
-explanation:"Many smoke detectors require compatible bases. Always verify whether they are listed separately."
-},
-
-{
-id:113,
-module:1,
-lesson:7,
-category:"Sales Support",
-difficulty:"Hard",
-product:"",
-question:"A customer asks for a replacement device but only knows the application, not the part number. What is your first step?",
-answers:[
-"Determine the application before selecting the correct replacement.",
-"Guess the most common part number.",
-"Quote a random module.",
-"Tell them to order a new panel."
-],
-correct:0,
-explanation:"Understanding the application helps identify the correct replacement product."
-},
-
-{
 id:114,
 module:1,
 lesson:7,
@@ -1948,24 +1712,6 @@ answers:[
 ],
 correct:0,
 explanation:"HVAC systems commonly interface with fire alarm systems for smoke control."
-},
-
-{
-id:116,
-module:1,
-lesson:7,
-category:"Estimator",
-difficulty:"Hard",
-product:"",
-question:"You see numerous sprinkler monitoring devices on a project. What should you verify before completing the quote?",
-answers:[
-"That appropriate monitoring interfaces are included.",
-"That every smoke detector is ceiling mounted.",
-"That all horns are white.",
-"That batteries have already been installed."
-],
-correct:0,
-explanation:"Monitoring devices require the proper interface hardware to communicate with the fire alarm system."
 },
 
 {
@@ -3185,8 +2931,8 @@ question:"A fire alarm drawing specifies single-action manual pull stations at s
 answers:[
 "SIGA-270 Single Action Intelligent Pull Station",
 "SIGA-278 Double Action Intelligent Pull Station",
-"SIGA-CC1 Single Input Monitor Module",
-"SIGA-CT1 Single Output Control Module"
+"SIGA-CC1 Single Input Signal Module",
+"SIGA-CT1 Single Input Module"
 ],
 correct:0,
 explanation:"The verified Edwards SIGA-270 is the single-action intelligent pull station, so the takeoff line is SIGA-270, quantity 7."
@@ -3203,7 +2949,7 @@ question:"The fire alarm notes specify double-action manual pull stations at fou
 answers:[
 "SIGA-278 Double Action Intelligent Pull Station",
 "SIGA-270 Single Action Intelligent Pull Station",
-"SIGA-CC1 Single Input Monitor Module",
+"SIGA-CC1 Single Input Signal Module",
 "SIGA-CR Control Relay Module"
 ],
 correct:0,
@@ -3359,6 +3105,194 @@ question:"A drawing lists seven new wall horn-strobe locations with red housing 
 answers:["G1A — Qty 7","G1VRF — Qty 7","G1AVRF — Qty 7","G4LFV — Qty 7"],
 correct:2,
 explanation:"The G1AV function is horn-strobe, R is red housing, F is FIRE marking, and the drawing has seven new locations."
+},
+
+{
+id:208,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Hard",
+product:"EST4 Network Components",
+question:"A campus project requires multiple EST4 systems to communicate across a network. Which component relationship should the design review account for?",
+answers:[
+"Network controllers, with network expansion components such as extenders or adders as required by the design",
+"Only detector bases and manual stations",
+"Only NAC appliances with no network hardware",
+"A standalone iO64 with no network components"
+],
+correct:0,
+explanation:"The EST4 product material identifies network controllers for system communication and network extenders or network adder modules for network expansion where the design requires them."
+},
+{
+id:209,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Medium",
+product:"EST4 Remote Annunciators",
+question:"An EST4 project requires system status and control from a security desk away from the main cabinet. Which panel-related component should be evaluated?",
+answers:[
+"Remote annunciator",
+"Detector base",
+"NAC isolator",
+"Waterflow switch"
+],
+correct:0,
+explanation:"The EST4 material describes remote annunciators as remote user-interface stations that display system status and provide control functions from locations such as security desks and command centers."
+},
+{
+id:210,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Medium",
+product:"EST4 Audio Units and Interfaces",
+question:"A project requires emergency voice messages to be distributed to designated audio zones. Which EST4 relationship should be reviewed?",
+answers:[
+"Audio units/interfaces paired with zoned audio amplifiers",
+"Detector bases paired with monitor modules",
+"Network firewalls paired with pull stations",
+"NAC isolators paired with waterflow switches"
+],
+correct:0,
+explanation:"The EST4 product material identifies audio units and interfaces for voice evacuation and emergency communications, with zoned audio amplifiers distributing messages to designated audio zones."
+},
+{
+id:211,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Hard",
+product:"EST4 and iO Series",
+question:"A project requires a modular, high-capacity platform for fire alarm, mass notification, and building integration, with possible EST3 migration needs. Which family should be evaluated first?",
+answers:[
+"EST4",
+"iO64 only",
+"SIGA-CC1",
+"Genesis G1"
+],
+correct:0,
+explanation:"The Academy material describes EST4 as a modular, high-capacity platform for fire alarm, mass notification, and building integration, with backward compatibility to EST3 infrastructure."
+},
+{
+id:212,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Medium",
+product:"EST4 Network Firewall",
+question:"An EST4 networked system requires security hardware to protect communications from external cyber threats. Which component addresses that requirement?",
+answers:[
+"EST4 network firewall",
+"EST4 remote annunciator",
+"Genesis speaker-strobe",
+"SIGA-CT1"
+],
+correct:0,
+explanation:"The EST4 product material describes network firewalls as security hardware that protects the EST4 network from external cyber threats."
+},
+{
+id:213,
+module:1,
+lesson:10,
+category:"Fundamentals",
+difficulty:"Medium",
+product:"EST4 Central Processing Unit",
+question:"When reviewing an EST4 configuration, which component is responsible for processing and operating the platform rather than providing a remote user interface?",
+answers:[
+"Central processing unit",
+"Remote annunciator",
+"Network extender",
+"Zoned audio amplifier"
+],
+correct:0,
+explanation:"The EST4 product material identifies the CPU as the processing hardware responsible for operating the platform. Remote annunciators provide user interface functions, while network and audio components serve different roles."
+},
+{
+id:214,
+module:1,
+lesson:10,
+category:"Estimator",
+difficulty:"Hard",
+product:"EST4 Voice Evacuation Configuration",
+question:"An EST4 project specification adds voice evacuation to a fire alarm scope that previously listed only detection and notification devices. What should the estimator verify before releasing the BOM?",
+answers:[
+"That the required audio units/interfaces and zoned audio amplifiers are accounted for",
+"That all detector bases are replaced with pull stations",
+"That network firewalls are removed because audio replaces networking",
+"That the project is changed to an iO64 automatically"
+],
+correct:0,
+explanation:"The EST4 material identifies audio units/interfaces and zoned audio amplifiers as the hardware relationships for voice evacuation and emergency communications."
+},
+{
+id:215,
+module:1,
+lesson:10,
+category:"Estimator",
+difficulty:"Hard",
+product:"EST4 Remote Annunciators",
+question:"The security-desk location appears on the plans, but the EST4 equipment list contains no remote user-interface component. What should the estimator review?",
+answers:[
+"Whether an EST4 remote annunciator is required for the stated status and control location",
+"Whether all notification appliances should be deleted",
+"Whether the security desk should receive a detector base",
+"Whether the network should be replaced with a NAC"
+],
+correct:0,
+explanation:"Remote annunciators are the EST4 components described for remote status display and control from locations such as security desks. The discrepancy should be reviewed against the project scope before release."
+},
+{
+id:216,
+module:1,
+lesson:10,
+category:"Estimator",
+difficulty:"Hard",
+product:"EST4 Network Expansion",
+question:"A design revision changes an EST4 project from a single-panel arrangement to a larger networked arrangement. Which scope change should be reconciled across the documents?",
+answers:[
+"Network controllers and any required network extenders or adders, along with network security requirements",
+"Only the color of the notification appliances",
+"Only the detector base type",
+"Only the manual station action type"
+],
+correct:0,
+explanation:"The EST4 product material identifies network controllers, network expansion hardware, and network firewalls as distinct networked-system considerations. A design revision should be reconciled against those requirements before quoting."
+},
+{
+id:217,
+module:1,
+lesson:10,
+category:"Scenario",
+difficulty:"Hard",
+product:"EST4 Project Coordination",
+question:"The riser shows a networked EST4 system with voice evacuation, while the equipment schedule lists only a basic panel cabinet. What is the best sales-support response?",
+answers:[
+"Reconcile the riser, schedule, and EST4 requirements, then document the unresolved panel, network, and audio scope before quoting",
+"Quote the basic cabinet and assume the other components are included",
+"Replace the EST4 with an iO64 without reviewing the project",
+"Ignore the riser because the equipment schedule always controls every detail"
+],
+correct:0,
+explanation:"The EST4 material identifies separate panel, network, and audio relationships. Conflicting project documents should be reconciled and unresolved scope documented before quote release."
+},
+{
+id:218,
+module:1,
+lesson:10,
+category:"Estimator",
+difficulty:"Hard",
+product:"EST4 Network and Audio Scope",
+question:"A revision adds EST4 networking and voice evacuation to a project. What qualitative estimating impact should be reviewed before the quote is updated?",
+answers:[
+"Additional panel, network, audio, wiring, and related hardware requirements may affect project cost",
+"The revision cannot affect the quote because the control panel remains the same family",
+"Only the color of the notification appliances can change project cost",
+"The added functions eliminate the need to review the BOM"
+],
+correct:0,
+explanation:"The Academy material states that interface devices can affect wiring, hardware, and project costs. EST4 networking and voice evacuation introduce additional documented component relationships that should be reconciled in the estimate."
 }
 
 ];

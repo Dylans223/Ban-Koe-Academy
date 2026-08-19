@@ -43,7 +43,7 @@ const takeoffScenario = {
             id: "single-action-manual-activation",
             requirement: "The first-floor drawing notes specify single-action manual initiating stations at two exit locations.",
             question: "Which exact device should be included for those two locations?",
-            options: ["SIGA-270 Single Action Intelligent Pull Station", "SIGA-278 Double Action Intelligent Pull Station", "SIGA-CC1 Single Input Monitor Module", "SIGA-CT1 Single Output Control Module"],
+            options: ["SIGA-270 Single Action Intelligent Pull Station", "SIGA-278 Double Action Intelligent Pull Station", "SIGA-CC1 Single Input Signal Module", "SIGA-CT1 Single Input Module"],
             answer: "SIGA-270 Single Action Intelligent Pull Station",
             explanation: "Correct. The verified Edwards SIGA-270 is the single-action intelligent pull station, so the takeoff needs two SIGA-270 devices for the specified first-floor locations."
         },
@@ -51,7 +51,7 @@ const takeoffScenario = {
             id: "double-action-manual-activation",
             requirement: "The first-floor drawing notes specify one double-action manual initiating station at a designated exit location.",
             question: "Which exact device should be included for that location?",
-            options: ["SIGA-278 Double Action Intelligent Pull Station", "SIGA-270 Single Action Intelligent Pull Station", "SIGA-CC1 Single Input Monitor Module", "SIGA-CR Control Relay Module"],
+            options: ["SIGA-278 Double Action Intelligent Pull Station", "SIGA-270 Single Action Intelligent Pull Station", "SIGA-CC1 Single Input Signal Module", "SIGA-CR Control Relay Module"],
             answer: "SIGA-278 Double Action Intelligent Pull Station",
             explanation: "Correct. The verified Edwards SIGA-278 is the double-action intelligent pull station, so the takeoff needs one SIGA-278 device for the specified location."
         },
@@ -394,8 +394,8 @@ const bomCatalog = {
         { label: "Duct Smoke Detector", type: "generic" }
     ],
     "Module": [
-        { label: "SIGA-CC1 Single Input Monitor Module", type: "verified" },
-        { label: "SIGA-CT1 Single Output Control Module", type: "verified" },
+        { label: "SIGA-CC1 Single Input Signal Module", type: "verified" },
+        { label: "SIGA-CT1 Single Input Module", type: "verified" },
         { label: "Monitor or input interface for duct detector", type: "generic" },
         { label: "Control or relay interface for HVAC shutdown", type: "generic" },
         { label: "Control or relay interface for door holder release", type: "generic" }
@@ -712,9 +712,9 @@ function getBomSuggestedQuantity(item) {
         "Genesis LED G1 Series Compact Notification Devices": scenarioState.rememberedCounts["horn-quantity"] || 8,
         "Duct Smoke Detector": scenarioState.rememberedCounts["duct-quantity"] || 1,
         "Monitor or input interface for duct detector": scenarioState.rememberedCounts["duct-monitor"] || 1,
-        "SIGA-CC1 Single Input Monitor Module": scenarioState.rememberedCounts["duct-monitor"] || 1,
+        "SIGA-CC1 Single Input Signal Module": scenarioState.rememberedCounts["duct-monitor"] || 1,
         "Control or relay interface for HVAC shutdown": scenarioState.rememberedCounts["hvac-interface"] || 1,
-        "SIGA-CT1 Single Output Control Module": scenarioState.rememberedCounts["hvac-interface"] || 1,
+        "SIGA-CT1 Single Input Module": scenarioState.rememberedCounts["hvac-interface"] || 1,
         "Control or relay interface for door holder release": 1,
         "GRSW-10 Room-Side Wiring Plate": 1,
         "GOCT 4-Inch Octagon Box Adapter Plate": 8,

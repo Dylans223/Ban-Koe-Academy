@@ -1,42 +1,6 @@
 const questions = [
 
 {
-id:1,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"What does SLC stand for?",
-answers:[
-"Signaling Line Circuit",
-"Smoke Line Cable",
-"Supervised Loop Circuit",
-"Signal Logic Controller"
-],
-correct:0,
-explanation:"SLC stands for Signaling Line Circuit. It is the communication loop used by addressable fire alarm systems."
-},
-
-{
-id:2,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which wiring method continues operating if a single wire is broken?",
-answers:[
-"Class B",
-"Class A",
-"Conventional",
-"NAC"
-],
-correct:1,
-explanation:"Class A wiring returns to the panel, allowing communication to continue after a single open circuit."
-},
-
-{
 id:3,
 module:1,
 lesson:1,
@@ -55,42 +19,6 @@ explanation:"Each addressable device has its own address, allowing the panel to 
 },
 
 {
-id:4,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which circuit powers horn/strobes and speaker/strobes?",
-answers:[
-"SLC",
-"NAC",
-"IDC",
-"LAN"
-],
-correct:1,
-explanation:"Notification Appliance Circuits (NACs) provide power to notification appliances."
-},
-
-{
-id:5,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which circuit communicates with addressable devices?",
-answers:[
-"NAC",
-"SLC",
-"120 VAC",
-"Speaker Circuit"
-],
-correct:1,
-explanation:"The SLC carries communication between the fire alarm panel and addressable devices."
-},
-
-{
 id:6,
 module:1,
 lesson:1,
@@ -106,24 +34,6 @@ answers:[
 ],
 correct:0,
 explanation:"Smoke detectors, pull stations, and waterflow switches are initiating devices."
-},
-
-{
-id:7,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which device alerts building occupants?",
-answers:[
-"Smoke Detector",
-"Horn/Strobe",
-"Monitor Module",
-"Control Module"
-],
-correct:1,
-explanation:"Notification appliances such as horn/strobes notify occupants during an alarm."
 },
 
 {
@@ -181,78 +91,6 @@ explanation:"Supervision continuously checks for opens, shorts, and other wiring
 },
 
 {
-id:11,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which type of fire alarm system allows each field device to have its own unique address?",
-answers:[
-"Conventional",
-"Addressable",
-"Analog",
-"Standalone"
-],
-correct:1,
-explanation:"Addressable systems assign a unique address to each device so the panel can identify exactly which device is in alarm."
-},
-
-{
-id:12,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which type of device sends information TO the fire alarm panel?",
-answers:[
-"Initiating Device",
-"Notification Appliance",
-"Amplifier",
-"Power Supply"
-],
-correct:0,
-explanation:"Initiating devices such as smoke detectors and pull stations send alarm or supervisory information to the panel."
-},
-
-{
-id:13,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which type of device receives commands FROM the fire alarm panel?",
-answers:[
-"Smoke Detector",
-"Monitor Module",
-"Notification Appliance",
-"Heat Detector"
-],
-correct:2,
-explanation:"Notification appliances receive commands from the control panel to alert building occupants."
-},
-
-{
-id:14,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which system component is considered the 'brain' of the fire alarm system?",
-answers:[
-"Smoke Detector",
-"Fire Alarm Control Panel",
-"Monitor Module",
-"Horn/Strobe"
-],
-correct:1,
-explanation:"The Fire Alarm Control Panel (FACP) monitors inputs, makes decisions, and controls system outputs."
-},
-
-{
 id:15,
 module:1,
 lesson:1,
@@ -286,96 +124,6 @@ answers:[
 ],
 correct:1,
 explanation:"Control modules allow the fire alarm system to operate external equipment such as door holders, fans, or HVAC shutdown."
-},
-
-{
-id:17,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which fire alarm wiring class provides a return path to the control panel?",
-answers:[
-"Class B",
-"Class A",
-"Class C",
-"Class D"
-],
-correct:1,
-explanation:"Class A wiring loops back to the control panel, providing communication beyond a single open circuit."
-},
-
-{
-id:18,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"What is the main purpose of a horn/strobe?",
-answers:[
-"Monitor duct smoke",
-"Notify building occupants",
-"Control HVAC equipment",
-"Detect heat"
-],
-correct:1,
-explanation:"Horn/strobes provide audible and visual notification during an alarm."
-},
-
-{
-id:19,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which of the following is NOT normally considered an initiating device?",
-answers:[
-"Smoke Detector",
-"Manual Pull Station",
-"Horn/Strobe",
-"Heat Detector"
-],
-correct:2,
-explanation:"Horn/strobes are notification appliances. They do not initiate alarms."
-},
-
-{
-id:20,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"What does FACP stand for?",
-answers:[
-"Fire Alarm Control Panel",
-"Fire Alarm Communication Port",
-"Fire Alarm Circuit Panel",
-"Fire Alarm Control Processor"
-],
-correct:0,
-explanation:"FACP stands for Fire Alarm Control Panel."
-},
-
-{
-id:21,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which Edwards system component communicates with addressable devices over the SLC?",
-answers:[
-"Fire Alarm Control Panel",
-"Horn/Strobe",
-"Speaker",
-"Power Supply"
-],
-correct:0,
-explanation:"The Fire Alarm Control Panel communicates with all addressable devices over the SLC."
 },
 
 {
@@ -415,42 +163,6 @@ explanation:"Valve tamper switches typically generate a supervisory condition be
 },
 
 {
-id:24,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which circuit normally powers horn/strobes?",
-answers:[
-"SLC",
-"NAC",
-"IDC",
-"LAN"
-],
-correct:1,
-explanation:"Notification Appliance Circuits (NACs) provide operating power to horn/strobes and other notification appliances."
-},
-
-{
-id:25,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which circuit carries communication between the panel and addressable modules?",
-answers:[
-"NAC",
-"SLC",
-"120 VAC",
-"Telephone Line"
-],
-correct:1,
-explanation:"The Signaling Line Circuit (SLC) carries data between the fire alarm panel and addressable devices."
-},
-
-{
 id:26,
 module:1,
 lesson:1,
@@ -484,60 +196,6 @@ answers:[
 ],
 correct:0,
 explanation:"Color (red/white) and wall or ceiling mounting are common ordering details that should always be verified."
-},
-
-{
-id:28,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Medium",
-product:"",
-question:"Which type of fire alarm device typically requires an address in an addressable system?",
-answers:[
-"Addressable smoke detector",
-"Conventional horn",
-"120V strobe",
-"Mechanical bell"
-],
-correct:0,
-explanation:"Every addressable field device must have a unique address so the panel can identify it."
-},
-
-{
-id:29,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Medium",
-product:"",
-question:"Which condition is most commonly generated by an open circuit on a supervised fire alarm loop?",
-answers:[
-"Alarm",
-"Supervisory",
-"Trouble",
-"Reset"
-],
-correct:2,
-explanation:"An open or broken supervised circuit usually creates a trouble condition."
-},
-
-{
-id:30,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Medium",
-product:"",
-question:"Why are addressable systems preferred in larger buildings?",
-answers:[
-"They eliminate notification appliances",
-"They identify the exact device in alarm",
-"They require no programming",
-"They do not require batteries"
-],
-correct:1,
-explanation:"Knowing the exact device location speeds emergency response and troubleshooting."
 },
 
 {
@@ -595,42 +253,6 @@ explanation:"Elevators commonly interface with the fire alarm system for recall 
 },
 
 {
-id:34,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Medium",
-product:"",
-question:"Which fire alarm circuit is responsible for communication rather than notification power?",
-answers:[
-"NAC",
-"SLC",
-"120 VAC",
-"Speaker Circuit"
-],
-correct:1,
-explanation:"The SLC carries communication between the control panel and addressable devices."
-},
-
-{
-id:35,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Medium",
-product:"",
-question:"Which fire alarm condition indicates that the system itself has a problem?",
-answers:[
-"Alarm",
-"Supervisory",
-"Trouble",
-"Normal"
-],
-correct:2,
-explanation:"Trouble conditions indicate wiring faults, device failures, or other system issues."
-},
-
-{
 id:36,
 module:1,
 lesson:1,
@@ -646,42 +268,6 @@ answers:[
 ],
 correct:1,
 explanation:"Accurate part numbers prevent ordering errors and project delays."
-},
-
-{
-id:37,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Medium",
-product:"",
-question:"Which fire alarm device provides visual notification?",
-answers:[
-"Smoke Detector",
-"Strobe",
-"Monitor Module",
-"Control Module"
-],
-correct:1,
-explanation:"Strobes provide visual notification for building occupants."
-},
-
-{
-id:38,
-module:1,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Medium",
-product:"",
-question:"Which fire alarm device provides audible notification?",
-answers:[
-"Horn",
-"Smoke Detector",
-"Heat Detector",
-"Monitor Module"
-],
-correct:0,
-explanation:"Horns provide audible notification during emergency events."
 },
 
 {
@@ -736,42 +322,6 @@ answers:[
 ],
 correct:0,
 explanation:"Monitor modules supervise external inputs. Control modules operate external equipment."
-},
-
-{
-id:42,
-module:1,
-lesson:2,
-category:"Control & Monitor Modules",
-difficulty:"Easy",
-product:"",
-question:"Which type of module is commonly used to supervise a waterflow switch?",
-answers:[
-"Monitor Module",
-"Control Module",
-"Horn Module",
-"Speaker Module"
-],
-correct:0,
-explanation:"Waterflow switches are supervised by monitor modules."
-},
-
-{
-id:43,
-module:1,
-lesson:2,
-category:"Control & Monitor Modules",
-difficulty:"Easy",
-product:"",
-question:"Which type of module is commonly used to control external equipment?",
-answers:[
-"Monitor Module",
-"Control Module",
-"Smoke Detector",
-"Pull Station"
-],
-correct:1,
-explanation:"Control modules activate or deactivate external equipment."
 },
 
 {
@@ -867,24 +417,6 @@ explanation:"Valve tamper switches usually generate supervisory conditions."
 },
 
 {
-id:51,
-module:1,
-lesson:2,
-category:"Fundamentals",
-difficulty:"Medium",
-product:"",
-question:"Which device typically provides the input that tells the fire alarm system to shut down HVAC equipment?",
-answers:[
-"Smoke detector or duct detector",
-"Speaker",
-"Strobe",
-"Power supply"
-],
-correct:0,
-explanation:"Smoke detection commonly initiates HVAC shutdown sequences."
-},
-
-{
 id:52,
 module:1,
 lesson:2,
@@ -900,24 +432,6 @@ answers:[
 ],
 correct:0,
 explanation:"Interface devices frequently affect wiring, hardware, and project costs."
-},
-
-{
-id:53,
-module:1,
-lesson:2,
-category:"Fundamentals",
-difficulty:"Medium",
-product:"",
-question:"Which devices are considered field devices?",
-answers:[
-"Devices installed throughout the building",
-"Only the control panel",
-"Only batteries",
-"Only amplifiers"
-],
-correct:0,
-explanation:"Field devices include detectors, modules, pull stations, and notification appliances."
 },
 
 {
@@ -995,24 +509,6 @@ explanation:"Door holders are commonly released by the fire alarm system."
 
 
 {
-id:59,
-module:1,
-lesson:2,
-category:"Fundamentals",
-difficulty:"Medium",
-product:"",
-question:"Which fire alarm component usually decides when outputs should activate?",
-answers:[
-"Fire Alarm Control Panel",
-"Speaker",
-"Horn",
-"Strobe"
-],
-correct:0,
-explanation:"The FACP evaluates inputs and controls system outputs."
-},
-
-{
 id:60,
 module:1,
 lesson:2,
@@ -1039,13 +535,13 @@ difficulty:"Easy",
 product:"SIGA-CT1",
 question:"The SIGA-CT1 belongs to which general category of fire alarm device?",
 answers:[
-"Control Module",
+"Single Input Module",
 "Smoke Detector",
 "Heat Detector",
 "Power Supply"
 ],
 correct:0,
-explanation:"The SIGA-CT1 is a control module used to interface the fire alarm system with external equipment."
+explanation:"Official Edwards documentation identifies the SIGA-CT1 as a Single Input Module."
 },
 
 {
@@ -1057,13 +553,13 @@ difficulty:"Easy",
 product:"SIGA-CT2",
 question:"The SIGA-CT2 belongs to which general category?",
 answers:[
-"Control Module",
-"Monitor Module",
+"Dual Input Module",
+"Single Input Module",
 "Manual Pull Station",
 "Speaker"
 ],
 correct:0,
-explanation:"The SIGA-CT2 is part of the Signature Series control module family."
+explanation:"Official Edwards documentation identifies the SIGA-CT2 as a Dual Input Module."
 },
 
 {
@@ -1100,24 +596,6 @@ answers:[
 ],
 correct:0,
 explanation:"The SIGA-RM1 is part of the Signature Series relay module family."
-},
-
-{
-id:65,
-module:1,
-lesson:3,
-category:"Applications",
-difficulty:"Easy",
-product:"SIGA-CT1",
-question:"A control module is commonly used to operate what type of equipment?",
-answers:[
-"External building equipment",
-"Smoke detector LEDs",
-"Panel batteries",
-"Speaker circuits"
-],
-correct:0,
-explanation:"Control modules are used to operate external equipment through controlled outputs."
 },
 
 {
@@ -1190,24 +668,6 @@ answers:[
 ],
 correct:0,
 explanation:"Control modules provide outputs used to operate external equipment."
-},
-
-{
-id:70,
-module:1,
-lesson:3,
-category:"Fundamentals",
-difficulty:"Medium",
-product:"",
-question:"Which device category is most commonly installed near controlled equipment such as HVAC units?",
-answers:[
-"Control Modules",
-"Pull Stations",
-"Speakers",
-"Heat Detectors"
-],
-correct:0,
-explanation:"Control modules are typically installed near the equipment they interface with."
 },
 
 {

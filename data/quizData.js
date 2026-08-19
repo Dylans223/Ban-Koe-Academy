@@ -149,25 +149,12 @@ const CATEGORY_ASSIGNMENT = {
     "Final Project":        null,
 };
 
-const WIRING_KEYWORDS = [
-    "class a", "class b", "wiring class", "return path",
-    "open circuit", "short circuit", "supervised loop",
-    "isolator", "relay", "relay module",
-    "awg", "conductor", "18/2", "14/2", "12/2"
-];
-
 const DIFFICULTY_NORMALIZE = {
     "Easy": "beginner", "easy": "beginner",
     "Medium": "intermediate", "medium": "intermediate",
     "Hard": "advanced", "hard": "advanced",
     "Expert": "expert", "expert": "expert"
 };
-
-// Checks whether a modules-systems question also belongs in wiring-connections
-function isWiringQuestion(q) {
-    const text = (q.question + " " + (q.answers || []).join(" ")).toLowerCase();
-    return WIRING_KEYWORDS.some(k => text.includes(k));
-}
 
 // Normalizes a legacy question to the unified format
 function normalizeQuestion(q, sourcePrefix, overrideCategory) {
@@ -205,6 +192,7 @@ function buildAllQuestionPools() {
     QUIZ_CATEGORIES.forEach(cat => { pools[cat.id] = []; });
 
     const seen = new Set();
+    const seenPoolQuestionTexts = new Map();
 
     function addQuestion(q, sourcePrefix, overrideCategory) {
         const questionText = JSON.stringify(q);
@@ -213,16 +201,16 @@ function buildAllQuestionPools() {
         const norm = normalizeQuestion(q, sourcePrefix, overrideCategory);
         if (!norm) return;
         if (seen.has(norm.uid)) return;
+        const poolTexts = seenPoolQuestionTexts.get(norm.category) || new Set();
+        const poolQuestionKey = norm.question.trim().replace(/\s+/g, " ").toLowerCase();
+        if (poolTexts.has(poolQuestionKey)) return;
+        poolTexts.add(poolQuestionKey);
+        seenPoolQuestionTexts.set(norm.category, poolTexts);
         seen.add(norm.uid);
 
         if (!pools[norm.category]) pools[norm.category] = [];
         pools[norm.category].push(norm);
 
-        // Wiring questions from modules-systems also go in wiring-connections
-        if (norm.category === "modules-systems" && isWiringQuestion(q)) {
-            const wiringCopy = { ...norm, uid: norm.uid + "_wc", category: "wiring-connections" };
-            pools["wiring-connections"].push(wiringCopy);
-        }
     }
 
     // Process module1 questions (variable: questions)
@@ -263,23 +251,16 @@ function buildAllQuestionPools() {
         "modules-systems", "wiring-connections", "part-number-mastery",
         "takeoff-estimating", "real-world-scenarios", "access-control"];
 
+    const mixedQuestionTexts = new Set();
     standardCategories.forEach(catId => {
         pools[catId].forEach(q => {
+            const mixedQuestionKey = q.question.trim().replace(/\s+/g, " ").toLowerCase();
+            if (mixedQuestionTexts.has(mixedQuestionKey)) return;
+            mixedQuestionTexts.add(mixedQuestionKey);
             // Mixed-knowledge pulls from all standard categories
             const mixedCopy = { ...q, uid: q.uid + "_mx", category: "mixed-knowledge" };
             pools["mixed-knowledge"].push(mixedCopy);
         });
-    });
-
-    // Part-number-mastery: draw from product-recognition pool with part-number keywords
-    const partNumKeywords = ["siga-", "est4", "est3", "est3x", "io bridge", "g4", "gcs", "g1",
-        "io-", "edge-", "pt-", "ps-", "cc1", "ct1", "ct2", "im2", "g1rf", "g4rf", "g1l"];
-    pools["product-recognition"].forEach(q => {
-        const text = (q.question + " " + q.answers.join(" ")).toLowerCase();
-        if (partNumKeywords.some(k => text.includes(k))) {
-            const partCopy = { ...q, uid: q.uid + "_pn", category: "part-number-mastery" };
-            pools["part-number-mastery"].push(partCopy);
-        }
     });
 
     return pools;

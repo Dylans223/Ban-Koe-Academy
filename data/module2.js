@@ -1,294 +1,6 @@
 const module2Questions = [
 
 {
-id:1,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"What is the primary purpose of a smoke detector?",
-answers:[
-"Detect the presence of smoke and initiate an alarm",
-"Control HVAC equipment",
-"Power notification appliances",
-"Monitor sprinkler pressure"
-],
-correct:0,
-explanation:"Smoke detectors sense products of combustion and notify the fire alarm system of a potential fire."
-},
-
-{
-id:2,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Smoke detectors are considered what type of fire alarm device?",
-answers:[
-"Initiating Device",
-"Notification Appliance",
-"Power Supply",
-"Interface Module"
-],
-correct:0,
-explanation:"Smoke detectors initiate alarm events."
-},
-
-{
-id:3,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which circuit commonly communicates with addressable smoke detectors?",
-answers:[
-"SLC",
-"NAC",
-"120 VAC",
-"Telephone"
-],
-correct:0,
-explanation:"Addressable smoke detectors communicate over the Signaling Line Circuit (SLC)."
-},
-
-{
-id:4,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Why are addressable smoke detectors valuable?",
-answers:[
-"They identify the exact detector in alarm",
-"They require no wiring",
-"They eliminate notification appliances",
-"They never require testing"
-],
-correct:0,
-explanation:"Each detector has its own address, allowing the panel to identify its location."
-},
-
-{
-id:5,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Smoke detectors normally report to what system component?",
-answers:[
-"Fire Alarm Control Panel",
-"HVAC Controller",
-"Network Switch",
-"Speaker Amplifier"
-],
-correct:0,
-explanation:"The Fire Alarm Control Panel receives and processes detector signals."
-},
-
-{
-id:6,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which type of fire alarm device alerts building occupants after smoke is detected?",
-answers:[
-"Notification Appliance",
-"Monitor Module",
-"Power Supply",
-"Relay"
-],
-correct:0,
-explanation:"Notification appliances provide audible and visual warning."
-},
-
-{
-id:7,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"A smoke detector is an example of which category?",
-answers:[
-"Initiating Device",
-"Output Device",
-"Power Device",
-"Communication Device"
-],
-correct:0,
-explanation:"Smoke detectors initiate alarm events."
-},
-
-{
-id:8,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which statement best describes smoke detectors?",
-answers:[
-"They detect smoke but do not notify occupants directly.",
-"They sound the building horns themselves.",
-"They replace notification appliances.",
-"They provide HVAC power."
-],
-correct:0,
-explanation:"Smoke detectors report to the fire alarm panel, which then activates notification appliances."
-},
-
-{
-id:9,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"What happens after a smoke detector activates?",
-answers:[
-"The panel follows its programmed response",
-"The HVAC immediately restarts",
-"The sprinkler system always activates",
-"The batteries disconnect"
-],
-correct:0,
-explanation:"The panel determines what outputs should operate based on its programming."
-},
-
-{
-id:10,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Why is detector location important?",
-answers:[
-"It helps responders quickly locate the alarm source",
-"It increases battery life",
-"It changes SLC voltage",
-"It reduces wiring size"
-],
-correct:0,
-explanation:"Addressable systems report the exact detector location."
-},
-
-{
-id:11,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which fire alarm device is designed to detect products of combustion before occupants may notice a fire?",
-answers:[
-"Smoke Detector",
-"Horn/Strobe",
-"Control Module",
-"Power Supply"
-],
-correct:0,
-explanation:"Smoke detectors are intended to detect smoke in the early stages of many fires."
-},
-
-{
-id:12,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"What is the primary job of a smoke detector after it senses smoke?",
-answers:[
-"Report the condition to the fire alarm control panel",
-"Turn on sprinkler water",
-"Sound every horn directly",
-"Shut off building power"
-],
-correct:0,
-explanation:"The detector reports its status to the fire alarm control panel, which then follows the programmed response."
-},
-
-{
-id:13,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which type of fire alarm device is a smoke detector?",
-answers:[
-"Initiating Device",
-"Notification Appliance",
-"Output Device",
-"Power Device"
-],
-correct:0,
-explanation:"Smoke detectors initiate an alarm condition by detecting smoke."
-},
-
-{
-id:14,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"After the control panel receives an alarm from a smoke detector, what is a common next step?",
-answers:[
-"Activate programmed notification appliances",
-"Disconnect all field wiring",
-"Erase the detector address",
-"Disable the SLC"
-],
-correct:0,
-explanation:"The control panel activates outputs according to the programmed sequence of operations."
-},
-
-{
-id:15,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Why is the location of an addressable smoke detector valuable during an emergency?",
-answers:[
-"The panel can identify the specific detector that reported the alarm",
-"The detector becomes louder",
-"It increases battery capacity",
-"It reduces wire size"
-],
-correct:0,
-explanation:"Addressable systems identify the exact detector that activated."
-},
-
-{
-id:16,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which system component evaluates detector inputs and determines what outputs should operate?",
-answers:[
-"Fire Alarm Control Panel",
-"Smoke Detector",
-"Strobe",
-"Heat Detector"
-],
-correct:0,
-explanation:"The control panel receives inputs and executes the programmed response."
-},
-
-{
 id:17,
 module:2,
 lesson:1,
@@ -304,24 +16,6 @@ answers:[
 ],
 correct:0,
 explanation:"Smoke detection is intended to provide early warning so occupants can respond appropriately."
-},
-
-{
-id:18,
-module:2,
-lesson:1,
-category:"Fundamentals",
-difficulty:"Easy",
-product:"",
-question:"Which statement best describes the relationship between smoke detectors and notification appliances?",
-answers:[
-"Smoke detectors detect; notification appliances alert occupants.",
-"Smoke detectors perform both functions.",
-"Notification appliances detect smoke.",
-"They are interchangeable."
-],
-correct:0,
-explanation:"Detection and occupant notification are separate functions within a fire alarm system."
 },
 
 {
@@ -595,24 +289,6 @@ explanation:"Detector bases are often separate BOM items and should be verified 
 },
 
 {
-id:34,
-module:2,
-lesson:3,
-category:"Sales Support",
-difficulty:"Medium",
-product:"",
-question:"Why is it important for Sales Support to recognize detector bases as separate products?",
-answers:[
-"They may need to be quoted and ordered separately",
-"They eliminate the need for detectors",
-"They replace control modules",
-"They contain backup batteries"
-],
-correct:0,
-explanation:"Many manufacturers require both the detector and its compatible base to be ordered."
-},
-
-{
 id:35,
 module:2,
 lesson:3,
@@ -646,42 +322,6 @@ answers:[
 ],
 correct:0,
 explanation:"The detector head is installed onto its compatible base."
-},
-
-{
-id:37,
-module:2,
-lesson:3,
-category:"Estimator",
-difficulty:"Medium",
-product:"",
-question:"During a quote review, you notice 100 smoke detectors but only 60 detector bases. What should you do?",
-answers:[
-"Verify whether the remaining detector bases are listed elsewhere",
-"Delete 40 detectors",
-"Ignore the difference",
-"Increase battery capacity"
-],
-correct:0,
-explanation:"The difference may be intentional, but it should always be verified before the quote is finalized."
-},
-
-{
-id:38,
-module:2,
-lesson:3,
-category:"Sales Support",
-difficulty:"Medium",
-product:"",
-question:"Why should compatible detector bases be confirmed before ordering?",
-answers:[
-"Not every detector works with every base",
-"All bases are identical",
-"Detector bases determine battery size",
-"Bases are optional"
-],
-correct:0,
-explanation:"Manufacturers specify which bases are compatible with each detector model."
 },
 
 {
@@ -901,42 +541,6 @@ explanation:"This lesson focuses on recognizing building systems that may requir
 },
 
 {
-id:71,
-module:2,
-lesson:6,
-category:"Sales Support Scenario",
-difficulty:"Hard",
-product:"",
-question:"A customer tells you they added three new rooftop units after the original bid. What should you review first?",
-answers:[
-"The fire alarm equipment associated with the new HVAC equipment",
-"The building paint schedule",
-"The landscaping drawings",
-"The speaker wattage"
-],
-correct:0,
-explanation:"Changes to HVAC equipment can affect the required fire alarm equipment and should be reviewed before updating the quote."
-},
-
-{
-id:72,
-module:2,
-lesson:6,
-category:"Estimator Scenario",
-difficulty:"Hard",
-product:"",
-question:"While reviewing the mechanical drawings, you discover additional air handling units that were not included in the original estimate. What is the best next step?",
-answers:[
-"Review whether the fire alarm scope should be updated",
-"Ignore the change",
-"Reduce the number of smoke detectors",
-"Order additional batteries"
-],
-correct:0,
-explanation:"Changes to the mechanical design should prompt a review of the fire alarm scope."
-},
-
-{
 id:73,
 module:2,
 lesson:6,
@@ -991,42 +595,6 @@ explanation:"Design revisions in one discipline often require coordination with 
 },
 
 {
-id:76,
-module:2,
-lesson:6,
-category:"Sales Support",
-difficulty:"Hard",
-product:"",
-question:"What is one of the biggest advantages of reviewing drawing revisions before submitting a quote?",
-answers:[
-"You can identify changes that affect the fire alarm scope",
-"You can reduce the building size",
-"You can eliminate detector bases",
-"You can remove notification appliances"
-],
-correct:0,
-explanation:"Drawing revisions often introduce changes that affect material quantities and equipment."
-},
-
-{
-id:77,
-module:2,
-lesson:6,
-category:"Estimator",
-difficulty:"Hard",
-product:"",
-question:"A revised mechanical plan shows two additional air handling units. Which document should be reviewed next?",
-answers:[
-"The fire alarm BOM and equipment list",
-"The landscaping plan",
-"The finish schedule",
-"The furniture layout"
-],
-correct:0,
-explanation:"The fire alarm equipment list should be reviewed to determine whether additional equipment is required."
-},
-
-{
 id:78,
 module:2,
 lesson:6,
@@ -1045,24 +613,6 @@ explanation:"Sales Support should verify potential omissions rather than making 
 },
 
 {
-id:79,
-module:2,
-lesson:6,
-category:"Sales Support",
-difficulty:"Medium",
-product:"",
-question:"Which habit improves quote accuracy the most?",
-answers:[
-"Comparing multiple project documents before finalizing the quote",
-"Working from memory alone",
-"Only reviewing the title page",
-"Looking only at product pricing"
-],
-correct:0,
-explanation:"Comparing the drawings, specifications, and BOM helps identify inconsistencies and missing items."
-},
-
-{
 id:80,
 module:2,
 lesson:6,
@@ -1078,42 +628,6 @@ answers:[
 ],
 correct:0,
 explanation:"Lesson 6 focuses on thinking like a Sales Support specialist by reviewing changes, identifying coordination issues, and verifying project information."
-},
-
-{
-id:81,
-module:2,
-lesson:7,
-category:"Document Interpretation",
-difficulty:"Hard",
-product:"",
-question:"A mechanical drawing shows six Air Handling Units (AHUs). What should this prompt you to do?",
-answers:[
-"Review the fire alarm documents for related HVAC coordination",
-"Assume no fire alarm equipment is needed",
-"Increase the number of pull stations",
-"Ignore the mechanical drawings"
-],
-correct:0,
-explanation:"Mechanical drawings can identify building systems that may require coordination with the fire alarm design."
-},
-
-{
-id:82,
-module:2,
-lesson:7,
-category:"BOM Review",
-difficulty:"Hard",
-product:"",
-question:"You compare the mechanical drawings and the fire alarm BOM. The mechanical drawings show new HVAC equipment added during a revision. What is your next step?",
-answers:[
-"Verify whether the fire alarm BOM should also be updated",
-"Immediately add products to the quote",
-"Ignore the revision",
-"Delete existing equipment"
-],
-correct:0,
-explanation:"Changes should be verified before updating a quote."
 },
 
 {
@@ -1168,24 +682,6 @@ answers:[
 ],
 correct:0,
 explanation:"Design revisions should trigger a review of the fire alarm scope."
-},
-
-{
-id:86,
-module:2,
-lesson:7,
-category:"BOM Recognition",
-difficulty:"Hard",
-product:"",
-question:"A detector quantity changes significantly between project revisions. What should you do before submitting the quote?",
-answers:[
-"Confirm that the change is reflected throughout the project documents",
-"Assume the newest number is correct",
-"Delete the original detectors",
-"Increase battery size"
-],
-correct:0,
-explanation:"Always verify that project revisions are coordinated across the documentation."
 },
 
 {

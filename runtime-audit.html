@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ban-Koe Academy Runtime Audit</title>
+    <style>
+        :root { color-scheme: dark; font-family: Consolas, "Courier New", monospace; }
+        body { margin: 0; padding: 2rem; background: #10151c; color: #e5edf5; }
+        main { max-width: 1200px; margin: 0 auto; }
+        h1 { margin-top: 0; font-size: 1.35rem; }
+        button { padding: .65rem 1rem; border: 1px solid #78a9d8; background: #1a3148; color: #fff; cursor: pointer; }
+        #status { margin: 1rem 0; padding: .8rem; border: 1px solid #536b82; }
+        #status.pass { border-color: #4ecb8d; color: #9ff1c5; }
+        #status.fail { border-color: #ef7777; color: #ffb0b0; }
+        pre { overflow: auto; padding: 1rem; background: #080b0f; border: 1px solid #293746; white-space: pre-wrap; }
+        .production-shell { display: none; }
+    </style>
+</head>
+<body>
+    <!-- DEVELOPER AUDIT TOOL — NOT PART OF THE PRODUCTION UI -->
+    <main>
+        <h1>Ban-Koe Academy Browser Runtime Audit</h1>
+        <button id="copyAuditResults" type="button">COPY AUDIT RESULTS</button>
+        <div id="status">Running the actual browser quiz code...</div>
+        <pre id="auditResults">Loading...</pre>
+    </main>
+
+    <div class="production-shell" aria-hidden="true">
+        <div id="viewCenter"></div><div id="viewQuiz"></div><div id="viewResults"></div><div id="viewReview"></div>
+        <div id="statAccuracy"></div><div id="statQuestions"></div><div id="statQuizzes"></div><div id="statStreak"></div><div id="statXP"></div>
+        <button id="startQuickQuiz"></button><div id="recommendTitle"></div><div id="recommendDetail"></div><div id="recommendScore"></div><button id="recommendBtn"></button><div id="categoryGrid"></div>
+        <button id="exitQuizBtn"></button><div id="quizCategoryLabel"></div><div id="quizCounterLabel"></div><div id="quizStreakDisplay"></div><div id="quizProgressLabel"></div><div id="quizProgressPct"></div><div id="quizProgressFill"></div><div id="questionText"></div><div id="answerGrid"></div><div id="feedbackPanel"></div><div id="feedbackVerdict"></div><div id="feedbackCorrectAnswer"></div><div id="feedbackExplanation"></div><button id="submitAnswerBtn"></button><button id="continueBtn" class="hidden"></button>
+        <div id="resultsQuizName"></div><div id="resultsScore"></div><div id="resultsCorrect"></div><div id="resultsIncorrect"></div><div id="resultsXP"></div><div id="bdTotal"></div><div id="bdCorrect"></div><div id="bdIncorrect"></div><div id="bdAccuracy"></div><div id="bdXP"></div><div id="reviewPreviewList"></div><button id="reviewMistakesBtn"></button><button id="retakeQuizBtn"></button><button id="backToCenterBtn"></button>
+        <div id="reviewCounter"></div><div id="reviewActiveCard"></div><div id="reviewQuestionText"></div><div id="reviewYourAnswer"></div><div id="reviewCorrectAnswer"></div><div id="reviewExplanation"></div><button id="nextMistakeBtn"></button><div id="reviewCompleteCard"></div><button id="reviewDoneBtn"></button><button id="exitReviewBtn"></button>
+    </div>
+
+    <script>
+        // Provide the minimum hidden DOM contract required by the real quiz engine.
+        window.addEventListener("error", (event) => {
+            window.__runtimeAuditLoadError = event.error || new Error(event.message);
+        });
+    </script>
+    <script src="scripts/navigation.js"></script>
+    <script src="data/module1.js"></script>
+    <script src="data/module2.js"></script>
+    <script src="data/edwards/index.js"></script>
+    <script src="data/wiringQuestions.js"></script>
+    <script src="data/inventoryOrderCheckInQuestions.js"></script>
+    <script src="data/partNumberQuestions.js"></script>
+    <script src="data/finalBossQuestions.js"></script>
+    <script src="data/accessControlQuestions.js"></script>
+    <script src="data/quizData.js"></script>
+    <script src="quiz/quiz.js"></script>
+    <script>
+        (() => {
+            const categories = [
+                ["product-recognition", "Product Recognition"],
+                ["part-number-mastery", "Part Number Mastery"],
+                ["product-applications", "Product Applications"],
+                ["inventory-order-check-in", "Inventory & Order Check-In"],
+                ["access-control", "Access Control"],
+                ["wiring-connections", "Wiring & Connections"],
+                ["takeoff-estimating", "Takeoff & Estimating"],
+                ["modules-systems", "Modules & Systems"],
+                ["final-boss", "Final Boss"],
+                ["mixed-knowledge", "Mixed Knowledge"]
+            ];
+            const trackedParts = ["SIGA-CT1", "SIGA-CT2", "SIGA-CC1", "SIGA-CC2", "SIGA-CRH", "SIGA-HPR", "SIGA-UM", "SIGA-UM2", "SIGA-CC1S"];
+            const resultElement = document.getElementById("auditResults");
+            const statusElement = document.getElementById("status");
+            const reportLines = [];
+            let failed = false;
+
+            const textKey = (value) => String(value || "").trim().replace(/\s+/g, " ").toLowerCase();
+            const addFailure = (message) => { failed = true; reportLines.push(`FAIL: ${message}`); };
+
+            function validateQuestion(question, categoryId) {
+                const failures = [];
+                if (!question || typeof question !== "object") failures.push("invalid question object");
+                if (!question.uid) failures.push("missing question ID");
+                if (!question.question || typeof question.question !== "string" || !question.question.trim()) failures.push("missing question text");
+                if (!Array.isArray(question.answers) || question.answers.length !== 4) failures.push("missing answers or answer count is not four");
+                if (Array.isArray(question.answers)) {
+                    const answers = question.answers.map(textKey);
+                    if (answers.some((answer) => !answer)) failures.push("empty answer");
+                    if (new Set(answers).size !== answers.length) failures.push("duplicate answer choices");
+                    if (!question.correctAnswerText || !answers.includes(textKey(question.correctAnswerText))) failures.push("invalid correct-answer reference");
+                }
+                if (!question.explanation || !String(question.explanation).trim()) failures.push("missing explanation");
+                if (question.category !== categoryId) failures.push(`invalid category ${question.category}`);
+                return failures;
+            }
+
+            function testActualAnswerShuffle(question) {
+                const correctText = textKey(question.correctAnswerText);
+                const positions = new Set();
+                let scoringFailures = 0;
+                for (let attempt = 0; attempt < 20; attempt += 1) {
+                    const answerObjects = question.answers.map((answer, originalIndex) => ({ answer, originalIndex }));
+                    window.shuffleArray(answerObjects);
+                    const correctPosition = answerObjects.findIndex((item) => textKey(item.answer) === correctText);
+                    if (correctPosition < 0) scoringFailures += 1;
+                    else positions.add(correctPosition);
+                    const selectedCorrect = answerObjects[correctPosition]?.answer;
+                    if (textKey(selectedCorrect) !== correctText) scoringFailures += 1;
+                    const wrong = answerObjects.find((item) => textKey(item.answer) !== correctText)?.answer;
+                    if (textKey(wrong) === correctText) scoringFailures += 1;
+                }
+                return { positions, scoringFailures };
+            }
+
+            function auditPool(categoryId, label) {
+                const pool = window.getQuestionPool(categoryId) || [];
+                const ids = pool.map((question) => question.uid);
+                const texts = pool.map((question) => textKey(question.question));
+                const validationDetails = pool.flatMap((question) => validateQuestion(question, categoryId).map((failure) => ({ uid: question.uid, question: question.question, failure })));
+                const validationFailures = validationDetails.map((detail) => detail.failure);
+                const duplicateAnswers = pool.reduce((count, question) => count + (Array.isArray(question.answers) && new Set(question.answers.map(textKey)).size !== question.answers.length ? 1 : 0), 0);
+                const duplicateText = texts.length - new Set(texts).size;
+                let randomizationFailures = 0;
+                let scoringFailures = 0;
+                const positions = new Set();
+                pool.forEach((question) => {
+                    const shuffleResult = testActualAnswerShuffle(question);
+                    shuffleResult.positions.forEach((position) => positions.add(position));
+                    randomizationFailures += shuffleResult.positions.size === 0 ? 1 : 0;
+                    scoringFailures += shuffleResult.scoringFailures;
+                });
+                const row = {
+                    Quiz: label,
+                    "Total questions": pool.length,
+                    "Unique IDs": new Set(ids).size,
+                    "Unique question text": new Set(texts).size,
+                    "Exact duplicate text": duplicateText,
+                    "Invalid question objects": validationFailures.length,
+                    "Invalid categories": validationFailures.filter((failure) => failure.includes("invalid category")).length,
+                    "Missing answers": validationFailures.filter((failure) => failure.includes("missing answers")).length,
+                    "Duplicate answers": duplicateAnswers,
+                    "Invalid correct-answer references": validationFailures.filter((failure) => failure.includes("correct-answer")).length,
+                    "Missing explanations": validationFailures.filter((failure) => failure.includes("explanation")).length,
+                    "Questions tested": pool.length * 20,
+                    "Correct-answer position variations": positions.size,
+                    "Randomization failures": randomizationFailures,
+                    "Scoring failures": scoringFailures
+                };
+                if (validationDetails.length) reportLines.push(JSON.stringify({ [`${label} invalid details`]: validationDetails }));
+                if (row["Total questions"] === 0 || row["Unique IDs"] !== row["Total questions"] || row["Unique question text"] !== row["Total questions"] || row["Exact duplicate text"] || row["Invalid question objects"] || row["Invalid categories"] || row["Missing answers"] || row["Duplicate answers"] || row["Invalid correct-answer references"] || row["Missing explanations"] || row["Randomization failures"] || row["Scoring failures"]) {
+                    failed = true;
+                }
+                reportLines.push(JSON.stringify(row));
+                return pool;
+            }
+
+            function auditProductFacts() {
+                const library = typeof productLibrary !== "undefined" && Array.isArray(productLibrary.products) ? productLibrary.products : [];
+                const scoredQuestions = categories.flatMap(([id]) => window.getQuestionPool(id) || []);
+                const scoredText = JSON.stringify(scoredQuestions);
+                const expected = {
+                    "SIGA-CT1": "Single Input Module",
+                    "SIGA-CT2": "Dual Input Module",
+                    "SIGA-CC1": "Single Input Signal Module",
+                    "SIGA-CC2": "Dual Input Signal Module",
+                    "SIGA-CRH": "High Power Control Relay Module",
+                    "SIGA-UM": "Universal Class A/B Module"
+                };
+                Object.entries(expected).forEach(([part, name]) => {
+                    const records = library.filter((product) => String(product.model || "").includes(part));
+                    const verifiedRecord = records.find((product) => product.verification === "VERIFIED" && (String(product.model || "").includes(name) || JSON.stringify(product).includes(name)));
+                    if (!verifiedRecord) addFailure(`verified product record does not include expected name: ${part} -> ${name}`);
+                });
+                if (scoredText.includes("SIGA-HPR")) addFailure("SIGA-HPR appears in loaded scored data");
+                if (scoredText.includes("SIGA-UM2") || scoredText.includes("SIGA-CC1S")) addFailure("unverified product appears in loaded scored data");
+                reportLines.push(`Product integrity: ${failed ? "review failures above" : "verified facts present; HPR and unverified products absent from loaded scored data"}`);
+            }
+
+            function testEngineScoring(categoryId, label) {
+                if (typeof window.launchQuiz !== "function" || typeof window.selectAnswer !== "function" || typeof window.submitAnswer !== "function") {
+                    addFailure(`${label}: actual quiz scoring functions are unavailable`);
+                    return { correct: false, incorrect: false };
+                }
+                const pool = window.getQuestionPool(categoryId) || [];
+                if (!pool.length) return { correct: false, incorrect: false };
+                const runSelection = (shouldBeCorrect) => {
+                    window.launchQuiz(categoryId, 1);
+                    const displayedQuestion = document.getElementById("questionText").textContent;
+                    const sourceQuestion = pool.find((question) => question.question === displayedQuestion);
+                    if (!sourceQuestion) return false;
+                    const expectedText = shouldBeCorrect ? sourceQuestion.correctAnswerText : sourceQuestion.answers.find((answer) => textKey(answer) !== textKey(sourceQuestion.correctAnswerText));
+                    const button = [...document.querySelectorAll("#answerGrid button")].find((candidate) => textKey(candidate.getAttribute("data-answer")) === textKey(expectedText));
+                    if (!button) return false;
+                    window.selectAnswer(button);
+                    window.submitAnswer();
+                    const panel = document.getElementById("feedbackPanel");
+                    return shouldBeCorrect ? panel.classList.contains("correct-feedback") : panel.classList.contains("incorrect-feedback");
+                };
+                const correct = runSelection(true);
+                const incorrect = runSelection(false);
+                if (!correct || !incorrect) addFailure(`${label}: actual scoring path failed correct=${correct} incorrect=${incorrect}`);
+                return { correct, incorrect };
+            }
+
+            function runAudit() {
+                try {
+                    categories.forEach(([categoryId, label]) => auditPool(categoryId, label));
+                    const scoringResults = categories.map(([categoryId, label]) => ({ label, ...testEngineScoring(categoryId, label) }));
+                    reportLines.push(JSON.stringify({ "Engine scoring tests": scoringResults }));
+                    const mixed = window.getQuestionPool("mixed-knowledge") || [];
+                    const mixedSourceCategories = [...new Set(mixed.flatMap((question) => categories.filter(([categoryId]) => (window.getQuestionPool(categoryId) || []).some((source) => source.uid === question.uid.replace(/_mx$/, ""))).map(([, label]) => label)))];
+                    reportLines.push(JSON.stringify({ "Mixed Knowledge": { Total: mixed.length, "Unique IDs": new Set(mixed.map((question) => question.uid)).size, "Unique text": new Set(mixed.map((question) => textKey(question.question))).size, "Exact duplicates": mixed.length - new Set(mixed.map((question) => textKey(question.question))).size, "Invalid questions": mixed.filter((question) => validateQuestion(question, "mixed-knowledge").length).length, "Source categories represented": mixedSourceCategories } }));
+                    auditProductFacts();
+                    if (window.__runtimeAuditLoadError) addFailure(`script load error: ${window.__runtimeAuditLoadError.message}`);
+                } catch (error) {
+                    addFailure(`audit execution error: ${error.stack || error.message}`);
+                }
+                statusElement.textContent = failed ? "FAIL — SEE RESULTS BELOW" : "PASS — ALL RUNTIME CHECKS PASSED";
+                statusElement.className = failed ? "fail" : "pass";
+                resultElement.textContent = reportLines.join("\n");
+            }
+
+            document.getElementById("copyAuditResults").addEventListener("click", async () => {
+                await navigator.clipboard.writeText(resultElement.textContent);
+                document.getElementById("copyAuditResults").textContent = "COPIED";
+            });
+            window.addEventListener("DOMContentLoaded", runAudit, { once: true });
+        })();
+    </script>
+</body>
+</html>

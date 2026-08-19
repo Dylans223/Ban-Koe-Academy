@@ -1523,7 +1523,7 @@ officialDescription:
 "Single Input Module",
 
 plainEnglish:
-"Monitors one external contact or initiating device and reports its status to the fire alarm panel.",
+"Provides one Signature input channel for supervised field-circuit applications configured by the system design.",
 
 features:[
 "One address",
@@ -1534,10 +1534,9 @@ features:[
 ],
 
 applications:[
-"Waterflow Switches",
-"Valve Tamper Switches",
-"Conventional Contacts",
-"Supervisory Inputs"
+"Single input applications",
+"Supervised field circuits",
+"Signature system input functions"
 ],
 
 relatedProducts:[
@@ -1561,13 +1560,13 @@ keywords:[
 training:{
 
 whatIsIt:
-"An addressable single input (monitor) module that supervises one initiating circuit and reports its status to the fire alarm control panel.",
+"An addressable single input module used for one Signature input channel according to its configured application.",
 
 howToRecognize:
 "Usually installed inside a 4-inch square electrical box or enclosure. The module is labeled SIGA-CT1 and connects to the Signature Data Loop (SLC) while monitoring one field input.",
 
 howItWorks:
-"The module continuously supervises one external circuit. When the monitored contact changes state, the module reports that event to the fire alarm control panel using its address on the SLC.",
+"The module provides one input channel and communicates its configured field-circuit status to the fire alarm control panel over the Signature loop.",
 
 commonlyUsedFor:[
 "Waterflow switches",
@@ -1584,9 +1583,9 @@ commonlyPairedWith:[
 ],
 
 commonMistakes:[
-"Ordering one CT1 when two monitored inputs require a CT2.",
-"Confusing monitor modules with control modules.",
-"Assuming the module controls equipment instead of monitoring equipment."
+"Treating CT1 as a dual-input module.",
+"Confusing the CT1 input-module family with CC signal-module products.",
+"Assigning a function without checking the applicable personality code and system documentation."
 ],
 
 salesSupportNotes:[
@@ -1599,9 +1598,9 @@ warehouseRecognition:
 "Small Signature Series module typically packaged individually with installation instructions.",
 
 biddingTips:[
-"Verify monitored point quantities.",
+"Verify the required input function and quantity.",
 "Confirm compatibility with the specified Edwards panel.",
-"Check whether mounting hardware is specified separately."
+"Check the applicable personality code and mounting requirements."
 ]
 
 },
@@ -1676,7 +1675,7 @@ officialDescription:
 "Dual Input Module",
 
 plainEnglish:
-"Monitors two independent input circuits while using two module addresses.",
+"Provides two Signature input channels for supervised field-circuit applications configured by the system design.",
 
 features:[
 "Dual input",
@@ -1687,10 +1686,9 @@ features:[
 ],
 
 applications:[
-"Two monitored inputs",
-"Waterflow",
-"Tamper",
-"Conventional contacts"
+"Two-input applications",
+"Supervised field circuits",
+"Signature system input functions"
 ],
 
 relatedProducts:[
@@ -1711,13 +1709,13 @@ keywords:[
 training:{
 
 whatIsIt:
-"An addressable dual input (monitor) module capable of supervising two independent initiating circuits.",
+"An addressable dual input module used for two Signature input channels according to the configured application.",
 
 howToRecognize:
 "Labeled SIGA-CT2 and designed for two monitored inputs.",
 
 howItWorks:
-"The module supervises two independent field circuits and reports each using its assigned addresses.",
+"The module provides two input channels and communicates their configured field-circuit statuses to the fire alarm control panel.",
 
 commonlyUsedFor:[
 "Two waterflow switches",
@@ -1731,8 +1729,9 @@ commonlyPairedWith:[
 ],
 
 commonMistakes:[
-"Using a CT2 when only one monitored point exists.",
-"Forgetting that each monitored circuit still requires proper addressing."
+"Using a CT2 when only one input channel is required.",
+"Confusing the CT2 input-module family with CC signal-module products.",
+"Assigning a function without checking the applicable personality codes and system documentation."
 ],
 
 salesSupportNotes:[
@@ -1811,7 +1810,7 @@ officialDescription:
 "Single Signal Module",
 
 plainEnglish:
-"Connects supervised notification appliance or telephone circuits to their power source when commanded by the control panel.",
+"Provides one supervised signal output channel for notification-appliance or telephone-circuit applications when commanded by the control panel.",
 
 features:[
 "One output circuit",
@@ -1821,9 +1820,9 @@ features:[
 ],
 
 applications:[
-"Horn/Strobes",
-"Speakers",
-"Telephone Circuits"
+"Notification appliance circuits",
+"Speaker circuits",
+"Telephone circuits"
 ],
 
 relatedProducts:[
@@ -1871,7 +1870,7 @@ officialDescription:
 "Dual Signal Module",
 
 plainEnglish:
-"Controls two supervised notification or telephone circuits from the Signature loop.",
+"Provides two supervised signal output channels for notification-appliance or telephone-circuit applications from the Signature loop.",
 
 features:[
 "Two output circuits",
@@ -1879,9 +1878,9 @@ features:[
 ],
 
 applications:[
-"Notification Appliance Circuits",
-"Audio",
-"Telephone"
+"Notification appliance circuits",
+"Audio circuits",
+"Telephone circuits"
 ],
 
 relatedProducts:[

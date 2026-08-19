@@ -15,48 +15,48 @@ const partNumberQuestions = [
 id: 1,
 category: "PartNumber",
 difficulty: "Easy",
-product: "SIGA-CT1 Single Output Control Module",
+product: "SIGA-CT1 Single Input Module",
 question: "Which product is identified by the part number SIGA-CT1?",
 answers: [
-"Single Output Control Module",
-"Single Input Monitor Module",
+"Single Input Module",
+"Single Input Signal Module",
 "Control Relay Module",
 "Intelligent Isolator Module"
 ],
 correct: 0,
-explanation: "SIGA-CT1 is the Single Output Control Module in the Edwards Signature addressable module family. It provides one supervised output channel activated by panel logic."
+explanation: "Official Edwards documentation identifies SIGA-CT1 as a Single Input Module."
 },
 
 {
 id: 2,
 category: "PartNumber",
 difficulty: "Easy",
-product: "SIGA-CC1 Single Input Monitor Module",
+product: "SIGA-CC1 Single Input Signal Module",
 question: "Which product is identified by the part number SIGA-CC1?",
 answers: [
-"Single Input Monitor Module",
-"Single Output Control Module",
+"Single Input Signal Module",
+"Single Input Module",
 "Intelligent Isolator Module",
 "Universal Signal Module"
 ],
 correct: 0,
-explanation: "SIGA-CC1 is the Single Input Monitor Module in the Edwards Signature addressable module family. It supervises one initiating input circuit."
+explanation: "Official Edwards documentation identifies SIGA-CC1 as a Single Input Signal Module for signal/riser circuit applications."
 },
 
 {
 id: 3,
 category: "PartNumber",
 difficulty: "Easy",
-product: "SIGA-CT2 Dual Output Control Module",
+product: "SIGA-CT2 Dual Input Module",
 question: "Which product is identified by the part number SIGA-CT2?",
 answers: [
-"Dual Output Control Module",
-"Dual Input Monitor Module",
+"Dual Input Module",
+"Dual Input Signal Module",
 "Control Relay Module",
 "Universal Class A/B Signal Module"
 ],
 correct: 0,
-explanation: "SIGA-CT2 is the Dual Output Control Module, providing two independently supervised output channels activated by panel logic."
+explanation: "Official Edwards documentation identifies SIGA-CT2 as a Dual Input Module."
 },
 
 {
@@ -68,8 +68,8 @@ question: "Which product is identified by the part number SIGA-278?",
 answers: [
 "Double Action Intelligent Pull Station",
 "Single Action Intelligent Pull Station",
-"Dual Input Monitor Module",
-"Dual Output Control Module"
+"Dual Input Signal Module",
+"Single Input Module"
 ],
 correct: 0,
 explanation: "SIGA-278 is the Double Action Intelligent Pull Station — designed for applications where two-step manual initiation is required."
@@ -84,8 +84,8 @@ question: "Which product is identified by the part number SIGA-270?",
 answers: [
 "Single Action Intelligent Pull Station",
 "Double Action Intelligent Pull Station",
-"Single Input Monitor Module",
-"Single Output Control Module"
+"Single Input Signal Module",
+"Dual Input Module"
 ],
 correct: 0,
 explanation: "SIGA-270 is the Single Action Intelligent Pull Station in the Edwards Signature manual station family."
@@ -95,16 +95,16 @@ explanation: "SIGA-270 is the Single Action Intelligent Pull Station in the Edwa
 id: 7,
 category: "PartNumber",
 difficulty: "Easy",
-product: "SIGA-CC2 Dual Input Monitor Module",
+product: "SIGA-CC2 Dual Input Signal Module",
 question: "Which product is identified by the part number SIGA-CC2?",
 answers: [
-"Dual Input Monitor Module",
-"Dual Output Control Module",
-"Miniature Dual Input Monitor Module",
+"Dual Input Signal Module",
+"Dual Input Module",
+"Miniature Dual Input Signal Module",
 "Class A Signal Module"
 ],
 correct: 0,
-explanation: "SIGA-CC2 is the Dual Input Monitor Module, providing supervision of two input channels in the Signature addressable module family."
+explanation: "Official Edwards documentation identifies SIGA-CC2 as a Dual Input Signal Module for signal/riser circuit applications."
 },
 
 {
@@ -132,8 +132,8 @@ explanation: "SIGA-AB4G is the Audible Sounder Base — a Signature detector bas
 id: 9,
 category: "PartNumber",
 difficulty: "Easy",
-product: "SIGA-CC1 Single Input Monitor Module",
-question: "Which Edwards Signature part number represents a Single Input Monitor Module?",
+product: "SIGA-CC1 Single Input Signal Module",
+question: "Which Edwards Signature part number represents a Single Input Signal Module?",
 answers: [
 "SIGA-CC1",
 "SIGA-CT1",
@@ -141,7 +141,7 @@ answers: [
 "SIGA-IM2"
 ],
 correct: 0,
-explanation: "SIGA-CC1 is the Single Input Monitor Module. It is commonly specified to supervise one external input contact and report its status to the fire alarm panel."
+explanation: "Official Edwards documentation identifies SIGA-CC1 as a Single Input Signal Module."
 },
 
 {
@@ -180,8 +180,8 @@ explanation: "The Genesis LED GCS Series covers Ceiling Mount Speakers and Speak
 id: 12,
 category: "PartNumber",
 difficulty: "Medium",
-product: "SIGA-CT2 Dual Output Control Module",
-question: "Which Edwards Signature part number represents a Dual Output Control Module?",
+product: "SIGA-CT2 Dual Input Module",
+question: "Which Edwards Signature part number represents a Dual Input Module?",
 answers: [
 "SIGA-CT2",
 "SIGA-CC2",
@@ -189,7 +189,7 @@ answers: [
 "SIGA-CR"
 ],
 correct: 0,
-explanation: "SIGA-CT2 is the Dual Output Control Module, providing two independently supervised output channels. SIGA-CT1 provides a single output; SIGA-CC2 is a dual input monitor (not control)."
+explanation: "Official Edwards documentation identifies SIGA-CT2 as a Dual Input Module."
 },
 
 {
@@ -294,22 +294,6 @@ explanation: "SIGA-CRR is the Reverse Polarity Control Relay Module — a specif
 },
 
 {
-id: 21,
-category: "PartNumber",
-difficulty: "Hard",
-product: "SIGA-UM2 Universal Class A/B Signal Module",
-question: "SIGA-UM2 is documented in the Academy as which type of signal module?",
-answers: [
-"Universal Class A/B Signal Module",
-"Universal Class B Signal Module",
-"Class A-only Signal Module",
-"Dual Output Signal Module"
-],
-correct: 0,
-explanation: "SIGA-UM2 is the Universal Class A/B Signal Module — it supports both Class A and Class B wiring topologies. The SIGA-UM (without the 2) is Class B only."
-},
-
-{
 id: 22,
 category: "PartNumber",
 difficulty: "Hard",
@@ -335,15 +319,15 @@ id: 23,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "The Academy documents SIGA-CC1 as Single Input Monitor Module and SIGA-CC2 as Dual Input Monitor Module. What does the number suffix (1 vs 2) indicate in this naming pattern?",
+question: "The official module sheets identify SIGA-CC1 as a Single Input Signal Module and SIGA-CC2 as a Dual Input Signal Module. What does the number suffix (1 vs 2) indicate in this naming pattern?",
 answers: [
-"The number of input channels (1 = single, 2 = dual)",
+"The number of signal/input channels (1 = single, 2 = dual)",
 "The product generation number",
 "The mounting configuration type",
 "The Class A or Class B wiring topology"
 ],
 correct: 0,
-explanation: "In the Signature CC module family, the number suffix indicates the input channel count. SIGA-CC1 supervises one input; SIGA-CC2 supervises two inputs. This same pattern applies to SIGA-CT1 (one output) and SIGA-CT2 (two outputs)."
+explanation: "In the Signature CC module family, the number suffix distinguishes single versus dual signal/input channels."
 },
 
 {
@@ -351,15 +335,15 @@ id: 24,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "The Academy documents SIGA-CT1 as Single Output Control Module and SIGA-CT2 as Dual Output Control Module. What does the number suffix indicate in the CT module naming?",
+question: "The official module sheet identifies SIGA-CT1 as a Single Input Module and SIGA-CT2 as a Dual Input Module. What does the number suffix indicate in the CT module naming?",
 answers: [
-"The number of output channels (1 = single, 2 = dual)",
+"The number of input channels (1 = single, 2 = dual)",
 "The product generation number",
 "The SLC loop assignment",
 "The device address capacity"
 ],
 correct: 0,
-explanation: "In the Signature CT module family, the number suffix indicates the output channel count. SIGA-CT1 has one output channel; SIGA-CT2 has two independently supervised output channels."
+explanation: "In the Signature CT module family, the number suffix distinguishes single versus dual input channels."
 },
 
 {
@@ -367,15 +351,15 @@ id: 25,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "Looking at SIGA-CC1 (Single Input Monitor Module) and SIGA-CC2 (Dual Input Monitor Module) in the Academy: what module function does the 'CC' portion identify?",
+question: "Looking at SIGA-CC1 (Single Input Signal Module) and SIGA-CC2 (Dual Input Signal Module): what module function does the 'CC' portion identify?",
 answers: [
-"Monitor/input module category",
-"Control/output module category",
+"Signal module category",
+"Monitor-only category",
 "Control relay module category",
-"Signal module category"
+"Input module category"
 ],
 correct: 0,
-explanation: "In the Signature module naming, 'CC' is associated with monitor/input module products. Both SIGA-CC1 and SIGA-CC2 are monitor modules that supervise input conditions."
+explanation: "Official Edwards documentation identifies the CC family entries as signal modules with single or dual signal/input channels."
 },
 
 {
@@ -383,15 +367,15 @@ id: 26,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "Looking at SIGA-CT1 (Single Output Control Module) and SIGA-CT2 (Dual Output Control Module): what module function does the 'CT' portion identify?",
+question: "Looking at SIGA-CT1 (Single Input Module) and SIGA-CT2 (Dual Input Module): what module function does the 'CT' portion identify?",
 answers: [
-"Control/output module category",
-"Monitor/input module category",
+"Input module category",
+"Signal module category",
 "Control relay module category",
 "Sounder base category"
 ],
 correct: 0,
-explanation: "In the Signature module naming, 'CT' is associated with control/output module products. Both SIGA-CT1 and SIGA-CT2 provide supervised output channels activated by panel logic."
+explanation: "Official Edwards documentation identifies the CT family entries as single or dual input modules."
 },
 
 {
@@ -408,22 +392,6 @@ answers: [
 ],
 correct: 0,
 explanation: "The '4' suffix in Signature base part numbers like SIGA-SB4 and SIGA-IB4 indicates the 4-inch footprint variant for installations where a 4-inch mounting form is required."
-},
-
-{
-id: 29,
-category: "PartNumber",
-difficulty: "Hard",
-product: "",
-question: "The Academy documents SIGA-UM (Universal Class B Signal Module) and SIGA-UM2 (Universal Class A/B Signal Module). What specific capability does the '2' in SIGA-UM2 add?",
-answers: [
-"Class A wiring topology support in addition to Class B",
-"Two output channels instead of one",
-"A second mounting option",
-"A second address on the SLC"
-],
-correct: 0,
-explanation: "SIGA-UM2 adds Class A topology support compared to SIGA-UM. UM2 supports both Class A and Class B wiring configurations; SIGA-UM is limited to Class B."
 },
 
 {
@@ -452,15 +420,15 @@ id: 32,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "The Academy documents both SIGA-CT1 and SIGA-CC1 as Signature addressable modules. What is the key functional difference?",
+question: "Official Edwards documentation identifies SIGA-CT1 as a Single Input Module and SIGA-CC1 as a Single Input Signal Module. What distinction should Sales Support verify?",
 answers: [
-"SIGA-CT1 provides a controlled output; SIGA-CC1 supervises an input",
+"The required input or signal/riser application and applicable module documentation",
 "SIGA-CT1 is Class A capable; SIGA-CC1 is Class B only",
 "SIGA-CT1 is for NAC circuits; SIGA-CC1 is for SLC circuits only",
 "They perform the same function — only the naming differs"
 ],
 correct: 0,
-explanation: "SIGA-CT1 is a control module (output function). SIGA-CC1 is a monitor module (input function). Despite similar part number structure, they serve opposite purposes."
+explanation: "The official Edwards sheets identify CT1 as a Single Input Module and CC1 as a Single Input Signal Module. The application and module documentation should be verified before selection."
 },
 
 {
@@ -517,22 +485,6 @@ explanation: "For ordinary wall-mounted horn-strobe work that fits the common G1
 },
 
 {
-id: 37,
-category: "PartNumber",
-difficulty: "Easy",
-product: "SIGA-CC1 Single Input Monitor Module",
-question: "A project requires monitoring a single dry contact input at a remote location. Which Signature module part number would you investigate?",
-answers: [
-"SIGA-CC1 (Single Input Monitor Module)",
-"SIGA-CT1 (Single Output Control Module)",
-"SIGA-CR (Control Relay Module)",
-"SIGA-IM2 (Intelligent Isolator Module)"
-],
-correct: 0,
-explanation: "SIGA-CC1 is the Single Input Monitor Module — the correct choice for supervising a single dry contact input and reporting its status to the fire alarm panel."
-},
-
-{
 id: 38,
 category: "PartNumber",
 difficulty: "Medium",
@@ -546,22 +498,6 @@ answers: [
 ],
 correct: 0,
 explanation: "The Genesis LED G4LF Series is the Low Frequency notification product family. When the design criteria requires low-frequency signaling, G4LF is the appropriate Genesis series."
-},
-
-{
-id: 39,
-category: "PartNumber",
-difficulty: "Medium",
-product: "SIGA-CT2 Dual Output Control Module",
-question: "An HVAC system shutdown requires two independently controlled fire alarm outputs at the same equipment location. Which Signature module part number should you investigate?",
-answers: [
-"SIGA-CT2 (Dual Output Control Module)",
-"SIGA-CT1 (Single Output Control Module)",
-"SIGA-CC2 (Dual Input Monitor Module)",
-"SIGA-CR (Control Relay Module)"
-],
-correct: 0,
-explanation: "SIGA-CT2 is the Dual Output Control Module, providing two independently supervised output channels. When two separate control outputs are needed at one location, CT2 is the appropriate choice over CT1."
 },
 
 {
@@ -597,22 +533,6 @@ explanation: "The Genesis GCS Series covers Ceiling Mount Speakers and Speaker-S
 },
 
 {
-id: 42,
-category: "PartNumber",
-difficulty: "Hard",
-product: "SIGA-CC1 Single Input Monitor Module",
-question: "A project requires monitoring sprinkler valve tamper switches — each switch needs its own addressable monitored point. Which Signature part number is appropriate for each point?",
-answers: [
-"SIGA-CC1 (Single Input Monitor Module)",
-"SIGA-CT1 (Single Output Control Module)",
-"SIGA-CT2 (Dual Output Control Module)",
-"SIGA-CR (Control Relay Module)"
-],
-correct: 0,
-explanation: "Each tamper switch is a single dry contact input. SIGA-CC1 supervises one input and reports its status to the panel — the correct choice for a single monitored point. If two points are at the same location, SIGA-CC2 could be considered."
-},
-
-{
 id: 43,
 category: "PartNumber",
 difficulty: "Hard",
@@ -632,8 +552,8 @@ explanation: "SIGA-SB4 is the Standard Detector Base with a 4-inch footprint —
 id: 44,
 category: "PartNumber",
 difficulty: "Easy",
-product: "SIGA-HPR High Power Control Relay Module",
-question: "Which product is identified by the catalog number SIGA-HPR?",
+product: "SIGA-CRH High Power Control Relay Module",
+question: "Which product is identified by the catalog number SIGA-CRH?",
 answers: [
 "High Power Control Relay Module",
 "Standard Control Relay Module",
@@ -641,7 +561,7 @@ answers: [
 "Universal Signal Module"
 ],
 correct: 0,
-explanation: "SIGA-HPR is the High Power Control Relay Module in the Edwards Signature module family."
+explanation: "The official Edwards high-power relay sheet identifies SIGA-CRH as the High Power Control Relay Module."
 },
 
 {
@@ -760,16 +680,16 @@ explanation: "SIGA-AB4G-LF is the low-frequency variant of the Signature Audible
 id: 56,
 category: "PartNumber",
 difficulty: "Medium",
-product: "SIGA-UM Universal Class B Signal Module",
-question: "What is the catalog number for the Universal Class B Signal Module?",
+product: "SIGA-UM Universal Class A/B Module",
+question: "What is the catalog number for the Universal Class A/B Module?",
 answers: [
 "SIGA-UM",
-"SIGA-UM2",
+"SIGA-MAB",
 "SIGA-CC2",
 "SIGA-CT2"
 ],
 correct: 0,
-explanation: "SIGA-UM is the Universal Class B Signal Module; SIGA-UM2 is the Class A/B variant."
+explanation: "The official Edwards Class A/B module sheet identifies SIGA-UM as a Universal Class A/B Module."
 },
 
 {
@@ -856,16 +776,16 @@ explanation: "SIGA-COD is the Intelligent Carbon Monoxide Detector, distinct fro
 id: 63,
 category: "PartNumber",
 difficulty: "Medium",
-product: "SIGA-HPR High Power Control Relay Module",
+product: "SIGA-CRH High Power Control Relay Module",
 question: "Which catalog number corresponds to the High Power Control Relay Module?",
 answers: [
-"SIGA-HPR",
+"SIGA-CRH",
 "SIGA-CR",
 "SIGA-CRR",
 "SIGA-CT2"
 ],
 correct: 0,
-explanation: "SIGA-HPR is the High Power Control Relay Module."
+explanation: "The official Edwards high-power relay sheet identifies SIGA-CRH as the High Power Control Relay Module."
 },
 
 {
@@ -1032,16 +952,16 @@ explanation: "SIGA-AB4G-LF is the low-frequency variant; SIGA-AB4G is the standa
 id: 78,
 category: "PartNumber",
 difficulty: "Hard",
-product: "SIGA-HPR High Power Control Relay Module",
+product: "SIGA-CRH High Power Control Relay Module",
 question: "A control requirement calls for the high-power relay product rather than a standard control relay. Which catalog number should be selected?",
 answers: [
-"SIGA-HPR",
+"SIGA-CRH",
 "SIGA-CR",
 "SIGA-CRR",
 "SIGA-CT1"
 ],
 correct: 0,
-explanation: "SIGA-HPR is the High Power Control Relay Module; SIGA-CR and SIGA-CRR are separate control relay products."
+explanation: "The official Edwards high-power relay sheet identifies SIGA-CRH as the High Power Control Relay Module; SIGA-CR and SIGA-CRR are separate control relay products."
 },
 
 {
@@ -1058,22 +978,6 @@ answers: [
 ],
 correct: 0,
 explanation: "SIGA-DMP is the Detector Mounting Plate associated with raised-floor and plenum mounting support."
-},
-
-{
-id: 83,
-category: "PartNumber",
-difficulty: "Hard",
-product: "SIGA-UM2 Universal Class A/B Signal Module",
-question: "A design requires the Signature universal signal module that supports both Class A and Class B. Which catalog number should be selected?",
-answers: [
-"SIGA-UM2",
-"SIGA-UM",
-"SIGA-CT2",
-"SIGA-CR"
-],
-correct: 0,
-explanation: "SIGA-UM2 is the Universal Class A/B Signal Module; SIGA-UM is the Class B variant."
 },
 
 {

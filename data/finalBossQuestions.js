@@ -11,15 +11,15 @@ id: "fbq_001",
 category: "Final Boss",
 difficulty: "Easy",
 product: "SIGA-CT2",
-question: "A field note says two separate equipment outputs must be controlled at one location. Which Signature module function should you recognize as the best fit?",
+question: "A field note says two separate Signature input channels are required at one location. Which module function should you recognize as the best fit?",
 answers: [
-"Dual output control function",
-"Dual input monitoring function",
+"Dual input module function",
+"Single input module function",
 "Detectors-only monitoring function",
 "Remote visual status indication"
 ],
 correct: 0,
-explanation: "A dual output control module is the correct fit when the system must command two separate external actions from one location. The distinction is output control, not input supervision."
+explanation: "Official Edwards documentation identifies SIGA-CT2 as a Dual Input Module."
 },
 {
 id: "fbq_003",
@@ -160,8 +160,8 @@ explanation: "A carbon-monoxide-only detector is a distinct Optica category. The
 id: "fbq_014",
 category: "Final Boss",
 difficulty: "Medium",
-product: "SIGA-UM2",
-question: "A project requires a signal module that supports both Class A and Class B wiring topologies. Which module type should you recognize?",
+product: "SIGA-UM",
+question: "A project requires the verified Signature universal module that supports both Class A and Class B wiring topologies. Which module type should you recognize?",
 answers: [
 "Universal Class A/B signal module",
 "Single-output control module",
@@ -169,22 +169,22 @@ answers: [
 "Isolator module"
 ],
 correct: 0,
-explanation: "A universal signal module with both Class A and Class B support is the correct recognition fit. This is a topology and function recognition question, not a part-number decode."
+explanation: "The official Edwards module sheet identifies SIGA-UM as a Universal Class A/B Module."
 },
 {
 id: "fbq_015",
 category: "Final Boss",
 difficulty: "Medium",
 product: "SIGA-CT1",
-question: "A quote note says a field point requires one monitored input, but the listed device is described as a one-output control module. What is the main recognition issue?",
+question: "A quote note says a field point requires one Signature input, but the listed device is described as a different module function. What is the main recognition issue?",
 answers: [
-"The listed device is the wrong function for an input-only point",
+"The listed device must be checked against the verified SIGA-CT1 Single Input Module function",
 "The listed device is a detector base and should be ignored",
 "The control module is always used for monitored inputs",
 "The input point should be treated as a notification appliance"
 ],
 correct: 0,
-explanation: "An input-only point should be recognized as a monitor function, not a control-output module. CT1 is a one-output control module, while a monitored input is typically handled by a monitor module such as CC1."
+explanation: "Official Edwards documentation identifies SIGA-CT1 as a Single Input Module; the configured application should be checked against the product documentation."
 },
 
 // Part Number Mastery (15)
@@ -208,7 +208,7 @@ id: "fbq_017",
 category: "Final Boss",
 difficulty: "Easy",
 product: "SIGA-CC2",
-question: "Which part number identifies a dual input monitor module?",
+question: "Which part number identifies a dual input signal module?",
 answers: [
 "SIGA-CC2",
 "SIGA-CT2",
@@ -216,7 +216,7 @@ answers: [
 "SIGA-IM2"
 ],
 correct: 0,
-explanation: "SIGA-CC2 is the dual input monitor module. CT2 is dual output control, not monitor input."
+explanation: "Official Edwards documentation identifies SIGA-CC2 as a Dual Input Signal Module."
 },
 {
 id: "fbq_019",
@@ -255,13 +255,13 @@ difficulty: "Medium",
 product: "Part Number Pairing",
 question: "Which pairing is correct?",
 answers: [
-"SIGA-CT2 = Dual Output Control Module",
-"SIGA-CC2 = Dual Output Control Module",
-"SIGA-IM2 = Single Input Monitor Module",
+"SIGA-CT2 = Dual Input Module",
+"SIGA-CC2 = High Power Control Relay Module",
+"SIGA-IM2 = Single Input Module",
 "SIGA-CR = Isolator Module"
 ],
 correct: 0,
-explanation: "CT2 is dual output control. CC2 is dual input monitor, IM2 is isolator, and CR is control relay."
+explanation: "Official Edwards documentation identifies CT2 as a Dual Input Module and CC2 as a Dual Input Signal Module. IM2 is an isolator and CR is a control relay."
 },
 {
 id: "fbq_022",
@@ -270,35 +270,20 @@ difficulty: "Medium",
 product: "Part Number Pairing",
 question: "Which pairing is NOT correct?",
 answers: [
-"SIGA-CC1 = Single Output Control Module",
-"SIGA-CT1 = Single Output Control Module",
+"SIGA-CC1 = Dual Input Signal Module",
+"SIGA-CT1 = Single Input Module",
 "SIGA-278 = Double Action Pull Station",
 "SIGA-OSD = Smoke Detector"
 ],
 correct: 0,
-explanation: "SIGA-CC1 is a single input monitor module, not a single output control module."
-},
-{
-id: "fbq_023",
-category: "Final Boss",
-difficulty: "Medium",
-product: "Input and Output Selection",
-question: "A field location needs one monitored input and one controlled output. Which pair best matches that requirement?",
-answers: [
-"SIGA-CC1 and SIGA-CT1",
-"SIGA-CT1 and SIGA-CT2",
-"SIGA-CC1 and SIGA-CC2",
-"SIGA-IM2 and SIGA-CRR"
-],
-correct: 0,
-explanation: "CC1 provides one monitored input and CT1 provides one controlled output."
+explanation: "SIGA-CC1 is a Single Input Signal Module, not a Single Output Control Module."
 },
 {
 id: "fbq_024",
 category: "Final Boss",
 difficulty: "Medium",
 product: "Dual Input Selection",
-question: "Two dry-contact inputs at the same location must each be supervised. Which part number is the most direct fit?",
+question: "Two signal/riser channels at the same location must be provided. Which part number is the most direct fit?",
 answers: [
 "SIGA-CC2",
 "SIGA-CT2",
@@ -306,7 +291,7 @@ answers: [
 "SIGA-CR"
 ],
 correct: 0,
-explanation: "CC2 is a dual input monitor module and directly fits two supervised inputs."
+explanation: "CC2 is a Dual Input Signal Module for the applicable signal/riser application."
 },
 {
 id: "fbq_027",
@@ -355,36 +340,6 @@ explanation: "OSHCD combines smoke, heat, and CO sensing in one Signature Optica
 },
 
 // Product Applications (15)
-{
-id: "fbq_031",
-category: "Final Boss",
-difficulty: "Easy",
-product: "Monitor Modules",
-question: "A waterflow switch must report status to the panel. Which function should be investigated first?",
-answers: [
-"Monitor input function",
-"Control output function",
-"NAC output function",
-"Isolator segmentation function"
-],
-correct: 0,
-explanation: "Waterflow is an input condition, so monitor input function is the first fit."
-},
-{
-id: "fbq_032",
-category: "Final Boss",
-difficulty: "Medium",
-product: "Control Modules",
-question: "A sequence requires the fire alarm system to command external equipment to change state. Which module function is application-appropriate?",
-answers: [
-"Control output",
-"Monitor input",
-"Detector base accessory",
-"Isolator base"
-],
-correct: 0,
-explanation: "Commanding external equipment is a control-output application."
-},
 {
 id: "fbq_033",
 category: "Final Boss",
@@ -525,47 +480,31 @@ id: "fbq_043",
 category: "Final Boss",
 difficulty: "Hard",
 product: "SIGA-CT2 Application",
-question: "A package has two separate controlled actions at the same equipment location. Which module type should you consider before using two single-output modules?",
+question: "A package requires two Signature input channels at the same equipment location. Which module type should you consider before using two single-input modules?",
 answers: [
-"Dual output control module",
-"Dual input monitor module",
+"Dual input module",
+"Single input signal module",
 "Isolator module",
 "Remote LED indicator"
 ],
 correct: 0,
-explanation: "Two independent controlled outputs often map directly to a dual output control module approach."
+explanation: "Official Edwards documentation identifies SIGA-CT2 as a Dual Input Module."
 },
 {
 id: "fbq_044",
 category: "Final Boss",
 difficulty: "Hard",
 product: "SIGA-CC2 Application",
-question: "A mechanical room provides two dry contacts that must each report separately. Which module function best aligns with that requirement?",
+question: "A mechanical room requires two signal/riser channels that must each be provided separately. Which module function best aligns with that requirement?",
 answers: [
-"Dual input monitoring",
+"Dual input signal",
 "Dual output control",
-"Single output control",
+"Single input module",
 "Notification output"
 ],
 correct: 0,
-explanation: "Two separate reporting contacts align with dual input monitor function."
+explanation: "Official Edwards documentation identifies SIGA-CC2 as a Dual Input Signal Module."
 },
-{
-id: "fbq_045",
-category: "Final Boss",
-difficulty: "Hard",
-product: "FACP Logic",
-question: "A junior estimator says field devices trigger outputs directly without panel logic. What is the best correction?",
-answers: [
-"The panel processes device inputs and then activates programmed outputs",
-"Only NAC devices can trigger outputs directly",
-"Modules bypass the panel in addressable systems",
-"Inputs and outputs are independent with no panel relation"
-],
-correct: 0,
-explanation: "The fire alarm control panel is the decision point that processes inputs and commands outputs by programming."
-},
-
 // Modules and Systems (15)
 {
 id: "fbq_046",
@@ -643,21 +582,6 @@ correct: 0,
 explanation: "Distributed isolators localize short-fault effects to loop segments."
 },
 {
-id: "fbq_052",
-category: "Final Boss",
-difficulty: "Medium",
-product: "Duct and HVAC",
-question: "For duct detector applications, which two system functions are frequently paired?",
-answers: [
-"Input monitoring and output control",
-"NAC and battery charging",
-"Loop isolation and detector base sounder",
-"Speaker zoning and door holder release"
-],
-correct: 0,
-explanation: "Duct alarm contact reporting is an input, while HVAC shutdown is a control output."
-},
-{
 id: "fbq_053",
 category: "Final Boss",
 difficulty: "Medium",
@@ -671,21 +595,6 @@ answers: [
 ],
 correct: 0,
 explanation: "Tamper is typically supervisory because it indicates a system impairment state that needs attention."
-},
-{
-id: "fbq_054",
-category: "Final Boss",
-difficulty: "Hard",
-product: "Class A and Class B",
-question: "A customer asks why Class A might be chosen over Class B on a critical loop. What is the strongest system-level reason?",
-answers: [
-"Class A return path helps maintain communication after a single open circuit",
-"Class A removes the need for supervision",
-"Class A always lowers installation labor",
-"Class A eliminates module requirements"
-],
-correct: 0,
-explanation: "Class A includes a return path that supports continued communication after one open fault condition."
 },
 {
 id: "fbq_055",
@@ -733,21 +642,6 @@ correct: 0,
 explanation: "Waterflow and tamper are separate monitored inputs, and shutdown is a controlled output action."
 },
 {
-id: "fbq_058",
-category: "Final Boss",
-difficulty: "Hard",
-product: "Output Verification",
-question: "An output command is not occurring, but the initiating input appears valid. Which systems-level check should come next?",
-answers: [
-"Verify output module path and programming logic for that control action",
-"Replace all input devices first",
-"Assume the panel is wrong and ignore",
-"Change wire gauge before checking logic"
-],
-correct: 0,
-explanation: "After confirming input, verify control path and programmed output behavior for that sequence."
-},
-{
 id: "fbq_059",
 category: "Final Boss",
 difficulty: "Hard",
@@ -762,22 +656,6 @@ answers: [
 correct: 0,
 explanation: "Signature modules and Genesis notification products have different system functions and selection criteria."
 },
-{
-id: "fbq_060",
-category: "Final Boss",
-difficulty: "Hard",
-product: "Panel and Field Coordination",
-question: "A field note says \"detector directly releases door holder.\" What is the most accurate systems interpretation?",
-answers: [
-"Detector input is processed by panel logic, then a control output releases the holder",
-"Detector directly powers the holder release in all addressable systems",
-"Door holder release is always a NAC function",
-"No panel involvement is required"
-],
-correct: 0,
-explanation: "Addressable detector events are panel inputs; release actions are output commands from panel logic."
-},
-
 // Wiring and Connections (15)
 {
 id: "fbq_061",
@@ -945,21 +823,6 @@ correct: 0,
 explanation: "If the initiating input is valid, move next to control output path integrity and mapping."
 },
 {
-id: "fbq_072",
-category: "Final Boss",
-difficulty: "Hard",
-product: "Circuit Identification",
-question: "A plan note says \"return path to panel maintained for single open continuity.\" Which wiring class is implied?",
-answers: [
-"Class A",
-"Class B",
-"NAC only",
-"IDC only"
-],
-correct: 0,
-explanation: "A maintained return path for open-circuit tolerance describes Class A behavior."
-},
-{
 id: "fbq_073",
 category: "Final Boss",
 difficulty: "Hard",
@@ -974,37 +837,6 @@ answers: [
 correct: 0,
 explanation: "Reporting and commanding are separate functions and typically use different interface paths."
 },
-{
-id: "fbq_074",
-category: "Final Boss",
-difficulty: "Hard",
-product: "SLC Fault Priority",
-question: "During a service call, panel shows SLC trouble and multiple \"missing device\" points downstream. What wiring interpretation is most likely?",
-answers: [
-"A loop wiring fault is interrupting communication to downstream addresses",
-"All devices failed at once from sensitivity drift",
-"NAC overcurrent disabled SLC addressing",
-"Door-holder release logic caused detector dropout"
-],
-correct: 0,
-explanation: "SLC wiring faults commonly produce loss-of-communication behavior for downstream devices."
-},
-{
-id: "fbq_075",
-category: "Final Boss",
-difficulty: "Hard",
-product: "Module Function Wiring",
-question: "Which statement best prevents wiring-function confusion in design reviews?",
-answers: [
-"Monitor modules supervise inputs, while control modules drive commanded outputs",
-"Monitor and control modules can be wired interchangeably",
-"Control modules should be used for all field contacts",
-"Monitor modules should power NAC appliances"
-],
-correct: 0,
-explanation: "Keeping input supervision and output control roles distinct avoids wiring and BOM errors."
-},
-
 // Takeoff and Estimating (10)
 {
 id: "fbq_076",
@@ -1020,21 +852,6 @@ answers: [
 ],
 correct: 0,
 explanation: "Accurate BOM entry starts with clear understanding of the actual drawing scope and callouts."
-},
-{
-id: "fbq_077",
-category: "Final Boss",
-difficulty: "Medium",
-product: "Detector and Base",
-question: "A takeoff shows detector heads but does not clearly list bases. What is the best estimator action?",
-answers: [
-"Verify whether compatible detector bases must be added as separate line items",
-"Assume every head ships with a base",
-"Remove all detectors from BOM",
-"Replace detectors with pull stations"
-],
-correct: 0,
-explanation: "Detector heads and bases are often separate BOM items and need explicit verification."
 },
 {
 id: "fbq_078",
@@ -1101,15 +918,15 @@ id: "fbq_082",
 category: "Final Boss",
 difficulty: "Hard",
 product: "Cross-Reference Review",
-question: "A schedule calls for SIGA-CT1, while notes describe two independent outputs. What is the best next step?",
+question: "A schedule calls for SIGA-CT1, while notes describe two independent input channels. What is the best next step?",
 answers: [
-"Flag the mismatch and verify whether a dual-output module is actually required",
+"Flag the mismatch and verify whether a dual-input module is actually required",
 "Keep CT1 and ignore notes",
 "Convert all outputs to monitor points",
 "Delete the schedule line"
 ],
 correct: 0,
-explanation: "Two independent outputs can indicate dual-output requirement, so the inconsistency should be verified."
+explanation: "Official Edwards documentation identifies CT1 as a Single Input Module; two independent inputs may require a different documented configuration, so the inconsistency should be verified."
 },
 {
 id: "fbq_083",
@@ -1141,22 +958,6 @@ answers: [
 correct: 0,
 explanation: "Misalignment between application and product should be clarified before release."
 },
-{
-id: "fbq_085",
-category: "Final Boss",
-difficulty: "Hard",
-product: "Estimator Workflow",
-question: "When should ambiguous device descriptions be clarified in the estimating workflow?",
-answers: [
-"Before BOM finalization and quote issue",
-"After product shipment",
-"Only if a customer complains",
-"Never if part numbers look similar"
-],
-correct: 0,
-explanation: "Clarifying ambiguity early prevents incorrect quoting, ordering delays, and rework."
-},
-
 // Real-World Sales Support Scenarios (15)
 {
 id: "fbq_086",
@@ -1174,51 +975,6 @@ correct: 0,
 explanation: "Validating identity and intent before pricing reduces application mismatch risk."
 },
 {
-id: "fbq_087",
-category: "Final Boss",
-difficulty: "Easy",
-product: "Unknown Device",
-question: "During BOM build, you encounter a device you do not recognize. What is the strongest sales-support action?",
-answers: [
-"Verify part number and function before committing the line item",
-"Delete the item to keep moving",
-"Assume it is a standard detector",
-"Auto-substitute any similar prefix"
-],
-correct: 0,
-explanation: "Unrecognized parts should be validated before inclusion in quote or BOM."
-},
-{
-id: "fbq_088",
-category: "Final Boss",
-difficulty: "Medium",
-product: "Similar Part Numbers",
-question: "Two similar part numbers exist in stock records. What must be verified before selecting one for a quote?",
-answers: [
-"Functional fit to the required application",
-"Only which one has a shorter name",
-"Only which one appears first alphabetically",
-"Only which one has a newer carton"
-],
-correct: 0,
-explanation: "Selection should be based on application-correct function, not superficial similarity."
-},
-{
-id: "fbq_089",
-category: "Final Boss",
-difficulty: "Medium",
-product: "Quote Consistency",
-question: "A quote line appears inconsistent with drawing intent. What is the most professional next step?",
-answers: [
-"Document and request clarification before final submission",
-"Submit anyway and revise after award",
-"Remove all related devices",
-"Assume drawing is wrong without review"
-],
-correct: 0,
-explanation: "Escalating and documenting clarification protects accuracy and reduces downstream rework."
-},
-{
 id: "fbq_090",
 category: "Final Boss",
 difficulty: "Medium",
@@ -1232,21 +988,6 @@ answers: [
 ],
 correct: 0,
 explanation: "Valve tamper is an input condition that should be supervised through monitor functionality."
-},
-{
-id: "fbq_091",
-category: "Final Boss",
-difficulty: "Medium",
-product: "AHU Interface",
-question: "A customer says \"we need duct detector shutdown too.\" Which follow-up best clarifies scope?",
-answers: [
-"Confirm both alarm-monitor input and shutdown-control output requirements",
-"Ask only for cable color",
-"Assume one monitor point covers shutdown",
-"Skip clarification and issue quote"
-],
-correct: 0,
-explanation: "Duct applications often include two distinct functions: reporting and commanded shutdown."
 },
 {
 id: "fbq_092",
@@ -1276,7 +1017,7 @@ answers: [
 "Reduced need for sequence programming"
 ],
 correct: 0,
-explanation: "CC2 and CT2 serve different roles: CC2 monitors inputs while CT2 controls outputs."
+explanation: "Official Edwards documentation identifies CC2 as a Dual Input Signal Module and CT2 as a Dual Input Module; similar channel counts do not make them interchangeable."
 },
 {
 id: "fbq_094",
@@ -1345,28 +1086,13 @@ difficulty: "Hard",
 product: "Cross-Category Reasoning",
 question: "A line item says \"SIGA-CC1 for AHU shutdown\" and another says \"SIGA-CT1 for duct alarm monitoring.\" What is the best diagnosis?",
 answers: [
-"The two module functions appear reversed relative to typical application roles",
+"The listed functions do not match the official module categories and require clarification",
 "Both lines are clearly correct and need no review",
 "Both should be replaced with isolator modules",
 "Both should be moved to NAC-only design"
 ],
 correct: 0,
-explanation: "CC1 is monitor input and CT1 is control output, so the listed intents appear swapped and should be corrected."
-},
-{
-id: "fbq_099",
-category: "Final Boss",
-difficulty: "Hard",
-product: "BOM Quality Control",
-question: "What is the strongest indicator that a BOM is ready for final customer release?",
-answers: [
-"Part numbers, functions, and application context are reconciled with resolved ambiguities",
-"All line items have short descriptions only",
-"Every item uses the same product family",
-"No questions were asked during review"
-],
-correct: 0,
-explanation: "Release readiness depends on verified functional fit and resolution of ambiguities, not on superficial completeness."
+explanation: "Official Edwards documentation identifies CC1 as a Single Input Signal Module and CT1 as a Single Input Module. The listed AHU shutdown and duct-monitoring roles require documented clarification rather than assuming the older monitor/control labels."
 },
 {
 id: "fbq_100",

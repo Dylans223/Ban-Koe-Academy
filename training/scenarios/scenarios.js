@@ -12,8 +12,8 @@
 
     const verifiedReferences = {
         est4: findProductBy((product) => product.family === "EST4" || product.model === "EST4"),
-        monitorModule: findProductBy((product) => /SIGA-CC1 Single Input Monitor Module/i.test(product.model || "")),
-        controlModule: findProductBy((product) => /SIGA-CT1 Single Output Control Module/i.test(product.model || "")),
+        monitorModule: null,
+        controlModule: null,
         relayModule: findProductBy((product) => /SIGA-CR Control Relay Module/i.test(product.model || "")),
         notificationSpeaker: findProductBy((product) => /Genesis LED GCS Series Ceiling Mount Speakers and Speaker-Strobes/i.test(product.model || "")),
         notificationWall: findProductBy((product) => /Genesis LED G4 Series Wall Mount Notification Devices/i.test(product.model || "")),

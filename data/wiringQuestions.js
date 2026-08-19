@@ -26,22 +26,6 @@ correct: 0,
 explanation: "Addressable smoke detectors communicate their state to the panel over the SLC. Notification appliances such as horn/strobes are powered by the NAC, not the SLC."
 },
 {
-id: 4,
-category: "Wiring",
-difficulty: "Medium",
-product: "",
-question: "A project requires connecting addressable smoke detectors and addressable pull stations to the fire alarm panel. Which circuit are these devices most likely connected to?",
-answers: [
-"SLC",
-"NAC",
-"120 VAC",
-"Speaker circuit"
-],
-correct: 0,
-explanation: "Addressable smoke detectors and pull stations communicate through the SLC. The NAC is used for notification appliances, not initiating devices."
-},
-
-{
 id: 5,
 category: "Wiring",
 difficulty: "Medium",
@@ -109,41 +93,9 @@ correct: 0,
 explanation: "Check the NAC first because it provides notification-appliance output power. Continued SLC communication does not prove that the NAC output path is operating."
 },
 
-{
-id: 9,
-category: "Wiring",
-difficulty: "Medium",
-product: "",
-question: "Which statement best describes the relationship between the SLC and NAC circuits?",
-answers: [
-"The SLC handles addressable device communication; the NAC handles notification appliance output",
-"Both circuits carry device communication to the panel",
-"The NAC handles addressable device communication; the SLC handles notification output",
-"Both circuits carry output power only"
-],
-correct: 0,
-explanation: "The SLC and NAC serve completely different functions. The SLC is for communication with addressable devices. The NAC is for powering notification output. Knowing which circuit does what is essential for reading drawings, troubleshooting, and quoting."
-},
-
 // -----------------------------------------------
 // WIRE TYPES / GAUGE
 // -----------------------------------------------
-
-{
-id: 10,
-category: "Wiring",
-difficulty: "Easy",
-product: "",
-question: "What does the \"/2\" indicate in the wire notation \"18/2\"?",
-answers: [
-"Two conductors",
-"Two circuits",
-"Two panels",
-"Two amps"
-],
-correct: 0,
-explanation: "The /2 notation indicates the number of conductors in the cable. 18/2 means 18 AWG wire with two conductors. This notation is commonly used in fire alarm wiring specifications and training materials."
-},
 
 {
 id: 11,
@@ -159,22 +111,6 @@ answers: [
 ],
 correct: 0,
 explanation: "In the American Wire Gauge (AWG) system, a lower number indicates a larger conductor. 14 AWG is physically larger than 18 AWG."
-},
-
-{
-id: 12,
-category: "Wiring",
-difficulty: "Easy",
-product: "",
-question: "Of the common conductor sizes 18 AWG, 14 AWG, and 12 AWG, which has the largest conductors?",
-answers: [
-"12 AWG",
-"14 AWG",
-"18 AWG",
-"They are all the same conductor size"
-],
-correct: 0,
-explanation: "In the AWG system, the lower the gauge number, the larger the conductor. 12 AWG is larger than 14 AWG, which is larger than 18 AWG."
 },
 
 {
@@ -198,22 +134,6 @@ explanation: "Wire notation always follows the pattern: gauge AWG / number of co
 // -----------------------------------------------
 
 {
-id: 14,
-category: "Wiring",
-difficulty: "Medium",
-product: "",
-question: "Which wiring class does NOT route a return path back to the fire alarm panel?",
-answers: [
-"Class B",
-"Class A",
-"Both provide a return path",
-"Neither provides a return path"
-],
-correct: 0,
-explanation: "Class B wiring does not loop back to the panel. A single open circuit at any point will cut off communication to all devices beyond the break. Class A includes a return path, allowing the loop to communicate from both ends."
-},
-
-{
 id: 15,
 category: "Wiring",
 difficulty: "Medium",
@@ -227,22 +147,6 @@ answers: [
 ],
 correct: 0,
 explanation: "Class A wiring returns to the panel, creating a complete loop. If one wire breaks, communication can still reach devices from the opposite direction. Class B has no return path — a single break cuts off everything beyond it."
-},
-
-{
-id: 16,
-category: "Wiring",
-difficulty: "Hard",
-product: "",
-question: "A fire alarm system uses Class B wiring on an addressable SLC. A wire break occurs between two devices. What is the most likely impact?",
-answers: [
-"All devices beyond the break lose communication with the panel",
-"No impact — Class B handles this condition automatically",
-"Only the device immediately adjacent to the break is affected",
-"The panel automatically reroutes communication around the break"
-],
-correct: 0,
-explanation: "With Class B wiring, an open circuit cuts off communication to every device beyond the break point. This is a key reason why Class A is used in applications where continuity of communication past a single fault is required."
 },
 
 // -----------------------------------------------
@@ -333,8 +237,8 @@ explanation: "The duct detector's alarm contact is an input — it reports a con
 id: 22,
 category: "Wiring",
 difficulty: "Medium",
-product: "SIGA-CC1 Single Input Monitor Module",
-question: "Which Edwards Signature module model is identified as a Single Input Monitor Module?",
+product: "SIGA-CC1 Single Input Signal Module",
+question: "Which Edwards Signature module model is identified as a Single Input Signal Module?",
 answers: [
 "SIGA-CC1",
 "SIGA-CT1",
@@ -342,15 +246,15 @@ answers: [
 "SIGA-IM2"
 ],
 correct: 0,
-explanation: "The SIGA-CC1 is the Single Input Monitor Module in the Edwards Signature addressable module family. It supervises one initiating input circuit and communicates its state to the panel over the SLC."
+explanation: "Official Edwards documentation identifies the SIGA-CC1 as a Single Input Signal Module for signal/riser circuit applications."
 },
 
 {
 id: 23,
 category: "Wiring",
 difficulty: "Medium",
-product: "SIGA-CT1 Single Output Control Module",
-question: "Which Edwards Signature module model is identified as a Single Output Control Module?",
+product: "SIGA-CT1 Single Input Module",
+question: "Which Edwards Signature module model is identified as a Single Input Module?",
 answers: [
 "SIGA-CT1",
 "SIGA-CC1",
@@ -358,15 +262,15 @@ answers: [
 "SIGA-UM"
 ],
 correct: 0,
-explanation: "The SIGA-CT1 is the Single Output Control Module in the Edwards Signature family. It provides one supervised output channel and is activated by the panel through programmed cause-and-effect logic."
+explanation: "Official Edwards documentation identifies the SIGA-CT1 as a Single Input Module."
 },
 
 {
 id: 24,
 category: "Wiring",
 difficulty: "Hard",
-product: "SIGA-CT2 Dual Output Control Module",
-question: "A project requires two independently controlled output functions at the same location. Which Edwards Signature module is described as a dual output control module?",
+product: "SIGA-CT2 Dual Input Module",
+question: "A project requires two Signature input channels at the same location. Which Edwards Signature module is described as a dual input module?",
 answers: [
 "SIGA-CT2",
 "SIGA-CT1",
@@ -374,7 +278,7 @@ answers: [
 "SIGA-CR"
 ],
 correct: 0,
-explanation: "The SIGA-CT2 is the Dual Output Control Module, providing two independently supervised output channels that can be activated by panel logic. The SIGA-CT1 provides a single output channel."
+explanation: "Official Edwards documentation identifies the SIGA-CT2 as a Dual Input Module."
 },
 
 // -----------------------------------------------
@@ -550,38 +454,6 @@ explanation: "A duct smoke detector is installed in HVAC ductwork to sample air 
 },
 
 {
-id: 35,
-category: "Wiring",
-difficulty: "Easy",
-product: "",
-question: "Where is a duct smoke detector typically installed?",
-answers: [
-"Inside HVAC ductwork",
-"On the ceiling of occupied spaces like a standard detector",
-"Inside the fire alarm control panel enclosure",
-"On the exterior of the building near air intakes"
-],
-correct: 0,
-explanation: "Duct smoke detectors are installed within HVAC ductwork to monitor air moving through the system. They are a specialized detector designed for that specific environment."
-},
-
-{
-id: 36,
-category: "Wiring",
-difficulty: "Medium",
-product: "",
-question: "A duct smoke detector has an alarm contact that needs to report its condition to the fire alarm panel. Which module function is involved?",
-answers: [
-"Monitor input — the detector contact is an input reporting a condition",
-"Control output — the detector activates the panel directly",
-"NAC output — the duct detector is a notification appliance",
-"Isolator function — to contain the duct fault"
-],
-correct: 0,
-explanation: "The duct detector's alarm contact is an input — it reports that smoke was detected. A monitor module supervises that contact and communicates the alarm status to the panel over the SLC."
-},
-
-{
 id: 37,
 category: "Wiring",
 difficulty: "Medium",
@@ -633,38 +505,6 @@ correct: 0,
 explanation: "HVAC systems can transport smoke from a fire throughout a building. Shutting down the air handling equipment helps limit smoke spread, which is an important life-safety objective."
 },
 
-{
-id: 40,
-category: "Wiring",
-difficulty: "Medium",
-product: "",
-question: "Which type of fire alarm function is used to send a shutdown command to HVAC equipment?",
-answers: [
-"Control output",
-"Monitor input",
-"Supervisory input",
-"NAC notification output"
-],
-correct: 0,
-explanation: "Stopping HVAC equipment requires a control output — the fire alarm system must actively command the equipment to change state. A monitor input only reports conditions; it does not produce a control command on its own."
-},
-
-{
-id: 41,
-category: "Wiring",
-difficulty: "Hard",
-product: "",
-question: "A technician asks whether a monitor module or a control module should be used for an HVAC shutdown application. Which is correct?",
-answers: [
-"Control module — the system needs to produce a command output to stop the HVAC unit",
-"Monitor module — the system needs to track the HVAC on/off status",
-"Either can be used — they are interchangeable for HVAC applications",
-"Neither — HVAC shutdown only requires a direct wire without any module"
-],
-correct: 0,
-explanation: "HVAC shutdown is a control action. A control module provides the output that commands the equipment to stop. A monitor module supervises an input condition — it does not generate a control output on its own. Choosing the right function type is fundamental to a correct system design."
-},
-
 // -----------------------------------------------
 // OTHER INTERFACES
 // -----------------------------------------------
@@ -699,22 +539,6 @@ answers: [
 ],
 correct: 0,
 explanation: "Releasing a door holder is a control action — the fire alarm system commands the device to change state. A control module or relay provides that output function as part of the fire alarm sequence of operations."
-},
-
-{
-id: 44,
-category: "Wiring",
-difficulty: "Medium",
-product: "",
-question: "A sprinkler waterflow switch needs to send an alarm condition to the fire alarm panel. Which module function is involved?",
-answers: [
-"Monitor input — the waterflow switch is an input device reporting a condition",
-"Control output — the waterflow switch requires a control command",
-"NAC output — the waterflow switch is a notification appliance",
-"Isolator function — to separate the sprinkler circuit"
-],
-correct: 0,
-explanation: "A waterflow switch is an input device that detects water flowing through sprinkler piping. A monitor module supervises that contact and reports the alarm condition to the panel."
 },
 
 {

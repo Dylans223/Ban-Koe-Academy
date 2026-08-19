@@ -292,11 +292,11 @@ const productLibrary = {
             manufacturer: "Edwards",
             family: "SIGA",
             category: "Intelligent Control Relay Module",
-            model: "SIGA-HPR High Power Control Relay Module",
+            model: "SIGA-CRH High Power Control Relay Module",
             verification: "VERIFIED",
             sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0644%20--%20High%20Power%20Control%20Relay%20Module.pdf",
             image: "",
-            officialDescription: "Official Edwards Intelligent Input/Output Modules catalog listing for the High Power Control Relay Module.",
+            officialDescription: "Official Edwards catalog sheet identifies the High Power Control Relay Module as SIGA-CRH.",
             features: [
                 "High-power control relay module category.",
                 "Published in Edwards Intelligent Input/Output Modules literature."
@@ -883,42 +883,42 @@ const productLibrary = {
         {
             id: 28,
             manufacturer: "Edwards",
-            family: "Monitor Modules",
-            category: "Single Input Monitor Module",
-            model: "SIGA-CC1 Single Input Monitor Module",
+            family: "Signal Modules",
+            category: "Single Input Signal Module",
+            model: "SIGA-CC1 Single Input Signal Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
             image: "",
-            officialDescription: "Common Signature monitor module used for single input monitoring in Edwards addressable module architecture.",
+            officialDescription: "Official Edwards catalog sheet identifies SIGA-CC1 as a Single Input Signal Module.",
             features: [
-                "Single input monitor module.",
-                "Commonly shown on life safety drawings and BOMs."
+                "Single input signal module.",
+                "Signal and telephone circuit applications."
             ],
             quizQuestions: [],
-            howItWorks: "The module supervises one initiating input circuit and reports state changes to the panel as an addressable Signature module.",
+            howItWorks: "The module provides one supervised signal/riser channel for the configured Signature application and operates under panel control.",
             commonMistakes: [
-                "Selecting monitor modules without matching input circuit requirements.",
+                "Confusing a signal module with a monitor/input module.",
                 "Mixing standard and miniature module assumptions in BOMs."
             ]
         },
         {
             id: 29,
             manufacturer: "Edwards",
-            family: "Monitor Modules",
-            category: "Dual Input Monitor Module",
-            model: "SIGA-CC2 Dual Input Monitor Module",
+            family: "Signal Modules",
+            category: "Dual Input Signal Module",
+            model: "SIGA-CC2 Dual Input Signal Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
             image: "",
-            officialDescription: "Signature dual input monitor module used for monitoring two initiating inputs within Edwards addressable systems.",
+            officialDescription: "Official Edwards catalog sheet identifies SIGA-CC2 as a Dual Input Signal Module.",
             features: [
-                "Dual input monitoring capability.",
-                "Part of common Signature module selections."
+                "Dual input signal capability.",
+                "Signal and telephone circuit applications."
             ],
             quizQuestions: [],
-            howItWorks: "This module supervises two input channels and reports input state transitions to the control panel.",
+            howItWorks: "This module provides two supervised signal/riser channels for the configured Signature application and operates under panel control.",
             commonMistakes: [
-                "Assuming dual-input modules are direct drop-in replacements for single-input quantities.",
+                "Confusing a signal module with a monitor/input module.",
                 "Overlooking wiring and enclosure constraints when converting module types."
             ]
         },
@@ -988,43 +988,43 @@ const productLibrary = {
         {
             id: 33,
             manufacturer: "Edwards",
-            family: "Control Modules",
-            category: "Single Output Control Module",
-            model: "SIGA-CT1 Single Output Control Module",
+            family: "Input Modules",
+            category: "Single Input Module",
+            model: "SIGA-CT1 Single Input Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
             image: "",
-            officialDescription: "Common Signature control module used for single output control in Edwards addressable systems.",
+            officialDescription: "Official Edwards catalog sheet identifies SIGA-CT1 as a Single Input Module.",
             features: [
-                "Single output control.",
-                "Frequently specified on fire alarm drawings and BOMs."
+                "Single input channel.",
+                "Signature input-module application."
             ],
             quizQuestions: [],
-            howItWorks: "The module switches a commanded output circuit under panel control according to programmed cause-and-effect logic.",
+            howItWorks: "The module provides one input channel for the configured field-circuit application and communicates through the Signature loop.",
             commonMistakes: [
-                "Assuming any control module meets all output electrical requirements.",
-                "Not validating output module selection against the controlled load."
+                "Treating CT1 as an output-control module.",
+                "Not validating the configured input function and personality code."
             ]
         },
         {
             id: 34,
             manufacturer: "Edwards",
-            family: "Control Modules",
-            category: "Dual Output Control Module",
-            model: "SIGA-CT2 Dual Output Control Module",
+            family: "Input Modules",
+            category: "Dual Input Module",
+            model: "SIGA-CT2 Dual Input Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
             image: "https://firealarm.com/wp-content/uploads/2021/01/SIGA-CT2-main.jpg",
-            officialDescription: "Common Signature dual output control module used for two-channel output control in Edwards systems.",
+            officialDescription: "Official Edwards catalog sheet identifies SIGA-CT2 as a Dual Input Module.",
             features: [
-                "Dual output control channels.",
-                "Common module family for output-side field control."
+                "Dual input channels.",
+                "Signature input-module application."
             ],
             quizQuestions: [],
-            howItWorks: "The module provides two independently supervised output channels that can be activated by panel logic.",
+            howItWorks: "The module provides two input channels for the configured field-circuit application and communicates through the Signature loop.",
             commonMistakes: [
-                "Treating dual-output modules as simple quantity substitutions without design review.",
-                "Failing to coordinate output channel use with sequence of operations."
+                "Treating CT2 as a dual-output control module.",
+                "Failing to coordinate the two input channels with the system design."
             ]
         },
         {
@@ -1073,18 +1073,18 @@ const productLibrary = {
             id: 38,
             manufacturer: "Edwards",
             family: "Signal Modules",
-            category: "Universal Class B Signal Module",
-            model: "SIGA-UM Universal Class B Signal Module",
+            category: "Universal Class A/B Module",
+            model: "SIGA-UM Universal Class A/B Module",
             verification: "VERIFIED",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
             image: "",
-            officialDescription: "Signature universal signal module variant for Class B signaling applications in Edwards intelligent module ecosystems.",
+            officialDescription: "Official Edwards catalog sheet identifies SIGA-UM as a Universal Class A/B Module.",
             features: [
                 "Universal signaling functionality.",
-                "Class B signaling application category."
+                "Class A/B module capability."
             ],
             quizQuestions: [],
-            howItWorks: "This signal module provides addressable output signaling in Class B wiring topologies under panel command.",
+            howItWorks: "This universal module supports the applicable Class A/B input-output personality and wiring configuration defined by the system design.",
             commonMistakes: [
                 "Using Class B modules where Class A survivability topology is required.",
                 "Assuming all signal module variants have identical wiring constraints."
@@ -1096,16 +1096,13 @@ const productLibrary = {
             family: "Signal Modules",
             category: "Universal Class A/B Signal Module",
             model: "SIGA-UM2 Universal Class A/B Signal Module",
-            verification: "VERIFIED",
+            verification: "UNVERIFIED — DO NOT USE AS TRAINING FACT",
             sourceURL: "https://www.edwardsfiresafety.com/lifelines/intelligent-input-output-modules/",
             image: "",
-            officialDescription: "Signature universal signal module variant supporting Class A/B signaling applications depending on project topology requirements.",
-            features: [
-                "Class A/B signaling flexibility.",
-                "Universal signal module family variant."
-            ],
+            officialDescription: "The reviewed official Edwards module sheets did not verify SIGA-UM2. Do not use this part number as a training fact without additional manufacturer documentation.",
+            features: [],
             quizQuestions: [],
-            howItWorks: "The module enables addressable signaling outputs configured for Class A or Class B topologies per system design.",
+            howItWorks: "UNVERIFIED — DO NOT USE AS TRAINING FACT.",
             commonMistakes: [
                 "Assuming topology flexibility removes the need for detailed circuit design checks.",
                 "Applying market-specific variant assumptions to all regions."
@@ -1116,17 +1113,14 @@ const productLibrary = {
             manufacturer: "Edwards",
             family: "Signal Modules",
             category: "Class A Signal Module",
-            model: "SIGA-CC1S Class A Signal Module (varies by market)",
-            verification: "VERIFIED",
+            model: "SIGA-CC1S Class A Signal Module (unverified)",
+            verification: "UNVERIFIED — DO NOT USE AS TRAINING FACT",
             sourceURL: "https://myeddie.edwardsfiresafety.com/PublicMedia/Catalog%20Sheets/E85001-0609%20--%20Signal%20Modules%20with%20Class%20A%20Operation.pdf",
             image: "",
-            officialDescription: "Class A signal module variant documented in Edwards signal module literature, with availability and naming that can vary by market.",
-            features: [
-                "Class A signaling application focus.",
-                "Referenced alongside dedicated Class A operation signal module documentation."
-            ],
+            officialDescription: "The reviewed official Edwards module sheets did not verify SIGA-CC1S. Do not use this part number as a training fact without additional manufacturer documentation.",
+            features: [],
             quizQuestions: [],
-            howItWorks: "This module provides supervised Class A signaling behavior under panel command in applicable Edwards system designs.",
+            howItWorks: "UNVERIFIED — DO NOT USE AS TRAINING FACT.",
             commonMistakes: [
                 "Ignoring regional naming and availability differences during submittal creation.",
                 "Assuming Class A variants are identical to Class B-only module behavior."
