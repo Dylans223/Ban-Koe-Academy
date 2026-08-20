@@ -260,21 +260,6 @@ const inventoryOrderCheckInQuestions = [
         explanation: "The note records that all parts were received, where they are located, and what the parts/staging area is labeled."
     },
     {
-        id: "oci_019",
-        category: "InventoryOrderCheckIn",
-        difficulty: "Medium",
-        product: "",
-        question: "Who should be emailed after all material has been received?",
-        answers: [
-            "The project's Sales Rep",
-            "The carrier driver",
-            "The customer before delivery",
-            "No one"
-        ],
-        correct: 0,
-        explanation: "The receiving procedure requires emailing the project's Sales Rep when all material has been received."
-    },
-    {
         id: "oci_020",
         category: "InventoryOrderCheckIn",
         difficulty: "Hard",

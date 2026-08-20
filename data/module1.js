@@ -1028,6 +1028,8 @@ answers:[
 ],
 correct:0,
 explanation:"Edwards lists the High Power Control Relay Module in Intelligent Input/Output Modules as a control relay category product."
+,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0644", manufacturer:"Edwards", verified:true, sourcePage:"1-3", sourceSection:"Description; Application; Specifications" }
 },
 
 {
@@ -1046,6 +1048,8 @@ answers:[
 ],
 correct:0,
 explanation:"Edwards identifies this product as a signal module category that supports Class A operation."
+,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0609", manufacturer:"Edwards", verified:true, sourcePage:"1-2, 5", sourceSection:"Overview; Application; Ordering Information" }
 },
 
 {
@@ -2333,15 +2337,16 @@ lesson:10,
 category:"Edwards Product Library",
 difficulty:"Easy",
 product:"EST4",
-question:"Which Edwards platform is described as using a new network architecture for fire alarm, mass notification, and integration?",
+question:"Which Edwards platform is documented as using a new network architecture for fire alarm, mass notification, and building integration?",
 answers:[
 "EST4",
-"EST3",
-"Genesis G4",
-"SIGA-IM2"
+"A conventional notification circuit",
+"A detector base",
+"A local power supply"
 ],
 correct:0,
-explanation:"The official Edwards EST4 page describes EST4 as a new network architecture platform for fire alarm, mass notification, and building integration."
+explanation:"The EST4 overview documents EST4 as a new network architecture platform for fire alarm, mass notification, and building integration.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0001", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Overview" }
 },
 
 {
@@ -2351,7 +2356,7 @@ lesson:10,
 category:"Edwards Product Library",
 difficulty:"Easy",
 product:"EST4",
-question:"Which EST4 feature provides remote, device-independent access to system status reports?",
+question:"Which EST4 feature is documented for remote, device-independent access to system status reports?",
 answers:[
 "On-board webserver",
 "Local bell circuit",
@@ -2359,7 +2364,8 @@ answers:[
 "Conventional IDC"
 ],
 correct:0,
-explanation:"Edwards lists an on-board webserver for remote, device-independent access to system status reports."
+explanation:"The EST4 overview documents an on-board webserver for remote, device-independent access to system status reports. This item does not establish remote control, programming, authentication, or cybersecurity behavior.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0001", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Overview" }
 },
 
 {
@@ -2477,15 +2483,16 @@ lesson:10,
 category:"Edwards Product Library",
 difficulty:"Easy",
 product:"Genesis LED G4 Series Wall Mount Notification Devices",
-question:"Which configurable option is associated with Genesis notification products?",
+question:"Which statement is explicitly documented for Genesis G4 notification devices?",
 answers:[
 "Selectable candela output and flash rate",
-"SLC device addressing only",
-"Ethernet bridge licensing",
-"Loop expansion to 64 nodes"
+"16 to 33 VDC operating voltage and 12 to 18 AWG wiring",
+"520 Hz low-frequency horn output",
+"GRSW-10 room-side wiring plate"
 ],
 correct:0,
-explanation:"Genesis family descriptions reference selectable candela output and flash rate among configurable options."
+explanation:"E85001-0668 documents selectable candela output and approximately 1 fps flash rate for Genesis G4 strobes and horn-strobes.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0668", manufacturer: "Edwards", verified: true, sourcePage: "3-4", sourceSection: "Field Configuration; Specifications" }
 },
 
 {
@@ -2495,15 +2502,16 @@ lesson:10,
 category:"Edwards Product Library",
 difficulty:"Easy",
 product:"Genesis LED GCS Series Ceiling Mount Speakers and Speaker-Strobes",
-question:"The Genesis LED GCS series is categorized as which device type?",
+question:"Which documented Genesis category is intended for ceiling-mounted speaker notification?",
 answers:[
 "Ceiling mount speaker and speaker-strobe",
-"Intelligent smoke detector",
-"Control relay module",
-"Panel CPU"
+"G4 wall-mount notification appliance",
+"G4LF low-frequency notification appliance",
+"G1 compact notification appliance"
 ],
 correct:0,
-explanation:"In the Edwards library, GCS series devices are categorized as ceiling mount speakers and speaker-strobes."
+explanation:"E85001-1025 identifies the Genesis LED GCS Series as ceiling-mount speakers and speaker-strobes.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1025", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Application" }
 },
 
 {
@@ -2630,6 +2638,8 @@ answers:[
 ],
 correct:0,
 explanation:"Its listed purpose is control relay interfacing between panel logic and external circuits."
+,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0644", manufacturer:"Edwards", verified:true, sourcePage:"1-3", sourceSection:"Description; Application; Specifications" }
 },
 
 {
@@ -2648,6 +2658,8 @@ answers:[
 ],
 correct:0,
 explanation:"The signal module entry explains Class A as a return-path topology concept in life safety circuit design."
+,
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0609", manufacturer:"Edwards", verified:true, sourcePage:"1-2, 5", sourceSection:"Overview; Application; Ordering Information" }
 },
 
 {
@@ -2657,15 +2669,16 @@ lesson:10,
 category:"Edwards Product Library",
 difficulty:"Medium",
 product:"Genesis LED G4 Series Wall Mount Notification Devices",
-question:"Which configurable pair is associated with Genesis notification devices?",
+question:"Which configuration pair is explicitly documented for Genesis G4 notification devices?",
 answers:[
 "Candela output and flash rate",
-"Device address and loop class only",
-"CO threshold and heat threshold",
-"CPU clock and memory size"
+"16 to 33 VDC operating voltage and 12 to 18 AWG wiring",
+"G4TR and G4TW trim plates",
+"G4RSB and G4WSB surface-mount boxes"
 ],
 correct:0,
-explanation:"Genesis descriptions reference selectable candela output and flash rate among field-configurable options."
+explanation:"E85001-0668 states that Genesis LED clear strobes and horn-strobes may be set for 15, 30, 75, or 110 candela and approximately 1 fps flash rate.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0668", manufacturer: "Edwards", verified: true, sourcePage: "3-4", sourceSection: "Field Configuration; Specifications" }
 },
 
 {
@@ -2675,15 +2688,16 @@ lesson:10,
 category:"Edwards Product Library",
 difficulty:"Hard",
 product:"Genesis LED G1 Series Compact Notification Devices",
-question:"What best describes the Genesis LED G1 Series?",
+question:"Which documented category should be used when scoping the Genesis LED G1 Series?",
 answers:[
 "A compact notification appliance within the Genesis LED family",
-"An intelligent initiating detector",
-"A control relay module",
-"A network firewall module"
+"A G4 wall-mount notification appliance",
+"A G4LF low-frequency notification appliance",
+"A GCS ceiling-mount speaker or speaker-strobe"
 ],
 correct:0,
-explanation:"The G1 series is categorized as a compact notification appliance in the Genesis family."
+explanation:"E85001-0667 identifies the Genesis LED G1 Series as Compact Notification Devices.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "1", sourceSection: "Overview; Genesis LED G1 Series Compact Notification Devices" }
 },
 
 {
@@ -2693,15 +2707,16 @@ lesson:10,
 category:"Edwards Product Library",
 difficulty:"Medium",
 product:"Genesis LED G4LF Series Low Frequency",
-question:"When is the Genesis G4LF series typically selected?",
+question:"Which application is explicitly associated with the Genesis G4LF series?",
 answers:[
-"When low-frequency signaling is required by the design basis",
-"When only SLC communication is needed",
-"When replacing panel CPUs",
-"When adding monitor modules"
+"Low-frequency 520 Hz notification for sleeping areas",
+"G4 wall-mounted public-mode strobe notification",
+"GCS ceiling speaker and speaker-strobe notification",
+"G1 compact notification appliances"
 ],
 correct:0,
-explanation:"The G4LF entry is tied to low-frequency signaling applications and panel-driven notification logic."
+explanation:"E85001-1052 states that G4LF notification appliances meet 520 Hz low-frequency audible requirements and are suitable for sleeping areas.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Audible Signal Application" }
 },
 
 {
@@ -2711,15 +2726,16 @@ lesson:10,
 category:"Edwards Product Library",
 difficulty:"Medium",
 product:"Genesis LED GCS Series Ceiling Mount Speakers and Speaker-Strobes",
-question:"Which application description aligns with Genesis GCS ceiling speaker-strobes?",
+question:"Which device category is explicitly identified for the Genesis LED GCS Series?",
 answers:[
-"Ceiling-mounted audible/visual notification in configured system logic",
-"Loop isolation for SLC faults",
-"Panel-to-panel communications bridging",
-"Detection-only initiating service"
+"Ceiling-mounted speakers and speaker-strobes",
+"G4 wall-mounted notification appliances",
+"G4LF low-frequency horns and horn-strobes",
+"G1 compact notification devices"
 ],
 correct:0,
-explanation:"The GCS entry describes ceiling-mounted speaker-strobe notification controlled by configured system logic."
+explanation:"E85001-1025 identifies the Genesis LED GCS Series as ceiling-mount speakers and speaker-strobes.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1025", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Application" }
 },
 
 {
@@ -2985,6 +3001,8 @@ question:"Which Genesis family is the low-frequency horn-strobe rather than the 
 answers:["G4LF","G4LFV","G4 Series standard wall appliance","GCS ceiling speaker-strobe"],
 correct:1,
 explanation:"G4LF is the Genesis LED wall-mount low-frequency horn. G4LFV is the distinct low-frequency horn-strobe."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1, 5", sourceSection: "Overview; Model Number Syntax, Appliances" }
 },
 {
 id:198,
@@ -2994,9 +3012,11 @@ category:"Product Recognition",
 difficulty:"Medium",
 product:"G4LF Genesis LED Wall-Mount Low-Frequency Horn",
 question:"What audible frequency is documented for the Genesis G4LF/G4LFV low-frequency appliances?",
-answers:["250 Hz","520 Hz","1,000 Hz","60 Hz"],
-correct:1,
+answers:["520 Hz","12 to 18 AWG","16 to 33 VDC","GRSW-10 room-side wiring plate"],
+correct:0,
 explanation:"The supplied Genesis datasheets document 520 Hz low-frequency audible output."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Audible Signal Application" }
 },
 {
 id:199,
@@ -3009,6 +3029,8 @@ question:"A drawing specifies a G4LFV appliance mounted on a 4-inch octagon box.
 answers:["G4TR red trim plate","GRT-10 removal tool","GOCT 4-inch octagon box adapter plate","G4RSB red surface-mount box"],
 correct:2,
 explanation:"GOCT is the documented 4-inch octagon box adapter plate required for the G4LF/G4LFV to 4-inch octagon box installation relationship."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "2, 5", sourceSection: "Installation; Accessories" }
 },
 {
 id:200,
@@ -3021,6 +3043,8 @@ question:"Which Genesis accessory is the required room-side wiring plate and is 
 answers:["GRT-10","GRSW-10","G4TW","G4WSB"],
 correct:1,
 explanation:"GRSW-10 is the required room-side wiring plate and is ordered separately in packs of 10."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "2, 5-6", sourceSection: "Installation; Accessories; Specifications" }
 },
 {
 id:201,
@@ -3030,9 +3054,11 @@ category:"Wiring",
 difficulty:"Medium",
 product:"G4LF Genesis LED Wall-Mount Low-Frequency Horn",
 question:"Which conductor range is documented for the applicable Genesis appliance wiring?",
-answers:["20–24 AWG","6–8 AWG","12–18 AWG","2–4 AWG"],
-correct:2,
+answers:["12 to 18 AWG","16 to 33 VDC","15, 30, 75, or 110 candela","GOCT 4-inch octagon box adapter plate"],
+correct:0,
 explanation:"The supplied Genesis datasheets document 12–18 AWG wiring."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1, 6", sourceSection: "Standard Features; Specifications" }
 },
 {
 id:202,
@@ -3045,6 +3071,8 @@ question:"A takeoff calls for a wall-mounted low-frequency horn-strobe on a 4-in
 answers:["G4LF only, with no room-side wiring plate","G4LFV, GRSW-10, and GOCT","G4TW and G4WSB only","GRT-10 for each appliance, with no adapter plate"],
 correct:1,
 explanation:"The appliance is G4LFV. GRSW-10 is the required room-side wiring plate, and GOCT is required for the documented 4-inch octagon box relationship."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "2, 5", sourceSection: "Installation; Accessories" }
 },
 {
 id:203,
@@ -3057,6 +3085,8 @@ question:"What is G1A in the Genesis G1 family?",
 answers:["A wall-mounted strobe","A wall-mounted horn","A wall-mounted horn-strobe","A ceiling speaker-strobe"],
 correct:1,
 explanation:"G1A is the Genesis LED compact wall-mount horn family."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances" }
 },
 {
 id:204,
@@ -3069,6 +3099,8 @@ question:"Which G1 family provides strobe-only notification?",
 answers:["G1AV","G1A","G1V","G4LFV"],
 correct:2,
 explanation:"G1V is the Genesis LED compact wall-mount strobe family. G1A is horn-only and G1AV is horn-strobe."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances" }
 },
 {
 id:205,
@@ -3081,6 +3113,8 @@ question:"Which G1 family provides both audible and visual notification?",
 answers:["G1V","G1A","GCS","G1AV"],
 correct:3,
 explanation:"G1AV is the wall-mounted horn-strobe family, providing both audible and visual notification."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances" }
 },
 {
 id:206,
@@ -3093,6 +3127,8 @@ question:"A drawing specifies a wall-mounted audible and visual notification app
 answers:["G1ARF","G1VRF","G1AVRF","G1AVRN"],
 correct:2,
 explanation:"G1AV is the horn-strobe family, R identifies red housing, and F identifies FIRE marking, producing G1AVRF."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances; Notification Appliances Color Marking" }
 },
 {
 id:207,
@@ -3105,6 +3141,8 @@ question:"A drawing lists seven new wall horn-strobe locations with red housing 
 answers:["G1A — Qty 7","G1VRF — Qty 7","G1AVRF — Qty 7","G4LFV — Qty 7"],
 correct:2,
 explanation:"The G1AV function is horn-strobe, R is red housing, F is FIRE marking, and the drawing has seven new locations."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances; Notification Appliances Color Marking" }
 },
 
 {
@@ -3114,15 +3152,16 @@ lesson:10,
 category:"Fundamentals",
 difficulty:"Hard",
 product:"EST4 Network Components",
-question:"A campus project requires multiple EST4 systems to communicate across a network. Which component relationship should the design review account for?",
+question:"Which EST4 component roles are documented for networked-system review?",
 answers:[
-"Network controllers, with network expansion components such as extenders or adders as required by the design",
+"Network controllers, network extenders, and network adder modules",
 "Only detector bases and manual stations",
 "Only NAC appliances with no network hardware",
 "A standalone iO64 with no network components"
 ],
 correct:0,
-explanation:"The EST4 product material identifies network controllers for system communication and network extenders or network adder modules for network expansion where the design requires them."
+explanation:"The Edwards component sheets document distinct roles for network controllers, network extenders, and network adder modules. The sheets do not determine which combination a particular project requires.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0008/E85014-0009/E85014-0015", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Network Controllers; EST4 Network Extender; EST4 Network Adder Module" }
 },
 {
 id:209,
@@ -3148,15 +3187,16 @@ lesson:10,
 category:"Fundamentals",
 difficulty:"Medium",
 product:"EST4 Audio Units and Interfaces",
-question:"A project requires emergency voice messages to be distributed to designated audio zones. Which EST4 relationship should be reviewed?",
+question:"Which documented EST4 components are associated with voice-audio review?",
 answers:[
-"Audio units/interfaces paired with zoned audio amplifiers",
-"Detector bases paired with monitor modules",
-"Network firewalls paired with pull stations",
-"NAC isolators paired with waterflow switches"
+"Audio units/interfaces and zoned audio amplifiers",
+"Detector bases and monitor modules",
+"Network firewalls and pull stations",
+"NAC isolators and waterflow switches"
 ],
 correct:0,
-explanation:"The EST4 product material identifies audio units and interfaces for voice evacuation and emergency communications, with zoned audio amplifiers distributing messages to designated audio zones."
+explanation:"The Edwards audio and amplifier sheets document audio units/interfaces and zoned audio amplifiers as EST4 voice-audio components. They do not establish project-specific zone distribution or sizing.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0017", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Audio Units and Interfaces; Zoned Audio Amplifiers" }
 },
 {
 id:211,
@@ -3165,7 +3205,7 @@ lesson:10,
 category:"Fundamentals",
 difficulty:"Hard",
 product:"EST4 and iO Series",
-question:"A project requires a modular, high-capacity platform for fire alarm, mass notification, and building integration, with possible EST3 migration needs. Which family should be evaluated first?",
+question:"Which Edwards platform is documented for fire alarm, mass notification, and building integration in an EST3 migration context?",
 answers:[
 "EST4",
 "iO64 only",
@@ -3173,7 +3213,8 @@ answers:[
 "Genesis G1"
 ],
 correct:0,
-explanation:"The Academy material describes EST4 as a modular, high-capacity platform for fire alarm, mass notification, and building integration, with backward compatibility to EST3 infrastructure."
+explanation:"The EST4 overview documents fire alarm, mass notification, building integration, and backward compatibility with EST3 wiring, devices, and most local rail modules. It does not establish universal compatibility for every EST3 component or a universal platform-selection rule.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0001", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Overview; Backward Compatibility" }
 },
 {
 id:212,
@@ -3182,7 +3223,7 @@ lesson:10,
 category:"Fundamentals",
 difficulty:"Medium",
 product:"EST4 Network Firewall",
-question:"An EST4 networked system requires security hardware to protect communications from external cyber threats. Which component addresses that requirement?",
+question:"Which EST4 component is documented as an interface between EST4 and outside networks?",
 answers:[
 "EST4 network firewall",
 "EST4 remote annunciator",
@@ -3190,7 +3231,8 @@ answers:[
 "SIGA-CT1"
 ],
 correct:0,
-explanation:"The EST4 product material describes network firewalls as security hardware that protects the EST4 network from external cyber threats."
+explanation:"The Edwards firewall sheet documents 4-FWAL as a secure interface between EST4 and outside networks. The source does not establish broader cybersecurity capabilities or a specific threat-protection claim.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0012", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Network Firewalls" }
 },
 {
 id:213,
@@ -3199,7 +3241,7 @@ lesson:10,
 category:"Fundamentals",
 difficulty:"Medium",
 product:"EST4 Central Processing Unit",
-question:"When reviewing an EST4 configuration, which component is responsible for processing and operating the platform rather than providing a remote user interface?",
+question:"Which EST4 component is documented as the nexus for system-wide network communication, node control, and audio data?",
 answers:[
 "Central processing unit",
 "Remote annunciator",
@@ -3207,7 +3249,8 @@ answers:[
 "Zoned audio amplifier"
 ],
 correct:0,
-explanation:"The EST4 product material identifies the CPU as the processing hardware responsible for operating the platform. Remote annunciators provide user interface functions, while network and audio components serve different roles."
+explanation:"The Edwards CPU sheet documents the 4-CPU as the nexus for system-wide network communication, node control, and audio data. The source does not establish a broader claim that the CPU alone operates every platform function.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0010", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"EST4 Central Processing Unit" }
 },
 {
 id:214,
@@ -3267,15 +3310,16 @@ lesson:10,
 category:"Scenario",
 difficulty:"Hard",
 product:"EST4 Project Coordination",
-question:"The riser shows a networked EST4 system with voice evacuation, while the equipment schedule lists only a basic panel cabinet. What is the best sales-support response?",
+question:"The riser shows a networked EST4 system with voice evacuation, while the equipment schedule lists only a basic panel cabinet. What should Sales Support do?",
 answers:[
-"Reconcile the riser, schedule, and EST4 requirements, then document the unresolved panel, network, and audio scope before quoting",
+"Reconcile the riser and schedule, then document unresolved EST4 network and audio scope before quoting",
 "Quote the basic cabinet and assume the other components are included",
 "Replace the EST4 with an iO64 without reviewing the project",
 "Ignore the riser because the equipment schedule always controls every detail"
 ],
 correct:0,
-explanation:"The EST4 material identifies separate panel, network, and audio relationships. Conflicting project documents should be reconciled and unresolved scope documented before quote release."
+explanation:"The Edwards documents establish separate EST4 network and audio component roles. They do not establish which project components are required, so conflicting documents should be reconciled and unresolved scope documented.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0001/E85014-0002", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Overview/Networking; EST4 Audio Units and Interfaces" }
 },
 {
 id:218,
@@ -3284,15 +3328,16 @@ lesson:10,
 category:"Estimator",
 difficulty:"Hard",
 product:"EST4 Network and Audio Scope",
-question:"A revision adds EST4 networking and voice evacuation to a project. What qualitative estimating impact should be reviewed before the quote is updated?",
+question:"A revision adds EST4 networking and voice evacuation to a project. Which documented hardware groups should be reviewed to understand the broader EST4 estimating scope before finalizing the BOM?",
 answers:[
-"Additional panel, network, audio, wiring, and related hardware requirements may affect project cost",
-"The revision cannot affect the quote because the control panel remains the same family",
-"Only the color of the notification appliances can change project cost",
-"The added functions eliminate the need to review the BOM"
+"Network components, audio units/interfaces, amplifiers, power supplies, and cabinet scope",
+"Only the control-panel model, because network and audio do not affect the overall scope",
+"Only the notification-appliance color",
+"No BOM review is needed after the revision"
 ],
 correct:0,
-explanation:"The Academy material states that interface devices can affect wiring, hardware, and project costs. EST4 networking and voice evacuation introduce additional documented component relationships that should be reconciled in the estimate."
+explanation:"The Edwards documents identify separate EST4 network, audio, amplifier, power, and cabinet hardware groups. Adding those items generally increases the system hardware and estimating scope, but the sources do not provide internal pricing, confidential commercial values, or a universal required component set.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0001/E85014-0002/E85014-0004/E85014-0017/E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Overview/Networking; Audio Units and Interfaces; Cabinets and Chassis; Zoned Audio Amplifiers; System Power Supplies" }
 },
 {
 id:219,

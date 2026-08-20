@@ -24,6 +24,9 @@ dist/
 build/
 coverage/
 
+# Private manufacturer source/reference material
+_sources/
+
 # IDE local settings
 .vscode/*.log
 

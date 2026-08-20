@@ -20,36 +20,40 @@ answers: [
 ],
 correct: 0,
 explanation: "Official Edwards documentation identifies SIGA-CT2 as a Dual Input Module."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0241", manufacturer: "Edwards", verified: true, sourcePage: "1-2, 4", sourceSection: "Overview; Application; Ordering Information" }
 },
 {
 id: "fbq_003",
 category: "Final Boss",
 difficulty: "Medium",
 product: "Genesis LED GCS Series",
-question: "A ceiling-mount application calls for speaker-strobes, not wall-mounted horn-strobes. Which Genesis notification category should you recognize as the correct fit?",
+question: "A ceiling-mount application calls for speaker-strobes. Which documented Genesis category is the correct fit?",
 answers: [
 "Ceiling speaker and speaker-strobe family",
 "Wall-mount horn-strobe family",
-"Low-frequency signaling family",
-"Compact detector accessory family"
+"G4LF low-frequency horn and horn-strobe family",
+"G1 compact notification family"
 ],
 correct: 0,
-explanation: "Ceiling speaker-strobes are recognized as the Genesis ceiling speaker and speaker-strobe category, which is distinct from wall-mount and low-frequency notification families."
+explanation: "E85001-1025 identifies the Genesis LED GCS Series as ceiling-mount speakers and speaker-strobes.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1025", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Application" }
 },
 {
 id: "fbq_004",
 category: "Final Boss",
 difficulty: "Medium",
-product: "SIGA-AB4G",
-question: "What type of Signature accessory is SIGA-AB4G?",
+product: "SIGA-OSHCD",
+question: "Which set of mounting-base options is listed for SIGA-OSHCD?",
 answers: [
-"Audible Sounder Base",
-"Remote LED Indicator",
-"Standard Detector Base",
-"Isolator Module"
+"Standard, relay, fault-isolator, and audible bases",
+"Only a standard base",
+"Only a relay base",
+"No base options are listed"
 ],
 correct: 0,
-explanation: "SIGA-AB4G is an audible sounder base accessory used at the detector base location."
+explanation: "The Edwards SIGA-OSHCD document lists standard, relay, fault-isolator, and audible mounting bases as documented base options.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1004", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Intelligent Multisensor Smoke, Heat, CO Detector" }
 },
 {
 id: "fbq_005",
@@ -80,6 +84,8 @@ answers: [
 ],
 correct: 0,
 explanation: "Reverse-polarity relay behavior is a distinct relay-function category, not just a generic control module. The correct fit is a reverse-polarity control relay module."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0239", manufacturer: "Edwards", verified: true, sourcePage: "1-2, 5", sourceSection: "Overview; Application; Ordering Information" }
 },
 {
 id: "fbq_008",
@@ -112,34 +118,20 @@ correct: 0,
 explanation: "Two-step activation is a double-action manual-station function, which is distinct from a single-action pull station and from module-based interfaces."
 },
 {
-id: "fbq_010",
-category: "Final Boss",
-difficulty: "Medium",
-product: "Detector Bases",
-question: "Which pair correctly identifies a standard 4-inch base and a 4-inch isolator base?",
-answers: [
-"SIGA-SB4 and SIGA-IB4",
-"SIGA-SB and SIGA-SB4",
-"SIGA-IB and SIGA-SB",
-"SIGA-AB4G and SIGA-SB4"
-],
-correct: 0,
-explanation: "SIGA-SB4 is the standard 4-inch base and SIGA-IB4 is the 4-inch isolator base."
-},
-{
 id: "fbq_011",
 category: "Final Boss",
 difficulty: "Hard",
 product: "Genesis LED G4LF",
-question: "A design narrative explicitly requires low-frequency occupant notification. Which product characteristic should stand out as the deciding recognition factor?",
+question: "A design narrative explicitly requires low-frequency occupant notification. Which documented Genesis family matches that requirement?",
 answers: [
-"Low-frequency signaling requirement",
-"Wall-mount horn-strobe layout",
-"Ceiling speaker-strobe mounting",
-"Detector base sounder output"
+"G4LF low-frequency horns and horn-strobes",
+"G4 wall-mount notification appliances",
+"GCS ceiling speakers and speaker-strobes",
+"G1 compact notification devices"
 ],
 correct: 0,
-explanation: "Low-frequency signaling is the key recognition factor for the Genesis low-frequency notification family; this is an application-driven classification rather than a part-number lookup."
+explanation: "E85001-1052 identifies the Genesis LED G4LF Series as low-frequency horns and horn-strobes and documents 520 Hz audible requirements.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Audible Signal Application" }
 },
 {
 id: "fbq_013",
@@ -161,15 +153,16 @@ id: "fbq_014",
 category: "Final Boss",
 difficulty: "Medium",
 product: "SIGA-UM",
-question: "A project requires the verified Signature universal module that supports both Class A and Class B wiring topologies. Which module type should you recognize?",
+question: "A project requires the documented Signature module whose personality codes include Class A/B input, NAC, two-wire smoke, and Form C relay applications. Which module should you recognize?",
 answers: [
-"Universal Class A/B signal module",
-"Single-output control module",
-"Dual-input monitor module",
-"Isolator module"
+"SIGA-UM Universal Class A/B Module",
+"SIGA-CT2 Dual Input Module",
+"SIGA-CC2 Dual Input Signal Module",
+"SIGA-IM2 Fault Isolator Module"
 ],
 correct: 0,
-explanation: "The official Edwards module sheet identifies SIGA-UM as a Universal Class A/B Module."
+explanation: "E85001-0275 identifies SIGA-UM as a Universal Class A/B Module and documents its personality-code applications, including Class A/B inputs, NAC, two-wire smoke, and a Form C relay.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0275", manufacturer: "Edwards", verified: true, sourcePage: "1, 3-4", sourceSection: "Overview; Application (Personality Codes)" }
 },
 {
 id: "fbq_015",
@@ -185,6 +178,8 @@ answers: [
 ],
 correct: 0,
 explanation: "Official Edwards documentation identifies SIGA-CT1 as a Single Input Module; the configured application should be checked against the product documentation."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0241", manufacturer: "Edwards", verified: true, sourcePage: "1-2, 4", sourceSection: "Overview; Application; Ordering Information" }
 },
 
 // Part Number Mastery (15)
@@ -294,21 +289,6 @@ correct: 0,
 explanation: "CC2 is a Dual Input Signal Module for the applicable signal/riser application."
 },
 {
-id: "fbq_027",
-category: "Final Boss",
-difficulty: "Hard",
-product: "SIGA-SB4",
-question: "A drawing indicates 4-inch boxes and standard bases, not isolator bases. Which part number most directly fits?",
-answers: [
-"SIGA-SB4",
-"SIGA-IB4",
-"SIGA-SB",
-"SIGA-AB4G"
-],
-correct: 0,
-explanation: "SB4 is the standard 4-inch base. IB4 is the isolator 4-inch base."
-},
-{
 id: "fbq_029",
 category: "Final Boss",
 difficulty: "Hard",
@@ -317,11 +297,12 @@ question: "Which series pairing is accurate for these applications: wall-mount n
 answers: [
 "G4 for wall-mount notification, GCS for ceiling speaker-strobes",
 "GCS for wall-mount notification, G4 for ceiling speaker-strobes",
-"G4LF for all wall and ceiling speaker-strobes",
-"G1 for ceiling speaker-strobes, GCS for compact wall devices"
+"G4LF for wall low-frequency horns and horn-strobes, G1 for compact notification devices",
+"G1 for compact notification devices, G4LF for ceiling speaker-strobes"
 ],
 correct: 0,
-explanation: "G4 identifies wall notification, while GCS identifies ceiling speaker and speaker-strobe products."
+explanation: "E85001-0668 identifies G4 wall-mount notification appliances, while E85001-1025 identifies GCS ceiling speakers and speaker-strobes.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0668; E85001-1025", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Application" }
 },
 {
 id: "fbq_030",
@@ -371,34 +352,20 @@ correct: 0,
 explanation: "Double action pull stations are used where a two-step manual action is required."
 },
 {
-id: "fbq_035",
-category: "Final Boss",
-difficulty: "Medium",
-product: "Detector Bases",
-question: "A BOM shows detector heads but no bases. What application-level check is most important before release?",
-answers: [
-"Verify required detector bases and compatibility are included",
-"Replace all heads with pull stations",
-"Convert all devices to NAC appliances",
-"Assume bases are built into every detector"
-],
-correct: 0,
-explanation: "Detector bases are often separate line items and should be confirmed during BOM review."
-},
-{
 id: "fbq_036",
 category: "Final Boss",
 difficulty: "Medium",
 product: "Genesis G4LF",
-question: "A project specifically calls out low-frequency occupant notification. Which application direction is most appropriate?",
+question: "Which application is explicitly associated with Genesis G4LF notification appliances?",
 answers: [
-"Investigate Genesis G4LF products",
-"Default to any G4 wall model",
-"Use GCS ceiling speakers only",
-"Use monitor modules as audible outputs"
+"520 Hz low-frequency notification for sleeping areas",
+"G4 wall-mounted public-mode strobe notification",
+"GCS ceiling speaker and speaker-strobe notification",
+"G1 compact notification appliances"
 ],
 correct: 0,
-explanation: "Low-frequency requirement points to the G4LF family."
+explanation: "E85001-1052 states that G4LF notification appliances meet 520 Hz low-frequency audible requirements and are suitable for sleeping areas.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Audible Signal Application" }
 },
 {
 id: "fbq_037",
@@ -507,21 +474,6 @@ explanation: "Official Edwards documentation identifies SIGA-CC2 as a Dual Input
 },
 // Modules and Systems (15)
 {
-id: "fbq_046",
-category: "Final Boss",
-difficulty: "Easy",
-product: "SLC",
-question: "In an addressable architecture, what is the SLC primarily responsible for?",
-answers: [
-"Panel-to-device communication",
-"Primary horn/strobe power",
-"Battery charging",
-"Building internet connectivity"
-],
-correct: 0,
-explanation: "SLC is the communication path between the panel and addressable field devices."
-},
-{
 id: "fbq_047",
 category: "Final Boss",
 difficulty: "Medium",
@@ -595,21 +547,6 @@ answers: [
 ],
 correct: 0,
 explanation: "Tamper is typically supervisory because it indicates a system impairment state that needs attention."
-},
-{
-id: "fbq_055",
-category: "Final Boss",
-difficulty: "Hard",
-product: "SLC Troubles",
-question: "A panel reports SLC trouble while NACs test normally. Which subsystem should be prioritized first in troubleshooting?",
-answers: [
-"SLC wiring and addressable device path",
-"NAC appliance quantity",
-"Audio amplifier tuning",
-"Door holder magnet voltage"
-],
-correct: 0,
-explanation: "When SLC trouble is present, start with SLC path integrity and connected addressable devices."
 },
 {
 id: "fbq_056",

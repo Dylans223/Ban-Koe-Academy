@@ -247,6 +247,8 @@ answers: [
 ],
 correct: 0,
 explanation: "Official Edwards documentation identifies the SIGA-CC1 as a Single Input Signal Module for signal/riser circuit applications."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0237", manufacturer: "Edwards", verified: true, sourcePage: "1-2, 6", sourceSection: "Overview; Application; Ordering Information" }
 },
 
 {
@@ -263,6 +265,8 @@ answers: [
 ],
 correct: 0,
 explanation: "Official Edwards documentation identifies the SIGA-CT1 as a Single Input Module."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0241", manufacturer: "Edwards", verified: true, sourcePage: "1-2, 4", sourceSection: "Overview; Application; Ordering Information" }
 },
 
 {
@@ -279,6 +283,8 @@ answers: [
 ],
 correct: 0,
 explanation: "Official Edwards documentation identifies the SIGA-CT2 as a Dual Input Module."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0241", manufacturer: "Edwards", verified: true, sourcePage: "1-2, 4", sourceSection: "Overview; Application; Ordering Information" }
 },
 
 // -----------------------------------------------
@@ -357,12 +363,13 @@ product: "SIGA-CR Control Relay Module",
 question: "The SIGA-CR is described as providing Form C relay contact behavior. In which type of application is this module used?",
 answers: [
 "Interfacing fire alarm panel commands to controlled external circuits",
-"Powering addressable detectors on the SLC",
-"Providing output to horn/strobe notification appliances",
-"Isolating shorted loop segments"
+"Controlling door closers, fans, or dampers with a Form C dry relay contact",
+"Reversing 24 VDC polarity to activate SIGA-AB4G sounder bases",
+"Isolating a shorted Class A loop section"
 ],
 correct: 0,
-explanation: "The SIGA-CR Control Relay Module features Form C relay contacts and is used for auxiliary equipment control — interfacing panel commands to external circuits that need to change state when a fire alarm condition occurs."
+explanation: "E85001-0239 documents SIGA-CR as a Form C dry relay contact for external appliances such as door closers, fans, and dampers; the relay contact state is not supervised.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0239", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Application" }
 },
 
 // -----------------------------------------------
@@ -376,13 +383,14 @@ difficulty: "Easy",
 product: "",
 question: "What is the primary purpose of an isolator module on an addressable circuit?",
 answers: [
-"To help isolate a shorted section so the rest of the loop can continue operating",
+"On a Class A circuit, to isolate a shorted section so the remaining loop can continue operating",
 "To provide additional power to the SLC",
 "To replace a damaged detection device",
 "To automatically reset the panel after a fault"
 ],
 correct: 0,
-explanation: "An isolator electronically isolates a shorted section of an addressable circuit. The remaining portions of the loop beyond the isolator can continue to communicate with the panel, preserving system coverage during a fault."
+explanation: "E85001-0272 documents SIGA-IM2 for Class A circuits: it isolates a shorted section so the remaining data loop can continue operating.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0272 (printed page 1 identifies E85001-0271)", manufacturer: "Edwards", verified: true, sourcePage: "1-3", sourceSection: "Overview; Application; Typical Wiring" }
 },
 
 {
@@ -408,13 +416,14 @@ difficulty: "Medium",
 product: "",
 question: "On an addressable SLC loop, a short circuit occurs in one section. If an isolator is present near the fault, what does it do?",
 answers: [
-"It electronically isolates the shorted section, allowing devices on the rest of the loop to continue communicating",
+"On the documented Class A circuit, it electronically isolates the shorted section, allowing the remaining loop to continue communicating",
 "It increases loop power to overcome the short",
 "It automatically repairs the wiring damage",
 "It generates an alarm condition and silences the system"
 ],
 correct: 0,
-explanation: "When a short occurs on an addressable loop, an isolator can electronically disconnect the affected segment. Devices on the far side of the isolator maintain communication with the panel, limiting the scope of the fault."
+explanation: "E85001-0272 states that SIGA-IM2 is used only on Class A circuits and isolates the shorted section so the remaining data loop can continue operating.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0272 (printed page 1 identifies E85001-0271)", manufacturer: "Edwards", verified: true, sourcePage: "1-3", sourceSection: "Overview; Application; Typical Wiring" }
 },
 
 {
@@ -424,13 +433,15 @@ difficulty: "Hard",
 product: "",
 question: "Why are isolator modules typically placed at intervals throughout an addressable loop rather than only at one location near the panel?",
 answers: [
-"To limit the number of devices that lose communication when a short fault occurs at any given point",
+"On a Class A circuit, to limit the number of devices that lose communication when a short fault occurs at any given point",
 "To increase the maximum device count on the loop",
 "To provide additional power distribution at each segment",
 "To create separate independent SLC networks"
 ],
 correct: 0,
 explanation: "Isolators placed throughout a loop limit the scope of a fault. Without distributed isolators, a single short anywhere on the loop affects all devices between the panel and the fault. With isolators at intervals, only the segment between two adjacent isolators is lost."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0272 (printed page 1 identifies E85001-0271)", manufacturer: "Edwards", verified: true, sourcePage: "1-3", sourceSection: "Overview; Application; Typical Wiring" }
 },
 
 // -----------------------------------------------
@@ -678,10 +689,11 @@ id:53,
 category:"Wiring",
 difficulty:"Medium",
 product:"G4LF Genesis LED Wall-Mount Low-Frequency Horn",
-question:"Which wire-size range is documented for the Genesis low-frequency appliance wiring?",
-answers:["20–24 AWG","12–18 AWG","6–8 AWG","2–4 AWG"],
-correct:1,
-explanation:"The supplied Genesis datasheets document 12–18 AWG wiring."
+question:"Which documented Genesis specification gives the applicable wiring range?",
+answers:["12–18 AWG","16–33 VDC operating voltage","15, 30, 75, or 110 candela","GRSW-10 room-side wiring plate"],
+correct:0,
+explanation:"E85001-1052 specifies 12 to 18 AWG in-out screw terminals for G4LF Series appliances.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1, 6", sourceSection: "Standard Features; Specifications" }
 },
 {
 id:54,
@@ -692,26 +704,19 @@ question:"What installation relationship does GRSW-10 represent?",
 answers:["The 4-inch octagon box adapter plate","The red device/cover removal tool","The required room-side wiring plate ordered separately in packs of 10","The white surface-mount box"],
 correct:2,
 explanation:"GRSW-10 is the required room-side wiring plate and is ordered separately in packs of 10."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "2, 5-6", sourceSection: "Installation; Accessories; Specifications" }
 },
 {
 id:55,
 category:"Wiring",
 difficulty:"Hard",
 product:"GOCT 4-Inch Octagon Box Adapter Plate",
-question:"A G4LF appliance is specified on a 4-inch octagon box. What should the estimator verify in the wiring/mounting relationship?",
-answers:["That a second SLC address is assigned","That GRT-10 is ordered per appliance","That the appliance is changed to a ceiling speaker","That the documented GOCT adapter plate is included"],
+question:"A G4LF appliance is specified on a 4-inch octagon box. Which documented component should the estimator verify?",
+answers:["GRSW-10 room-side wiring plate","GRT-10 device and cover removal tool, 10-pack","G4WSB white wall 4-inch surface-mount box","GOCT 4-inch octagon box adapter plate"],
 correct:3,
-explanation:"The datasheet relationship identifies GOCT as required when installing the G4LF/G4LFV appliance onto a 4-inch octagon box."
-},
-{
-id:56,
-category:"Wiring",
-difficulty:"Medium",
-product:"G4LFV Genesis LED Wall-Mount Low-Frequency Horn-Strobe",
-question:"Which statement accurately distinguishes the G4LFV from the G4LF during a signaling-appliance takeoff?",
-answers:["G4LFV is the required room-side wiring plate; G4LF is the adapter","G4LFV is the low-frequency horn-strobe; G4LF is the low-frequency horn","G4LFV is a ceiling speaker; G4LF is a detector","G4LFV and G4LF are interchangeable model names"],
-correct:1,
-explanation:"G4LFV includes the horn-strobe function, while G4LF is the horn-only low-frequency appliance."
+explanation:"E85001-1052 states that GOCT is required when installing a G4LF Series appliance onto a 4-inch octagon box.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "2, 5", sourceSection: "Installation; Accessories" }
 },
 {
 id:57,
@@ -722,6 +727,8 @@ question:"Which functional distinction matters when connecting a G1 notification
 answers:["All G1 models are speaker-strobes","G1A is horn, G1V is strobe, and G1AV is horn-strobe","G1V is horn-only and G1A is strobe-only","G1AV is a detector base"],
 correct:1,
 explanation:"The G1 family separates audible, visual, and combined audible/visual functions: G1A horn, G1V strobe, G1AV horn-strobe."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances" }
 },
 {
 id:58,
@@ -732,6 +739,8 @@ question:"A wall notification circuit requires both audible and visual output, a
 answers:["Horn only","Strobe only","Horn-strobe","Speaker-strobe"],
 correct:2,
 explanation:"G1AV identifies the wall-mounted horn-strobe function; RF identifies the red FIRE-marked variant."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances; Notification Appliances Color Marking" }
 }
 
 ];

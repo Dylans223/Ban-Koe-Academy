@@ -19,44 +19,12 @@ product: "SIGA-CT1 Single Input Module",
 question: "Which product is identified by the part number SIGA-CT1?",
 answers: [
 "Single Input Module",
-"Single Input Signal Module",
-"Control Relay Module",
-"Intelligent Isolator Module"
-],
-correct: 0,
-explanation: "Official Edwards documentation identifies SIGA-CT1 as a Single Input Module."
-},
-
-{
-id: 2,
-category: "PartNumber",
-difficulty: "Easy",
-product: "SIGA-CC1 Single Input Signal Module",
-question: "Which product is identified by the part number SIGA-CC1?",
-answers: [
-"Single Input Signal Module",
-"Single Input Module",
-"Intelligent Isolator Module",
-"Universal Signal Module"
-],
-correct: 0,
-explanation: "Official Edwards documentation identifies SIGA-CC1 as a Single Input Signal Module for signal/riser circuit applications."
-},
-
-{
-id: 3,
-category: "PartNumber",
-difficulty: "Easy",
-product: "SIGA-CT2 Dual Input Module",
-question: "Which product is identified by the part number SIGA-CT2?",
-answers: [
 "Dual Input Module",
-"Dual Input Signal Module",
-"Control Relay Module",
-"Universal Class A/B Signal Module"
+"Single Input Signal Module",
+"Control Relay Module"
 ],
 correct: 0,
-explanation: "Official Edwards documentation identifies SIGA-CT2 as a Dual Input Module."
+explanation: "E85001-0241 identifies SIGA-CT1 as a Single Input Module.",
 },
 
 {
@@ -105,6 +73,7 @@ answers: [
 ],
 correct: 0,
 explanation: "Official Edwards documentation identifies SIGA-CC2 as a Dual Input Signal Module for signal/riser circuit applications."
+,
 },
 
 {
@@ -145,38 +114,6 @@ explanation: "Official Edwards documentation identifies SIGA-CC1 as a Single Inp
 },
 
 {
-id: 10,
-category: "PartNumber",
-difficulty: "Easy",
-product: "Genesis LED G4 Series Wall Mount Notification Devices",
-question: "A project requires wall-mount notification appliances from the Genesis LED product family. Which series should you investigate?",
-answers: [
-"Genesis LED G4 Series",
-"Genesis LED GCS Series",
-"Genesis LED G4LF Series",
-"Genesis LED G1 Series"
-],
-correct: 0,
-explanation: "The Genesis LED G4 Series covers Wall Mount Notification Devices. GCS is ceiling-mount speakers; G4LF is low-frequency; G1 is compact notification."
-},
-
-{
-id: 11,
-category: "PartNumber",
-difficulty: "Easy",
-product: "Genesis LED GCS Series Ceiling Mount Speakers and Speaker-Strobes",
-question: "A project requires ceiling-mount speakers and speaker-strobes from the Genesis LED family. Which series should you investigate?",
-answers: [
-"Genesis LED GCS Series",
-"Genesis LED G4 Series",
-"Genesis LED G4LF Series",
-"Genesis LED G1 Series"
-],
-correct: 0,
-explanation: "The Genesis LED GCS Series covers Ceiling Mount Speakers and Speaker-Strobes. The G4 Series is wall-mount notification appliances."
-},
-
-{
 id: 12,
 category: "PartNumber",
 difficulty: "Medium",
@@ -190,6 +127,7 @@ answers: [
 ],
 correct: 0,
 explanation: "Official Edwards documentation identifies SIGA-CT2 as a Dual Input Module."
+,
 },
 
 {
@@ -200,12 +138,13 @@ product: "Genesis LED G4LF Series Low Frequency",
 question: "A project requires low-frequency notification appliances. Which Genesis series is designed for this application?",
 answers: [
 "Genesis LED G4LF Series",
-"Genesis LED G4 Series",
 "Genesis LED GCS Series",
 "Genesis LED G1 Series"
 ],
 correct: 0,
 explanation: "The Genesis LED G4LF Series is the Low Frequency notification product family. The 'LF' identifies low-frequency signaling capability, which is required for specific occupancy types."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1-2, 5", sourceSection: "Overview; Audible Signal Application; Model Number Syntax, Appliances" }
 },
 
 {
@@ -291,6 +230,7 @@ answers: [
 ],
 correct: 0,
 explanation: "SIGA-CRR is the Reverse Polarity Control Relay Module — a specific relay variant for applications requiring reverse-polarity behavior. The standard relay module is SIGA-CR."
+,
 },
 
 {
@@ -319,15 +259,15 @@ id: 23,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "The official module sheets identify SIGA-CC1 as a Single Input Signal Module and SIGA-CC2 as a Dual Input Signal Module. What does the number suffix (1 vs 2) indicate in this naming pattern?",
+question: "Which documented pairing is correct for the Signature CC modules?",
 answers: [
-"The number of signal/input channels (1 = single, 2 = dual)",
-"The product generation number",
-"The mounting configuration type",
-"The Class A or Class B wiring topology"
+"SIGA-CC1 is a Single Input Signal Module; SIGA-CC2 is a Dual Input Signal Module",
+"SIGA-CC1 is a Dual Input Module; SIGA-CC2 is a Single Input Module",
+"SIGA-CC1 is a Control Relay Module; SIGA-CC2 is an Isolator Module",
+"SIGA-CC1 is a detector base; SIGA-CC2 is a notification appliance"
 ],
 correct: 0,
-explanation: "In the Signature CC module family, the number suffix distinguishes single versus dual signal/input channels."
+explanation: "E85001-0237 identifies SIGA-CC1 as a Single Input Signal Module and SIGA-CC2 as a Dual Input Signal Module.",
 },
 
 {
@@ -335,15 +275,15 @@ id: 24,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "The official module sheet identifies SIGA-CT1 as a Single Input Module and SIGA-CT2 as a Dual Input Module. What does the number suffix indicate in the CT module naming?",
+question: "Which documented pairing is correct for the Signature CT modules?",
 answers: [
-"The number of input channels (1 = single, 2 = dual)",
-"The product generation number",
-"The SLC loop assignment",
-"The device address capacity"
+"SIGA-CT1 is a Single Input Module; SIGA-CT2 is a Dual Input Module",
+"SIGA-CT1 is a Dual Input Module; SIGA-CT2 is a Single Input Module",
+"SIGA-CT1 is a Signal Module; SIGA-CT2 is a Control Relay Module",
+"SIGA-CT1 is an Isolator Module; SIGA-CT2 is a detector base"
 ],
 correct: 0,
-explanation: "In the Signature CT module family, the number suffix distinguishes single versus dual input channels."
+explanation: "E85001-0241 identifies SIGA-CT1 as a Single Input Module and SIGA-CT2 as a Dual Input Module.",
 },
 
 {
@@ -359,7 +299,7 @@ answers: [
 "Input module category"
 ],
 correct: 0,
-explanation: "Official Edwards documentation identifies the CC family entries as signal modules with single or dual signal/input channels."
+explanation: "E85001-0237 identifies the CC family entries as Signal Modules: SIGA-CC1 is Single Input Signal and SIGA-CC2 is Dual Input Signal.",
 },
 
 {
@@ -367,7 +307,7 @@ id: 26,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "Looking at SIGA-CT1 (Single Input Module) and SIGA-CT2 (Dual Input Module): what module function does the 'CT' portion identify?",
+question: "Which documented category applies to the Signature CT modules?",
 answers: [
 "Input module category",
 "Signal module category",
@@ -375,7 +315,7 @@ answers: [
 "Sounder base category"
 ],
 correct: 0,
-explanation: "Official Edwards documentation identifies the CT family entries as single or dual input modules."
+explanation: "E85001-0241 identifies the CT family entries as Input Modules: SIGA-CT1 is Single Input and SIGA-CT2 is Dual Input.",
 },
 
 {
@@ -441,10 +381,11 @@ answers: [
 "SIGA-CRR provides reverse-polarity relay behavior; SIGA-CR is the standard Form C relay variant",
 "SIGA-CRR has two relay outputs; SIGA-CR has one",
 "SIGA-CRR is Class A capable; SIGA-CR is Class B only",
-"SIGA-CRR is a monitor module; SIGA-CR is a control module"
+"SIGA-CRR is an isolator module; SIGA-CR is a signal module"
 ],
 correct: 0,
 explanation: "Both are control relay modules. SIGA-CRR is specifically designed for applications requiring reverse-polarity relay behavior. SIGA-CR is the standard Form C relay variant for auxiliary equipment control."
+,
 },
 
 {
@@ -562,6 +503,7 @@ answers: [
 ],
 correct: 0,
 explanation: "The official Edwards high-power relay sheet identifies SIGA-CRH as the High Power Control Relay Module."
+,
 },
 
 {
@@ -690,6 +632,7 @@ answers: [
 ],
 correct: 0,
 explanation: "The official Edwards Class A/B module sheet identifies SIGA-UM as a Universal Class A/B Module."
+,
 },
 
 {
@@ -989,6 +932,8 @@ question:"Using the documented Genesis syntax, what does G4LFVRF identify?",
 answers:["G4 ceiling appliance, LF low-frequency horn, W white housing, N no marking","G4 wall appliance, LFV low-frequency horn-strobe, W white housing, A ALERT marking","G4 wall-mount appliance, LFV low-frequency horn-strobe, R red housing, F FIRE marking","G4 compact appliance, LF standard horn, R red housing, F-FR FIRE/FEU marking"],
 correct:2,
 explanation:"The supplied syntax documents G4 as the Genesis wall-mount appliance, LFV as low-frequency horn-strobe, R as red housing, and F as FIRE marking."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances" }
 },
 {
 id:85,
@@ -999,6 +944,8 @@ question:"What is the documented distinction between G4LF and G4LFV?",
 answers:["G4LF is ceiling-mounted; G4LFV is a detector base","G4LF is the low-frequency horn; G4LFV is the low-frequency horn-strobe","G4LF is white; G4LFV is always red","G4LF is a removal tool; G4LFV is a trim plate"],
 correct:1,
 explanation:"G4LF and G4LFV are separate Genesis families: LF identifies the low-frequency horn, while LFV identifies the low-frequency horn-strobe."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1, 5", sourceSection: "Overview; Model Number Syntax, Appliances" }
 },
 {
 id:86,
@@ -1009,6 +956,8 @@ question:"What does GRSW-10 represent in a Genesis takeoff?",
 answers:["A red 4-inch surface-mount box","A device/cover removal tool for one appliance","The required room-side wiring plate, ordered separately in a 10-pack","A white G4 trim plate"],
 correct:2,
 explanation:"GRSW-10 is the required room-side wiring plate and is ordered separately in packs of 10."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "2, 5-6", sourceSection: "Installation; Accessories; Specifications" }
 },
 {
 id:87,
@@ -1019,6 +968,8 @@ question:"In the documented Genesis housing-marking syntax, which code indicates
 answers:["F","F-SP","A","F-FR"],
 correct:3,
 explanation:"The supplied Genesis syntax identifies F-FR as FIRE/FEU, F as FIRE, F-SP as FUEGO, and A as ALERT."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances" }
 },
 {
 id:88,
@@ -1029,6 +980,8 @@ question:"Using the documented G1 syntax, what does G1AVRF identify?",
 answers:["A white Genesis G1 wall-mounted ALERT strobe","A red Genesis G1 wall-mounted FIRE horn","A red Genesis G1 wall-mounted FIRE horn-strobe","A red Genesis G4 low-frequency horn-strobe"],
 correct:2,
 explanation:"G1 is the Genesis wall-mount appliance, AV is horn-strobe, R is red, and F is FIRE."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances; Notification Appliances Color Marking" }
 },
 {
 id:89,
@@ -1039,6 +992,8 @@ question:"What does AV indicate in a documented G1 model number?",
 answers:["Horn only","Strobe only","Surface-mount box","Horn-strobe"],
 correct:3,
 explanation:"AV identifies the G1 horn-strobe function. A identifies horn and V identifies strobe."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances" }
 },
 {
 id:90,
@@ -1049,6 +1004,8 @@ question:"What does R indicate in a documented G1 model number?",
 answers:["White housing","No marking","Red housing","FIRE marking"],
 correct:2,
 explanation:"R identifies the red housing option; W identifies white housing."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances" }
 },
 {
 id:91,
@@ -1059,6 +1016,8 @@ question:"What does N indicate in a documented G1 model number?",
 answers:["FIRE marking","FUEGO marking","ALERT marking","No marking"],
 correct:3,
 explanation:"N identifies no marking. F, F-FR, F-SP, and A identify the documented marking options."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances" }
 },
 {
 id:92,
@@ -1069,6 +1028,8 @@ question:"Which item is a G1 accessory rather than a primary notification applia
 answers:["G1AVRF horn-strobe","G1TR red trim ring","G1ARF horn","G1VRF strobe"],
 correct:1,
 explanation:"G1TR is the red G1 trim ring accessory. G1AVRF, G1ARF, and G1VRF are primary notification appliance variants."
+,
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Ordering Information; Accessories; Notification Appliances Color Marking" }
 },
 
 ];

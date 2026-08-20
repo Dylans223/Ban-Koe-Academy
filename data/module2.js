@@ -943,7 +943,7 @@ lesson:9,
 category:"Edwards Product Library",
 difficulty:"Medium",
 product:"EST4",
-question:"Which EST4 capability supports remote status access without being tied to one device type?",
+question:"Which EST4 capability is documented for remote, device-independent access to system status reports?",
 answers:[
 "On-board webserver access",
 "Local bell silence switch",
@@ -951,7 +951,8 @@ answers:[
 "A Class B NAC circuit"
 ],
 correct:0,
-explanation:"The EST4 platform documentation includes an on-board webserver for remote, device-independent access to status reports."
+explanation:"The EST4 overview documents an on-board webserver for remote, device-independent access to system status reports. This item does not establish remote control, programming, authentication, or cybersecurity behavior.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0001", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Overview" }
 },
 
 {
@@ -1015,15 +1016,16 @@ lesson:9,
 category:"Edwards Product Library",
 difficulty:"Medium",
 product:"Signature Optica Smoke and CO Detector",
-question:"How should Sales Support distinguish this Signature Optica model from the smoke/heat/CO variant?",
+question:"Which sensing combination is documented for SIGA-OSCD compared with SIGA-OSHCD?",
 answers:[
-"By confirming it is specifically the smoke-and-CO model",
-"By assuming all Optica models include heat",
-"By treating it as a notification appliance",
-"By assigning it to Genesis"
+"OSCD provides smoke and CO sensing; OSHCD provides smoke, heat, and CO sensing",
+"OSCD provides smoke and heat only; OSHCD provides CO only",
+"Both models are notification appliances",
+"Both models are EST4 network modules"
 ],
 correct:0,
-explanation:"The model naming and library entries separate smoke-and-CO from smoke/heat/CO combinations."
+explanation:"Edwards documents SIGA-OSCD as an intelligent multisensor smoke and CO detector and SIGA-OSHCD as an intelligent multisensor smoke, heat, and CO detector.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-1002/E85001-1004", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Intelligent Multisensor Smoke and CO Detector; Intelligent Multisensor Smoke, Heat, CO Detector" }
 },
 
 {
@@ -1032,16 +1034,17 @@ module:2,
 lesson:9,
 category:"Edwards Product Library",
 difficulty:"Medium",
-product:"Intelligent CO Detector",
-question:"Which Edwards family includes the Intelligent CO Detector?",
+product:"SIGA-COD Intelligent CO Detector",
+question:"Which controller is SIGA-COD documented as compatible with?",
 answers:[
-"Signature Series",
-"EST4",
-"Genesis",
-"Edge Series"
+"Signature Loop Controller",
+"EST4 4-CPU",
+"Genesis notification controller",
+"Edge network accessory"
 ],
 correct:0,
-explanation:"The updated Edwards product library groups the Intelligent CO Detector within Signature Series entries."
+explanation:"The Edwards SIGA-COD document states that the detector is compatible only with the Signature Loop Controller.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0648", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Intelligent CO Detector; Compatibility" }
 },
 
 {
@@ -1054,12 +1057,13 @@ product:"High Power Control Relay Module",
 question:"Which use case matches a high power control relay module in fire alarm integration?",
 answers:[
 "Interfacing panel logic to controlled external circuits",
-"Detecting smoke in HVAC ducts",
-"Providing visible strobe output",
-"Hosting network node programming"
+"SIGA-CR Form C Control Relay Module",
+"SIGA-CRR Polarity Reversal Relay Module",
+"SIGA-IM2 Fault Isolator Module"
 ],
 correct:0,
-explanation:"The high power control relay module is listed as an I/O control interface category device, not a detector or notification appliance."
+explanation:"E85001-0644 documents SIGA-CRH as a High Power Control Relay Module for external appliances or equipment shutdown, with two Form C contacts.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0644", manufacturer:"Edwards", verified:true, sourcePage:"1-3", sourceSection:"Description; Application; Specifications" }
 },
 
 {
@@ -1072,12 +1076,13 @@ product:"Signal Modules with Class A Operation",
 question:"In this product listing, Class A operation is most closely tied to what concept?",
 answers:[
 "Return-path circuit topology for survivability goals",
-"Detector sensitivity level",
-"Network login permissions",
-"Speaker wattage selection"
+"SIGA-CRH High Power Control Relay Module",
+"SIGA-IM2 Fault Isolator Module",
+"SIGA-UM Universal Class A/B Module"
 ],
 correct:0,
-explanation:"The product description context links Class A operation to circuit topology in life safety output design."
+explanation:"E85001-0609 identifies the referenced product as a Class A signal-module category; the exact circuit behavior is source-specific.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0609", manufacturer:"Edwards", verified:true, sourcePage:"1-2, 5", sourceSection:"Overview; Application; Ordering Information" }
 },
 
 {
@@ -1087,15 +1092,16 @@ lesson:9,
 category:"Edwards Product Library",
 difficulty:"Medium",
 product:"Genesis LED G4 Series Wall Mount Notification Devices",
-question:"Which configuration options are associated with Genesis notification devices?",
+question:"Which configuration pair is explicitly documented for Genesis G4 notification devices?",
 answers:[
 "Selectable candela output and flash rate",
-"Detector address map upload",
-"Panel CPU frequency setting",
-"Ground fault module isolation"
+"16 to 33 VDC operating voltage and 12 to 18 AWG wiring",
+"G4TR and G4TW trim plates",
+"G4RSB and G4WSB surface-mount boxes"
 ],
 correct:0,
-explanation:"The Genesis library language includes configurable candela and flash-rate options."
+explanation:"E85001-0668 states that Genesis LED clear strobes and horn-strobes may be set for 15, 30, 75, or 110 candela and approximately 1 fps flash rate.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0668", manufacturer: "Edwards", verified: true, sourcePage: "3-4", sourceSection: "Field Configuration; Specifications" }
 },
 
 {
@@ -1105,15 +1111,16 @@ lesson:9,
 category:"Edwards Product Library",
 difficulty:"Hard",
 product:"Genesis LED G1 Series Compact Notification Devices",
-question:"Why is it important to keep G1 compact models distinct in quoting?",
+question:"Which documented category should be used when scoping the Genesis LED G1 Series?",
 answers:[
 "They are a compact notification category and should not be treated as detector or module products",
-"They replace all control panels",
-"They are network gateways",
-"They are detector base adapters"
+"They are G4 wall-mount notification appliances",
+"They are G4LF low-frequency notification appliances",
+"They are GCS ceiling-mount speakers and speaker-strobes"
 ],
 correct:0,
-explanation:"The G1 line is categorized as compact notification appliances in Genesis, so it should be scoped as notification hardware."
+explanation:"E85001-0667 identifies the Genesis LED G1 Series as Compact Notification Devices.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "1", sourceSection: "Overview; Genesis LED G1 Series Compact Notification Devices" }
 },
 
 {
@@ -1123,15 +1130,16 @@ lesson:9,
 category:"Edwards Product Library",
 difficulty:"Medium",
 product:"Genesis LED G4LF Series Low Frequency",
-question:"When is the G4LF series most appropriate?",
+question:"Which application is explicitly associated with the Genesis G4LF series?",
 answers:[
-"When low-frequency signaling is part of the design basis",
-"When a new SLC loop is needed",
-"When adding control relays",
-"When replacing EST3X network nodes"
+"Low-frequency 520 Hz notification for sleeping areas",
+"G4 wall-mounted public-mode strobe notification",
+"GCS ceiling speaker and speaker-strobe notification",
+"G1 compact notification appliances"
 ],
 correct:0,
-explanation:"The G4LF entry is tied to low-frequency signaling applications controlled by panel output logic."
+explanation:"E85001-1052 states that G4LF notification appliances meet 520 Hz low-frequency audible requirements and are suitable for sleeping areas.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Audible Signal Application" }
 },
 
 {
@@ -1141,15 +1149,16 @@ lesson:9,
 category:"Edwards Product Library",
 difficulty:"Hard",
 product:"Genesis LED GCS Series Ceiling Mount Speakers and Speaker-Strobes",
-question:"What best describes the GCS series role in a life safety system?",
+question:"Which device category is explicitly identified for the Genesis LED GCS Series?",
 answers:[
-"Ceiling-mounted audible/visual notification endpoints driven by configured system logic",
-"Loop isolator modules",
-"Intelligent initiating detectors",
-"Panel networking backbones"
+"Ceiling-mounted speakers and speaker-strobes",
+"G4 wall-mounted notification appliances",
+"G4LF low-frequency horns and horn-strobes",
+"G1 compact notification devices"
 ],
 correct:0,
-explanation:"The GCS series is categorized as ceiling-mount speaker/speaker-strobe notification devices in the updated library."
+explanation:"E85001-1025 identifies the Genesis LED GCS Series as ceiling-mount speakers and speaker-strobes.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1025", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Application" }
 },
 
 {
@@ -1401,17 +1410,17 @@ module:2,
 lesson:11,
 category:"Estimator",
 difficulty:"Hard",
-product:"EST4 Remote Audio Cabinets",
-question:"A project drawing places EST4 audio equipment in a remote cabinet, but the equipment schedule lists only the main cabinet. What should the estimator verify?",
+product:"EST4 Audio and Cabinet Scope",
+question:"A project drawing and equipment schedule show different EST4 audio and cabinet scope. What should the estimator do?",
 answers:[
-"Whether the remote cabinet, audio modules, amplifier, and associated power relationships are included in the documented scope",
-"Whether the remote cabinet can be deleted because all audio belongs in the main cabinet",
-"Whether detector bases should be used as the remote audio enclosure",
-"Whether the drawing should be ignored when the schedule is shorter"
+"Compare the drawing and schedule against the documented audio, amplifier, and cabinet component roles, then record unresolved scope",
+"Delete the cabinet from the BOM because all audio belongs in the main cabinet",
+"Use detector bases as the audio enclosure",
+"Ignore the drawing when the schedule is shorter"
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0004/E85014-0017", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Audio Units and Interfaces; Cabinets and Chassis; Zoned Audio Amplifiers" },
-explanation:"Edwards documents audio components that mount in EST4 cabinets and describes cabinet arrangements for system equipment. The remote-cabinet scope should be reconciled before the BOM is finalized."
+explanation:"The Edwards documents identify audio units/interfaces, amplifiers, and cabinet arrangements as separate component roles. They do not establish a universal remote-cabinet requirement, so conflicting project documents must be reconciled without assuming the final configuration."
 },
 {
 id:132,
@@ -1438,16 +1447,16 @@ lesson:11,
 category:"Scenario",
 difficulty:"Hard",
 product:"EST4 Audio and Notification Coordination",
-question:"A drawing labels a device as a speaker-strobe, while the specification describes an EST4 voice-audio system. What is the best review approach?",
+question:"A drawing labels a device as a speaker-strobe, while the specification describes an EST4 voice-audio system. What should Sales Support record for review?",
 answers:[
-"Reconcile the endpoint description with the documented EST4 audio units, amplifier, speaker-circuit, and notification scope before selecting the BOM line",
-"Assume every speaker-strobe is interchangeable with every EST4 audio component",
-"Treat the label as an audio amplifier and omit the system audio review",
-"Replace the device with a detector because the specification is more detailed"
+"The conflicting endpoint and system descriptions, together with the documented EST4 audio-component roles",
+"That every speaker-strobe is interchangeable with every EST4 audio component",
+"That the label alone identifies the audio amplifier",
+"That the device should be replaced with a detector"
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0017", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Audio Units and Interfaces; Zoned Audio Amplifiers" },
-explanation:"The Edwards documents distinguish modular audio components and zoned amplifiers from endpoint notification devices. Conflicting endpoint and system descriptions require scope reconciliation before selection."
+explanation:"The Edwards sheets document audio units/interfaces and zoned amplifiers, but they do not establish a universal relationship between a drawing label and a particular endpoint. Record the discrepancy and reconcile it before selecting a BOM line."
 },
 {
 id:134,
@@ -1456,16 +1465,16 @@ lesson:12,
 category:"Fundamentals",
 difficulty:"Medium",
 product:"EST4 Cabinets and Chassis",
-question:"A panel specification requires two color LCD touch screens plus LED and switch modules at the cabinet. Which cabinet-scope fact should Sales Support verify?",
+question:"Which cabinet/display relationship is documented for EST4?",
 answers:[
-"Whether the selected EST4 cabinet/chassis arrangement supports that documented display and module configuration",
-"Whether the displays can be replaced by detector bases",
-"Whether the network firewall supplies the cabinet mounting space",
-"Whether the audio amplifier removes the need for a chassis"
+"The cabinet sheet documents arrangements supporting up to two color LCD touch screens and LED/switch module configurations",
+"Every EST4 cabinet supports any display arrangement without review",
+"The network firewall supplies cabinet mounting space",
+"The audio amplifier removes the need for a chassis"
 ],
 correct:0,
-source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0004", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Cabinets and Chassis" },
-explanation:"The official Edwards cabinet sheet documents arrangements supporting up to two color LCD touch screens and LED/switch module configurations. The selected cabinet/chassis arrangement should be reconciled with the specified display scope."
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0004", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"EST4 Cabinets and Chassis" },
+explanation:"E85014-0004 documents the stated cabinet/display arrangement. The source does not establish that every cabinet variant supports every display configuration, so a selected cabinet must still be checked against the document."
 },
 {
 id:135,
@@ -1600,16 +1609,16 @@ lesson:13,
 category:"Scenario",
 difficulty:"Hard",
 product:"EST4 Network Extender",
-question:"A project team reports a 4-NET-XT link problem but provides no panel screenshots or equipment details. Which documented information should Sales Support gather before escalating the issue?",
+question:"Which documented 4-NET-XT status information should be recorded when a link issue is reported?",
 answers:[
-"The Power, DSL, Ethernet, and Link Trouble LED states and the documented extender location/run context",
+"The Power, DSL, Ethernet, and Link Trouble LED states",
 "A replacement part selected solely from the symptom",
 "Instructions to bypass the link supervision",
 "A new cable size chosen without reviewing the design"
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0009", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Network Extender" },
-explanation:"The official Edwards network-extender sheet identifies Power, DSL, Ethernet, and Link Trouble status LEDs. Gathering those documented observations and the equipment context supports escalation without assuming a failed component or directing field repair."
+explanation:"The official Edwards network-extender sheet identifies Power, DSL, Ethernet, and Link Trouble status LEDs. Record those documented indicators for appropriate technical review; the source does not provide a repair or fault-diagnosis procedure."
 },
 {
 id:143,
@@ -1672,16 +1681,16 @@ lesson:13,
 category:"Scenario",
 difficulty:"Hard",
 product:"EST4 Power Supply and Local Rail",
-question:"A support request says several local-rail modules are affected, but no power-supply or display information is included. What system-level information should be requested before assigning a cause?",
+question:"Which documented system information should be recorded when several local-rail modules are reported as affected?",
 answers:[
 "The affected modules, power-supply arrangement, local-rail relationship, and documented status indications",
-"Only the product price of the affected module",
+"Only an unrelated module detail",
 "A definite failed power supply selected from the symptom alone",
 "Instructions to disconnect the local rail"
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"System Power Supplies" },
-explanation:"The official power-supply sheet documents the monitor-module and local-rail power relationship. It does not identify a failed component from a symptom alone, so the relevant configuration and status information should be gathered before escalation."
+explanation:"The official power-supply sheet documents the power relationship between system supplies and local-rail modules. Record the affected modules, arrangement, and status information for appropriate technical review; the source does not establish a cause or repair procedure."
 },
 {
 id:147,
