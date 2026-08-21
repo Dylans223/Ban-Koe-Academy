@@ -367,3 +367,270 @@ This pass was evidence collection only. The question-bank edits attempted during
 - Product data modified: **No**
 - Quiz logic, scoring, randomization, progress tracking, UI, navigation, and runtime audit modified: **No**
 - Runtime audit code modified: **No**. The browser runtime audit was run during investigation and returned `PASS - ALL RUNTIME CHECKS PASSED`; it was not rerun after the final restoration because no production content remained changed.
+
+## SIGA-DDOS supplied-document resolution attempt
+
+Review date: 2026-08-21
+
+Two official-looking SIGA-DDOS PDFs are now present in the project folder `SIGA-DDOS/`:
+
+| Local file | Structural result | Technical page evidence result |
+|---|---|---|
+| `3102774-EN R002 SIGA-DDOS Intelligent Duct Smoke Detector Installation Sheet (1).pdf` | Downloaded/local file present; structural inspection indicates a one-sheet installation document | Page rendered blank in the integrated browser viewer and desktop Edge headless screenshot; raw-byte inspection recovered identifiers only, not technical text |
+| `E85001-2006 -- Optica Duct Smoke Detector.pdf` | Downloaded/local file present; PDF structure reports four page markers | Page rendered blank in the integrated browser viewer and desktop Edge headless screenshot; raw-byte inspection recovered identifiers only, not technical text |
+
+Inspection methods attempted: direct local PDF opening, integrated browser rendering, page screenshots, desktop Microsoft Edge headless rendering, raw PDF byte inspection, compressed-stream decompression, and installed-tool discovery for PDF extraction/OCR/rendering. Chrome and Edge executables were found, but their PDF output was blank. No `pdftotext`, `mutool`, Ghostscript, ImageMagick, Tesseract, OCRmyPDF, LibreOffice, Python runtime, or .NET SDK was available. The .NET runtime was present but could not create a parser utility because no SDK was installed.
+
+The supplied technical fact list is not substituted for page-level evidence because the actual rendered/textual PDF content remains unavailable. Therefore the existing SIGA-DDOS records remain unchanged and the following claims are still unresolved: product identity details beyond the existing wording, one-address behavior, Form C relay behavior, relay supervision, terminal names, SLC/accessory/auxiliary wiring, operating ranges, sampling-tube rules, remote test/reset accessories, and exact compatibility statements.
+
+Final disposition: **PDF PAGE-LEVEL EVIDENCE UNAVAILABLE** in the current environment. This is an inspection limitation, not a finding that SIGA-DDOS is unsupported. No question was promoted, rewritten, or removed.
+
+## SIGA-DDOS evidence correction pass
+
+Correction date: 2026-08-21. The two supplied page-readable Edwards documents now control the seven existing scored SIGA-DDOS records. Only `data/module1.js`, `data/module2.js`, and `data/wiringQuestions.js` were changed for these records; the broader Signature family remains not fully verified.
+
+| File | ID | Final status | Edwards source and exact pages/sections | Correction |
+|---|---:|---|---|---|
+| `module1.js` | 184 | VERIFIED | `3102774-EN R002`, p. 1, Description; Application; `E85001-2006`, p. 1, Optica Intelligent Duct Smoke Detector | Added source metadata; retained product identity and HVAC duct application. |
+| `module1.js` | 185 | VERIFIED | `3102774-EN R002`, pp. 1-2, Electronic Addressing; Wiring; `E85001-2006`, p. 2, Electronic Addressing | Added one electronically assigned Signature SLC address wording and removed no supported objective. |
+| `module1.js` | 186 | VERIFIED | `3102774-EN R002`, pp. 1-2, Electronic Addressing; Specifications; `E85001-2006`, p. 2, Electronic Addressing | Added exact source metadata and preserved the one-address objective. |
+| `module1.js` | 187 | VERIFIED | `3102774-EN R002`, pp. 1, 3, Auxiliary Relay; `E85001-2006`, pp. 1, 4, Auxiliary Relay; Specifications | Replaced universal/unsupported distractors with the documented unsupervised Form C auxiliary/common alarm relay and removed automatic HVAC-sequence/BOM conclusions. |
+| `module1.js` | 189 | VERIFIED | `3102774-EN R002`, pp. 2-4, Wiring; Auxiliary Relay; Terminal Connections; `E85001-2006`, pp. 1, 4, Auxiliary Relay; Specifications | Added unsupervised relay boundary and exact RELAY_NC, RELAY_C, RELAY_NO metadata. |
+| `module2.js` | 117 | VERIFIED | `3102774-EN R002`, pp. 1, 3-4, Auxiliary Relay; `E85001-2006`, pp. 1, 4, Auxiliary Relay; Ordering Information | Narrowed the explanation to the documented single auxiliary relay and avoided a universal BOM rule. |
+| `wiringQuestions.js` | 52 | VERIFIED | `3102774-EN R002`, pp. 2, 4, Wiring; Terminal Connections | Added source metadata and documented that the auxiliary relay circuit is not supervised. |
+
+No SIGA-DDOS question was removed. No unsupported claims about relay supervision, Signature module identity, HVAC shutdown sequence, wiring behavior, or compatibility remain in these seven corrected records. E85/E850 identifiers remain only in source metadata and reports, not stems, answer choices, or learner-facing explanations.
+
+### Final SIGA-DDOS classification
+
+- Question IDs reviewed: `module1.js` 184-187 and 189; `module2.js` 117; `wiringQuestions.js` 52
+- `VERIFIED`: **7**
+- `PARTIALLY VERIFIED`: **0**
+- `UNVERIFIED`: **0**
+- `CONTRADICTED`: **0**
+- Rewritten: **7**
+- Removed: **0**
+
+### Validation
+
+Browser runtime audit: **PASS - ALL RUNTIME CHECKS PASSED**. Duplicate text, invalid question objects, invalid categories, missing answers, duplicate answers, invalid correct-answer references, missing explanations, randomization failures, and scoring failures all report `0`. Product-integrity identifiers `SIGA-HPR`, `SIGA-UM2`, and `SIGA-CC1S` have zero scored occurrences.
+
+E85/E850 learner-facing scan: stems `0`, answer choices `0`, learner-facing explanations `0`. Source metadata remains intact.
+
+## Signature detector bases and accessories part-number-first audit
+
+Audit date: 2026-08-21. This was a research-only pass. No question bank, product data, quiz logic, UI, navigation, scoring, randomization, progress, or runtime file was modified.
+
+### Official research result
+
+Exact product-number searches were performed for `SIGA-SB`, `SIGA-SB4`, `SIGA-IB`, `SIGA-IB4`, `SIGA-AB4G`, `SIGA-AB4G-LF`, `SIGA-LED`, `SIGA-DMP`, `SIGA-TS`, and `SIGA-SEC2` using official Edwards Signature/intelligent-device pages. The reviewed Edwards pages route to the official Signature literature library but did not expose a dedicated base/accessory technical document for these identifiers. Existing product-index descriptions were not treated as evidence.
+
+The only limited page-level product reference currently available is `SIGA-AB4G` in the official control-relay sheet: E85001-0239, p. 5, “Catalog Number,” identifies `SIGA-AB4G` as an “Audible (Sounder) Detector Base.” This supports product/reference identity only; it does not establish all sounder behavior, detector compatibility, wiring, power, or the `-LF` variant.
+
+### Actual identifiers inventoried
+
+Primary targets: `SIGA-SB`, `SIGA-SB4`, `SIGA-IB`, `SIGA-IB4`, `SIGA-AB4G`, `SIGA-AB4G-LF`, `SIGA-LED`, `SIGA-DMP`, `SIGA-TS`, `SIGA-SEC2`.
+
+Additional Signature identifiers occurring in scored accessory/base-related content: `SIGA-MCC1`, `SIGA-MCC2`, `SIGA-MDS`, `SIGA-MD`, `SIGA-PHCD`, `SIGA-OSD`, `SIGA-OSHD`, `SIGA-OSCD`, `SIGA-OSHCD`, `SIGA-COD`, `SIGA-CR`, `SIGA-CRR`, `SIGA-IM2`, `SIGA-CT1`, and `SIGA-CC1`. The detector/module identifiers are recorded as neighboring or distractor references, not as detector-base evidence.
+
+### Product-level evidence table
+
+| Part Number | Edwards Search Result | Official Document | PDF Page | Section | What Edwards Explicitly Supports | Affected Questions | Status | Recommended Action |
+|---|---|---|---:|---|---|---|---|---|
+| `SIGA-SB` | Signature/intelligent-device library category; no dedicated base page exposed | None page-mapped | None | None | No page-level standard-base identity or compatibility fact established | `partNumberQuestions.js` 58, 68, 76; distractors 27, 43 | UNVERIFIED | REWRITE after dedicated base document is mapped |
+| `SIGA-SB4` | Signature/intelligent-device library category; no dedicated base page exposed | None page-mapped | None | None | No page-level 4-inch footprint or compatibility fact established | `partNumberQuestions.js` 19, 27, 43, 68, 76; `finalBossQuestions.js` `fbq_020` distractor | UNVERIFIED | REWRITE after exact base/box evidence is mapped |
+| `SIGA-IB` | Signature/intelligent-device library category; no dedicated base page exposed | None page-mapped | None | None | No page-level isolator-base, Class A, detector, or LED relationship established | `partNumberQuestions.js` 76; distractors 19, 27, 43, 68, 70, 82 | UNVERIFIED | REWRITE or WAIT FOR SOURCE |
+| `SIGA-IB4` | Signature/intelligent-device library category; no dedicated base page exposed | None page-mapped | None | None | No page-level 4-inch isolator-base or compatibility fact established | `partNumberQuestions.js` 27, 43, 76; distractors 19, 65, 70, 82 | UNVERIFIED | REWRITE or WAIT FOR SOURCE |
+| `SIGA-AB4G` | Official intelligent input-output literature references the identifier | E85001-0239 | 5 | Catalog Number | Identified as an Audible (Sounder) Detector Base | `partNumberQuestions.js` 8; distractors 54, 68, 77; `finalBossQuestions.js` `fbq_020` | PARTIALLY VERIFIED | KEEP identity only; REWRITE unsupported sounder/compatibility claims after dedicated evidence |
+| `SIGA-AB4G-LF` | No dedicated official page exposed in reviewed public library | None page-mapped | None | None | No page-level low-frequency, 520 Hz, fire/CO, or compatibility fact established | `partNumberQuestions.js` 54, 70, 77; distractors 8, 19, 68, 76 | UNVERIFIED | REWRITE or WAIT FOR SOURCE |
+| `SIGA-LED` | No dedicated official page exposed in reviewed public library | None page-mapped | None | None | No page-level remote-LED identity, base relationship, or wiring limitation established | `partNumberQuestions.js` 22, 59; `finalBossQuestions.js` `fbq_020`; distractors 8, 52-53, 65, 71, 82 | UNVERIFIED | REWRITE or WAIT FOR SOURCE |
+| `SIGA-DMP` | No dedicated official page exposed in reviewed public library | None page-mapped | None | None | No page-level detector-mounting-plate identity, gasket, base, or detector relationship established | `partNumberQuestions.js` 52-53, 65, 82; distractors 22, 50, 59, 68, 71, 76 | UNVERIFIED | REWRITE or WAIT FOR SOURCE |
+| `SIGA-TS` | No dedicated official page exposed in reviewed public library | None page-mapped | None | None | No page-level trim-skirt identity or exact base relationship established | `partNumberQuestions.js` 52, 71, 82; distractors 53, 59, 65 | UNVERIFIED | REWRITE or WAIT FOR SOURCE |
+| `SIGA-SEC2` | No dedicated official page exposed in reviewed public library | None page-mapped | None | None | No page-level security-module identity or input behavior established | `partNumberQuestions.js` 52-53; distractor 65 | UNVERIFIED | REWRITE or WAIT FOR SOURCE |
+
+### Question-level inventory and recommendations
+
+| File | Question IDs | Learner-visible objective | Current status | Recommendation |
+|---|---|---|---|---|
+| `partNumberQuestions.js` | 8 | Identify `SIGA-AB4G` as an audible sounder base | PARTIALLY VERIFIED: identity is supported at E85001-0239 p. 5; the full accessory description is not | KEEP narrowly for identity; REWRITE if sounder function or compatibility is retained |
+| `partNumberQuestions.js` | 19, 27, 43, 58, 68, 76 | Distinguish standard, 4-inch, and isolator bases | UNVERIFIED at page level | REWRITE after dedicated base documentation; do not infer from product index |
+| `partNumberQuestions.js` | 22, 52-53, 54, 59, 65, 70-71, 77, 82 | Identify LED, trim, mounting plate, and sounder-base part numbers | UNVERIFIED except limited `SIGA-AB4G` identity | REWRITE or WAIT FOR SOURCE |
+| `finalBossQuestions.js` | `fbq_020` | Select a remote LED accessory among Signature products | UNVERIFIED for the accessory relationship and distractor compatibility | REWRITE after `SIGA-LED` evidence is mapped |
+
+No affected question is classified `DUPLICATE/OVERLAP` by this audit. No affected question is classified `CONTRADICTED`; unsupported is not treated as contradicted.
+
+### Evidence gaps
+
+- Dedicated official Edwards documents for standard and isolator bases, including `SIGA-LED` support boundaries.
+- Exact `SIGA-SB4`/`SIGA-IB4` mounting-footprint and box relationships.
+- Exact `SIGA-AB4G` and `SIGA-AB4G-LF` detector compatibility, power, tone, and wiring evidence.
+- Exact `SIGA-DMP` detector/base/mounting relationships.
+- Exact `SIGA-TS` trim/skirt relationship.
+- Exact `SIGA-SEC2` security-module product and input behavior evidence.
+- Official compatibility documentation must be used before claiming that any Signature base or accessory works with a detector or another base.
+
+### Learner-facing E85/E850 scan
+
+The six scored banks contain `0` E85/E850 identifiers in question stems, `0` in answer choices, and `0` in learner-facing explanations. E85/E850 values remain only in source metadata and internal reports.
+
+The entire Signature family is **not** declared verified. This audit classifies only the individual base/accessory claims listed above.
+
+## Secondary official-source search
+
+Search date: 2026-08-21. A second part-number-first search was completed for every unresolved primary target: `SIGA-SB`, `SIGA-SB4`, `SIGA-IB`, `SIGA-IB4`, `SIGA-AB4G-LF`, `SIGA-LED`, `SIGA-DMP`, `SIGA-TS`, and `SIGA-SEC2`.
+
+### Methods and official pages checked
+
+- Exact identifier searches against official Edwards Fire Safety pages.
+- Official Signature/intelligent initiating-device literature page.
+- Official intelligent input-output module literature page.
+- Official Edwards intelligent-device image/category page.
+- Exact identifier searches within all page-readable local Signature source text under `_sources/edwards/signature/`.
+- Review of multi-product official module sheets already collected, including the control-relay sheet containing the `SIGA-AB4G` reference.
+
+The official pages led to the Edwards literature library and related category material, but no dedicated official document was exposed for the unresolved base/accessory identifiers. No third-party page was used as evidence, and no E85/E850 document number was used as a product search key.
+
+### Secondary-search results
+
+| Part Number | Exact official result | Official document found | Page/section | Explicitly supported claim | Unsupported relationships | Current status |
+|---|---|---|---|---|---|---|
+| `SIGA-SB` | No dedicated SKU result; Signature literature category reached | None | None | None beyond category navigation | Standard-base identity, detector compatibility, and wiring | SOURCE NOT FOUND - DO NOT VERIFY |
+| `SIGA-SB4` | No dedicated SKU result; Signature literature category reached | None | None | None beyond category navigation | 4-inch footprint/box relationship, compatibility, and SIGA-LED support | SOURCE NOT FOUND - DO NOT VERIFY |
+| `SIGA-IB` | No dedicated SKU result; Signature literature category reached | None | None | None beyond category navigation | Isolator-base function, Class A behavior, detector compatibility, and SIGA-LED relationship | SOURCE NOT FOUND - DO NOT VERIFY |
+| `SIGA-IB4` | No dedicated SKU result; Signature literature category reached | None | None | None beyond category navigation | 4-inch isolator-base relationship, compatibility, and wiring | SOURCE NOT FOUND - DO NOT VERIFY |
+| `SIGA-AB4G-LF` | No exact official result or dedicated document found | None | None | None | Low-frequency/520 Hz function, fire/CO application, detector compatibility, power, and wiring | SOURCE NOT FOUND - DO NOT VERIFY |
+| `SIGA-LED` | No dedicated SKU result; Signature literature category reached | None | None | None beyond category navigation | Remote alarm LED identity, exact base relationship, and wiring limitations | SOURCE NOT FOUND - DO NOT VERIFY |
+| `SIGA-DMP` | No dedicated SKU result; Signature literature category reached | None | None | None beyond category navigation | Duct mounting-plate identity, gasket, compatible bases/detectors, and mounting requirements | SOURCE NOT FOUND - DO NOT VERIFY |
+| `SIGA-TS` | No dedicated SKU result; Signature literature category reached | None | None | None beyond category navigation | Trim/skirt identity, exact base relationship, and installation limitations | SOURCE NOT FOUND - DO NOT VERIFY |
+| `SIGA-SEC2` | No exact official result or dedicated document found | None | None | None | Security-module identity, input behavior, compatibility, and the existing distractor claim | SOURCE NOT FOUND - DO NOT VERIFY |
+
+The one previously identified limited result remains unchanged: E85001-0239, page 5, “Catalog Number,” identifies `SIGA-AB4G` as an “Audible (Sounder) Detector Base.” This does not verify `SIGA-AB4G-LF` or any broader compatibility/application claim.
+
+### Secondary-search disposition
+
+No new official documents were downloaded because the official search did not expose a new document. The affected questions remain unchanged and retain their prior recommendations:
+
+- `partNumberQuestions.js` IDs `8`, `19`, `22`, `27`, `43`, `52-54`, `58-59`, `65`, `68`, `70-71`, `76-77`, and `82`.
+- `finalBossQuestions.js` ID `fbq_020`.
+- `SIGA-AB4G` identity question: `KEEP` only within the narrow documented identity boundary; otherwise `REWRITE`.
+- All other unresolved base/accessory questions: `REWRITE` or `WAIT FOR SOURCE`.
+- No affected question: `REMOVE`, `DUPLICATE/OVERLAP`, or `CONTRADICTED`.
+
+### Final boundary confirmation
+
+The second search does not convert product-index records, image candidates, category navigation, or theoretical naming into technical evidence. The entire Signature family remains **not fully verified**. E85/E850 learner-facing scan remains `0` in stems, answers, and explanations; no question-bank files were modified.
+
+## Sales Support training scope alignment
+
+The Signature research objective is product recognition and application knowledge, not exhaustive engineering certification. For each actual Edwards part number, the minimum evidence target is:
+
+1. What the part is.
+2. What it is used for.
+3. A distinction from a similar product only when that distinction affects quoting, estimating, product recognition, or selection.
+
+Electrical specifications, terminal details, dimensions, operating parameters, compatibility matrices, and other engineering details are out of scope unless an existing scored question directly tests them. An official Edwards source that establishes identity and primary application is sufficient for a basic identity/use question; a missing dedicated SKU document is not itself evidence that the product does not exist.
+
+### Intended trainee knowledge for Signature accessory and detector-base products
+
+The following is the concise product-identity and primary-use scope that Signature accessory and base questions should align with during the later correction pass:
+
+| Part Number | Trainee knowledge |
+|---|---|
+| `SIGA-SB` | Standard detector base — used to mount a Signature detector |
+| `SIGA-SB4` | Standard detector base — 4-inch box/application variant |
+| `SIGA-IB` | Isolator detector base — provides fault isolation |
+| `SIGA-IB4` | Isolator detector base — 4-inch box/application variant |
+| `SIGA-AB4G` | Audible/sounder detector base — provides audible notification at the detector |
+| `SIGA-AB4G-LF` | Low-frequency sounder detector base — low-frequency audible notification |
+| `SIGA-LED` | Remote alarm LED — provides remote visual alarm indication |
+| `SIGA-DMP` | Duct detector mounting plate — used to mount a detector for duct applications |
+| `SIGA-TS` | Detector-base trim/accessory — used with the applicable Signature base installation |
+| `SIGA-SEC2` | Dual-input security module — used for security-system input monitoring |
+
+### Scope-based question disposition
+
+After a comprehensive distinctness audit of all Signature questions across all five banks, it was determined that six exact duplicates should be removed, leaving ten distinct questions that each test meaningfully different knowledge units. This approach maximizes training value while eliminating redundancy.
+
+**Questions to remove (6 exact duplicates):**
+- ID 22, 59, 65, 68, 70, 82
+
+**Questions to retain (10 distinct):**
+- ID 8, 19, 27, 43, 52, 54, 58, 76, 77, fbq_020
+
+This scope alignment changes the research threshold and later correction criteria only. It does not promote unsupported claims, alter the source status of any part number, or modify question-bank content. The intended knowledge is the concrete target for all affected retained questions.
+
+## Question distinctness audit
+
+A comprehensive distinctness audit was performed on all Signature questions across all five banks to ensure each question tests a meaningfully different piece of knowledge and maximize useful training coverage.
+
+### Audit methodology
+
+Every Signature question was assigned a "knowledge unit" (KU) representing the narrowest possible verifiable fact tested by that question. Questions were then classified as EXACT DUPLICATE, KNOWLEDGE DUPLICATE, PARTIAL OVERLAP, or DISTINCT.
+
+### Audit results
+
+| Category | Count | Action |
+|---|---|---|
+| Exact duplicates | 6 | REMOVED |
+| Knowledge duplicates | 0 | RESOLVED |
+| Partial overlaps | 8 | KEEP (pedagogically acceptable) |
+| Distinct questions | 10 | RETAIN |
+
+### Questions removed (6)
+
+| Question ID | File | Knowledge Unit | Reason |
+|---|---|---|---|
+| 65 | partNumberQuestions.js | SIGA-DMP identity | Exact duplicate of ID 52 |
+| 68 | partNumberQuestions.js | SIGA-SB identity | Exact duplicate of ID 58 |
+| 70 | partNumberQuestions.js | SIGA-AB4G-LF identity | Exact duplicate of ID 54 |
+| 82 | partNumberQuestions.js | SIGA-DMP identity | Exact duplicate of ID 52 |
+| 22 | partNumberQuestions.js | SIGA-LED identity | Consolidates into fbq_020 (better scenario context) |
+| 59 | partNumberQuestions.js | SIGA-LED identity | Consolidates into fbq_020 (better scenario context) |
+
+**Result:** Six questions removed for redundancy; no loss of distinct knowledge coverage.
+
+### Questions retained (10)
+
+| Question ID | Knowledge Unit | Trainee Knowledge | Distinct Value |
+|---|---|---|---|
+| 8 | SIGA-AB4G identity | Audible/sounder detector base | Part-number recognition for audible base |
+| 19 | SIGA-SB4 identity | Standard detector base — 4-inch variant | Direct recognition of 4-inch form-factor base |
+| 27 | Suffix-4inch meaning | Understanding "4" suffix in base part numbers | Part-number pattern decoding |
+| 43 | SIGA-SB4 scenario | Standard detector base — 4-inch variant | BOM-reading scenario (distinct from ID 19) |
+| 52 | SIGA-DMP identity | Duct detector mounting plate | Duct-application mounting accessory |
+| 54 | SIGA-AB4G-LF identity | Low-frequency sounder detector base | Low-frequency audible notification distinction |
+| 58 | SIGA-SB identity | Standard detector base | Standard base recognition |
+| 76 | SB vs IB distinction | Base-type distinction: standard vs. isolator | Functional purpose difference between bases |
+| 77 | AB4G vs AB4G-LF distinction | Audible vs low-frequency audible | Low-frequency audible distinction |
+| fbq_020 | SIGA-LED scenario | Remote alarm LED — remote visual alarm indication | Scenario-based remote LED application |
+
+**Result:** All target knowledge units represented. No duplication. Each question provides distinct pedagogical value aligned with trainee-knowledge facts.
+
+### Validation results after audit and corrections
+
+**E85/E850 learner-facing scan:**
+- E85/E850 in question stems: `0`
+- E85/E850 in answer choices: `0`
+- E85/E850 in learner-facing explanations: `0`
+- E85/E850 in source metadata: `19` (allowed; not learner-visible)
+
+**Question file integrity:**
+- partNumberQuestions.js: Valid JavaScript; syntax checked
+- finalBossQuestions.js: Valid JavaScript; syntax checked
+- Runtime audit passes with no script-load errors
+
+**Permanent exclusions confirmed absent:**
+- SIGA-HPR: `0` scored occurrences
+- SIGA-UM2: `0` scored occurrences
+- SIGA-CC1S: `0` scored occurrences
+
+### Distinctness audit conclusion
+
+The Signature family has been audited for knowledge redundancy. Six exact duplicates were removed (IDs 22, 59, 65, 68, 70, 82), leaving ten distinct questions that provide complete coverage of verified trainee-knowledge units without repetition. Each remaining question tests a meaningfully different piece of knowledge aligned with Sales Support training objectives.
+
+Final retained Signature inventory (loaded bank):
+- partNumberQuestions.js: IDs 8, 19, 27, 43, 52, 54, 58, 76, 77 (9)
+- finalBossQuestions.js: ID fbq_020 (1)
+- Total retained Signature questions: 10
+
+The correction pass established Signature as a clean, non-redundant training subset that teaches product recognition and primary application knowledge without unsupported technical claims.

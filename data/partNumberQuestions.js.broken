@@ -27,7 +27,6 @@ correct: 0,
 explanation: "SIGA-CT1 is a Single Input Module.",
 },
 
-
 {
 id: 4,
 category: "PartNumber",
@@ -44,7 +43,6 @@ correct: 0,
 explanation: "SIGA-278 is the Double Action Intelligent Pull Station â€” designed for applications where two-step manual initiation is required."
 },
 
-
 {
 id: 5,
 category: "PartNumber",
@@ -60,7 +58,6 @@ answers: [
 correct: 0,
 explanation: "SIGA-270 is the Single Action Intelligent Pull Station in the Edwards Signature manual station family."
 },
-
 
 {
 id: 7,
@@ -79,7 +76,6 @@ explanation: "Official Edwards documentation identifies SIGA-CC2 as a Dual Input
 ,
 },
 
-
 {
 id: 8,
 category: "PartNumber",
@@ -95,7 +91,6 @@ answers: [
 correct: 0,
 explanation: "SIGA-AB4G is the Audible Sounder Base â€” a Signature detector base accessory that provides local audible output at the detector base location."
 },
-
 
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // TYPE 2 â€” DESCRIPTION â†’ PART NUMBER (8 questions)
@@ -118,7 +113,6 @@ correct: 0,
 explanation: "Official Edwards documentation identifies SIGA-CC1 as a Single Input Signal Module."
 },
 
-
 {
 id: 12,
 category: "PartNumber",
@@ -135,7 +129,6 @@ correct: 0,
 explanation: "Official Edwards documentation identifies SIGA-CT2 as a Dual Input Module."
 ,
 },
-
 
 {
 id: 14,
@@ -154,7 +147,6 @@ explanation: "The Genesis LED G4LF Series is the Low Frequency notification prod
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1-2, 5", sourceSection: "Overview; Audible Signal Application; Model Number Syntax, Appliances" }
 },
 
-
 {
 id: 15,
 category: "PartNumber",
@@ -170,7 +162,6 @@ answers: [
 correct: 0,
 explanation: "SIGA-278 is the Double Action Intelligent Pull Station, designed for applications requiring double-action (two-step) operation. SIGA-270 is the single-action variant."
 },
-
 
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // TYPE 3 â€” PART NUMBER â†’ DESCRIPTION (6 questions)
@@ -193,7 +184,6 @@ correct: 0,
 explanation: "SIGA-OSD is the Signature Optica Smoke Detector â€” smoke only. For smoke + heat: SIGA-OSHD. For smoke + heat + CO: SIGA-OSHCD. For CO only: SIGA-COD."
 },
 
-
 {
 id: 18,
 category: "PartNumber",
@@ -209,7 +199,6 @@ answers: [
 correct: 0,
 explanation: "The SIGA-OSHCD is the Signature Optica Smoke, Heat & Carbon Monoxide Detector. It combines all three sensing functions in one device. Compare to SIGA-OSHD (no CO) and SIGA-OSD (smoke only)."
 },
-
 
 {
 id: 19,
@@ -227,7 +216,6 @@ correct: 0,
 explanation: "SIGA-SB4 is the standard detector base with a 4-inch footprint â€” used to mount a Signature detector in 4-inch installation applications."
 },
 
-
 {
 id: 20,
 category: "PartNumber",
@@ -244,7 +232,6 @@ correct: 0,
 explanation: "SIGA-CRR is the Reverse Polarity Control Relay Module â€” a specific relay variant for applications requiring reverse-polarity behavior. The standard relay module is SIGA-CR."
 ,
 },
-
 
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // TYPE 4 â€” PART NUMBER DECODING (8 questions)
@@ -267,7 +254,6 @@ correct: 0,
 explanation: "SIGA-CC1 is a Single Input Signal Module and SIGA-CC2 is a Dual Input Signal Module.",
 },
 
-
 {
 id: 24,
 category: "PartNumber",
@@ -283,7 +269,6 @@ answers: [
 correct: 0,
 explanation: "SIGA-CT1 is a Single Input Module and SIGA-CT2 is a Dual Input Module.",
 },
-
 
 {
 id: 25,
@@ -301,7 +286,6 @@ correct: 0,
 explanation: "The CC family entries are Signal Modules: SIGA-CC1 is Single Input Signal and SIGA-CC2 is Dual Input Signal.",
 },
 
-
 {
 id: 26,
 category: "PartNumber",
@@ -317,7 +301,6 @@ answers: [
 correct: 0,
 explanation: "The CT family entries are Input Modules: SIGA-CT1 is Single Input and SIGA-CT2 is Dual Input.",
 },
-
 
 {
 id: 27,
@@ -335,7 +318,6 @@ correct: 0,
 explanation: "The '4' suffix in Signature base part numbers like SIGA-SB4 and SIGA-IB4 indicates a 4-inch footprint form factor variant."
 },
 
-
 {
 id: 30,
 category: "PartNumber",
@@ -351,7 +333,6 @@ answers: [
 correct: 0,
 explanation: "G4 identifies the wall-mount notification series; GCS identifies the ceiling-mount speaker and speaker-strobe series. These are different product categories within the Genesis notification family."
 },
-
 
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // TYPE 5 â€” SIMILAR PART NUMBERS (5 questions)
@@ -374,7 +355,6 @@ correct: 0,
 explanation: "The official Edwards sheets identify CT1 as a Single Input Module and CC1 as a Single Input Signal Module. The application and module documentation should be verified before selection."
 },
 
-
 {
 id: 33,
 category: "PartNumber",
@@ -392,7 +372,6 @@ explanation: "Both are control relay modules. SIGA-CRR is specifically designed 
 ,
 },
 
-
 {
 id: 35,
 category: "PartNumber",
@@ -408,7 +387,6 @@ answers: [
 correct: 0,
 explanation: "The 'LF' in Genesis G4LF stands for Low Frequency. Low-frequency notification products are applied where low-frequency signaling is specified as part of the design criteria for a particular occupancy."
 },
-
 
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // TYPE 6 â€” REAL-WORLD PART SELECTION (8 questions)
@@ -431,7 +409,6 @@ correct: 3,
 explanation: "For ordinary wall-mounted horn-strobe work that fits the common G1 family, investigate Genesis G1 first. G4 remains legitimate when the project specifically calls for G4 or its documented characteristics."
 },
 
-
 {
 id: 38,
 category: "PartNumber",
@@ -447,7 +424,6 @@ answers: [
 correct: 0,
 explanation: "The Genesis LED G4LF Series is the Low Frequency notification product family. When the design criteria requires low-frequency signaling, G4LF is the appropriate Genesis series."
 },
-
 
 {
 id: 40,
@@ -465,7 +441,6 @@ correct: 0,
 explanation: "SIGA-270 is the Single Action Intelligent Pull Station. Single-action means one motion activates the station. SIGA-278 is the double-action (two-step) variant."
 },
 
-
 {
 id: 41,
 category: "PartNumber",
@@ -482,7 +457,6 @@ correct: 0,
 explanation: "The Genesis GCS Series covers Ceiling Mount Speakers and Speaker-Strobes. For ceiling-mount speaker-strobe applications, GCS is the correct series within the Genesis LED family."
 },
 
-
 {
 id: 43,
 category: "PartNumber",
@@ -498,7 +472,6 @@ answers: [
 correct: 0,
 explanation: "SIGA-SB4 is the standard detector base â€” 4-inch box/application variant â€” used to mount a Signature detector in installations requiring a 4-inch footprint."
 },
-
 
 {
 id: 44,
@@ -517,7 +490,6 @@ explanation: "The official Edwards high-power relay sheet identifies SIGA-CRH as
 ,
 },
 
-
 {
 id: 45,
 category: "PartNumber",
@@ -533,7 +505,6 @@ answers: [
 correct: 0,
 explanation: "SIGA-OSCD identifies the Signature Optica detector that combines smoke and carbon monoxide detection."
 },
-
 
 {
 id: 46,
@@ -551,7 +522,6 @@ correct: 0,
 explanation: "SIGA-COD is the Intelligent Carbon Monoxide Detector in the Edwards Signature product data."
 },
 
-
 {
 id: 48,
 category: "PartNumber",
@@ -567,7 +537,6 @@ answers: [
 correct: 0,
 explanation: "SIGA-PHCD is the Intelligent Multisensor Smoke, Heat and CO Detector."
 },
-
 
 {
 id: 50,
@@ -585,7 +554,6 @@ correct: 0,
 explanation: "SIGA-MDS is the Signature PIR Motion Detector Swivel Mount."
 },
 
-
 {
 id: 52,
 category: "PartNumber",
@@ -601,7 +569,6 @@ answers: [
 correct: 0,
 explanation: "SIGA-TS is the detector-base trim/accessory â€” used with the applicable Signature base installation."
 },
-
 
 {
 id: 53,
@@ -619,7 +586,6 @@ correct: 0,
 explanation: "SIGA-DMP is the duct detector mounting plate â€” used to mount a detector for duct applications."
 },
 
-
 {
 id: 54,
 category: "PartNumber",
@@ -635,7 +601,6 @@ answers: [
 correct: 0,
 explanation: "SIGA-AB4G-LF is the low-frequency sounder detector base â€” low-frequency audible notification for the detector."
 },
-
 
 {
 id: 56,
@@ -654,7 +619,6 @@ explanation: "The official Edwards Class A/B module sheet identifies SIGA-UM as 
 ,
 },
 
-
 {
 id: 58,
 category: "PartNumber",
@@ -670,7 +634,6 @@ answers: [
 correct: 0,
 explanation: "SIGA-SB is the standard detector base â€” used to mount a Signature detector."
 },
-
 
 {
 id: 60,
@@ -688,7 +651,6 @@ correct: 0,
 explanation: "SIGA-OSHD is the Signature Optica Smoke and Heat Detector."
 },
 
-
 {
 id: 61,
 category: "PartNumber",
@@ -704,7 +666,6 @@ answers: [
 correct: 0,
 explanation: "SIGA-OSCD is the Signature Optica Smoke and Carbon Monoxide Detector."
 },
-
 
 {
 id: 62,
@@ -722,7 +683,6 @@ correct: 0,
 explanation: "SIGA-COD is the Intelligent Carbon Monoxide Detector, distinct from the smoke-and-CO detector variants."
 },
 
-
 {
 id: 63,
 category: "PartNumber",
@@ -738,7 +698,6 @@ answers: [
 correct: 0,
 explanation: "The official Edwards high-power relay sheet identifies SIGA-CRH as the High Power Control Relay Module."
 },
-
 
 {
 id: 66,
@@ -756,7 +715,6 @@ correct: 0,
 explanation: "SIGA-MCC2 is the miniature dual-input monitor module; SIGA-MCC1 is the miniature single-input version."
 },
 
-
 {
 id: 71,
 category: "PartNumber",
@@ -772,7 +730,6 @@ answers: [
 correct: 0,
 explanation: "SIGA-MDS is the Signature PIR Motion Detector Swivel Mount; SIGA-MD is the non-swivel PIR motion detector listing."
 },
-
 
 {
 id: 72,
@@ -790,7 +747,6 @@ correct: 0,
 explanation: "SIGA-OSCD is the smoke-and-carbon-monoxide model; SIGA-OSD is the smoke-only model."
 },
 
-
 {
 id: 73,
 category: "PartNumber",
@@ -806,7 +762,6 @@ answers: [
 correct: 0,
 explanation: "SIGA-OSHD is the smoke-and-heat detector; SIGA-OSHCD adds carbon monoxide detection."
 },
-
 
 {
 id: 75,
@@ -824,7 +779,6 @@ correct: 0,
 explanation: "SIGA-MCC2 is the miniature dual-input monitor module; SIGA-MCC1 is the miniature single-input version."
 },
 
-
 {
 id: 76,
 category: "PartNumber",
@@ -840,7 +794,6 @@ answers: [
 correct: 0,
 explanation: "SIGA-SB is the standard detector base â€” used to mount a Signature detector. SIGA-IB is the isolator detector base â€” provides fault isolation."
 },
-
 
 {
 id: 77,
@@ -858,7 +811,6 @@ correct: 0,
 explanation: "SIGA-AB4G is the audible/sounder detector base â€” provides audible notification at the detector. SIGA-AB4G-LF is the low-frequency sounder detector base â€” low-frequency audible notification."
 },
 
-
 {
 id: 78,
 category: "PartNumber",
@@ -875,7 +827,6 @@ correct: 0,
 explanation: "The official Edwards high-power relay sheet identifies SIGA-CRH as the High Power Control Relay Module; SIGA-CR and SIGA-CRR are separate control relay products."
 },
 
-
 {
 id:84,
 category:"PartNumber",
@@ -888,7 +839,6 @@ explanation:"The supplied syntax documents G4 as the Genesis wall-mount applianc
 ,
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances" }
 },
-
 {
 id:85,
 category:"PartNumber",
@@ -901,7 +851,6 @@ explanation:"G4LF and G4LFV are separate Genesis families: LF identifies the low
 ,
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1, 5", sourceSection: "Overview; Model Number Syntax, Appliances" }
 },
-
 {
 id:86,
 category:"PartNumber",
@@ -914,7 +863,6 @@ explanation:"GRSW-10 is the required room-side wiring plate and is ordered separ
 ,
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "2, 5-6", sourceSection: "Installation; Accessories; Specifications" }
 },
-
 {
 id:87,
 category:"PartNumber",
@@ -927,7 +875,6 @@ explanation:"The supplied Genesis syntax identifies F-FR as FIRE/FEU, F as FIRE,
 ,
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances" }
 },
-
 {
 id:88,
 category:"PartNumber",
@@ -940,7 +887,6 @@ explanation:"G1 is the Genesis wall-mount appliance, AV is horn-strobe, R is red
 ,
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances; Notification Appliances Color Marking" }
 },
-
 {
 id:89,
 category:"PartNumber",
@@ -953,7 +899,6 @@ explanation:"AV identifies the G1 horn-strobe function. A identifies horn and V 
 ,
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances" }
 },
-
 {
 id:90,
 category:"PartNumber",
@@ -966,7 +911,6 @@ explanation:"R identifies the red housing option; W identifies white housing."
 ,
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances" }
 },
-
 {
 id:91,
 category:"PartNumber",
@@ -979,7 +923,6 @@ explanation:"N identifies no marking. F, F-FR, F-SP, and A identify the document
 ,
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Model Number Syntax, Appliances" }
 },
-
 {
 id:92,
 category:"PartNumber",
@@ -993,7 +936,5 @@ explanation:"G1TR is the red G1 trim ring accessory. G1AVRF, G1ARF, and G1VRF ar
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "5", sourceSection: "Ordering Information; Accessories; Notification Appliances Color Marking" }
 },
 
-
 ];
-
 

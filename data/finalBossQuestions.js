@@ -36,7 +36,7 @@ answers: [
 "G1 compact notification family"
 ],
 correct: 0,
-explanation: "E85001-1025 identifies the Genesis LED GCS Series as ceiling-mount speakers and speaker-strobes.",
+explanation: "The Genesis LED GCS Series is a ceiling-mount speaker and speaker-strobe family.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1025", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Application" }
 },
 {
@@ -130,7 +130,7 @@ answers: [
 "G1 compact notification devices"
 ],
 correct: 0,
-explanation: "E85001-1052 identifies the Genesis LED G4LF Series as low-frequency horns and horn-strobes and documents 520 Hz audible requirements.",
+explanation: "The Genesis LED G4LF Series provides low-frequency horns and horn-strobes with 520 Hz audible requirements.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Audible Signal Application" }
 },
 {
@@ -161,7 +161,7 @@ answers: [
 "SIGA-IM2 Fault Isolator Module"
 ],
 correct: 0,
-explanation: "E85001-0275 identifies SIGA-UM as a Universal Class A/B Module and documents its personality-code applications, including Class A/B inputs, NAC, two-wire smoke, and a Form C relay.",
+explanation: "SIGA-UM is a Universal Class A/B Module with documented personality-code applications including Class A/B inputs, NAC, two-wire smoke, and a Form C relay.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0275", manufacturer: "Edwards", verified: true, sourcePage: "1, 3-4", sourceSection: "Overview; Application (Personality Codes)" }
 },
 {
@@ -233,15 +233,15 @@ id: "fbq_020",
 category: "Final Boss",
 difficulty: "Medium",
 product: "SIGA-LED",
-question: "A remote visual status indicator is needed. Which Signature part number matches that accessory?",
+question: "A system design calls for remote visual alarm indication. Which Signature accessory provides this function?",
 answers: [
-"SIGA-LED",
-"SIGA-AB4G",
-"SIGA-SB4",
-"SIGA-IM2"
+"SIGA-LED (Remote Alarm LED)",
+"SIGA-AB4G (Audible Sounder Base)",
+"SIGA-SB4 (Standard Detector Base)",
+"SIGA-IM2 (Isolator Module)"
 ],
 correct: 0,
-explanation: "SIGA-LED is the remote LED indicator accessory."
+explanation: "SIGA-LED is the remote alarm LED \u2014 provides remote visual alarm indication."
 },
 {
 id: "fbq_021",
@@ -301,7 +301,7 @@ answers: [
 "G1 for compact notification devices, G4LF for ceiling speaker-strobes"
 ],
 correct: 0,
-explanation: "E85001-0668 identifies G4 wall-mount notification appliances, while E85001-1025 identifies GCS ceiling speakers and speaker-strobes.",
+explanation: "G4 is the wall-mount notification family, while GCS is the ceiling speaker and speaker-strobe family.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0668; E85001-1025", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Application" }
 },
 {
@@ -364,7 +364,7 @@ answers: [
 "G1 compact notification appliances"
 ],
 correct: 0,
-explanation: "E85001-1052 states that G4LF notification appliances meet 520 Hz low-frequency audible requirements and are suitable for sleeping areas.",
+explanation: "G4LF notification appliances meet 520 Hz low-frequency audible requirements and are suitable for sleeping areas.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Audible Signal Application" }
 },
 {

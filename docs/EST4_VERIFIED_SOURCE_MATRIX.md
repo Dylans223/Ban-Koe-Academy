@@ -14,6 +14,67 @@ Source rule: Existing Academy content is not evidence. A claim is verified only 
 | COLLECTED - PAGE REVIEW PENDING | An official Edwards source page exposes the document and the direct PDF is available, but revision/date and page-level claim mapping were not established during this collection pass. |
 | SOURCE NOT FOUND - DO NOT VERIFY | No publicly accessible official Edwards document was located for the requested topic during this pass. |
 
+## iO Series source collection and evidence audit
+
+Audit date: 2026-08-21. This is an evidence-only phase; no question content or product data was modified.
+
+Official Edwards pages reviewed:
+
+- https://www.edwardsfiresafety.com/products/life-safety-systems/intelligent-panels/io
+- https://www.edwardsfiresafety.com/lifelines/control-panel/small-building-fire-alarm-solutions
+- https://www.edwardsfiresafety.com/lifelines/submittal-guides-and-brochures/submittal-guides
+- https://www.edwardsfiresafety.com/lifelines/submittal-guides-and-brochures/platform-brochures
+- https://www.edwardsfiresafety.com/lifelines/cad-drawings
+- https://www.edwardsfiresafety.com/lifelines/images/io
+- https://priority.edwardsfiresafety.com/
+- https://www.edwardsfiresafety.com/lifelines/connected-solutions
+
+The complete iO audit inventory and claim classifications are recorded in `docs/IO_SOURCE_VERIFICATION_REPORT.md`. The reviewed scored set contains direct iO IDs `module1.js` 156, 171, 188, 190-193 and `module2.js` 104, plus iO distractor references in `module1.js` 208, 211, 214, and 217. No direct iO question was found in `questions.js`, `partNumberQuestions.js`, `wiringQuestions.js`, or `finalBossQuestions.js`.
+
+Official documents downloaded into the private, ignored `io/` directory: E85001-0135, E85010-0156, E85005-0132, E85000-0348, E85001-0136, and CAD package 3102535. The local environment could download the PDFs but could not extract PDF text, so PDF page/section mapping remains pending. No question is promoted to `VERIFIED` from web summaries alone.
+
+Local and hosted PDF viewers, page anchors, screenshots, and the available webpage extractor were also attempted for page-level resolution. Both PDF views rendered blank and no alternate OCR/PDF runtime was available; no page number or section is invented as a result.
+
+Initial iO statuses: 0 VERIFIED, 8 PARTIALLY VERIFIED direct questions, 1 UNVERIFIED direct question, 4 UNVERIFIED distractor references, 0 confirmed duplicates, and 0 primary contradictions. ID 217 contains an unsupported universal EST4 replacement claim in a distractor; compatibility must not be inferred. No question content was rewritten.
+
+## iO Series page-level evidence correction pass
+
+Correction date: 2026-08-21. The eight direct iO questions were corrected using the page-level Edwards evidence supplied for E85001-0135. IDs `module1.js` 156, 171, 188, 190-193 and `module2.js` 104 are now `VERIFIED`; each retains source metadata with exact document, page, and section. Four unrelated EST4 distractor references in `module1.js` IDs 208, 211, 214, and 217 were rewritten to remove unsupported iO or compatibility claims.
+
+| Question IDs | Document | Pages | Sections | Evidence applied |
+|---|---|---:|---|---|
+| module1 156, 171; module2 104 | E85001-0135 | 1-2 | iO Series; Features and Benefits | Automatic device mapping, electronic addressing, optional Ethernet, and other documented family features |
+| module1 188 | E85001-0135 | 1 | iO Series | Small to mid-size application positioning |
+| module1 190, 192 | E85001-0135 | 1, 3 | iO64; Device Capacity | One Class A/B intelligent loop and up to 64 intelligent devices/addresses |
+| module1 191 | E85001-0135 | 3, 5 | iO64; Device Capacity; iO-SDC1 | Base iO64 capacity cannot be expanded; iO-SDC1 replacement/expansion boundary |
+| module1 193 | E85001-0135 | 1, 3, 7 | iO64; iO1000; Device Capacity; Loop Configuration | Fixed iO64 capacity and iO1000 expansion in 250-point increments up to 1,000 addresses |
+
+Final mapped correction result: `8 VERIFIED`, `0 PARTIALLY VERIFIED`, `0 UNVERIFIED`, `0 primary CONTRADICTED`, and `0 removed`. Distractor references: `0` retained unchanged, `4` rewritten, `0` removed as questions. No claim for unsupported compatibility, loading, battery calculation, fault code, repair, or unrestricted remote control was promoted.
+
+## EDGE-ML / Edge Series source collection and page-level audit
+
+Audit date: 2026-08-21. Official Edwards Edge Series pages identify the Edge Series as a mid-sized platform with a 10-inch touchscreen, up to 30 remote annunciators, up to four loops at 250 devices per loop, and a documented iO1000/iO500 migration boundary covering initiating devices, notification devices, wiring, and backboxes. These are webpage claims and are not substituted for PDF page evidence.
+
+Official Edge documents identified and downloaded privately: E85008-0001 (EDGE-ML Fire Alarm Systems Datasheet), E85008-0002 (EDGE-ML Control Display Modules), E85008-0003 (Edge Networking Accessories Datasheet), E85008-0100 (Edge Fire Alarm Systems Brochure), and E85008-0101 (Edge Submittal Guide). The local PDF viewer rendered the priority E85008-0001 page blank, so no PDF page or section is asserted without readable inspection.
+
+Actual Edge identifiers recorded for later product-focused review: `EDGE-ML`, `EDGE-ML-G`, `EDGE-ML-R`, `EDGE-SLC-250`, `EDGE-SLC-500`, `EDGE-CLA1`, `RZI16-2`, `EDGE-24L24S`, `SA-DACT`, and `EDGE-PTK2`. These are product/model identifiers; the E85008 values remain source-document identifiers only.
+
+Current Edge question status: `module1.js` IDs `158` and `172`, and `module2.js` ID `106`, remain `PARTIALLY VERIFIED`. No Edge question was promoted to `VERIFIED`, `UNVERIFIED`, `CONTRADICTED`, or removed. The complete question-by-question evidence and correction recommendations are recorded in `EDGE_SOURCE_VERIFICATION_REPORT.md`.
+
+### Superseding EDGE-ML targeted correction pass
+
+Correction date: 2026-08-21. The three Edge questions were narrowed to explicit official Edwards webpage claims. `module1.js` IDs `158` and `172`, and `module2.js` ID `106`, are now `VERIFIED`; each uses actual Edge product/family language and retains source metadata. No E85/E850 identifier appears in learner-facing Edge content.
+
+| Question IDs | Official source | Web section | Evidence applied |
+|---|---|---|---|
+| module1 158 | Edwards Edge Series webpage | Edge Series; Migration-Ready | Mid-sized positioning and the explicit iO1000/iO500 initiating-device, notification-device, wiring, and backbox migration boundary |
+| module1 172 | Edwards Edge Series webpage | Edge Series; Pure Performance, Perfectly Scaled | Up to four loops at 250 devices per loop |
+| module2 106 | Edwards Edge Series webpage | Edge Series; Pure Performance, Perfectly Scaled | Up to four loops at 250 devices per loop and up to 30 remote annunciators |
+
+Final Edge result: `3 VERIFIED`, `0 PARTIALLY VERIFIED`, `0 UNVERIFIED`, `0 CONTRADICTED`, and `0 removed`. The result is limited to these three revised questions and does not promote unrelated Edge identifiers or technical claims without their own exact official source mapping.
+
+Post-correction browser validation: **PASS - ALL RUNTIME CHECKS PASSED**. Duplicate text, invalid question objects/categories, missing or duplicate answers, invalid answer references, missing explanations, randomization failures, and scoring failures all report `0`. Product-integrity checks pass with `SIGA-HPR`, `SIGA-UM2`, and `SIGA-CC1S` absent from loaded scored data. No question-bank diagnostics errors were reported.
+
 ## Official Edwards website evidence reconciliation (2026-08-20)
 
 The current EST4 platform page and EST3 migration page were added to the evidence set. This update does not change the question banks or introduce any rewrite. It narrows the status of a few previously partial claims and preserves the no-commercial-pricing rule.
@@ -454,7 +515,46 @@ The previously mapped official detector sheets remain authoritative for scored d
 
 | Product/family | Official evidence result | Status |
 |---|---|---|
-| SIGA-DDOS | No dedicated official SIGA-DDOS relay/wiring document was located on the reviewed Edwards pages or in the collected Signature source set. | SOURCE NOT FOUND - DO NOT VERIFY |
+| SIGA-DDOS | Supplied `3102774-EN R002 SIGA-DDOS Intelligent Duct Smoke Detector Installation Sheet` and `E85001-2006 Optica Duct Smoke Detector` provide the mapped identity, SLC address, auxiliary relay, and terminal evidence recorded below. | VERIFIED for listed SIGA-DDOS claims; broader Signature family remains unresolved |
+
+### SIGA-DDOS evidence correction update
+
+On 2026-08-21, the supplied `3102774-EN R002 SIGA-DDOS Intelligent Duct Smoke Detector Installation Sheet` and `E85001-2006 Optica Duct Smoke Detector` were used to correct the seven existing SIGA-DDOS scored records: `module1.js` IDs `184-187` and `189`, `module2.js` ID `117`, and `wiringQuestions.js` ID `52`.
+
+| Question IDs | Source pages and sections | Final status | Supported boundary |
+|---|---|---|---|
+| module1 184 | 3102774-EN R002 p. 1, Description/Application; E85001-2006 p. 1, Optica Intelligent Duct Smoke Detector | VERIFIED | SIGA-DDOS identity and HVAC duct application |
+| module1 185-186 | 3102774-EN R002 pp. 1-2, Electronic Addressing/Wiring; E85001-2006 p. 2, Electronic Addressing | VERIFIED | One electronically assigned Signature SLC address |
+| module1 187, 189; module2 117 | 3102774-EN R002 pp. 1-4, Auxiliary Relay/Wiring/Terminal Connections; E85001-2006 pp. 1, 4, Auxiliary Relay/Specifications/Ordering Information | VERIFIED | One unsupervised Form C auxiliary/common alarm relay; no universal HVAC sequence or BOM rule inferred |
+| wiringQuestions 52 | 3102774-EN R002 pp. 2, 4, Wiring/Terminal Connections | VERIFIED | RELAY_NC, RELAY_C, RELAY_NO terminals and unsupervised auxiliary relay circuit |
+
+Final SIGA-DDOS result: `7 VERIFIED`, `0 PARTIALLY VERIFIED`, `0 UNVERIFIED`, `0 CONTRADICTED`, `0 removed`. This update does not verify the entire Signature family; only the listed SIGA-DDOS records are promoted.
+
+### Signature detector bases and accessories audit
+
+Audit date: 2026-08-21. Exact part-number-first searches were performed for `SIGA-SB`, `SIGA-SB4`, `SIGA-IB`, `SIGA-IB4`, `SIGA-AB4G`, `SIGA-AB4G-LF`, `SIGA-LED`, `SIGA-DMP`, `SIGA-TS`, and `SIGA-SEC2`. The official Edwards Signature/intelligent-device pages exposed the literature library but no dedicated base/accessory technical document for these identifiers in the reviewed source set.
+
+The only limited page-level reference is `SIGA-AB4G` in E85001-0239, p. 5, “Catalog Number,” where Edwards identifies it as an “Audible (Sounder) Detector Base.” This supports identity/reference only, not universal compatibility or the other accessory claims.
+
+Affected direct questions are concentrated in `partNumberQuestions.js` IDs `8`, `19`, `22`, `27`, `43`, `52-54`, `58-59`, `65`, `68`, `70-71`, `76-77`, and `82`, with `finalBossQuestions.js` `fbq_020` as an accessory-related question. `SIGA-SEC2` appears only as a distractor. The complete product and question inventory, status classifications, and KEEP/REWRITE/REMOVE recommendations are recorded in `SIGNATURE_SOURCE_VERIFICATION_REPORT.md`.
+
+Final accessory/base status: `0 VERIFIED`, `1 PARTIALLY VERIFIED` (`SIGA-AB4G` identity reference), remaining targeted claims `UNVERIFIED`, `0 CONTRADICTED`, and `0 confirmed duplicates`. No question content was modified. E85/E850 learner-facing scan remains `0` in stems, answers, and explanations.
+
+### Secondary official-source search update
+
+On 2026-08-21, a deeper exact-part-number search was completed for `SIGA-SB`, `SIGA-SB4`, `SIGA-IB`, `SIGA-IB4`, `SIGA-AB4G-LF`, `SIGA-LED`, `SIGA-DMP`, `SIGA-TS`, and `SIGA-SEC2`. Official Edwards Signature/intelligent-device pages and all page-readable local Signature source text were checked. No new dedicated official base/accessory document or page-level technical mapping was found.
+
+The limited `SIGA-AB4G` reference remains E85001-0239, p. 5, “Catalog Number,” where it is identified as an “Audible (Sounder) Detector Base.” This does not establish `SIGA-AB4G-LF`, compatibility, wiring, power, or sounder behavior.
+
+The complete secondary-search result, affected question IDs, unsupported relationships, and recommendations are recorded in `SIGNATURE_SOURCE_VERIFICATION_REPORT.md`. No questions were modified, and the learner-facing E85/E850 scan remains zero in stems, answer choices, and explanations.
+
+### Sales Support scope alignment
+
+Signature research is limited to product recognition and application knowledge. For each part number, the minimum target is the product identity, primary use, and only those distinctions needed for quoting, estimating, recognition, or product selection. Exhaustive electrical, dimensional, terminal, operating, environmental, and compatibility details are out of scope unless an existing scored question directly tests them.
+
+Under this scope, an official Edwards identity/application source is sufficient for a basic training question; absence of a dedicated SKU document is not proof that a product does not exist. The intended trainee-knowledge items for affected Signature accessory and base products are recorded in `SIGNATURE_SOURCE_VERIFICATION_REPORT.md` and serve as the concrete target for all `REWRITE` questions.
+
+Current accessory dispositions remain: `SIGA-AB4G` identity question `KEEP` within its narrow mapped boundary; other affected direct questions `REWRITE` or `WAIT FOR SOURCE` to align with the intended trainee knowledge; `REMOVE` none. This is a research-threshold clarification only and does not promote unsupported claims or modify question content.
 | SIGA-SB, SIGA-SB4, SIGA-IB, SIGA-IB4 | No dedicated official detector-base document or universal compatibility matrix was mapped. | SOURCE NOT FOUND - DO NOT VERIFY |
 | SIGA-AB4G | Referenced by E85001-0239 as an Audible Sounder Base; broader compatibility claims remain unmapped. | PARTIALLY VERIFIED |
 | SIGA-AB4G-LF, SIGA-LED, SIGA-DMP, SIGA-TS, SIGA-SEC2 | No exact official page mapped in this pass. | SOURCE NOT FOUND - DO NOT VERIFY |
@@ -466,3 +566,25 @@ The detailed question IDs, claim boundaries, and personality-code table are reco
 ### Final Signature correction disposition
 
 The final correction pass applied only page-supported CT1/CT2, CC1/CC2, CR/CRR/CRH, IM2, and UM changes recorded in the Signature report. No questions were removed. `SIGA-UM2`, `SIGA-CC1S`, and `SIGA-HPR` remain excluded from scored training, and all remaining `SOURCE NOT FOUND` products remain unpromoted.
+
+## Superseding EST4 partial-question correction pass
+
+Correction date: 2026-08-21. This entry supersedes the earlier partial-status disposition for the affected EST4 IDs while preserving the historical evidence tables above.
+
+| File | IDs rewritten | Promoted status | Evidence boundary |
+|---|---|---|---|
+| `data/module1.js` | 151, 209, 211, 214-218, 228 | VERIFIED for this mapped correction set | Platform, EST3 migration, remote-annunciator, network, audio, power, cabinet, and hardware-group claims remain limited to the cited Edwards pages and sections. |
+| `data/module2.js` | 129-134, 138, 141-142, 144, 146 | VERIFIED for this mapped correction set | Audio, cabinet, configuration, power/local-rail, and documented indicator claims contain no universal compatibility, repair, programming, sizing, or project-required conclusion. |
+
+No question was removed. ID 218 contains qualitative BOM-scope awareness only; no pricing, cost, margin, vendor, customer-specific, or confidential commercial value remains. Each changed question retains `sourceType`, `sourceDocument`, `manufacturer`, `verified`, `sourcePage`, and `sourceSection` metadata. The broader EST4 family remains **not fully verified** because other historical partial or source-pending claims remain outside this correction set.
+
+## Superseding EST4 partial-question correction pass
+
+Correction date: 2026-08-21. This entry supersedes the earlier partial-status disposition for the affected EST4 IDs while preserving the historical evidence tables above.
+
+| File | IDs rewritten | Promoted status | Evidence boundary |
+|---|---|---|---|
+| `data/module1.js` | 151, 209, 211, 214-218, 228 | VERIFIED for this mapped correction set | Platform, EST3 migration, remote-annunciator, network, audio, power, cabinet, and hardware-group claims remain limited to the cited Edwards pages and sections. |
+| `data/module2.js` | 129-134, 138, 141-142, 144, 146 | VERIFIED for this mapped correction set | Audio, cabinet, configuration, power/local-rail, and documented indicator claims contain no universal compatibility, repair, programming, sizing, or project-required conclusion. |
+
+No question was removed. ID 218 contains qualitative BOM-scope awareness only; no pricing, cost, margin, vendor, customer-specific, or confidential commercial value remains. Each changed question retains `sourceType`, `sourceDocument`, `manufacturer`, `verified`, `sourcePage`, and `sourceSection` metadata. The broader EST4 family remains **not fully verified** because other historical partial or source-pending claims remain outside this correction set.

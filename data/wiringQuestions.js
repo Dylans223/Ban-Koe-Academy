@@ -368,7 +368,7 @@ answers: [
 "Isolating a shorted Class A loop section"
 ],
 correct: 0,
-explanation: "E85001-0239 documents SIGA-CR as a Form C dry relay contact for external appliances such as door closers, fans, and dampers; the relay contact state is not supervised.",
+explanation: "SIGA-CR is a Form C dry relay contact for external appliances such as door closers, fans, and dampers; the relay contact state is not supervised.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0239", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Application" }
 },
 
@@ -389,7 +389,7 @@ answers: [
 "To automatically reset the panel after a fault"
 ],
 correct: 0,
-explanation: "E85001-0272 documents SIGA-IM2 for Class A circuits: it isolates a shorted section so the remaining data loop can continue operating.",
+explanation: "SIGA-IM2 is used on Class A circuits to isolate a shorted section so the remaining data loop can continue operating.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0272 (printed page 1 identifies E85001-0271)", manufacturer: "Edwards", verified: true, sourcePage: "1-3", sourceSection: "Overview; Application; Typical Wiring" }
 },
 
@@ -422,7 +422,7 @@ answers: [
 "It generates an alarm condition and silences the system"
 ],
 correct: 0,
-explanation: "E85001-0272 states that SIGA-IM2 is used only on Class A circuits and isolates the shorted section so the remaining data loop can continue operating.",
+explanation: "SIGA-IM2 is used only on Class A circuits and isolates the shorted section so the remaining data loop can continue operating.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0272 (printed page 1 identifies E85001-0271)", manufacturer: "Edwards", verified: true, sourcePage: "1-3", sourceSection: "Overview; Application; Typical Wiring" }
 },
 
@@ -681,7 +681,8 @@ answers: [
 "EOL and Trouble only"
 ],
 correct: 0,
-explanation: "The SIGA-DDOS wiring diagram identifies RELAY_NC, RELAY_C, and RELAY_NO terminals for its built-in Form C auxiliary relay."
+explanation: "The SIGA-DDOS wiring diagram identifies RELAY_NC, RELAY_C, and RELAY_NO terminals for its built-in Form C auxiliary relay. The auxiliary relay circuit is not supervised.",
+source: { sourceType: "Edwards Installation Sheet", sourceDocument: "3102774-EN R002", manufacturer: "Edwards", verified: true, sourcePage: "2, 4", sourceSection: "Wiring; Terminal Connections" }
 },
 
 {
@@ -692,7 +693,7 @@ product:"G4LF Genesis LED Wall-Mount Low-Frequency Horn",
 question:"Which documented Genesis specification gives the applicable wiring range?",
 answers:["12–18 AWG","16–33 VDC operating voltage","15, 30, 75, or 110 candela","GRSW-10 room-side wiring plate"],
 correct:0,
-explanation:"E85001-1052 specifies 12 to 18 AWG in-out screw terminals for G4LF Series appliances.",
+explanation:"G4LF Series appliances use 12 to 18 AWG in-out screw terminals.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1, 6", sourceSection: "Standard Features; Specifications" }
 },
 {
@@ -715,7 +716,7 @@ product:"GOCT 4-Inch Octagon Box Adapter Plate",
 question:"A G4LF appliance is specified on a 4-inch octagon box. Which documented component should the estimator verify?",
 answers:["GRSW-10 room-side wiring plate","GRT-10 device and cover removal tool, 10-pack","G4WSB white wall 4-inch surface-mount box","GOCT 4-inch octagon box adapter plate"],
 correct:3,
-explanation:"E85001-1052 states that GOCT is required when installing a G4LF Series appliance onto a 4-inch octagon box.",
+explanation:"GOCT is required when installing a G4LF Series appliance onto a 4-inch octagon box.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "2, 5", sourceSection: "Installation; Accessories" }
 },
 {

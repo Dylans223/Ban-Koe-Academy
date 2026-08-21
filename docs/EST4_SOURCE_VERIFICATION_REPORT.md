@@ -293,3 +293,33 @@ EST4 is **not fully verified**. Remaining partial boundaries are:
 - Questions retained unchanged from the reviewed EST4 set: **34**.
 - Production files changed: `data/module1.js` and `data/module2.js` only, plus this audit report and the source matrix.
 - Quiz logic, scoring, randomization, progress tracking, navigation, UI, runtime-audit logic, product library, and Final Boss: **unchanged**.
+
+### Superseding EST4 partial-question correction pass
+
+Correction date: 2026-08-21. This section supersedes the earlier partial-status disposition for the IDs listed below. Earlier sections remain historical evidence records.
+
+| File | Questions rewritten in this pass | Reason |
+|---|---|---|
+| `data/module1.js` | 151, 209, 211, 214-218, 228 | Replaced unmapped distractor or project-required wording with documented EST4 platform, migration, remote-annunciator, audio, network, power, cabinet, and hardware-group relationships. |
+| `data/module2.js` | 129-134, 138, 141-142, 144, 146 | Removed project-specific BOM workflow, cabinet-variant, endpoint, escalation, and troubleshooting conclusions; retained documented component relationships and status indicators. |
+
+Question `218` retains general BOM-scope awareness but contains no price, cost, margin, vendor, customer, or confidential commercial value. No question was removed. The affected questions are promoted to `VERIFIED` within this mapped correction set because their wording, answers, distractors, explanations, and metadata now stay within the cited Edwards evidence.
+
+Supporting sources are the Edwards documents already mapped in this report and matrix: E85014-0001, E85014-0002, E85014-0003, E85014-0004, E85014-0006, E85014-0007, E85014-0008, E85014-0009, E85014-0010, E85014-0012, E85014-0015, E85014-0017, and E85010-0060, using the page and section metadata stored on each changed question.
+
+Questions remaining partially verified or waiting for source elsewhere in the EST4 family were not promoted by this pass. Therefore, the entire EST4 family is **not** claimed to be fully verified.
+
+### Superseding EST4 partial-question correction pass
+
+Correction date: 2026-08-21. This section supersedes the earlier partial-status disposition for the IDs listed below. Earlier sections remain historical evidence records.
+
+| File | Questions rewritten in this pass | Reason |
+|---|---|---|
+| `data/module1.js` | 151, 209, 211, 214-218, 228 | Replaced unmapped distractor or project-required wording with documented EST4 platform, migration, remote-annunciator, audio, network, power, cabinet, and hardware-group relationships. |
+| `data/module2.js` | 129-134, 138, 141-142, 144, 146 | Removed project-specific BOM workflow, cabinet-variant, endpoint, escalation, and troubleshooting conclusions; retained documented component relationships and status indicators. |
+
+Question `218` retains general BOM-scope awareness but contains no price, cost, margin, vendor, customer, or confidential commercial value. No question was removed. The affected questions are promoted to `VERIFIED` within this mapped correction set because their wording, answers, distractors, explanations, and metadata now stay within the cited Edwards evidence.
+
+Supporting sources are the Edwards documents already mapped in this report and matrix: E85014-0001, E85014-0002, E85014-0003, E85014-0004, E85014-0006, E85014-0007, E85014-0008, E85014-0009, E85014-0010, E85014-0012, E85014-0015, E85014-0017, and E85010-0060, using the page and section metadata stored on each changed question.
+
+Questions remaining partially verified or waiting for source elsewhere in the EST4 family were not promoted by this pass. Therefore, the entire EST4 family is **not** claimed to be fully verified.

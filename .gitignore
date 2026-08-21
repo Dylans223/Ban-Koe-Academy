@@ -26,6 +26,8 @@ coverage/
 
 # Private manufacturer source/reference material
 _sources/
+io/
+edge/
 
 # IDE local settings
 .vscode/*.log

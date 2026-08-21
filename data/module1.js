@@ -14,7 +14,6 @@ answers:[
 "Supervised Loop Circuit",
 "Signal Logic Controller"
 ],
-correct:0,
 explanation:"SLC stands for Signaling Line Circuit. It is the communication loop used by addressable fire alarm systems."
 },
 
@@ -2337,12 +2336,12 @@ lesson:10,
 category:"Edwards Product Library",
 difficulty:"Easy",
 product:"EST4",
-question:"Which Edwards platform is documented as using a new network architecture for fire alarm, mass notification, and building integration?",
+question:"Which Edwards platform is documented as a new network architecture for fire alarm, mass notification, and building integration?",
 answers:[
 "EST4",
-"A conventional notification circuit",
-"A detector base",
-"A local power supply"
+"A conventional notification appliance",
+"An initiating-device base",
+"A system power supply"
 ],
 correct:0,
 explanation:"The EST4 overview documents EST4 as a new network architecture platform for fire alarm, mass notification, and building integration.",
@@ -2378,12 +2377,13 @@ product:"iO-Series Intelligent Fire Alarm Systems",
 question:"Which iO Series capability helps automatically organize connected devices?",
 answers:[
 "Automatic device mapping",
-"Manual map-only mode",
-"Battery bypass",
-"Unsynchronized NAC"
+"Electronic addressing",
+"Optional Ethernet connectivity",
+"Two Class B NACs"
 ],
 correct:0,
-explanation:"The iO Series description lists automatic device mapping as a key capability."
+explanation:"The iO Series sheet lists automatic device mapping as a system capability. Electronic addressing, Ethernet connectivity, and NAC configuration are separate documented features.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0135", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"iO Series; Features and Benefits" }
 },
 
 {
@@ -2393,15 +2393,16 @@ lesson:10,
 category:"Edwards Product Library",
 difficulty:"Medium",
 product:"EDGE-ML Fire Alarm Systems",
-question:"Which Edge Series point is accurate?",
+question:"Which Edge Series platform statement is documented?",
 answers:[
-"It is designed for mid-sized applications with migration-ready compatibility.",
-"It is only a conventional 2-zone panel.",
-"It has no display options.",
+"It is designed for mid-sized applications and supports documented iO1000/iO500 migration boundaries.",
+"It is a conventional-only panel with no intelligent-device support.",
+"It has no touchscreen user interface.",
 "It cannot support remote annunciators."
 ],
 correct:0,
-explanation:"Edwards positions Edge for mid-sized applications with migration-ready compatibility features."
+explanation:"Edwards positions Edge for mid-sized applications and documents backward compatibility with existing iO1000/iO500 initiating and notification devices, wiring, and backboxes.",
+source:{ sourceType:"Edwards Product Webpage", sourceDocument:"Edge Series", manufacturer:"Edwards", verified:true, sourcePage:"Web", sourceSection:"Edge Series; Migration-Ready" }
 },
 
 {
@@ -2491,7 +2492,7 @@ answers:[
 "GRSW-10 room-side wiring plate"
 ],
 correct:0,
-explanation:"E85001-0668 documents selectable candela output and approximately 1 fps flash rate for Genesis G4 strobes and horn-strobes.",
+explanation:"Genesis G4 strobes and horn-strobes support selectable candela output and approximately 1 fps flash rate.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0668", manufacturer: "Edwards", verified: true, sourcePage: "3-4", sourceSection: "Field Configuration; Specifications" }
 },
 
@@ -2510,7 +2511,7 @@ answers:[
 "G1 compact notification appliance"
 ],
 correct:0,
-explanation:"E85001-1025 identifies the Genesis LED GCS Series as ceiling-mount speakers and speaker-strobes.",
+explanation:"The Genesis LED GCS Series is identified as ceiling-mount speakers and speaker-strobes.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1025", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Application" }
 },
 
@@ -2557,15 +2558,16 @@ lesson:10,
 category:"Edwards Product Library",
 difficulty:"Medium",
 product:"iO-Series Intelligent Fire Alarm Systems",
-question:"Which pair of iO Series features is associated with the product family?",
+question:"Which pair of iO Series features includes the documented optional Ethernet capability?",
 answers:[
 "Automatic device mapping and optional Ethernet connectivity",
-"Fiber-only networking and integrated voice evacuation",
-"Fixed conventional zones and no addressing",
-"Built-in waterflow switches and tamper valves"
+"Electronic addressing and automatic device mapping",
+"Up to eight annunciators and incremental auto-programming",
+"Standard wiring and retrofit applications"
 ],
 correct:0,
-explanation:"The iO Series entry includes automatic device mapping and optional Ethernet connectivity."
+explanation:"The Edwards iO Series documentation lists automatic device mapping and optional Ethernet connectivity as features. The other choices combine separate documented features or do not preserve the exact pair asked for.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0135", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"iO Series; Features and Benefits" }
 },
 
 {
@@ -2575,15 +2577,16 @@ lesson:10,
 category:"Edwards Product Library",
 difficulty:"Hard",
 product:"EDGE-ML Fire Alarm Systems",
-question:"Which Edge Series capacity statement is accurate?",
+question:"Which Edge Series loop-capacity statement is documented?",
 answers:[
 "Up to 4 loops at 250 devices per loop",
-"One loop only with no expansion",
-"Up to 64 network nodes",
-"No support for remote annunciators"
+"Up to 30 remote annunciators with no loop capability",
+"A 10-inch touchscreen with no loop capability",
+"Mid-sized applications with no loop expansion capability"
 ],
 correct:0,
-explanation:"The Edge Series data notes support for up to four loops with up to 250 devices per loop."
+explanation:"The Edwards Edge Series page documents up to four loops with 250 devices per loop.",
+source:{ sourceType:"Edwards Product Webpage", sourceDocument:"Edge Series", manufacturer:"Edwards", verified:true, sourcePage:"Web", sourceSection:"Edge Series; Pure Performance, Perfectly Scaled" }
 },
 
 {
@@ -2677,7 +2680,7 @@ answers:[
 "G4RSB and G4WSB surface-mount boxes"
 ],
 correct:0,
-explanation:"E85001-0668 states that Genesis LED clear strobes and horn-strobes may be set for 15, 30, 75, or 110 candela and approximately 1 fps flash rate.",
+explanation:"Genesis LED clear strobes and horn-strobes may be set for 15, 30, 75, or 110 candela and approximately 1 fps flash rate.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0668", manufacturer: "Edwards", verified: true, sourcePage: "3-4", sourceSection: "Field Configuration; Specifications" }
 },
 
@@ -2696,7 +2699,7 @@ answers:[
 "A GCS ceiling-mount speaker or speaker-strobe"
 ],
 correct:0,
-explanation:"E85001-0667 identifies the Genesis LED G1 Series as Compact Notification Devices.",
+explanation:"The Genesis LED G1 Series is identified as Compact Notification Devices.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "1", sourceSection: "Overview; Genesis LED G1 Series Compact Notification Devices" }
 },
 
@@ -2715,7 +2718,7 @@ answers:[
 "G1 compact notification appliances"
 ],
 correct:0,
-explanation:"E85001-1052 states that G4LF notification appliances meet 520 Hz low-frequency audible requirements and are suitable for sleeping areas.",
+explanation:"G4LF notification appliances meet 520 Hz low-frequency audible requirements and are suitable for sleeping areas.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Audible Signal Application" }
 },
 
@@ -2734,7 +2737,7 @@ answers:[
 "G1 compact notification devices"
 ],
 correct:0,
-explanation:"E85001-1025 identifies the Genesis LED GCS Series as ceiling-mount speakers and speaker-strobes.",
+explanation:"The Genesis LED GCS Series is identified as ceiling-mount speakers and speaker-strobes.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1025", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Application" }
 },
 
@@ -2771,7 +2774,8 @@ answers:[
 "A power supply"
 ],
 correct:0,
-explanation:"The SIGA-DDOS is Edwards' intelligent duct smoke detector, used to detect smoke in a building's HVAC ductwork."
+explanation:"SIGA-DDOS is an Optica Intelligent Duct Smoke Detector in the Signature Series for HVAC duct applications.",
+source:{ sourceType:"Edwards Installation Sheet/Datasheet", sourceDocument:"3102774-EN R002; E85001-2006", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Description; Application" }
 },
 
 {
@@ -2789,7 +2793,8 @@ answers:[
 "An RS-485 network only"
 ],
 correct:0,
-explanation:"The SIGA-DDOS is a Signature SLC device, addressed on the Signature Signaling Line Circuit."
+explanation:"SIGA-DDOS is a Signature SLC device with one electronically assigned address; the installation sheet does not use address switches.",
+source:{ sourceType:"Edwards Installation Sheet/Datasheet", sourceDocument:"3102774-EN R002; E85001-2006", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Description; Electronic Addressing" }
 },
 
 {
@@ -2807,7 +2812,8 @@ answers:[
 "None — it is a conventional device"
 ],
 correct:0,
-explanation:"The SIGA-DDOS requires one address on the Signature SLC."
+explanation:"SIGA-DDOS requires one electronically assigned address on the Signature SLC.",
+source:{ sourceType:"Edwards Installation Sheet/Datasheet", sourceDocument:"3102774-EN R002; E85001-2006", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Electronic Addressing; Specifications" }
 },
 
 {
@@ -2817,15 +2823,16 @@ lesson:10,
 category:"Applications",
 difficulty:"Medium",
 product:"SIGA-DDOS Intelligent Duct Smoke Detector",
-question:"A project specifies a SIGA-DDOS and requires the relay function that the detector's onboard auxiliary relay can provide. What should the estimator recognize?",
+question:"Which relay relationship is documented for SIGA-DDOS?",
 answers:[
-"The SIGA-DDOS already provides that relay function, so an additional external relay should not automatically be added",
-"A SIGA-CT1 must always be added alongside every SIGA-DDOS",
-"Duct detectors never require any relay or control function",
-"The SIGA-DDOS cannot provide any relay function"
+"It has one unsupervised Form C auxiliary/common alarm relay for ancillary equipment such as HVAC controls",
+"Its auxiliary relay is a supervised Signature SLC module",
+"Its relay provides a documented automatic HVAC shutdown sequence",
+"It has no auxiliary relay"
 ],
 correct:0,
-explanation:"The SIGA-DDOS has a built-in auxiliary Form C relay. When that onboard relay satisfies the application's relay requirement, an additional external relay is not automatically needed. Other duct-detector configurations or applications may still require a separate device such as a SIGA-CT1, CT2, or CR depending on the system design."
+explanation:"The Edwards documents identify one unsupervised Form C auxiliary/common alarm relay for ancillary equipment such as HVAC controls. They do not establish a universal relay requirement or a specific HVAC shutdown sequence.",
+source:{ sourceType:"Edwards Installation Sheet/Datasheet", sourceDocument:"3102774-EN R002; E85001-2006", manufacturer:"Edwards", verified:true, sourcePage:"1, 3-4", sourceSection:"Application; Auxiliary Relay; Specifications; Ordering Information" }
 },
 
 {
@@ -2835,15 +2842,16 @@ lesson:10,
 category:"Applications",
 difficulty:"Medium",
 product:"iO-Series Intelligent Fire Alarm Systems",
-question:"For an appropriately small building project, which Edwards platform family should be considered as an alternative to automatically selecting an EST4?",
+question:"Which application positioning is documented for the Edwards iO Series?",
 answers:[
-"The iO Series",
-"EST3X",
-"A duct smoke detector",
-"A notification power supply"
+"It is intended for small to mid-size applications",
+"It is limited to multi-building network applications",
+"It is a conventional-only product family",
+"It is a communications accessory rather than a fire alarm system"
 ],
 correct:0,
-explanation:"Edwards positions the iO Series as an intelligent system family for small to mid-sized applications. For a project sized appropriately for that family, it should be considered rather than defaulting to EST4 for every building."
+explanation:"The Edwards iO Series documentation positions the family for small to mid-size applications. It does not establish a universal platform-selection rule for a specific project.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0135", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"iO Series" }
 },
 
 {
@@ -2861,7 +2869,8 @@ answers:[
 "A built-in NAC power supply"
 ],
 correct:0,
-explanation:"The SIGA-DDOS includes one onboard auxiliary relay with Form C contacts (RELAY_NC, RELAY_C, RELAY_NO terminals)."
+explanation:"SIGA-DDOS has one Form C auxiliary relay with RELAY_NC, RELAY_C, and RELAY_NO terminals; the auxiliary relay circuit is not supervised.",
+source:{ sourceType:"Edwards Installation Sheet/Datasheet", sourceDocument:"3102774-EN R002; E85001-2006", manufacturer:"Edwards", verified:true, sourcePage:"2-4", sourceSection:"Wiring; Auxiliary Relay; Specifications; Terminal Connections" }
 },
 
 {
@@ -2874,12 +2883,13 @@ product:"iO64",
 question:"What is the maximum device capacity of an Edwards iO64?",
 answers:[
 "64 devices",
-"125 devices",
-"250 devices",
-"1,000 devices"
+"One Class A or Class B intelligent device loop",
+"Two Class B NACs",
+"Eight remote annunciators"
 ],
 correct:0,
-explanation:"The Edwards brochure identifies the iO64 as a fixed-capacity small-building panel supporting up to 64 devices of any type."
+explanation:"The iO64 loop supports up to 64 intelligent devices of any type.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0135", manufacturer:"Edwards", verified:true, sourcePage:"3", sourceSection:"iO64; Device Capacity" }
 },
 
 {
@@ -2892,12 +2902,13 @@ product:"iO64",
 question:"Can the device capacity of an iO64 be expanded?",
 answers:[
 "No",
-"Yes, by adding another controller card",
-"Yes, by doubling every loop",
-"Only if it is paired with an EST4"
+"Yes, by adding another loop-controller module",
+"Yes, by adding an iO-SDC2",
+"Yes, by connecting it to an iO1000"
 ],
 correct:0,
-explanation:"The iO64 has a fixed device capacity and cannot be expanded beyond its 64-device limit."
+explanation:"Device capacity cannot be expanded on the base iO64. The iO-SDC1 is a replacement for the standard iO64 loop, not as an expansion of the base panel capacity.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0135", manufacturer:"Edwards", verified:true, sourcePage:"3, 5", sourceSection:"iO64; Device Capacity; iO-SDC1" }
 },
 
 {
@@ -2907,7 +2918,7 @@ lesson:10,
 category:"Applications",
 difficulty:"Medium",
 product:"iO64",
-question:"A small building has 48 addressable devices. Which Edwards platform should be considered based on the iO Series product family?",
+question:"Based only on documented device-address capacity, which Edwards iO panel can accommodate a 48-device requirement?",
 answers:[
 "iO64",
 "iO1000",
@@ -2915,7 +2926,8 @@ answers:[
 "A communications bridge"
 ],
 correct:0,
-explanation:"The iO64 supports 64 devices and has fixed, non-expandable capacity, which makes it a purpose-built option for an appropriately small building with 48 addressable devices."
+explanation:"The iO64 supports up to 64 intelligent device addresses, so 48 devices are within that stated capacity. This comparison does not establish the complete design or final platform selection.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0135", manufacturer:"Edwards", verified:true, sourcePage:"1, 3", sourceSection:"iO64; Device Capacity" }
 },
 
 {
@@ -2928,12 +2940,13 @@ product:"iO1000",
 question:"Which statement best describes the difference between iO64 and iO1000?",
 answers:[
 "iO64 is fixed-capacity at 64 devices, while iO1000 is the expandable platform up to 1,000 addressable devices",
-"iO64 supports 1,000 devices and iO1000 supports only 64",
-"Both are identical except for their external cabinet color",
-"The iO1000 is not an Edwards product"
+"iO64 starts with four 250-device loops, while iO1000 has one fixed 64-device loop",
+"Both have the same documented address capacity and expansion arrangement",
+"Neither panel supports loop-controller expansion"
 ],
 correct:0,
-explanation:"The brochure distinguishes iO64 as a fixed-capacity 64-device platform and iO1000 as the expandable platform supporting up to 1,000 addressable devices."
+explanation:"The iO64 is a fixed 64-device platform, while the iO1000 is expandable in 250-device increments up to 1,000 addresses.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0135", manufacturer:"Edwards", verified:true, sourcePage:"1, 3, 7", sourceSection:"iO64; iO1000; Device Capacity; Loop Configuration" }
 },
 
 {
@@ -3157,7 +3170,7 @@ answers:[
 "Network controllers, network extenders, and network adder modules",
 "Only detector bases and manual stations",
 "Only NAC appliances with no network hardware",
-"A standalone iO64 with no network components"
+"A standalone control panel with no network expansion component"
 ],
 correct:0,
 explanation:"The Edwards component sheets document distinct roles for network controllers, network extenders, and network adder modules. The sheets do not determine which combination a particular project requires.",
@@ -3170,7 +3183,7 @@ lesson:10,
 category:"Fundamentals",
 difficulty:"Medium",
 product:"EST4 Remote Annunciators",
-question:"An EST4 project requires system status and control from a security desk away from the main cabinet. Which panel-related component should be evaluated?",
+question:"Which EST4 component is documented to provide remote system status and control?",
 answers:[
 "Remote annunciator",
 "Detector base",
@@ -3178,7 +3191,8 @@ answers:[
 "Waterflow switch"
 ],
 correct:0,
-explanation:"The EST4 material describes remote annunciators as remote user-interface stations that display system status and provide control functions from locations such as security desks and command centers."
+explanation:"The Edwards remote-annunciator sheet documents remote annunciators as user-interface stations that provide system status and control over the life-safety network.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0003", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Remote Annunciators" }
 },
 {
 id:210,
@@ -3205,12 +3219,12 @@ lesson:10,
 category:"Fundamentals",
 difficulty:"Hard",
 product:"EST4 and iO Series",
-question:"Which Edwards platform is documented for fire alarm, mass notification, and building integration in an EST3 migration context?",
+question:"Which Edwards platform is documented for fire alarm, mass notification, and building integration while supporting the stated EST3 migration context?",
 answers:[
 "EST4",
-"iO64 only",
-"SIGA-CC1",
-"Genesis G1"
+"An EST4 remote annunciator",
+"A Signature input-output module",
+"A Genesis notification appliance"
 ],
 correct:0,
 explanation:"The EST4 overview documents fire alarm, mass notification, building integration, and backward compatibility with EST3 wiring, devices, and most local rail modules. It does not establish universal compatibility for every EST3 component or a universal platform-selection rule.",
@@ -3259,15 +3273,16 @@ lesson:10,
 category:"Estimator",
 difficulty:"Hard",
 product:"EST4 Voice Evacuation Configuration",
-question:"An EST4 project specification adds voice evacuation to a fire alarm scope that previously listed only detection and notification devices. What should the estimator verify before releasing the BOM?",
+question:"Which EST4 component relationship is documented for emergency voice audio?",
 answers:[
-"That the required audio units/interfaces and zoned audio amplifiers are accounted for",
+"Audio units/interfaces and zoned audio amplifiers are documented voice-audio components",
 "That all detector bases are replaced with pull stations",
 "That network firewalls are removed because audio replaces networking",
-"That the project is changed to an iO64 automatically"
+"That the project is changed to a conventional-only panel automatically"
 ],
 correct:0,
-explanation:"The EST4 material identifies audio units/interfaces and zoned audio amplifiers as the hardware relationships for voice evacuation and emergency communications."
+explanation:"The Edwards audio and amplifier sheets identify audio units/interfaces and zoned audio amplifiers as EST4 voice-audio components.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0017", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Audio Units and Interfaces; Zoned Audio Amplifiers" }
 },
 {
 id:215,
@@ -3276,15 +3291,16 @@ lesson:10,
 category:"Estimator",
 difficulty:"Hard",
 product:"EST4 Remote Annunciators",
-question:"The security-desk location appears on the plans, but the EST4 equipment list contains no remote user-interface component. What should the estimator review?",
+question:"Which documented EST4 component corresponds to a remote status and control location?",
 answers:[
-"Whether an EST4 remote annunciator is required for the stated status and control location",
+"An EST4 remote annunciator",
 "Whether all notification appliances should be deleted",
 "Whether the security desk should receive a detector base",
 "Whether the network should be replaced with a NAC"
 ],
 correct:0,
-explanation:"Remote annunciators are the EST4 components described for remote status display and control from locations such as security desks. The discrepancy should be reviewed against the project scope before release."
+explanation:"The Edwards remote-annunciator sheet describes remote annunciators as components for remote system status and control. It does not establish that a project location universally requires one.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0003", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Remote Annunciators" }
 },
 {
 id:216,
@@ -3293,15 +3309,16 @@ lesson:10,
 category:"Estimator",
 difficulty:"Hard",
 product:"EST4 Network Expansion",
-question:"A design revision changes an EST4 project from a single-panel arrangement to a larger networked arrangement. Which scope change should be reconciled across the documents?",
+question:"Which EST4 network component roles are documented as separate considerations when reviewing network scope?",
 answers:[
-"Network controllers and any required network extenders or adders, along with network security requirements",
-"Only the color of the notification appliances",
-"Only the detector base type",
-"Only the manual station action type"
+"Network controllers, network extenders or adders, and network firewalls",
+"Only notification-appliance colors",
+"Only detector-base types",
+"Only manual-station action types"
 ],
 correct:0,
-explanation:"The EST4 product material identifies network controllers, network expansion hardware, and network firewalls as distinct networked-system considerations. A design revision should be reconciled against those requirements before quoting."
+explanation:"The Edwards network component sheets document network controllers, network extenders, network adders, and network firewalls as distinct EST4 network component roles. The sources do not establish that every project requires all of them.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0008/E85014-0009/E85014-0012/E85014-0015", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Network Controllers; EST4 Network Extender; EST4 Network Firewalls; EST4 Network Adder Module" }
 },
 {
 id:217,
@@ -3310,15 +3327,15 @@ lesson:10,
 category:"Scenario",
 difficulty:"Hard",
 product:"EST4 Project Coordination",
-question:"The riser shows a networked EST4 system with voice evacuation, while the equipment schedule lists only a basic panel cabinet. What should Sales Support do?",
+question:"Which EST4 scope distinction is documented when reviewing a networked system with voice audio?",
 answers:[
-"Reconcile the riser and schedule, then document unresolved EST4 network and audio scope before quoting",
-"Quote the basic cabinet and assume the other components are included",
-"Replace the EST4 with an iO64 without reviewing the project",
-"Ignore the riser because the equipment schedule always controls every detail"
+"Network components and audio units/interfaces are separate documented component groups",
+"A basic cabinet automatically includes every network and audio component",
+"Replace the EST4 with an unrelated conventional panel without reviewing the project",
+"Network and audio components are not part of EST4 scope"
 ],
 correct:0,
-explanation:"The Edwards documents establish separate EST4 network and audio component roles. They do not establish which project components are required, so conflicting documents should be reconciled and unresolved scope documented.",
+explanation:"The Edwards overview and audio sheet document network components and audio units/interfaces as separate EST4 component groups. They do not establish a universal project configuration or document authority rule.",
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0001/E85014-0002", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Overview/Networking; EST4 Audio Units and Interfaces" }
 },
 {
@@ -3328,7 +3345,7 @@ lesson:10,
 category:"Estimator",
 difficulty:"Hard",
 product:"EST4 Network and Audio Scope",
-question:"A revision adds EST4 networking and voice evacuation to a project. Which documented hardware groups should be reviewed to understand the broader EST4 estimating scope before finalizing the BOM?",
+question:"Which documented EST4 hardware groups are relevant when a BOM includes networking and voice audio?",
 answers:[
 "Network components, audio units/interfaces, amplifiers, power supplies, and cabinet scope",
 "Only the control-panel model, because network and audio do not affect the overall scope",
@@ -3336,7 +3353,7 @@ answers:[
 "No BOM review is needed after the revision"
 ],
 correct:0,
-explanation:"The Edwards documents identify separate EST4 network, audio, amplifier, power, and cabinet hardware groups. Adding those items generally increases the system hardware and estimating scope, but the sources do not provide internal pricing, confidential commercial values, or a universal required component set.",
+explanation:"The Edwards documents identify EST4 network, audio, amplifier, power-supply, and cabinet hardware groups. The sources do not provide pricing or establish a universal required component set.",
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0001/E85014-0002/E85014-0004/E85014-0017/E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Overview/Networking; Audio Units and Interfaces; Cabinets and Chassis; Zoned Audio Amplifiers; System Power Supplies" }
 },
 {
@@ -3508,16 +3525,17 @@ lesson:10,
 category:"Estimator",
 difficulty:"Hard",
 product:"EST4 Network and Audio Scope",
-question:"A revised drawing adds a networked EST4 node and voice audio to a scope that previously listed only the main cabinet. What should the estimator reconcile before quote release?",
+question:"Which EST4 hardware groups are documented as separate network, audio, power, and cabinet scope areas?",
 answers:[
-"The required network controllers or expansion components, audio components, power, and cabinet space",
+"Network controllers or expansion components, audio components, power supplies, and cabinets",
 "Only the detector count, because network and audio do not affect the BOM",
 "Only the color of the notification appliances",
 "Only the manual pull-station action type"
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0001", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Overview/Networking" },
-explanation:"The official EST4 overview and component sheets document separate network, audio, power, and cabinet relationships. A scope revision should reconcile those component groups before release."
+explanation:"The official EST4 overview and component sheets document separate network, audio, power-supply, and cabinet hardware groups. The sources do not establish a universal required component set.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0001/E85014-0002/E85014-0004/E85014-0017/E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Overview/Networking; Audio Units and Interfaces; Cabinets and Chassis; Zoned Audio Amplifiers; System Power Supplies" }
 },
 {
 id:229,

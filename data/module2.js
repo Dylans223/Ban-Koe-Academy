@@ -962,15 +962,16 @@ lesson:9,
 category:"Edwards Product Library",
 difficulty:"Medium",
 product:"iO-Series Intelligent Fire Alarm Systems",
-question:"Which feature pairing is associated with the iO-Series product family?",
+question:"Which pairing names the documented iO Series device-addressing features?",
 answers:[
 "Electronic addressing and automatic device mapping",
-"Conventional only and no mapping",
-"No Ethernet options and no addressing",
-"Audio amplification and strobe synchronization only"
+"Optional Ethernet connectivity and up to eight annunciators",
+"Two Class B NACs and a 64-device loop",
+"Incremental auto-programming and retrofit wiring"
 ],
 correct:0,
-explanation:"The iO-Series library entry includes intelligent/electronic addressing and automatic device mapping."
+explanation:"Electronic addressing and automatic device mapping are documented iO Series device-addressing features. The other choices combine separate documented capabilities.",
+source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0135", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"iO Series; Features and Benefits" }
 },
 
 {
@@ -980,15 +981,16 @@ lesson:9,
 category:"Edwards Product Library",
 difficulty:"Medium",
 product:"EDGE-ML Fire Alarm Systems",
-question:"Which capacity point is associated with the Edge Series entry?",
+question:"Which Edge Series capacity and annunciation pairing is documented?",
 answers:[
-"Up to 4 loops with up to 250 devices per loop",
-"Single loop fixed at 64 devices",
-"No remote annunciator support",
-"Panel networking only, no loop support"
+"Up to 4 loops with up to 250 devices per loop, and up to 30 remote annunciators",
+"A single 64-device loop with no remote annunciator support",
+"Up to 30 remote annunciators but no loop support",
+"Panel networking only, with no loop support or annunciators"
 ],
 correct:0,
-explanation:"The Edge entry includes support up to four loops and 250 devices per loop, with additional annunciator support noted in the product data."
+explanation:"The Edwards Edge Series page documents up to four loops at 250 devices per loop and support for up to 30 remote annunciators.",
+source:{ sourceType:"Edwards Product Webpage", sourceDocument:"Edge Series", manufacturer:"Edwards", verified:true, sourcePage:"Web", sourceSection:"Edge Series; Pure Performance, Perfectly Scaled" }
 },
 
 {
@@ -1062,7 +1064,7 @@ answers:[
 "SIGA-IM2 Fault Isolator Module"
 ],
 correct:0,
-explanation:"E85001-0644 documents SIGA-CRH as a High Power Control Relay Module for external appliances or equipment shutdown, with two Form C contacts.",
+explanation:"SIGA-CRH is a High Power Control Relay Module for external appliances or equipment shutdown, with two Form C contacts.",
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0644", manufacturer:"Edwards", verified:true, sourcePage:"1-3", sourceSection:"Description; Application; Specifications" }
 },
 
@@ -1081,7 +1083,7 @@ answers:[
 "SIGA-UM Universal Class A/B Module"
 ],
 correct:0,
-explanation:"E85001-0609 identifies the referenced product as a Class A signal-module category; the exact circuit behavior is source-specific.",
+explanation:"The referenced product is a Class A signal-module category; the exact circuit behavior is source-specific.",
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85001-0609", manufacturer:"Edwards", verified:true, sourcePage:"1-2, 5", sourceSection:"Overview; Application; Ordering Information" }
 },
 
@@ -1100,7 +1102,7 @@ answers:[
 "G4RSB and G4WSB surface-mount boxes"
 ],
 correct:0,
-explanation:"E85001-0668 states that Genesis LED clear strobes and horn-strobes may be set for 15, 30, 75, or 110 candela and approximately 1 fps flash rate.",
+explanation:"Genesis LED clear strobes and horn-strobes may be set for 15, 30, 75, or 110 candela and approximately 1 fps flash rate.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0668", manufacturer: "Edwards", verified: true, sourcePage: "3-4", sourceSection: "Field Configuration; Specifications" }
 },
 
@@ -1119,7 +1121,7 @@ answers:[
 "They are GCS ceiling-mount speakers and speaker-strobes"
 ],
 correct:0,
-explanation:"E85001-0667 identifies the Genesis LED G1 Series as Compact Notification Devices.",
+explanation:"The Genesis LED G1 Series is identified as Compact Notification Devices.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0667", manufacturer: "Edwards", verified: true, sourcePage: "1", sourceSection: "Overview; Genesis LED G1 Series Compact Notification Devices" }
 },
 
@@ -1138,7 +1140,7 @@ answers:[
 "G1 compact notification appliances"
 ],
 correct:0,
-explanation:"E85001-1052 states that G4LF notification appliances meet 520 Hz low-frequency audible requirements and are suitable for sleeping areas.",
+explanation:"G4LF notification appliances meet 520 Hz low-frequency audible requirements and are suitable for sleeping areas.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1052", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Audible Signal Application" }
 },
 
@@ -1157,7 +1159,7 @@ answers:[
 "G1 compact notification devices"
 ],
 correct:0,
-explanation:"E85001-1025 identifies the Genesis LED GCS Series as ceiling-mount speakers and speaker-strobes.",
+explanation:"The Genesis LED GCS Series is identified as ceiling-mount speakers and speaker-strobes.",
 source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-1025", manufacturer: "Edwards", verified: true, sourcePage: "1-2", sourceSection: "Overview; Application" }
 },
 
@@ -1176,7 +1178,8 @@ answers:[
 "The SIGA-CR, since it is now an obsolete product"
 ],
 correct:0,
-explanation:"The SIGA-DDOS has a built-in auxiliary relay. If a separate relay is also listed for the same function, verify against the actual application before assuming both are required — the SIGA-CR may still be legitimately needed for a different function, but a duplicated relay for the same function should be flagged."
+explanation:"SIGA-DDOS has one auxiliary relay. A separate relay should not be treated as automatically interchangeable with that documented relay; the Edwards documents do not establish a universal project BOM rule.",
+source:{ sourceType:"Edwards Installation Sheet/Datasheet", sourceDocument:"3102774-EN R002; E85001-2006", manufacturer:"Edwards", verified:true, sourcePage:"1, 3-4", sourceSection:"Auxiliary Relay; Specifications; Ordering Information" }
 },
 {
 id:118,
@@ -1375,16 +1378,16 @@ lesson:11,
 category:"Applications",
 difficulty:"Hard",
 product:"EST4 Zoned Audio Amplifiers",
-question:"A design requires audio to be delivered to designated zones and the project documents identify EST4 zoned amplification. What should Sales Support verify in the audio scope?",
+question:"Which EST4 audio relationships are documented for audio units, amplifiers, speaker circuits, and system power?",
 answers:[
-"That the documented audio units/interfaces, zoned amplifiers, speaker-circuit requirements, and system power relationships are represented",
+"Audio units/interfaces, zoned amplifiers, speaker circuits, and system power are related component areas",
 "That all audio items can be replaced by notification strobes",
 "That no cabinet or power review is needed for audio equipment",
 "That the audio scope is treated as a detector-input circuit"
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0017/E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"Audio Units and Interfaces; Zoned Audio Amplifiers; System Power Supplies" },
-explanation:"The approved Edwards documents describe audio units/interfaces, zoned amplifiers, speaker circuits, and system power as related EST4 component areas. The review should reconcile those documented relationships without inventing sizing or quantities."
+explanation:"The approved Edwards documents describe audio units/interfaces, zoned amplifiers, speaker circuits, and system power as related EST4 component areas. They do not establish project-specific sizing or quantities."
 },
 {
 id:130,
@@ -1393,16 +1396,16 @@ lesson:11,
 category:"Estimator",
 difficulty:"Hard",
 product:"EST4 Audio Scope Change",
-question:"A revision changes a project from ordinary occupant notification to an EST4 voice-audio scope. What should the estimator compare before updating the BOM?",
+question:"Which documented EST4 hardware groups are associated with a voice-audio BOM review?",
 answers:[
-"The revised audio requirements against the audio units/interfaces, amplifier, cabinet, and power portions of the current BOM",
+"Audio units/interfaces, amplifiers, cabinets, and power supplies",
 "Only the existing smoke-detector quantity",
 "Only the color of the notification appliances",
 "Only the project title, because audio does not affect material scope"
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0004/E85014-0017/E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Audio Units and Interfaces; Cabinets and Chassis; Zoned Audio Amplifiers; System Power Supplies" },
-explanation:"The Edwards documents identify audio, amplifier, cabinet, and power components as related parts of an EST4 audio configuration. A scope change should trigger a cross-check of those BOM sections."
+explanation:"The Edwards documents identify audio, amplifier, cabinet, and power components as related EST4 hardware groups. The sources do not prescribe a project-specific BOM workflow."
 },
 {
 id:131,
@@ -1411,16 +1414,16 @@ lesson:11,
 category:"Estimator",
 difficulty:"Hard",
 product:"EST4 Audio and Cabinet Scope",
-question:"A project drawing and equipment schedule show different EST4 audio and cabinet scope. What should the estimator do?",
+question:"Which documented EST4 component roles should be distinguished when reviewing audio and cabinet scope?",
 answers:[
-"Compare the drawing and schedule against the documented audio, amplifier, and cabinet component roles, then record unresolved scope",
+"Audio units/interfaces, amplifiers, and cabinets are separate component roles",
 "Delete the cabinet from the BOM because all audio belongs in the main cabinet",
 "Use detector bases as the audio enclosure",
 "Ignore the drawing when the schedule is shorter"
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0004/E85014-0017", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Audio Units and Interfaces; Cabinets and Chassis; Zoned Audio Amplifiers" },
-explanation:"The Edwards documents identify audio units/interfaces, amplifiers, and cabinet arrangements as separate component roles. They do not establish a universal remote-cabinet requirement, so conflicting project documents must be reconciled without assuming the final configuration."
+explanation:"The Edwards documents identify audio units/interfaces, amplifiers, and cabinet arrangements as separate component roles. They do not establish a universal cabinet variant or remote-cabinet requirement."
 },
 {
 id:132,
@@ -1429,16 +1432,16 @@ lesson:11,
 category:"Scenario",
 difficulty:"Hard",
 product:"EST4 Audio Clarification",
-question:"A specification says \"voice evacuation required\" but does not identify the audio interface, amplifier arrangement, or speaker-circuit configuration. What should Sales Support identify before selecting line items?",
+question:"Which EST4 component relationships are documented for a voice-audio scope?",
 answers:[
-"The missing documented audio-system components and configuration requirements that determine the BOM scope",
+"Audio units/interfaces, zoned amplifiers, and speaker-circuit relationships",
 "A made-up amplifier size based on the building name",
 "A generic speaker product with no application review",
 "Only the number of smoke detectors"
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0017", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Audio Units and Interfaces; Zoned Audio Amplifiers" },
-explanation:"The approved Edwards audio documents describe multiple component relationships, but they do not provide enough project-specific information to select a complete configuration from the phrase alone. Missing scope criteria must be identified before quoting."
+explanation:"The approved Edwards audio documents describe audio units/interfaces, zoned amplifiers, and speaker-circuit relationships. They do not establish amplifier sizing or a complete project configuration."
 },
 {
 id:133,
@@ -1447,16 +1450,16 @@ lesson:11,
 category:"Scenario",
 difficulty:"Hard",
 product:"EST4 Audio and Notification Coordination",
-question:"A drawing labels a device as a speaker-strobe, while the specification describes an EST4 voice-audio system. What should Sales Support record for review?",
+question:"Which documented EST4 distinction applies when reviewing audio units/interfaces and zoned amplifiers?",
 answers:[
-"The conflicting endpoint and system descriptions, together with the documented EST4 audio-component roles",
+"Audio units/interfaces and zoned amplifiers are documented audio-component roles",
 "That every speaker-strobe is interchangeable with every EST4 audio component",
 "That the label alone identifies the audio amplifier",
 "That the device should be replaced with a detector"
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0002/E85014-0017", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Audio Units and Interfaces; Zoned Audio Amplifiers" },
-explanation:"The Edwards sheets document audio units/interfaces and zoned amplifiers, but they do not establish a universal relationship between a drawing label and a particular endpoint. Record the discrepancy and reconcile it before selecting a BOM line."
+explanation:"The Edwards sheets document audio units/interfaces and zoned amplifiers as separate audio-component roles. They do not establish interchangeability with a particular notification endpoint."
 },
 {
 id:134,
@@ -1465,7 +1468,7 @@ lesson:12,
 category:"Fundamentals",
 difficulty:"Medium",
 product:"EST4 Cabinets and Chassis",
-question:"Which cabinet/display relationship is documented for EST4?",
+question:"Which EST4 cabinet/display relationship is documented?",
 answers:[
 "The cabinet sheet documents arrangements supporting up to two color LCD touch screens and LED/switch module configurations",
 "Every EST4 cabinet supports any display arrangement without review",
@@ -1474,7 +1477,7 @@ answers:[
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0004", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"EST4 Cabinets and Chassis" },
-explanation:"E85014-0004 documents the stated cabinet/display arrangement. The source does not establish that every cabinet variant supports every display configuration, so a selected cabinet must still be checked against the document."
+explanation:"The cabinet documentation describes arrangements supporting up to two color LCD touch screens and LED/switch module configurations. It does not establish that every cabinet variant supports every display arrangement."
 },
 {
 id:135,
@@ -1537,16 +1540,16 @@ lesson:12,
 category:"Estimator",
 difficulty:"Hard",
 product:"EST4 Cabinets and Chassis",
-question:"A panel revision adds local rail modules and display components. Which BOM relationship should be reviewed before finalizing the cabinet selection?",
+question:"Which documented EST4 cabinet relationship includes power, display, SLC, amplifier, and other local-rail modules?",
 answers:[
-"Available cabinet/chassis space for the documented power, display, SLC, amplifier, and other local-rail modules",
+"The cabinet/chassis arrangement includes space for documented power, display, SLC, amplifier, and other local-rail modules",
 "Only the project title and customer address",
 "Only the color of the cabinet door",
 "Only the pull-station action type"
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0004", manufacturer:"Edwards", verified:true, sourcePage:"2", sourceSection:"EST4 Cabinets and Chassis" },
-explanation:"The official cabinet sheet documents cabinet space for power supplies, amplifiers, SLC, and other modules. A revision affecting local hardware should be reconciled with the cabinet/chassis arrangement."
+explanation:"The official cabinet sheet documents cabinet/chassis arrangements for power supplies, displays, amplifiers, SLC, and other modules. It does not establish compatibility with every cabinet variant."
 },
 {
 id:139,
@@ -1591,16 +1594,16 @@ lesson:12,
 category:"Scenario",
 difficulty:"Hard",
 product:"EST4 Panel Configuration Review",
-question:"A schedule identifies an EST4 panel but does not state the required LCD/control-display arrangement, cabinet/chassis arrangement, local-module scope, or power configuration. What is the strongest review conclusion?",
+question:"Which EST4 configuration relationships are documented across the cabinet, display, CPU, local-module, and power sheets?",
 answers:[
-"The configuration is incomplete for final BOM selection and those documented requirements must be reconciled before release",
+"Cabinet, display, CPU, local-module, and power requirements are separate documented relationships",
 "The smallest cabinet and one display can be assumed",
 "The 4-CPU alone defines every cabinet and display choice",
 "The missing information can be replaced with internal pricing assumptions"
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0004/E85014-0006/E85014-0007/E85014-0010/E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Cabinets and Chassis; Display Modules; LCD Display Module; Central Processing Unit; System Power Supplies" },
-explanation:"The approved Edwards documents describe separate cabinet, display, CPU, local-module, and power relationships. Without the required configuration information, Sales Support should not finalize the BOM by assumption."
+explanation:"The approved Edwards documents describe separate cabinet, display, CPU, local-module, and power relationships. They do not establish a universal configuration from the EST4 panel name alone."
 },
 {
 id:142,
@@ -1609,7 +1612,7 @@ lesson:13,
 category:"Scenario",
 difficulty:"Hard",
 product:"EST4 Network Extender",
-question:"Which documented 4-NET-XT status information should be recorded when a link issue is reported?",
+question:"Which status indicators are documented for the EST4 4-NET-XT?",
 answers:[
 "The Power, DSL, Ethernet, and Link Trouble LED states",
 "A replacement part selected solely from the symptom",
@@ -1618,7 +1621,7 @@ answers:[
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0009", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Network Extender" },
-explanation:"The official Edwards network-extender sheet identifies Power, DSL, Ethernet, and Link Trouble status LEDs. Record those documented indicators for appropriate technical review; the source does not provide a repair or fault-diagnosis procedure."
+explanation:"The official Edwards network-extender sheet identifies Power, DSL, Ethernet, and Link Trouble status LEDs. The sheet does not provide a repair or fault-diagnosis procedure."
 },
 {
 id:143,
@@ -1645,16 +1648,16 @@ lesson:13,
 category:"Scenario",
 difficulty:"Medium",
 product:"EST4 Control-Display Modules",
-question:"A project report mentions a CPU Fail and Trouble indication on the EST4 control display. What is the safest Sales Support interpretation?",
+question:"Which status indicators are documented on EST4 control-display modules?",
 answers:[
-"Record the exact indicators and related event information, then escalate for technical review without directing a repair",
+"CPU Fail and Trouble indicators",
 "Tell the user to bypass the indicators and continue operation",
 "Identify the failed board with certainty from the indicator names alone",
 "Replace the display module because it shows a system status"
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0006", manufacturer:"Edwards", verified:true, sourcePage:"1-2", sourceSection:"Display Modules" },
-explanation:"Edwards documents discrete CPU Fail and Trouble indicators as system-status information. The approved source does not provide a repair decision tree, so Sales Support should capture the indication and escalate rather than diagnose or direct a repair."
+explanation:"The Edwards control-display sheet documents discrete CPU Fail and Trouble indicators as system-status information. It does not provide a repair decision tree."
 },
 {
 id:145,
@@ -1681,16 +1684,16 @@ lesson:13,
 category:"Scenario",
 difficulty:"Hard",
 product:"EST4 Power Supply and Local Rail",
-question:"Which documented system information should be recorded when several local-rail modules are reported as affected?",
+question:"Which documented relationship connects EST4 system power supplies with local-rail modules?",
 answers:[
-"The affected modules, power-supply arrangement, local-rail relationship, and documented status indications",
+"System power supplies distribute power to local-rail modules",
 "Only an unrelated module detail",
 "A definite failed power supply selected from the symptom alone",
 "Instructions to disconnect the local rail"
 ],
 correct:0,
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85010-0060", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"System Power Supplies" },
-explanation:"The official power-supply sheet documents the power relationship between system supplies and local-rail modules. Record the affected modules, arrangement, and status information for appropriate technical review; the source does not establish a cause or repair procedure."
+explanation:"The official power-supply sheet documents the distribution of system power to local-rail modules. It does not establish a cause or repair procedure."
 },
 {
 id:147,
