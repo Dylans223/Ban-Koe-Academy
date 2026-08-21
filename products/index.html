@@ -40,32 +40,19 @@
     <main class="content">
         <header class="page-header">
             <h1 class="pageTitle">PRODUCT LIBRARY</h1>
-            <p class="page-subtitle">Browse verified products, learn what they do, and practice identifying them.</p>
+            <p class="page-subtitle">Find a part number and quickly confirm what it is.</p>
         </header>
 
         <section class="toolbar products-toolbar">
-            <input id="productSearch" class="search-box" type="text" placeholder="Search by part number, product, family, manufacturer, category">
-            <select id="familyFilter">
-                <option value="All">All Families</option>
-            </select>
-            <select id="categoryFilter">
-                <option value="All">All Categories</option>
-            </select>
+            <input id="productSearch" class="search-box" type="text" placeholder="Search by part number">
         </section>
 
         <div class="results-summary" id="resultsSummary">Showing 0 of 0 products</div>
 
         <section class="library-grid">
-            <article class="column-panel explorer-panel">
-                <div class="explorer-section">
-                    <h3>Families</h3>
-                    <div class="column-list explorer-list" id="familyList"></div>
-                </div>
-            </article>
-
             <article class="column-panel explorer-panel products-column">
                 <div class="products-top-bar">
-                    <h3>Products</h3>
+                    <h3>Part Numbers</h3>
                     <span class="product-count-chip" id="productCountChip">0 products</span>
                 </div>
                 <div id="productGrid" class="explorer-list"></div>
@@ -81,27 +68,10 @@
                         </div>
 
                         <div class="detail-header-copy">
-                            <div class="detail-badges">
-                                <span class="detail-badge" id="detailVerification"></span>
-                                <span class="detail-badge detail-badge-secondary" id="detailFamilyBadge"></span>
-                            </div>
-
                             <div class="detail-header-lines">
                                 <div class="detail-line">
                                     <span class="detail-label">Part Number</span>
                                     <strong id="detailModelCode"></strong>
-                                </div>
-                                <div class="detail-line">
-                                    <span class="detail-label">Product Name</span>
-                                    <strong id="detailModel"></strong>
-                                </div>
-                                <div class="detail-line">
-                                    <span class="detail-label">Manufacturer</span>
-                                    <strong id="detailManufacturer"></strong>
-                                </div>
-                                <div class="detail-line">
-                                    <span class="detail-label">Family / Category</span>
-                                    <strong id="detailHeaderMeta"></strong>
                                 </div>
                             </div>
                         </div>
@@ -110,12 +80,6 @@
                     <section class="detail-panel panel-description">
                         <h3 class="card-title">What is it?</h3>
                         <p id="detailDescription"></p>
-                    </section>
-
-                    <section class="detail-panel detail-practice-panel">
-                        <h3 class="card-title">Practice This Product</h3>
-                        <p class="detail-support">Test your knowledge of this product.</p>
-                        <button class="btn btn-primary" id="practiceProductButton" type="button">Practice This Product →</button>
                     </section>
                 </div>
             </section>

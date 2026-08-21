@@ -1,0 +1,264 @@
+﻿# Product Library Cleanup Report
+
+## Scope
+- Data source audited: `data/edwards/index.js` (actual source loaded by `products/index.html`).
+- Runtime model normalization in source file was considered (document IDs moved to `documentReference` and part number cleared).
+- No quiz/question-bank files were modified.
+
+## Inventory Summary
+- Total product records: 145
+- Records with valid part numbers: 81
+- Records missing part numbers: 64
+- Records using E85/E850 document numbers as product identifiers: 71
+- Duplicate candidates: 0
+- Records needing identity correction: 64
+- Current part-number field valid as stored: 5
+- Current part-number field needing correction: 140
+- Images missing: 131
+
+## Classification Counts
+- VALID: 81
+- NEEDS PART NUMBER: 64
+- DUPLICATE: 0
+- INVALID / NON-PRODUCT RECORD: 0
+
+## E85/E850 Learner-Facing Audit
+- E85/E850 in learner-facing part numbers: 0
+- E85/E850 in learner-facing What is it: 0
+
+## Missing Part Numbers (Needs Verification)
+| Record ID | Current displayed information | Likely product identity | Recommended action |
+|---|---|---|---|
+| 5 | iO Communications Bridge \| Communications Accessory | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 13 | Genesis LED G4 Series Wall Mount Notification Devices \| Wall Mount Notification Appliance | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 14 | Genesis LED G1 Series Compact Notification Devices \| Compact Notification Appliance | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 16 | Genesis LED GCS Series Ceiling Mount Speakers and Speaker-Strobes \| Ceiling Mount Speaker and Speaker-Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 60 | Synchronization Output Module \| Synchronization Output Module | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 61 | Universal Input-Output Module Motherboards \| Universal Input-Output Module Motherboards | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 62 | Fireray Smoke Beam Detector \| Beam Smoke Detector | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 64 | Explosionproof Smoke Detector \| Explosionproof Smoke Detector | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 65 | Carbon Monoxide Detector \| Carbon Monoxide Detector | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 67 | Conventional 2-Wire Smoke & Heat Detectors \| Conventional Smoke and Heat Detector | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 68 | Rate Compensation Heat Detectors \| Heat Detector | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 71 | Fire Alarm Stations \| Fire Alarm Station | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 72 | Double Action Pull Stations \| Pull Station | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 73 | Single Action Pull Stations \| Pull Station | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 74 | Hazardous location Fire Alarm Station \| Hazardous-Location Station | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 75 | Weatherproof, Explosionproof Pull Stations \| Weatherproof/Explosionproof Pull Station | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 77 | Genesis LED G4S Series Wall Mount Speakers and Speaker-Strobes \| Wall Mount Speaker and Speaker-Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 78 | Genesis LED GC Series Ceiling Mount Notification Devices \| Ceiling Mount Notification Device | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 79 | Genesis LED G4SE Strobe Expander \| Strobe Expander | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 80 | Genesis Chimes and Chime-Strobes \| Chime and Chime-Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 81 | Genesis Low Frequency Audible Signals \| Low Frequency Audible Signal | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 82 | Multiple Tone Signal \| Multiple Tone Signal | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 83 | 202 Synchronized Strobe \| Synchronized Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 84 | Temporal Horns and Horn-strobes \| Horn and Horn-Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 85 | Fire Alarm Bells \| Bell | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 86 | Auxiliary Power Supply \| Power Supply | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 87 | Remote Booster Power Supplies \| Power Supply | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 88 | E85010-0127 Batteries \| Battery | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 89 | Voltage Regulator with Security Bell Interface \| Power Supply / Interface | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 91 | Heavy Duty Power Relays \| Control Relay | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 95 | Manual Override Relays \| Control Relay | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 96 | ADA Station Relocator \| Mounting Accessory | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 97 | Surface Mount Boxes \| Mounting Accessory | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 98 | STI Series Stopper \| Accessory | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 99 | Electromagnetic Door Holders \| Door Holder | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 100 | Call for Assistance Kit \| Accessory Kit | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 101 | Signal Master \| Accessory | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 103 | Protective Hoods, Grills, and Grids \| Accessory | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 104 | Input Modules \| Input Module | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 105 | Class A, B Signal Modules \| Signal Module | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 106 | Riser Monitor Modules \| Monitor Module | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 108 | Input Modules \| Input Module | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 109 | Signal Modules \| Signal Module | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 110 | Genesis Ceiling Mount High Candela Strobes & Speaker Strobes \| Ceiling Mount Speaker and Speaker-Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 111 | Genesis Ceiling Mount Mass Notification \| Ceiling Mount Notification Device | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 112 | Genesis Wall Mount Mass Notification \| Wall Mount Notification Device | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 113 | 8-inch Speaker and Speaker-Strobe \| Speaker and Speaker-Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 114 | 8-inch Ceiling Speakers and Speaker-Strobes \| Ceiling Speaker and Speaker-Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 115 | 4-inch Ceiling Speakers and Speaker-Strobes \| Ceiling Speaker and Speaker-Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 116 | Genesis Outdoor Speakers and Strobes \| Outdoor Speaker and Speaker-Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 118 | Integrity Re-entrant Speaker and Speaker-Strobe \| Re-entrant Speaker and Speaker-Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 119 | Integrity Speaker and Speaker-Strobe \| Speaker and Speaker-Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 120 | Genesis Outdoor-Rated Horns, Strobes, and Horn-Strobes \| Outdoor Horn and Horn-Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 121 | Genesis Outdoor-Rated Speakers and Speaker-Strobes \| Outdoor Speaker and Speaker-Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 123 | Hazardous Location Bells \| Bell | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 124 | Hazardous Location Horns \| Horn | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 125 | Hazardous Location Multiple Tone Signal \| Multiple Tone Signal | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 126 | Hazardous Location Horns and Sirens \| Horn and Siren | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 127 | Genesis Outdoor Horns and Strobes \| Outdoor Horn and Horn-Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 128 | Weatherproof Mounting Boxes \| Mounting Accessory | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 129 | Harsh Environment Strobes \| Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 130 | Hazardous Location Strobes \| Strobe | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 131 | Signature Series Diagnostic Tool \| Diagnostic Tool | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+| 138 | GOCT 4-Inch Octagon Box Adapter Plate \| Genesis Accessory | PART NUMBER NEEDS VERIFICATION | PART NUMBER NEEDS VERIFICATION |
+
+## Duplicate Candidates
+- No duplicate part-number candidates detected from resolved learner-facing part numbers.
+
+## Excluded From Scored Training (Retained In Library)
+- Target excluded products: SIGA-HPR, SIGA-UM2, SIGA-CC1S
+- Present in library records: 2
+- Present part numbers: SIGA-CC1S, SIGA-UM2
+
+## Final Record Matrix
+| PART NUMBER | WHAT IS IT? | IMAGE | STATUS | ACTION |
+|---|---|---|---|---|
+| EST4 | EST4 | Present | VALID | KEEP |
+| EST3 | EST3 | Present | VALID | KEEP |
+| EST3X | EST3X | Present | VALID | KEEP |
+| iO-Series | iO-Series Intelligent Fire Alarm Systems | Present | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Communications Accessory | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| EDGE-ML | EDGE-ML Fire Alarm Systems | IMAGE MISSING | VALID | KEEP |
+| SIGA-OSHCD | SIGA-OSHCD Signature Optica Smoke, Heat & Carbon Monoxide Detector | Present | VALID | KEEP |
+| SIGA-OSCD | SIGA-OSCD Signature Optica Smoke & Carbon Monoxide Detector | Present | VALID | KEEP |
+| SIGA-COD | SIGA-COD Intelligent Carbon Monoxide Detector | Present | VALID | KEEP |
+| SIGA-IM2 | SIGA-IM2 Isolator Module | Present | VALID | KEEP |
+| SIGA-CRH | SIGA-CRH High Power Control Relay Module | IMAGE MISSING | VALID | KEEP |
+| SIGA-CC2A | SIGA-CC2A Signal Modules with Class A Operation | Present | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Wall Mount Notification Appliance | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Compact Notification Appliance | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| G4LF | G4LF Genesis LED Wall-Mount Low-Frequency Horn | IMAGE MISSING | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Ceiling Mount Speaker and Speaker-Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| SIGA-OSD | SIGA-OSD Signature Optica Smoke Detector | Present | VALID | KEEP |
+| SIGA-OSHD | SIGA-OSHD Signature Optica Smoke & Heat Detector | Present | VALID | KEEP |
+| SIGA-PD | SIGA-PD Intelligent Photoelectric Smoke Detector | IMAGE MISSING | VALID | KEEP |
+| SIGA-PS | SIGA-PS Intelligent Photoelectric Smoke Detector (legacy variant) | IMAGE MISSING | VALID | KEEP |
+| SIGA-PHS | SIGA-PHS Intelligent Photoelectric Smoke & Heat Detector | IMAGE MISSING | VALID | KEEP |
+| SIGA-PHD | SIGA-PHD Intelligent Multisensor Detector | IMAGE MISSING | VALID | KEEP |
+| SIGA-HFS | SIGA-HFS Fixed Temperature Heat Detector | IMAGE MISSING | VALID | KEEP |
+| SIGA-HRS | SIGA-HRS Rate-of-Rise Heat Detector | IMAGE MISSING | VALID | KEEP |
+| SIGA-CO | SIGA-CO Intelligent Carbon Monoxide Detector | IMAGE MISSING | VALID | KEEP |
+| SIGA-CC1 | SIGA-CC1 Single Input Signal Module | IMAGE MISSING | VALID | KEEP |
+| SIGA-CC2 | SIGA-CC2 Dual Input Signal Module | IMAGE MISSING | VALID | KEEP |
+| SIGA-MCC1 | SIGA-MCC1 Miniature Single Input Monitor Module | IMAGE MISSING | VALID | KEEP |
+| SIGA-MCC2 | SIGA-MCC2 Miniature Dual Input Monitor Module | IMAGE MISSING | VALID | KEEP |
+| SIGA-RM1 | SIGA-RM1 Riser Monitor Module | IMAGE MISSING | VALID | KEEP |
+| SIGA-CT1 | SIGA-CT1 Single Input Module | IMAGE MISSING | VALID | KEEP |
+| SIGA-CT2 | SIGA-CT2 Dual Input Module | Present | VALID | KEEP |
+| SIGA-CR | SIGA-CR Control Relay Module | IMAGE MISSING | VALID | KEEP |
+| SIGA-CRR | SIGA-CRR Reverse Polarity Control Relay Module | IMAGE MISSING | VALID | KEEP |
+| SIGA-UM | SIGA-UM Universal Class A/B Module | IMAGE MISSING | VALID | KEEP |
+| SIGA-UM2 | SIGA-UM2 Universal Class A/B Signal Module | IMAGE MISSING | VALID | KEEP |
+| SIGA-CC1S | SIGA-CC1S Class A Signal Module (unverified) | IMAGE MISSING | VALID | KEEP |
+| SIGA-IM | SIGA-IM Short Circuit Isolator Module | IMAGE MISSING | VALID | KEEP |
+| SIGA-RM | SIGA-RM Releasing Module | IMAGE MISSING | VALID | KEEP |
+| SIGA-SB | SIGA-SB Standard Detector Base | IMAGE MISSING | VALID | KEEP |
+| SIGA-SB4 | SIGA-SB4 Standard Detector Base (4-inch) | IMAGE MISSING | VALID | KEEP |
+| SIGA-IB | SIGA-IB Isolator Detector Base | IMAGE MISSING | VALID | KEEP |
+| SIGA-IB4 | SIGA-IB4 Isolator Detector Base (4-inch) | IMAGE MISSING | VALID | KEEP |
+| SIGA-AB4G | SIGA-AB4G Audible Sounder Base | IMAGE MISSING | VALID | KEEP |
+| SIGA-LED | SIGA-LED Remote LED Indicator | IMAGE MISSING | VALID | KEEP |
+| SIGA-270 | SIGA-270 Single Action Intelligent Pull Station | IMAGE MISSING | VALID | KEEP |
+| SIGA-278 | SIGA-278 Double Action Intelligent Pull Station | IMAGE MISSING | VALID | KEEP |
+| SIGA-AB4G-LF | SIGA-AB4G-LF Audible Sounder Base (Low Frequency) | IMAGE MISSING | VALID | KEEP |
+| SIGA-PCD | SIGA-PCD Intelligent Multisensor Smoke and CO Detector | IMAGE MISSING | VALID | KEEP |
+| SIGA-PHCD | SIGA-PHCD Intelligent Multisensor Smoke, Heat and CO Detector | IMAGE MISSING | VALID | KEEP |
+| SIGA-MD | SIGA-MD Signature PIR Motion Detector | IMAGE MISSING | VALID | KEEP |
+| SIGA-MDS | SIGA-MDS Signature PIR Motion Detector Swivel Mount | IMAGE MISSING | VALID | KEEP |
+| SIGA-SEC2 | SIGA-SEC2 Complete Cabinet | IMAGE MISSING | VALID | KEEP |
+| SIGA-TS | SIGA-TS Signature System Accessory | IMAGE MISSING | VALID | KEEP |
+| SIGA-DMP | SIGA-DMP Detector Mounting Plate | IMAGE MISSING | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Synchronization Output Module | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Universal Input-Output Module Motherboards | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Beam Smoke Detector | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| End-to-End | End-to-End Beam Smoke Detector | IMAGE MISSING | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Explosionproof Smoke Detector | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Carbon Monoxide Detector | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| EC5000R | EC5000R Reflective Beam Detector | IMAGE MISSING | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Conventional Smoke and Heat Detector | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Heat Detector | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| Two-Wire | Two-Wire SuperDuct Duct Smoke Detector | IMAGE MISSING | VALID | KEEP |
+| Four-Wire | Four-Wire SuperDuct Duct Smoke Detector | IMAGE MISSING | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Fire Alarm Station | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Pull Station | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Pull Station | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Hazardous-Location Station | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Weatherproof/Explosionproof Pull Station | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| Key-operated | Key-operated Fire Alarm Station | IMAGE MISSING | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Wall Mount Speaker and Speaker-Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Ceiling Mount Notification Device | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Strobe Expander | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Chime and Chime-Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Low Frequency Audible Signal | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Multiple Tone Signal | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Synchronized Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Horn and Horn-Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Bell | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Power Supply | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Power Supply | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Battery | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Power Supply / Interface | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PAM1 | PAM1 Multi-Voltage Control Relay | IMAGE MISSING | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Control Relay | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| MR-700 | MR-700 Multi-Voltage Control Relays | IMAGE MISSING | VALID | KEEP |
+| MR-800 | MR-800 Multi-Voltage Control Relays | IMAGE MISSING | VALID | KEEP |
+| MR-100 | MR-100 and 200 Multi-Voltage Control Relays | IMAGE MISSING | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Control Relay | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Mounting Accessory | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Mounting Accessory | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Accessory | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Door Holder | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Accessory Kit | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Accessory | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| Bell-Strobe | Bell-Strobe Plate | IMAGE MISSING | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Accessory | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Input Module | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Signal Module | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Monitor Module | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| Input-Output | Input-Output Modules | IMAGE MISSING | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Input Module | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Signal Module | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Ceiling Mount Speaker and Speaker-Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Ceiling Mount Notification Device | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Wall Mount Notification Device | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Speaker and Speaker-Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Ceiling Speaker and Speaker-Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Ceiling Speaker and Speaker-Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Outdoor Speaker and Speaker-Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| Multi-purpose | Multi-purpose Loudspeaker, 15 Watt | IMAGE MISSING | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Re-entrant Speaker and Speaker-Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Speaker and Speaker-Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Outdoor Horn and Horn-Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Outdoor Speaker and Speaker-Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| Horn-Siren | Horn-Siren Combination | IMAGE MISSING | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Bell | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Horn | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Multiple Tone Signal | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Horn and Siren | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Outdoor Horn and Horn-Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Mounting Accessory | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Strobe | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| PART NUMBER NEEDS VERIFICATION | Diagnostic Tool | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| SIGA-DDOS | SIGA-DDOS Intelligent Duct Smoke Detector | IMAGE MISSING | VALID | KEEP |
+| iO64 | iO64 | Present | VALID | KEEP |
+| iO1000 | iO1000 | Present | VALID | KEEP |
+| G4LFV | G4LFV Genesis LED Wall-Mount Low-Frequency Horn-Strobe | IMAGE MISSING | VALID | KEEP |
+| GRSW-10 | GRSW-10 Room-Side Wiring Plate | IMAGE MISSING | VALID | KEEP |
+| PART NUMBER NEEDS VERIFICATION | Genesis Accessory | IMAGE MISSING | NEEDS PART NUMBER | PART NUMBER NEEDS VERIFICATION |
+| GRT-10 | GRT-10 Genesis LED Device/Cover Removal Tool | IMAGE MISSING | VALID | KEEP |
+| G4TR | G4TR Red G4 Trim Plate | IMAGE MISSING | VALID | KEEP |
+| G4TW | G4TW White G4 Trim Plate | IMAGE MISSING | VALID | KEEP |
+| G4RSB | G4RSB Red 4-Inch Surface-Mount Box | IMAGE MISSING | VALID | KEEP |
+| G4WSB | G4WSB White 4-Inch Surface-Mount Box | IMAGE MISSING | VALID | KEEP |
+| G1A | G1A Genesis LED Compact Wall-Mount Horn | IMAGE MISSING | VALID | KEEP |
+| G1V | G1V Genesis LED Compact Wall-Mount Strobe | IMAGE MISSING | VALID | KEEP |
+| G1AV | G1AV Genesis LED Compact Wall-Mount Horn-Strobe | IMAGE MISSING | VALID | KEEP |
+| G1TR | G1TR Red G1 Trim Ring | IMAGE MISSING | VALID | KEEP |
+| G1TW | G1TW White G1 Trim Ring | IMAGE MISSING | VALID | KEEP |
+| 27193-11 | 27193-11 Red One-Gang Surface-Mount Box | IMAGE MISSING | VALID | KEEP |
+| 27193-16 | 27193-16 White One-Gang Surface-Mount Box | IMAGE MISSING | VALID | KEEP |
+
+## Final Totals
+Total records: 145
+Valid part numbers: 81
+Missing part numbers: 64
+E85/E850 used as product IDs: 71
+Duplicate candidates: 0
+Products needing verification: 64
+Images missing: 131
+Products retained: 145
+Products excluded from scored training: 2
+

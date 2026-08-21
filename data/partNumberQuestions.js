@@ -233,15 +233,15 @@ id: 20,
 category: "PartNumber",
 difficulty: "Medium",
 product: "SIGA-CRR Reverse Polarity Control Relay Module",
-question: "SIGA-CRR is documented in the Academy as which relay module variant?",
+question: "Which Edwards Signature relay part number matches a reverse-polarity control relay module?",
 answers: [
-"Reverse Polarity Control Relay Module",
-"Standard Control Relay Module",
-"High Power Control Relay Module",
-"Riser Monitor Module"
+"SIGA-CRR",
+"SIGA-CR",
+"SIGA-CRH",
+"SIGA-UM"
 ],
 correct: 0,
-explanation: "SIGA-CRR is the Reverse Polarity Control Relay Module â€” a specific relay variant for applications requiring reverse-polarity behavior. The standard relay module is SIGA-CR."
+explanation: "SIGA-CRR is the reverse-polarity control relay module. SIGA-CR is the standard control relay module, and SIGA-CRH is the high-power control relay module."
 ,
 },
 
@@ -256,7 +256,7 @@ id: 23,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "Which documented pairing is correct for the Signature CC modules?",
+question: "Which documented pairing is correct for the Signature CC modules in the verified library?",
 answers: [
 "SIGA-CC1 is a Single Input Signal Module; SIGA-CC2 is a Dual Input Signal Module",
 "SIGA-CC1 is a Dual Input Module; SIGA-CC2 is a Single Input Module",
@@ -264,7 +264,7 @@ answers: [
 "SIGA-CC1 is a detector base; SIGA-CC2 is a notification appliance"
 ],
 correct: 0,
-explanation: "SIGA-CC1 is a Single Input Signal Module and SIGA-CC2 is a Dual Input Signal Module.",
+explanation: "The verified Signature CC family uses the signal-module category: SIGA-CC1 is the Single Input Signal Module and SIGA-CC2 is the Dual Input Signal Module.",
 },
 
 
@@ -273,7 +273,7 @@ id: 24,
 category: "PartNumber",
 difficulty: "Medium",
 product: "",
-question: "Which documented pairing is correct for the Signature CT modules?",
+question: "Which documented pairing is correct for the Signature CT modules in the verified library?",
 answers: [
 "SIGA-CT1 is a Single Input Module; SIGA-CT2 is a Dual Input Module",
 "SIGA-CT1 is a Dual Input Module; SIGA-CT2 is a Single Input Module",
@@ -281,7 +281,7 @@ answers: [
 "SIGA-CT1 is an Isolator Module; SIGA-CT2 is a detector base"
 ],
 correct: 0,
-explanation: "SIGA-CT1 is a Single Input Module and SIGA-CT2 is a Dual Input Module.",
+explanation: "The verified Signature CT family uses the input-module category: SIGA-CT1 is the Single Input Module and SIGA-CT2 is the Dual Input Module.",
 },
 
 

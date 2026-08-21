@@ -262,31 +262,33 @@ explanation: "Official Edwards documentation identifies CT2 as a Dual Input Modu
 id: "fbq_022",
 category: "Final Boss",
 difficulty: "Medium",
-product: "Part Number Pairing",
-question: "Which pairing is NOT correct?",
+product: "SIGA-CC2",
+question: "A design calls for a two-channel signal module for a signal/riser application. Which Signature part number is the correct match?",
 answers: [
-"SIGA-CC1 = Dual Input Signal Module",
-"SIGA-CT1 = Single Input Module",
-"SIGA-278 = Double Action Pull Station",
-"SIGA-OSD = Smoke Detector"
+"SIGA-CC2",
+"SIGA-CT2",
+"SIGA-CR",
+"SIGA-UM"
 ],
 correct: 0,
-explanation: "SIGA-CC1 is a Single Input Signal Module, not a Single Output Control Module."
+explanation: "SIGA-CC2 is the Dual Input Signal Module for a two-channel signal/riser application. SIGA-CT2 is a dual input module, but the CC-family product is the signal-module category used for this type of signal/riser function.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0275", manufacturer: "Edwards", verified: true, sourcePage: "1, 3-4", sourceSection: "Overview; Application (Personality Codes)" }
 },
 {
 id: "fbq_024",
 category: "Final Boss",
 difficulty: "Medium",
-product: "Dual Input Selection",
-question: "Two signal/riser channels at the same location must be provided. Which part number is the most direct fit?",
+product: "SIGA-CC2 vs SIGA-CT2",
+question: "Which statement best distinguishes SIGA-CC2 from SIGA-CT2 for a field review?",
 answers: [
-"SIGA-CC2",
-"SIGA-CT2",
-"SIGA-CC1",
-"SIGA-CR"
+"SIGA-CC2 is a signal-module category product; SIGA-CT2 is an input-module category product",
+"SIGA-CC2 is a detector base; SIGA-CT2 is a relay module",
+"SIGA-CC2 is a pull station; SIGA-CT2 is a smoke detector",
+"SIGA-CC2 and SIGA-CT2 are the same product family for all signal/riser applications"
 ],
 correct: 0,
-explanation: "CC2 is a Dual Input Signal Module for the applicable signal/riser application."
+explanation: "The CC family is the signal-module category; the CT family is the input-module category. Both are dual-channel products, but they serve different Signature product functions.",
+source: { sourceType: "Edwards Datasheet", sourceDocument: "E85001-0275", manufacturer: "Edwards", verified: true, sourcePage: "1, 3-4", sourceSection: "Overview; Application (Personality Codes)" }
 },
 {
 id: "fbq_029",

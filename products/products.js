@@ -1,14 +1,12 @@
 const grid = document.getElementById("productGrid");
 const search = document.getElementById("productSearch");
-const familyFilter = document.getElementById("familyFilter");
-const categoryFilter = document.getElementById("categoryFilter");
-const familyList = document.getElementById("familyList");
 const resultsSummary = document.getElementById("resultsSummary");
 const productCountChip = document.getElementById("productCountChip");
 
-let selectedFamily = "All";
-let selectedCategory = "All";
 let selectedProductId = null;
+
+const knownAlphaPartNumbers = new Set(["EDGE", "APS", "BPS", "GCS", "GC", "GOCT"]);
+const genericModelTokens = new Set(["END-TO-END", "TWO-WIRE", "FOUR-WIRE", "KEY-OPERATED", "MULTI-PURPOSE", "HORN-SIREN"]);
 
 const familyImageKeys = {
     "EST4": "control",
@@ -34,6 +32,64 @@ function truncate(text, limit) {
     const value = String(text || "");
     if (value.length <= limit) return value;
     return value.slice(0, limit - 1) + "…";
+}
+
+function isDisplayPartNumber(value) {
+    const part = String(value || "").trim();
+    if (!part) {
+        return false;
+    }
+    if (genericModelTokens.has(part.toUpperCase())) {
+        return false;
+    }
+    if (/^E85\d{3}(?:-[A-Z0-9]+)?$/i.test(part)) {
+        return false;
+    }
+    if (/\s/.test(part)) {
+        return false;
+    }
+
+    if (/^[A-Z]+$/i.test(part)) {
+        return knownAlphaPartNumbers.has(part.toUpperCase());
+    }
+
+    return /^([A-Z]+[A-Z0-9]*-[A-Z0-9][A-Z0-9-]*|[A-Z]{1,6}[0-9]{1,4}[A-Z0-9-]*|[0-9]{5}-[0-9]{2}|4-NET)$/i.test(part);
+}
+
+function normalizePartNumber(product) {
+    const current = String(product.partNumber || "").trim();
+    if (isDisplayPartNumber(current)) {
+        return current;
+    }
+
+    const model = String(product.model || "").trim();
+    const token = model.split(/\s+/)[0] || "";
+    if (isDisplayPartNumber(token)) {
+        return token;
+    }
+
+    return "";
+}
+
+function getWhatIsIt(product, partNumber) {
+    const model = String(product.model || "").trim();
+    if (partNumber) {
+        let remainder = "";
+        if (model.toLowerCase() !== partNumber.toLowerCase()) {
+            const escapedPart = partNumber.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+            const prefixPattern = new RegExp(`^${escapedPart}\\s+`, "i");
+            remainder = model.replace(prefixPattern, "").trim();
+        }
+        if (remainder) {
+            return remainder;
+        }
+    }
+
+    if (product.category) {
+        return String(product.category).trim();
+    }
+
+    return "PART NUMBER NEEDS VERIFICATION";
 }
 
 function getCategoryTone(key) {
@@ -100,118 +156,18 @@ function handleProductImageError(event, productId) {
 
 window.getProductImage = getProductImage;
 window.handleProductImageError = handleProductImageError;
-
-function uniqueSorted(values) {
-    return [...new Set(values)]
-        .filter(Boolean)
-        .sort((a, b) => a.localeCompare(b));
-}
-
-function getManufacturers() {
-    return uniqueSorted((productLibrary.manufacturers || []).map(item => item.name));
-}
-
-function getFamilies() {
-    return uniqueSorted(productLibrary.products.map(product => product.family));
-}
-
-function getCategories() {
-    return uniqueSorted(productLibrary.products.map(product => product.category));
-}
-
-function syncFilterControls() {
-    const families = getFamilies();
-    const categories = getCategories();
-
-    familyFilter.innerHTML = "";
-    const familyAllOption = document.createElement("option");
-    familyAllOption.value = "All";
-    familyAllOption.textContent = "All Families";
-    familyFilter.appendChild(familyAllOption);
-    families.forEach(name => {
-        const option = document.createElement("option");
-        option.value = name;
-        option.textContent = name;
-        familyFilter.appendChild(option);
-    });
-    familyFilter.value = selectedFamily;
-
-    categoryFilter.innerHTML = "";
-    const categoryAllOption = document.createElement("option");
-    categoryAllOption.value = "All";
-    categoryAllOption.textContent = "All Categories";
-    categoryFilter.appendChild(categoryAllOption);
-    categories.forEach(name => {
-        const option = document.createElement("option");
-        option.value = name;
-        option.textContent = name;
-        categoryFilter.appendChild(option);
-    });
-    categoryFilter.value = selectedCategory;
-}
-
-function renderFamilyList() {
-    const families = getFamilies();
-    familyList.innerHTML = "";
-
-    const allButton = document.createElement("button");
-    allButton.type = "button";
-    allButton.className = "explorer-item";
-    allButton.textContent = "All Families";
-    allButton.onclick = () => {
-        selectedFamily = "All";
-        selectedProductId = null;
-        refreshExplorer();
-    };
-    if (selectedFamily === "All") {
-        allButton.classList.add("active");
-    }
-    familyList.appendChild(allButton);
-
-    families.forEach(name => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "explorer-item";
-        button.textContent = name;
-        if (selectedFamily === name) {
-            button.classList.add("active");
-        }
-        button.onclick = () => {
-            selectedFamily = name;
-            selectedProductId = null;
-            refreshExplorer();
-        };
-        familyList.appendChild(button);
-    });
-}
+window.getDisplayPartNumber = normalizePartNumber;
+window.getDisplayWhatIsIt = getWhatIsIt;
 
 function getFilteredProducts() {
     const text = search.value.trim().toLowerCase();
 
     return productLibrary.products.filter(product => {
-        if (selectedFamily !== "All" && product.family !== selectedFamily) {
-            return false;
-        }
-
-        if (selectedCategory !== "All" && product.category !== selectedCategory) {
-            return false;
-        }
-
         if (text.length === 0) {
             return true;
         }
 
-        const searchText = [
-            product.model,
-            product.manufacturer,
-            product.family,
-            product.category,
-            product.series,
-            product.officialDescription,
-            product.plainEnglish,
-            ...(product.keywords || []),
-            ...(product.features || [])
-        ].join(" ").toLowerCase();
+        const searchText = normalizePartNumber(product).toLowerCase();
 
         return searchText.includes(text);
     });
@@ -234,28 +190,28 @@ function renderProducts() {
     grid.innerHTML = "";
 
     products.forEach(product => {
+        const partNumber = normalizePartNumber(product) || "PART NUMBER NEEDS VERIFICATION";
+        const whatIsIt = getWhatIsIt(product, normalizePartNumber(product));
         const item = document.createElement("button");
         item.type = "button";
         item.className = "explorer-item productCard";
-        item.setAttribute("aria-label", product.model);
+        item.setAttribute("aria-label", partNumber);
         if (selectedProductId === product.id) {
             item.classList.add("active");
         }
 
         item.innerHTML = `
             <div class="product-card-top">
-                <img class="product-thumb" src="${getProductImage(product)}" alt="${escapeHtml(product.model)} image" onerror="window.handleProductImageError(event, ${product.id})">
+                <img class="product-thumb" src="${getProductImage(product)}" alt="${escapeHtml(partNumber)} image" onerror="window.handleProductImageError(event, ${product.id})">
                 <div class="product-card-copy">
-                    <div class="product-card-model">${escapeHtml(product.model)}</div>
-                    <div class="product-card-name">${escapeHtml(product.category || "Verified product")}</div>
-                    <div class="product-card-meta">
-                        <span class="product-chip">${escapeHtml(product.manufacturer || "Manufacturer")}</span>
-                        <span class="product-chip">${escapeHtml(product.family || "Family")}</span>
-                    </div>
+                    <div class="product-card-label">Part Number</div>
+                    <div class="product-card-model">${escapeHtml(partNumber)}</div>
+                    <div class="product-card-label">What is it?</div>
+                    <div class="product-card-name">${escapeHtml(whatIsIt)}</div>
                 </div>
             </div>
             <div class="product-card-footer">
-                <p>${escapeHtml(truncate(product.officialDescription || product.plainEnglish || "Verified product description", 120))}</p>
+                <p>${escapeHtml(truncate(whatIsIt, 120))}</p>
                 <span class="product-link">View Product →</span>
             </div>
         `;
@@ -272,7 +228,7 @@ function renderProducts() {
     if (products.length === 0) {
         const empty = document.createElement("div");
         empty.className = "explorer-empty";
-        empty.innerHTML = "<strong>No products found.</strong><p>Try searching by part number, product family, or category.</p>";
+        empty.innerHTML = "<strong>No products found.</strong><p>Try searching by part number.</p>";
         grid.appendChild(empty);
     }
 }
@@ -319,27 +275,15 @@ function setupListKeyboardNavigation(container) {
 }
 
 function refreshExplorer() {
-    syncFilterControls();
-    renderFamilyList();
     renderProducts();
 }
 
-search.addEventListener("input", () => {
-    selectedProductId = null;
-    renderProducts();
-});
-
-familyFilter.addEventListener("change", () => {
-    selectedFamily = familyFilter.value;
-    selectedProductId = null;
-    refreshExplorer();
-});
-
-categoryFilter.addEventListener("change", () => {
-    selectedCategory = categoryFilter.value;
-    selectedProductId = null;
-    refreshExplorer();
-});
+if (search) {
+    search.addEventListener("input", () => {
+        selectedProductId = null;
+        renderProducts();
+    });
+}
 
 function filterQuestionsForProduct(pool, product) {
     if (!product || !Array.isArray(pool)) {
@@ -370,7 +314,6 @@ function filterQuestionsForProduct(pool, product) {
 
 window.filterQuestionsForProduct = filterQuestionsForProduct;
 
-setupListKeyboardNavigation(familyList);
 setupListKeyboardNavigation(grid);
 
 refreshExplorer();
@@ -381,7 +324,6 @@ const productFromQuery = Number(params.get("id") || params.get("productId"));
 if (Number.isFinite(productFromQuery) && productFromQuery > 0) {
     const target = productLibrary.products.find(product => product.id === productFromQuery);
     if (target) {
-        selectedFamily = target.family;
         selectedProductId = target.id;
         refreshExplorer();
         openProduct(target.id);

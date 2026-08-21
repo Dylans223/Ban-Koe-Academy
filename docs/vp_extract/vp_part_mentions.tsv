@@ -1,0 +1,70 @@
+﻿PART	COUNT	SOURCE_SAMPLES
+APS	5	Exam DOCX line 138; Exam DOCX line 140; Exam DOCX line 267
+BPS	7	Exam DOCX line 134; Exam DOCX line 136; Exam DOCX line 140
+EDGE	4	Exam DOCX line 32; Slidedeck PPTX line 80; Slidedeck PPTX line 146
+EST3X	7	Exam DOCX line 24; Exam DOCX line 32; Exam DOCX line 34
+EST4	8	Exam DOCX line 26; Exam DOCX line 30; Exam DOCX line 32
+G1AVRF	7	Slidedeck PPTX line 42; Slidedeck PPTX line 45; Slidedeck PPTX line 47
+G4S	4	Exam DOCX line 131; Exam DOCX line 274; Slidedeck PPTX line 52
+G4SV	2	Exam DOCX line 274; Slidedeck PPTX line 52
+G4SVWF	7	Slidedeck PPTX line 52; Slidedeck PPTX line 54; Slidedeck PPTX line 55
+IO-1000	3	Exam DOCX line 28; Exam DOCX line 32; Slidedeck PPTX line 146
+IO-64	2	Exam DOCX line 32; Slidedeck PPTX line 146
+SIGA-270	7	Slidedeck PPTX line 111; Slidedeck PPTX line 111; Slidedeck PPTX line 111
+SIGA-270L	2	Slidedeck PPTX line 111; Slidedeck PPTX line 111
+SIGA-278	6	Slidedeck PPTX line 117; Slidedeck PPTX line 117; Slidedeck PPTX line 118
+SIGA-AA30	6	Exam DOCX line 142; Slidedeck PPTX line 20; Slidedeck PPTX line 20
+SIGA-AA50	2	Exam DOCX line 142; Slidedeck PPTX line 20
+SIGA-AB4G-LF	1	Slidedeck PPTX line 90
+SIGA-AB4GT	6	Exam DOCX line 74; Slidedeck PPTX line 86; Slidedeck PPTX line 86
+SIGA-AB4-LF	5	Exam DOCX line 74; Slidedeck PPTX line 90; Slidedeck PPTX line 92
+SIGA-AB4-LFD	1	Exam DOCX line 131
+SIGA-CC1	9	Exam DOCX line 81; Exam DOCX line 90; Exam DOCX line 97
+SIGA-CC1(S)	1	Exam DOCX line 89
+SIGA-CC1D	1	Exam DOCX line 87
+SIGA-CC1S	2	Slidedeck PPTX line 33; Slidedeck PPTX line 140
+SIGA-COD	12	Exam DOCX line 47; Exam DOCX line 49; Exam DOCX line 52
+SIGA-CR	8	Exam DOCX line 72; Exam DOCX line 280; Slidedeck PPTX line 129
+SIGA-CRB	2	Exam DOCX line 85; Exam DOCX line 87
+SIGA-CRC	1	Exam DOCX line 79
+SIGA-CRD	1	Exam DOCX line 97
+SIGA-CRH	10	Exam DOCX line 72; Exam DOCX line 165; Exam DOCX line 273
+SIGA-CRHC	2	Exam DOCX line 87; Exam DOCX line 89
+SIGA-CRHD	1	Exam DOCX line 81
+SIGA-CT1	7	Exam DOCX line 71; Slidedeck PPTX line 122; Slidedeck PPTX line 122
+SIGA-CT1B	2	Exam DOCX line 79; Exam DOCX line 81
+SIGA-CT1C	1	Exam DOCX line 85
+SIGA-CT2	4	Exam DOCX line 71; Exam DOCX line 82; Slidedeck PPTX line 123
+SIGA-CT2B	1	Exam DOCX line 89
+SIGA-CT2C	1	Exam DOCX line 81
+SIGA-DDOS	5	Exam DOCX line 108; Exam DOCX line 272; Slidedeck PPTX line 100
+SIGA-HCD	2	Exam DOCX line 57; Slidedeck PPTX line 76
+SIGA-HCDC	1	Exam DOCX line 61
+SIGA-HFD	2	Exam DOCX line 62; Slidedeck PPTX line 71
+SIGA-HFDB	2	Exam DOCX line 52; Exam DOCX line 54
+SIGA-HRD	5	Exam DOCX line 62; Exam DOCX line 271; Slidedeck PPTX line 70
+SIGA-HRDC	2	Exam DOCX line 52; Exam DOCX line 54
+SIGA-HRS	1	Slidedeck PPTX line 113
+SIGA-LED	2	Slidedeck PPTX line 77; Slidedeck PPTX line 82
+SIGA-OSCD	2	Exam DOCX line 58; Slidedeck PPTX line 76
+SIGA-OSCDD	1	Exam DOCX line 61
+SIGA-OSD	8	Exam DOCX line 45; Slidedeck PPTX line 2; Slidedeck PPTX line 2
+SIGA-OSDB	1	Exam DOCX line 61
+SIGA-OSDD	2	Exam DOCX line 52; Exam DOCX line 54
+SIGA-OSHCD	3	Exam DOCX line 59; Exam DOCX line 61; Slidedeck PPTX line 76
+SIGA-OSHD	2	Exam DOCX line 56; Slidedeck PPTX line 76
+SIGA-PD	1	Slidedeck PPTX line 102
+SIGA-PS	1	Slidedeck PPTX line 102
+SIGA-RB4	7	Exam DOCX line 73; Exam DOCX line 131; Exam DOCX line 278
+SIGA-REL	19	Exam DOCX line 276; Slidedeck PPTX line 8; Slidedeck PPTX line 8
+SIGA-RELB	1	Exam DOCX line 97
+SIGA-RM1	8	Exam DOCX line 89; Slidedeck PPTX line 152; Slidedeck PPTX line 152
+SIGA-RM1C	1	Exam DOCX line 97
+SIGA-RM1D	2	Exam DOCX line 79; Exam DOCX line 85
+SIGA-SB4	5	Exam DOCX line 73; Slidedeck PPTX line 77; Slidedeck PPTX line 78
+SIGA-SD	3	Exam DOCX line 75; Exam DOCX line 272; Slidedeck PPTX line 124
+SIGA-SDH	9	Exam DOCX line 75; Exam DOCX line 272; Slidedeck PPTX line 106
+SIGA-TCDR	17	Exam DOCX line 79; Exam DOCX line 85; Exam DOCX line 92
+SIGA-TCDRS	1	Slidedeck PPTX line 145
+SIGA-UIO6	8	Exam DOCX line 87; Exam DOCX line 277; Slidedeck PPTX line 3
+SIGA-UIO6R	2	Exam DOCX line 277; Slidedeck PPTX line 3

@@ -1,0 +1,282 @@
+﻿EDWARDS PRODUCT RECOGNITION
+Sales / Service Certification Examination
+Employee: __________________________________________
+Department: ________________________________________
+Date: ___________________
+Manager/Trainer: ___________________________________
+Score: __________ / 100
+CERTIFICATION STANDARD
+This examination is designed to verify that the employee can:
+Recognize key Edwards products.
+Explain the primary purpose/function of each product.
+Distinguish between similar products.
+Select an appropriate product based on a customer or service situation.
+Understand basic system relationships between detectors, modules, bases, notification appliances, power supplies, and control panels.
+Identify important product limitations and installation/service considerations.
+Recommended Passing Standard
+80% minimum overall score
+AND
+No less than 70% in any individual section
+A score below 80% should trigger targeted product review and retesting.
+SECTION 1 â€” FIRE ALARM CONTROL PANELS
+10 points â€” 1 point each
+1. Which panel is rated for 64 devices?
+A. EDGEB. iO-64C. iO-1000D. EST3X
+2. Which panel is rated for 1,000 devices?
+A. iO-64B. EST3XC. iO-1000D. EST4
+3. Which panel is identified as supporting 1,500 devices?
+A. EDGEB. EST3XC. EST4D. iO-1000
+4. Which panel is identified as supporting 2,500 devices?
+A. iO-1000B. EDGEC. EST3XD. EST4
+5. Which two panels are identified as supporting 1,000 devices?
+A. iO-64 and EST3XB. iO-1000 and EDGEC. EST3X and EST4D. EDGE and EST4
+6. The presentation identifies the following network capacities:
+EST3X: __________ panelsEST4: __________ panels
+7. A customer tells you they have a system requirement approaching 2,000 devices. Based strictly on the capacity information in the presentation, which panel family should be investigated first?
+A. iO-64B. iO-1000C. EST3XD. EST4
+8. Which legacy panel is identified as having been in use from 1995â€“2012?
+A. EST3B. EST2C. EDGED. EST4
+9. Which legacy panel is identified as having been in use from 1996â€“2023?
+A. EST2B. EST3C. iO-1000D. EST3X
+10. Why is panel capacity an important consideration during a sales conversation?
+Answer in 2â€“3 sentences.
+SECTION 2 â€” DETECTOR RECOGNITION
+15 points â€” 1.5 points each
+11. What type of detection does the SIGA-OSD provide?
+A. COB. Optical smokeC. Fixed-temperature heatD. Rate-of-rise heat
+12. What does the SIGA-COD specifically detect?
+A. Smoke and heatB. Heat and COC. Carbon monoxideD. Smoke and CO
+13. What does the SIGA-COD NOT detect?
+A. Carbon monoxideB. Heat from a fireC. SmokeD. Both B and C
+14. Which detector uses both fixed-temperature and rate-of-rise heat sensing?
+A. SIGA-HFDB. SIGA-HRDC. SIGA-OSDD. SIGA-COD
+15. Which detector uses fixed-temperature heat sensing?
+A. SIGA-HFDB. SIGA-HRDC. SIGA-OSDD. SIGA-COD
+16. Match each combination detector with its detection technologies.
+SIGA-OSHD: __________________________________
+SIGA-HCD: ___________________________________
+SIGA-OSCD: __________________________________
+SIGA-OSHCD: _________________________________
+17. A customer wants a detector capable of identifying smoke, heat, and CO. Which product from the presentation should you discuss?
+A. SIGA-OSDB. SIGA-HCDC. SIGA-OSCDD. SIGA-OSHCD
+18. A service technician sees a SIGA-HRD and a SIGA-HFD on the same project. What is the key functional difference between the two?
+Answer:
+19. What is the stated lifespan of the SIGA-COD?
+A. 5 yearsB. 7 yearsC. 10 yearsD. 15 years
+20. A customer proposes using heat detectors as the sole means of fire protection. Based on the training material, how should the salesperson/service employee respond?
+Answer in your own words.
+SECTION 3 â€” PRODUCT DIFFERENTIATION
+15 points â€” 3 points each
+For each pair, identify the primary difference between the products.
+21. SIGA-CT1 vs. SIGA-CT2
+22. SIGA-CR vs. SIGA-CRH
+23. SIGA-SB4 vs. SIGA-RB4
+24. SIGA-AB4GT vs. SIGA-AB4-LF
+25. SIGA-SD vs. SIGA-SDH
+SECTION 4 â€” MODULE RECOGNITION & APPLICATION
+15 points â€” 1.5 points each
+26. A project needs to connect a Class B initiating device circuit to a Signature controller module. Which product is appropriate?
+A. SIGA-CT1B. SIGA-CRC. SIGA-RM1D. SIGA-TCDR
+27. A project needs to connect one or two Class B initiating device circuits. Which product should be considered?
+A. SIGA-CT1B. SIGA-CT2C. SIGA-CRHD. SIGA-CC1
+28. How many SLC addresses does the SIGA-CT2 require?
+A. NoneB. OneC. TwoD. Four
+29. A system requires a Form C dry-contact relay output. Which module is designed for this function?
+A. SIGA-CRB. SIGA-CT1C. SIGA-RM1D. SIGA-TCDR
+30. A high-voltage, high-current relay application is required. Which module should be considered?
+A. SIGA-CRB. SIGA-CRHC. SIGA-CC1D. SIGA-UIO6
+31. Which module is designed to connect audible/visible notification circuits, speaker circuits, and two-way telephone communication circuits?
+A. SIGA-CT2B. SIGA-CRHC. SIGA-CC1(S)D. SIGA-RM1
+32. Does the SIGA-CC1(S) provide synchronization?
+A. YesB. No
+33. What is the primary purpose of the SIGA-TCDR?
+A. Monitor a riserB. Generate temporal sound patterns for compatible audible basesC. Provide relay outputD. Detect CO
+34. How many SIGA-TCDR modules are required for each TCDR riser?
+A. OneB. TwoC. One per detectorD. One per panel
+35. A service technician needs to monitor 12/24 Vdc, 25 Vac, 70 Vac, or telephone riser signals. Which product should they recognize?
+A. SIGA-RELB. SIGA-RM1C. SIGA-CRD. SIGA-CC1
+SECTION 5 â€” DUCT SMOKE DETECTION
+10 points â€” 2 points each
+36. What is the primary purpose of a duct smoke detector?
+A. Replace room smoke detectorsB. Provide early warning and help prevent smoke from circulating through the building HVAC systemC. Detect carbon monoxide in HVAC systemsD. Detect heat only
+37. Where should a duct smoke detector generally be installed in relation to bends or obstructions?
+A. Immediately adjacent to themB. 1â€“2 duct widths awayC. 6â€“10 duct widths awayD. At least 20 duct widths away
+38. How far across the duct should the sampling tube extend?
+A. One-quarterB. One-thirdC. One-halfD. At least two-thirds
+39. A sampling tube is longer than 36 inches. What additional installation consideration is identified in the presentation?
+A. It must be electrically groundedB. It must be supported at both endsC. It must be replacedD. It must be insulated
+40. During installation of a SIGA-DDOS, what should be verified regarding duct airflow?
+Answer:
+SECTION 6 â€” NOTIFICATION APPLIANCES
+10 points â€” 1 point each
+41. In the Genesis model nomenclature, what does â€œGâ€ represent?
+A. GroundB. GenerationC. GeneralD. Generator
+42. What does â€œ1â€ represent in the G1 model nomenclature?
+A. One voltageB. Single-gang/smaller form factorC. One speakerD. One strobe
+43. What does â€œ4â€ represent?
+A. Four wattsB. Four circuitsC. Larger form factor/4-inch squareD. Four speakers
+44. What does â€œAâ€ represent?
+A. Audible hornB. AuxiliaryC. AddressableD. Amplifier
+45. What does â€œVâ€ represent?
+A. VoiceB. VoltageC. Visible strobeD. Variable
+46. What does â€œSâ€ represent?
+A. SensorB. SpeakerC. StrobeD. SLC
+47. What does â€œRâ€ represent?
+A. RelayB. RemoteC. RedD. Riser
+48. What does â€œWâ€ represent?
+A. WallB. WhiteC. WattD. Wire
+49. What does â€œFâ€ represent?
+A. Fire markingB. Form CC. FrequencyD. Field configurable
+50. A customer needs an indoor wall-mounted fire alarm notification appliance that may be configured as a horn, strobe, or horn-strobe. Which family should you investigate?
+A. G1 SeriesB. G4S SeriesC. SIGA-AB4-LFD. SIGA-RB4
+SECTION 7 â€” POWER SUPPLIES & AUDIO
+10 points â€” 2 points each
+51. What is the primary purpose of the BPS Series?
+A. Detect smokeB. Extend power capacity for emergency communication, life safety, and fire alarm systemsC. Provide CO detectionD. Provide relay outputs
+52. How many independent NAC/AUX circuits does the BPS have?
+A. TwoB. ThreeC. FourD. Six
+53. What is a key characteristic of the APS Series?
+A. It has four outputs configurable as NACs or AUX power circuitsB. It only provides audio amplificationC. It only supports conventional detectorsD. It replaces the fire alarm control panel
+54. What is one distinction identified between the BPS and APS families?
+Answer:
+55. The SIGA-AA30 and SIGA-AA50 are:
+A. Detector basesB. Audio amplifiersC. Power suppliesD. Relay modules
+SECTION 8 â€” SALES & SERVICE SCENARIOS
+15 points â€” 3 points each
+These questions are intended to test application, not memorization.
+56. CUSTOMER SCENARIO â€” CO
+A school has an area where carbon monoxide detection is required. The customer asks:
+â€œCan I use a normal smoke detector for this?â€
+What Edwards product from the presentation should you discuss, and what is its primary detection function?
+Product: ______________________________________
+Explanation:
+57. CUSTOMER SCENARIO â€” HEAT
+A customer says:
+â€œI want a heat detector that can respond quickly to a fast, flaming fire but also provide fixed-temperature detection.â€
+Which product should you discuss?
+Answer: _______________________________________
+Why?
+58. CUSTOMER SCENARIO â€” HVAC
+A school district wants to reduce the possibility of smoke being circulated throughout a building through the HVAC system.
+What category of Edwards product should you discuss?
+Answer: _______________________________________
+What is its primary purpose?
+59. SERVICE SCENARIO â€” MODULE IDENTIFICATION
+A technician finds a module identified as SIGA-CRH and asks:
+â€œWhat is this module intended to do?â€
+Provide a concise service-level answer.
+60. SALES SCENARIO â€” NOTIFICATION
+A customer needs a distributed speaker system operating at 25 or 70 VRMS and may require speaker-strobe appliances.
+Which Edwards product family should you investigate?
+Answer: _______________________________________
+What additional product characteristics should you confirm with the customer before making a recommendation?
+SECTION 9 â€” ADVANCED PRODUCT RECOGNITION
+10 points â€” 2 points each
+61. Identify the product from the description:
+â€œAddressable device used to actuate solenoid valves in fire suppression applications. Includes manual release and abort inputs, prerelease signaling circuits, releasing device circuits, and a prerelease output relay.â€
+Product: _______________________________________
+62. Identify the product:
+â€œUniversal Input/Output Motherboard providing mounting and wiring terminations for up to six M-series modules.â€
+Product: _______________________________________
+63. Identify the product:
+â€œ4-inch relay base used to mount Signature detectors on 4-inch square boxes and adds relay functionality.â€
+Product: _______________________________________
+64. Identify the product:
+â€œAddressable device that generates sound patterns for fire or CO alarms for compatible audible bases.â€
+Product: _______________________________________
+65. Identify the product:
+â€œAddressable module with one Form C dry-contact output relay.â€
+Product: _______________________________________
+BONUS â€” FIELD RECOGNITION CHALLENGE
+5 bonus points
+Without referring to the training material, explain the difference between the following four product categories:
+Detector
+Module
+Base
+Notification Appliance
+EMPLOYEE CERTIFICATION
+I certify that I understand the Edwards products covered in this examination and can recognize their primary functions and intended applications based on the training material.
+Employee Signature: ______________________________________
+Date: ___________________
+Trainer Signature: _______________________________________
+Date: ___________________
+Answer Key / Trainer Version
+Section 1
+B
+C
+B
+D
+B
+EST3X = 64 panels; EST4 = 150 panels
+D
+B
+B
+Should demonstrate understanding that panel/device capacity affects product selection and system design.
+Section 2
+B
+C
+D
+B
+A
+OSHD = OSD / HRD
+HCD = HRD / COD
+OSCD = OSD / COD
+OSHCD = OSD / HRD / COD
+D
+HRD uses fixed-temperature and rate-of-rise heat sensing; HFD uses fixed-temperature heat sensing.
+C
+The deck states that heat detectors should not be relied upon as the sole means of fire protection and should be part of a broader life-safety approach.
+Section 3
+CT1 = one Class B IDC / one SLC address; CT2 = one or two Class B IDCs / two SLC addresses.
+CR = Form C dry-contact relay; CRH = high-voltage/high-current relay.
+SB4 = standard 4-inch base; RB4 = relay base.
+AB4GT = CO-compatible sounder base; AB4-LF = 520 Hz low-frequency audible base.
+SD = complete SuperDuct Signature duct smoke detector; SDH = duct detector housing assembly used with compatible Signature smoke detectors.
+Section 4
+A
+B
+C
+A
+B
+C
+B
+B
+A
+B
+Section 5
+B
+C
+D
+B
+Air velocity should be verified to be within the detector's specified operating range, including direction of airflow.
+Section 6
+B
+B
+C
+A
+C
+B
+C
+B
+A
+A
+Section 7
+B
+C
+A
+The deck identifies the APS as having the same wiring/internal characteristics as the BPS while providing more available room for amplifiers and modules.
+B
+Section 8
+SIGA-COD â€” carbon monoxide detection.
+SIGA-HRD â€” fixed-temperature and rate-of-rise heat detection.
+Duct smoke detection â€” products such as SIGA-SD, SIGA-DDOS, or the SIGA-SDH housing/application should be considered based on the specific system requirement.
+SIGA-CRH â€” addressable high-power control relay designed for high-voltage/high-current relay applications.
+G4S/G4SV â€” confirm speaker/strobe requirements, 25/70 VRMS requirements, speaker wattage/voltage settings, and strobe requirements.
+Section 9
+SIGA-REL
+SIGA-UIO6 / SIGA-UIO6R
+SIGA-RB4
+SIGA-TCDR
+SIGA-CR
+Bonus
+Responses should demonstrate an understanding of the basic roles of the four categories rather than simply repeating product names.

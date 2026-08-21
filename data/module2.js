@@ -943,15 +943,15 @@ lesson:9,
 category:"Edwards Product Library",
 difficulty:"Medium",
 product:"EST4",
-question:"Which EST4 capability is documented for remote, device-independent access to system status reports?",
+question:"Which EST4 capability is documented as useful for retrofit projects?",
 answers:[
-"On-board webserver access",
-"Local bell silence switch",
-"A detector test magnet",
-"A Class B NAC circuit"
+"Backward compatibility with EST3 wiring, devices, and most local rail modules",
+"Replacement of all existing field devices without review",
+"A conventional-only operating mode",
+"A requirement to use a single copper network path"
 ],
 correct:0,
-explanation:"The EST4 overview documents an on-board webserver for remote, device-independent access to system status reports. This item does not establish remote control, programming, authentication, or cybersecurity behavior.",
+explanation:"The EST4 overview documents backward compatibility with EST3 wiring, devices, and most local rail modules, which is relevant when reviewing retrofit projects.",
 source:{ sourceType:"Edwards Datasheet", sourceDocument:"E85014-0001", manufacturer:"Edwards", verified:true, sourcePage:"1", sourceSection:"EST4 Overview" }
 },
 
