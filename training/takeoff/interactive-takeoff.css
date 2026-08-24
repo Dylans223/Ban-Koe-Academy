@@ -1,0 +1,497 @@
+.interactive-takeoff-shell {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.takeoff-view-tabs {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid var(--border);
+    background: rgba(15, 23, 42, 0.55);
+}
+
+.takeoff-view-tab {
+    flex: 1;
+    min-height: 42px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.takeoff-view-tab:hover,
+.takeoff-view-tab:focus-visible,
+.takeoff-view-tab.is-active {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.14);
+    color: var(--text);
+}
+
+.interactive-takeoff-heading,
+.interactive-takeoff-toolbar,
+.interactive-takeoff-actions,
+.interactive-takeoff-summary {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.interactive-takeoff-heading h3 {
+    color: var(--text);
+    font-size: 18px;
+}
+
+.interactive-takeoff-heading p,
+.interactive-takeoff-notice,
+.interactive-takeoff-summary p,
+.interactive-takeoff-tally td,
+.interactive-takeoff-tally th,
+.interactive-takeoff-status {
+    color: var(--text-secondary);
+}
+
+.interactive-takeoff-notice {
+    padding: 12px;
+    border-left: 3px solid #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+    font-size: 14px;
+}
+
+.interactive-takeoff-gates {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.interactive-takeoff-gate,
+.interactive-takeoff-panel {
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    background: rgba(15, 23, 42, 0.46);
+}
+
+.interactive-takeoff-gate h4,
+.interactive-takeoff-panel h4 {
+    color: var(--text);
+    font-size: 14px;
+}
+
+.interactive-takeoff-gate p,
+.interactive-takeoff-panel label,
+.interactive-takeoff-panel option {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.interactive-takeoff-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 10px;
+}
+
+.interactive-takeoff-workspace.is-results {
+    display: none;
+}
+
+.interactive-results {
+    display: grid;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    background: rgba(15, 23, 42, 0.52);
+}
+
+.interactive-results-heading {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.interactive-results-heading h3 {
+    color: var(--text);
+    font-size: 20px;
+}
+
+.interactive-results-heading > strong {
+    color: #86efac;
+    font-size: 28px;
+}
+
+.interactive-results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.interactive-results-grid span {
+    display: grid;
+    gap: 4px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.interactive-results-grid b {
+    color: var(--text);
+    font-size: 16px;
+}
+
+.interactive-takeoff-drawing {
+    display: grid;
+    place-items: center;
+    min-height: 560px;
+    border: 1px dashed #64748b;
+    background: repeating-linear-gradient(0deg, rgba(100, 116, 139, 0.08) 0 1px, transparent 1px 24px), repeating-linear-gradient(90deg, rgba(100, 116, 139, 0.08) 0 1px, transparent 1px 24px), rgba(15, 23, 42, 0.62);
+    text-align: center;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+}
+
+.interactive-takeoff-drawing img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.interactive-drawing-layer {
+    position: absolute;
+    inset: 0;
+    transform-origin: center;
+    transition: transform 120ms ease-out;
+}
+
+.interactive-takeoff-drawing strong {
+    color: #fbbf24;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.interactive-takeoff-drawing p {
+    max-width: 320px;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.interactive-takeoff-toolbar {
+    justify-content: flex-start;
+}
+
+.interactive-takeoff-toolbar select {
+    min-width: 220px;
+}
+
+.interactive-color-indicator {
+    display: inline-flex;
+    gap: 7px;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.interactive-color-indicator i {
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.interactive-takeoff-tally {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.interactive-takeoff-tally th,
+.interactive-takeoff-tally td {
+    padding: 8px 4px;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.65);
+    text-align: left;
+    font-size: 13px;
+}
+
+.interactive-takeoff-tally th {
+    color: var(--text-secondary);
+    font-size: 11px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.interactive-takeoff-summary {
+    justify-content: flex-start;
+}
+
+.interactive-takeoff-summary span {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.interactive-takeoff-summary input {
+    width: 100px;
+}
+
+.interactive-takeoff-stage-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.interactive-takeoff-stage {
+    padding: 8px;
+    border-left: 3px solid #64748b;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.interactive-takeoff-stage.is-current {
+    border-left-color: #f59e0b;
+    color: var(--text);
+}
+
+.interactive-takeoff-stage.is-complete {
+    border-left-color: #22c55e;
+    color: #86efac;
+}
+
+@media (max-width: 900px) {
+    .interactive-takeoff-workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .interactive-takeoff-stage-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .interactive-results-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .interactive-takeoff-gates,
+    .interactive-takeoff-stage-list {
+        grid-template-columns: 1fr;
+    }
+
+    .interactive-takeoff-drawing {
+        min-height: 220px;
+    }
+}
+.interactive-takeoff-exercise-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.interactive-exercise-card {
+    display: grid;
+    gap: 5px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-top: 3px solid #64748b;
+    background: rgba(15, 23, 42, 0.48);
+    color: var(--text);
+    cursor: pointer;
+    text-align: left;
+}
+
+.interactive-exercise-card.is-active {
+    border-color: #f59e0b;
+    border-top-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.12);
+}
+
+.interactive-exercise-card span,
+.interactive-exercise-card small {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.interactive-takeoff-drawing {
+    position: relative;
+}
+
+.interactive-mark {
+    position: absolute;
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #0f172a;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.interactive-mark.is-crossed-off {
+    background: var(--marker-color, #be123c);
+}
+
+.interactive-mark-list {
+    display: grid;
+    gap: 6px;
+}
+
+.interactive-mark-list > div {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.interactive-mark-list span {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .takeoff-content,
+    .takeoff-content > *,
+    .takeoff-content > * > *,
+    .takeoff-content > * > * > * {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .takeoff-content {
+        overflow-x: hidden;
+    }
+
+    .takeoff-content h1,
+    .takeoff-content h2,
+    .takeoff-content h3,
+    .takeoff-content p,
+    .takeoff-content span,
+    .takeoff-content button {
+        overflow-wrap: anywhere;
+    }
+
+    .takeoff-view-tabs {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .interactive-takeoff-exercise-list {
+        grid-template-columns: 1fr;
+    }
+
+    .interactive-results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.interactive-location-marker {
+    position: absolute;
+    z-index: 2;
+    min-width: 22px;
+    min-height: 22px;
+    transform: translate(-50%, -50%);
+    border: 2px solid transparent;
+    background: transparent;
+    color: #fff;
+    cursor: crosshair;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.interactive-location-marker:hover,
+.interactive-location-marker:focus-visible {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.3);
+}
+
+.interactive-location-marker.is-marked {
+    border-color: #fff;
+    border-radius: 50%;
+    background: var(--marker-color, #0f172a);
+    cursor: default;
+}
+.interactive-drawing-layer[data-selected-color="DARK BLUE"] .interactive-location-marker.is-marked { background: #1d4ed8; }
+.interactive-drawing-layer[data-selected-color="RED"] .interactive-location-marker.is-marked { background: #ef4444; }
+.interactive-drawing-layer[data-selected-color="LIGHT BLUE"] .interactive-location-marker.is-marked { background: #60a5fa; }
+.interactive-drawing-layer[data-selected-color="ORANGE"] .interactive-location-marker.is-marked { background: #f97316; }
+.interactive-drawing-layer[data-selected-color="YELLOW"] .interactive-location-marker.is-marked { background: #facc15; color: #0f172a; }
+.interactive-drawing-layer[data-selected-color="GREEN"] .interactive-location-marker.is-marked { background: #22c55e; }
+.interactive-drawing-layer[data-selected-color="PINK"] .interactive-location-marker.is-marked { background: #ec4899; }
+
+.interactive-mode-actions,
+.interactive-learning-choices {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.interactive-mode-actions .is-selected {
+    border-color: #f59e0b;
+    color: var(--text);
+}
+
+.interactive-color-learning {
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    border: 1px solid rgba(245, 158, 11, 0.55);
+    background: rgba(245, 158, 11, 0.08);
+}
+
+.interactive-color-learning h4 {
+    color: var(--text);
+}
+
+.interactive-takeoff-drawing:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    background: #0f172a;
+}
+
+.interactive-takeoff-breadcrumb,
+.interactive-reference-controls,
+.interactive-current-task {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.interactive-takeoff-breadcrumb {
+    justify-content: space-between;
+}
+
+.interactive-reference-controls {
+    justify-content: flex-start;
+}
+
+.interactive-current-task {
+    padding: 10px 12px;
+    border-left: 3px solid #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.interactive-current-task span {
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.interactive-current-task strong {
+    color: var(--text);
+    margin-right: 10px;
+    font-size: 13px;
+}

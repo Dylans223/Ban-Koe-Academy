@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../styles/style.css">
     <link rel="stylesheet" href="../module-shell.css">
     <link rel="stylesheet" href="takeoff.css">
+    <link rel="stylesheet" href="interactive-takeoff.css">
 </head>
 <body>
 <div class="app">
@@ -78,13 +79,268 @@
             </div>
         </section>
 
+        <section class="takeoff-lessons" aria-labelledby="takeoffLessonsTitle">
+            <div class="takeoff-lessons-heading">
+                <div>
+                    <p class="eyebrow">The Ban-Koe Method</p>
+                    <h2 id="takeoffLessonsTitle">Understand first. Count second.</h2>
+                    <p class="section-intro">A reliable takeoff starts with the drawing key and notes. Follow the source drawing from meaning to final reconciliation.</p>
+                </div>
+                <a class="btn btn-secondary" href="../../Takeoffs/20260824110900240.pdf" target="_blank" rel="noopener">Open Takeoff Example</a>
+            </div>
+
+            <div class="workflow-strip" aria-label="Takeoff workflow">
+                <span class="workflow-step workflow-step-priority"><strong>01</strong> Read the key</span>
+                <span class="workflow-step workflow-step-priority"><strong>02</strong> Read the notes</span>
+                <span class="workflow-step"><strong>03</strong> Identify products</span>
+                <span class="workflow-step"><strong>04</strong> Highlight</span>
+                <span class="workflow-step"><strong>05</strong> Count</span>
+                <span class="workflow-step"><strong>06</strong> Cross off</span>
+                <span class="workflow-step"><strong>07</strong> Tally</span>
+                <span class="workflow-step"><strong>08</strong> Enter</span>
+                <span class="workflow-step"><strong>09</strong> Reconcile</span>
+            </div>
+
+            <div class="lesson-grid">
+                <article class="lesson-card">
+                    <span class="lesson-number">Lesson 01</span>
+                    <h3>What Is a Takeoff?</h3>
+                    <p>A takeoff is the disciplined process of reading project drawings, identifying the required products, counting each applicable occurrence, and recording the final quantities for review.</p>
+                    <p class="lesson-rule">Do not just count symbols. Understand what you are looking at first.</p>
+                </article>
+                <article class="lesson-card lesson-card-priority">
+                    <span class="lesson-number">Lesson 02</span>
+                    <h3>Read the Drawing Key / Legend</h3>
+                    <p>Before counting anything, read the key. Confirm what each symbol means, which product or device it represents, its part number, the abbreviations in use, and which symbols belong in this takeoff.</p>
+                    <p class="lesson-rule">Do not start counting until you understand the key.</p>
+                </article>
+                <article class="lesson-card lesson-card-priority">
+                    <span class="lesson-number">Lesson 03</span>
+                    <h3>Read the Drawing Notes</h3>
+                    <p>Read all applicable notes immediately after the key. Notes can change how symbols are interpreted, including what is new or existing, what is excluded, and what relationships or requirements affect the count.</p>
+                    <p class="lesson-rule">Key first. Notes second. Count third.</p>
+                </article>
+                <article class="lesson-card">
+                    <span class="lesson-number">Lesson 04</span>
+                    <h3>Identify the Products</h3>
+                    <p>Make the product identity explicit before counting. Use the drawing key and verified Academy product information to establish the part number, description, and drawing symbol.</p>
+                    <div class="lesson-table-label">PART NUMBER | WHAT IS IT | DRAWING SYMBOL</div>
+                    <p class="lesson-muted">Only use mappings that are established by the project documents or verified Academy sources.</p>
+                </article>
+                <article class="lesson-card">
+                    <span class="lesson-number">Lesson 05</span>
+                    <h3>Apply the Color-Coding System</h3>
+                    <p>Use the designated color for each product type so the drawing is easier to scan and audit. The Takeoffs source is the visual reference for the manual color-coded process.</p>
+                    <p class="lesson-muted">The source does not establish a readable color-to-product assignment here. Do not guess one; confirm it with Ban-Koe.</p>
+                </article>
+                <article class="lesson-card">
+                    <span class="lesson-number">Lesson 06</span>
+                    <h3>Count Systematically</h3>
+                    <p>Start at a known location, work through one area in a consistent pattern, and continue until every applicable device has been considered exactly once.</p>
+                </article>
+                <article class="lesson-card">
+                    <span class="lesson-number">Lesson 07</span>
+                    <h3>Cross Off What You Count</h3>
+                    <p>After identifying and counting an item, cross it off on the drawing. Use the physical mark instead of memory to prevent double-counting.</p>
+                    <p class="lesson-rule">Identify → Count → Cross off → Move to the next item</p>
+                </article>
+                <article class="lesson-card">
+                    <span class="lesson-number">Lesson 08</span>
+                    <h3>Tally the Quantities</h3>
+                    <p>Maintain a separate tally for each product or part number. The result must be clear as <strong>part number → total quantity</strong>.</p>
+                </article>
+                <article class="lesson-card">
+                    <span class="lesson-number">Lesson 09</span>
+                    <h3>Enter the Takeoff Spreadsheet</h3>
+                    <p>When the drawing is completely counted, transfer the final quantities to the takeoff spreadsheet. The drawing is the source of the count; the spreadsheet is the organized final tally.</p>
+                </article>
+                <article class="lesson-card">
+                    <span class="lesson-number">Lesson 10</span>
+                    <h3>Reconcile Your Takeoff</h3>
+                    <p>Compare the drawing markings, crossed-off items, tally, and spreadsheet quantity. If they do not match, return to the drawing and recount.</p>
+                    <p class="lesson-rule">Drawing markings + crossed-off items + tally = spreadsheet quantity</p>
+                </article>
+                <article class="lesson-card">
+                    <span class="lesson-number">Lesson 11</span>
+                    <h3>Common Takeoff Mistakes</h3>
+                    <ul class="mistake-list">
+                        <li>Counting before reading the key or notes</li>
+                        <li>Misidentifying symbols or mixing product types</li>
+                        <li>Double-counting, missing devices, or forgetting to cross off</li>
+                        <li>Entering the wrong part number or quantity</li>
+                        <li>Failing to reconcile the final tally</li>
+                    </ul>
+                </article>
+                <article class="lesson-card lesson-card-practice">
+                    <span class="lesson-number">Lesson 12</span>
+                    <h3>Practice Takeoff</h3>
+                    <p>The practice simulator below keeps the existing verified scenario and feedback behavior. Apply the same order: read key, read notes, identify products, count, cross off, tally, enter quantities, submit, and review feedback.</p>
+                    <p class="lesson-muted">An interactive drawing surface is a future feature. The source PDF remains read-only and is not replaced by a fabricated drawing.</p>
+                </article>
+                <article class="lesson-card lesson-card-source">
+                    <span class="lesson-number">Source Reference</span>
+                    <h3>Completed Takeoff Example</h3>
+                    <p><strong>20260824110900240.pdf</strong> is the only file currently in the Takeoffs folder. Use it as visual context for the manual, color-coded takeoff and grid-based tally process.</p>
+                    <a href="../../Takeoffs/20260824110900240.pdf" target="_blank" rel="noopener">View the read-only source</a>
+                </article>
+            </div>
+        </section>
+
+        <nav class="takeoff-view-tabs" aria-label="Takeoff views">
+            <button type="button" class="takeoff-view-tab is-active" data-takeoff-view="learn" aria-selected="true">Learn</button>
+            <button type="button" class="takeoff-view-tab" data-takeoff-view="practice" aria-selected="false">Practice</button>
+            <button type="button" class="takeoff-view-tab" data-takeoff-view="drawings" aria-selected="false">Drawing Exercises</button>
+        </nav>
+
+        <section class="takeoff-framework panel" aria-labelledby="takeoffFrameworkTitle">
+            <div class="section-heading compact">
+                <div>
+                    <p class="eyebrow">Training Dashboard</p>
+                    <h2 id="takeoffFrameworkTitle">Takeoff Training</h2>
+                </div>
+                <span class="badge">Framework</span>
+            </div>
+            <p class="section-intro">Work through the method in order. Completion is not recorded yet, so stages show only their current availability.</p>
+
+            <div class="training-mode-key" aria-label="Training modes">
+                <span class="mode-label mode-learn">Learn</span>
+                <span class="mode-label mode-practice">Practice</span>
+                <span class="mode-label mode-advanced">Advanced Practice</span>
+            </div>
+
+            <div class="framework-grid">
+                <article class="framework-step framework-step-available">
+                    <span class="framework-step-number">Step 1</span>
+                    <h3>Read the Key</h3>
+                    <span class="framework-status">Available</span>
+                </article>
+                <article class="framework-step">
+                    <span class="framework-step-number">Step 2</span>
+                    <h3>Read the Notes</h3>
+                    <span class="framework-status">Locked</span>
+                </article>
+                <article class="framework-step">
+                    <span class="framework-step-number">Step 3</span>
+                    <h3>Identify Products</h3>
+                    <span class="framework-status">Locked</span>
+                </article>
+                <article class="framework-step">
+                    <span class="framework-step-number">Step 4</span>
+                    <h3>Color Code</h3>
+                    <span class="framework-status">Locked</span>
+                </article>
+                <article class="framework-step">
+                    <span class="framework-step-number">Step 5</span>
+                    <h3>Count</h3>
+                    <span class="framework-status">Locked</span>
+                </article>
+                <article class="framework-step">
+                    <span class="framework-step-number">Step 6</span>
+                    <h3>Cross Off</h3>
+                    <span class="framework-status">Locked</span>
+                </article>
+                <article class="framework-step">
+                    <span class="framework-step-number">Step 7</span>
+                    <h3>Tally</h3>
+                    <span class="framework-status">Locked</span>
+                </article>
+                <article class="framework-step">
+                    <span class="framework-step-number">Step 8</span>
+                    <h3>Enter</h3>
+                    <span class="framework-status">Locked</span>
+                </article>
+                <article class="framework-step">
+                    <span class="framework-step-number">Step 9</span>
+                    <h3>Reconcile</h3>
+                    <span class="framework-status">Locked</span>
+                </article>
+                <article class="framework-step framework-step-advanced">
+                    <span class="framework-step-number">Step 10</span>
+                    <h3>Independent Takeoff</h3>
+                    <span class="framework-status">Locked</span>
+                </article>
+            </div>
+
+            <div class="knowledge-check-grid">
+                <details class="knowledge-check">
+                    <summary>Knowledge check: What should you do before counting devices?</summary>
+                    <div class="knowledge-answer">
+                        <strong>Correct concept</strong>
+                        <p>Read and understand the drawing key or legend first.</p>
+                    </div>
+                </details>
+                <details class="knowledge-check">
+                    <summary>Knowledge check: What should you do before starting the device count?</summary>
+                    <div class="knowledge-answer">
+                        <strong>Correct concept</strong>
+                        <p>Review the key and all applicable drawing notes.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="takeoff-color-legend panel" aria-labelledby="takeoffColorLegendTitle">
+            <div class="section-heading compact">
+                <div>
+                    <p class="eyebrow">Learn</p>
+                    <h2 id="takeoffColorLegendTitle">Confirmed Ban-Koe Takeoff Color System</h2>
+                </div>
+                <span class="badge">User-confirmed procedure</span>
+            </div>
+            <p class="section-intro">These colors organize product types during the takeoff. Color does not assign a part number; use the verified product identity separately.</p>
+            <div class="color-legend-grid">
+                <article class="color-legend-card color-dark-blue">
+                    <div class="color-legend-heading"><span class="color-swatch" aria-hidden="true"></span><h3>DARK BLUE</h3></div>
+                    <ul><li>FACP</li><li>FAA</li></ul>
+                </article>
+                <article class="color-legend-card color-red">
+                    <div class="color-legend-heading"><span class="color-swatch" aria-hidden="true"></span><h3>RED</h3></div>
+                    <ul><li>Smokes</li></ul>
+                </article>
+                <article class="color-legend-card color-light-blue">
+                    <div class="color-legend-heading"><span class="color-swatch" aria-hidden="true"></span><h3>LIGHT BLUE</h3></div>
+                    <ul><li>R of R Heats</li><li>Fixed Heats</li></ul>
+                </article>
+                <article class="color-legend-card color-orange">
+                    <div class="color-legend-heading"><span class="color-swatch" aria-hidden="true"></span><h3>ORANGE</h3></div>
+                    <ul><li>Duct Smokes</li><li>Test Stations</li><li>Wall Strobes</li><li>Ceiling Strobes</li></ul>
+                </article>
+                <article class="color-legend-card color-yellow">
+                    <div class="color-legend-heading"><span class="color-swatch" aria-hidden="true"></span><h3>YELLOW</h3></div>
+                    <ul><li>Wall Horn/Strobes</li><li>Wall Speaker/Strobes</li><li>Ceiling Horn/Strobes</li><li>Ceiling Speaker/Strobes</li><li>Weatherproof Devices</li></ul>
+                </article>
+                <article class="color-legend-card color-green">
+                    <div class="color-legend-heading"><span class="color-swatch" aria-hidden="true"></span><h3>GREEN</h3></div>
+                    <ul><li>Pulls</li></ul>
+                </article>
+                <article class="color-legend-card color-pink">
+                    <div class="color-legend-heading"><span class="color-swatch" aria-hidden="true"></span><h3>PINK</h3></div>
+                    <ul><li>Dampers</li><li>Waterflow</li><li>Door Holders</li><li>CR's</li><li>CT-1</li><li>CT-2</li><li>Tamper</li></ul>
+                </article>
+            </div>
+            <p class="color-legend-note">Confirmed Ban-Koe takeoff procedure. The original PDF remains read-only workflow reference; these mappings were provided separately by the user.</p>
+        </section>
+
+        <section class="future-practice panel" aria-labelledby="futurePracticeTitle">
+            <div class="future-practice-copy">
+                <p class="eyebrow">Advanced Practice</p>
+                <h2 id="futurePracticeTitle">Drawing Takeoff Practice</h2>
+                <p>Practice the Ban-Koe workflow on the approved drawings below: read the key and notes, identify products, mark and cross off devices, tally quantities, and reconcile the takeoff.</p>
+            </div>
+            <div class="future-practice-status">
+                <span class="framework-status">3 exercises available</span>
+                <p>Source drawings preserved</p>
+            </div>
+            <div id="interactiveTakeoffMount" class="interactive-takeoff-mount" aria-live="polite"></div>
+        </section>
+
         <section class="takeoff-layout">
             <div class="takeoff-main">
                 <section class="takeoff-panel project-brief panel" id="projectStep">
                     <div class="section-heading compact">
                         <div>
-                            <p class="eyebrow">Section 1</p>
-                            <h2>Project Brief</h2>
+                            <p class="eyebrow">Practice</p>
+                            <h2>Takeoff Practice — Current Simulator</h2>
                         </div>
                         <span class="badge">Beginner</span>
                     </div>
@@ -332,6 +588,11 @@
 
 <script src="../../scripts/navigation.js"></script>
 <script src="../../data/edwards/index.js"></script>
+<script src="exercises/example-schema.js"></script>
+<script src="exercises/exercise-001/exercise-data.js"></script>
+<script src="exercises/exercise-002/exercise-data.js"></script>
+<script src="exercises/exercise-003/exercise-data.js"></script>
+<script src="interactive-takeoff.js"></script>
 <script src="takeoff.js"></script>
 </body>
 </html>
