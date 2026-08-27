@@ -87,19 +87,18 @@ function acknowledgeInteractiveNotes(state) {
 }
 
 function selectInteractiveProduct(state, productId) {
-    if (!state.notesAcknowledged) {
-        state.feedback = "Read the key and drawing notes before selecting a product to count.";
+    if (!state.exercise || !state.exercise.products?.length) {
+        state.feedback = "Select an approved product identity.";
         return false;
     }
 
     const product = state.exercise.products.find((entry) => entry.id === productId);
     if (!product) {
-        state.feedback = "Select an approved product identity.";
+        state.feedback = "Select a product category first.";
         return false;
     }
 
     state.selectedProductId = productId;
-    state.selectedColor = "";
     state.stage = "mark";
     return true;
 }
@@ -112,7 +111,7 @@ function markInteractiveLocation(state, locationId) {
 
     const location = state.exercise.locations.find((entry) => entry.id === locationId);
     if (!state.selectedColor) {
-        state.feedback = "Select the Ban-Koe color before marking a device.";
+        state.feedback = "Select a Ban-Koe color first.";
         return false;
     }
     if (location && state.markedLocations.has(locationId)) {
@@ -315,13 +314,14 @@ function renderInteractiveTakeoff(state) {
             ${state.exercisePickerOpen ? `<div class="interactive-takeoff-exercise-list" aria-label="Drawing takeoff practice exercises">${exerciseLibrary.map((exercise) => `<button type="button" class="interactive-exercise-card ${exercise.exerciseId === state.exercise.exerciseId ? "is-active" : ""}" data-interactive-exercise="${exercise.exerciseId}"><strong>${exercise.title}</strong><span>${exercise.drawing.project} · ${exercise.drawing.drawingNumber}</span><small>Open Exercise</small></button>`).join("")}</div>` : `<div class="interactive-takeoff-breadcrumb"><button type="button" class="btn btn-secondary" data-interactive-action="back-to-exercises">← Back to Exercises</button><span>${state.exercise.title}</span></div>`}
             <div class="interactive-takeoff-heading">
                 <div>
-                    <h3>Real Drawing Takeoff Practice</h3>
-                    <p>${approved ? state.exercise.title || state.exercise.exerciseId : "TAKEOFF PRACTICE 001"}</p>
+                    <button type="button" class="interactive-back-link" data-interactive-action="back-to-exercises">← Exercises</button>
+                    <p class="interactive-exercise-label">${approved ? state.exercise.exerciseId.replace("takeoff-practice-", "EXERCISE ") : "EXERCISE 001"}</p>
+                    <h3>${approved ? state.exercise.drawing.project : "Drawing Takeoff Practice"}</h3>
                 </div>
-                <span class="framework-status">${approved ? "Approved exercise" : "Awaiting approved drawing"}</span>
+                <div class="interactive-header-actions"><button type="button" class="btn btn-secondary" data-interactive-action="toggle-key">[KEY]</button><button type="button" class="btn btn-secondary" data-interactive-action="toggle-notes">[NOTES]</button><button type="button" class="btn btn-secondary" data-interactive-action="fullscreen" ${approved ? "" : "disabled"}>EXPAND DRAWING</button></div>
             </div>
             ${approved && state.exercise.exerciseId === "takeoff-practice-001" ? `<div class="interactive-mode-actions"><button type="button" class="btn btn-secondary ${state.mode === "colors" ? "is-selected" : ""}" data-interactive-action="colors">Learn the Colors</button><button type="button" class="btn btn-secondary ${state.mode === "takeoff" ? "is-selected" : ""}" data-interactive-action="takeoff">Full Takeoff Practice</button></div>${state.mode === "colors" ? renderColorLearning(state) : ""}` : ""}
-            <p class="interactive-takeoff-notice">${approved ? "Read the key and notes before counting. The drawing remains unchanged; your marks are an overlay." : "AWAITING APPROVED DRAWING DATA. Add a reviewed drawing, key, notes, product identities, locations, and expected quantities before enabling this practice."}</p>
+            <p class="interactive-takeoff-notice">${approved ? "Review the key and notes, then select a category and color to mark the drawing." : "AWAITING APPROVED DRAWING DATA."}</p>
             <div class="interactive-takeoff-stage-list" aria-label="Drawing takeoff practice stages">
                 ${stageLabels.map((label, index) => `<span class="interactive-takeoff-stage ${currentStageIndex === index ? "is-current" : currentStageIndex > index ? "is-complete" : ""}">${index + 1}. ${label}</span>`).join("")}
             </div>
@@ -349,32 +349,14 @@ function renderInteractiveTakeoff(state) {
             </div>` : ""}
             <div class="interactive-takeoff-workspace ${state.stage === "complete" ? "is-results" : ""}">
                 <section class="interactive-takeoff-panel">
-                    <div class="interactive-takeoff-toolbar">
-                        <label for="interactiveProductSelect">What Are You Counting?</label>
-                        <select id="interactiveProductSelect" ${approved && state.notesAcknowledged ? "" : "disabled"}>
-                            <option value="">${approved ? "Select Product Category" : "Awaiting approved drawing data"}</option>
-                            ${approved ? state.exercise.products.map((product) => `<option value="${product.id}" ${state.selectedProductId === product.id ? "selected" : ""}>${product.partNumber || product.id} - ${product.whatIsIt || "Approved product"}</option>`).join("") : ""}
-                        </select>
-                        <span class="interactive-color-indicator"><i style="background:${state.selectedColor ? takeoffColorHex[state.selectedColor] : "#64748b"}" aria-hidden="true"></i>${selectedProduct ? `CATEGORY: ${selectedProduct.whatIsIt}` : "No category selected"}</span>
-                    </div>
-                    <div class="interactive-takeoff-toolbar">
-                        <label for="interactiveColorSelect">Ban-Koe Color</label>
-                        <select id="interactiveColorSelect" ${approved && state.notesAcknowledged && state.selectedProductId ? "" : "disabled"}>
-                            <option value="">Select color</option>
-                            ${Object.keys(takeoffColorHex).map((color) => `<option value="${color}" ${state.selectedColor === color ? "selected" : ""}>${color}</option>`).join("")}
-                        </select>
-                    </div>
                     <div class="interactive-takeoff-drawing" role="img" aria-label="Interactive drawing viewport">
-                        ${approved && state.exercise.drawing.asset ? `<div class="interactive-drawing-layer" style="transform: translate(${state.viewport.offsetX}px, ${state.viewport.offsetY}px) scale(${state.viewport.scale})"><img src="${state.exercise.drawing.asset}" alt="${state.exercise.title}">${state.exercise.locations.map((location) => `<button type="button" class="interactive-location-marker ${state.markedLocations.has(location.id) ? "is-marked" : ""}" data-interactive-location="${location.id}" style="left:${location.x * 100}%;top:${location.y * 100}%;width:${location.width * 100}%;height:${location.height * 100}%" ${state.markedLocations.has(location.id) ? "disabled" : ""} aria-label="${state.markedLocations.has(location.id) ? "Counted" : "Mark"} ${location.type} ${location.room}">${state.markedLocations.has(location.id) ? "✓" : ""}</button>`).join("")}${state.freeformMarks.map((mark) => `<button type="button" class="interactive-mark ${mark.crossedOff ? "is-crossed-off" : ""}" data-interactive-cross-mark="${mark.id}" style="left:${mark.x * 100}%;top:${mark.y * 100}%" aria-label="${mark.crossedOff ? "Crossed off" : "Counted"} mark ${mark.id}">${mark.crossedOff ? "X" : "✓"}</button>`).join("")}</div>` : `<div><strong>AWAITING APPROVED DRAWING</strong><p>The original PDF remains read-only source material. An approved image or SVG is required for marking.</p></div>`}
-                        <div class="interactive-drawing-layer" data-selected-color="${state.selectedColor}" style="transform: translate(${state.viewport.offsetX}px, ${state.viewport.offsetY}px) scale(${state.viewport.scale})"><img src="${state.exercise.drawing.asset}" alt="${state.exercise.title}">${state.exercise.locations.map((location) => `<button type="button" class="interactive-location-marker ${state.markedLocations.has(location.id) ? "is-marked" : ""}" data-interactive-location="${location.id}" style="left:${location.x * 100}%;top:${location.y * 100}%;width:${location.width * 100}%;height:${location.height * 100}%" ${state.markedLocations.has(location.id) ? "disabled" : ""} aria-label="${state.markedLocations.has(location.id) ? "Counted" : "Mark"} ${location.type} ${location.room}">${state.markedLocations.has(location.id) ? "✓" : ""}</button>`).join("")}${state.freeformMarks.map((mark) => `<button type="button" class="interactive-mark ${mark.crossedOff ? "is-crossed-off" : ""}" data-interactive-cross-mark="${mark.id}" style="left:${mark.x * 100}%;top:${mark.y * 100}%" aria-label="${mark.crossedOff ? "Crossed off" : "Counted"} mark ${mark.id}">${mark.crossedOff ? "X" : "✓"}</button>`).join("")}</div>
+                        ${approved && state.exercise.drawing.asset ? `<div class="interactive-drawing-layer" data-selected-color="${state.selectedColor}" style="transform: translate(${state.viewport.offsetX}px, ${state.viewport.offsetY}px) scale(${state.viewport.scale})"><img src="${state.exercise.drawing.asset}" alt="${state.exercise.title}">${state.exercise.locations.map((location) => `<button type="button" class="interactive-location-marker ${state.markedLocations.has(location.id) ? "is-marked" : ""} ${state.crossedOffLocations.has(location.id) ? "is-crossed-off" : ""}" data-interactive-location="${location.id}" style="left:${location.x * 100}%;top:${location.y * 100}%;width:${location.width * 100}%;height:${location.height * 100}%" ${state.markedLocations.has(location.id) ? "disabled" : ""} aria-label="${state.markedLocations.has(location.id) ? "Counted" : "Mark"} ${location.type} ${location.room}">${state.markedLocations.has(location.id) ? "✓" : ""}</button>`).join("")}${state.freeformMarks.map((mark) => `<button type="button" class="interactive-mark ${mark.crossedOff ? "is-crossed-off" : ""}" data-interactive-cross-mark="${mark.id}" style="left:${mark.x * 100}%;top:${mark.y * 100}%" aria-label="${mark.crossedOff ? "Crossed off" : "Counted"} mark ${mark.id}">${mark.crossedOff ? "X" : "✓"}</button>`).join("")}</div>` : `<div><strong>AWAITING APPROVED DRAWING</strong><p>The original PDF remains read-only source material. An approved image or SVG is required for marking.</p></div>`}
                     </div>
-                    <div class="interactive-current-task"><span>READY TO MARK</span><strong>${selectedProduct && state.selectedColor ? `${selectedProduct.whatIsIt} • ${state.selectedColor}` : "SELECT CATEGORY + COLOR"}</strong></div>
                     <div class="interactive-takeoff-toolbar" aria-label="Drawing view controls">
                         <button type="button" class="btn btn-secondary" data-interactive-action="zoom-out" ${approved ? "" : "disabled"}>Zoom out</button>
                         <span class="interactive-takeoff-status">${Math.round(state.viewport.scale * 100)}%</span>
                         <button type="button" class="btn btn-secondary" data-interactive-action="zoom-in" ${approved ? "" : "disabled"}>Zoom in</button>
                         <button type="button" class="btn btn-secondary" data-interactive-action="reset-view" ${approved ? "" : "disabled"}>Reset view</button>
-                        <button type="button" class="btn btn-secondary" data-interactive-action="fullscreen" ${approved ? "" : "disabled"}>Expand Drawing</button>
                     </div>
                     <div class="interactive-takeoff-actions">
                         <button type="button" class="btn btn-secondary" data-interactive-action="undo" ${state.markedLocations.size ? "" : "disabled"}>Undo Mark</button>
@@ -383,10 +365,30 @@ function renderInteractiveTakeoff(state) {
                     </div>
                 </section>
                 <aside class="interactive-takeoff-panel">
-                    <h4>Takeoff Tally</h4>
+                    <h4>CURRENT TASK</h4>
+                    <div class="interactive-selector-group">
+                        <label for="interactiveProductSelect">WHAT ARE YOU COUNTING?</label>
+                        <select id="interactiveProductSelect" ${approved ? "" : "disabled"}>
+                            <option value="">${approved ? "Select Product Category" : "Awaiting approved drawing data"}</option>
+                            ${approved ? state.exercise.products.map((product) => `<option value="${product.id}" ${state.selectedProductId === product.id ? "selected" : ""}>${product.whatIsIt || product.id}</option>`).join("") : ""}
+                        </select>
+                        <strong class="interactive-selected-value">${selectedProduct ? selectedProduct.whatIsIt : "Select a category"}</strong>
+                    </div>
+                    <div class="interactive-selector-group">
+                        <label for="interactiveColorSelect">BAN-KOE COLOR</label>
+                        <select id="interactiveColorSelect" ${approved && state.selectedProductId ? "" : "disabled"}>
+                            <option value="">Select color</option>
+                            ${Object.keys(takeoffColorHex).map((color) => `<option value="${color}" ${state.selectedColor === color ? "selected" : ""}>${color}</option>`).join("")}
+                        </select>
+                        <strong class="interactive-selected-value"><i style="background:${state.selectedColor ? takeoffColorHex[state.selectedColor] : "#64748b"}" aria-hidden="true"></i>${state.selectedColor || "Select a color"}</strong>
+                    </div>
+                    <div class="interactive-rail-divider"></div>
+                    <div class="interactive-current-task"><span>READY TO MARK</span><strong>${selectedProduct && state.selectedColor ? `${selectedProduct.whatIsIt} • ${state.selectedColor}` : "SELECT CATEGORY + COLOR"}</strong></div>
+                    <div class="interactive-rail-divider"></div>
+                    <h4>CURRENT TALLY</h4>
                     <table class="interactive-takeoff-tally">
-                        <thead><tr><th>Product</th><th>Counted</th><th>Final</th></tr></thead>
-                        <tbody>${approved ? state.exercise.products.map((product) => `<tr><td>${product.partNumber || product.id}</td><td>${state.tallyByProduct[product.id] || 0}</td><td><input type="number" min="0" inputmode="numeric" data-interactive-final="${product.id}" value="${state.finalQuantities[product.id] || ""}" ${state.stage === "reconcile" || state.stage === "complete" ? "" : "disabled"}></td></tr>`).join("") : `<tr><td colspan="3">No approved products loaded</td></tr>`}</tbody>
+                        <thead><tr><th>Product</th><th>Counted</th></tr></thead>
+                        <tbody>${approved ? state.exercise.products.map((product) => `<tr><td>${product.whatIsIt || product.id}</td><td>${state.tallyByProduct[product.id] || 0}</td></tr>`).join("") : `<tr><td colspan="2">No approved products loaded</td></tr>`}</tbody>
                     </table>
                     <div class="interactive-takeoff-summary"><span>Counted: ${state.markedLocations.size}</span><span>Crossed off: ${state.crossedOffLocations.size}</span></div>
                     <div class="interactive-mark-list">${state.freeformMarks.length ? state.freeformMarks.map((mark) => `<div><span>${mark.productId}</span><button type="button" class="btn btn-secondary" data-interactive-cross-mark="${mark.id}" ${mark.crossedOff ? "disabled" : ""}>${mark.crossedOff ? "Crossed Off" : "Cross Off / Counted"}</button></div>`).join("") : "<p class=\"interactive-takeoff-status\">No marked devices yet.</p>"}</div>
@@ -398,50 +400,72 @@ function renderInteractiveTakeoff(state) {
                 </aside>
             </div>
             ${state.stage === "complete" ? renderInteractiveResults(state) : ""}
-            ${approved && state.stage !== "complete" ? `<section class="interactive-takeoff-panel"><h4>Countable Locations</h4><div class="interactive-takeoff-actions">${state.exercise.locations.map((location) => `<button type="button" class="btn btn-secondary" data-interactive-location="${location.id}" ${location.productId !== state.selectedProductId || state.markedLocations.has(location.id) ? "disabled" : ""}>${state.markedLocations.has(location.id) ? "COUNTED" : "Mark location"} ${location.id}</button><button type="button" class="btn btn-secondary" data-interactive-cross="${location.id}" ${!state.markedLocations.has(location.id) || state.crossedOffLocations.has(location.id) ? "disabled" : ""}>${state.crossedOffLocations.has(location.id) ? "CROSSED OFF" : "Cross off"}</button>`).join("")}</div></section>` : ""}
+            ${approved && state.stage !== "complete" ? `<section class="interactive-takeoff-panel interactive-location-index"><h4>Countable Locations</h4><div class="interactive-takeoff-actions">${state.exercise.locations.map((location) => `<button type="button" class="btn btn-secondary" data-interactive-location="${location.id}" ${location.productId !== state.selectedProductId || state.markedLocations.has(location.id) ? "disabled" : ""}>${state.markedLocations.has(location.id) ? "COUNTED" : "Mark location"} ${location.id}</button><button type="button" class="btn btn-secondary" data-interactive-cross="${location.id}" ${!state.markedLocations.has(location.id) || state.crossedOffLocations.has(location.id) ? "disabled" : ""}>${state.crossedOffLocations.has(location.id) ? "CROSSED OFF" : "Cross off"}</button>`).join("")}</div></section>` : ""}
         </div>
     `;
 
-    mount.querySelectorAll("[data-interactive-action]").forEach((button) => {
-        button.addEventListener("click", () => handleInteractiveAction(button.getAttribute("data-interactive-action"), state));
-    });
-    mount.querySelectorAll("[data-interactive-exercise]").forEach((button) => {
-        button.addEventListener("click", () => selectInteractiveExercise(button.getAttribute("data-interactive-exercise")));
-    });
-    mount.querySelectorAll("[data-interactive-learning-answer]").forEach((button) => {
-        button.addEventListener("click", () => {
-            answerColorLearning(state, button.getAttribute("data-interactive-learning-answer"));
-            renderInteractiveTakeoff(state);
-        });
-    });
-    mount.querySelectorAll("[data-interactive-cross-mark]").forEach((button) => {
-        button.addEventListener("pointerdown", (event) => event.stopPropagation());
-        button.addEventListener("click", (event) => {
+    mount.addEventListener("click", (event) => {
+        const actionTarget = event.target.closest("[data-interactive-action]");
+        if (actionTarget) {
             event.stopPropagation();
-            crossOffFreeformMark(state, button.getAttribute("data-interactive-cross-mark"));
+            handleInteractiveAction(actionTarget.getAttribute("data-interactive-action"), state);
+            return;
+        }
+
+        const exerciseTarget = event.target.closest("[data-interactive-exercise]");
+        if (exerciseTarget) {
+            event.stopPropagation();
+            selectInteractiveExercise(exerciseTarget.getAttribute("data-interactive-exercise"));
+            return;
+        }
+
+        const learningTarget = event.target.closest("[data-interactive-learning-answer]");
+        if (learningTarget) {
+            event.stopPropagation();
+            answerColorLearning(state, learningTarget.getAttribute("data-interactive-learning-answer"));
             renderInteractiveTakeoff(state);
-        });
+            return;
+        }
+
+        const crossMarkTarget = event.target.closest("[data-interactive-cross-mark]");
+        if (crossMarkTarget) {
+            event.stopPropagation();
+            crossOffFreeformMark(state, crossMarkTarget.getAttribute("data-interactive-cross-mark"));
+            renderInteractiveTakeoff(state);
+            return;
+        }
+
+        const locationTarget = event.target.closest("[data-interactive-location]");
+        if (locationTarget) {
+            event.stopPropagation();
+            markInteractiveLocation(state, locationTarget.getAttribute("data-interactive-location"));
+            renderInteractiveTakeoff(state);
+            return;
+        }
+
+        const crossTarget = event.target.closest("[data-interactive-cross]");
+        if (crossTarget) {
+            event.stopPropagation();
+            crossOffInteractiveLocation(state, crossTarget.getAttribute("data-interactive-cross"));
+            renderInteractiveTakeoff(state);
+        }
     });
     mount.querySelector("#interactiveProductSelect")?.addEventListener("change", (event) => {
-        selectInteractiveProduct(state, event.target.value);
+        const nextValue = event.target.value;
+        if (!nextValue) {
+            state.selectedProductId = null;
+            state.feedback = "Select a product category first.";
+            state.stage = "product";
+            renderInteractiveTakeoff(state);
+            return;
+        }
+        selectInteractiveProduct(state, nextValue);
         renderInteractiveTakeoff(state);
     });
     mount.querySelector("#interactiveColorSelect")?.addEventListener("change", (event) => {
         state.selectedColor = event.target.value;
+        state.feedback = !event.target.value ? "Select a Ban-Koe color first." : null;
         renderInteractiveTakeoff(state);
-    });
-    mount.querySelectorAll("[data-interactive-location]").forEach((button) => {
-        button.addEventListener("pointerdown", (event) => event.stopPropagation());
-        button.addEventListener("click", () => {
-            markInteractiveLocation(state, button.getAttribute("data-interactive-location"));
-            renderInteractiveTakeoff(state);
-        });
-    });
-    mount.querySelectorAll("[data-interactive-cross]").forEach((button) => {
-        button.addEventListener("click", () => {
-            crossOffInteractiveLocation(state, button.getAttribute("data-interactive-cross"));
-            renderInteractiveTakeoff(state);
-        });
     });
     const drawingViewport = mount.querySelector(".interactive-takeoff-drawing");
     let dragStart = null;
@@ -544,7 +568,7 @@ function handleInteractiveAction(action, state) {
     } else if (action === "reset-view") {
         resetInteractiveViewport(state);
     } else if (action === "fullscreen") {
-        document.querySelector(".interactive-takeoff-drawing")?.requestFullscreen?.();
+        document.querySelector(".interactive-takeoff-workspace")?.requestFullscreen?.();
     } else if (action === "back-to-exercises") {
         resetInteractiveTakeoff(state);
         state.exercisePickerOpen = true;
