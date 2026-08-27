@@ -103,6 +103,10 @@ SOURCE: `data/edwards/index.js`, verified Academy record with Edwards Signature 
 CONFIDENCE: High; Academy record identifies it as a verified multisensor detector, but the exact applicable sensing configuration should still be checked for a specific takeoff.
 
 ### COLOR: LIGHT BLUE
+GENERAL TAKEOFF CATEGORY: Heat Detectors
+
+Rate-of-Rise and Fixed Heat are separate verified product subtypes, but Academy recognition/counting uses the general Heat Detectors category unless authoritative project information explicitly requires a subtype. Sales Engineering determines the exact engineered device selection when required.
+
 PRODUCT TYPE: R of R Heats
 VERIFIED PART NUMBER: SIGA-HRS
 WHAT IS IT: Signature rate-of-rise heat detector.

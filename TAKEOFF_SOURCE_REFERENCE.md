@@ -11,7 +11,7 @@ The `Takeoffs/` folder contains one source artifact. It is preserved unchanged a
 - The PDF is not used to assert color-to-product assignments or part-number mappings that cannot be read confidently from the source.
 - No new color assignments are published. Any unclear color relationship requires clarification from Ban-Koe before it is added to training.
 - The existing Academy product data remains the source for verified product identities.
-- The existing Takeoff simulator remains the practice mechanism. An interactive practice drawing is a future feature, not fabricated here.
+- The existing Takeoff simulator and interactive Drawing Exercises are the available practice mechanisms.
 
 ## CONFIRMED BAN-KOE TAKEOFF COLOR SYSTEM
 
@@ -21,7 +21,7 @@ The following mappings are user-confirmed Ban-Koe takeoff procedures provided se
 | --- | --- |
 | DARK BLUE | FACP; FAA |
 | RED | Smokes |
-| LIGHT BLUE | R of R Heats; Fixed Heats |
+| LIGHT BLUE | Heat Detectors (including R of R Heats or Fixed Heats only when specifically required) |
 | ORANGE | Duct Smokes; Test Stations; Wall Strobes; Ceiling Strobes |
 | YELLOW | Wall Horn/Strobes; Wall Speaker/Strobes; Ceiling Horn/Strobes; Ceiling Speaker/Strobes; Weatherproof Devices |
 | GREEN | Pulls |

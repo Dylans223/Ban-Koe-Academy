@@ -19,8 +19,7 @@ The complete mapping detail is in [TAKEOFF_PRODUCT_MAPPING.md](TAKEOFF_PRODUCT_M
 | --- | --- | --- |
 | DARK BLUE | FACP | EST4, EST3, EST3X, iO-64, iO-1000, EDGE |
 | RED | Smokes | SIGA-OSD, SIGA-OSCD, SIGA-OSHD, SIGA-OSHCD, SIGA-PD, SIGA-PS, SIGA-PHS, SIGA-PHD |
-| LIGHT BLUE | R of R Heats | SIGA-HRS |
-| LIGHT BLUE | Fixed Heats | SIGA-HFS |
+| LIGHT BLUE | Heat Detectors (specific subtype when required) | SIGA-HRS (Rate-of-Rise), SIGA-HFS (Fixed Heat) |
 | ORANGE | Duct Smokes | SIGA-DDOS, SIGA-SD, SIGA-SDH |
 | ORANGE | Wall Strobes | G1V |
 | ORANGE | Ceiling Strobes | GCVH |

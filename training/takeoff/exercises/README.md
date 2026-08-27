@@ -42,6 +42,10 @@ specialInstructions
 - `excludedDevices`: locations that must not be counted and the reason for exclusion.
 - `specialInstructions`: source-backed counting or interpretation rules.
 
+## Heat Detector Recognition Rule
+
+For Academy-level takeoff training, `RATE-OF-RISE HEATS` and `FIXED HEATS` are one general `HEAT DETECTORS` recognition/counting category by default. Do not force a trainee to distinguish a Rate-of-Rise Heat from a Fixed Heat by symbol alone. Use a specific subtype only when the drawing notes, specifications, legend, or other authoritative project information explicitly requires it. Combination Heat types follow the project-specific requirement.
+
 Before an exercise is used in the Academy, every populated field must be reviewed against the source and marked with appropriate provenance. Missing or unreadable information stays unresolved rather than being guessed.
 
 ## Interactive Framework Boundary

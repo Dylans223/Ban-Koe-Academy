@@ -6,6 +6,20 @@ Source: `Takeoff Drawings/ChatGPT Image Aug 24, 2026, 02_21_04 PM.png`
 Review status: `DRAWING MAPPING IN REVIEW`  
 Scoring: **Disabled**
 
+## Correction Notice
+
+The original 41-device mapping understated the Smoke count. A fresh independent audit of the original 1536 x 1024 source PNG identified three additional visible Smoke Detector symbols. The corrected mapping contains 12 Smokes and 44 approved mapped devices.
+
+Previously missing devices:
+
+| Device ID | Category | Color | Room/Area | Normalized x | Normalized y |
+| --- | --- | --- | --- | ---: | ---: |
+| `smoke-010` | Smokes | RED | OPEN OFFICE 103 | 0.768 | 0.231 |
+| `smoke-011` | Smokes | RED | OFFICE 108 | 0.889 | 0.563 |
+| `smoke-012` | Smokes | RED | LOBBY 100 | 0.518 | 0.736 |
+
+The prior 41-device totals in this historical table are superseded by the corrected totals below.
+
 ## QA Method
 
 Each entry in `training/takeoff/exercises/exercise-002/exercise-data.js` was checked against the supplied drawing, its key/legend, and its notes. Coordinate status confirms normalized values are present and within the drawing bounds. Interaction status was checked through the isolated interactive module for product/color gating, marking, cross-off, duplicate prevention, tally, undo, reset, exercise switching, and the unavailable-answer state.
@@ -27,6 +41,9 @@ The mapped overlay was also checked structurally at 100%, 125%, 150%, and 200% v
 | `smoke-007` | Smokes | RED | BREAK ROOM 105 | PASS | PASS | PASS | PASS |
 | `smoke-008` | Smokes | RED | LOBBY 100 | PASS | PASS | PASS | PASS |
 | `smoke-009` | Smokes | RED | SERVER 110 | PASS | PASS | PASS | PASS |
+| `smoke-010` | Smokes | RED | OPEN OFFICE 103 | PASS | PASS | PASS | PASS |
+| `smoke-011` | Smokes | RED | OFFICE 108 | PASS | PASS | PASS | PASS |
+| `smoke-012` | Smokes | RED | LOBBY 100 | PASS | PASS | PASS | PASS |
 | `ror-heat-001` | R of R Heats | LIGHT BLUE | OPEN OFFICE 101 | PASS | PASS | PASS | PASS |
 | `ror-heat-002` | R of R Heats | LIGHT BLUE | OPEN OFFICE 103 | PASS | PASS | PASS | PASS |
 | `ror-heat-003` | R of R Heats | LIGHT BLUE | LOBBY 100 | PASS | PASS | PASS | PASS |
@@ -60,8 +77,8 @@ The mapped overlay was also checked structurally at 100%, 125%, 150%, and 200% v
 
 ## Totals
 
-- Total mapped devices: **41**
-- Passed: **41**
+- Total mapped devices: **44**
+- Passed: **44**
 - Needs review: **0**
 - Incorrect mappings: **0**
 - Incorrect colors: **0**
@@ -84,8 +101,10 @@ The small lower-right symbol that is not confidently assigned to one of the mapp
 - Undo, Clear All, and Reset: clear overlay state and tally as designed.
 - Tally: increments only for accepted mapped marks.
 - Zoom/pan: image and mapped marker layer share the same transform.
-- Reconciliation: remains unavailable as a scored result because `expectedQuantities` is empty.
+- Reconciliation: corrected Exercise 002 expected quantities are present; full reconciliation is verified separately at 100% for 44 mapped devices.
 
 ## Final Disposition
 
-Scoring remains disabled. No expected quantities or trainee answer key were added. Exercise 001 remains separate and unmapped. The drawing source image remains unchanged.
+Corrected disposition: previous total 41, corrected total 44, Smoke quantity 12, Smoke physical test 12/12 PASS, full corrected exercise 44/44 PASS, corrected reconciliation 100%. Exercise 001 and Exercise 003 were not modified.
+
+Scoring remains local to Exercise 002. The general Heat Detectors category was added for the two subtype-ambiguous heat records; no Exercise 001 or Exercise 003 data changed. The drawing source image remains unchanged.

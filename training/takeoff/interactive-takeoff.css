@@ -262,6 +262,14 @@
     transition: transform 120ms ease-out;
 }
 
+.interactive-drawing-layer.is-exercise-002 {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1536 / 1024;
+}
+
 .interactive-takeoff-drawing strong {
     color: #fbbf24;
     letter-spacing: 0.08em;
@@ -682,4 +690,34 @@
     .interactive-takeoff-drawing {
         min-height: 380px;
     }
+
+    .interactive-drawing-layer.is-exercise-002 .interactive-location-marker {
+        min-width: 8px;
+        min-height: 8px;
+    }
+}
+
+.interactive-marker-debug {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    z-index: 5;
+    width: max-content;
+    padding: 3px 4px;
+    border: 1px solid #f59e0b;
+    background: rgba(15, 23, 42, 0.9);
+    color: #fef3c7;
+    font: 10px/1.2 Consolas, "Courier New", monospace;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.interactive-location-marker:has(.interactive-marker-debug) {
+    border-color: #f59e0b !important;
+    background: rgba(245, 158, 11, 0.16) !important;
+}
+
+.interactive-drawing-layer.is-exercise-002 .interactive-location-marker {
+    min-width: 0;
+    min-height: 0;
 }

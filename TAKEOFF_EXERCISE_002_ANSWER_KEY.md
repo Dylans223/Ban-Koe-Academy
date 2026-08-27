@@ -3,7 +3,14 @@
 Exercise: `TAKEOFF PRACTICE 002`  
 Drawing: `RIVERDALE OFFICE BUILDING`, `FA-101`  
 Source: `Takeoff Drawings/ChatGPT Image Aug 24, 2026, 02_21_04 PM.png`  
-Total mapped devices: **41**
+Total mapped devices: **44**
+
+## Correction Notice
+
+- Previous Smoke quantity: **9**
+- Correct Smoke quantity: **12**
+- Reason: A fresh audit of the original 1536 x 1024 source drawing identified 12 visible Smoke Detector symbols.
+- Three previously missing Smoke devices: `smoke-010` in OPEN OFFICE 103, `smoke-011` in OFFICE 108, and `smoke-012` in LOBBY 100.
 
 This answer key was generated from the QA-approved Exercise 002 device mapping.
 
@@ -13,8 +20,9 @@ This answer key was generated from the QA-approved Exercise 002 device mapping.
 | --- | --- | ---: |
 | FACP | DARK BLUE | 1 |
 | FAA | DARK BLUE | 1 |
-| Smokes | RED | 9 |
-| R of R Heats | LIGHT BLUE | 3 |
+| Smokes | RED | 12 |
+| R of R Heats | LIGHT BLUE | 1 |
+| Heat Detectors | LIGHT BLUE | 2 |
 | Test Stations | ORANGE | 1 |
 | Duct Smokes | ORANGE | 2 |
 | Wall Speaker/Strobes | YELLOW | 8 |
@@ -25,14 +33,15 @@ This answer key was generated from the QA-approved Exercise 002 device mapping.
 | Door Holders | PINK | 1 |
 | Tamper | PINK | 1 |
 
-Expected quantity total: **41**
+Expected quantity total: **44**
 
 ## Device IDs by Category
 
 - FACP: `facp-001`
 - FAA: `faa-001`
-- Smokes: `smoke-001`, `smoke-002`, `smoke-003`, `smoke-004`, `smoke-005`, `smoke-006`, `smoke-007`, `smoke-008`, `smoke-009`
-- R of R Heats: `ror-heat-001`, `ror-heat-002`, `ror-heat-003`
+- Smokes: `smoke-001`, `smoke-002`, `smoke-003`, `smoke-004`, `smoke-005`, `smoke-006`, `smoke-007`, `smoke-008`, `smoke-009`, `smoke-010`, `smoke-011`, `smoke-012`
+- R of R Heats: `ror-heat-001`
+- Heat Detectors: `ror-heat-002`, `ror-heat-003`
 - Test Stations: `test-001`
 - Duct Smokes: `duct-001`, `duct-002`
 - Wall Speaker/Strobes: `wall-speaker-strobe-001`, `wall-speaker-strobe-002`, `wall-speaker-strobe-003`, `wall-speaker-strobe-004`, `wall-speaker-strobe-005`, `wall-speaker-strobe-006`, `wall-speaker-strobe-007`, `wall-speaker-strobe-008`

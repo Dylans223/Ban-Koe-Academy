@@ -58,7 +58,7 @@ The following mappings are now user-confirmed Ban-Koe takeoff procedures supplie
 | --- | --- |
 | DARK BLUE | FACP; FAA |
 | RED | Smokes |
-| LIGHT BLUE | R of R Heats; Fixed Heats |
+| LIGHT BLUE | Heat Detectors (R of R or Fixed subtype only when specifically required) |
 | ORANGE | Duct Smokes; Test Stations; Wall Strobes; Ceiling Strobes |
 | YELLOW | Wall Horn/Strobes; Wall Speaker/Strobes; Ceiling Horn/Strobes; Ceiling Speaker/Strobes; Weatherproof Devices |
 | GREEN | Pulls |
