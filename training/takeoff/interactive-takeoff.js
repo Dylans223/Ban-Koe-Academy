@@ -64,6 +64,10 @@ function isApprovedInteractiveExercise(exercise) {
     );
 }
 
+function isCountOnlyInteractiveExercise(exercise) {
+    return exercise?.exerciseId === "takeoff-practice-001";
+}
+
 function acknowledgeInteractiveKey(state) {
     if (!isApprovedInteractiveExercise(state.exercise)) {
         state.feedback = "AWAITING APPROVED DRAWING DATA";
@@ -82,7 +86,7 @@ function acknowledgeInteractiveNotes(state) {
     }
 
     state.notesAcknowledged = true;
-    state.stage = "product";
+    state.stage = isCountOnlyInteractiveExercise(state.exercise) ? "mark" : "product";
     return true;
 }
 
@@ -104,13 +108,14 @@ function selectInteractiveProduct(state, productId) {
 }
 
 function markInteractiveLocation(state, locationId) {
-    if (state.stage !== "mark" || !state.selectedProductId) {
+    const countOnly = isCountOnlyInteractiveExercise(state.exercise);
+    if (state.stage !== "mark" || (!countOnly && !state.selectedProductId)) {
         state.feedback = "Select a product category first.";
         return false;
     }
 
     const location = state.exercise.locations.find((entry) => entry.id === locationId);
-    if (!state.selectedColor) {
+    if (!countOnly && !state.selectedColor) {
         state.feedback = "Select a Ban-Koe color first.";
         return false;
     }
@@ -118,18 +123,19 @@ function markInteractiveLocation(state, locationId) {
         state.feedback = "ALREADY COUNTED";
         return false;
     }
-    if (!location || location.productId !== state.selectedProductId) {
+    if (!location || (!countOnly && location.productId !== state.selectedProductId)) {
         state.feedback = "WRONG DEVICE";
         return false;
     }
 
-    if (location.color !== state.selectedColor) {
+    if (!countOnly && location.color !== state.selectedColor) {
         state.feedback = "WRONG COLOR";
         return false;
     }
 
     state.markedLocations.add(locationId);
-    state.tallyByProduct[state.selectedProductId] = (state.tallyByProduct[state.selectedProductId] || 0) + 1;
+    const productId = countOnly ? location.productId : state.selectedProductId;
+    state.tallyByProduct[productId] = (state.tallyByProduct[productId] || 0) + 1;
     return true;
 }
 
@@ -312,7 +318,7 @@ function renderInteractiveTakeoff(state) {
     const exerciseLibrary = window.takeoffExerciseLibrary || [];
     mount.innerHTML = `
         <div class="interactive-takeoff-shell">
-            ${state.exercisePickerOpen ? `<div class="interactive-exercise-intro"><p class="eyebrow">DRAWING EXERCISES</p><h2>DRAWING TAKEOFF PRACTICE</h2><p>Practice the complete Ban-Koe takeoff workflow on real training drawings.</p></div><div class="interactive-takeoff-exercise-list" aria-label="Drawing takeoff practice exercises">${exerciseLibrary.map((exercise, index) => { const levels = ["Guided / Color-Coded", "Independent Takeoff", "Advanced Takeoff"]; const descriptions = ["Learn the Ban-Koe color system and practice the complete takeoff workflow.", "Black-and-white drawing. Apply the Ban-Koe color system yourself.", "More involved black-and-white drawing with multiple areas and device types."]; return `<button type="button" class="interactive-exercise-card exercise-level-${index + 1}" data-interactive-exercise="${exercise.exerciseId}"><span class="interactive-exercise-number">EXERCISE ${String(index + 1).padStart(3, "0")}</span><strong>${exercise.drawing.project.replace(" - LEVEL 1", "")}</strong><b>${levels[index]}</b><span>${descriptions[index]}</span><small>START EXERCISE</small></button>`; }).join("")}</div>` : `<div class="interactive-takeoff-breadcrumb"><button type="button" class="btn btn-secondary" data-interactive-action="back-to-exercises">← Back to Exercises</button><span>${state.exercise.title}</span></div>`}
+            ${state.exercisePickerOpen ? `<div class="interactive-exercise-intro"><p class="eyebrow">DRAWING EXERCISES</p><h2>DRAWING TAKEOFF PRACTICE</h2><p>Practice the complete Ban-Koe takeoff workflow on real training drawings.</p></div><div class="interactive-takeoff-exercise-list" aria-label="Drawing takeoff practice exercises">${exerciseLibrary.map((exercise, index) => { const levels = ["Guided Count", "Independent Takeoff", "Advanced Takeoff"]; const descriptions = ["Color-coded source drawing. Count, cross off, tally, and reconcile.", "Black-and-white drawing. Apply the Ban-Koe color system yourself.", "More involved black-and-white drawing with multiple areas and device types."]; return `<button type="button" class="interactive-exercise-card exercise-level-${index + 1}" data-interactive-exercise="${exercise.exerciseId}"><span class="interactive-exercise-number">EXERCISE ${String(index + 1).padStart(3, "0")}</span><strong>${exercise.drawing.project.replace(" - LEVEL 1", "")}</strong><b>${levels[index]}</b><span>${descriptions[index]}</span><small>START EXERCISE</small></button>`; }).join("")}</div>` : `<div class="interactive-takeoff-breadcrumb"><button type="button" class="btn btn-secondary" data-interactive-action="back-to-exercises">← Back to Exercises</button><span>${state.exercise.title}</span></div>`}
             <div class="interactive-takeoff-heading">
                 <div>
                     <button type="button" class="interactive-back-link" data-interactive-action="back-to-exercises">← Exercises</button>
@@ -321,8 +327,8 @@ function renderInteractiveTakeoff(state) {
                 </div>
                 <div class="interactive-header-actions"><button type="button" class="btn btn-secondary" data-interactive-action="toggle-key">[KEY]</button><button type="button" class="btn btn-secondary" data-interactive-action="toggle-notes">[NOTES]</button><button type="button" class="btn btn-secondary" data-interactive-action="fullscreen" ${approved ? "" : "disabled"}>EXPAND DRAWING</button></div>
             </div>
-            ${approved && state.exercise.exerciseId === "takeoff-practice-001" ? `<div class="interactive-mode-actions"><button type="button" class="btn btn-secondary ${state.mode === "colors" ? "is-selected" : ""}" data-interactive-action="colors">Learn the Colors</button><button type="button" class="btn btn-secondary ${state.mode === "takeoff" ? "is-selected" : ""}" data-interactive-action="takeoff">Full Takeoff Practice</button></div>${state.mode === "colors" ? renderColorLearning(state) : ""}` : ""}
-            <p class="interactive-takeoff-notice">${approved ? "Review the key and notes, then select a category and color to mark the drawing." : "AWAITING APPROVED DRAWING DATA."}</p>
+            ${approved && state.exercise.exerciseId === "takeoff-practice-001" ? `<div class="interactive-mode-actions"><button type="button" class="btn btn-secondary ${state.mode === "colors" ? "is-selected" : ""}" data-interactive-action="colors">Learn the Colors</button><button type="button" class="btn btn-secondary ${state.mode === "takeoff" ? "is-selected" : ""}" data-interactive-action="takeoff">Guided Count</button></div>${state.mode === "colors" ? renderColorLearning(state) : ""}` : ""}
+            <p class="interactive-takeoff-notice">${approved ? (isCountOnlyInteractiveExercise(state.exercise) ? "Count the devices on the color-coded drawing. Category and color selection are not required." : "Review the key and notes, then select a category and color to mark the drawing.") : "AWAITING APPROVED DRAWING DATA."}</p>
             <div class="interactive-takeoff-stage-list" aria-label="Drawing takeoff practice stages">
                 ${stageLabels.map((label, index) => `<span class="interactive-takeoff-stage ${currentStageIndex === index ? "is-current" : currentStageIndex > index ? "is-complete" : ""}">${index + 1}. ${label}</span>`).join("")}
             </div>
@@ -384,7 +390,7 @@ function renderInteractiveTakeoff(state) {
                         <strong class="interactive-selected-value"><i style="background:${state.selectedColor ? takeoffColorHex[state.selectedColor] : "#64748b"}" aria-hidden="true"></i>${state.selectedColor || "Select a color"}</strong>
                     </div>
                     <div class="interactive-rail-divider"></div>
-                    <div class="interactive-current-task"><span>READY TO MARK</span><strong>${selectedProduct && state.selectedColor ? `${selectedProduct.whatIsIt} • ${state.selectedColor}` : "SELECT CATEGORY + COLOR"}</strong></div>
+                    <div class="interactive-current-task"><span>READY TO MARK</span><strong>${isCountOnlyInteractiveExercise(state.exercise) ? "COUNT FROM COLOR-CODED DRAWING" : selectedProduct && state.selectedColor ? `${selectedProduct.whatIsIt} • ${state.selectedColor}` : "SELECT CATEGORY + COLOR"}</strong></div>
                     <div class="interactive-rail-divider"></div>
                     <h4>CURRENT TALLY</h4>
                     <table class="interactive-takeoff-tally">
@@ -402,7 +408,7 @@ function renderInteractiveTakeoff(state) {
                 </aside>
             </div>
             ${state.stage === "complete" ? renderInteractiveResults(state) : ""}
-            ${approved && state.stage !== "complete" ? `<section class="interactive-takeoff-panel interactive-location-index"><h4>Countable Locations</h4><div class="interactive-takeoff-actions">${state.exercise.locations.map((location) => `<button type="button" class="btn btn-secondary" data-interactive-location="${location.id}" ${location.productId !== state.selectedProductId || state.markedLocations.has(location.id) ? "disabled" : ""}>${state.markedLocations.has(location.id) ? "COUNTED" : "Mark location"} ${location.id}</button><button type="button" class="btn btn-secondary" data-interactive-cross="${location.id}" ${!state.markedLocations.has(location.id) || state.crossedOffLocations.has(location.id) ? "disabled" : ""}>${state.crossedOffLocations.has(location.id) ? "CROSSED OFF" : "Cross off"}</button>`).join("")}</div></section>` : ""}
+            ${approved && state.stage !== "complete" ? `<section class="interactive-takeoff-panel interactive-location-index"><h4>Countable Locations</h4><div class="interactive-takeoff-actions">${state.exercise.locations.map((location) => `<button type="button" class="btn btn-secondary" data-interactive-location="${location.id}" ${(!isCountOnlyInteractiveExercise(state.exercise) && location.productId !== state.selectedProductId) || state.markedLocations.has(location.id) ? "disabled" : ""}>${state.markedLocations.has(location.id) ? "COUNTED" : "Mark location"} ${location.id}</button><button type="button" class="btn btn-secondary" data-interactive-cross="${location.id}" ${!state.markedLocations.has(location.id) || state.crossedOffLocations.has(location.id) ? "disabled" : ""}>${state.crossedOffLocations.has(location.id) ? "CROSSED OFF" : "Cross off"}</button>`).join("")}</div></section>` : ""}
         </div>
     `;
 
