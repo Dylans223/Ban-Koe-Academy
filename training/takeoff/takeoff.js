@@ -154,13 +154,13 @@ const takeoffScenario = {
             id: "duct-quantity",
             question: "Enter the number of duct smoke detectors required.",
             answer: 1,
-            explanation: "The project brief specifies 1 duct smoke detector."
+            explanation: "The project requirements specify 1 duct smoke detector."
         },
         {
             id: "panel-quantity",
             question: "Enter the number of fire alarm control panels required.",
             answer: 1,
-            explanation: "The project brief specifies 1 fire alarm control panel."
+            explanation: "The project requirements specify 1 fire alarm control panel."
         }
     ],
     relationshipQuestions: [
@@ -325,47 +325,6 @@ const returnTrainingButton = document.getElementById("returnTrainingButton");
 const nextModuleButton = document.getElementById("nextModuleButton");
 const liveScoreValue = document.getElementById("liveScoreValue");
 const liveScoreNote = document.getElementById("liveScoreNote");
-const topProgressBar = document.getElementById("topProgressBar");
-const topProgressValue = document.getElementById("topProgressValue");
-const stepIndicator = document.getElementById("stepIndicator");
-const moduleStepList = document.getElementById("moduleStepList");
-const moduleObjectiveChip = document.getElementById("moduleObjectiveChip");
-const moduleObjectiveTitle = document.getElementById("moduleObjectiveTitle");
-const moduleObjectiveText = document.getElementById("moduleObjectiveText");
-
-const moduleSteps = [
-    {
-        label: "Project",
-        chip: "Project Brief",
-        title: "Understand the project requirements.",
-        objective: "Your goal is to read the project scope and understand what you will need to identify before building the takeoff."
-    },
-    {
-        label: "Identify",
-        chip: "Identify Devices",
-        title: "Identify which devices the project requires.",
-        objective: "Your goal is to match each requirement to the correct fire alarm device before moving on to quantities."
-    },
-    {
-        label: "Quantities",
-        chip: "Determine Quantities",
-        title: "Calculate the required material counts.",
-        objective: "Your goal is to determine the total quantity required for each major device across the full project."
-    },
-    {
-        label: "Relationships",
-        chip: "System Relationships",
-        title: "Recognize the related modules and interfaces.",
-        objective: "Your goal is to identify when the system needs monitoring or control functions beyond the major field devices."
-    },
-    {
-        label: "BOM",
-        chip: "Build BOM",
-        title: "Build the project material list.",
-        objective: "Your goal is to turn the project requirements and remembered counts into an organized BOM."
-    }
-];
-
 // Navigation is handled by global functions in navigation.js
 // Add module-specific navigation if needed
 function goSystemBuilder() {
@@ -440,30 +399,7 @@ function initializeTakeoffTraining() {
     renderBomTable();
     updateStepState();
     updateScoreDisplay();
-    updateProgressDisplay();
-}
-
-function renderModuleShell() {
-    const visualStep = Math.min(scenarioState.currentStep, 5);
-    moduleStepList.innerHTML = moduleSteps.map((step, index) => {
-        const stepNumber = index + 1;
-        const isComplete = scenarioState.currentStep === 6 ? true : stepNumber < visualStep;
-        const isActive = scenarioState.currentStep !== 6 && stepNumber === visualStep;
-        const icon = isComplete ? "✓" : isActive ? "●" : "○";
-        return `<span class="module-step-item ${isComplete ? "is-complete" : isActive ? "is-active" : ""}"><span class="module-step-icon">${icon}</span>${stepNumber} ${step.label}</span>`;
-    }).join("");
-
-    const activeConfig = scenarioState.currentStep === 6
-        ? {
-            chip: "Review & Learn",
-            title: "Review why your takeoff was correct or incorrect.",
-            objective: "Your goal is to understand the result, review any missed items, and carry those lessons into the next module."
-        }
-        : moduleSteps[visualStep - 1];
-
-    moduleObjectiveChip.textContent = activeConfig.chip;
-    moduleObjectiveTitle.textContent = activeConfig.title;
-    moduleObjectiveText.textContent = activeConfig.objective;
+    initializeLessonCards();
 }
 
 function beginTakeoffFlow() {
@@ -846,7 +782,7 @@ function evaluateTakeoff() {
                 label: item.item,
                 actual: item.quantity,
                 expected: expected.quantity,
-                explanation: expected.key === "smoke-detector" ? "10 detectors × 2 floors = 20 detectors" : "Review the project brief and matching requirements."
+                explanation: expected.key === "smoke-detector" ? "10 detectors × 2 floors = 20 detectors" : "Review the project requirements and matching details."
             });
         } else {
             reviewLines.push({
@@ -936,7 +872,6 @@ function resetScenario() {
     renderBomTable();
     updateStepState();
     updateScoreState();
-    updateProgressDisplay();
     resultsReview.innerHTML = "";
     resultsScore.textContent = "0/100";
     resultsCorrectItems.textContent = "0/0";
@@ -1000,9 +935,37 @@ function updateStepState() {
         panel.classList.toggle("hidden", Number(step) !== scenarioState.currentStep);
     });
 
-    stepIndicator.textContent = scenarioState.currentStep === 6 ? "Module Complete" : `Step ${scenarioState.currentStep} of 5`;
-    renderModuleShell();
-    updateProgressDisplay();
+}
+
+function initializeLessonCards() {
+    document.querySelectorAll(".lesson-card").forEach((card) => {
+        if (card.dataset.collapsible === "true") {
+            return;
+        }
+
+        const details = document.createElement("details");
+        details.className = card.className;
+        details.dataset.collapsible = "true";
+        const summary = document.createElement("summary");
+        summary.append(card.querySelector(".lesson-number"), card.querySelector("h3"));
+        details.append(summary);
+        while (card.firstChild) {
+            details.append(card.firstChild);
+        }
+        card.replaceWith(details);
+    });
+
+    document.querySelectorAll("[data-lesson-check]").forEach((check) => {
+        check.querySelectorAll("[data-knowledge-answer]").forEach((button) => {
+            button.addEventListener("click", () => {
+                const correct = button.dataset.knowledgeAnswer === "correct";
+                const feedback = check.querySelector("[data-knowledge-feedback]");
+                check.querySelectorAll("[data-knowledge-answer]").forEach((option) => { option.disabled = true; });
+                feedback.textContent = correct ? "Correct. Follow the Key before counting." : "Review this lesson: read the Key before counting.";
+                feedback.className = correct ? "is-correct" : "is-incorrect";
+            });
+        });
+    });
 }
 
 function updateScoreDisplay() {
@@ -1019,22 +982,6 @@ function updateScoreState() {
     liveScoreValue.textContent = `${scenarioState.score} / 100`;
     liveScoreNote.textContent = scenarioState.completed ? "Takeoff submitted. Review your results below." : "Work through the steps to build your total.";
     finalScoreBadge.textContent = `${scenarioState.score} / 100`;
-    updateProgressDisplay();
-}
-
-function updateProgressDisplay() {
-    const progressMap = {
-        1: 20,
-        2: 40,
-        3: 60,
-        4: 80,
-        5: 90,
-        6: 100
-    };
-
-    const progress = progressMap[scenarioState.currentStep] || 20;
-    topProgressBar.style.width = `${progress}%`;
-    topProgressValue.textContent = `${progress}%`;
 }
 
 function normalizeQuantityInput(value) {

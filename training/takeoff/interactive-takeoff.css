@@ -409,6 +409,37 @@
     font-size: 12px;
 }
 
+.interactive-exercise-card {
+    gap: 8px;
+    min-height: 170px;
+}
+
+.interactive-exercise-card strong {
+    color: var(--text);
+    font-size: 18px;
+}
+
+.interactive-exercise-card b {
+    color: #fbbf24;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.interactive-exercise-number {
+    color: #f59e0b !important;
+    font-size: 11px !important;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.interactive-exercise-card small {
+    margin-top: auto;
+    color: var(--text) !important;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
 .interactive-takeoff-drawing {
     position: relative;
 }

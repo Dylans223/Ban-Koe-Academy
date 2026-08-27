@@ -49,7 +49,7 @@ Before an exercise is used in the Academy, every populated field must be reviewe
 `training/takeoff/interactive-takeoff.js` owns the future drawing-practice state separately from `takeoff.js`. Its planned operations are:
 
 - Acknowledging the key and notes before counting.
-- Selecting an approved product identity.
+- Selecting a product category.
 - Marking a matching location and maintaining a product tally.
 - Crossing off a marked location and undoing a mark.
 - Entering final quantities and reconciling them against approved expected quantities.

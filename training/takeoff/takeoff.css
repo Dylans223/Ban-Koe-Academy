@@ -60,10 +60,124 @@
     gap: var(--space-3);
 }
 
+.takeoff-lessons-heading {
+    align-items: start;
+}
+
+.lesson-card {
+    display: block;
+    padding: 0;
+}
+
+.lesson-card summary {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 14px;
+    color: var(--text);
+    cursor: pointer;
+    list-style: none;
+}
+
+.lesson-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.lesson-card summary::after {
+    margin-left: auto;
+    color: var(--text-secondary);
+    content: "+";
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.lesson-card[open] summary::after {
+    content: "-";
+}
+
+.lesson-card > :not(summary) {
+    margin-right: 14px;
+    margin-left: 14px;
+}
+
+.lesson-card > :last-child {
+    margin-bottom: 14px;
+}
+
+.lesson-check {
+    display: grid;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-left: 3px solid #f59e0b;
+    background: rgba(245, 158, 11, 0.08);
+}
+
+.lesson-check > strong {
+    color: var(--text);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+}
+
+.lesson-check > div,
+.lesson-links {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.lesson-check button {
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.lesson-check button:hover,
+.lesson-check button:focus-visible {
+    border-color: #f59e0b;
+    color: var(--text);
+}
+
+.lesson-check p {
+    min-height: 18px;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.lesson-check p.is-correct {
+    color: #86efac;
+}
+
+.lesson-check p.is-incorrect {
+    color: #fca5a5;
+}
+
 .takeoff-framework,
 .future-practice {
     display: grid;
     gap: var(--space-2);
+}
+
+.takeoff-framework {
+    display: none;
+}
+
+.takeoff-color-details > summary {
+    padding: 4px 0;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.takeoff-color-details > summary::marker {
+    color: #f59e0b;
 }
 
 .training-mode-key {
@@ -176,6 +290,20 @@
     grid-template-columns: minmax(0, 1fr) auto;
     border-color: rgba(245, 158, 11, 0.65);
     background: rgba(120, 73, 5, 0.16);
+}
+
+.interactive-exercise-intro {
+    display: grid;
+    gap: 6px;
+}
+
+.interactive-exercise-intro h2 {
+    color: var(--text);
+    font-size: 24px;
+}
+
+.interactive-exercise-intro p:last-child {
+    color: var(--text-secondary);
 }
 
 .future-practice h2 {

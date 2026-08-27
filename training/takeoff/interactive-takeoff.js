@@ -88,7 +88,7 @@ function acknowledgeInteractiveNotes(state) {
 
 function selectInteractiveProduct(state, productId) {
     if (!state.exercise || !state.exercise.products?.length) {
-        state.feedback = "Select an approved product identity.";
+        state.feedback = "Select a product category.";
         return false;
     }
 
@@ -311,7 +311,7 @@ function renderInteractiveTakeoff(state) {
     const exerciseLibrary = window.takeoffExerciseLibrary || [];
     mount.innerHTML = `
         <div class="interactive-takeoff-shell">
-            ${state.exercisePickerOpen ? `<div class="interactive-takeoff-exercise-list" aria-label="Drawing takeoff practice exercises">${exerciseLibrary.map((exercise) => `<button type="button" class="interactive-exercise-card ${exercise.exerciseId === state.exercise.exerciseId ? "is-active" : ""}" data-interactive-exercise="${exercise.exerciseId}"><strong>${exercise.title}</strong><span>${exercise.drawing.project} · ${exercise.drawing.drawingNumber}</span><small>Open Exercise</small></button>`).join("")}</div>` : `<div class="interactive-takeoff-breadcrumb"><button type="button" class="btn btn-secondary" data-interactive-action="back-to-exercises">← Back to Exercises</button><span>${state.exercise.title}</span></div>`}
+            ${state.exercisePickerOpen ? `<div class="interactive-exercise-intro"><p class="eyebrow">DRAWING EXERCISES</p><h2>DRAWING TAKEOFF PRACTICE</h2><p>Practice the complete Ban-Koe takeoff workflow on real training drawings.</p></div><div class="interactive-takeoff-exercise-list" aria-label="Drawing takeoff practice exercises">${exerciseLibrary.map((exercise, index) => { const levels = ["Guided / Color-Coded", "Independent Takeoff", "Advanced Takeoff"]; const descriptions = ["Learn the Ban-Koe color system and practice the complete takeoff workflow.", "Black-and-white drawing. Apply the Ban-Koe color system yourself.", "More involved black-and-white drawing with multiple areas and device types."]; return `<button type="button" class="interactive-exercise-card exercise-level-${index + 1}" data-interactive-exercise="${exercise.exerciseId}"><span class="interactive-exercise-number">EXERCISE ${String(index + 1).padStart(3, "0")}</span><strong>${exercise.drawing.project.replace(" - LEVEL 1", "")}</strong><b>${levels[index]}</b><span>${descriptions[index]}</span><small>START EXERCISE</small></button>`; }).join("")}</div>` : `<div class="interactive-takeoff-breadcrumb"><button type="button" class="btn btn-secondary" data-interactive-action="back-to-exercises">← Back to Exercises</button><span>${state.exercise.title}</span></div>`}
             <div class="interactive-takeoff-heading">
                 <div>
                     <button type="button" class="interactive-back-link" data-interactive-action="back-to-exercises">← Exercises</button>
@@ -388,7 +388,7 @@ function renderInteractiveTakeoff(state) {
                     <h4>CURRENT TALLY</h4>
                     <table class="interactive-takeoff-tally">
                         <thead><tr><th>Product</th><th>Counted</th></tr></thead>
-                        <tbody>${approved ? state.exercise.products.map((product) => `<tr><td>${product.whatIsIt || product.id}</td><td>${state.tallyByProduct[product.id] || 0}</td></tr>`).join("") : `<tr><td colspan="2">No approved products loaded</td></tr>`}</tbody>
+                        <tbody>${approved ? state.exercise.products.map((product) => `<tr><td>${product.whatIsIt || product.id}</td><td>${state.tallyByProduct[product.id] || 0}</td></tr>`).join("") : `<tr><td colspan="2">No product categories loaded</td></tr>`}</tbody>
                     </table>
                     <div class="interactive-takeoff-summary"><span>Counted: ${state.markedLocations.size}</span><span>Crossed off: ${state.crossedOffLocations.size}</span></div>
                     <div class="interactive-mark-list">${state.freeformMarks.length ? state.freeformMarks.map((mark) => `<div><span>${mark.productId}</span><button type="button" class="btn btn-secondary" data-interactive-cross-mark="${mark.id}" ${mark.crossedOff ? "disabled" : ""}>${mark.crossedOff ? "Crossed Off" : "Cross Off / Counted"}</button></div>`).join("") : "<p class=\"interactive-takeoff-status\">No marked devices yet.</p>"}</div>
