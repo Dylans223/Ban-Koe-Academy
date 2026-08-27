@@ -984,6 +984,65 @@
 }
 
 @media (max-width: 700px) {
+    .app {
+        display: block;
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        min-height: 0;
+        padding: 12px 16px;
+        gap: 10px;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-brand {
+        padding-bottom: 8px;
+    }
+
+    .sidebar-brand h1 {
+        font-size: 18px;
+    }
+
+    .sidebar-nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+        overflow: visible;
+    }
+
+    .nav-group {
+        display: contents;
+    }
+
+    .nav-group-title,
+    .sidebar-footer {
+        display: none;
+    }
+
+    .sidebar button,
+    .sidebar .nav-button {
+        width: auto;
+        min-height: 36px;
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 12px;
+    }
+
+    .takeoff-content .future-practice {
+        width: 100%;
+        padding: 8px;
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
     .takeoff-content {
         gap: var(--space-2);
     }

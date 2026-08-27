@@ -4,6 +4,8 @@ Exercise: `TAKEOFF PRACTICE 003`
 Drawing: `PRAIRIE MEDICAL CLINIC - LEVEL 1`, `FA-1.1`  
 Source: `Takeoff Drawings/ChatGPT Image Aug 24, 2026, 03_13_27 PM.png`
 
+Native source dimensions: **1536 x 1024**; aspect ratio **1.5000**. The key/legend and drawing notes are in the right-side source column. The approved 36-device mapping uses this source image's own normalized coordinate system.
+
 ## Trainee Workflow
 
 The visible trainee path was completed from the normal Takeoff page:
@@ -27,6 +29,8 @@ The visible trainee path was completed from the normal Takeoff page:
 **Appropriate / Advanced.** Exercise 003 is more involved than Exercise 002 because the device set is distributed across exam rooms, corridors, imaging areas, support rooms, stairs, the vestibule, and mechanical/electrical areas. The difficulty comes from systematic search and multiple category changes rather than an artificial timer or hidden rule.
 
 The approved scored exercise contains 36 mapped devices. The full drawing includes circular detector symbols that are intentionally outside the approved set because the supplied raster does not make Smoke Detector versus Rate of Rise Heat Detector reliably distinguishable at every location.
+
+All 36 approved locations were checked against the original source drawing and remain **CONFIRMED**. Ambiguous circular detector symbols remain **UNRESOLVED / EXCLUDED FROM SCORING**.
 
 ## UX Review
 

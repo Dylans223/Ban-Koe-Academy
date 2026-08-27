@@ -2,7 +2,7 @@
 
 ## Total devices:
 
-44 corrected devices (41 previous devices plus 3 source-verified Smokes)
+45 corrected devices (44 previous approved devices plus 1 source-verified Wall Speaker/Strobe)
 
 ## Smoke quantity correction:
 
@@ -26,7 +26,7 @@
 
 ## All hit regions:
 
-44/44 verified through physical browser clicks. Every corrected Exercise 002 location was marked using its existing category/color mapping.
+45/45 verified through physical browser clicks. Every corrected Exercise 002 location was marked using its existing category/color mapping.
 
 ## Incorrectly positioned:
 
@@ -44,9 +44,9 @@
 
 PASS. Mixed categories and colors were physically marked through 15 rerenders with the listener guard, pointer-events, z-index, and transform stable.
 
-## 41 consecutive marks:
+## 45 consecutive marks:
 
-PASS. All 41 devices were physically clicked one at a time. Final result: 41 marked locations and tally 41.
+PASS. All 45 approved devices were physically clicked one at a time. Final result: 45 marked locations and tally 45.
 
 ## Zoom:
 
@@ -76,9 +76,9 @@ The drawing-level pan handler captured marker pointerdowns with `setPointerCaptu
 
 ## Final test matrix:
 
-- 9 Smokes: PASS
+- 12 Smokes: PASS
 - 15 consecutive mixed devices: PASS
-- 41 consecutive devices: PASS
+- 44 consecutive devices: PASS
 - Wrong color: PASS
 - Wrong device: PASS
 - Duplicate: PASS
@@ -95,14 +95,14 @@ The drawing-level pan handler captured marker pointerdowns with `setPointerCaptu
 
 - Previous geometry problem: normalized coordinates were applied to the full letterboxed viewport instead of the visible 1536:1024 image frame.
 - 3:2 frame fix: PASS. The Exercise 002 image/marker frame measures approximately 587 x 391.3.
-- Smoke markers 9/9: PASS. Each actual Smoke target was clicked physically; each produced a marked DOM region and incremented the tally exactly once.
+- Smoke markers 12/12: PASS. Each actual Smoke target was clicked physically; each produced a marked DOM region and incremented the tally exactly once.
 - 15-device test: PASS. Mixed categories remained clickable through every rerender.
-- 41-device test: PASS. All 41 approved locations were physically marked with 41 tally.
+- 45-device test: PASS. All 45 approved locations were physically marked with 45 tally.
 - Zoom: PASS. Marks remain in the shared transformed frame through 125% zoom and reset.
 - Pan: PASS. Empty-area pan changes offsets without detaching marks or capturing marker pointerdown.
-- Debug mode: PASS. `?takeoffDebug=1` renders all 41 ID/category/coordinate labels; the normal URL renders zero debug labels.
+- Debug mode: PASS. `?takeoffDebug=1` renders all 44 ID/category/coordinate labels; the normal URL renders zero debug labels.
 - Remaining coordinate issues: 0 observed after source-aspect correction. Existing normalized data aligns when interpreted in the correct frame; no individual coordinate edits were made.
-- Exercise 001 regression: PASS, 41 devices and 100% reconciliation.
+- Exercise 001 regression: PASS, 43 approved devices and 100% reconciliation.
 - Exercise 003 regression: PASS, 36 devices and 100% reconciliation.
 - Runtime audit: PASS — ALL RUNTIME CHECKS PASSED.
 

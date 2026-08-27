@@ -55,7 +55,7 @@ Before an exercise is used in the Academy, every populated field must be reviewe
 - Acknowledging the key and notes before counting.
 - Selecting a product category.
 - Marking a matching location and maintaining a product tally.
-- Crossing off a marked location and undoing a mark.
+- Undoing a marked location.
 - Entering final quantities and reconciling them against approved expected quantities.
 - Resetting the advanced exercise state without changing the current simulator.
 

@@ -3,7 +3,6 @@ const interactiveTakeoffStages = [
     "notes",
     "product",
     "mark",
-    "cross-off",
     "tally",
     "enter",
     "reconcile"
@@ -33,7 +32,6 @@ function createInteractiveTakeoffState(exercise = takeoffExerciseSchema) {
         keyReferenceOpen: false,
         notesReferenceOpen: false,
         markedLocations: new Set(),
-        crossedOffLocations: new Set(),
         tallyByProduct: {},
         finalQuantities: {},
         feedback: null,
@@ -86,7 +84,7 @@ function acknowledgeInteractiveNotes(state) {
     }
 
     state.notesAcknowledged = true;
-    state.stage = isCountOnlyInteractiveExercise(state.exercise) ? "mark" : "product";
+    state.stage = "product";
     return true;
 }
 
@@ -103,19 +101,22 @@ function selectInteractiveProduct(state, productId) {
     }
 
     state.selectedProductId = productId;
+    if (isCountOnlyInteractiveExercise(state.exercise)) {
+        state.selectedColor = product.color;
+    }
     state.stage = "mark";
     return true;
 }
 
 function markInteractiveLocation(state, locationId) {
     const countOnly = isCountOnlyInteractiveExercise(state.exercise);
-    if (state.stage !== "mark" || (!countOnly && !state.selectedProductId)) {
+    if (state.stage !== "mark" || !state.selectedProductId) {
         state.feedback = "Select a product category first.";
         return false;
     }
 
     const location = state.exercise.locations.find((entry) => entry.id === locationId);
-    if (!countOnly && !state.selectedColor) {
+    if (!state.selectedColor && !countOnly) {
         state.feedback = "Select a Ban-Koe color first.";
         return false;
     }
@@ -123,7 +124,7 @@ function markInteractiveLocation(state, locationId) {
         state.feedback = "ALREADY COUNTED";
         return false;
     }
-    if (!location || (!countOnly && location.productId !== state.selectedProductId)) {
+    if (!location || location.productId !== state.selectedProductId) {
         state.feedback = "WRONG DEVICE";
         return false;
     }
@@ -134,18 +135,7 @@ function markInteractiveLocation(state, locationId) {
     }
 
     state.markedLocations.add(locationId);
-    const productId = countOnly ? location.productId : state.selectedProductId;
-    state.tallyByProduct[productId] = (state.tallyByProduct[productId] || 0) + 1;
-    return true;
-}
-
-function crossOffInteractiveLocation(state, locationId) {
-    if (!state.markedLocations.has(locationId)) {
-        state.feedback = "Mark and count the occurrence before crossing it off.";
-        return false;
-    }
-
-    state.crossedOffLocations.add(locationId);
+    state.tallyByProduct[state.selectedProductId] = (state.tallyByProduct[state.selectedProductId] || 0) + 1;
     return true;
 }
 
@@ -154,7 +144,6 @@ function undoInteractiveMark(state, locationId) {
     if (freeformMark) {
         state.freeformMarks = state.freeformMarks.filter((mark) => mark.id !== locationId);
         state.markedLocations.delete(locationId);
-        state.crossedOffLocations.delete(locationId);
         state.tallyByProduct[freeformMark.productId] = Math.max(0, (state.tallyByProduct[freeformMark.productId] || 0) - 1);
         return true;
     }
@@ -165,14 +154,13 @@ function undoInteractiveMark(state, locationId) {
     }
 
     state.markedLocations.delete(locationId);
-    state.crossedOffLocations.delete(locationId);
     state.tallyByProduct[location.productId] = Math.max(0, (state.tallyByProduct[location.productId] || 0) - 1);
     return true;
 }
 
 function enterInteractiveQuantities(state, quantities) {
-    if (!state.crossedOffLocations.size) {
-        state.feedback = "Cross off counted occurrences before entering final quantities.";
+    if (!state.markedLocations.size) {
+        state.feedback = "Count devices before entering final quantities.";
         return false;
     }
 
@@ -202,20 +190,17 @@ function reconcileInteractiveTakeoff(state) {
         const entered = state.finalQuantities[productId] || 0;
         const expectedQuantity = expected[productId];
         const expectedIds = expectedLocations.filter((location) => location.productId === productId).map((location) => location.id);
-        const crossed = expectedIds.filter((locationId) => state.crossedOffLocations.has(locationId)).length;
-        const categoryCorrect = counted === expectedQuantity && entered === expectedQuantity && crossed === expectedQuantity;
-        categoryResults.push({ productId, counted, entered, crossed, expected: expectedQuantity, status: categoryCorrect ? "correct" : "needs-correction" });
+        const categoryCorrect = counted === expectedQuantity && entered === expectedQuantity;
+        categoryResults.push({ productId, counted, entered, expected: expectedQuantity, status: categoryCorrect ? "correct" : "needs-correction" });
         if (!categoryCorrect) {
-            discrepancies.push({ productId, counted, entered, crossed, expected: expectedQuantity });
+            discrepancies.push({ productId, counted, entered, expected: expectedQuantity });
         }
     });
 
     const totalLocations = expectedLocations.length;
     const markedExpected = expectedLocations.filter((location) => state.markedLocations.has(location.id)).length;
-    const crossedExpected = expectedLocations.filter((location) => state.crossedOffLocations.has(location.id)).length;
     const correctCategories = categoryResults.filter((result) => result.status === "correct").length;
     const countAccuracy = totalLocations ? Math.round((markedExpected / totalLocations) * 100) : 0;
-    const crossOffAccuracy = totalLocations ? Math.round((crossedExpected / totalLocations) * 100) : 0;
     const reconciliationAccuracy = categoryResults.length ? Math.round((correctCategories / categoryResults.length) * 100) : 0;
     state.score = {
         productIdentification: countAccuracy,
@@ -225,9 +210,8 @@ function reconcileInteractiveTakeoff(state) {
         doubleCountedDevices: 0,
         tallyAccuracy: countAccuracy,
         finalQuantityAccuracy: reconciliationAccuracy,
-        crossOffCompletion: crossOffAccuracy,
         reconciliationAccuracy,
-        total: Math.round((countAccuracy + crossOffAccuracy + reconciliationAccuracy) / 3)
+        total: Math.round((countAccuracy + reconciliationAccuracy) / 2)
     };
     state.feedback = discrepancies.length ? { status: "review", discrepancies, categoryResults, score: state.score } : { status: "correct", categoryResults, score: state.score };
     state.stage = "complete";
@@ -274,7 +258,6 @@ function resetInteractiveViewport(state) {
 function clearInteractiveMarks(state) {
     state.freeformMarks = [];
     state.markedLocations.clear();
-    state.crossedOffLocations.clear();
     state.tallyByProduct = {};
     state.stage = state.selectedProductId ? "mark" : "product";
 }
@@ -286,21 +269,159 @@ function addFreeformInteractiveMark(state, x, y) {
     }
 
     const markId = `mark-${state.freeformMarks.length + 1}`;
-    state.freeformMarks.push({ id: markId, productId: state.selectedProductId, x, y, crossedOff: false });
+    state.freeformMarks.push({ id: markId, productId: state.selectedProductId, x, y });
     state.markedLocations.add(markId);
     state.tallyByProduct[state.selectedProductId] = (state.tallyByProduct[state.selectedProductId] || 0) + 1;
-    state.stage = "cross-off";
+    state.stage = "mark";
     return true;
 }
 
-function crossOffFreeformMark(state, markId) {
-    const mark = state.freeformMarks.find((entry) => entry.id === markId);
-    if (!mark) {
-        return false;
+function applyExercise001SymbolColors(state) {
+    if (!['takeoff-practice-001', 'takeoff-practice-002'].includes(state.exercise.exerciseId)) {
+        return;
     }
-    mark.crossedOff = true;
-    state.crossedOffLocations.add(markId);
-    return true;
+
+    const image = document.querySelector(".interactive-drawing-layer img");
+    const canvas = document.querySelector(".interactive-symbol-color-layer");
+    if (!image || !canvas || !image.naturalWidth || !image.naturalHeight) {
+        return;
+    }
+
+    canvas.width = image.naturalWidth;
+    canvas.height = image.naturalHeight;
+    const context = canvas.getContext("2d", { willReadFrequently: true });
+    context.drawImage(image, 0, 0);
+    const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+    const pixels = imageData.data;
+    const isOrange = (x, y) => {
+        const index = (y * canvas.width + x) * 4;
+        const red = pixels[index];
+        const green = pixels[index + 1];
+        const blue = pixels[index + 2];
+        return red > 170 && green > 45 && green < 210 && blue < 150 && red > green * 1.2;
+    };
+    const isWhite = (x, y) => {
+        const index = (y * canvas.width + x) * 4;
+        return pixels[index] > 220 && pixels[index + 1] > 220 && pixels[index + 2] > 220;
+    };
+    const recolorGlyph = (location, color) => {
+        const red = Number.parseInt(color.slice(1, 3), 16);
+        const green = Number.parseInt(color.slice(3, 5), 16);
+        const blue = Number.parseInt(color.slice(5, 7), 16);
+        const padding = 3;
+        const startX = Math.max(0, Math.floor(location.x * canvas.width) - padding);
+        const startY = Math.max(0, Math.floor(location.y * canvas.height) - padding);
+        const endX = Math.min(canvas.width, Math.ceil((location.x + location.width) * canvas.width) + padding);
+        const endY = Math.min(canvas.height, Math.ceil((location.y + location.height) * canvas.height) + padding);
+        const width = endX - startX;
+        const height = endY - startY;
+        const background = new Uint8Array(width * height);
+        const queue = [];
+        for (let x = 0; x < width; x += 1) {
+            queue.push([x, 0], [x, height - 1]);
+        }
+        for (let y = 1; y < height - 1; y += 1) {
+            queue.push([0, y], [width - 1, y]);
+        }
+        while (queue.length) {
+            const [x, y] = queue.pop();
+            const localIndex = y * width + x;
+            if (background[localIndex] || !isWhite(startX + x, startY + y)) {
+                continue;
+            }
+            background[localIndex] = 1;
+            for (const [nextX, nextY] of [[x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]]) {
+                if (nextX >= 0 && nextX < width && nextY >= 0 && nextY < height) {
+                    queue.push([nextX, nextY]);
+                }
+            }
+        }
+        for (let y = 1; y < height - 1; y += 1) {
+            for (let x = 1; x < width - 1; x += 1) {
+                const sourceX = startX + x;
+                const sourceY = startY + y;
+                if (background[y * width + x] || !isWhite(sourceX, sourceY)) {
+                    continue;
+                }
+                const hasOrangeNeighbor = [[-1, -1], [0, -1], [1, -1], [-1, 0], [1, 0], [-1, 1], [0, 1], [1, 1]]
+                    .some(([offsetX, offsetY]) => isOrange(sourceX + offsetX, sourceY + offsetY));
+                if (hasOrangeNeighbor) {
+                    const index = (sourceY * canvas.width + sourceX) * 4;
+                    pixels[index] = red;
+                    pixels[index + 1] = green;
+                    pixels[index + 2] = blue;
+                }
+            }
+        }
+    };
+
+    const recolorDarkGlyph = (location, color) => {
+        const red = Number.parseInt(color.slice(1, 3), 16);
+        const green = Number.parseInt(color.slice(3, 5), 16);
+        const blue = Number.parseInt(color.slice(5, 7), 16);
+        const startX = Math.max(0, Math.floor((location.x + location.width * 0.2) * canvas.width));
+        const startY = Math.max(0, Math.floor((location.y + location.height * 0.2) * canvas.height));
+        const endX = Math.min(canvas.width, Math.ceil((location.x + location.width * 0.8) * canvas.width));
+        const endY = Math.min(canvas.height, Math.ceil((location.y + location.height * 0.8) * canvas.height));
+        for (let y = startY; y < endY; y += 1) {
+            for (let x = startX; x < endX; x += 1) {
+                const index = (y * canvas.width + x) * 4;
+                if (pixels[index] < 120 && pixels[index + 1] < 120 && pixels[index + 2] < 120) {
+                    pixels[index] = red;
+                    pixels[index + 1] = green;
+                    pixels[index + 2] = blue;
+                }
+            }
+        }
+    };
+
+    if (state.exercise.exerciseId === "takeoff-practice-001") {
+        state.exercise.locations.filter((location) => location.productId === "wall-speaker-strobes")
+            .forEach((location) => recolorGlyph(location, "#facc15"));
+        state.exercise.locations.filter((location) => location.productId === "test-stations")
+            .forEach((location) => recolorGlyph(location, "#ec4899"));
+    } else {
+        state.exercise.locations.filter((location) => location.productId === "wall-speaker-strobes")
+            .forEach((location) => recolorDarkGlyph(location, "#facc15"));
+    }
+
+    context.putImageData(imageData, 0, 0);
+}
+
+function renderDetectorSymbol(type, color, label = "") {
+    const stroke = takeoffColorHex[color] || color;
+    if (type === "smoke") {
+        return `<span class="takeoff-key-symbol takeoff-key-symbol-smoke" style="--key-symbol-color:${stroke}" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"></circle>${label ? `<text x="16" y="16" text-anchor="middle" dominant-baseline="central">${label}</text>` : "<circle cx=\"16\" cy=\"16\" r=\"3\" fill=\"currentColor\"></circle><path d=\"M16 5v5M16 22v5M5 16h5M22 16h5\"></path>"}</svg></span>`;
+    }
+    return `<span class="takeoff-key-symbol takeoff-key-symbol-heat" style="--key-symbol-color:${stroke}" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4 28 16 16 28 4 16Z"></path>${label ? `<text x="16" y="16" text-anchor="middle" dominant-baseline="central">${label}</text>` : "<path d=\"M16 9v14M9 16h14\"></path><circle cx=\"16\" cy=\"16\" r=\"2\" fill=\"currentColor\"></circle>"}</svg></span>`;
+}
+
+function renderInteractiveKeyEntry(entry) {
+    const text = `${entry.symbol} ${entry.description}`.toLowerCase();
+    const isSmoke = text.includes("smoke") && !text.includes("duct");
+    const isHeat = text.includes("heat");
+    const sourceLabel = ["S", "H", "R"].includes(entry.symbol) ? entry.symbol : "";
+    const symbol = isSmoke ? renderDetectorSymbol("smoke", "RED", sourceLabel) : isHeat ? renderDetectorSymbol("heat", "LIGHT BLUE", sourceLabel) : "";
+    return `<li>${symbol}<strong>${entry.symbol}</strong> - ${entry.description} - ${entry.color}</li>`;
+}
+
+function renderDetectorOverlay(state) {
+    const detectorLocations = state.exercise.locations.filter((location) => location.productId === "smokes" || location.productId === "ror-heats" || location.productId === "heat-detectors");
+    if (!detectorLocations.length) {
+        return "";
+    }
+    const isExercise003 = state.exercise.exerciseId === "takeoff-practice-003";
+    return `<svg class="interactive-detector-symbol-layer" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">${detectorLocations.map((location) => {
+        const isSmoke = location.productId === "smokes";
+        const color = isSmoke ? takeoffColorHex.RED : takeoffColorHex["LIGHT BLUE"];
+        const centerX = isExercise003 ? location.x : location.x + location.width / 2;
+        const centerY = isExercise003 ? location.y : location.y + location.height / 2;
+        const radiusX = location.width * 0.42;
+        const radiusY = location.height * 0.42;
+        return isSmoke
+            ? `<g class="interactive-detector-symbol interactive-detector-smoke" transform="translate(${centerX} ${centerY}) scale(${radiusX} ${radiusY})" style="color:${color}"><circle r="1"></circle><circle r="0.25" fill="currentColor"></circle><path d="M0 -1V-0.45M0 .45V1M-1 0H-.45M.45 0H1"></path></g>`
+            : `<g class="interactive-detector-symbol interactive-detector-heat" transform="translate(${centerX} ${centerY}) scale(${radiusX} ${radiusY})" style="color:${color}"><path d="M0 -1 1 0 0 1-1 0Z"></path><path d="M0 -.6V.6M-.6 0H.6"></path><circle r=".16" fill="currentColor"></circle></g>`;
+    }).join("")}</svg>`;
 }
 
 function renderInteractiveTakeoff(state) {
@@ -310,15 +431,20 @@ function renderInteractiveTakeoff(state) {
     }
 
     const approved = isApprovedInteractiveExercise(state.exercise);
-    const stageLabels = ["Key / Legend", "Drawing Notes", "Select Product", "Mark / Count", "Cross Off", "Tally", "Enter", "Reconcile"];
+    const stageLabels = ["Key / Legend", "Drawing Notes", "Select Product", "Mark / Count", "Tally", "Enter", "Reconcile"];
     const currentStageIndex = interactiveTakeoffStages.indexOf(state.stage);
     const selectedProduct = state.exercise.products.find((product) => product.id === state.selectedProductId);
-    const debugMode = state.exercise.exerciseId === "takeoff-practice-002" && new URLSearchParams(window.location.search).get("takeoffDebug") === "1";
+    const debugMode = new URLSearchParams(window.location.search).get("takeoffDebug") === "1";
+    const sourceFrameClass = state.exercise.exerciseId === "takeoff-practice-001"
+        ? "is-exercise-001"
+        : state.exercise.exerciseId === "takeoff-practice-002"
+            ? "is-exercise-002"
+            : "is-exercise-003";
 
     const exerciseLibrary = window.takeoffExerciseLibrary || [];
     mount.innerHTML = `
         <div class="interactive-takeoff-shell">
-            ${state.exercisePickerOpen ? `<div class="interactive-exercise-intro"><p class="eyebrow">DRAWING EXERCISES</p><h2>DRAWING TAKEOFF PRACTICE</h2><p>Practice the complete Ban-Koe takeoff workflow on real training drawings.</p></div><div class="interactive-takeoff-exercise-list" aria-label="Drawing takeoff practice exercises">${exerciseLibrary.map((exercise, index) => { const levels = ["Guided Count", "Independent Takeoff", "Advanced Takeoff"]; const descriptions = ["Color-coded source drawing. Count, cross off, tally, and reconcile.", "Black-and-white drawing. Apply the Ban-Koe color system yourself.", "More involved black-and-white drawing with multiple areas and device types."]; return `<button type="button" class="interactive-exercise-card exercise-level-${index + 1}" data-interactive-exercise="${exercise.exerciseId}"><span class="interactive-exercise-number">EXERCISE ${String(index + 1).padStart(3, "0")}</span><strong>${exercise.drawing.project.replace(" - LEVEL 1", "")}</strong><b>${levels[index]}</b><span>${descriptions[index]}</span><small>START EXERCISE</small></button>`; }).join("")}</div>` : `<div class="interactive-takeoff-breadcrumb"><button type="button" class="btn btn-secondary" data-interactive-action="back-to-exercises">← Back to Exercises</button><span>${state.exercise.title}</span></div>`}
+            ${state.exercisePickerOpen ? `<div class="interactive-exercise-intro"><p class="eyebrow">DRAWING EXERCISES</p><h2>DRAWING TAKEOFF PRACTICE</h2><p>Practice the complete Ban-Koe takeoff workflow on real training drawings.</p></div><div class="interactive-takeoff-exercise-list" aria-label="Drawing takeoff practice exercises">${exerciseLibrary.map((exercise, index) => { const levels = ["Guided Count", "Independent Takeoff", "Advanced Takeoff"]; const descriptions = ["Color-coded source drawing. Count, tally, and reconcile.", "Black-and-white drawing. Apply the Ban-Koe color system yourself.", "More involved black-and-white drawing with multiple areas and device types."]; return `<button type="button" class="interactive-exercise-card exercise-level-${index + 1}" data-interactive-exercise="${exercise.exerciseId}"><span class="interactive-exercise-number">EXERCISE ${String(index + 1).padStart(3, "0")}</span><strong>${exercise.drawing.project.replace(" - LEVEL 1", "")}</strong><b>${levels[index]}</b><span>${descriptions[index]}</span><small>START EXERCISE</small></button>`; }).join("")}</div>` : `<div class="interactive-takeoff-breadcrumb"><button type="button" class="btn btn-secondary" data-interactive-action="back-to-exercises">← Back to Exercises</button><span>${state.exercise.title}</span></div>`}
             <div class="interactive-takeoff-heading">
                 <div>
                     <button type="button" class="interactive-back-link" data-interactive-action="back-to-exercises">← Exercises</button>
@@ -328,7 +454,7 @@ function renderInteractiveTakeoff(state) {
                 <div class="interactive-header-actions"><button type="button" class="btn btn-secondary" data-interactive-action="toggle-key">[KEY]</button><button type="button" class="btn btn-secondary" data-interactive-action="toggle-notes">[NOTES]</button><button type="button" class="btn btn-secondary" data-interactive-action="fullscreen" ${approved ? "" : "disabled"}>EXPAND DRAWING</button></div>
             </div>
             ${approved && state.exercise.exerciseId === "takeoff-practice-001" ? `<div class="interactive-mode-actions"><button type="button" class="btn btn-secondary ${state.mode === "colors" ? "is-selected" : ""}" data-interactive-action="colors">Learn the Colors</button><button type="button" class="btn btn-secondary ${state.mode === "takeoff" ? "is-selected" : ""}" data-interactive-action="takeoff">Guided Count</button></div>${state.mode === "colors" ? renderColorLearning(state) : ""}` : ""}
-            <p class="interactive-takeoff-notice">${approved ? (isCountOnlyInteractiveExercise(state.exercise) ? "Count the devices on the color-coded drawing. Category and color selection are not required." : "Review the key and notes, then select a category and color to mark the drawing.") : "AWAITING APPROVED DRAWING DATA."}</p>
+            <p class="interactive-takeoff-notice">${approved ? (isCountOnlyInteractiveExercise(state.exercise) ? "Pick what you are counting, then click those devices on the color-coded drawing." : "Review the key and notes, then select a category and color to mark the drawing.") : "AWAITING APPROVED DRAWING DATA."}</p>
             <div class="interactive-takeoff-stage-list" aria-label="Drawing takeoff practice stages">
                 ${stageLabels.map((label, index) => `<span class="interactive-takeoff-stage ${currentStageIndex === index ? "is-current" : currentStageIndex > index ? "is-complete" : ""}">${index + 1}. ${label}</span>`).join("")}
             </div>
@@ -347,7 +473,7 @@ function renderInteractiveTakeoff(state) {
             ${!state.keyAcknowledged || state.keyReferenceOpen || state.notesReferenceOpen ? `<div class="interactive-takeoff-source-data">
                 <section class="interactive-takeoff-panel">
                     <h4>Drawing Key / Legend</h4>
-                    <ul>${approved && (!state.keyAcknowledged || state.keyReferenceOpen) ? state.exercise.key.map((entry) => `<li><strong>${entry.symbol}</strong> - ${entry.description} - ${entry.color}</li>`).join("") : "<li>Key reference minimized</li>"}</ul>
+                    <ul>${approved && (!state.keyAcknowledged || state.keyReferenceOpen) ? state.exercise.key.map(renderInteractiveKeyEntry).join("") : "<li>Key reference minimized</li>"}</ul>
                 </section>
                 <section class="interactive-takeoff-panel">
                     <h4>Drawing Notes</h4>
@@ -357,7 +483,7 @@ function renderInteractiveTakeoff(state) {
             <div class="interactive-takeoff-workspace ${state.stage === "complete" ? "is-results" : ""}">
                 <section class="interactive-takeoff-panel">
                     <div class="interactive-takeoff-drawing" role="img" aria-label="Interactive drawing viewport">
-                        ${approved && state.exercise.drawing.asset ? `<div class="interactive-drawing-layer ${state.exercise.exerciseId === "takeoff-practice-002" ? "is-exercise-002" : ""}" data-selected-color="${state.selectedColor}" style="transform: ${state.exercise.exerciseId === "takeoff-practice-002" ? `translate(calc(-50% + ${state.viewport.offsetX}px), calc(-50% + ${state.viewport.offsetY}px))` : `translate(${state.viewport.offsetX}px, ${state.viewport.offsetY}px)`} scale(${state.viewport.scale})"><img src="${state.exercise.drawing.asset}" alt="${state.exercise.title}">${state.exercise.locations.map((location) => `<button type="button" class="interactive-location-marker ${state.markedLocations.has(location.id) ? "is-marked" : ""} ${state.crossedOffLocations.has(location.id) ? "is-crossed-off" : ""}" data-interactive-location="${location.id}" style="left:${location.x * 100}%;top:${location.y * 100}%;width:${location.width * 100}%;height:${location.height * 100}%" ${state.markedLocations.has(location.id) ? "disabled" : ""} aria-label="${state.markedLocations.has(location.id) ? "Counted" : "Mark"} ${location.type} ${location.room}">${state.markedLocations.has(location.id) ? "✓" : ""}${debugMode ? `<span class="interactive-marker-debug">${location.id}<br>${location.type}<br>x: ${location.x.toFixed(3)} y: ${location.y.toFixed(3)}</span>` : ""}</button>`).join("")}${state.freeformMarks.map((mark) => `<button type="button" class="interactive-mark ${mark.crossedOff ? "is-crossed-off" : ""}" data-interactive-cross-mark="${mark.id}" style="left:${mark.x * 100}%;top:${mark.y * 100}%" aria-label="${mark.crossedOff ? "Crossed off" : "Counted"} mark ${mark.id}">${mark.crossedOff ? "X" : "✓"}</button>`).join("")}</div>` : `<div><strong>AWAITING APPROVED DRAWING</strong><p>The original PDF remains read-only source material. An approved image or SVG is required for marking.</p></div>`}
+                        ${approved && state.exercise.drawing.asset ? `<div class="interactive-drawing-layer ${sourceFrameClass}" data-selected-color="${state.selectedColor}" style="transform: translate(calc(-50% + ${state.viewport.offsetX}px), calc(-50% + ${state.viewport.offsetY}px)) scale(${state.viewport.scale})"><img src="${state.exercise.drawing.asset}" alt="${state.exercise.title}">${["takeoff-practice-001", "takeoff-practice-002", "takeoff-practice-003"].includes(state.exercise.exerciseId) ? renderDetectorOverlay(state) : ""}${["takeoff-practice-001", "takeoff-practice-002"].includes(state.exercise.exerciseId) ? "<canvas class=\"interactive-symbol-color-layer\" aria-hidden=\"true\"></canvas>" : ""}${state.exercise.locations.map((location) => `<button type="button" class="interactive-location-marker ${state.markedLocations.has(location.id) ? "is-marked" : ""}" data-interactive-location="${location.id}" style="left:${location.x * 100}%;top:${location.y * 100}%;width:${location.width * 100}%;height:${location.height * 100}%" ${!state.selectedProductId || location.productId !== state.selectedProductId ? "disabled" : ""} aria-label="${state.markedLocations.has(location.id) ? "Counted" : "Mark"} ${location.type} ${location.room}">${state.markedLocations.has(location.id) ? "✓" : ""}${debugMode ? `<span class="interactive-marker-debug">${location.id}<br>${location.type}<br>x: ${location.x.toFixed(3)} y: ${location.y.toFixed(3)}</span>` : ""}</button>`).join("")}</div>` : `<div><strong>AWAITING APPROVED DRAWING</strong><p>The original PDF remains read-only source material. An approved image or SVG is required for marking.</p></div>`}
                     </div>
                     <div class="interactive-takeoff-toolbar" aria-label="Drawing view controls">
                         <button type="button" class="btn btn-secondary" data-interactive-action="zoom-out" ${approved ? "" : "disabled"}>Zoom out</button>
@@ -383,34 +509,37 @@ function renderInteractiveTakeoff(state) {
                     </div>
                     <div class="interactive-selector-group">
                         <label for="interactiveColorSelect">BAN-KOE COLOR</label>
-                        <select id="interactiveColorSelect" ${approved && state.selectedProductId ? "" : "disabled"}>
+                        <select id="interactiveColorSelect" ${approved && state.selectedProductId && !isCountOnlyInteractiveExercise(state.exercise) ? "" : "disabled"}>
                             <option value="">Select color</option>
                             ${Object.keys(takeoffColorHex).map((color) => `<option value="${color}" ${state.selectedColor === color ? "selected" : ""}>${color}</option>`).join("")}
                         </select>
                         <strong class="interactive-selected-value"><i style="background:${state.selectedColor ? takeoffColorHex[state.selectedColor] : "#64748b"}" aria-hidden="true"></i>${state.selectedColor || "Select a color"}</strong>
                     </div>
                     <div class="interactive-rail-divider"></div>
-                    <div class="interactive-current-task"><span>READY TO MARK</span><strong>${isCountOnlyInteractiveExercise(state.exercise) ? "COUNT FROM COLOR-CODED DRAWING" : selectedProduct && state.selectedColor ? `${selectedProduct.whatIsIt} • ${state.selectedColor}` : "SELECT CATEGORY + COLOR"}</strong></div>
+                    <div class="interactive-current-task"><span>READY TO MARK</span><strong>${selectedProduct && state.selectedColor ? `${selectedProduct.whatIsIt} • ${state.selectedColor}` : "SELECT CATEGORY + COLOR"}</strong></div>
                     <div class="interactive-rail-divider"></div>
                     <h4>CURRENT TALLY</h4>
                     <table class="interactive-takeoff-tally">
                         <thead><tr><th>Product</th><th>Counted</th>${state.stage === "reconcile" || state.stage === "complete" ? "<th>Final</th>" : ""}</tr></thead>
                         <tbody>${approved ? state.exercise.products.map((product) => `<tr><td>${product.whatIsIt || product.id}</td><td>${state.tallyByProduct[product.id] || 0}</td>${state.stage === "reconcile" || state.stage === "complete" ? `<td><input type="number" min="0" inputmode="numeric" data-interactive-final="${product.id}" value="${state.finalQuantities[product.id] || ""}"></td>` : ""}</tr>`).join("") : `<tr><td colspan="2">No product categories loaded</td></tr>`}</tbody>
                     </table>
-                    <div class="interactive-takeoff-summary"><span>Counted: ${state.markedLocations.size}</span><span>Crossed off: ${state.crossedOffLocations.size}</span></div>
-                    <div class="interactive-counted-list">${[...state.markedLocations].filter((locationId) => state.exercise.locations.some((location) => location.id === locationId)).map((locationId) => { const location = state.exercise.locations.find((entry) => entry.id === locationId); const crossed = state.crossedOffLocations.has(locationId); return `<div><span>${location.type}</span><button type="button" class="btn btn-secondary" data-interactive-cross="${locationId}" ${crossed ? "disabled" : ""}>${crossed ? "CROSSED OFF" : "CROSS OFF"}</button></div>`; }).join("")}</div>
-                    <div class="interactive-mark-list">${state.freeformMarks.length ? state.freeformMarks.map((mark) => `<div><span>${mark.productId}</span><button type="button" class="btn btn-secondary" data-interactive-cross-mark="${mark.id}" ${mark.crossedOff ? "disabled" : ""}>${mark.crossedOff ? "Crossed Off" : "Cross Off / Counted"}</button></div>`).join("") : "<p class=\"interactive-takeoff-status\">No marked devices yet.</p>"}</div>
+                    <div class="interactive-takeoff-summary"><span>Counted: ${state.markedLocations.size}</span></div>
+                    <div class="interactive-counted-list">${[...state.markedLocations].filter((locationId) => state.exercise.locations.some((location) => location.id === locationId)).map((locationId) => { const location = state.exercise.locations.find((entry) => entry.id === locationId); return `<div><span>${location.type}</span></div>`; }).join("")}</div>
                     <div class="interactive-takeoff-actions">
-                        <button type="button" class="btn btn-primary" data-interactive-action="enter" ${approved && state.crossedOffLocations.size ? "" : "disabled"}>Enter Final Quantities</button>
+                        <button type="button" class="btn btn-primary" data-interactive-action="enter" ${approved && state.markedLocations.size ? "" : "disabled"}>Enter Final Quantities</button>
                         <button type="button" class="btn btn-primary" data-interactive-action="reconcile" ${state.stage === "reconcile" ? "" : "disabled"}>Reconcile Takeoff</button>
                     </div>
                     <div class="interactive-feedback-details" aria-live="polite">${renderInteractiveFeedback(state)}</div>
                 </aside>
             </div>
             ${state.stage === "complete" ? renderInteractiveResults(state) : ""}
-            ${approved && state.stage !== "complete" ? `<section class="interactive-takeoff-panel interactive-location-index"><h4>Countable Locations</h4><div class="interactive-takeoff-actions">${state.exercise.locations.map((location) => `<button type="button" class="btn btn-secondary" data-interactive-location="${location.id}" ${(!isCountOnlyInteractiveExercise(state.exercise) && location.productId !== state.selectedProductId) || state.markedLocations.has(location.id) ? "disabled" : ""}>${state.markedLocations.has(location.id) ? "COUNTED" : "Mark location"} ${location.id}</button><button type="button" class="btn btn-secondary" data-interactive-cross="${location.id}" ${!state.markedLocations.has(location.id) || state.crossedOffLocations.has(location.id) ? "disabled" : ""}>${state.crossedOffLocations.has(location.id) ? "CROSSED OFF" : "Cross off"}</button>`).join("")}</div></section>` : ""}
+            ${approved && state.stage !== "complete" ? `<section class="interactive-takeoff-panel interactive-location-index"><h4>Countable Locations</h4><div class="interactive-takeoff-actions">${state.exercise.locations.map((location) => `<button type="button" class="btn btn-secondary" data-interactive-location="${location.id}" ${!state.selectedProductId || location.productId !== state.selectedProductId ? "disabled" : ""}>${state.markedLocations.has(location.id) ? "COUNTED" : "Mark location"} ${location.id}</button>`).join("")}</div></section>` : ""}
         </div>
     `;
+
+    const colorizeImage = () => applyExercise001SymbolColors(state);
+    mount.querySelector(".interactive-drawing-layer img")?.addEventListener("load", colorizeImage, { once: true });
+    colorizeImage();
 
     if (mount.dataset.interactiveClickBound !== "true") {
         mount.dataset.interactiveClickBound = "true";
@@ -438,14 +567,6 @@ function renderInteractiveTakeoff(state) {
             return;
         }
 
-        const crossMarkTarget = event.target.closest("[data-interactive-cross-mark]");
-        if (crossMarkTarget) {
-            event.stopPropagation();
-            crossOffFreeformMark(activeState, crossMarkTarget.getAttribute("data-interactive-cross-mark"));
-            renderInteractiveTakeoff(activeState);
-            return;
-        }
-
         const locationTarget = event.target.closest("[data-interactive-location]");
         if (locationTarget) {
             event.stopPropagation();
@@ -454,12 +575,6 @@ function renderInteractiveTakeoff(state) {
             return;
         }
 
-        const crossTarget = event.target.closest("[data-interactive-cross]");
-        if (crossTarget) {
-            event.stopPropagation();
-            crossOffInteractiveLocation(activeState, crossTarget.getAttribute("data-interactive-cross"));
-            renderInteractiveTakeoff(activeState);
-        }
         });
     }
     mount.querySelector("#interactiveProductSelect")?.addEventListener("change", (event) => {
@@ -496,18 +611,14 @@ function renderInteractiveTakeoff(state) {
         if (!dragStart || !approved) {
             return;
         }
-        updateInteractiveViewport(state, 0, event.clientX - dragStart.x, event.clientY - dragStart.y);
+            updateInteractiveViewport(state, 0, event.clientX - dragStart.x, event.clientY - dragStart.y);
         dragStart = { x: event.clientX, y: event.clientY };
         const drawingLayer = drawingViewport.querySelector(".interactive-drawing-layer");
         if (drawingLayer) {
-            drawingLayer.style.transform = `${drawingLayer.classList.contains("is-exercise-002") ? `translate(calc(-50% + ${state.viewport.offsetX}px), calc(-50% + ${state.viewport.offsetY}px))` : `translate(${state.viewport.offsetX}px, ${state.viewport.offsetY}px)`} scale(${state.viewport.scale})`;
+            drawingLayer.style.transform = `translate(calc(-50% + ${state.viewport.offsetX}px), calc(-50% + ${state.viewport.offsetY}px)) scale(${state.viewport.scale})`;
         }
     });
     drawingViewport?.addEventListener("pointerup", (event) => {
-        if (event.target.closest("[data-interactive-cross-mark]")) {
-            dragStart = null;
-            return;
-        }
         if (dragStart && Math.abs(event.clientX - dragStart.x) < 5 && Math.abs(event.clientY - dragStart.y) < 5 && approved && state.selectedProductId && !state.exercise.locations.length) {
             const bounds = drawingViewport.getBoundingClientRect();
             addFreeformInteractiveMark(state, (event.clientX - bounds.left) / bounds.width, (event.clientY - bounds.top) / bounds.height);
@@ -635,7 +746,6 @@ function initializeInteractiveTakeoff() {
         acknowledgeNotes: () => acknowledgeInteractiveNotes(window.takeoffInteractive.state),
         selectProduct: (productId) => selectInteractiveProduct(window.takeoffInteractive.state, productId),
         markLocation: (locationId) => markInteractiveLocation(window.takeoffInteractive.state, locationId),
-        crossOffLocation: (locationId) => crossOffInteractiveLocation(window.takeoffInteractive.state, locationId),
         undoMark: (locationId) => undoInteractiveMark(window.takeoffInteractive.state, locationId),
         enterQuantities: (quantities) => enterInteractiveQuantities(window.takeoffInteractive.state, quantities),
         reconcile: () => reconcileInteractiveTakeoff(window.takeoffInteractive.state),

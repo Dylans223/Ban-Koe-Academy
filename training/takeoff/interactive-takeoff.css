@@ -252,21 +252,79 @@
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+}
+
+.interactive-symbol-color-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.interactive-detector-symbol-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.interactive-detector-symbol {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 0.16;
+    vector-effect: non-scaling-stroke;
+}
+
+.interactive-detector-symbol circle[fill="currentColor"] {
+    stroke: none;
+}
+
+.takeoff-key-symbol {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-right: 6px;
+    vertical-align: middle;
+    color: var(--key-symbol-color);
+}
+
+.takeoff-key-symbol svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.takeoff-key-symbol circle[fill="currentColor"] {
+    stroke: none;
 }
 
 .interactive-drawing-layer {
     position: absolute;
-    inset: 0;
-    transform-origin: center;
-    transition: transform 120ms ease-out;
-}
-
-.interactive-drawing-layer.is-exercise-002 {
     top: 50%;
     left: 50%;
     width: 100%;
     height: auto;
+    aspect-ratio: 1402 / 1122;
+    transform-origin: center;
+    transition: transform 120ms ease-out;
+}
+
+.interactive-drawing-layer.is-exercise-001 {
+    aspect-ratio: 1402 / 1122;
+}
+
+.interactive-drawing-layer.is-exercise-002 {
+    aspect-ratio: 1536 / 1024;
+}
+
+.interactive-drawing-layer.is-exercise-003 {
     aspect-ratio: 1536 / 1024;
 }
 
@@ -466,10 +524,6 @@
     font-weight: 800;
 }
 
-.interactive-mark.is-crossed-off {
-    background: var(--marker-color, #be123c);
-}
-
 .interactive-mark-list {
     display: grid;
     gap: 6px;
@@ -542,10 +596,10 @@
 
 .interactive-location-marker {
     position: absolute;
-    z-index: 2;
-    min-width: 22px;
-    min-height: 22px;
-    padding: 0;
+    z-index: 3;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
     transform: translate(-50%, -50%);
     border: 1px solid transparent !important;
     border-radius: 0;
@@ -572,6 +626,9 @@
     font-size: 13px;
     font-weight: 800;
     cursor: default;
+}
+.interactive-location-marker:disabled {
+     pointer-events: none;
 }
 
 .interactive-location-marker.is-marked.is-crossed-off {
@@ -683,6 +740,10 @@
 }
 
 @media (max-width: 600px) {
+    .interactive-takeoff-panel {
+        padding: 8px;
+    }
+
     .interactive-takeoff-workspace {
         grid-template-columns: minmax(0, 1fr);
     }
@@ -691,10 +752,6 @@
         min-height: 380px;
     }
 
-    .interactive-drawing-layer.is-exercise-002 .interactive-location-marker {
-        min-width: 8px;
-        min-height: 8px;
-    }
 }
 
 .interactive-marker-debug {
@@ -717,7 +774,3 @@
     background: rgba(245, 158, 11, 0.16) !important;
 }
 
-.interactive-drawing-layer.is-exercise-002 .interactive-location-marker {
-    min-width: 0;
-    min-height: 0;
-}
