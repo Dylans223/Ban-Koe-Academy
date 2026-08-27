@@ -467,6 +467,23 @@
     gap: 6px;
 }
 
+.interactive-counted-list {
+    display: grid;
+    gap: 6px;
+}
+
+.interactive-counted-list > div {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.interactive-counted-list span {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
 .interactive-mark-list > div {
     display: flex;
     gap: 8px;

@@ -391,6 +391,7 @@ function renderInteractiveTakeoff(state) {
                         <tbody>${approved ? state.exercise.products.map((product) => `<tr><td>${product.whatIsIt || product.id}</td><td>${state.tallyByProduct[product.id] || 0}</td></tr>`).join("") : `<tr><td colspan="2">No product categories loaded</td></tr>`}</tbody>
                     </table>
                     <div class="interactive-takeoff-summary"><span>Counted: ${state.markedLocations.size}</span><span>Crossed off: ${state.crossedOffLocations.size}</span></div>
+                    <div class="interactive-counted-list">${[...state.markedLocations].filter((locationId) => state.exercise.locations.some((location) => location.id === locationId)).map((locationId) => { const location = state.exercise.locations.find((entry) => entry.id === locationId); const crossed = state.crossedOffLocations.has(locationId); return `<div><span>${location.type}</span><button type="button" class="btn btn-secondary" data-interactive-cross="${locationId}" ${crossed ? "disabled" : ""}>${crossed ? "CROSSED OFF" : "CROSS OFF"}</button></div>`; }).join("")}</div>
                     <div class="interactive-mark-list">${state.freeformMarks.length ? state.freeformMarks.map((mark) => `<div><span>${mark.productId}</span><button type="button" class="btn btn-secondary" data-interactive-cross-mark="${mark.id}" ${mark.crossedOff ? "disabled" : ""}>${mark.crossedOff ? "Crossed Off" : "Cross Off / Counted"}</button></div>`).join("") : "<p class=\"interactive-takeoff-status\">No marked devices yet.</p>"}</div>
                     <div class="interactive-takeoff-actions">
                         <button type="button" class="btn btn-primary" data-interactive-action="enter" ${approved && state.crossedOffLocations.size ? "" : "disabled"}>Enter Final Quantities</button>
@@ -404,11 +405,14 @@ function renderInteractiveTakeoff(state) {
         </div>
     `;
 
-    mount.addEventListener("click", (event) => {
+    if (mount.dataset.interactiveClickBound !== "true") {
+        mount.dataset.interactiveClickBound = "true";
+        mount.addEventListener("click", (event) => {
+        const activeState = window.takeoffInteractive?.state || state;
         const actionTarget = event.target.closest("[data-interactive-action]");
         if (actionTarget) {
             event.stopPropagation();
-            handleInteractiveAction(actionTarget.getAttribute("data-interactive-action"), state);
+            handleInteractiveAction(actionTarget.getAttribute("data-interactive-action"), activeState);
             return;
         }
 
@@ -422,34 +426,35 @@ function renderInteractiveTakeoff(state) {
         const learningTarget = event.target.closest("[data-interactive-learning-answer]");
         if (learningTarget) {
             event.stopPropagation();
-            answerColorLearning(state, learningTarget.getAttribute("data-interactive-learning-answer"));
-            renderInteractiveTakeoff(state);
+            answerColorLearning(activeState, learningTarget.getAttribute("data-interactive-learning-answer"));
+            renderInteractiveTakeoff(activeState);
             return;
         }
 
         const crossMarkTarget = event.target.closest("[data-interactive-cross-mark]");
         if (crossMarkTarget) {
             event.stopPropagation();
-            crossOffFreeformMark(state, crossMarkTarget.getAttribute("data-interactive-cross-mark"));
-            renderInteractiveTakeoff(state);
+            crossOffFreeformMark(activeState, crossMarkTarget.getAttribute("data-interactive-cross-mark"));
+            renderInteractiveTakeoff(activeState);
             return;
         }
 
         const locationTarget = event.target.closest("[data-interactive-location]");
         if (locationTarget) {
             event.stopPropagation();
-            markInteractiveLocation(state, locationTarget.getAttribute("data-interactive-location"));
-            renderInteractiveTakeoff(state);
+            markInteractiveLocation(activeState, locationTarget.getAttribute("data-interactive-location"));
+            renderInteractiveTakeoff(activeState);
             return;
         }
 
         const crossTarget = event.target.closest("[data-interactive-cross]");
         if (crossTarget) {
             event.stopPropagation();
-            crossOffInteractiveLocation(state, crossTarget.getAttribute("data-interactive-cross"));
-            renderInteractiveTakeoff(state);
+            crossOffInteractiveLocation(activeState, crossTarget.getAttribute("data-interactive-cross"));
+            renderInteractiveTakeoff(activeState);
         }
-    });
+        });
+    }
     mount.querySelector("#interactiveProductSelect")?.addEventListener("change", (event) => {
         const nextValue = event.target.value;
         if (!nextValue) {
@@ -471,6 +476,10 @@ function renderInteractiveTakeoff(state) {
     let dragStart = null;
     drawingViewport?.addEventListener("pointerdown", (event) => {
         if (!approved) {
+            return;
+        }
+        if (event.target.closest("[data-interactive-location]")) {
+            dragStart = null;
             return;
         }
         dragStart = { x: event.clientX, y: event.clientY };
