@@ -10,7 +10,7 @@ Only the eight devices named in the targeted failure report were investigated ag
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Smoke | Work Room 111 | approx. `(649, 562)` | `(823, 562)` | Existing `ex004-smoke-021` moved to normalized `(0.423, 0.549)` | PASS, tally 1 | PASS, centered on source Smoke | Correct `Smokes` active; wrong categories inactive | Existing duplicate path returns `ALREADY COUNTED` |
 | Wall Speaker/Strobe | Office 105 | approx. `(96, 446)` | No matching record | FAIL / missing mapping; no record added because locked quantity and existing six-record mapping require approval for replacement disposition | Not applicable | No target rendered | No category target exists | Not applicable |
-| Ceiling Horn/Strobe | Mechanical Room 118 | Visible HS approx. `(398, 846)`, but source appearance is wall-attached HS, not circled ceiling HS | Existing ceiling-HS record points to `(824, 199)` / Multipurpose 104 | No correction: requested ceiling-mounted device is not supported by the source convention; existing ceiling-HS record is a different source device | FAIL for requested Mechanical ceiling device | Not applicable | Existing ceiling-HS category is valid for Multipurpose 104 only | Not applicable |
+| Wall Horn/Strobe | Mechanical Room 118 | Visible HS approx. `(398, 846)`, with wall attachment line | No current Mechanical 118 record | Added `ex004-wall-hs-009` at normalized `(0.259, 0.826)` | PASS, direct source click counted | PASS, yellow mark aligned | Wall category active; circled ceiling HS rejected | Duplicate protection preserved |
 | Duct Smoke Detector 1 | Mechanical 118 / Return Air | approx. `(740, 789)` | `(740, 789)` | None; current record is source-aligned | PASS, tally 1 | PASS | Correct `Duct Smokes` active; inactive categories use pointer-events none | Existing duplicate path preserved |
 | Duct Smoke Detector 2 | Mechanical 118 / Return Air | approx. `(826, 789)` | `(826, 789)` | None; current record is source-aligned | PASS, tally 2 | PASS | Correct `Duct Smokes` active; inactive categories use pointer-events none | Existing duplicate path preserved |
 | Smoke | Kitchen 120 | approx. `(1044, 844)` | No matching record | FAIL / missing mapping; no record added because locked Smoke quantity is 33 and replacement disposition is not source-proven within this targeted pass | Not applicable | Not applicable | No target rendered | Not applicable |
@@ -37,7 +37,7 @@ Inactive marker buttons were disabled with `pointer-events: none`; no unrelated 
 - Duct Smoke 1: PASS.
 - Duct Smoke 2: PASS.
 - Office 105 Wall Speaker/Strobe: unresolved missing mapping.
-- Mechanical Room 118 Ceiling Horn/Strobe: unresolved source/mounting conflict; visible HS is wall-attached, not ceiling-circled.
+- Mechanical Room 118 Wall Horn/Strobe: PASS after adding `ex004-wall-hs-009`; visible HS is wall-attached, not ceiling-circled.
 - Kitchen 120 Smoke: unresolved missing mapping.
 - Janitor 119 Smoke: unresolved missing mapping.
 

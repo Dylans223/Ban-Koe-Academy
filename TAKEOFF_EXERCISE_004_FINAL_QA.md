@@ -4,7 +4,7 @@
 
 - Source: `Takeoff Drawings/exercise-004-source.png`
 - Native dimensions: 1536 x 1024
-- Source = mapped = expected: **65 = 65 = 65**
+- Source = mapped = expected: **66 = 66 = 66**
 
 | Category | Expected | Direct source-click result |
 | --- | ---: | --- |
@@ -13,7 +13,7 @@
 | R of R Heats | 0 | 0/0 PASS |
 | Test Stations | 2 | 2/2 PASS |
 | Duct Smokes | 2 | 2/2 PASS |
-| Wall Horn/Strobes | 8 | 8/8 PASS |
+| Wall Horn/Strobes | 9 | 9/9 PASS |
 | Wall Speaker/Strobes | 6 | 6/6 PASS |
 | Wall Strobes | 0 | 0/0 PASS |
 | Ceiling Horn/Strobes | 1 | 1/1 PASS |
@@ -26,7 +26,7 @@
 | Tamper Switches | 2 | 2/2 PASS |
 | FACP | 0 | 0/0 PASS |
 | FAA | 0 | 0/0 PASS |
-| **Total** | **65** | **65/65 PASS** |
+| **Total** | **66** | **66/66 PASS** |
 
 ## Initial State
 
@@ -65,7 +65,7 @@ PASS. At approximately 390px, the document had no horizontal overflow (`scrollWi
 PASS. Final quantities entered from the approved inventory reconciled as:
 
 - Correct categories: 18 / 18
-- Devices accounted for: 65 / 65
+- Devices accounted for: 66 / 66
 - Quantity accuracy: 100%
 - Overall score: 100%
 
@@ -77,4 +77,4 @@ Exercises 001, 002, and 003 remain registered and were not modified. Their exist
 
 ## Final Determination
 
-Exercise 004 is complete only because the source PNG count, mapping count, expected total, and visible-device direct-click results agree at **65**. No source PNG was modified. No commit or GitHub push was made.
+Exercise 004 is complete only because the source PNG count, mapping count, expected total, and visible-device direct-click results agree at **66**. No source PNG was modified. No commit or GitHub push was made.

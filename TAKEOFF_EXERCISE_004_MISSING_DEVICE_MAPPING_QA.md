@@ -21,6 +21,8 @@ The visible Mechanical Room 118 HS symbol uses the wall attachment convention. N
 
 ## Quantity Preservation
 
+Mechanical Room 118 Wall Horn/Strobe was source-confirmed as an additional physical device and mapped as `ex004-wall-hs-009` at normalized `(0.259, 0.826)`, approximately native `(398, 846)`. Wall Horn/Strobes changed from 8 to 9 and the overall source/mapping total changed from 65 to 66. A direct click on the visible HS counted under Wall Horn/Strobes + YELLOW; a click on the nearby circled HS did not count under the wall category, then counted under Ceiling Horn/Strobes + YELLOW.
+
 - Existing Smoke quantity: 33, unchanged.
 - Existing Wall Speaker/Strobe quantity: 6, unchanged.
 - Existing Duct Smoke quantity: 2, unchanged.

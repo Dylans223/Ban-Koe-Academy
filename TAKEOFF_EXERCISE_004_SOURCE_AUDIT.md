@@ -33,7 +33,7 @@ The approved drawing presents a realistic school/commercial first-floor plan wit
 | R of R Heats | none shown | R | none | 0 |
 | Test Stations | plan station | TS | Corridors 100 and 117 | 2 |
 | Duct Smokes | duct-mounted | DD | Mechanical Room 118 | 2 |
-| Wall Horn/Strobes | wall | HS + attachment line | Classroom 101, Classroom 102, Multipurpose 104, Lobby 114, Corridor 117, Kitchen 120, additional corridor/exit locations | 8 |
+| Wall Horn/Strobes | wall | HS + attachment line | Classroom 101, Classroom 102, Multipurpose 104, Lobby 114, Corridor 117, Kitchen 120, additional corridor/exit locations, Mechanical Room 118 west wall | 9 |
 | Wall Speaker/Strobes | wall | S + attachment line | Multipurpose 104, Office 105, Open Office 107, Office 106, Conference 108, Admin 115 | 6 |
 | Wall Strobes | wall | O + attachment line | none visibly shown on floor plan | 0 |
 | Ceiling Horn/Strobes | ceiling | circled HS | Multipurpose 104 | 1 |
@@ -48,13 +48,13 @@ The approved drawing presents a realistic school/commercial first-floor plan wit
 
 ## Count Reconciliation
 
-- Source PNG device count: **65**
+- Source PNG device count: **66**
 - Count method: independent visual count of floor-plan devices only
 - Prior SVG-based count: not authoritative and superseded
 - Website mapping count: not created yet
 - Expected quantity total: not created yet
 
-The final quantity is **65 physical devices** in the newest approved PNG. The category totals above sum to 65. This count supersedes the earlier 60-device recount.
+The final quantity is **66 physical devices** in the newest approved PNG. The category totals above sum to 66. This count supersedes the earlier 60-device recount and the prior 65-device inventory.
 
 ## Category Notes
 
@@ -64,6 +64,6 @@ The source visibly includes no floor-plan FACP/FAA block, no explicit H/R detect
 
 **STOP: source inventory complete; interactive mapping is not authorized in this phase.**
 
-Do not create `exercise-data.js` entries, normalized coordinates, expected quantities, answer-key quantities, or interactive hit regions until this 65-device PNG inventory is approved.
+The source inventory is now approved for mapping at 66 devices; the existing Exercise 004 mapping is being updated only for the confirmed Mechanical Room 118 Wall Horn/Strobe.
 
 No Exercise 001, Exercise 002, or Exercise 003 data was modified. No prior Exercise 004 SVG was used as authority. No source PNG was modified or recolored. No commit or GitHub push was made.

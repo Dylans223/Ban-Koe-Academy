@@ -145,6 +145,26 @@ The historical IDs do not encode source-room identity. The assignments above are
 
 Smoke quantity remains 33. The three approved Smoke record corrections are now applied: `ex004-smoke-010` is Kitchen 120, `ex004-smoke-018` is Janitor 119, and `ex004-smoke-022` is Storage 109 at its source coordinate.
 
+## Final Administrative Assignments
+
+| Source Smoke | Room | Source native X/Y | Current Record | Corrected normalized X/Y | Status |
+| --- | --- | --- | --- | --- | --- |
+| source-smoke-032 | Janitor 119 | approx. `(934, 844)` | `ex004-smoke-018` | `(0.608, 0.824)` | CORRECTED |
+| source-smoke-033 | Kitchen 120 | approx. `(1044, 844)` | `ex004-smoke-010` | `(0.680, 0.824)` | CORRECTED |
+| source-smoke-021 | Storage 109 | approx. `(824, 422)` | `ex004-smoke-022` | `(0.536, 0.412)` | CORRECTED |
+
+The historical IDs do not encode source-room identity. The assignments above are administrative replacements used to restore a one-to-one source mapping.
+
+Normal-page direct-click validation after correction:
+
+- Kitchen 120: direct visible Smoke click counted; Smoke tally reached 1.
+- Janitor 119: direct visible Smoke click counted; Smoke tally reached 2.
+- Storage 109: direct visible Smoke click counted; Smoke tally reached 3.
+- Additional visible Smoke: direct click counted; Smoke tally reached 4.
+- Duplicate corrected Smoke click: `ALREADY COUNTED`; tally remained 4.
+- Wrong-category clicks on Wall Speaker/Strobe, Duct Smoke, and Wall Horn/Strobe symbols: no Smoke tally change.
+- Full Smoke sweep: **33/33** direct source-coordinate clicks.
+
 ## Stop Condition
 
 The exact one-to-one source set is established: 33 source Smokes, 33 current records, 31 current records already matching plain Smoke symbols, and two wrong-symbol records that must be reassigned to the two missing rooms. Approval is required before making the two legacy-ID reassignments and correcting the Storage 109 coordinate.

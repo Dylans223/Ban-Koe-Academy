@@ -18,7 +18,7 @@ The following IDs are the complete 65-record approved mapping, grouped by catego
 | Smokes | 33 | `ex004-smoke-001` through `ex004-smoke-033` |
 | Test Stations | 2 | `ex004-ts-001`, `ex004-ts-002` |
 | Duct Smokes | 2 | `ex004-dd-001`, `ex004-dd-002` |
-| Wall Horn/Strobes | 8 | `ex004-wall-hs-001` through `ex004-wall-hs-008` |
+| Wall Horn/Strobes | 9 | `ex004-wall-hs-001` through `ex004-wall-hs-009` |
 | Wall Speaker/Strobes | 6 | `ex004-wall-s-001` through `ex004-wall-s-006` |
 | Ceiling Horn/Strobes | 1 | `ex004-ceiling-hs-001` |
 | Ceiling Speaker/Strobes | 3 | `ex004-ceiling-s-001` through `ex004-ceiling-s-003` |
@@ -54,9 +54,9 @@ No viewport-relative coordinates, nearest-device fallback, room-sized target, mi
 
 | Measure | Count |
 | --- | ---: |
-| Source PNG devices | 65 |
-| Mapped locations | 65 |
-| Expected quantity total | 65 |
+| Source PNG devices | 66 |
+| Mapped locations | 66 |
+| Expected quantity total | 66 |
 | Difference | 0 |
 
 ## Category Filtering
