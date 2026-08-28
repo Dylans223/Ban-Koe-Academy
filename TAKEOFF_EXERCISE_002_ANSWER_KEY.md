@@ -3,7 +3,7 @@
 Exercise: `TAKEOFF PRACTICE 002`  
 Drawing: `RIVERDALE OFFICE BUILDING`, `FA-101`  
 Source: `Takeoff Drawings/ChatGPT Image Aug 24, 2026, 02_21_04 PM.png`  
-Total mapped devices: **45**
+Total mapped devices: **43**
 
 ## Correction Notice
 
@@ -22,7 +22,7 @@ This answer key was generated from the QA-approved Exercise 002 device mapping.
 | FAA | DARK BLUE | 1 |
 | Smokes | RED | 12 |
 | R of R Heats | LIGHT BLUE | 1 |
-| Heat Detectors | LIGHT BLUE | 2 |
+| Heat Detectors | LIGHT BLUE | 0 |
 | Test Stations | ORANGE | 1 |
 | Duct Smokes | ORANGE | 2 |
 | Wall Speaker/Strobes | YELLOW | 9 |
@@ -33,7 +33,7 @@ This answer key was generated from the QA-approved Exercise 002 device mapping.
 | Door Holders | PINK | 1 |
 | Tamper | PINK | 1 |
 
-Expected quantity total: **45**
+Expected quantity total: **43**
 
 ## Device IDs by Category
 
@@ -41,7 +41,7 @@ Expected quantity total: **45**
 - FAA: `faa-001`
 - Smokes: `smoke-001`, `smoke-002`, `smoke-003`, `smoke-004`, `smoke-005`, `smoke-006`, `smoke-007`, `smoke-008`, `smoke-009`, `smoke-010`, `smoke-011`, `smoke-012`
 - R of R Heats: `ror-heat-001`
-- Heat Detectors: `ror-heat-002`, `ror-heat-003`
+- Heat Detectors: none; the source contains no generic Heat Detector symbols.
 - Test Stations: `test-001`
 - Duct Smokes: `duct-001`, `duct-002`
 - Wall Speaker/Strobes: `wall-speaker-strobe-001` through `wall-speaker-strobe-009`, including the Electrical 109 S

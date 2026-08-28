@@ -23,10 +23,10 @@ The confirmed Exercise 001 training symbols now visually match their Ban-Koe tra
 ## Test Stations
 
 - Confirmed symbols: 2 orange `TS` symbols.
-- Application training color: **PINK**.
-- Key entry: `Test Station - PINK`.
-- Canvas color-layer samples: both mapped TS regions contain PINK glyph pixels while retaining the original orange symbol pixels.
-- Normal-page and 150% visual inspection: the TS lettering visibly reads pink without a colored rectangle/blob around it.
+- Application training color: **ORANGE**.
+- Key entry: `Test Station - ORANGE`.
+- Canvas color-layer samples: both mapped TS regions contain ORANGE glyph pixels while retaining the original orange symbol pixels.
+- Normal-page and 150% visual inspection: the TS lettering visibly reads orange without a colored rectangle/blob around it.
 - Direct interaction: **2/2** physically counted.
 - Post-click highlight: translucent PINK and centered over the source symbol.
 
@@ -39,7 +39,7 @@ The original orange source PNG remains unchanged. The application canvas layer p
 | Symbol | Source appearance | Training presentation | Key color | Result |
 | --- | --- | --- | --- | --- |
 | S / Wall Speaker-Strobe | Orange in preserved source PNG | Yellow application layer | YELLOW | PASS |
-| TS / Test Station | Orange in preserved source PNG | Pink application layer | PINK | PASS |
+| TS / Test Station | Orange in preserved source PNG | Orange application layer | ORANGE | PASS |
 
 The same Exercise 001 product color definition drives the Key, category display, canvas color treatment, and post-click highlight. The source PNG is retained as the read-only base asset.
 

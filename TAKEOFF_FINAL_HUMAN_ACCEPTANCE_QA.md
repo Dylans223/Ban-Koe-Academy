@@ -39,7 +39,7 @@ Approved total: **44**
 | Door Holders | `door-holder-001` | Pass | Pass | Pass |
 | Tamper | `tamper-001` | Pass | Pass | Pass |
 
-The visible drawing shows the 9 S symbols as YELLOW Wall Speaker/Strobes, the 6 HS symbols as separate YELLOW Wall Horn/Strobes, PINK Test Station presentation, RED Smoke presentation, and LIGHT BLUE Heat presentation. Smoke and Heat geometry is visibly different in both key and drawing.
+The visible drawing shows the 9 S symbols as YELLOW Wall Speaker/Strobes, the 6 HS symbols as separate YELLOW Wall Horn/Strobes, ORANGE Test Station presentation, RED Smoke presentation, and LIGHT BLUE Heat presentation. Smoke and Heat geometry is visibly different in both key and drawing.
 
 ## Exercise 002
 
@@ -105,7 +105,7 @@ Approved total: **36**. There are no approved Smoke or Heat mapped devices in th
 
 - Exercise 001 S/Wall Speaker-Strobes: YELLOW.
 - Exercise 001 HS/Wall Horn-Strobes: YELLOW and separate from S.
-- Exercise 001 Test Stations: PINK.
+- Exercise 001 Test Stations: ORANGE.
 - Smoke: RED.
 - Heat: LIGHT BLUE.
 - Key Smoke symbol: circular outline, center dot, and cardinal details.

@@ -236,6 +236,25 @@
     font-size: 16px;
 }
 
+.interactive-reconciliation-summary,
+.interactive-reconciliation-corrections {
+    display: grid;
+    gap: 6px;
+    padding: 10px;
+    border: 1px solid var(--border);
+}
+
+.interactive-reconciliation-summary span,
+.interactive-reconciliation-corrections div,
+.interactive-feedback-result > div > small {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.interactive-reconciliation-corrections {
+    border-color: rgba(245, 158, 11, 0.45);
+}
+
 .interactive-takeoff-drawing {
     display: grid;
     place-items: center;
@@ -325,6 +344,10 @@
 }
 
 .interactive-drawing-layer.is-exercise-003 {
+    aspect-ratio: 1536 / 1024;
+}
+
+.interactive-drawing-layer.is-exercise-004 {
     aspect-ratio: 1536 / 1024;
 }
 

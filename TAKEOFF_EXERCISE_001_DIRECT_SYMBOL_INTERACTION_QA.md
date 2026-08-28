@@ -6,7 +6,7 @@ Source dimensions: **1402 x 1122**
 
 ## Scope
 
-This pass preserved the source-frame architecture and all approved quantities. The only behavior correction was the Exercise 001 Test Station training highlight color: Test Stations now use PINK. The source PNG remains unchanged; its orange `TS` symbols are not recolored.
+This pass preserved the source-frame architecture and all approved quantities. Exercise 001 Test Stations use the Academy-wide ORANGE training color. The source PNG remains unchanged; its orange `TS` symbols are not recolored.
 
 ## Direct-Symbol Acceptance
 
@@ -22,7 +22,7 @@ The trainee can look at the visible device symbol, place the cursor directly on 
 | FAA | 1 | 1 | PASS | DARK BLUE |
 | Smokes | 10 | 10 | PASS | RED |
 | R of R Heats | 3 | 3 | PASS | LIGHT BLUE |
-| Test Stations | 2 | 2 | PASS | PINK |
+| Test Stations | 2 | 2 | PASS | ORANGE |
 | Duct Smokes | 2 | 2 | PASS | ORANGE |
 | Wall Horn/Strobes | 6 | 6 | PASS | YELLOW |
 | Wall Speaker/Strobes | 9 | 9 | PASS | YELLOW |
@@ -44,9 +44,9 @@ Approved total physically tested: **44/44**.
 - Wall Speaker/Strobes selected color: `YELLOW`.
 - All 9 confirmed orange `S` symbols counted under Wall Speaker/Strobes.
 - Wall Speaker/Strobe highlight: translucent YELLOW.
-- Test Stations selected color: `PINK`.
+- Test Stations selected color: `ORANGE`.
 - Both actual orange `TS` symbols counted under Test Stations.
-- Test Station highlight: translucent PINK.
+- Test Station highlight: translucent ORANGE.
 - The original orange source symbols remained unchanged.
 
 ## Category Filtering

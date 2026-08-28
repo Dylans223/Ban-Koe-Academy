@@ -170,6 +170,11 @@ function enterInteractiveQuantities(state, quantities) {
 }
 
 function reconcileInteractiveTakeoff(state) {
+    const submittedInputs = document.querySelectorAll("[data-interactive-final]");
+    if (submittedInputs.length) {
+        state.finalQuantities = {};
+        submittedInputs.forEach((input) => { state.finalQuantities[input.getAttribute("data-interactive-final")] = Number(input.value) || 0; });
+    }
     if (!Object.keys(state.exercise.expectedQuantities).length) {
         state.feedback = "Exercise answer data not yet configured";
         state.stage = "complete";
@@ -189,9 +194,9 @@ function reconcileInteractiveTakeoff(state) {
         const counted = state.tallyByProduct[productId] || 0;
         const entered = state.finalQuantities[productId] || 0;
         const expectedQuantity = expected[productId];
-        const expectedIds = expectedLocations.filter((location) => location.productId === productId).map((location) => location.id);
-        const categoryCorrect = counted === expectedQuantity && entered === expectedQuantity;
-        categoryResults.push({ productId, counted, entered, expected: expectedQuantity, status: categoryCorrect ? "correct" : "needs-correction" });
+        const accounted = Math.min(Math.max(entered, 0), expectedQuantity);
+        const categoryCorrect = entered === expectedQuantity;
+        categoryResults.push({ productId, counted, entered, expected: expectedQuantity, accounted, status: categoryCorrect ? "correct" : "needs-correction" });
         if (!categoryCorrect) {
             discrepancies.push({ productId, counted, entered, expected: expectedQuantity });
         }
@@ -200,8 +205,10 @@ function reconcileInteractiveTakeoff(state) {
     const totalLocations = expectedLocations.length;
     const markedExpected = expectedLocations.filter((location) => state.markedLocations.has(location.id)).length;
     const correctCategories = categoryResults.filter((result) => result.status === "correct").length;
+    const accountedDevices = categoryResults.reduce((total, result) => total + result.accounted, 0);
+    const expectedDeviceTotal = categoryResults.reduce((total, result) => total + result.expected, 0);
     const countAccuracy = totalLocations ? Math.round((markedExpected / totalLocations) * 100) : 0;
-    const reconciliationAccuracy = categoryResults.length ? Math.round((correctCategories / categoryResults.length) * 100) : 0;
+    const reconciliationAccuracy = expectedDeviceTotal ? Math.round((accountedDevices / expectedDeviceTotal) * 100) : 0;
     state.score = {
         productIdentification: countAccuracy,
         colorCoding: countAccuracy,
@@ -211,6 +218,10 @@ function reconcileInteractiveTakeoff(state) {
         tallyAccuracy: countAccuracy,
         finalQuantityAccuracy: reconciliationAccuracy,
         reconciliationAccuracy,
+        correctCategories,
+        categoryTotal: categoryResults.length,
+        accountedDevices,
+        expectedDeviceTotal,
         total: Math.round((countAccuracy + reconciliationAccuracy) / 2)
     };
     state.feedback = discrepancies.length ? { status: "review", discrepancies, categoryResults, score: state.score } : { status: "correct", categoryResults, score: state.score };
@@ -253,6 +264,33 @@ function updateInteractiveViewport(state, scaleDelta = 0, offsetX = 0, offsetY =
 
 function resetInteractiveViewport(state) {
     state.viewport = { scale: 1, offsetX: 0, offsetY: 0 };
+}
+
+function fitInteractiveViewport(state) {
+    if (state.exercise.exerciseId !== "takeoff-practice-004") {
+        return;
+    }
+
+    const drawingViewport = document.querySelector(".interactive-takeoff-drawing");
+    if (!drawingViewport) {
+        return;
+    }
+
+    const availableWidth = drawingViewport.clientWidth;
+    const availableHeight = drawingViewport.clientHeight;
+    const sourceWidth = state.exercise.drawing.nativeWidth || 1536;
+    const sourceHeight = state.exercise.drawing.nativeHeight || 1024;
+    const sheetHeight = availableWidth * sourceHeight / sourceWidth;
+    const fitScale = sheetHeight ? Math.min(1, availableHeight / sheetHeight) : 1;
+    state.viewport = { scale: fitScale, offsetX: 0, offsetY: 0 };
+    const drawingLayer = drawingViewport.querySelector(".interactive-drawing-layer");
+    if (drawingLayer) {
+        drawingLayer.style.transform = `translate(calc(-50% + ${state.viewport.offsetX}px), calc(-50% + ${state.viewport.offsetY}px)) scale(${state.viewport.scale})`;
+    }
+    const status = drawingViewport.parentElement?.querySelector(".interactive-takeoff-toolbar .interactive-takeoff-status");
+    if (status) {
+        status.textContent = `${Math.round(fitScale * 100)}%`;
+    }
 }
 
 function clearInteractiveMarks(state) {
@@ -381,7 +419,7 @@ function applyExercise001SymbolColors(state) {
         state.exercise.locations.filter((location) => location.productId === "test-stations")
             .forEach((location) => recolorGlyph(location, "#ec4899"));
     } else {
-        state.exercise.locations.filter((location) => location.productId === "wall-speaker-strobes")
+        state.exercise.locations.filter((location) => location.productId === "wall-speaker-strobes" && state.markedLocations.has(location.id))
             .forEach((location) => recolorDarkGlyph(location, "#facc15"));
     }
 
@@ -405,17 +443,29 @@ function renderInteractiveKeyEntry(entry) {
     return `<li>${symbol}<strong>${entry.symbol}</strong> - ${entry.description} - ${entry.color}</li>`;
 }
 
+function renderExercise004Key(exercise) {
+    const wallEntries = exercise.key.filter((entry) => entry.symbol.includes("+ line"));
+    const ceilingEntries = exercise.key.filter((entry) => entry.symbol.includes("circled"));
+    const otherEntries = exercise.key.filter((entry) => !entry.symbol.includes("+ line") && !entry.symbol.includes("circled"));
+    const renderEntry = (entry) => `<li><strong>${entry.symbol}</strong> - ${entry.description} - ${entry.color}</li>`;
+    return `<li><strong>WALL-MOUNTED DEVICES</strong><ul>${wallEntries.map(renderEntry).join("")}</ul></li><li><strong>CEILING-MOUNTED DEVICES</strong><ul>${ceilingEntries.map(renderEntry).join("")}</ul></li><li><strong>OTHER FIRE ALARM DEVICES</strong><ul>${otherEntries.map(renderEntry).join("")}</ul></li><li><strong>ATTACHMENT LINE = WALL-MOUNTED | CIRCLE = CEILING-MOUNTED</strong></li>`;
+}
+
 function renderDetectorOverlay(state) {
-    const detectorLocations = state.exercise.locations.filter((location) => location.productId === "smokes" || location.productId === "ror-heats" || location.productId === "heat-detectors");
+    const isExercise003 = state.exercise.exerciseId === "takeoff-practice-003";
+    const detectorLocations = state.exercise.locations.filter((location) => {
+        const isDetector = location.productId === "smokes" || location.productId === "ror-heats" || location.productId === "heat-detectors";
+        return isDetector && ((isExercise003 || state.exercise.exerciseId === "takeoff-practice-002" || state.exercise.exerciseId === "takeoff-practice-004") ? state.markedLocations.has(location.id) : true);
+    });
     if (!detectorLocations.length) {
         return "";
     }
-    const isExercise003 = state.exercise.exerciseId === "takeoff-practice-003";
     return `<svg class="interactive-detector-symbol-layer" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">${detectorLocations.map((location) => {
         const isSmoke = location.productId === "smokes";
         const color = isSmoke ? takeoffColorHex.RED : takeoffColorHex["LIGHT BLUE"];
-        const centerX = isExercise003 ? location.x : location.x + location.width / 2;
-        const centerY = isExercise003 ? location.y : location.y + location.height / 2;
+        const usesCenterCoordinates = isExercise003 || state.exercise.exerciseId === "takeoff-practice-004";
+        const centerX = usesCenterCoordinates ? location.x : location.x + location.width / 2;
+        const centerY = usesCenterCoordinates ? location.y : location.y + location.height / 2;
         const radiusX = location.width * 0.42;
         const radiusY = location.height * 0.42;
         return isSmoke
@@ -439,12 +489,14 @@ function renderInteractiveTakeoff(state) {
         ? "is-exercise-001"
         : state.exercise.exerciseId === "takeoff-practice-002"
             ? "is-exercise-002"
-            : "is-exercise-003";
+            : state.exercise.exerciseId === "takeoff-practice-003"
+                ? "is-exercise-003"
+                : "is-exercise-004";
 
     const exerciseLibrary = window.takeoffExerciseLibrary || [];
     mount.innerHTML = `
         <div class="interactive-takeoff-shell">
-            ${state.exercisePickerOpen ? `<div class="interactive-exercise-intro"><p class="eyebrow">DRAWING EXERCISES</p><h2>DRAWING TAKEOFF PRACTICE</h2><p>Practice the complete Ban-Koe takeoff workflow on real training drawings.</p></div><div class="interactive-takeoff-exercise-list" aria-label="Drawing takeoff practice exercises">${exerciseLibrary.map((exercise, index) => { const levels = ["Guided Count", "Independent Takeoff", "Advanced Takeoff"]; const descriptions = ["Color-coded source drawing. Count, tally, and reconcile.", "Black-and-white drawing. Apply the Ban-Koe color system yourself.", "More involved black-and-white drawing with multiple areas and device types."]; return `<button type="button" class="interactive-exercise-card exercise-level-${index + 1}" data-interactive-exercise="${exercise.exerciseId}"><span class="interactive-exercise-number">EXERCISE ${String(index + 1).padStart(3, "0")}</span><strong>${exercise.drawing.project.replace(" - LEVEL 1", "")}</strong><b>${levels[index]}</b><span>${descriptions[index]}</span><small>START EXERCISE</small></button>`; }).join("")}</div>` : `<div class="interactive-takeoff-breadcrumb"><button type="button" class="btn btn-secondary" data-interactive-action="back-to-exercises">← Back to Exercises</button><span>${state.exercise.title}</span></div>`}
+            ${state.exercisePickerOpen ? `<div class="interactive-exercise-intro"><p class="eyebrow">DRAWING EXERCISES</p><h2>DRAWING TAKEOFF PRACTICE</h2><p>Practice the complete Ban-Koe takeoff workflow on real training drawings.</p></div><div class="interactive-takeoff-exercise-list" aria-label="Drawing takeoff practice exercises">${exerciseLibrary.map((exercise, index) => { const levels = ["Guided Count", "Independent Takeoff", "Advanced Takeoff", "Advanced Takeoff"]; const descriptions = ["Color-coded source drawing. Count, tally, and reconcile.", "Black-and-white drawing. Apply the Ban-Koe color system yourself.", "More involved black-and-white drawing with multiple areas and device types.", "Mixed wall and ceiling notification takeoff with HVAC and interface devices."]; return `<button type="button" class="interactive-exercise-card exercise-level-${index + 1}" data-interactive-exercise="${exercise.exerciseId}"><span class="interactive-exercise-number">EXERCISE ${String(index + 1).padStart(3, "0")}</span><strong>${exercise.drawing.project.replace(" - LEVEL 1", "")}</strong><b>${levels[index]}</b><span>${descriptions[index]}</span><small>START EXERCISE</small></button>`; }).join("")}</div>` : `<div class="interactive-takeoff-breadcrumb"><button type="button" class="btn btn-secondary" data-interactive-action="back-to-exercises">← Back to Exercises</button><span>${state.exercise.title}</span></div>`}
             <div class="interactive-takeoff-heading">
                 <div>
                     <button type="button" class="interactive-back-link" data-interactive-action="back-to-exercises">← Exercises</button>
@@ -473,7 +525,7 @@ function renderInteractiveTakeoff(state) {
             ${!state.keyAcknowledged || state.keyReferenceOpen || state.notesReferenceOpen ? `<div class="interactive-takeoff-source-data">
                 <section class="interactive-takeoff-panel">
                     <h4>Drawing Key / Legend</h4>
-                    <ul>${approved && (!state.keyAcknowledged || state.keyReferenceOpen) ? state.exercise.key.map(renderInteractiveKeyEntry).join("") : "<li>Key reference minimized</li>"}</ul>
+                    <ul>${approved && (!state.keyAcknowledged || state.keyReferenceOpen) ? (state.exercise.exerciseId === "takeoff-practice-004" ? renderExercise004Key(state.exercise) : state.exercise.key.map(renderInteractiveKeyEntry).join("")) : "<li>Key reference minimized</li>"}</ul>
                 </section>
                 <section class="interactive-takeoff-panel">
                     <h4>Drawing Notes</h4>
@@ -483,7 +535,7 @@ function renderInteractiveTakeoff(state) {
             <div class="interactive-takeoff-workspace ${state.stage === "complete" ? "is-results" : ""}">
                 <section class="interactive-takeoff-panel">
                     <div class="interactive-takeoff-drawing" role="img" aria-label="Interactive drawing viewport">
-                        ${approved && state.exercise.drawing.asset ? `<div class="interactive-drawing-layer ${sourceFrameClass}" data-selected-color="${state.selectedColor}" style="transform: translate(calc(-50% + ${state.viewport.offsetX}px), calc(-50% + ${state.viewport.offsetY}px)) scale(${state.viewport.scale})"><img src="${state.exercise.drawing.asset}" alt="${state.exercise.title}">${["takeoff-practice-001", "takeoff-practice-002", "takeoff-practice-003"].includes(state.exercise.exerciseId) ? renderDetectorOverlay(state) : ""}${["takeoff-practice-001", "takeoff-practice-002"].includes(state.exercise.exerciseId) ? "<canvas class=\"interactive-symbol-color-layer\" aria-hidden=\"true\"></canvas>" : ""}${state.exercise.locations.map((location) => `<button type="button" class="interactive-location-marker ${state.markedLocations.has(location.id) ? "is-marked" : ""}" data-interactive-location="${location.id}" style="left:${location.x * 100}%;top:${location.y * 100}%;width:${location.width * 100}%;height:${location.height * 100}%" ${!state.selectedProductId || location.productId !== state.selectedProductId ? "disabled" : ""} aria-label="${state.markedLocations.has(location.id) ? "Counted" : "Mark"} ${location.type} ${location.room}">${state.markedLocations.has(location.id) ? "✓" : ""}${debugMode ? `<span class="interactive-marker-debug">${location.id}<br>${location.type}<br>x: ${location.x.toFixed(3)} y: ${location.y.toFixed(3)}</span>` : ""}</button>`).join("")}</div>` : `<div><strong>AWAITING APPROVED DRAWING</strong><p>The original PDF remains read-only source material. An approved image or SVG is required for marking.</p></div>`}
+                        ${approved && state.exercise.drawing.asset ? `<div class="interactive-drawing-layer ${sourceFrameClass}" data-selected-color="${state.selectedColor}" style="transform: translate(calc(-50% + ${state.viewport.offsetX}px), calc(-50% + ${state.viewport.offsetY}px)) scale(${state.viewport.scale})"><img src="${state.exercise.drawing.asset}" alt="${state.exercise.title}">${["takeoff-practice-001", "takeoff-practice-002", "takeoff-practice-003", "takeoff-practice-004"].includes(state.exercise.exerciseId) ? renderDetectorOverlay(state) : ""}${["takeoff-practice-001", "takeoff-practice-002"].includes(state.exercise.exerciseId) ? "<canvas class=\"interactive-symbol-color-layer\" aria-hidden=\"true\"></canvas>" : ""}${state.exercise.locations.map((location) => `<button type="button" class="interactive-location-marker ${state.markedLocations.has(location.id) ? "is-marked" : ""}" data-interactive-location="${location.id}" style="left:${location.x * 100}%;top:${location.y * 100}%;width:${location.width * 100}%;height:${location.height * 100}%" ${!state.selectedProductId || location.productId !== state.selectedProductId ? "disabled" : ""} aria-label="${state.markedLocations.has(location.id) ? "Counted" : "Mark"} ${location.type} ${location.room}">${state.markedLocations.has(location.id) ? "✓" : ""}${debugMode ? `<span class="interactive-marker-debug">${location.id}<br>${location.type}<br>x: ${location.x.toFixed(3)} y: ${location.y.toFixed(3)}</span>` : ""}</button>`).join("")}</div>` : `<div><strong>AWAITING APPROVED DRAWING</strong><p>The original PDF remains read-only source material. An approved image or SVG is required for marking.</p></div>`}
                     </div>
                     <div class="interactive-takeoff-toolbar" aria-label="Drawing view controls">
                         <button type="button" class="btn btn-secondary" data-interactive-action="zoom-out" ${approved ? "" : "disabled"}>Zoom out</button>
@@ -594,7 +646,15 @@ function renderInteractiveTakeoff(state) {
         state.feedback = !event.target.value ? "Select a Ban-Koe color first." : null;
         renderInteractiveTakeoff(state);
     });
+    mount.querySelectorAll("[data-interactive-final]").forEach((input) => {
+        input.addEventListener("input", (event) => {
+            state.finalQuantities[event.target.getAttribute("data-interactive-final")] = Number(event.target.value) || 0;
+        });
+    });
     const drawingViewport = mount.querySelector(".interactive-takeoff-drawing");
+    if (state.exercise.exerciseId === "takeoff-practice-004" && state.viewport.offsetX === 0 && state.viewport.offsetY === 0 && state.viewport.scale <= 1) {
+        fitInteractiveViewport(state);
+    }
     let dragStart = null;
     drawingViewport?.addEventListener("pointerdown", (event) => {
         if (!approved) {
@@ -627,6 +687,15 @@ function renderInteractiveTakeoff(state) {
         dragStart = null;
     });
     drawingViewport?.addEventListener("pointercancel", () => { dragStart = null; });
+    if (mount.dataset.interactiveResizeBound !== "true") {
+        mount.dataset.interactiveResizeBound = "true";
+        window.addEventListener("resize", () => {
+            const activeState = window.takeoffInteractive?.state;
+            if (activeState?.exercise.exerciseId === "takeoff-practice-004" && activeState.viewport.offsetX === 0 && activeState.viewport.offsetY === 0 && activeState.viewport.scale <= 1) {
+                fitInteractiveViewport(activeState);
+            }
+        });
+    }
 }
 
 function setTakeoffView(view) {
@@ -652,12 +721,25 @@ function renderInteractiveFeedback(state) {
     if (!state.feedback) {
         return `<p class="interactive-takeoff-status">${Object.keys(state.exercise.expectedQuantities).length ? "Select a product after reviewing the key and notes." : "Exercise answer data not yet configured"}</p>`;
     }
+    if (state.stage === "complete") {
+        return "";
+    }
+    return renderInteractiveReconciliationFeedback(state);
+}
+
+function renderInteractiveReconciliationFeedback(state) {
     const scoreText = state.feedback.score ? `<strong>Takeoff Practice Score: ${state.feedback.score.total}%</strong>` : "";
     const categoryText = state.feedback.categoryResults ? state.feedback.categoryResults.map((result) => {
         const product = state.exercise.products.find((entry) => entry.id === result.productId);
-        return `<div><span>${product ? product.whatIsIt : result.productId}</span><small>Your count: ${result.counted} | Expected: ${result.expected} | ${result.status === "correct" ? "✓ Correct" : "Needs correction"}</small></div>`;
+        const resultText = result.status === "correct" ? "Correct" : `${result.entered}/${result.expected}`;
+        return `<div><span>${product ? product.whatIsIt : result.productId}</span><small>Entered: ${result.entered} | Expected: ${result.expected} | Result: ${resultText}</small></div>`;
     }).join("") : "";
-    return `<div class="interactive-feedback-result ${state.feedback.status === "correct" ? "is-correct" : "is-review"}">${scoreText}<p>${state.feedback.status === "correct" ? "CORRECT" : "Review the discrepancies."}</p>${categoryText}</div>`;
+    const reconciliation = state.feedback.score ? `<section class="interactive-reconciliation-summary"><strong>RECONCILIATION</strong><span>Correct categories: ${state.feedback.score.correctCategories} / ${state.feedback.score.categoryTotal}</span><span>Devices accounted for: ${state.feedback.score.accountedDevices} / ${state.feedback.score.expectedDeviceTotal}</span><span>Quantity accuracy: ${state.feedback.score.reconciliationAccuracy}%</span></section>` : "";
+    const corrections = state.feedback.discrepancies?.length ? `<strong>Needs correction:</strong>${state.feedback.discrepancies.map((result) => {
+        const product = state.exercise.products.find((entry) => entry.id === result.productId);
+        return `<div>${product ? product.whatIsIt : result.productId} - entered ${result.entered}, expected ${result.expected}</div>`;
+    }).join("")}` : "";
+    return `<div class="interactive-feedback-result ${state.feedback.status === "correct" ? "is-correct" : "is-review"}">${scoreText}<p>${state.feedback.status === "correct" ? "CORRECT" : "Review the discrepancies."}</p>${reconciliation}${corrections ? `<section class="interactive-reconciliation-corrections">${corrections}</section>` : ""}${categoryText}</div>`;
 }
 
 function renderInteractiveResults(state) {
@@ -665,7 +747,7 @@ function renderInteractiveResults(state) {
         return `<section class="interactive-results"><p class="interactive-takeoff-status">${state.feedback}</p><div class="interactive-takeoff-actions"><button type="button" class="btn btn-primary" data-interactive-action="reset">Retry</button><button type="button" class="btn btn-secondary" data-interactive-action="back-to-exercises">Back to Exercises</button></div></section>`;
     }
     const score = state.feedback?.score;
-    return `<section class="interactive-results"><div class="interactive-results-heading"><div><p class="eyebrow">Takeoff Results</p><h3>${state.feedback?.status === "correct" ? "Correct Takeoff" : "Review Your Takeoff"}</h3></div><strong>${score ? `${score.total}%` : "Review"}</strong></div><div class="interactive-results-grid"><span>Device Identification <b>${score ? `${score.productIdentification}%` : "Review"}</b></span><span>Color Coding <b>${score ? `${score.colorCoding}%` : "Review"}</b></span><span>Counting <b>${score ? `${score.countingAccuracy}%` : "Review"}</b></span><span>Reconciliation <b>${score ? `${score.reconciliationAccuracy}%` : "Review"}</b></span></div><div class="interactive-takeoff-actions"><button type="button" class="btn btn-primary" data-interactive-action="reset">Retry</button><button type="button" class="btn btn-secondary" data-interactive-action="back-to-exercises">Back to Exercises</button></div></section>`;
+    return `<section class="interactive-results"><div class="interactive-results-heading"><div><p class="eyebrow">Takeoff Results</p><h3>${state.feedback?.status === "correct" ? "Correct Takeoff" : "Review Your Takeoff"}</h3></div><strong>${score ? `${score.total}%` : "Review"}</strong></div><div class="interactive-results-grid"><span>Device Identification <b>${score ? `${score.productIdentification}%` : "Review"}</b></span><span>Color Coding <b>${score ? `${score.colorCoding}%` : "Review"}</b></span><span>Counting <b>${score ? `${score.countingAccuracy}%` : "Review"}</b></span><span>Reconciliation <b>${score ? `${score.reconciliationAccuracy}%` : "Review"}</b></span></div>${renderInteractiveReconciliationFeedback(state)}<div class="interactive-takeoff-actions"><button type="button" class="btn btn-primary" data-interactive-action="reset">Retry</button><button type="button" class="btn btn-secondary" data-interactive-action="back-to-exercises">Back to Exercises</button></div></section>`;
 }
 
 function handleInteractiveAction(action, state) {
@@ -683,6 +765,9 @@ function handleInteractiveAction(action, state) {
         document.querySelectorAll("[data-interactive-final]").forEach((input) => { quantities[input.getAttribute("data-interactive-final")] = Number(input.value) || 0; });
         enterInteractiveQuantities(state, quantities);
     } else if (action === "reconcile") {
+        const quantities = {};
+        document.querySelectorAll("[data-interactive-final]").forEach((input) => { quantities[input.getAttribute("data-interactive-final")] = Number(input.value) || 0; });
+        state.finalQuantities = quantities;
         reconcileInteractiveTakeoff(state);
     } else if (action === "reset") {
         resetInteractiveTakeoff(state);
@@ -694,6 +779,7 @@ function handleInteractiveAction(action, state) {
         updateInteractiveViewport(state, -0.25);
     } else if (action === "reset-view") {
         resetInteractiveViewport(state);
+        fitInteractiveViewport(state);
     } else if (action === "fullscreen") {
         document.querySelector(".interactive-takeoff-workspace")?.requestFullscreen?.();
     } else if (action === "back-to-exercises") {
@@ -734,7 +820,7 @@ function selectInteractiveExercise(exerciseId) {
 }
 
 function initializeInteractiveTakeoff() {
-    const exercises = [takeoffExercise001, takeoffExercise002, window.takeoffExercise003];
+    const exercises = [takeoffExercise001, takeoffExercise002, window.takeoffExercise003, window.takeoffExercise004];
     const states = Object.fromEntries(exercises.map((exercise) => [exercise.exerciseId, createInteractiveTakeoffState(exercise)]));
     const state = states[exercises[0].exerciseId];
     window.takeoffExerciseLibrary = exercises;
