@@ -123,14 +123,30 @@ The current approved data contains 33 Smoke records. Current coordinates are lis
 - `ex004-smoke-022` is displaced from the Storage 109 source Smoke and is a candidate mislocated record.
 - The current lower-right `ex004-smoke-033` record is not labeled Janitor 119 or Kitchen 120 and must not be silently reassigned without confirming which physical source symbol it represents.
 
-## Can Existing Records Represent Kitchen and Janitor?
+## Final One-to-One Reconciliation
 
-Not safely from this audit alone. The source count and current count are both 33, but the current set contains at least one `NOT A SMOKE` record and one mislocated record, while the two confirmed Kitchen/Janitor source symbols are both absent by room label. A one-to-one reassignment may be possible, but it requires approval of the exact replacement identities and a final source-coordinate review; moving a correct lower-right device or deleting a valid source Smoke would be unsafe.
+The source and current counts are both 33. The source-supported replacement set is:
 
-No Smoke quantity change is authorized by this report. No mapping change is made.
+- `ex004-smoke-010`: currently targets the top Multipurpose Room 104 wall-attached `S` notification symbol; status `WRONG SYMBOL`.
+- `ex004-smoke-018`: currently targets the Open Office 107 circled `S` ceiling Speaker/Strobe; status `WRONG SYMBOL`.
+
+Those two records are the only two current Smoke records without a plain Smoke source match. Kitchen 120 and Janitor 119 are the only two plain Smoke source symbols without current Smoke records. Therefore, the one-to-one correction must reuse `ex004-smoke-010` and `ex004-smoke-018` for Kitchen 120 and Janitor 119, while preserving the Smoke quantity at 33.
+
+The historical IDs do not encode source-room identity. The assignments above are administrative replacements used to restore a one-to-one source mapping.
+
+`ex004-smoke-022` is not a replacement candidate: it is a valid Storage 109 Smoke record with a small coordinate displacement and should be corrected to the Storage source point, not reassigned.
+
+## Explicit Determinations
+
+- Kitchen 120 -> one of `{ex004-smoke-010, ex004-smoke-018}`; exact historical-ID assignment is not source-provable.
+- Janitor 119 -> the other of `{ex004-smoke-010, ex004-smoke-018}`; exact historical-ID assignment is not source-provable.
+- Wrong-symbol records -> `ex004-smoke-010` and `ex004-smoke-018`.
+- Displaced record -> `ex004-smoke-022`, whose correct source is Storage 109.
+
+Smoke quantity remains 33. The three approved Smoke record corrections are now applied: `ex004-smoke-010` is Kitchen 120, `ex004-smoke-018` is Janitor 119, and `ex004-smoke-022` is Storage 109 at its source coordinate.
 
 ## Stop Condition
 
-The audit identifies exactly why Kitchen 120 and Janitor 119 are unmapped: there are no current Smoke records assigned to those rooms, and the existing 33-record set contains records that do not correspond cleanly to the plain Smoke source inventory. Approval is required before reassigning or removing any Smoke record.
+The exact one-to-one source set is established: 33 source Smokes, 33 current records, 31 current records already matching plain Smoke symbols, and two wrong-symbol records that must be reassigned to the two missing rooms. Approval is required before making the two legacy-ID reassignments and correcting the Storage 109 coordinate.
 
 No commit or GitHub push was made.
