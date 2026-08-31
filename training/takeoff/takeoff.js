@@ -40,36 +40,28 @@ const takeoffScenario = {
             explanation: "Correct. Smoke detectors are initiating devices used to detect smoke and send an alarm condition to the fire alarm system."
         },
         {
-            id: "single-action-manual-activation",
-            requirement: "The first-floor drawing notes specify single-action manual initiating stations at two exit locations.",
-            question: "Which exact device should be included for those two locations?",
-            options: ["SIGA-270 Single Action Intelligent Pull Station", "SIGA-278 Double Action Intelligent Pull Station", "SIGA-CC1 Single Input Signal Module", "SIGA-CT1 Single Input Module"],
-            answer: "SIGA-270 Single Action Intelligent Pull Station",
-            explanation: "Correct. The verified Edwards SIGA-270 is the single-action intelligent pull station, so the takeoff needs two SIGA-270 devices for the specified first-floor locations."
+            id: "pull-station-activation-type",
+            requirement: "The drawing calls for both single-action and double-action manual pull stations at different exits.",
+            question: "Why would a project specify double-action stations at some locations instead of using single-action everywhere?",
+            options: ["The drawing/specification calls for two-step activation at those specific locations", "Double-action stations are simply a newer replacement for single-action stations", "Double-action stations cost less, so they're used wherever possible", "There's no real difference — the two types are interchangeable"],
+            answer: "The drawing/specification calls for two-step activation at those specific locations",
+            explanation: "Correct. Single-action and double-action pull stations aren't interchangeable by preference — the applicable drawing or specification determines which activation type is required at each location, and the takeoff has to follow it exactly."
         },
         {
-            id: "double-action-manual-activation",
-            requirement: "The first-floor drawing notes specify one double-action manual initiating station at a designated exit location.",
-            question: "Which exact device should be included for that location?",
-            options: ["SIGA-278 Double Action Intelligent Pull Station", "SIGA-270 Single Action Intelligent Pull Station", "SIGA-CC1 Single Input Signal Module", "SIGA-CR Control Relay Module"],
-            answer: "SIGA-278 Double Action Intelligent Pull Station",
-            explanation: "Correct. The verified Edwards SIGA-278 is the double-action intelligent pull station, so the takeoff needs one SIGA-278 device for the specified location."
+            id: "notification-appliance-function",
+            requirement: "Provide wall-mounted audible AND visual notification throughout the building, with low-frequency output specified.",
+            question: "The requirement calls for both audible and visual signaling in one appliance. What kind of notification appliance does that describe?",
+            options: ["A strobe-only appliance", "A horn-strobe (combined audible/visual) appliance", "A horn-only appliance", "A speaker-only appliance"],
+            answer: "A horn-strobe (combined audible/visual) appliance",
+            explanation: "Correct. A horn-strobe combines audible (horn) and visual (strobe) output in one appliance. A horn-only or strobe-only device would satisfy just one half of this requirement."
         },
         {
-            id: "audible-visual",
-            requirement: "Provide wall-mounted 520 Hz low-frequency audible and visual notification throughout the building.",
-            question: "The notification drawing specifies a Genesis LED low-frequency horn-strobe. Which exact product should be included?",
-            options: ["G4LF", "G4LFV", "GCS ceiling speaker-strobe", "G1 compact notification device"],
-            answer: "G4LFV",
-            explanation: "Correct. G4LFV is the verified Genesis LED wall-mount low-frequency horn-strobe. G4LF is the distinct horn-only model."
-        },
-        {
-            id: "g1-wall-horn-strobe",
-            requirement: "A separate notification schedule specifies ordinary wall-mounted audible and visual notification with red housing and FIRE marking, without a low-frequency requirement.",
-            question: "Which exact G1 product should be included for those locations?",
-            options: ["G1ARF", "G1VRF", "G1AVRF", "G4LFV"],
-            answer: "G1AVRF",
-            explanation: "Correct. G1AV is the wall horn-strobe family, R is red housing, and F is FIRE marking. G4LFV remains the correct choice only for the separately specified low-frequency schedule."
+            id: "verify-separate-notification-schedules",
+            requirement: "A separate, ordinary wall notification schedule exists in addition to the low-frequency schedule already established.",
+            question: "Before adding this second schedule to the takeoff, what should you verify first?",
+            options: ["That it's really a separate requirement, not a duplicate of the low-frequency schedule already counted", "The housing color, since that's the only thing that could differ", "Nothing — any wall notification appliance already selected can be reused", "Whether the customer prefers a different manufacturer"],
+            answer: "That it's really a separate requirement, not a duplicate of the low-frequency schedule already counted",
+            explanation: "Correct. Two schedules on the same drawing set can easily get double-counted or mixed up. Confirm the second schedule is a genuinely separate requirement (different appliance family, different locations) before adding it to the BOM."
         },
         {
             id: "duct-smoke",
@@ -80,12 +72,12 @@ const takeoffScenario = {
             explanation: "Correct. Duct smoke detectors are used to detect smoke inside air handling systems and often tie into HVAC shutdown or alarm logic."
         },
         {
-            id: "hvac-interface",
+            id: "hvac-interface-verification",
             requirement: "Shut down HVAC equipment when required by the fire alarm sequence.",
-            question: "Select the correct control function for HVAC shutdown.",
-            options: ["Control or relay interface", "Smoke detector", "Notification appliance", "Manual station"],
-            answer: "Control or relay interface",
-            explanation: "Correct. HVAC shutdown typically uses a control or relay function so the panel can operate the connected equipment safely and as designed."
+            question: "Before adding an HVAC shutdown interface to the BOM, what should you confirm?",
+            options: ["The specific interface/module the project design requires, since HVAC shutdown wiring varies by system", "Nothing — any relay module will work for any HVAC shutdown", "The paint color of the HVAC unit", "Whether the customer wants email notifications from the panel"],
+            answer: "The specific interface/module the project design requires, since HVAC shutdown wiring varies by system",
+            explanation: "Correct. HVAC shutdown is handled through a control or relay function, but the exact module and wiring depend on the system design and project requirements — don't assume one generic module fits every HVAC interface."
         }
     ],
     quantityQuestions: [
@@ -195,6 +187,46 @@ const takeoffScenario = {
             options: ["GOCT 4-inch octagon box adapter plate", "GRT-10 device/cover removal tool", "G4TR red trim plate", "G4RSB red surface-mount box"],
             answer: "GOCT 4-inch octagon box adapter plate",
             explanation: "Correct. GOCT is required when installing the G4LF/G4LFV appliance onto a 4-inch octagon box."
+        },
+        {
+            id: "facp-faa-roles",
+            scenario: "A project includes both an FACP and a remote FAA at a separate building entrance.",
+            question: "What is the FAA's role compared to the FACP?",
+            options: ["The FAA is a remote annunciator that displays/reports system status; the FACP is the main control panel", "The FAA and FACP are two names for the same control panel", "The FAA replaces the FACP on smaller projects", "The FAA controls notification circuits while the FACP only monitors detectors"],
+            answer: "The FAA is a remote annunciator that displays/reports system status; the FACP is the main control panel",
+            explanation: "Correct. The FACP (Fire Alarm Control Panel) is the main system controller. An FAA (Fire Alarm Annunciator) is a remote display/reporting point, not a second control panel."
+        },
+        {
+            id: "slc-vs-nac",
+            scenario: "A technician mentions both SLC trouble and NAC trouble on the same job.",
+            question: "What's the real difference between these two circuit types?",
+            options: ["SLC carries addressable device communication (detectors, modules); NAC powers notification appliances (horns/strobes/speakers)", "SLC and NAC are two names for the same circuit type", "SLC is only used for notification; NAC is only used for detection", "NAC always takes priority for troubleshooting purposes"],
+            answer: "SLC carries addressable device communication (detectors, modules); NAC powers notification appliances (horns/strobes/speakers)",
+            explanation: "Correct. SLC (Signaling Line Circuit) is how the panel communicates with addressable initiating devices and modules. NAC (Notification Appliance Circuit) powers the notification appliances that alert occupants. They serve different purposes and a trouble on one doesn't necessarily mean a problem with the other."
+        },
+        {
+            id: "waterflow-monitoring",
+            scenario: "A waterflow switch on the sprinkler riser activates when water flows through the pipe.",
+            question: "What does the fire alarm system need to do with this condition?",
+            options: ["Monitor it as an initiating device input so it can report an alarm condition to the panel", "Ignore it — waterflow switches aren't connected to the fire alarm system", "Control it as a notification output", "Treat it the same as a duct detector's control function"],
+            answer: "Monitor it as an initiating device input so it can report an alarm condition to the panel",
+            explanation: "Correct. A waterflow switch is an initiating device — the fire alarm system monitors it as an input so activation reports an alarm condition."
+        },
+        {
+            id: "tamper-monitoring",
+            scenario: "A tamper switch on a sprinkler control valve changes state when the valve is not in its normal (fully open) position.",
+            question: "What kind of condition does this typically report to the fire alarm system?",
+            options: ["A supervisory condition, monitored as an input", "A control output telling the valve to close", "A notification appliance activation", "Nothing — tamper switches are not connected to the fire alarm system"],
+            answer: "A supervisory condition, monitored as an input",
+            explanation: "Correct. A tamper switch reports a supervisory condition (like an off-normal valve position) and is monitored as an input, distinct from an alarm-level initiating device."
+        },
+        {
+            id: "slc-device-not-reporting",
+            scenario: "A technician says a specific addressable device on the SLC isn't reporting to the panel, but the rest of the loop is fine.",
+            question: "What should you check first before assuming a defective device?",
+            options: ["Whether the device address is programmed correctly and matches what the panel expects", "Whether the NAC circuit has enough notification appliances", "Whether the building has enough exits", "Whether the panel's touchscreen display is bright enough"],
+            answer: "Whether the device address is programmed correctly and matches what the panel expects",
+            explanation: "Correct. A single device not reporting while the rest of the loop works normally often points to an addressing/programming mismatch — that's a faster, more likely first check than assuming the device itself is defective."
         }
     ],
     bomDefaults: [

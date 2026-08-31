@@ -11,7 +11,7 @@ const trainingModules = [
         difficulty: "Beginner",
         progress: 0,
         description: "Practice reading layouts, identifying devices, and determining material quantities.",
-        preview: "Future lessons can include floor plans, device identification, quantity calculations, placement decisions, and full takeoff exercises."
+        preview: "Includes the Takeoff Learn lessons, a hands-on Knowledge Simulator, and drawing exercises with real color-coded takeoffs."
     },
     {
         id: "system-builder",
@@ -20,7 +20,7 @@ const trainingModules = [
         difficulty: "Beginner / Intermediate",
         progress: 0,
         description: "Build complete fire alarm systems from real-world scenarios.",
-        preview: "Future scenarios can connect FACP, SLC, NAC, detectors, pull stations, notification appliances, modules, HVAC shutdown, dampers, elevators, and door holders."
+        preview: "A guided workflow covering how FACP, SLC, NAC, detectors, modules, and interfaces fit together in a real system."
     },
     {
         id: "wiring-connections",
@@ -29,7 +29,7 @@ const trainingModules = [
         difficulty: "Intermediate",
         progress: 0,
         description: "Learn SLC, NAC, power, relay, and module connections.",
-        preview: "Future lessons can cover SLC, NAC, 18/2, 14/2, 12/2, power-limited circuits, CT1, CT2, relays, isolators, duct detector wiring, and HVAC shutdown connections."
+        preview: "A guided workflow covering how circuits, modules, relays, and isolators connect and communicate."
     },
     {
         id: "bom-estimating",
@@ -38,7 +38,7 @@ const trainingModules = [
         difficulty: "Intermediate / Advanced",
         progress: 0,
         description: "Practice building accurate BOMs from project requirements.",
-        preview: "Future workflows can turn project requirements into product lists, quantities, complete BOMs, answer checks, and later pricing or quoting practice."
+        preview: "A step-by-step workflow that turns takeoff information into an organized, quote-ready material list."
     },
     {
         id: "real-world-scenarios",
@@ -47,7 +47,7 @@ const trainingModules = [
         difficulty: "Advanced",
         progress: 0,
         description: "Solve realistic customer, estimating, and system-design situations.",
-        preview: "Future scenario drills can include HVAC shutdown, duct smoke detection, door-holder release, exterior notification, gym speakers, classroom ceiling speakers, extra SLC devices, relay interfaces, module selection, and incomplete project information."
+        preview: "Five realistic Sales Support scenarios — substitutions, drawing discrepancies, rush requests, and more — each with its own decision and feedback."
     },
 ];
 
@@ -79,7 +79,6 @@ function renderTrainingModules() {
                 <div>
                     <div class="training-module-icon" aria-hidden="true">${module.icon}</div>
                 </div>
-                <span class="badge">Future ready</span>
             </div>
 
             <div>
@@ -88,7 +87,7 @@ function renderTrainingModules() {
             </div>
 
             <div class="training-module-preview">
-                <h3>Preview</h3>
+                <h3>What's Inside</h3>
                 <p>${module.preview}</p>
             </div>
 
