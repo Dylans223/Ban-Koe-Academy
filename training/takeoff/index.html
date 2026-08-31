@@ -63,108 +63,134 @@
             <div class="takeoff-lessons-heading">
                 <div>
                     <p class="eyebrow">TAKEOFF FUNDAMENTALS</p>
-                    <h2 id="takeoffLessonsTitle">Learn the Ban-Koe takeoff process</h2>
-                    <p class="section-intro">Learn how to read fire-alarm drawings, count devices, and build an accurate material takeoff.</p>
+                    <h2 id="takeoffLessonsTitle">Learn the Ban-Koe Takeoff Process</h2>
+                    <p class="section-intro">How to read a fire alarm drawing, count devices, and build an accurate material takeoff — in 12 lessons.</p>
                 </div>
                 <a class="btn btn-secondary" href="../../Takeoffs/20260824110900240.pdf" target="_blank" rel="noopener">Open Takeoff Example</a>
             </div>
 
             <div class="workflow-strip" aria-label="Takeoff workflow">
-                <span class="workflow-step workflow-step-priority"><strong>01</strong> Read the key</span>
-                <span class="workflow-step workflow-step-priority"><strong>02</strong> Read the notes</span>
-                <span class="workflow-step"><strong>03</strong> Identify products</span>
-                <span class="workflow-step"><strong>04</strong> Color</span>
-                <span class="workflow-step"><strong>05</strong> Count</span>
-                <span class="workflow-step"><strong>06</strong> Tally</span>
-                <span class="workflow-step"><strong>07</strong> Enter</span>
+                <span class="workflow-step workflow-step-priority"><strong>01</strong> Read the Key</span>
+                <span class="workflow-step workflow-step-priority"><strong>02</strong> Read the Notes</span>
+                <span class="workflow-step"><strong>03</strong> Identify Products</span>
+                <span class="workflow-step"><strong>04</strong> Identify Colors</span>
+                <span class="workflow-step"><strong>05</strong> Count Devices</span>
+                <span class="workflow-step"><strong>06</strong> Tally Quantities</span>
+                <span class="workflow-step"><strong>07</strong> Enter Quantities</span>
                 <span class="workflow-step"><strong>08</strong> Reconcile</span>
             </div>
 
             <div class="lesson-grid">
-                <article class="lesson-card">
-                    <span class="lesson-number">Lesson 01</span>
+                <article class="lesson-card" id="lesson-1">
+                    <span class="lesson-number">Lesson 1 of 12</span>
                     <h3>What Is a Takeoff?</h3>
-                    <p>A takeoff is the disciplined process of reading project drawings, identifying the required products, counting each applicable occurrence, and recording the final quantities for review.</p>
-                    <p class="lesson-rule">Do not just count symbols. Understand what you are looking at first.</p>
+                    <p>A takeoff turns a fire alarm drawing into a material list: read the drawing, identify the devices, count them, and record final quantities.</p>
+                    <p class="lesson-rule">Understand what you're looking at before you count it.</p>
+                    <nav class="lesson-nav" aria-label="Lesson navigation"><a href="#lesson-2">Next Lesson →</a></nav>
                 </article>
-                <article class="lesson-card lesson-card-priority">
-                    <span class="lesson-number">Lesson 02</span>
+                <article class="lesson-card lesson-card-priority" id="lesson-2">
+                    <span class="lesson-number">Lesson 2 of 12</span>
                     <h3>Read the Drawing Key / Legend</h3>
-                    <p>Before counting anything, read the key. Confirm what each symbol means, which product or device it represents, its part number, the abbreviations in use, and which symbols belong in this takeoff.</p>
+                    <p>Before counting anything, read the key. It tells you what each symbol means, its abbreviation, and which color/category it belongs to.</p>
+                    <div class="lesson-look-for">
+                        <strong>LOOK FOR</strong>
+                        <ul><li>Device abbreviation</li><li>Device symbol</li><li>Wall vs. ceiling indication</li><li>Color/category</li></ul>
+                    </div>
+                    <p>Mounting location is part of the key. <strong>Attachment line = wall-mounted. Circle = ceiling-mounted.</strong> A Wall Speaker/Strobe and a Ceiling Speaker/Strobe do a similar job, but they are counted as separate takeoff categories.</p>
                     <p class="lesson-rule">Do not start counting until you understand the key.</p>
                     <div class="lesson-check" data-lesson-check>
                         <strong>WHAT SHOULD YOU DO FIRST?</strong>
                         <div><button type="button" data-knowledge-answer="wrong">Start counting</button><button type="button" data-knowledge-answer="correct">Read the Key</button><button type="button" data-knowledge-answer="wrong">Build the BOM</button></div>
                         <p data-knowledge-feedback aria-live="polite"></p>
                     </div>
+                    <nav class="lesson-nav" aria-label="Lesson navigation"><a href="#lesson-1">← Previous Lesson</a><a href="#lesson-3">Next Lesson →</a></nav>
                 </article>
-                <article class="lesson-card lesson-card-priority">
-                    <span class="lesson-number">Lesson 03</span>
+                <article class="lesson-card lesson-card-priority" id="lesson-3">
+                    <span class="lesson-number">Lesson 3 of 12</span>
                     <h3>Read the Drawing Notes</h3>
-                    <p>Read all applicable notes immediately after the key. Notes can change how symbols are interpreted, including what is new or existing, what is excluded, and what relationships or requirements affect the count.</p>
+                    <p>Read all applicable notes right after the key. Notes can change how a symbol is interpreted — what's new vs. existing, what's excluded, or what it connects to.</p>
+                    <div class="lesson-look-for">
+                        <strong>LOOK FOR</strong>
+                        <ul><li>Required mounting</li><li>Device spacing</li><li>Manufacturer requirements</li><li>Special interfaces</li></ul>
+                    </div>
                     <p class="lesson-rule">Key first. Notes second. Count third.</p>
                     <div class="lesson-check" data-lesson-check>
                         <strong>WHAT CAN DRAWING NOTES CHANGE?</strong>
                         <div><button type="button" data-knowledge-answer="correct">How symbols should be interpreted</button><button type="button" data-knowledge-answer="wrong">The page size</button><button type="button" data-knowledge-answer="wrong">The Academy navigation</button></div>
                         <p data-knowledge-feedback aria-live="polite"></p>
                     </div>
+                    <nav class="lesson-nav" aria-label="Lesson navigation"><a href="#lesson-2">← Previous Lesson</a><a href="#lesson-4">Next Lesson →</a></nav>
                 </article>
-                <article class="lesson-card">
-                    <span class="lesson-number">Lesson 04</span>
+                <article class="lesson-card" id="lesson-4">
+                    <span class="lesson-number">Lesson 4 of 12</span>
                     <h3>Identify the Products</h3>
-                    <p>Before counting, know the product category represented by each symbol. The Academy exercise asks what you are counting; Sales Engineering determines the final engineered SKU later.</p>
+                    <p>Know the product category behind each symbol before you count it. The Academy exercise asks what you're counting; Sales Engineering confirms the final SKU later.</p>
+                    <p>Mounting location can also change the category — a wall-mounted device and a ceiling-mounted device with a similar function are still counted separately.</p>
                     <div class="lesson-table-label">PRODUCT CATEGORY | DRAWING SYMBOL</div>
                     <p class="lesson-muted">Use only mappings established by the project documents or verified Academy sources.</p>
+                    <nav class="lesson-nav" aria-label="Lesson navigation"><a href="#lesson-3">← Previous Lesson</a><a href="#lesson-5">Next Lesson →</a></nav>
                 </article>
-                <article class="lesson-card">
-                    <span class="lesson-number">Lesson 05</span>
-                    <h3>Apply the Color-Coding System</h3>
-                    <p>Ban-Koe colors make a takeoff easier to scan and audit. Use the confirmed color system consistently while keeping the product category separate from the final engineered SKU.</p>
-                    <p class="lesson-muted">DARK BLUE: FACP / FAA · RED: Smokes · LIGHT BLUE: Heat Detectors (including R of R Heats / Fixed Heats when specifically required) · ORANGE: Duct Smokes / Test Stations / Wall Strobes / Ceiling Strobes · YELLOW: Wall Horn/Strobes / Wall Speaker/Strobes / Ceiling Horn/Strobes / Ceiling Speaker/Strobes / Weatherproof Devices · GREEN: Pulls · PINK: Dampers / Waterflow / Door Holders / CR's / CT-1 / CT-2 / Tamper</p>
+                <article class="lesson-card" id="lesson-5">
+                    <span class="lesson-number">Lesson 5 of 12</span>
+                    <h3>Apply the Color System</h3>
+                    <p>Ban-Koe colors make a takeoff easier to scan and audit. Smoke Detectors are RED, Heat Detectors are LIGHT BLUE, Pull Stations are GREEN — see the full Ban-Koe Takeoff Color System below for every category.</p>
+                    <p class="lesson-muted">Color organizes the takeoff. It does not assign the final engineered SKU.</p>
+                    <nav class="lesson-nav" aria-label="Lesson navigation"><a href="#lesson-4">← Previous Lesson</a><a href="#lesson-6">Next Lesson →</a></nav>
                 </article>
-                <article class="lesson-card">
-                    <span class="lesson-number">Lesson 06</span>
+                <article class="lesson-card" id="lesson-6">
+                    <span class="lesson-number">Lesson 6 of 12</span>
                     <h3>Count Systematically</h3>
-                    <p>Start at a known location, work through one area in a consistent pattern, and continue until every applicable device has been considered exactly once.</p>
+                    <p>Start at a known location and work through the drawing in one consistent pattern until every applicable device has been considered exactly once.</p>
+                    <div class="lesson-look-for">
+                        <strong>LOOK FOR</strong>
+                        <ul><li>Every occurrence of the symbol</li><li>Rooms you already counted</li><li>Devices near doors/walls that are easy to miss</li><li>Ceiling-mounted devices</li></ul>
+                    </div>
+                    <nav class="lesson-nav" aria-label="Lesson navigation"><a href="#lesson-5">← Previous Lesson</a><a href="#lesson-7">Next Lesson →</a></nav>
                 </article>
-                <article class="lesson-card">
-                    <span class="lesson-number">Lesson 07</span>
+                <article class="lesson-card" id="lesson-7">
+                    <span class="lesson-number">Lesson 7 of 12</span>
                     <h3>Review the Counted Marks</h3>
-                    <p>After identifying and counting an item, the visual mark remains on the drawing. Use the counted marks and tally to prevent double-counting.</p>
-                    <p class="lesson-rule">Identify → Count → Move to the next item</p>
+                    <p>Once a device is counted, its mark stays visible on the drawing. Use those marks with your tally to avoid double-counting or missing one.</p>
+                    <p class="lesson-rule">Identify → Count → Move to the next device.</p>
+                    <nav class="lesson-nav" aria-label="Lesson navigation"><a href="#lesson-6">← Previous Lesson</a><a href="#lesson-8">Next Lesson →</a></nav>
                 </article>
-                <article class="lesson-card">
-                    <span class="lesson-number">Lesson 08</span>
+                <article class="lesson-card" id="lesson-8">
+                    <span class="lesson-number">Lesson 8 of 12</span>
                     <h3>Tally the Quantities</h3>
-                    <p>Maintain a separate tally for each product or part number. The result must be clear as <strong>part number → total quantity</strong>.</p>
+                    <p>Keep a running tally for each product category. The result should read as <strong>category → total quantity</strong>.</p>
+                    <nav class="lesson-nav" aria-label="Lesson navigation"><a href="#lesson-7">← Previous Lesson</a><a href="#lesson-9">Next Lesson →</a></nav>
                 </article>
-                <article class="lesson-card">
-                    <span class="lesson-number">Lesson 09</span>
+                <article class="lesson-card" id="lesson-9">
+                    <span class="lesson-number">Lesson 9 of 12</span>
                     <h3>Enter the Takeoff Spreadsheet</h3>
-                    <p>When the drawing is completely counted, transfer the final quantities to the takeoff spreadsheet. The drawing is the source of the count; the spreadsheet is the organized final tally.</p>
+                    <p>Once the drawing is fully counted, transfer the final quantities to the takeoff spreadsheet. The drawing is your source; the spreadsheet is the organized result.</p>
+                    <nav class="lesson-nav" aria-label="Lesson navigation"><a href="#lesson-8">← Previous Lesson</a><a href="#lesson-10">Next Lesson →</a></nav>
                 </article>
-                <article class="lesson-card">
-                    <span class="lesson-number">Lesson 10</span>
+                <article class="lesson-card" id="lesson-10">
+                    <span class="lesson-number">Lesson 10 of 12</span>
                     <h3>Reconcile Your Takeoff</h3>
-                    <p>Compare the drawing markings, tally, and spreadsheet quantity. If they do not match, return to the drawing and recount.</p>
-                    <p class="lesson-rule">Drawing markings + tally = spreadsheet quantity</p>
+                    <p>Compare your final category quantities against the drawing takeoff and identify discrepancies. If something doesn't match, go back to the drawing and recount.</p>
+                    <p class="lesson-rule">Count → Tally → Enter → Reconcile.</p>
+                    <nav class="lesson-nav" aria-label="Lesson navigation"><a href="#lesson-9">← Previous Lesson</a><a href="#lesson-11">Next Lesson →</a></nav>
                 </article>
-                <article class="lesson-card">
-                    <span class="lesson-number">Lesson 11</span>
+                <article class="lesson-card" id="lesson-11">
+                    <span class="lesson-number">Lesson 11 of 12</span>
                     <h3>Common Takeoff Mistakes</h3>
                     <ul class="mistake-list">
                         <li>Counting before reading the key or notes</li>
                         <li>Misidentifying symbols or mixing product types</li>
                         <li>Double-counting or missing devices</li>
-                        <li>Entering the wrong part number or quantity</li>
+                        <li>Entering the wrong category or quantity</li>
                         <li>Failing to reconcile the final tally</li>
                     </ul>
+                    <nav class="lesson-nav" aria-label="Lesson navigation"><a href="#lesson-10">← Previous Lesson</a><a href="#lesson-12">Next Lesson →</a></nav>
                 </article>
-                <article class="lesson-card lesson-card-practice">
-                    <span class="lesson-number">Lesson 12</span>
+                <article class="lesson-card lesson-card-practice" id="lesson-12">
+                    <span class="lesson-number">Lesson 12 of 12</span>
                     <h3>Practice Takeoff</h3>
                     <p>Apply the workflow using the Takeoff Knowledge Simulator and Drawing Exercises.</p>
                     <div class="lesson-links"><button type="button" class="btn btn-secondary" data-takeoff-view="practice">GO TO PRACTICE</button><button type="button" class="btn btn-secondary" data-takeoff-view="drawings">GO TO DRAWING EXERCISES</button></div>
+                    <nav class="lesson-nav" aria-label="Lesson navigation"><a href="#lesson-11">← Previous Lesson</a></nav>
                 </article>
                 <article class="lesson-card lesson-card-source">
                     <span class="lesson-number">Source Reference</span>
@@ -175,104 +201,10 @@
             </div>
         </section>
 
-        <section class="takeoff-framework panel view-learn" aria-labelledby="takeoffFrameworkTitle">
-            <div class="section-heading compact">
-                <div>
-                    <p class="eyebrow">LEARN</p>
-                    <h2 id="takeoffFrameworkTitle">Quick knowledge checks</h2>
-                </div>
-                <span class="badge">Framework</span>
-            </div>
-            <p class="section-intro">Check your understanding before opening the simulator or a drawing.</p>
-
-            <div class="training-mode-key" aria-label="Training modes">
-                <span class="mode-label mode-learn">Learn</span>
-                <span class="mode-label mode-practice">Practice</span>
-                <span class="mode-label mode-advanced">Advanced Practice</span>
-            </div>
-
-            <div class="framework-grid">
-                <article class="framework-step framework-step-available">
-                    <span class="framework-step-number">Step 1</span>
-                    <h3>Read the Key</h3>
-                    <span class="framework-status">Available</span>
-                </article>
-                <article class="framework-step">
-                    <span class="framework-step-number">Step 2</span>
-                    <h3>Read the Notes</h3>
-                    <span class="framework-status">Locked</span>
-                </article>
-                <article class="framework-step">
-                    <span class="framework-step-number">Step 3</span>
-                    <h3>Identify Products</h3>
-                    <span class="framework-status">Locked</span>
-                </article>
-                <article class="framework-step">
-                    <span class="framework-step-number">Step 4</span>
-                    <h3>Color Code</h3>
-                    <span class="framework-status">Locked</span>
-                </article>
-                <article class="framework-step">
-                    <span class="framework-step-number">Step 5</span>
-                    <h3>Count</h3>
-                    <span class="framework-status">Locked</span>
-                </article>
-                <article class="framework-step">
-                    <span class="framework-step-number">Step 6</span>
-                    <h3>Review Counted Marks</h3>
-                    <span class="framework-status">Locked</span>
-                </article>
-                <article class="framework-step">
-                    <span class="framework-step-number">Step 7</span>
-                    <h3>Tally</h3>
-                    <span class="framework-status">Locked</span>
-                </article>
-                <article class="framework-step">
-                    <span class="framework-step-number">Step 8</span>
-                    <h3>Enter</h3>
-                    <span class="framework-status">Locked</span>
-                </article>
-                <article class="framework-step">
-                    <span class="framework-step-number">Step 9</span>
-                    <h3>Reconcile</h3>
-                    <span class="framework-status">Locked</span>
-                </article>
-                <article class="framework-step framework-step-advanced">
-                    <span class="framework-step-number">Step 10</span>
-                    <h3>Independent Takeoff</h3>
-                    <span class="framework-status">Locked</span>
-                </article>
-            </div>
-
-            <div class="knowledge-check-grid">
-                <details class="knowledge-check">
-                    <summary>Knowledge check: What should you do before counting devices?</summary>
-                    <div class="knowledge-answer">
-                        <strong>Correct concept</strong>
-                        <p>Read and understand the drawing key or legend first.</p>
-                    </div>
-                </details>
-                <details class="knowledge-check">
-                    <summary>Knowledge check: What should you do before starting the device count?</summary>
-                    <div class="knowledge-answer">
-                        <strong>Correct concept</strong>
-                        <p>Review the key and all applicable drawing notes.</p>
-                    </div>
-                </details>
-            </div>
-        </section>
-
         <section class="takeoff-color-legend panel view-learn" aria-labelledby="takeoffColorLegendTitle">
-            <details class="takeoff-color-details">
-            <summary>TAKEOFF COLOR SYSTEM</summary>
-            <div class="section-heading compact">
-                <div>
-                    <p class="eyebrow">Learn</p>
-                    <h2 id="takeoffColorLegendTitle">Confirmed Ban-Koe Takeoff Color System</h2>
-                </div>
-                <span class="badge">User-confirmed procedure</span>
-            </div>
-            <p class="section-intro">These colors organize product types during the takeoff. Color does not assign a part number; use the verified product identity separately.</p>
+            <details class="takeoff-color-details" open>
+            <summary id="takeoffColorLegendTitle">BAN-KOE TAKEOFF COLOR SYSTEM</summary>
+            <p class="section-intro">One reference for every takeoff color. Color organizes product categories during the takeoff — it does not assign the final engineered SKU.</p>
             <div class="color-legend-grid">
                 <article class="color-legend-card color-dark-blue">
                     <div class="color-legend-heading"><span class="color-swatch" aria-hidden="true"></span><h3>DARK BLUE</h3></div>
@@ -303,7 +235,7 @@
                     <ul><li>Dampers</li><li>Waterflow</li><li>Door Holders</li><li>CR's</li><li>CT-1</li><li>CT-2</li><li>Tamper</li></ul>
                 </article>
             </div>
-            <p class="color-legend-note">Confirmed Ban-Koe takeoff procedure. The original PDF remains read-only workflow reference; these mappings were provided separately by the user.</p>
+            <p class="color-legend-note">Rate-of-Rise and Fixed heat detectors both count as Heat Detectors (LIGHT BLUE) for general training. Identify a specific subtype only when a project drawing or SKU requires it.</p>
             </details>
         </section>
 

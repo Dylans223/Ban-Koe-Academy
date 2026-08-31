@@ -945,6 +945,7 @@ function initializeLessonCards() {
 
         const details = document.createElement("details");
         details.className = card.className;
+        details.id = card.id;
         details.dataset.collapsible = "true";
         const summary = document.createElement("summary");
         summary.append(card.querySelector(".lesson-number"), card.querySelector("h3"));

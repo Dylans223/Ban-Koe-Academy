@@ -700,7 +700,7 @@ function renderInteractiveTakeoff(state) {
 
 function setTakeoffView(view) {
     const viewVisibility = {
-        learn: [".takeoff-framework", ".takeoff-lessons", ".takeoff-color-legend"],
+        learn: [".takeoff-lessons", ".takeoff-color-legend"],
         practice: [".takeoff-layout"],
         drawings: [".future-practice"]
     };

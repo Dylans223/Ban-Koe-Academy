@@ -6,73 +6,73 @@
 
 .scenarios-header {
     display: grid;
-    grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.75fr);
-    gap: var(--space-3);
-    align-items: start;
+    gap: 8px;
 }
 
-.scenarios-header-copy {
+.workspace-top {
     display: grid;
-    gap: var(--space-2);
+    gap: 10px;
+    margin-bottom: var(--space-2);
 }
 
-.scenarios-progress-card,
+.workspace-top-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.workspace-scenario-nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.field-notes-panel {
+    background: #152235;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-3);
+}
+
+.field-notes-reminder {
+    color: var(--text-secondary);
+    margin-top: 10px;
+}
+
 .scenario-card,
 .scenario-workspace,
-.rail-card,
 .summary-card,
 .readiness-panel-block,
 .customer-message,
 .decision-card,
 .score-card,
 .review-card,
-.response-builder,
 .confidence-card,
 .bom-builder-card,
 .bom-preview-card,
-.helper-card,
-.mindset-banner {
+.helper-card {
     background: #152235;
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
 }
 
-.scenarios-progress-card,
 .scenario-card,
 .scenario-workspace,
-.rail-card,
 .readiness-panel-block,
 .customer-message,
 .decision-card,
 .score-card,
 .review-card,
-.response-builder,
 .confidence-card,
 .bom-builder-card,
 .bom-preview-card,
-.helper-card,
-.mindset-banner {
+.helper-card {
     padding: var(--space-3);
 }
 
-.mindset-banner {
-    display: grid;
-    gap: 8px;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(30, 41, 59, 0.92));
-    border-color: rgba(59, 130, 246, 0.55);
-}
-
-.mindset-banner strong {
-    color: var(--text);
-    font-size: 18px;
-}
-
-.progress-head,
-.progress-meta,
 .scenario-card-top,
 .workspace-step-meta,
 .review-summary-row,
-.response-selected-row,
 .builder-controls,
 .bom-builder-toolbar,
 .completion-head {
@@ -83,19 +83,13 @@
     flex-wrap: wrap;
 }
 
-.progress-head span,
-.progress-meta span,
 .summary-label,
 .score-pill,
-.workflow-list li,
 .question-reference-list li,
-.skill-chip,
 .decision-label,
 .muted-label,
 .status-line,
 .helper-note,
-.skills-inline,
-.response-hint,
 .bom-builder-note,
 .question-explanation,
 .question-importance,
@@ -104,8 +98,6 @@
     color: var(--text-secondary);
 }
 
-.progress-head span,
-.progress-meta span,
 .summary-label,
 .muted-label,
 .decision-label,
@@ -117,20 +109,13 @@
 }
 
 .scenario-selector,
-.scenarios-main,
-.scenarios-rail,
-.scenarios-layout,
 .scenario-step-shell,
 .workspace-section,
 .workspace-question-group,
 .review-list,
-.skills-demonstrated-list,
 .skill-breakdown-grid,
 .readiness-score-grid,
 .scenario-card-grid,
-.response-builder-shell,
-.response-option-list,
-.response-selected-list,
 .confidence-options,
 .bom-builder-grid,
 .bom-preview-list,
@@ -142,16 +127,6 @@
 .explanation-list {
     display: grid;
     gap: var(--space-2);
-}
-
-.scenarios-layout {
-    grid-template-columns: minmax(0, 1.72fr) minmax(280px, 0.7fr);
-    align-items: start;
-}
-
-.scenarios-rail {
-    position: sticky;
-    top: var(--space-3);
 }
 
 .scenario-card-grid {
@@ -180,7 +155,6 @@
 .customer-message h3,
 .decision-card h3,
 .review-card h3,
-.response-builder h3,
 .confidence-card h3,
 .bom-builder-card h3,
 .bom-preview-card h3,
@@ -188,13 +162,10 @@
     color: var(--text);
 }
 
-.skill-chip-list,
 .scenario-actions,
 .choice-grid,
 .multi-choice-grid,
 .confidence-options,
-.response-option-list,
-.response-selected-list,
 .checklist-grid {
     display: flex;
     flex-wrap: wrap;
@@ -257,7 +228,6 @@
 .workspace-step-header p,
 .customer-message p,
 .review-card p,
-.response-builder p,
 .confidence-card p,
 .bom-builder-note,
 .helper-note,
@@ -268,26 +238,123 @@
 
 .choice-button,
 .multi-choice-button,
-.confidence-button,
-.response-option,
-.response-item {
+.confidence-button {
     border-radius: 999px;
-    border: 1px solid rgba(51, 65, 85, 0.92);
+    border: 2px solid rgba(51, 65, 85, 0.92);
     background: rgba(15, 23, 42, 0.85);
     color: var(--text);
     padding: 10px 14px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
+    text-align: left;
+}
+
+.choice-button,
+.multi-choice-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    border-radius: var(--radius-sm);
+    line-height: 1.4;
+}
+
+.choice-button-label {
+    flex: 1;
+}
+
+.choice-state-tag {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.choice-button:hover,
+.multi-choice-button:hover,
+.confidence-button:hover {
+    border-color: var(--hover);
+    background: rgba(59, 130, 246, 0.14);
 }
 
 .choice-button.selected,
 .multi-choice-button.selected,
-.confidence-button.selected,
-.response-option.selected,
-.response-item.selected {
+.confidence-button.selected {
     border-color: var(--primary);
-    background: rgba(37, 99, 235, 0.22);
+    background: rgba(37, 99, 235, 0.35);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.35);
+}
+
+.choice-button.selected .choice-state-tag,
+.multi-choice-button.selected .choice-state-tag {
+    color: #bfdbfe;
+}
+
+.choice-button.correct,
+.multi-choice-button.correct {
+    border-color: rgba(34, 197, 94, 0.85);
+    background: rgba(34, 197, 94, 0.22);
+}
+
+.choice-button.correct .choice-state-tag,
+.multi-choice-button.correct .choice-state-tag {
+    color: #bbf7d0;
+}
+
+.choice-button.correct::before,
+.multi-choice-button.correct::before {
+    content: "✓ ";
+}
+
+.choice-button.incorrect,
+.multi-choice-button.incorrect {
+    border-color: rgba(239, 68, 68, 0.85);
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.choice-button.incorrect .choice-state-tag,
+.multi-choice-button.incorrect .choice-state-tag {
+    color: #fecaca;
+}
+
+.choice-button.incorrect::before,
+.multi-choice-button.incorrect::before {
+    content: "✗ ";
+}
+
+.choice-button.also-reasonable,
+.multi-choice-button.also-reasonable {
+    border-color: rgba(245, 158, 11, 0.85);
+    background: rgba(245, 158, 11, 0.16);
+}
+
+.choice-button.also-reasonable::before,
+.multi-choice-button.also-reasonable::before {
+    content: "~ ";
+}
+
+.choice-button.correct-answer,
+.multi-choice-button.correct-answer {
+    border-color: rgba(34, 197, 94, 0.6);
+    border-style: dashed;
+    background: rgba(34, 197, 94, 0.08);
+}
+
+.choice-button.correct-answer::before,
+.multi-choice-button.correct-answer::before {
+    content: "→ ";
+}
+
+.choice-button:focus-visible,
+.multi-choice-button:focus-visible,
+.confidence-button:focus-visible {
+    outline: 3px solid var(--hover);
+    outline-offset: 2px;
 }
 
 .feedback-box {
@@ -314,42 +381,6 @@
     border-color: rgba(239, 68, 68, 0.6);
     background: rgba(127, 29, 29, 0.35);
     color: #fee2e2;
-}
-
-.choice-button.also-reasonable {
-    border-style: dashed;
-}
-
-.response-builder-shell {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-}
-
-.response-column {
-    display: grid;
-    gap: 12px;
-}
-
-.response-option,
-.response-item {
-    border-radius: var(--radius-sm);
-    padding: 12px;
-    display: grid;
-    gap: 8px;
-}
-
-.response-item-controls {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.response-preview {
-    border: 1px solid rgba(51, 65, 85, 0.85);
-    border-radius: var(--radius-sm);
-    background: rgba(15, 23, 42, 0.55);
-    padding: 14px;
-    color: var(--text);
-    line-height: 1.6;
 }
 
 .bom-builder-grid {
@@ -383,10 +414,8 @@
     color: var(--text);
 }
 
-.workflow-list,
 .question-reference-list,
 .review-list,
-.skills-demonstrated-list,
 .explanation-list {
     padding-left: 20px;
 }
@@ -437,18 +466,6 @@
     font-size: 24px;
 }
 
-.skills-demonstrated-list li {
-    list-style: none;
-    color: var(--text);
-    padding-left: 4px;
-}
-
-.skills-demonstrated-list li::before {
-    content: "✓ ";
-    color: #22c55e;
-    font-weight: 700;
-}
-
 .checklist-grid label {
     display: flex;
     align-items: flex-start;
@@ -483,19 +500,7 @@
     margin-top: 6px;
 }
 
-@media (max-width: 1360px) {
-    .scenarios-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .scenarios-rail {
-        position: static;
-    }
-}
-
 @media (max-width: 1100px) {
-    .scenarios-header,
-    .response-builder-shell,
     .readiness-score-grid,
     .skill-breakdown-grid,
     .scenario-card-grid {
@@ -514,6 +519,39 @@
 
     .quick-stats-grid,
     .scenario-metadata-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .choice-button,
+    .multi-choice-button {
+        flex-wrap: wrap;
+        min-height: 44px;
+        padding: 12px 14px;
+    }
+
+    .choice-state-tag {
+        white-space: normal;
+    }
+
+    .bom-builder-toolbar,
+    .bom-preview-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* This stylesheet only loads on the Real-World Scenarios page, so this override is scoped to this section only. */
+@media (max-width: 640px) {
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .scenario-card-grid {
         grid-template-columns: 1fr;
     }
 }

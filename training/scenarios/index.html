@@ -44,157 +44,69 @@
         </div>
 
         <header class="page-header scenarios-header">
-            <div class="scenarios-header-copy">
-                <p class="eyebrow">Job Skills Training</p>
-                <h1 class="pageTitle">Real-World Scenarios</h1>
-                <p class="page-subtitle">Apply your product, system, takeoff, wiring, and estimating knowledge to realistic Sales Support situations.</p>
-                <div class="mindset-banner">
-                    <strong>Think like Sales Support.</strong>
-                    <p>Don't just identify the product. Figure out what the customer actually needs.</p>
-                </div>
-            </div>
-
-            <div class="panel scenarios-progress-card">
-                <div class="progress-head">
-                    <span>Real-World Scenarios</span>
-                    <strong id="scenarioHeaderLabel">Scenario 1 of 5</strong>
-                </div>
-                <div class="progress-track" aria-hidden="true">
-                    <div id="scenarioProgressFill" class="progress-fill" style="width: 20%"></div>
-                </div>
-                <div class="progress-meta">
-                    <span>Progress</span>
-                    <strong id="scenarioProgressValue">20%</strong>
-                </div>
-            </div>
+            <p class="eyebrow">Job Skills Training</p>
+            <h1 class="pageTitle">Real-World Scenarios</h1>
+            <p class="page-subtitle">Realistic Sales Support situations. Read the situation, answer, then see why you were right or wrong.</p>
         </header>
-
-        <section class="panel module-overview">
-            <div class="module-overview-stepper">
-                <p class="eyebrow">Where Am I?</p>
-                <div id="moduleStepList" class="module-step-list" aria-label="Real-World scenario steps"></div>
-            </div>
-            <div class="module-overview-objective">
-                <p class="eyebrow">Current Objective</p>
-                <span id="moduleObjectiveChip" class="module-objective-chip">Customer Request</span>
-                <h2 id="moduleObjectiveTitle" class="module-objective-title">Understand what the customer actually needs before naming products.</h2>
-                <p id="moduleObjectiveText" class="module-objective-text">Your goal is to separate the customer message, the missing information, your decision, and the professional response you would send back.</p>
-            </div>
-        </section>
 
         <section class="scenario-selector panel">
             <div class="section-heading compact">
-                <div>
-                    <p class="eyebrow">Capstone Module</p>
-                    <h2>Choose a realistic Sales Support scenario</h2>
-                </div>
-                <span id="completedCountBadge" class="badge">0 / 5 Complete</span>
+                <h2>Choose a scenario</h2>
+                <span id="completedCountBadge" class="badge">0 of 5 complete</span>
             </div>
             <div id="scenarioCards" class="scenario-card-grid" aria-live="polite"></div>
         </section>
 
-        <section class="scenarios-layout">
-            <div class="scenarios-main">
-                <section class="panel scenario-workspace">
-                    <div class="section-heading compact">
-                        <div>
-                            <p class="eyebrow">Active Scenario</p>
-                            <h2 id="activeScenarioTitle">HVAC Shutdown Request</h2>
-                        </div>
-                        <div class="active-scenario-meta">
-                            <span id="activeScenarioDifficulty" class="badge">Intermediate</span>
-                            <span id="activeScenarioSkills" class="skills-inline"></span>
-                        </div>
-                    </div>
-
-                    <div id="scenarioStepShell" class="scenario-step-shell" aria-live="polite"></div>
-                </section>
-
-                <section id="finalReadinessPanel" class="panel final-readiness hidden">
-                    <div class="section-heading compact">
-                        <div>
-                            <p class="eyebrow">Capstone Complete</p>
-                            <h2>REAL-WORLD READINESS</h2>
-                        </div>
-                        <span id="readinessLevelBadge" class="badge">Continue Training</span>
-                    </div>
-
-                    <div class="readiness-score-grid">
-                        <article class="summary-card">
-                            <span class="summary-label">Overall Score</span>
-                            <strong id="overallReadinessScore" class="summary-value">0 / 500</strong>
-                        </article>
-                        <article class="summary-card">
-                            <span class="summary-label">Average</span>
-                            <strong id="overallReadinessAverage" class="summary-value">0%</strong>
-                        </article>
-                        <article class="summary-card">
-                            <span class="summary-label">Scenarios Completed</span>
-                            <strong id="overallCompletedScenarios" class="summary-value">0 / 5</strong>
-                        </article>
-                    </div>
-
-                    <article class="readiness-panel-block">
-                        <h3>Skills Demonstrated</h3>
-                        <ul id="skillsDemonstratedList" class="skills-demonstrated-list"></ul>
-                    </article>
-
-                    <article class="readiness-panel-block">
-                        <h3>Skill Breakdown</h3>
-                        <div id="skillBreakdownGrid" class="skill-breakdown-grid"></div>
-                    </article>
-                </section>
+        <section class="panel scenario-workspace">
+            <div class="workspace-top">
+                <div class="workspace-top-meta">
+                    <span id="scenarioProgressLabel" class="badge">Scenario 1 of 5</span>
+                    <span id="activeScenarioDifficulty" class="badge">Intermediate</span>
+                </div>
+                <h2 id="activeScenarioTitle">HVAC Shutdown Request</h2>
+                <div class="workspace-scenario-nav">
+                    <button class="btn btn-secondary" type="button" id="prevScenarioButton">← Previous Scenario</button>
+                    <button class="btn btn-secondary" type="button" id="nextScenarioButton">Next Scenario →</button>
+                </div>
             </div>
 
-            <aside class="scenarios-rail">
-                <section class="panel rail-card">
-                    <div class="section-heading compact">
-                        <div>
-                            <p class="eyebrow">Workflow</p>
-                            <h2>Scenario Structure</h2>
-                        </div>
-                    </div>
-                    <ol class="workflow-list">
-                        <li>Customer Request</li>
-                        <li>What Do You Know?</li>
-                        <li>What Information Is Missing?</li>
-                        <li>What Should You Investigate?</li>
-                        <li>What Product/Function Is Involved?</li>
-                        <li>Build Your Response</li>
-                        <li>Review</li>
-                        <li>Score</li>
-                    </ol>
-                </section>
+            <div id="scenarioStepShell" class="scenario-step-shell" aria-live="polite"></div>
+        </section>
 
-                <section class="panel rail-card">
-                    <details class="questions-panel" open>
-                        <summary>Useful Questions to Ask</summary>
-                        <ul class="question-reference-list">
-                            <li>What system are you using?</li>
-                            <li>Do you have the drawings/specifications?</li>
-                            <li>What quantity is required?</li>
-                            <li>What is the intended function?</li>
-                            <li>Does this interface with another building system?</li>
-                            <li>What exact condition needs to trigger the action?</li>
-                            <li>Is there an existing device/module?</li>
-                            <li>Has the product compatibility been verified?</li>
-                            <li>What accessories or power requirements apply?</li>
-                            <li>Is there anything else on the plans that affects the BOM?</li>
-                        </ul>
-                    </details>
-                </section>
+        <section id="finalReadinessPanel" class="panel final-readiness hidden">
+            <div class="section-heading compact">
+                <h2>Real-World Readiness</h2>
+                <span id="readinessLevelBadge" class="badge">Continue Training</span>
+            </div>
 
-                <section class="panel rail-card">
-                    <div class="section-heading compact">
-                        <div>
-                            <p class="eyebrow">Training Reminder</p>
-                            <h2>Technical Accuracy</h2>
-                        </div>
-                    </div>
-                    <p>This simulator teaches professional reasoning. Verify against manufacturer documentation and project specifications.</p>
-                    <p>Actual fire alarm design and installation must follow applicable codes, engineered drawings, manufacturer documentation, and AHJ requirements.</p>
-                </section>
-            </aside>
+            <div class="readiness-score-grid">
+                <article class="summary-card">
+                    <span class="summary-label">Overall Score</span>
+                    <strong id="overallReadinessScore" class="summary-value">0 / 500</strong>
+                </article>
+                <article class="summary-card">
+                    <span class="summary-label">Scenarios Completed</span>
+                    <strong id="overallCompletedScenarios" class="summary-value">0 / 5</strong>
+                </article>
+            </div>
+
+            <article class="readiness-panel-block">
+                <h3>Skill Breakdown</h3>
+                <div id="skillBreakdownGrid" class="skill-breakdown-grid"></div>
+            </article>
+        </section>
+
+        <section class="panel field-notes-panel">
+            <details class="questions-panel">
+                <summary>Field notes: questions to ask &amp; accuracy reminder</summary>
+                <ul class="question-reference-list">
+                    <li>What system are you using, and do you have the drawings/specifications?</li>
+                    <li>What exact quantity or condition is required?</li>
+                    <li>Is there an existing device/module, and has compatibility been verified?</li>
+                    <li>Does this interface with another building system?</li>
+                </ul>
+                <p class="field-notes-reminder">This simulator teaches professional reasoning. Always verify against manufacturer documentation, project specifications, and applicable codes.</p>
+            </details>
         </section>
     </main>
 </div>

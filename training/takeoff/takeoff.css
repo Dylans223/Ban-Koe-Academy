@@ -156,16 +156,6 @@
     color: #fca5a5;
 }
 
-.takeoff-framework,
-.future-practice {
-    display: grid;
-    gap: var(--space-2);
-}
-
-.takeoff-framework {
-    display: none;
-}
-
 .takeoff-color-details > summary {
     padding: 4px 0;
     color: var(--text);
@@ -180,113 +170,9 @@
     color: #f59e0b;
 }
 
-.training-mode-key {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.mode-label {
-    padding: 6px 9px;
-    border-left: 3px solid var(--primary);
-    color: var(--text-secondary);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.mode-practice {
-    border-left-color: #22c55e;
-}
-
-.mode-advanced {
-    border-left-color: #f59e0b;
-}
-
-.framework-grid {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 9px;
-}
-
-.framework-step {
-    display: grid;
-    gap: 7px;
-    min-height: 112px;
-    align-content: start;
-    padding: 12px;
-    border: 1px solid var(--border);
-    border-top: 3px solid #64748b;
-    background: rgba(15, 23, 42, 0.48);
-}
-
-.framework-step h3 {
-    color: var(--text);
-    font-size: 15px;
-}
-
-.framework-step-number {
-    color: var(--text-secondary);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.framework-status {
-    color: #94a3b8;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.framework-step-available {
-    border-top-color: var(--primary);
-}
-
-.framework-step-available .framework-status {
-    color: var(--primary);
-}
-
-.framework-step-advanced {
-    border-top-color: #f59e0b;
-}
-
-.knowledge-check-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-2);
-}
-
-.knowledge-check {
-    border: 1px solid var(--border);
-    background: rgba(15, 23, 42, 0.45);
-}
-
-.knowledge-check summary {
-    padding: 14px;
-    color: var(--text);
-    cursor: pointer;
-    font-weight: 700;
-}
-
-.knowledge-answer {
-    display: grid;
-    gap: 5px;
-    padding: 0 14px 14px;
-    color: var(--text-secondary);
-}
-
-.knowledge-answer strong {
-    color: #86efac;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
 .future-practice {
+    display: grid;
+    gap: var(--space-2);
     grid-template-columns: minmax(0, 1fr) auto;
     border-color: rgba(245, 158, 11, 0.65);
     background: rgba(120, 73, 5, 0.16);
@@ -428,7 +314,7 @@
 
 .workflow-strip {
     display: grid;
-    grid-template-columns: repeat(9, minmax(110px, 1fr));
+    grid-template-columns: repeat(8, minmax(110px, 1fr));
     gap: 8px;
     overflow-x: auto;
     padding-bottom: 4px;
@@ -516,6 +402,48 @@
 .lesson-rule {
     color: var(--text) !important;
     font-weight: 700;
+}
+
+.lesson-look-for {
+    display: grid;
+    gap: 6px;
+    padding: 10px 12px;
+    border-left: 3px solid var(--primary);
+    background: rgba(37, 99, 235, 0.08);
+}
+
+.lesson-look-for > strong {
+    color: var(--text);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+}
+
+.lesson-look-for ul {
+    display: grid;
+    gap: 3px;
+    margin: 0;
+    padding-left: 18px;
+}
+
+.lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 4px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+}
+
+.lesson-nav a {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.lesson-nav a:hover,
+.lesson-nav a:focus-visible {
+    text-decoration: underline;
 }
 
 .lesson-muted {
@@ -974,10 +902,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .framework-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
     .color-legend-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -1073,8 +997,6 @@
         grid-template-columns: 1fr;
     }
 
-    .framework-grid,
-    .knowledge-check-grid,
     .future-practice,
     .color-legend-grid {
         grid-template-columns: 1fr;

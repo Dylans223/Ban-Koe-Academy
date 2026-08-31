@@ -654,11 +654,6 @@
      pointer-events: none;
 }
 
-.interactive-location-marker.is-marked.is-crossed-off {
-    border-style: dashed;
-    background: color-mix(in srgb, var(--marker-color, #f59e0b) 14%, transparent) !important;
-    box-shadow: 0 0 0 1px color-mix(in srgb, var(--marker-color, #f59e0b) 32%, transparent);
-}
 .interactive-drawing-layer[data-selected-color="DARK BLUE"] .interactive-location-marker.is-marked { --marker-color: #1d4ed8; }
 .interactive-drawing-layer[data-selected-color="RED"] .interactive-location-marker.is-marked { --marker-color: #ef4444; }
 .interactive-drawing-layer[data-selected-color="LIGHT BLUE"] .interactive-location-marker.is-marked { --marker-color: #60a5fa; }

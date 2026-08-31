@@ -112,33 +112,28 @@
             customerMessage: "The duct smoke detector is on the project, but we're not sure how it communicates with the fire alarm panel.",
             skills: ["Troubleshooting", "Wiring Awareness", "System Compatibility"],
             whatYouKnow: {
-                prompt: "What information should you verify first?",
-                type: "multi",
-                options: [
-                    { id: "fa-system", label: "Fire alarm system", importance: "The fire alarm platform affects compatible initiating and interface options." },
-                    { id: "detector-model", label: "Detector type/model", importance: "You need to know what kind of device or contacts are actually present." },
-                    { id: "monitor-function", label: "Required monitoring function", importance: "You are trying to understand how the detector reports its state." },
-                    { id: "existing-module", label: "Existing module/interface", importance: "A module may already be shown or specified on the project documents." },
-                    { id: "drawings", label: "Drawings", importance: "The plans or riser often show how the device is intended to connect." },
-                    { id: "manufacturer-docs", label: "Manufacturer documentation", importance: "You need documented compatibility and functional details." },
-                    { id: "siga-ddos-relay", label: "Whether the specified detector already has a built-in relay (e.g., SIGA-DDOS)", importance: "Some duct detectors, like the SIGA-DDOS, include their own onboard auxiliary relay for the applicable function. Recognizing this avoids adding an unnecessary duplicate external relay — other applications may still legitimately need a separate device such as a SIGA-CT1, CT2, or CR." },
-                    { id: "employee-count", label: "Number of employees in the building", importance: "This does not explain how the detector communicates to the panel." },
-                    { id: "paint-color", label: "Paint color of the duct", importance: "This does not affect communication method." }
-                ],
-                required: ["fa-system", "detector-model", "monitor-function", "existing-module", "drawings", "manufacturer-docs"],
-                optionalValid: ["siga-ddos-relay"]
-            },
-            missingInformation: {
-                prompt: "What key idea is still missing if the customer only says the detector is on the project?",
+                prompt: "What should you investigate FIRST?",
                 type: "single",
                 options: [
-                    { id: "monitoring-path", label: "How the detector's state is monitored and reported to the system", status: "best-answer" },
-                    { id: "battery-size", label: "Whether the batteries are large enough", status: "needs-clarification" },
-                    { id: "speaker-tap", label: "Which speaker watt tap is needed", status: "needs-clarification" },
-                    { id: "cabinet-color", label: "What color the panel enclosure should be", status: "needs-clarification" }
+                    { id: "check-paint", label: "What color the duct is painted", status: "needs-clarification" },
+                    { id: "check-monitoring", label: "How the duct detector's alarm/trouble state is monitored and reported to the panel", status: "best-answer" },
+                    { id: "check-headcount", label: "How many employees work in the building", status: "needs-clarification" },
+                    { id: "assume-module", label: "Assume a generic module will work and move on", status: "needs-clarification" }
                 ],
-                correct: "monitoring-path",
-                explanation: "The core question is how the duct detector communicates or is supervised by the fire alarm system."
+                correct: "check-monitoring",
+                explanation: "Start with how the detector's state gets to the panel — that's the actual troubleshooting question here."
+            },
+            missingInformation: {
+                prompt: "What would confirm your answer?",
+                type: "single",
+                options: [
+                    { id: "guess-based", label: "Guessing based on what similar projects usually use", status: "needs-clarification" },
+                    { id: "check-docs", label: "Reviewing the panel programming or riser diagram to see the monitored input for that detector", status: "best-answer" },
+                    { id: "ask-color", label: "Asking the customer what color wire was used", status: "needs-clarification" },
+                    { id: "assume-module2", label: "Assuming a module already works without checking", status: "needs-clarification" }
+                ],
+                correct: "check-docs",
+                explanation: "The panel programming or riser tells you what's actually monitored, instead of guessing."
             },
             investigate: {
                 prompt: "What general function are you investigating?",
@@ -177,240 +172,210 @@
             reviewPrompt: "How confident are you in this troubleshooting response?"
         },
         {
-            id: "customer-needs-notification",
-            title: "Customer Needs Notification",
-            shortTitle: "Notification Request",
+            id: "customer-substitute-request",
+            title: "Customer Substitute Request",
+            shortTitle: "Substitute Request",
             difficulty: "Intermediate",
-            customerRole: "Customer",
-            customerMessage: "We're adding notification devices to a school gymnasium. What should we use?",
-            skills: ["Application Thinking", "Product Recognition", "Clarifying Questions"],
-            whatYouKnow: {
-                prompt: "What should you ask before selecting a device?",
-                type: "multi",
-                options: [
-                    { id: "room-application", label: "Room/application", importance: "The physical application affects the type of device you investigate." },
-                    { id: "ceiling-height", label: "Ceiling height", importance: "Mounting conditions can affect the device family or configuration to investigate." },
-                    { id: "existing-system", label: "Existing system", importance: "The platform and device family must be compatible with the system." },
-                    { id: "notification-type", label: "Required notification type", importance: "You need to understand whether the application requires voice, tone, visible, or combined signaling." },
-                    { id: "notification-circuit", label: "Existing notification circuit", importance: "Existing circuit architecture can affect compatibility and approach." },
-                    { id: "drawings-specs", label: "Project drawings/specifications", importance: "The documents define the intended application and constraints." },
-                    { id: "coverage", label: "Coverage requirements", importance: "You need to know what the design is trying to accomplish in the space." },
-                    { id: "compatibility", label: "Manufacturer/system compatibility", importance: "Product family compatibility must be verified." }
-                ],
-                required: ["room-application", "ceiling-height", "existing-system", "notification-type", "notification-circuit", "drawings-specs", "coverage", "compatibility"]
-            },
-            missingInformation: {
-                prompt: "What is the most important reminder before naming the exact device?",
-                type: "single",
-                options: [
-                    { id: "more-info", label: "The answer requires more project information before device selection", status: "best-answer" },
-                    { id: "always-wall", label: "Gyms always use one wall device type", status: "needs-clarification" },
-                    { id: "always-pull", label: "A pull station solves the problem", status: "needs-clarification" },
-                    { id: "any-speaker", label: "Any speaker is acceptable if it fits", status: "needs-clarification" }
-                ],
-                correct: "more-info",
-                explanation: "Notification selection depends on the system design, required notification method, acoustics, mounting conditions, and project specifications."
-            },
-            investigate: {
-                prompt: "For a large gymnasium, which type of notification appliance would you investigate first?",
-                type: "single",
-                options: [
-                    { id: "surface-speaker", label: "Surface-mounted speaker", status: "also-reasonable" },
-                    { id: "ceiling-speaker", label: getVerifiedNotificationLabel(), status: "best-answer" },
-                    { id: "duct-detector", label: "Duct detector", status: "needs-clarification" },
-                    { id: "monitor-module", label: "Monitor module", status: "needs-clarification" },
-                    { id: "pull-station", label: "Pull station", status: "needs-clarification" }
-                ],
-                correct: "ceiling-speaker",
-                alsoReasonable: ["surface-speaker"],
-                explanation: `${getVerifiedNotificationExplanation()} Selection still depends on the design and specifications.`
-            },
-            productFunction: {
-                prompt: "What product/function lesson matters most here?",
-                type: "single",
-                options: [
-                    { id: "compatibility-first", label: "Investigate the notification family that fits the room and verify compatibility", status: "best-answer" },
-                    { id: "pick-any-genesis", label: "Pick any Genesis device without reviewing the space", status: "needs-clarification" },
-                    { id: "skip-docs", label: "Skip drawings because the room name is enough", status: "needs-clarification" },
-                    { id: "treat-as-duct", label: "Treat it as a duct detection question", status: "needs-clarification" }
-                ],
-                correct: "compatibility-first",
-                explanation: "Start with the application, then verify the compatible notification family and mounting approach against the project documents."
-            },
-            responseBuilder: {
-                intro: "Build the response you would send before recommending a final notification product.",
-                options: [
-                    { id: "ask-room", label: "I'd confirm the room conditions, mounting constraints, and required notification type.", required: true },
-                    { id: "review-system", label: "I'd confirm the existing system and compatible notification family.", required: true },
-                    { id: "review-docs", label: "I'd review drawings/specifications and coverage expectations for the gym.", required: true },
-                    { id: "investigate-speaker", label: `Then I'd investigate ${getVerifiedNotificationShort()} or another compatible notification appliance that matches the application.`, required: true },
-                    { id: "promise-device", label: "I can promise a single device now without checking the documents.", required: false, incorrect: true }
-                ]
-            },
-            reviewPrompt: "How confident are you in this application-based response?"
-        },
-        {
-            id: "missing-information-quote",
-            title: "Something Doesn't Look Right",
-            shortTitle: "Missing Quote Info",
-            difficulty: "Advanced",
-            customerRole: "Customer",
-            customerMessage: "Please quote the fire alarm devices for our new building.",
-            skills: ["Estimating Judgment", "BOM Thinking", "Professional Communication"],
-            whatYouKnow: {
-                prompt: "Can you confidently produce a complete BOM from this information?",
-                type: "single",
-                options: [
-                    { id: "yes-complete", label: "Yes, the request is complete enough to quote accurately", status: "needs-clarification" },
-                    { id: "no-not-enough", label: "No, there is not enough information for a complete and accurate BOM", status: "best-answer" }
-                ],
-                correct: "no-not-enough",
-                explanation: "Sales Support should recognize when there is not enough information to build an accurate BOM or quote."
-            },
-            missingInformation: {
-                prompt: "What should you request before building the BOM?",
-                type: "multi",
-                options: [
-                    { id: "floor-plans", label: "Floor plans", importance: "You need layout information to determine scope and quantities." },
-                    { id: "device-quantities", label: "Device quantities or takeoff basis", importance: "BOM accuracy depends on quantity information." },
-                    { id: "panel-requirements", label: "Panel/system requirements", importance: "The system platform affects compatible devices and interfaces." },
-                    { id: "notification-requirements", label: "Notification requirements", importance: "You need to know what type of signaling is required." },
-                    { id: "duct-detectors", label: "Duct detector requirements", importance: "Related detection scope must be understood." },
-                    { id: "hvac-interfaces", label: "HVAC interfaces", importance: "Building system interfaces affect materials and scope." },
-                    { id: "door-holders", label: "Door holder release requirements", importance: "These add interface scope." },
-                    { id: "elevator", label: "Elevator interfaces", importance: "Elevator-related scope is often easy to miss if not clarified." },
-                    { id: "power", label: "Battery/power requirements", importance: "Power scope may affect BOM completeness." },
-                    { id: "specifications", label: "Specifications", importance: "Specifications define design and product expectations." },
-                    { id: "existing-system", label: "Existing system information", importance: "If the project ties into existing equipment, compatibility matters." }
-                ],
-                required: ["floor-plans", "device-quantities", "panel-requirements", "notification-requirements", "duct-detectors", "hvac-interfaces", "door-holders", "elevator", "power", "specifications", "existing-system"]
-            },
-            investigate: {
-                prompt: "What should you investigate before calling the BOM quote-ready?",
-                type: "multi",
-                options: [
-                    { id: "drawings-scope", label: "Drawings/specifications and actual project scope", importance: "The project scope must be understood before pricing or quoting materials." },
-                    { id: "required-interfaces", label: "Required interfaces and related system functions", importance: "These often drive missing BOM scope." },
-                    { id: "compatibility", label: "Product family compatibility", importance: "Device and system compatibility must be verified." },
-                    { id: "revisions", label: "Current revisions and assumptions", importance: "Quote scope can change with project revisions." },
-                    { id: "ship-color", label: "Preferred truck color", importance: "This does not affect BOM readiness." }
-                ],
-                required: ["drawings-scope", "required-interfaces", "compatibility", "revisions"]
-            },
-            productFunction: {
-                prompt: "What is the strongest professional move in this situation?",
-                type: "single",
-                options: [
-                    { id: "request-clarification", label: "Request the missing project information before building the final BOM", status: "best-answer" },
-                    { id: "guess-devices", label: "Guess the common devices and hope the quote is close", status: "needs-clarification" },
-                    { id: "skip-interfaces", label: "Ignore interface questions until after the quote is sent", status: "needs-clarification" },
-                    { id: "quote-anyway", label: "Quote immediately because Edwards was mentioned", status: "needs-clarification" }
-                ],
-                correct: "request-clarification",
-                explanation: "Before I build the BOM, I'd need the project drawings/specifications and clarification on the system requirements and required interfaces."
-            },
-            responseBuilder: {
-                intro: "Build the professional response to the quote request.",
-                options: [
-                    { id: "acknowledge-request", label: "I'd be glad to help, but I need a clearer project basis before building the BOM.", required: true },
-                    { id: "request-docs", label: "Please send the project drawings/specifications and any available system requirements.", required: true },
-                    { id: "clarify-interfaces", label: "I also need clarification on notification scope and any required interfaces such as duct detectors, HVAC shutdown, door holders, or elevator functions.", required: true },
-                    { id: "confirm-quantities", label: "Once the missing information is verified, I can build a cleaner BOM and quote response.", required: true },
-                    { id: "quote-now", label: "I can provide a complete BOM now without further clarification.", required: false, incorrect: true }
-                ]
-            },
-            reviewPrompt: "How confident are you in pushing back for more information?"
-        },
-        {
-            id: "full-project-request",
-            title: "Full Project Request",
-            shortTitle: "Full Project",
-            difficulty: "Advanced",
             customerRole: "Contractor",
-            customerMessage: "A contractor sends you a project request for a three-story commercial office building and wants a material quote.",
-            skills: ["Capstone Reasoning", "BOM/Estimating", "Customer Communication"],
+            customerMessage: `Our supplier is out of stock on the specified ${getVerifiedOrFallback(verifiedReferences.pullStation, "pull station")}. Can we substitute a different manufacturer's pull station instead?`,
+            skills: ["Product Verification", "Compatibility Judgment", "Customer Communication"],
+            whatYouKnow: {
+                prompt: "What is the customer actually asking you to decide?",
+                type: "single",
+                options: [
+                    { id: "cheaper", label: "Whether the substitute is cheaper than the specified device", status: "needs-clarification" },
+                    { id: "compatible", label: "Whether a different manufacturer's device is compatible with the specified system and application", status: "best-answer" },
+                    { id: "discontinued", label: "Whether the original device has been discontinued", status: "needs-clarification" },
+                    { id: "brand-preference", label: "Whether the customer simply prefers a different brand", status: "needs-clarification" }
+                ],
+                correct: "compatible",
+                explanation: "A substitution request is a compatibility question first. Price, brand preference, or availability don't answer whether the device will actually work on this system."
+            },
+            missingInformation: {
+                prompt: "Which response is the safest next action?",
+                type: "single",
+                options: [
+                    { id: "reject-auto", label: "Reject any substitute automatically, no exceptions", status: "needs-clarification" },
+                    { id: "approve-now", label: "Approve the substitute now since the customer is in a hurry", status: "needs-clarification" },
+                    { id: "customer-decides", label: "Let the customer decide since it's their project", status: "needs-clarification" },
+                    { id: "verify-first", label: "Tell the customer you'll verify compatibility and listing before approving", status: "best-answer" }
+                ],
+                correct: "verify-first",
+                explanation: "Sales Support can be responsive without approving something unverified. Confirming compatibility first protects the customer and the project."
+            },
+            investigate: {
+                prompt: "Which of these must be verified before approving a substitute?",
+                type: "multi",
+                options: [
+                    { id: "listing-compatibility", label: "Listing/compatibility with the specified fire alarm system", importance: "A substitute must be compatible with the specified system, not just \"a pull station.\"" },
+                    { id: "mounting-fit", label: "Mounting/physical fit with existing back boxes or trim", importance: "Physical fit affects whether the substitute can actually be installed as specified." },
+                    { id: "lower-price", label: "Whether it's a lower price", importance: "Price doesn't determine whether a substitute is technically acceptable." },
+                    { id: "brand-liked", label: "Whether the customer has used the brand before", importance: "Familiarity isn't the same as verified compatibility." }
+                ],
+                required: ["listing-compatibility", "mounting-fit"]
+            },
+            productFunction: {
+                prompt: "The substitute pull station is UL listed for fire alarm use in general, but you haven't confirmed it works with the specified addressable system. What should you do?",
+                type: "single",
+                options: [
+                    { id: "approve-listed", label: "Approve it since it's UL listed for fire alarm use", status: "needs-clarification" },
+                    { id: "reject-outright", label: "Reject it outright without checking anything further", status: "needs-clarification" },
+                    { id: "confirm-system-compat", label: "Confirm compatibility with the specified system/manufacturer documentation before approving", status: "best-answer" },
+                    { id: "installer-decides", label: "Approve it and let the installer sort out compatibility", status: "needs-clarification" }
+                ],
+                correct: "confirm-system-compat",
+                explanation: "General UL listing doesn't guarantee compatibility with a specific addressable system. That still has to be verified against manufacturer documentation."
+            },
+            responseBuilder: {
+                intro: "Build the response you would send back about the substitute request.",
+                options: [
+                    { id: "verify-first-rb", label: "I'd let you know we need to verify compatibility with the specified system before approving a substitute.", required: true },
+                    { id: "confirm-listing", label: "I'd confirm listing and any approvals required by the project specifications.", required: true },
+                    { id: "approve-any-instock", label: "I can approve any substitute that happens to be in stock right away.", required: false, incorrect: true },
+                    { id: "follow-up", label: "I'll follow up as soon as compatibility is confirmed.", required: true }
+                ]
+            },
+            reviewPrompt: "How confident are you in holding off on approval until compatibility is verified?"
+        },
+        {
+            id: "drawing-bom-discrepancy",
+            title: "Drawing vs. BOM Discrepancy",
+            shortTitle: "Quantity Discrepancy",
+            difficulty: "Advanced",
+            customerRole: "Estimator (Internal)",
+            customerMessage: `The riser drawing shows 14 second-floor smoke detectors (specified as ${getVerifiedOrFallback(verifiedReferences.smokeDetector, "smoke detector")}), but the BOM/quote request lists 18. Which number should we quote?`,
+            skills: ["Drawing Review", "BOM Accuracy", "Attention to Detail"],
             scenarioMetadata: [
-                "Edwards system requested",
-                "Three floors",
-                "Smoke detection required",
-                "Manual pull stations",
-                "Horn/strobes",
-                "Two duct smoke detectors",
-                "HVAC shutdown",
-                "Door holder release",
-                "Elevator interface",
-                "Exterior notification",
-                "Customer wants a material quote",
-                "Drawings are available"
+                "Riser drawing: 14 second-floor smoke detectors",
+                "BOM/quote request: 18 second-floor smoke detectors",
+                "Drawing date: 3/12",
+                "BOM request date: 3/20"
             ],
             whatYouKnow: {
-                prompt: "What should you review first?",
-                type: "multi",
-                options: [
-                    { id: "drawings", label: "Drawings", importance: "They define scope, quantity clues, and interface needs." },
-                    { id: "specifications", label: "Specifications", importance: "They define the required system expectations and product direction." },
-                    { id: "system-requirements", label: "System requirements", importance: "The system platform and required functions drive compatibility." },
-                    { id: "existing-system", label: "Existing system information if applicable", importance: "If the project touches existing equipment, you need to understand it." },
-                    { id: "invoice-format", label: "Invoice formatting", importance: "This can wait until the technical scope is understood." }
-                ],
-                required: ["drawings", "specifications", "system-requirements", "existing-system"]
-            },
-            missingInformation: {
-                prompt: "What information still needs clarification?",
-                type: "multi",
-                options: [
-                    { id: "quantity-requirements", label: "Quantity requirements", importance: "A project request does not automatically equal a verified takeoff." },
-                    { id: "notification-type", label: "Notification type", importance: "Different signaling approaches can change the products involved." },
-                    { id: "hvac-interface", label: "HVAC interface requirements", importance: "The building interface details matter." },
-                    { id: "door-holder", label: "Door holder interface", importance: "Door holder release scope can add interfaces and accessories." },
-                    { id: "elevator-interface", label: "Elevator interface", importance: "Elevator-related scope must be clarified instead of assumed." },
-                    { id: "exterior-notification", label: "Exterior notification requirements", importance: "Exterior devices often require specific review." },
-                    { id: "battery-power", label: "Battery/power requirements", importance: "Power scope should not be assumed complete." },
-                    { id: "compatibility", label: "Product compatibility", importance: "Product family compatibility must be checked." },
-                    { id: "special-requirements", label: "Special project requirements", importance: "Special conditions can change the BOM." }
-                ],
-                required: ["quantity-requirements", "notification-type", "hvac-interface", "door-holder", "elevator-interface", "exterior-notification", "battery-power", "compatibility", "special-requirements"]
-            },
-            investigate: {
-                prompt: "Which high-level system components must you identify for this project?",
-                type: "multi",
-                options: [
-                    { id: "control-panel", label: "Control panel", importance: "The central system platform must be identified." },
-                    { id: "initiating", label: "Initiating devices", importance: "Smoke detectors and pull stations are part of the scope." },
-                    { id: "notification", label: "Notification", importance: "Horn/strobe or other notification scope must be captured." },
-                    { id: "duct-detection", label: "Duct detection", importance: "The request includes duct smoke detectors." },
-                    { id: "monitoring", label: "Monitoring", importance: "Some external devices may require monitored inputs." },
-                    { id: "control-interfaces", label: "Control interfaces", importance: "HVAC, door holders, and elevator functions imply interface scope." },
-                    { id: "power-batteries", label: "Power/batteries", importance: "Power scope may need to be accounted for." },
-                    { id: "accessories", label: "Accessories", importance: "Accessories and related items may affect BOM completeness." }
-                ],
-                required: ["control-panel", "initiating", "notification", "duct-detection", "monitoring", "control-interfaces", "power-batteries", "accessories"]
-            },
-            productFunction: {
-                prompt: "Are you ready to quote immediately after the customer request?",
+                prompt: "Which quantity should you trust at this point?",
                 type: "single",
                 options: [
-                    { id: "not-yet", label: "Not until the project requirements, interfaces, and compatibility are verified", status: "best-answer" },
-                    { id: "quote-now", label: "Yes, because the building type is already known", status: "needs-clarification" },
-                    { id: "skip-review", label: "Yes, if we assume the common system components", status: "needs-clarification" },
-                    { id: "only-panel", label: "Yes, as long as the control panel is identified", status: "needs-clarification" }
+                    { id: "trust-18", label: "18, because that's what the BOM request lists", status: "needs-clarification" },
+                    { id: "trust-14", label: "14, because that's what the drawing shows", status: "needs-clarification" },
+                    { id: "split", label: "Split the difference and quote 16", status: "needs-clarification" },
+                    { id: "confirm-current", label: "Neither yet — confirm which one reflects the current design before quoting", status: "best-answer" }
                 ],
-                correct: "not-yet",
-                explanation: "Never rush from a customer request directly to a quote. Good estimating requires verification."
+                correct: "confirm-current",
+                explanation: "A newer document isn't automatically correct, and an older one isn't automatically outdated. The discrepancy has to be resolved against the current design basis, not guessed."
+            },
+            missingInformation: {
+                prompt: "What should you request from the estimator before finalizing the BOM?",
+                type: "single",
+                options: [
+                    { id: "quote-18-now", label: "Nothing — just quote 18 since it's the newer number", status: "needs-clarification" },
+                    { id: "revision-basis", label: "The drawing revision number/date the BOM request was based on", status: "best-answer" },
+                    { id: "quote-14-now", label: "Nothing — just quote 14 since it's on the drawing", status: "needs-clarification" },
+                    { id: "customer-floor-pref", label: "The customer's preferred floor number", status: "needs-clarification" }
+                ],
+                correct: "revision-basis",
+                explanation: "Knowing which drawing revision the BOM was built from tells you whether the higher count reflects a real design change or a takeoff error."
+            },
+            investigate: {
+                prompt: "If the BOM was based on a newer drawing revision, what should you check to confirm that?",
+                type: "single",
+                options: [
+                    { id: "vendor-stock", label: "Whether the vendor has 18 units in stock", status: "needs-clarification" },
+                    { id: "device-price", label: "The unit price of the smoke detectors", status: "needs-clarification" },
+                    { id: "revision-match", label: "That the drawing revision date/number matches the basis used for the BOM", status: "best-answer" },
+                    { id: "customer-mood", label: "How the customer feels about the extra units", status: "needs-clarification" }
+                ],
+                correct: "revision-match",
+                explanation: "Matching the revision confirms the higher count is a real design update, not a takeoff mistake carried into the BOM."
+            },
+            productFunction: {
+                prompt: "What is the risk if you quote the wrong quantity without resolving the discrepancy?",
+                type: "single",
+                options: [
+                    { id: "no-risk", label: "No risk — quotes are always just estimates", status: "needs-clarification" },
+                    { id: "shortchange-project", label: "Under-quoting could shortchange the project and lead to a costly change order later", status: "best-answer" },
+                    { id: "looks-professional", label: "Over-quoting always looks more professional", status: "needs-clarification" },
+                    { id: "estimator-fixes", label: "The estimator will just fix it later during ordering", status: "needs-clarification" }
+                ],
+                correct: "shortchange-project",
+                explanation: "An unresolved quantity discrepancy either shortchanges the project or inflates it — both cost real money and trust later."
             },
             responseBuilder: {
-                intro: "Build the high-level Sales Support response and BOM approach.",
+                intro: "Build the note you'd send back about this discrepancy.",
                 options: [
-                    { id: "review-first", label: "I'd review the drawings, specifications, and system requirements first.", required: true },
-                    { id: "identify-scope", label: "I'd identify the major system categories and related interfaces before finalizing the BOM.", required: true },
-                    { id: "clarify-open-items", label: "I'd clarify notification type, HVAC, door holder, elevator, exterior notification, and power requirements.", required: true },
-                    { id: "verify-products", label: "Then I'd verify compatible products or use functional placeholders until the exact product is confirmed.", required: true },
-                    { id: "build-bom", label: "After that, I'd build a high-level BOM and review it before quote release.", required: true },
-                    { id: "rush-quote", label: "I can skip verification and rush the quote because drawings are available.", required: false, incorrect: true }
+                    { id: "flag-discrepancy", label: "I'd flag the drawing vs. BOM discrepancy before finalizing the quote.", required: true },
+                    { id: "confirm-revision", label: "I'd confirm which drawing revision the BOM request is based on.", required: true },
+                    { id: "quote-bigger-safe", label: "I'd just quote the larger number to be safe, without asking.", required: false, incorrect: true },
+                    { id: "note-for-estimator", label: "I'd note the discrepancy in the project file for the estimator to resolve.", required: true }
                 ]
             },
-            requiresBomBuilder: true,
-            reviewPrompt: "How confident are you that the project is quote-ready right now?"
+            reviewPrompt: "How confident are you in resolving this discrepancy before quoting?"
+        },
+        {
+            id: "rush-quote-request",
+            title: "Rush Quote Request",
+            shortTitle: "Rush Quote",
+            difficulty: "Advanced",
+            customerRole: "Customer",
+            customerMessage: "I need a quote in the next hour — just send me pricing for a basic fire alarm system for a small office. I don't have drawings ready yet.",
+            skills: ["Prioritization", "Professional Judgment", "Customer Communication"],
+            whatYouKnow: {
+                prompt: "What should you do FIRST?",
+                type: "single",
+                options: [
+                    { id: "quote-generic-now", label: "Quote a generic system immediately so you don't miss the deadline", status: "needs-clarification" },
+                    { id: "refuse-no-drawings", label: "Tell the customer no quote is possible without drawings", status: "needs-clarification" },
+                    { id: "explain-whats-possible", label: "Explain what you can responsibly provide in the time available and what's still needed", status: "best-answer" },
+                    { id: "wait-for-drawings", label: "Wait to respond at all until drawings arrive", status: "needs-clarification" }
+                ],
+                correct: "explain-whats-possible",
+                explanation: "Being responsive and being accurate aren't opposites. Say what you can do now, and what you still need."
+            },
+            missingInformation: {
+                prompt: "Which response best balances urgency and accuracy?",
+                type: "single",
+                options: [
+                    { id: "exact-10-min", label: "\"Sure, I'll have an exact quote for you in 10 minutes.\"", status: "needs-clarification" },
+                    { id: "no-drawings-no-help", label: "\"I can't help without drawings.\"", status: "needs-clarification" },
+                    { id: "whenever-time", label: "\"I'll get to it whenever I have time.\"", status: "needs-clarification" },
+                    { id: "budgetary-with-assumptions", label: "\"I can send a preliminary budgetary estimate now, but I'll need basic square footage and occupancy info to firm it up.\"", status: "best-answer" }
+                ],
+                correct: "budgetary-with-assumptions",
+                explanation: "This response is honest about what's possible right now and tells the customer exactly what would make the number more accurate."
+            },
+            investigate: {
+                prompt: "What is the minimum information needed to give even a rough budgetary number?",
+                type: "single",
+                options: [
+                    { id: "part-numbers", label: "Exact device part numbers", status: "needs-clarification" },
+                    { id: "any-number-works", label: "Nothing — any number works for a rough estimate", status: "needs-clarification" },
+                    { id: "sqft-occupancy", label: "Approximate square footage and occupancy type", status: "best-answer" },
+                    { id: "email-signature", label: "The customer's company letterhead", status: "needs-clarification" }
+                ],
+                correct: "sqft-occupancy",
+                explanation: "Square footage and occupancy type are the minimum inputs that make even a rough budgetary range meaningful."
+            },
+            productFunction: {
+                prompt: "What should you avoid doing under a tight deadline?",
+                type: "single",
+                options: [
+                    { id: "ask-clarifying", label: "Asking clarifying questions", status: "needs-clarification" },
+                    { id: "promise-firm-quote", label: "Promising a firm, itemized quote with no project basis", status: "best-answer" },
+                    { id: "state-assumptions", label: "Providing a budgetary range with clearly stated assumptions", status: "needs-clarification" },
+                    { id: "say-whats-needed", label: "Telling the customer what information you still need", status: "needs-clarification" }
+                ],
+                correct: "promise-firm-quote",
+                explanation: "Promising exact pricing with no project basis sets an expectation you can't responsibly meet — the other three are all good practice, not mistakes."
+            },
+            responseBuilder: {
+                intro: "Build the response you'd send back right now.",
+                options: [
+                    { id: "budgetary-range", label: "I'd provide a budgetary range based on typical small-office systems, with stated assumptions.", required: true },
+                    { id: "final-depends", label: "I'd note that final pricing depends on drawings/specifications.", required: true },
+                    { id: "ask-basics", label: "I'd ask for basic square footage and occupancy to firm up the range.", required: true },
+                    { id: "exact-now", label: "I'd send an exact itemized quote right now with no details.", required: false, incorrect: true }
+                ]
+            },
+            reviewPrompt: "How confident are you in this response given the time pressure?"
         }
     ];
 
@@ -444,38 +409,20 @@
 
     const el = {
         navButtons: document.querySelectorAll("[data-nav-target]"),
-        scenarioHeaderLabel: document.getElementById("scenarioHeaderLabel"),
-        scenarioProgressFill: document.getElementById("scenarioProgressFill"),
-        scenarioProgressValue: document.getElementById("scenarioProgressValue"),
+        scenarioProgressLabel: document.getElementById("scenarioProgressLabel"),
         completedCountBadge: document.getElementById("completedCountBadge"),
         scenarioCards: document.getElementById("scenarioCards"),
         activeScenarioTitle: document.getElementById("activeScenarioTitle"),
         activeScenarioDifficulty: document.getElementById("activeScenarioDifficulty"),
-        activeScenarioSkills: document.getElementById("activeScenarioSkills"),
         scenarioStepShell: document.getElementById("scenarioStepShell"),
+        prevScenarioButton: document.getElementById("prevScenarioButton"),
+        nextScenarioButton: document.getElementById("nextScenarioButton"),
         finalReadinessPanel: document.getElementById("finalReadinessPanel"),
         readinessLevelBadge: document.getElementById("readinessLevelBadge"),
         overallReadinessScore: document.getElementById("overallReadinessScore"),
-        overallReadinessAverage: document.getElementById("overallReadinessAverage"),
         overallCompletedScenarios: document.getElementById("overallCompletedScenarios"),
-        skillsDemonstratedList: document.getElementById("skillsDemonstratedList"),
-        skillBreakdownGrid: document.getElementById("skillBreakdownGrid"),
-        moduleStepList: document.getElementById("moduleStepList"),
-        moduleObjectiveChip: document.getElementById("moduleObjectiveChip"),
-        moduleObjectiveTitle: document.getElementById("moduleObjectiveTitle"),
-        moduleObjectiveText: document.getElementById("moduleObjectiveText")
+        skillBreakdownGrid: document.getElementById("skillBreakdownGrid")
     };
-
-    const scenarioFlowSteps = [
-        { label: "Customer", chip: "Customer Request", title: "Separate the request from the solution.", objective: "Your goal is to read the customer message and understand the actual need before jumping to products." },
-        { label: "Know", chip: "What Do You Know?", title: "Identify what the request already tells you.", objective: "Your goal is to recognize the clearest meaning of the request before deciding what information is still missing." },
-        { label: "Missing", chip: "Information Needed", title: "Identify what information is still missing.", objective: "Your goal is to decide what you still need before choosing a product, function, or BOM approach." },
-        { label: "Investigate", chip: "What To Investigate", title: "Decide what type of problem you are solving.", objective: "Your goal is to recognize whether the scenario is about monitoring, control, application fit, documentation, or scope review." },
-        { label: "Function", chip: "Product / Function", title: "Choose the strongest product or function approach.", objective: "Your goal is to investigate the right function first and avoid promising products without verification." },
-        { label: "Respond", chip: "Build Your Response", title: "Draft the professional response you would send back.", objective: "Your goal is to include the important confirmation, compatibility, and scope-review points in your response." },
-        { label: "Review", chip: "Review", title: "Check your reasoning before you submit it.", objective: "Your goal is to review the decision, identify uncertainty, and choose the confidence level that matches the information you actually have." },
-        { label: "Score", chip: "Score", title: "Review the result and why it matters.", objective: "Your goal is to learn from the decision and carry the reasoning pattern into the next real-world scenario." }
-    ];
 
     window.addEventListener("DOMContentLoaded", initializeScenarioModule);
 
@@ -506,6 +453,21 @@
                 }
             });
         });
+
+        el.prevScenarioButton.addEventListener("click", () => moveToScenario(-1));
+        el.nextScenarioButton.addEventListener("click", () => moveToScenario(1));
+    }
+
+    function moveToScenario(direction) {
+        const index = scenarioDefinitions.findIndex((scenario) => scenario.id === moduleState.selectedScenarioId);
+        const targetIndex = index + direction;
+        if (targetIndex < 0 || targetIndex >= scenarioDefinitions.length) {
+            return;
+        }
+        moduleState.selectedScenarioId = scenarioDefinitions[targetIndex].id;
+        updateHeader();
+        renderScenarioCards();
+        renderActiveScenario();
     }
 
     function renderScenarioCards() {
@@ -513,28 +475,16 @@
             const scenarioState = getScenarioState(scenario.id);
             const isActive = moduleState.selectedScenarioId === scenario.id;
             const complete = scenarioState.completed;
-            const progressLabel = complete ? `${scenarioState.score.total}/100` : `Step ${scenarioState.currentStep} of 8`;
             return `
                 <article class="scenario-card ${isActive ? "is-active" : ""} ${complete ? "is-complete" : ""}">
                     <div class="scenario-card-top">
                         <div>
-                            <p class="message-label">Scenario ${index + 1}</p>
+                            <p class="message-label">Scenario ${index + 1} · ${escapeHTML(scenario.difficulty)}</p>
                             <h3>${escapeHTML(scenario.title)}</h3>
                         </div>
-                        <span class="status-chip ${complete ? "good" : "warn"}">${complete ? "Complete" : "In Progress"}</span>
+                        <span class="status-chip ${complete ? "good" : "warn"}">${complete ? `${scenarioState.score.total}/100` : "In Progress"}</span>
                     </div>
                     <p>${escapeHTML(scenario.customerMessage)}</p>
-                    <div class="skill-chip-list">
-                        ${scenario.skills.map((skill) => `<span class="skill-chip">${escapeHTML(skill)}</span>`).join("")}
-                    </div>
-                    <div class="review-summary-row">
-                        <span class="muted-label">Difficulty</span>
-                        <strong>${escapeHTML(scenario.difficulty)}</strong>
-                    </div>
-                    <div class="review-summary-row">
-                        <span class="muted-label">Completion Status</span>
-                        <strong>${escapeHTML(progressLabel)}</strong>
-                    </div>
                     <div class="scenario-actions">
                         <button class="btn btn-primary" type="button" data-start-scenario="${escapeHTML(scenario.id)}">${isActive ? "Continue Scenario" : "Start Scenario"}</button>
                         ${complete ? `<button class="btn btn-secondary" type="button" data-reset-scenario="${escapeHTML(scenario.id)}">Try Again</button>` : ""}
@@ -564,44 +514,22 @@
             });
         });
 
-        el.completedCountBadge.textContent = `${getCompletedScenarioCount()} / 5 Complete`;
+        el.completedCountBadge.textContent = `${getCompletedScenarioCount()} of 5 complete`;
     }
 
     function updateHeader() {
         const activeScenario = getSelectedScenario();
         const index = scenarioDefinitions.findIndex((scenario) => scenario.id === activeScenario.id);
-        const progressPercent = Math.round(((index + 1) / scenarioDefinitions.length) * 100);
-        el.scenarioHeaderLabel.textContent = `Scenario ${index + 1} of 5`;
-        el.scenarioProgressFill.style.width = `${progressPercent}%`;
-        el.scenarioProgressValue.textContent = `${progressPercent}%`;
+        el.scenarioProgressLabel.textContent = `Scenario ${index + 1} of 5`;
         el.activeScenarioTitle.textContent = activeScenario.title;
         el.activeScenarioDifficulty.textContent = activeScenario.difficulty;
-        el.activeScenarioSkills.textContent = activeScenario.skills.join(" • ");
-    }
-
-    function renderModuleShell() {
-        const scenario = getSelectedScenario();
-        const scenarioState = getScenarioState(scenario.id);
-        const visualStep = Math.min(scenarioState.currentStep, 8);
-
-        el.moduleStepList.innerHTML = scenarioFlowSteps.map((step, index) => {
-            const stepNumber = index + 1;
-            const isComplete = scenarioState.completed ? true : stepNumber < visualStep;
-            const isActive = !scenarioState.completed && stepNumber === visualStep;
-            const icon = isComplete ? "✓" : isActive ? "●" : "○";
-            return `<span class="module-step-item ${isComplete ? "is-complete" : isActive ? "is-active" : ""}"><span class="module-step-icon">${icon}</span>${stepNumber} ${step.label}</span>`;
-        }).join("");
-
-        const activeConfig = scenarioState.completed ? scenarioFlowSteps[7] : scenarioFlowSteps[visualStep - 1];
-        el.moduleObjectiveChip.textContent = `${scenario.title} • ${activeConfig.chip}`;
-        el.moduleObjectiveTitle.textContent = activeConfig.title;
-        el.moduleObjectiveText.textContent = activeConfig.objective;
+        el.prevScenarioButton.disabled = index === 0;
+        el.nextScenarioButton.disabled = index === scenarioDefinitions.length - 1;
     }
 
     function renderActiveScenario() {
         const scenario = getSelectedScenario();
         const scenarioState = getScenarioState(scenario.id);
-        renderModuleShell();
         el.scenarioStepShell.innerHTML = renderStepMarkup(scenario, scenarioState);
         bindStepInteractions(scenario, scenarioState);
     }
@@ -672,39 +600,89 @@
                 </div>
 
                 <article class="decision-card">
-                    ${question.type === "single" ? renderSingleChoiceQuestion(question, value) : renderMultiChoiceQuestion(question, value)}
+                    ${question.type === "single" ? renderSingleChoiceQuestion(question, value, feedback) : renderMultiChoiceQuestion(question, value, feedback)}
                     ${feedback ? `<div class="feedback-box ${escapeHTML(feedback.type)}">${escapeHTML(feedback.message)}</div>` : ""}
                     ${question.type === "multi" ? renderImportanceLegend(question) : ""}
                 </article>
 
                 <div class="panel-actions">
-                    <button class="btn btn-primary" type="button" data-check-question="${escapeHTML(key)}">Check Step</button>
+                    <button class="btn btn-primary" type="button" data-check-question="${escapeHTML(key)}">${feedback ? "Re-check Step" : "Check Step"}</button>
                     ${feedback ? `<button class="btn btn-secondary" type="button" data-step-advance="${scenarioState.currentStep + 1}">Continue →</button>` : ""}
                 </div>
             </section>
         `;
     }
 
-    function renderSingleChoiceQuestion(question, selectedValue) {
+    function renderSingleChoiceQuestion(question, selectedValue, feedback) {
+        const revealed = Boolean(feedback);
         return `
-            <div class="choice-grid">
-                ${question.options.map((option) => `
-                    <button type="button" class="choice-button ${selectedValue === option.id ? "selected" : ""} ${option.status === "also-reasonable" ? "also-reasonable" : ""}" data-single-choice="${escapeHTML(option.id)}">
-                        ${escapeHTML(option.label)}
+            <div class="choice-grid" role="group" aria-label="Answer options">
+                ${question.options.map((option) => {
+                    const isSelected = selectedValue === option.id;
+                    const isCorrectOption = option.id === question.correct;
+                    let stateClass = isSelected ? "selected" : "";
+                    let stateLabel = isSelected ? "Selected" : "";
+                    const isAlsoReasonable = option.status === "also-reasonable" || (Array.isArray(question.alsoReasonable) && question.alsoReasonable.includes(option.id));
+                    if (revealed) {
+                        if (isSelected && isCorrectOption) {
+                            stateClass += " correct";
+                            stateLabel = "Selected · Correct";
+                        } else if (isSelected && isAlsoReasonable) {
+                            stateClass += " also-reasonable";
+                            stateLabel = "Selected · Also reasonable";
+                        } else if (isSelected && !isCorrectOption) {
+                            stateClass += " incorrect";
+                            stateLabel = "Selected · Not the best answer";
+                        } else if (isCorrectOption) {
+                            stateClass += " correct-answer";
+                            stateLabel = "Best answer";
+                        }
+                    }
+                    return `
+                    <button type="button" class="choice-button ${stateClass}" data-single-choice="${escapeHTML(option.id)}" aria-pressed="${isSelected}">
+                        <span class="choice-button-label">${escapeHTML(option.label)}</span>
+                        ${stateLabel ? `<span class="choice-state-tag">${escapeHTML(stateLabel)}</span>` : ""}
                     </button>
-                `).join("")}
+                `;
+                }).join("")}
             </div>
         `;
     }
 
-    function renderMultiChoiceQuestion(question, selectedValues) {
+    function renderMultiChoiceQuestion(question, selectedValues, feedback) {
+        const revealed = Boolean(feedback);
+        const requiredSet = new Set(question.required || []);
+        const optionalValidSet = new Set(question.optionalValid || []);
         return `
-            <div class="multi-choice-grid">
-                ${question.options.map((option) => `
-                    <button type="button" class="multi-choice-button ${(selectedValues || []).includes(option.id) ? "selected" : ""}" data-multi-choice="${escapeHTML(option.id)}">
-                        ${escapeHTML(option.label)}
+            <div class="multi-choice-grid" role="group" aria-label="Answer options">
+                ${question.options.map((option) => {
+                    const isSelected = (selectedValues || []).includes(option.id);
+                    const isRequired = requiredSet.has(option.id);
+                    const isOptionalValid = optionalValidSet.has(option.id);
+                    let stateClass = isSelected ? "selected" : "";
+                    let stateLabel = isSelected ? "Selected" : "";
+                    if (revealed) {
+                        if (isSelected && isRequired) {
+                            stateClass += " correct";
+                            stateLabel = "Selected · Useful";
+                        } else if (isSelected && isOptionalValid) {
+                            stateClass += " also-reasonable";
+                            stateLabel = "Selected · Also valid";
+                        } else if (isSelected && !isRequired && !isOptionalValid) {
+                            stateClass += " incorrect";
+                            stateLabel = "Selected · Not needed";
+                        } else if (isRequired) {
+                            stateClass += " correct-answer";
+                            stateLabel = "Missed · Should have been checked";
+                        }
+                    }
+                    return `
+                    <button type="button" class="multi-choice-button ${stateClass}" data-multi-choice="${escapeHTML(option.id)}" aria-pressed="${isSelected}">
+                        <span class="choice-button-label">${escapeHTML(option.label)}</span>
+                        ${stateLabel ? `<span class="choice-state-tag">${escapeHTML(stateLabel)}</span>` : ""}
                     </button>
-                `).join("")}
+                `;
+                }).join("")}
             </div>
         `;
     }
@@ -724,8 +702,7 @@
 
     function renderResponseBuilderStep(scenario, scenarioState) {
         const selectedIds = scenarioState.responseBuilder.selected;
-        const available = scenario.responseBuilder.options.filter((option) => !selectedIds.includes(option.id));
-        const selectedOptions = selectedIds.map((id) => scenario.responseBuilder.options.find((option) => option.id === id)).filter(Boolean);
+        const feedback = scenarioState.feedback.responseBuilder;
 
         return `
             <section class="workspace-section">
@@ -735,49 +712,49 @@
                     <p>${escapeHTML(scenario.responseBuilder.intro)}</p>
                 </div>
 
-                <article class="response-builder">
-                    <div class="response-builder-shell">
-                        <div class="response-column">
-                            <h3>Available Response Elements</h3>
-                            <div class="response-option-list">
-                                ${available.map((option) => `
-                                    <div class="response-option">
-                                        <p>${escapeHTML(option.label)}</p>
-                                        <button class="btn btn-secondary" type="button" data-response-add="${escapeHTML(option.id)}">Add</button>
-                                    </div>
-                                `).join("") || `<p class="response-hint">All response elements are in your draft.</p>`}
-                            </div>
-                        </div>
-                        <div class="response-column">
-                            <h3>Your Response Draft</h3>
-                            <div class="response-selected-list">
-                                ${selectedOptions.map((option, index) => `
-                                    <div class="response-item">
-                                        <p>${escapeHTML(option.label)}</p>
-                                        <div class="response-item-controls">
-                                            <button class="btn btn-secondary" type="button" data-response-move="up" data-response-id="${escapeHTML(option.id)}" ${index === 0 ? "disabled" : ""}>Move Up</button>
-                                            <button class="btn btn-secondary" type="button" data-response-move="down" data-response-id="${escapeHTML(option.id)}" ${index === selectedOptions.length - 1 ? "disabled" : ""}>Move Down</button>
-                                            <button class="btn btn-secondary" type="button" data-response-remove="${escapeHTML(option.id)}">Remove</button>
-                                        </div>
-                                    </div>
-                                `).join("") || `<p class="response-hint">Add the concepts you want in the customer response.</p>`}
-                            </div>
-                            <div class="response-preview">
-                                ${escapeHTML(buildResponsePreview(selectedOptions))}
-                            </div>
-                        </div>
-                    </div>
+                <article class="decision-card">
+                    ${renderResponseChoices(scenario.responseBuilder, selectedIds, feedback)}
+                    ${feedback ? `<div class="feedback-box ${escapeHTML(feedback.type)}">${escapeHTML(feedback.message)}</div>` : ""}
                 </article>
 
                 ${scenario.requiresBomBuilder ? renderBomBuilderStep(scenarioState) : ""}
 
-                ${scenarioState.feedback.responseBuilder ? `<div class="feedback-box ${escapeHTML(scenarioState.feedback.responseBuilder.type)}">${escapeHTML(scenarioState.feedback.responseBuilder.message)}</div>` : ""}
-
                 <div class="panel-actions">
-                    <button class="btn btn-primary" type="button" data-check-response>Review Response</button>
-                    ${scenarioState.feedback.responseBuilder ? `<button class="btn btn-secondary" type="button" data-step-advance="7">Continue →</button>` : ""}
+                    <button class="btn btn-primary" type="button" data-check-response>${feedback ? "Re-check Response" : "Check Response"}</button>
+                    ${feedback ? `<button class="btn btn-secondary" type="button" data-step-advance="7">Continue →</button>` : ""}
                 </div>
             </section>
+        `;
+    }
+
+    function renderResponseChoices(responseBuilder, selectedIds, feedback) {
+        const revealed = Boolean(feedback);
+        return `
+            <div class="multi-choice-grid" role="group" aria-label="Response elements">
+                ${responseBuilder.options.map((option) => {
+                    const isSelected = selectedIds.includes(option.id);
+                    let stateClass = isSelected ? "selected" : "";
+                    let stateLabel = isSelected ? "Selected" : "";
+                    if (revealed) {
+                        if (isSelected && option.required) {
+                            stateClass += " correct";
+                            stateLabel = "Selected · Good addition";
+                        } else if (isSelected && option.incorrect) {
+                            stateClass += " incorrect";
+                            stateLabel = "Selected · Leave this out";
+                        } else if (option.required) {
+                            stateClass += " correct-answer";
+                            stateLabel = "Missed · Should be included";
+                        }
+                    }
+                    return `
+                    <button type="button" class="multi-choice-button ${stateClass}" data-response-choice="${escapeHTML(option.id)}" aria-pressed="${isSelected}">
+                        <span class="choice-button-label">${escapeHTML(option.label)}</span>
+                        ${stateLabel ? `<span class="choice-state-tag">${escapeHTML(stateLabel)}</span>` : ""}
+                    </button>
+                `;
+                }).join("")}
+            </div>
         `;
     }
 
@@ -969,6 +946,7 @@
         el.scenarioStepShell.querySelectorAll("[data-single-choice]").forEach((button) => {
             button.addEventListener("click", () => {
                 scenarioState.answers[activeKey] = button.getAttribute("data-single-choice");
+                scenarioState.feedback[activeKey] = null;
                 renderActiveScenario();
             });
         });
@@ -982,6 +960,7 @@
                 } else {
                     scenarioState.answers[activeKey] = [...current, optionId];
                 }
+                scenarioState.feedback[activeKey] = null;
                 renderActiveScenario();
             });
         });
@@ -997,27 +976,16 @@
     }
 
     function bindResponseBuilderInteractions(scenario, scenarioState) {
-        el.scenarioStepShell.querySelectorAll("[data-response-add]").forEach((button) => {
+        el.scenarioStepShell.querySelectorAll("[data-response-choice]").forEach((button) => {
             button.addEventListener("click", () => {
-                const optionId = button.getAttribute("data-response-add");
-                scenarioState.responseBuilder.selected.push(optionId);
-                renderActiveScenario();
-            });
-        });
-
-        el.scenarioStepShell.querySelectorAll("[data-response-remove]").forEach((button) => {
-            button.addEventListener("click", () => {
-                const optionId = button.getAttribute("data-response-remove");
-                scenarioState.responseBuilder.selected = scenarioState.responseBuilder.selected.filter((id) => id !== optionId);
-                renderActiveScenario();
-            });
-        });
-
-        el.scenarioStepShell.querySelectorAll("[data-response-move]").forEach((button) => {
-            button.addEventListener("click", () => {
-                const direction = button.getAttribute("data-response-move");
-                const optionId = button.getAttribute("data-response-id");
-                moveResponseOption(scenarioState.responseBuilder.selected, optionId, direction);
+                const optionId = button.getAttribute("data-response-choice");
+                const current = scenarioState.responseBuilder.selected;
+                if (current.includes(optionId)) {
+                    scenarioState.responseBuilder.selected = current.filter((id) => id !== optionId);
+                } else {
+                    scenarioState.responseBuilder.selected = [...current, optionId];
+                }
+                scenarioState.feedback.responseBuilder = null;
                 renderActiveScenario();
             });
         });
@@ -1151,7 +1119,7 @@
             if (alsoReasonable || (selected && selected.status === "also-reasonable")) {
                 return {
                     type: "warning",
-                    message: `Also reasonable, but not the strongest answer for this training prompt. ${question.explanation}`,
+                    message: `Also reasonable, but not the strongest answer here. ${question.explanation}`,
                     ratio: 0.75
                 };
             }
@@ -1186,14 +1154,14 @@
         if (ratio >= 0.65) {
             return {
                 type: "warning",
-                message: `Also reasonable overall, but some items still need clarification. Missing: ${formatMissingItems(question, selectedValues)}.`,
+                message: `Also reasonable, but you're missing: ${formatMissingItems(question, selectedValues)}.`,
                 ratio
             };
         }
 
         return {
             type: "incorrect",
-            message: `Needs clarification. Missing: ${formatMissingItems(question, selectedValues)}.`,
+            message: `Not enough yet. Still missing: ${formatMissingItems(question, selectedValues)}.`,
             ratio
         };
     }
@@ -1312,19 +1280,8 @@
 
         el.finalReadinessPanel.classList.remove("hidden");
         el.overallReadinessScore.textContent = `${overall} / 500`;
-        el.overallReadinessAverage.textContent = `${average}%`;
         el.overallCompletedScenarios.textContent = `${completed.length} / 5`;
         el.readinessLevelBadge.textContent = readinessLevel;
-        el.skillsDemonstratedList.innerHTML = [
-            "Product Recognition",
-            "Information Gathering",
-            "System Thinking",
-            "Wiring Awareness",
-            "Takeoff Thinking",
-            "BOM/Estimating",
-            "Customer Communication",
-            "Professional Judgment"
-        ].map((item) => `<li>${escapeHTML(item)}</li>`).join("");
 
         const breakdown = computeSkillBreakdown();
         el.skillBreakdownGrid.innerHTML = skillCategories.map((category) => `
@@ -1396,7 +1353,7 @@
 
     function buildRecommendedResponse(scenario, scenarioState) {
         const responseIds = scenarioState.responseBuilder.selected;
-        const selectedOptions = responseIds.map((id) => scenario.responseBuilder.options.find((option) => option.id === id)).filter(Boolean);
+        const selectedOptions = scenario.responseBuilder.options.filter((option) => responseIds.includes(option.id));
         if (selectedOptions.length === 0) {
             return buildResponsePreview(scenario.responseBuilder.options.filter((option) => option.required));
         }
@@ -1444,22 +1401,6 @@
             return "investigate";
         }
         return "productFunction";
-    }
-
-    function moveResponseOption(list, optionId, direction) {
-        const index = list.indexOf(optionId);
-        if (index === -1) {
-            return;
-        }
-        const targetIndex = direction === "up" ? index - 1 : index + 1;
-        if (targetIndex < 0 || targetIndex >= list.length) {
-            return;
-        }
-        const updated = [...list];
-        const [item] = updated.splice(index, 1);
-        updated.splice(targetIndex, 0, item);
-        const scenarioState = getScenarioState(moduleState.selectedScenarioId);
-        scenarioState.responseBuilder.selected = updated;
     }
 
     function formatMissingItems(question, selectedValues) {
@@ -1566,25 +1507,6 @@
 
     function getVerifiedOrFallback(product, fallback) {
         return product ? product.model : fallback;
-    }
-
-    function getVerifiedNotificationLabel() {
-        return verifiedReferences.notificationSpeaker
-            ? `${verifiedReferences.notificationSpeaker.model}`
-            : "Ceiling speaker";
-    }
-
-    function getVerifiedNotificationShort() {
-        return verifiedReferences.notificationSpeaker
-            ? verifiedReferences.notificationSpeaker.model
-            : "a ceiling speaker option";
-    }
-
-    function getVerifiedNotificationExplanation() {
-        if (verifiedReferences.notificationSpeaker) {
-            return `Best answer for this training prompt: investigate the verified ${verifiedReferences.notificationSpeaker.model} family or an equivalent compatible ceiling notification approach for the space.`;
-        }
-        return "Best answer for this training prompt: investigate a ceiling speaker approach first for the large gymnasium application.";
     }
 
     function clampRatio(value) {
